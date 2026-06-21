@@ -1861,6 +1861,7 @@ window.addEventListener("beforeunload", () => saveQuizProgress());
 window.addEventListener("pagehide", () => saveQuizProgress());
 
 /* ======== Logic Quiz ======== */
+const logicProgressKey = "v502-logic-progress";
 let logicState = {
   questions: [],
   currentIndex: 0,
@@ -1870,9 +1871,34 @@ let logicState = {
   active: false,
 };
 
+function readLogicProgress() {
+  try { return JSON.parse(localStorage.getItem(logicProgressKey)) || {}; }
+  catch { return {}; }
+}
+function saveLogicCorrect(qid) {
+  const p = readLogicProgress();
+  const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
+  if (!p[key]) p[key] = [];
+  if (!p[key].includes(qid)) p[key].push(qid);
+  localStorage.setItem(logicProgressKey, JSON.stringify(p));
+}
+function getLogicCompleted() {
+  const p = readLogicProgress();
+  const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
+  return new Set(p[key] || []);
+}
+
 function shuffleLogicQuestions() {
   const raw = (window.__V502_LOGIC__ && window.__V502_LOGIC__.questions) || [];
-  logicState.questions = [...raw].sort(() => Math.random() - 0.5);
+  const completed = getLogicCompleted();
+  // Filter out already-correct questions
+  const remaining = raw.filter(q => !completed.has(q.id));
+  if (remaining.length === 0) {
+    // All done — reset and show all
+    logicState.questions = [...raw].sort(() => Math.random() - 0.5);
+  } else {
+    logicState.questions = [...remaining].sort(() => Math.random() - 0.5);
+  }
 }
 
 function startLogicQuiz() {
@@ -1914,7 +1940,7 @@ function renderLogicQuestion() {
   els.logicNextBtn.disabled = true;
   els.logicFeedback.hidden = true;
   els.logicFeedback.className = "feedback";
-  els.logicCounter.textContent = `${logicState.currentIndex + 1} / 150`;
+  els.logicCounter.textContent = `${logicState.currentIndex + 1} / ${logicState.questions.length}`;
   els.logicProgressBar.style.width = `${Math.round(((logicState.currentIndex) / logicState.questions.length) * 100)}%`;
 }
 
@@ -1923,7 +1949,10 @@ function submitLogicAnswer() {
   logicState.answered = true;
   const q = logicState.questions[logicState.currentIndex];
   const correct = logicState.selectedOption === q.answer;
-  if (correct) logicState.correctCount++;
+  if (correct) {
+    logicState.correctCount++;
+    saveLogicCorrect(q.id);
+  }
 
   els.logicFeedback.hidden = false;
   els.logicFeedback.className = `feedback ${correct ? "ok" : "no"}`;
@@ -1960,7 +1989,8 @@ function finishLogicQuiz() {
   els.logicPanel.hidden = true;
   els.resultPanel.hidden = false;
   els.resultTitle.textContent = "Logic Quiz Result";
-  els.resultSummary.textContent = `${logicState.correctCount}/${logicState.questions.length} correct — ${pct}% accuracy`;
+  const remaining = 150 - getLogicCompleted().size;
+  els.resultSummary.textContent = `${logicState.correctCount}/${logicState.questions.length} correct — ${pct}% accuracy · ${remaining} remaining`;
   els.leaderboard.innerHTML = "";
 }
 
