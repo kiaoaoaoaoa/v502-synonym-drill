@@ -572,7 +572,6 @@ const els = {
   wordlistPanel: document.querySelector("#wordlistPanel"),
   wordlistTitle: document.querySelector("#wordlistTitle"),
   wordlistContent: document.querySelector("#wordlistContent"),
-  wordlistCloseBtn: document.querySelector("#wordlistCloseBtn"),
   rankingSummary: document.querySelector("#rankingSummary"),
   rankingContent: document.querySelector("#rankingContent"),
   // Auth
@@ -1960,11 +1959,6 @@ els.restartBtn.addEventListener("click", resetAll);
 els.rankingBtn.addEventListener("click", showRanking);
 els.rankingCloseBtn.addEventListener("click", hideRanking);
 els.wordlistBtn.addEventListener("click", showWordlist);
-els.wordlistCloseBtn.addEventListener("click", () => {
-  els.wordlistPanel.hidden = true;
-  if (state.playerName) els.quizPanel.hidden = false;
-  else els.startPanel.hidden = false;
-});
 els.categoryButtons.forEach((button) => {
   button.addEventListener("click", () => selectCategorySet(button.dataset.setId));
   const smallEl = button.querySelector("small");

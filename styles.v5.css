@@ -470,11 +470,7 @@ h2 {
 }
 
 .wordlist-scroll {
-  max-height: 65vh;
-  overflow-y: auto;
   padding-right: 8px;
-  scrollbar-width: thin;
-  scrollbar-color: var(--line) transparent;
 }
 
 .wordlist-cat {
@@ -571,7 +567,6 @@ h2 {
 
 @media (max-width: 840px) {
   .wordlist-scroll {
-    max-height: 55vh;
     padding-right: 4px;
   }
 
@@ -626,7 +621,6 @@ h2 {
 
 @media (max-width: 480px) {
   .wordlist-scroll {
-    max-height: 50vh;
     padding-right: 2px;
   }
 
