@@ -928,7 +928,7 @@ function saveQuizProgress() {
   const key = state.playerName.toLowerCase();
   const data = {
     activeSetId: state.activeSetId,
-    questionIndex: state.questionIndex,
+    questionIndex: state.questionIndex + 1, // Next unanswered question
     totalAttempts: state.totalAttempts,
     correctAttempts: state.correctAttempts,
     streak: state.streak,
