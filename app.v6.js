@@ -540,7 +540,7 @@ const els = {
   playerNameLabel: document.querySelector("#playerNameLabel"),
   activeSetLabel: document.querySelector("#activeSetLabel"),
   activeSetMeta: document.querySelector("#activeSetMeta"),
-  categoryNav: document.querySelector("#categoryNav"),
+  categoryButtons: document.querySelectorAll(".cat-set-btn"),
   categoryLabel: document.querySelector("#categoryLabel"),
   categoryTitle: document.querySelector("#categoryTitle"),
   meaningPrompt: document.querySelector("#meaningPrompt"),
@@ -1712,17 +1712,9 @@ function updateSetDisplay() {
   els.activeSetMeta.textContent = "30 questions";
   els.categoryLabel.textContent = activeSet.label;
   els.questionTotal.textContent = "/ 30";
-  // Update aria-current on all set buttons
-  els.categoryNav.querySelectorAll(".cat-set-btn").forEach((button) => {
+  els.categoryButtons.forEach((button) => {
     button.setAttribute("aria-current", String(button.dataset.setId === state.activeSetId));
   });
-  // Highlight the parent group
-  els.categoryNav.querySelectorAll(".cat-group").forEach(g => g.classList.remove("active"));
-  const activeBtn = els.categoryNav.querySelector(`.cat-set-btn[data-set-id="${state.activeSetId}"]`);
-  if (activeBtn) {
-    const group = activeBtn.closest(".cat-group");
-    if (group) group.classList.add("active");
-  }
 }
 
 function selectCategorySet(setId) {
@@ -1814,51 +1806,11 @@ els.wordlistCloseBtn.addEventListener("click", () => {
   if (state.playerName) els.quizPanel.hidden = false;
   else els.startPanel.hidden = false;
 });
-/* ---- Dynamic accordion category nav ---- */
-function buildCategoryNav() {
-  // Group by Korean consonant
-  const groups = {};
-  const sortedIds = Object.keys(categorySets).sort();
-  for (const setId of sortedIds) {
-    const cid = categorySets[setId].ids[0];
-    const title = categorySummaries[cid] || `Category ${cid}`;
-    const firstChar = title[0];
-    if (!groups[firstChar]) groups[firstChar] = [];
-    groups[firstChar].push(setId);
-  }
-
-  let html = "";
-  for (const [char, setIds] of Object.entries(groups).sort()) {
-    const firstSet = setIds[0];
-    const lastSet = setIds[setIds.length - 1];
-    const sampleTitle = categorySummaries[categorySets[firstSet].ids[0]] || "";
-    const expanded = setIds.includes(state.activeSetId);
-
-    html += `<div class="cat-group${expanded ? " active" : ""}">`;
-    html += `<button class="cat-group-btn" type="button" onclick="this.parentElement.classList.toggle('active')">`;
-    html += `<span class="cat-group-char">${escapeHtml(char)}</span>`;
-    html += `<span class="cat-group-range">${escapeHtml(firstSet)}~${escapeHtml(lastSet)}</span>`;
-    html += `<span class="cat-group-title">${escapeHtml(sampleTitle.substring(0, 30))}</span>`;
-    html += `<span class="cat-group-arrow">▾</span>`;
-    html += `</button>`;
-    html += `<div class="cat-group-sets">`;
-    for (const setId of setIds) {
-      html += `<button class="cat-set-btn" type="button" data-set-id="${escapeHtml(setId)}" aria-current="${setId === state.activeSetId}">`;
-      html += `<span>${escapeHtml(setId)}</span><small>30</small>`;
-      html += `</button>`;
-    }
-    html += `</div></div>`;
-  }
-  els.categoryNav.innerHTML = html;
-
-  // Wire up click handlers
-  els.categoryNav.querySelectorAll(".cat-set-btn").forEach(btn => {
-    btn.addEventListener("click", () => selectCategorySet(btn.dataset.setId));
-  });
-}
-
-// Replace old sidebar init
-buildCategoryNav();
+els.categoryButtons.forEach((button) => {
+  button.addEventListener("click", () => selectCategorySet(button.dataset.setId));
+  const smallEl = button.querySelector("small");
+  if (smallEl) smallEl.textContent = "30";
+});
 
 function updateSidebarCompletion() {
   if (!state.playerName) return;
@@ -1870,7 +1822,7 @@ function updateSidebarCompletion() {
       completed.set(e.setId, e);
     }
   }
-  els.categoryNav.querySelectorAll(".cat-set-btn").forEach((button) => {
+  els.categoryButtons.forEach((button) => {
     const setId = button.dataset.setId;
     const entry = completed.get(setId);
     const smallEl = button.querySelector("small");
