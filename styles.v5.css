@@ -313,6 +313,37 @@ h2 {
   padding: 0 16px;
 }
 
+.password-row {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.password-row label {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.password-row label small {
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.password-row input {
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0 12px;
+  color: var(--ink);
+  font: inherit;
+}
+
+.password-hint {
+  margin: 0;
+  font-size: 13px;
+  color: var(--warn);
+}
+
 .ranking-header {
   display: flex;
   flex-direction: column;

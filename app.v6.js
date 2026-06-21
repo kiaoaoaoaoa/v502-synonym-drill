@@ -595,6 +595,7 @@ const confusionNotes = {
 };
 
 const leaderboardKey = "v502-synonym-drill-leaderboard";
+const passwordStoreKey = "v502-synonym-drill-passwords";
 let supabaseClient = null;
 let supabaseSdkPromise = null;
 
@@ -616,6 +617,7 @@ const state = {
   answers: new Map(),
   currentSelection: new Set(),
   playerName: "",
+  playerPassword: "",
   totalAttempts: 0,
   correctAttempts: 0,
   streak: 0,
@@ -628,6 +630,9 @@ const els = {
   resultPanel: document.querySelector("#resultPanel"),
   nameForm: document.querySelector("#nameForm"),
   nicknameInput: document.querySelector("#nicknameInput"),
+  passwordInput: document.querySelector("#passwordInput"),
+  passwordRow: document.querySelector("#passwordRow"),
+  passwordHint: document.querySelector("#passwordHint"),
   playerNameLabel: document.querySelector("#playerNameLabel"),
   activeSetLabel: document.querySelector("#activeSetLabel"),
   activeSetMeta: document.querySelector("#activeSetMeta"),
@@ -889,6 +894,36 @@ function writeLeaderboard(entries) {
   localStorage.setItem(leaderboardKey, JSON.stringify(entries));
 }
 
+function readPasswordStore() {
+  try {
+    return JSON.parse(localStorage.getItem(passwordStoreKey)) || {};
+  } catch {
+    return {};
+  }
+}
+
+function writePasswordStore(store) {
+  localStorage.setItem(passwordStoreKey, JSON.stringify(store));
+}
+
+function setPasswordForNickname(nickname, password) {
+  const store = readPasswordStore();
+  // Simple hash for basic protection
+  store[nickname.toLowerCase()] = btoa(password);
+  writePasswordStore(store);
+}
+
+function checkPassword(nickname, password) {
+  const store = readPasswordStore();
+  const stored = store[nickname.toLowerCase()];
+  if (!stored) return true; // No password set yet — first-time user
+  return stored === btoa(password);
+}
+
+function hasPassword(nickname) {
+  return Boolean(readPasswordStore()[nickname.toLowerCase()]);
+}
+
 function currentSetLeaderboard(entries = readLeaderboard()) {
   return entries.filter((item) => item.setId === state.activeSetId || (!item.setId && state.activeSetId === "001-010"));
 }
@@ -899,6 +934,54 @@ function sortedLeaderboard(entries) {
     b.correct - a.correct ||
     new Date(a.completedAt) - new Date(b.completedAt),
   );
+}
+
+/* Cumulative leaderboard: best attempt per (nickname, setId), summed across sets */
+function cumulativeLeaderboard(entries, setId = null) {
+  const best = new Map();
+  const filtered = setId ? entries.filter((e) => e.setId === setId || (!e.setId && setId === "001-010")) : entries;
+
+  for (const entry of filtered) {
+    const key = `${entry.name.toLowerCase()}|${entry.setId || "001-010"}`;
+    const existing = best.get(key);
+    if (!existing || entry.accuracy > existing.accuracy ||
+        (entry.accuracy === existing.accuracy && entry.correct > existing.correct)) {
+      best.set(key, entry);
+    }
+  }
+
+  // Aggregate by nickname across sets
+  const aggregated = new Map();
+  for (const entry of best.values()) {
+    const nameKey = entry.name.toLowerCase();
+    if (!aggregated.has(nameKey)) {
+      aggregated.set(nameKey, { name: entry.name, correct: 0, total: 0 });
+    }
+    const agg = aggregated.get(nameKey);
+    agg.correct += entry.correct;
+    agg.total += entry.total;
+  }
+
+  return [...aggregated.values()]
+    .map((a) => ({ ...a, accuracy: a.total ? Math.round((a.correct / a.total) * 100) : 0 }))
+    .sort((a, b) => b.accuracy - a.accuracy || b.correct - a.correct);
+}
+
+/* Upsert: replace existing entry for same (name, setId) if new is better */
+function upsertLocalScore(entry) {
+  const entries = readLeaderboard();
+  const idx = entries.findIndex(
+    (e) => e.name.toLowerCase() === entry.name.toLowerCase() && (e.setId || "001-010") === (entry.setId || "001-010"),
+  );
+  if (idx >= 0) {
+    if (entry.accuracy > entries[idx].accuracy || (entry.accuracy === entries[idx].accuracy && entry.correct > entries[idx].correct)) {
+      entries[idx] = entry;
+    }
+  } else {
+    entries.push(entry);
+  }
+  writeLeaderboard(entries);
+  return entries;
 }
 
 function getDbConfig() {
@@ -988,25 +1071,6 @@ async function readPublicLeaderboard() {
   return data.map(normalizePublicScore);
 }
 
-function renderLeaderboard(leaderboard, title, rank, note = "") {
-  els.resultSummary.textContent =
-    `${state.correctAttempts}/${state.questions.length} correct - ` +
-    `${Math.round((state.correctAttempts / state.questions.length) * 100)}% accuracy - Rank #${rank}`;
-  els.leaderboard.innerHTML = `
-    <h4>${escapeHtml(title)}</h4>
-    ${note ? `<p class="ranking-note">${escapeHtml(note)}</p>` : ""}
-    <ol>
-      ${leaderboard.map((item) => `
-        <li>
-          <span>${escapeHtml(item.name)}</span>
-          <b>${item.accuracy}%</b>
-          <small>${item.correct}/${item.total}</small>
-        </li>
-      `).join("")}
-    </ol>
-  `;
-}
-
 async function completeQuiz() {
   if (state.completed || state.answers.size !== state.questions.length) return;
   state.completed = true;
@@ -1021,38 +1085,65 @@ async function completeQuiz() {
     setLabel: getActiveSet().label,
     completedAt: new Date().toISOString(),
   };
-  const savedLocalEntries = [...readLeaderboard(), entry];
-  const leaderboard = sortedLeaderboard(currentSetLeaderboard(savedLocalEntries)).slice(0, 20);
-  writeLeaderboard(savedLocalEntries);
-  const rank = leaderboard.findIndex((item) => item.completedAt === entry.completedAt) + 1;
+
+  // Upsert: keep only best score per (name, setId)
+  upsertLocalScore(entry);
+  const cumulative = cumulativeLeaderboard(readLeaderboard(), state.activeSetId);
+  const cumEntry = cumulative.find((e) => e.name.toLowerCase() === state.playerName.toLowerCase()) || entry;
+  const rank = cumulative.findIndex((e) => e.name.toLowerCase() === state.playerName.toLowerCase()) + 1;
 
   els.quizPanel.hidden = true;
   els.resultPanel.hidden = false;
   els.resultTitle.textContent = `${state.playerName}'s Result`;
-  renderLeaderboard(leaderboard, "Local Ranking", rank, "Public ranking is not connected yet.");
+  renderCumulativeLeaderboard(cumulative.slice(0, 20), "Local Ranking", rank, cumEntry);
 
   if (!hasPublicConfig()) return;
 
-  els.resultSummary.textContent = `${state.correctAttempts}/${state.questions.length} correct - ${accuracy}% accuracy - saving public rank...`;
+  els.resultSummary.textContent = `${cumEntry.correct}/${cumEntry.total} cumulative — saving public rank...`;
 
   try {
     const savedId = await savePublicScore(entry);
-    const publicLeaderboard = await readPublicLeaderboard();
-    const publicRank = publicLeaderboard.findIndex((item) => item.id === savedId) + 1;
-    renderLeaderboard(
-      publicLeaderboard,
-      "Public Ranking",
-      publicRank || publicLeaderboard.length,
-      "Shared ranking for everyone using this link.",
-    );
+    const publicData = await readPublicLeaderboard();
+    const pubCumulative = cumulativeLeaderboard(publicData, state.activeSetId);
+    const pubRank = pubCumulative.findIndex((e) => e.name.toLowerCase() === state.playerName.toLowerCase()) + 1;
+
+    els.leaderboard.innerHTML = `
+      <h4>Public Ranking</h4>
+      <p class="ranking-note">Shared ranking for everyone using this link.</p>
+      <ol>
+        ${pubCumulative.slice(0, 20).map((item) => `
+          <li>
+            <span>${escapeHtml(item.name)}</span>
+            <b>${item.accuracy}%</b>
+            <small>${item.correct}/${item.total}</small>
+          </li>
+        `).join("")}
+      </ol>
+    `;
+    els.resultSummary.textContent = `${cumEntry.correct}/${cumEntry.total} cumulative — Rank #${pubRank || pubCumulative.length}`;
   } catch (error) {
-    renderLeaderboard(
-      leaderboard,
-      "Local Ranking",
-      rank,
-      "Public ranking failed to save. Check db-config.js and Supabase table settings.",
-    );
+    els.leaderboard.innerHTML += `
+      <p class="ranking-note">Public ranking sync failed. Your local score is saved.</p>
+    `;
   }
+}
+
+function renderCumulativeLeaderboard(leaderboard, title, rank, cumEntry) {
+  els.resultSummary.textContent =
+    `${cumEntry.correct}/${cumEntry.total} cumulative — ${cumEntry.accuracy}% accuracy — Rank #${rank}`;
+  els.leaderboard.innerHTML = `
+    <h4>${escapeHtml(title)}</h4>
+    <p class="ranking-note">Best attempt per set, cumulative totals.</p>
+    <ol>
+      ${leaderboard.map((item) => `
+        <li>
+          <span>${escapeHtml(item.name)}</span>
+          <b>${item.accuracy}%</b>
+          <small>${item.correct}/${item.total}</small>
+        </li>
+      `).join("")}
+    </ol>
+  `;
 }
 
 function showRanking() {
@@ -1068,17 +1159,17 @@ function showRanking() {
   els.rankingSummary.textContent = "Loading rankings...";
   els.rankingContent.innerHTML = "";
 
-  const localEntries = currentSetLeaderboard();
-  const leaderboard = sortedLeaderboard(localEntries).slice(0, 20);
-  els.rankingSummary.textContent = `${leaderboard.length} player${leaderboard.length !== 1 ? "s" : ""} on the board`;
+  const allEntries = readLeaderboard();
+  const cumulative = cumulativeLeaderboard(allEntries, state.activeSetId).slice(0, 20);
+  els.rankingSummary.textContent = `${cumulative.length} player${cumulative.length !== 1 ? "s" : ""} on the board · Best per set, cumulative totals`;
 
-  if (leaderboard.length === 0) {
+  if (cumulative.length === 0) {
     els.rankingContent.innerHTML = "<p>No scores yet. Complete a quiz to appear here!</p>";
   } else {
     els.rankingContent.innerHTML = `
       <h4>Local Ranking</h4>
       <ol>
-        ${leaderboard.map((item, idx) => `
+        ${cumulative.map((item, idx) => `
           <li>
             <span>${idx + 1}. ${escapeHtml(item.name)}</span>
             <b>${item.accuracy}%</b>
@@ -1101,11 +1192,13 @@ function showRanking() {
     if (!client) return;
     return readPublicLeaderboard().then((publicData) => {
       if (!publicData.length) return;
+      const pubCumulative = cumulativeLeaderboard(publicData, state.activeSetId);
+      if (!pubCumulative.length) return;
       const publicSection = document.createElement("div");
       publicSection.innerHTML = `
         <h4 style="margin-top:18px;">Public Ranking</h4>
         <ol>
-          ${publicData.map((item, idx) => `
+          ${pubCumulative.slice(0, 20).map((item, idx) => `
             <li>
               <span>${idx + 1}. ${escapeHtml(item.name)}</span>
               <b>${item.accuracy}%</b>
@@ -1198,11 +1291,47 @@ function startWithName(event) {
   const name = els.nicknameInput.value.trim();
   if (!name) return;
 
+  const pwd = els.passwordInput.value.trim();
+
+  // If nickname already has a password, it must match
+  if (hasPassword(name)) {
+    if (!pwd) {
+      els.passwordHint.textContent = "This nickname is claimed. Enter your password.";
+      els.passwordRow.hidden = false;
+      els.passwordInput.focus();
+      return;
+    }
+    if (!checkPassword(name, pwd)) {
+      els.passwordHint.textContent = "Wrong password. Try again.";
+      els.passwordInput.value = "";
+      els.passwordInput.focus();
+      return;
+    }
+  }
+
   state.playerName = name;
+  state.playerPassword = pwd;
+
+  // Set password for new nicknames
+  if (pwd) {
+    setPasswordForNickname(name, pwd);
+  }
+
   els.playerNameLabel.textContent = name;
   els.startPanel.hidden = true;
   startQuiz();
 }
+
+els.nicknameInput.addEventListener("input", () => {
+  const name = els.nicknameInput.value.trim().toLowerCase();
+  if (name && hasPassword(name)) {
+    els.passwordRow.hidden = false;
+    els.passwordHint.textContent = "This nickname has scores. Enter password to continue.";
+  } else {
+    els.passwordRow.hidden = false;
+    els.passwordHint.textContent = "";
+  }
+});
 
 els.nameForm.addEventListener("submit", startWithName);
 els.prevBtn.addEventListener("click", prevQuestion);

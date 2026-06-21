@@ -85,6 +85,11 @@
               <input id="nicknameInput" name="nickname" type="text" maxlength="24" autocomplete="nickname" required />
               <button type="submit">Start</button>
             </div>
+            <div id="passwordRow" class="password-row" hidden>
+              <label for="passwordInput">Password <small>(to claim this nickname)</small></label>
+              <input id="passwordInput" name="password" type="password" minlength="4" maxlength="32" autocomplete="new-password" />
+              <p id="passwordHint" class="password-hint"></p>
+            </div>
           </form>
         </section>
 
