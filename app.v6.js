@@ -549,6 +549,7 @@ const els = {
   questionTotal: document.querySelector("#questionTotal"),
   options: document.querySelector("#options"),
   feedback: document.querySelector("#feedback"),
+  postFeedbackActions: document.querySelector("#postFeedbackActions"),
   prevBtn: document.querySelector("#prevBtn"),
   submitBtn: document.querySelector("#submitBtn"),
   nextBtn: document.querySelector("#nextBtn"),
@@ -746,10 +747,12 @@ function renderQuestion() {
 
   if (saved) {
     showFeedback(saved.correct, question);
+    els.postFeedbackActions.hidden = false;
   } else {
     els.feedback.hidden = true;
     els.feedback.className = "feedback";
     els.feedback.textContent = "";
+    els.postFeedbackActions.hidden = true;
   }
 
   renderProgress();
