@@ -225,6 +225,10 @@ h1 {
   padding-right: 4px;
 }
 
+.category-nav[hidden] {
+  display: none;
+}
+
 .category-btn {
   display: grid;
   grid-template-columns: minmax(78px, 1fr) auto;
