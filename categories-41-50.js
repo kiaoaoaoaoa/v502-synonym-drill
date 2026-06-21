@@ -1,0 +1,380 @@
+// LOGIC TREE V502 — Categories 041-050
+// Auto-generated from V502.pdf pages 10-11
+
+window.__V502_EXT__ = window.__V502_EXT__ || {};
+window.__V502_EXT__.categories = window.__V502_EXT__.categories || [];
+window.__V502_EXT__.wordMeanings = window.__V502_EXT__.wordMeanings || {};
+window.__V502_EXT__.categorySummaries = window.__V502_EXT__.categorySummaries || {};
+window.__V502_EXT__.confusionNotes = window.__V502_EXT__.confusionNotes || {};
+
+window.__V502_EXT__.categories.push(
+  {
+    id: "041",
+    words: [
+      "awesome",
+      "prodigious",
+      "redoubtable",
+    ],
+  },
+  {
+    id: "042",
+    words: [
+      "baffle",
+      "balk",
+      "blight",
+      "damp",
+      "dampen",
+      "discomfit",
+      "disconcert",
+      "discourage",
+      "foil",
+      "founder",
+      "mar",
+      "muddle",
+    ],
+  },
+  {
+    id: "043",
+    words: [
+      "aristocratic",
+      "eminent",
+      "exalted",
+      "grandiose",
+      "lofty",
+      "virtuous",
+    ],
+  },
+  {
+    id: "044",
+    words: [
+      "lull",
+      "pacify",
+      "paregorize",
+      "placate",
+      "sedate",
+    ],
+  },
+  {
+    id: "045",
+    words: [
+      "halcyon",
+      "hushed",
+      "calm",
+      "equable",
+      "placid",
+      "serene",
+      "tranquil",
+    ],
+  },
+  {
+    id: "046",
+    words: [
+      "agitate",
+      "discombobulate",
+      "discompose",
+      "disquiet",
+      "disturb",
+      "faze",
+      "perturb",
+      "roil",
+      "ruffle",
+    ],
+  },
+  {
+    id: "047",
+    words: [
+      "chronic",
+      "indelible",
+      "ineradicable",
+      "inexterminable",
+      "ingrained",
+      "inveterate",
+    ],
+  },
+  {
+    id: "048",
+    words: [
+      "contumacious",
+      "crotchety",
+      "disobedient",
+      "dogged",
+      "froward",
+      "insubordinate",
+      "intractable",
+      "intransigent",
+      "mulish",
+      "obdurate",
+      "obstinate",
+      "obstreperous",
+      "opinionated",
+      "pertinacious",
+      "perverse",
+      "recalcitrant",
+      "refractory",
+      "restive",
+      "stubborn",
+      "tenacious",
+      "willful",
+      "fractious",
+      "incorrigible",
+      "rambunctious",
+      "unruly",
+      "untoward",
+    ],
+  },
+  {
+    id: "049",
+    words: [
+      "affliction",
+      "agony",
+      "anguish",
+      "distress",
+      "ordeal",
+      "throes",
+      "torment",
+      "torture",
+      "travail",
+      "tribulation",
+      "woe",
+    ],
+  },
+  {
+    id: "050",
+    words: [
+      "aggravate",
+      "aggrieve",
+      "exacerbate",
+    ],
+  }
+);
+
+Object.assign(window.__V502_EXT__.wordMeanings, {
+  // 041 — awesome / imposing
+  awesome: "경탄할 만한",
+  prodigious: "엄청난; 굉장한",
+  redoubtable: "경외할 만한",
+
+  // 042 — thwart / foil (계획을 망쳐놓다)
+  baffle: "좌절시키다",
+  balk: "장애, 훼방",
+  blight: "손상시키다",
+  damp: "망연한, 어찌할 바를 모르는",
+  dampen: "기를 꺾다",
+  discomfit: "(계획·목적을) 깨뜨리다",
+  disconcert: "(계략 따위를) 깨뜨리다, 방해하다",
+  discourage: "(계획·사업 등을) 방해하다",
+  foil: "(계략 따위를) 좌절시키다",
+  founder: "(계획·사업 등이) 틀어지다",
+  mar: "손상시키다",
+  muddle: "혼란시키다",
+
+  // 043 — noble / lofty
+  aristocratic: "귀족 정치의",
+  eminent: "저명한",
+  exalted: "고귀한",
+  grandiose: "웅장한, 숭고한",
+  lofty: "고상한",
+  virtuous: "덕이 높은",
+
+  // 044 — soothe / calm down
+  lull: "(비·바람·폭풍우 등의) 진정",
+  pacify: "달래다",
+  paregorize: "진정시키다",
+  placate: "위로하다",
+  sedate: "침착한",
+
+  // 045 — calm / tranquil
+  halcyon: "고요한; 번영의",
+  hushed: "조용해진",
+  calm: "조용한",
+  equable: "한결같은",
+  placid: "평온한",
+  serene: "잔잔한",
+  tranquil: "평온한",
+
+  // 046 — agitate / disturb
+  agitate: "심하게 움직이다",
+  discombobulate: "혼란시키다",
+  discompose: "불안하게 하다",
+  disquiet: "불안하게 하다",
+  disturb: "마음을 어지럽게 하다",
+  faze: "마음을 혼란시키다",
+  perturb: "교란하다",
+  roil: "(마음을) 어지럽히다",
+  ruffle: "뒤흔들다",
+
+  // 047 — chronic / deep-rooted
+  chronic: "만성의",
+  indelible: "지울 수 없는",
+  ineradicable: "근절할 수 없는, 뿌리 깊은",
+  inexterminable: "근절할 수 없는",
+  ingrained: "뿌리 깊은, 타고난",
+  inveterate: "(감정·병이) 뿌리 깊은",
+
+  // 048 — stubborn / intractable
+  contumacious: "반항적인",
+  crotchety: "변덕스러운",
+  disobedient: "순종치 않는",
+  dogged: "완강한",
+  froward: "완고한",
+  insubordinate: "고분고분하지 않는",
+  intractable: "말을 듣지 않는",
+  intransigent: "타협하지 않는",
+  mulish: "고집 센",
+  obdurate: "억지 센",
+  obstinate: "완고한",
+  obstreperous: "제어할 수 없는",
+  opinionated: "자기주장을 고집하는",
+  pertinacious: "집요한",
+  perverse: "외고집의",
+  recalcitrant: "반항하는",
+  refractory: "말을 안 듣는",
+  restive: "고집 센",
+  stubborn: "완고한",
+  tenacious: "고집이 센",
+  willful: "외고집의",
+  fractious: "(성미가 괴팍하여) 다루기 어려운",
+  incorrigible: "(나쁜 버릇 등을) 고칠 수 없는",
+  rambunctious: "난폭하게 날뛰는",
+  unruly: "통제나 규제가 어려운",
+  untoward: "다루기 어려운; 골칫거리의",
+
+  // 049 — suffering / ordeal
+  affliction: "고통",
+  agony: "고민, 고통",
+  anguish: "(심신의) 고통",
+  distress: "비탄, 고통",
+  ordeal: "호된 시련",
+  throes: "격통, 고민",
+  torment: "고통",
+  torture: "고문",
+  travail: "산고, 진통",
+  tribulation: "고난",
+  woe: "비애, 비통",
+
+  // 050 — aggravate / exacerbate
+  aggravate: "악화시키다",
+  aggrieve: "(사람을) 학대하다",
+  exacerbate: "(고통·병, 노여움 따위를) 악화시키다",
+});
+
+Object.assign(window.__V502_EXT__.categorySummaries, {
+  "041": "awesome / imposing",
+  "042": "thwart / foil",
+  "043": "noble / lofty",
+  "044": "soothe / calm down",
+  "045": "calm / tranquil",
+  "046": "agitate / disturb",
+  "047": "chronic / deep-rooted",
+  "048": "stubborn / intractable",
+  "049": "suffering / ordeal",
+  "050": "aggravate / exacerbate",
+});
+
+Object.assign(window.__V502_EXT__.confusionNotes, {
+  // 041
+  awesome: "일상적인 '굉장한' 뜻과 달리, 여기서는 '경외감을 주는' 엄숙한 느낌.",
+  prodigious: "엄청나게 큰/많은. 'prodigy'(신동)와 어원이 같음. 017(거대한) 카테고리와 중복 가능.",
+  redoubtable: "존경스럽다기보다 상대하기 두려울 만큼 강하고 만만치 않은 느낌. 017에도 등장.",
+
+  // 042
+  baffle: "계획을 좌절시키다. '당혹하게 하다' 뜻도 있음.",
+  balk: "갑자기 멈추거나 방해하다. 스포츠의 '보크(balk)' 반칙도 이 단어.",
+  blight: "식물의 병해(마름병). 비유적으로 희망·계획을 망가뜨리는 것.",
+  damp: "'축축한'이 기본 뜻이나, 여기서는 기세를 꺾는 '망연한' 상태.",
+  dampen: "damp의 동사형. 기운·열의를 꺾다.",
+  discomfit: "계획을 완전히 깨뜨리다. 패배감을 동반.",
+  disconcert: "계략을 어지럽혀 망치다. '당황하게 하다' 뜻도.",
+  discourage: "용기를 꺾어 일을 그만두게 하다.",
+  foil: "적의 계략을 좌절시키다. fencing(펜싱)의 플뢰레와 같은 철자.",
+  founder: "배가 침몰하다. 비유적으로 계획이 틀어지다.",
+  mar: "손상시키다, 망치다. 'mar one's reputation'.",
+  muddle: "혼란에 빠뜨리다. 'muddle through'(그럭저럭 해내다).",
+
+  // 043
+  aristocratic: "귀족의. 정치 체제라기보다 귀족적 품위를 뜻함.",
+  eminent: "특정 분야에서 탁월하고 저명한. 'eminent domain'(토지수용권).",
+  exalted: "높이 올려진, 고귀한. 종교적·영적 고양감.",
+  grandiose: "웅장하고 장대하지만, 때로는 과장되어 비현실적인 느낌.",
+  lofty: "높고 숭고한. 'lofty ideals'(숭고한 이상). 거만한 느낌으로도 쓰임.",
+  virtuous: "덕이 높은. 도덕적 완전성을 암시.",
+
+  // 044
+  lull: "잠잠해지다, 진정시키다. 'lullaby'(자장가)와 같은 어원.",
+  pacify: "달래다, 진정시키다. 'pacifier'(아기 젖꼭지).",
+  paregorize: "의학적 진통제(paregoric)에서 유래. 고통을 진정시키다.",
+  placate: "노여움을 풀어주다, 위로하다. 'placate an angry customer'.",
+  sedate: "침착하게 만들다. 진정제(sedative)와 같은 어원.",
+
+  // 045
+  halcyon: "물총새(halcyon bird) 신화에서 유래. 고요하고 평화로운 시절.",
+  hushed: "숨죽인 듯 조용한. 'hushed silence'.",
+  calm: "가장 일반적인 '고요한'. 바람 없는 바다 상태도 뜻함.",
+  equable: "한결같이 변함없는. 기질·성격이 고른.",
+  placid: "잔잔한 호수 같은 평온함. 느긋하고 동요 없는.",
+  serene: "흔들림 없는 고요함. 'serenity'(평정).",
+  tranquil: "평온한. tranquilizer(진정제)의 어근.",
+
+  // 046
+  agitate: "휘저어 동요시키다. 정치적 '선동하다' 뜻도 강함.",
+  discombobulate: "정신을 혼란시키다. 구어체 느낌의 재미있는 단어.",
+  discompose: "차분함을 깨뜨리다. compose(차분하게 하다)의 반대.",
+  disquiet: "마음의 평화를 깨뜨리다. 불안하게 하다.",
+  disturb: "마음을 어지럽히다. 가장 일반적인 단어.",
+  faze: "당황하게 하다, 동요시키다. 주로 부정문에서 'not fazed by'로 씀.",
+  perturb: "깊이 동요시키다. 천문학의 '섭동(perturbation)' 뜻도.",
+  roil: "액체를 휘저어 흐리게 하다. 비유적으로 마음을 어지럽히다.",
+  ruffle: "깃털을 뒤흔들다. 'ruffle one's feathers'(신경을 건드리다).",
+
+  // 047
+  chronic: "(병이) 만성적인. 'chronic pain'. 급성(acute)의 반대.",
+  indelible: "지울 수 없는. 'indelible ink'(지워지지 않는 잉크).",
+  ineradicable: "뿌리 뽑을 수 없는. eradicate(근절하다)의 반대.",
+  inexterminable: "근절할 수 없는. exterminate(박멸하다)의 반대.",
+  ingrained: "섬유 깊이 박힌 염료처럼 뿌리 깊은. 'ingrained habit'.",
+  inveterate: "오래되어 뿌리 깊은. 'inveterate liar'(상습적 거짓말쟁이).",
+
+  // 048
+  contumacious: "고의로 불복종하는. 법정 모독(contempt of court) 관련.",
+  crotchety: "괴팍하고 변덕스러운. 노인에게 자주 쓰는 표현.",
+  dogged: "개처럼 물고 늘어지는 완강함. 긍정적 '끈기'로도 쓰임.",
+  froward: "고집스럽게 반항하는. toward(순종적인)의 반대. 고어체.",
+  intractable: "다루거나 통제하기 어려운. 사람·문제 모두에 씀.",
+  intransigent: "절대 타협하지 않는. 정치적 완고함을 묘사할 때 자주 씀.",
+  mulish: "노새(mule)처럼 고집 센.",
+  obdurate: "완고하게 자기 입장을 고수하는. 감정에 움직이지 않는.",
+  obstinate: "완고한. 가장 일반적인 '고집 센' 단어.",
+  obstreperous: "시끄럽게 저항하는. 통제 불능의.",
+  opinionated: "자기 의견을 완강히 고집하는. 독단적인.",
+  pertinacious: "집요하게 매달리는. 포기하지 않는 끈질김.",
+  perverse: "일부러 반대로 하는, 외고집의. 일탈적 쾌락의 의미도.",
+  recalcitrant: "반항적으로 저항하는. 권위에 순종하지 않는.",
+  refractory: "다루기 어려운, 말을 안 듣는. 내화물(내열 재료)의 뜻도.",
+  restive: "안절부절 못하며 통제를 거부하는. 말(馬)이 앞으로 안 가려 할 때.",
+  stubborn: "가장 널리 쓰이는 '완고한'. 물건·얼룩·사람 모두에 씀.",
+  tenacious: "집요하게 붙잡는. 긍정적 '끈기'로도 쓰임.",
+  willful: "제 고집대로 하는. 법률에서는 '고의적인'.",
+  fractious: "성미가 까다로워 다루기 힘든. 특히 어린이에게 자주 씀.",
+  incorrigible: "교정이 불가능한. 나쁜 버릇이 몸에 밴.",
+  rambunctious: "난폭하게 날뛰는, 제어가 안 되는. 주로 미국 영어.",
+  unruly: "규칙을 따르지 않는. 통제하기 어려운.",
+  untoward: "예상 밖으로 다루기 어려운, 골치 아픈.",
+
+  // 049
+  affliction: "지속적인 고통·시련. 질병·가난·불운 등.",
+  agony: "극심한 육체적·정신적 고통. 그리스어 'agōn'(싸움)에서.",
+  anguish: "참을 수 없는 심적 고통. 불안과 슬픔이 섞인.",
+  distress: "비탄과 고통. 구조 신호(distress signal)로도 쓰임.",
+  ordeal: "통과해야 하는 혹독한 시련. 고대의 '시죄법(trial by ordeal)'에서.",
+  throes: "격렬한 고통의 발작. 'death throes'(죽음의 경련).",
+  torment: "계속해서 괴롭히는 고통. 고문에 가까운.",
+  torture: "의도적으로 가하는 극심한 고통. 고문.",
+  travail: "힘든 노동, 산고(출산의 고통). 프랑스어 travailler(일하다)에서.",
+  tribulation: "시련과 고난. 'trials and tribulations'(시련과 고난).",
+  woe: "깊은 슬픔과 비애. 'woe is me!'(아이고!).",
+
+  // 050
+  aggravate: "상황을 더 나쁘게 만들다. 구어적으로 '짜증나게 하다'.",
+  aggrieve: "억울하게 하다, 학대하다. 주로 수동태 'aggrieved party'(피해 당사자).",
+  exacerbate: "고통·질병·갈등을 악화시키다. 'exacerbate tensions'.",
+});
