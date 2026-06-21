@@ -589,38 +589,64 @@ function allWords(sourceCategories = categories) {
 function buildQuestions() {
   const sourceCategories = getActiveCategories();
   const bank = allWords(sourceCategories);
-  return shuffle(
-    sourceCategories.flatMap((category) => {
-      const words = shuffle(category.words);
-      const currentWords = new Set(category.words);
-      // Skip categories with fewer than 3 words (can't form valid 2-answer questions)
-      if (words.length < 3) return [];
-      return [0, 1, 2].map((round) => {
-        const prompt = words[round % words.length];
-        const answer = [words[(round + 1) % words.length], words[(round + 2) % words.length]];
-        const distractors = [];
+  const TARGET = 30;
 
-        for (const item of shuffle(bank.filter((entry) => entry.categoryId !== category.id))) {
-          if (
-            item.word === prompt ||
-            answer.includes(item.word) ||
-            currentWords.has(item.word) ||
-            distractors.includes(item.word)
-          ) continue;
-          distractors.push(item.word);
-          if (distractors.length === 4) break;
-        }
+  // Separate viable categories (≥3 words) from too-small ones
+  const viable = sourceCategories.filter(c => c.words.length >= 3);
+  const skipped = sourceCategories.filter(c => c.words.length < 3);
 
-        return {
-          id: `${category.id}-${round + 1}`,
-          categoryId: category.id,
-          prompt,
-          answer,
-          options: shuffle([...answer, ...distractors]),
-        };
+  // Base: 3 rounds per viable category
+  const baseTotal = viable.length * 3;
+  const shortfall = Math.max(0, TARGET - baseTotal);
+
+  // Distribute shortfall as extra rounds to categories with most words
+  const allocations = viable.map(cat => ({
+    category: cat,
+    rounds: 3,
+    wordCount: cat.words.length,
+  }));
+  // Sort by word count descending for extra round distribution
+  allocations.sort((a, b) => b.wordCount - a.wordCount);
+  for (let i = 0; i < shortfall; i++) {
+    allocations[i % allocations.length].rounds++;
+  }
+
+  // Generate all questions
+  const questions = [];
+  for (const alloc of allocations) {
+    const category = alloc.category;
+    const words = shuffle([...category.words]);
+    const currentWords = new Set(category.words);
+
+    for (let r = 0; r < alloc.rounds; r++) {
+      const prompt = words[r % words.length];
+      // Pick 2 other words as answers (never the prompt)
+      const candidates = words.filter(w => w !== prompt);
+      const answer = [candidates[r % candidates.length], candidates[(r + 1) % candidates.length]];
+      const distractors = [];
+
+      for (const item of shuffle(bank.filter((entry) => entry.categoryId !== category.id))) {
+        if (
+          item.word === prompt ||
+          answer.includes(item.word) ||
+          currentWords.has(item.word) ||
+          distractors.includes(item.word)
+        ) continue;
+        distractors.push(item.word);
+        if (distractors.length === 4) break;
+      }
+
+      questions.push({
+        id: `${category.id}-${r + 1}`,
+        categoryId: category.id,
+        prompt,
+        answer,
+        options: shuffle([...answer, ...distractors]),
       });
-    }),
-  );
+    }
+  }
+
+  return shuffle(questions);
 }
 
 function renderQuestion() {
@@ -1215,15 +1241,11 @@ function startQuiz() {
 
 function updateSetDisplay() {
   const activeSet = getActiveSet();
-  // Count actual questions: 3 per category with >= 3 words, skip smaller ones
-  const actualQuestions = activeSet.ids.reduce((sum, cid) => {
-    const cat = categories.find(c => c.id === cid);
-    return sum + (cat && cat.words.length >= 3 ? 3 : 0);
-  }, 0);
+  // buildQuestions now guarantees 30 questions per set via extra rounds
   els.activeSetLabel.textContent = activeSet.label;
-  els.activeSetMeta.textContent = `${actualQuestions} questions`;
+  els.activeSetMeta.textContent = "30 questions";
   els.categoryLabel.textContent = activeSet.label;
-  els.questionTotal.textContent = `/ ${actualQuestions}`;
+  els.questionTotal.textContent = "/ 30";
   els.categoryButtons.forEach((button) => {
     button.setAttribute("aria-current", String(button.dataset.setId === state.activeSetId));
   });
@@ -1326,17 +1348,9 @@ els.wordlistCloseBtn.addEventListener("click", () => {
 });
 els.categoryButtons.forEach((button) => {
   button.addEventListener("click", () => selectCategorySet(button.dataset.setId));
-  // Update question count per button dynamically
-  const setId = button.dataset.setId;
-  const set = categorySets[setId];
-  if (set) {
-    const qCount = set.ids.reduce((sum, cid) => {
-      const cat = categories.find(c => c.id === cid);
-      return sum + (cat && cat.words.length >= 3 ? 3 : 0);
-    }, 0);
-    const smallEl = button.querySelector("small");
-    if (smallEl) smallEl.textContent = `${qCount} questions`;
-  }
+  // All sets now have 30 questions (extra rounds distributed to larger categories)
+  const smallEl = button.querySelector("small");
+  if (smallEl) smallEl.textContent = "30 questions";
 });
 
 els.quizPanel.hidden = true;
