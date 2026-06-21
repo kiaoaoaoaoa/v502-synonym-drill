@@ -1407,7 +1407,7 @@ function showWordlist() {
     if (hasCollocations) html += `<span class="wl-coll-indicator">▸</span>`;
     html += `</h4>`;
     if (hasKoreanUsage) {
-      html += `<button class="wl-usage-btn" type="button" onclick="event.stopPropagation();toggleCatKoreanUsage('${escapeHtml(cat.id)}')">용례</button>`;
+      html += `<button class="wl-usage-btn" type="button" onclick="event.stopPropagation();toggleCatKoreanUsage('${escapeHtml(cat.id)}')">📖 용례</button>`;
     }
     if (hasExamples) {
       html += `<button class="wl-example-btn" type="button" onclick="event.stopPropagation();toggleCatExample('${escapeHtml(cat.id)}')">예문</button>`;

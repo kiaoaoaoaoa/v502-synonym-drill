@@ -676,6 +676,17 @@ h2 {
   color: var(--ink);
   line-height: 1.6;
   padding-left: 4px;
+  font-style: italic;
+}
+
+.wl-detail-usage .wl-detail-list li {
+  padding: 8px 10px;
+}
+
+.wl-detail-usage .wl-detail-word {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 14px;
 }
 
 .wl-detail {
