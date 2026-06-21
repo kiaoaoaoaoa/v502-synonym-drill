@@ -1056,14 +1056,18 @@ function handleLogin() {
     els.authError.hidden = false;
     return;
   }
-  if (store[key] !== pw) {
+  // Support both old plain-text and new btoa-encoded passwords
+  const stored = store[key];
+  const storedPw = typeof stored === 'string' ? stored : stored.password;
+  const storedDisplayName = typeof stored === 'string' ? name : (stored.displayName || name);
+  if (typeof stored === 'string' ? stored !== pw : storedPw !== btoa(pw)) {
     els.authError.textContent = "비밀번호가 일치하지 않습니다.";
     els.authError.hidden = false;
     return;
   }
 
-  state.playerName = name;
-  saveSession(name);
+  state.playerName = storedDisplayName;
+  saveSession(displayName);
   renderAuthUI();
   els.authNicknameInput.value = "";
   els.authPasswordInput.value = "";
@@ -1094,7 +1098,7 @@ function handleRegister() {
     return;
   }
 
-  store[key] = pw;
+  store[key] = { password: btoa(pw), displayName: name };
   localStorage.setItem(passwordStoreKey, JSON.stringify(store));
   state.playerName = name;
   saveSession(name);
@@ -1771,9 +1775,10 @@ els.categoryButtons.forEach((button) => {
 const savedSession = getSession();
 if (savedSession && savedSession.name) {
   const store = readPasswordStore();
-  if (store[savedSession.name.toLowerCase()]) {
-    state.playerName = savedSession.name;
-    // Check for saved quiz progress after a short delay (DOM ready)
+  const key = savedSession.name.toLowerCase();
+  if (store[key]) {
+    const stored = store[key];
+    state.playerName = (typeof stored === 'object' && stored.displayName) ? stored.displayName : savedSession.name;
     setTimeout(checkAndShowResume, 100);
   }
 }
