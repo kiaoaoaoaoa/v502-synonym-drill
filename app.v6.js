@@ -950,8 +950,6 @@ function showFeedback(correct, question) {
     <ul class="explain-list detailed">${optionRows}</ul>
   `;
 }
-  `;
-}
 
 function toggleSelection(word) {
   const question = state.questions[state.questionIndex];
