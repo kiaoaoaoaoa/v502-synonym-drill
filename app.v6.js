@@ -1200,42 +1200,49 @@ function showWordlist() {
   categories.forEach(cat => {
     const summary = categorySummaries[cat.id] || '';
     const catWords = cat.words;
+    // Only show collocation toggle if ANY word has meaningful collocation info
+    const hasCollocations = catWords.some(w => {
+      const n = confusionNotes[w] || '';
+      return n && (n.includes('(') || n.includes('의') || n.includes('대가') || n.includes(';') && n.length > 15);
+    });
     html += `<div class="wordlist-cat" data-cat-id="${escapeHtml(cat.id)}">`;
-    html += `<h4><span class="wl-cat-num">${escapeHtml(cat.id)}</span> ${escapeHtml(summary)}</h4>`;
-    // Toggle button to show/hide detailed collocation notes for this category
-    html += `<button class="wl-detail-btn" type="button" onclick="toggleCatDetail(this)" data-cat="${escapeHtml(cat.id)}">콜로케이션 보기 ▸</button>`;
+    html += `<h4 class="wl-cat-header${hasCollocations ? ' wl-has-coll' : ''}"${hasCollocations ? ` onclick="toggleCatDetail('${escapeHtml(cat.id)}')"` : ''}>`;
+    html += `<span class="wl-cat-num">${escapeHtml(cat.id)}</span> ${escapeHtml(summary)}`;
+    if (hasCollocations) html += `<span class="wl-coll-indicator">▸</span>`;
+    html += `</h4>`;
     html += `<div class="wordlist-words">`;
     catWords.forEach((w) => {
       const m = wordMeanings[w] || '';
-      const note = confusionNotes[w] || m || '';
-      html += `<span class="wl-word" title="${escapeHtml(note)}">${escapeHtml(w)}`;
+      html += `<span class="wl-word">${escapeHtml(w)}`;
       if (m) html += `<span class="wl-meaning">${escapeHtml(m)}</span>`;
       html += `</span>`;
     });
     html += `</div>`;
-    // Hidden detail panel for collocations
-    html += `<div class="wl-detail" id="wl-detail-${escapeHtml(cat.id)}" hidden>`;
-    html += `<p class="wl-detail-title">📝 "${escapeHtml(summary)}" 콜로케이션 / 용법 비교</p>`;
-    html += `<ul class="wl-detail-list">`;
-    catWords.forEach((w) => {
-      const note = confusionNotes[w] || wordMeanings[w] || '';
-      html += `<li><strong class="wl-detail-word">${escapeHtml(w)}</strong>`;
-      if (note) html += `<span class="wl-detail-note"> → ${escapeHtml(note)}</span>`;
-      html += `</li>`;
-    });
-    html += `</ul></div>`;
+    // Collocation detail (hidden, only for categories that have them)
+    if (hasCollocations) {
+      html += `<div class="wl-detail" id="wl-detail-${escapeHtml(cat.id)}" hidden>`;
+      html += `<ul class="wl-detail-list">`;
+      catWords.forEach((w) => {
+        const note = confusionNotes[w] || '';
+        if (note && (note.includes('(') || note.includes('의') || note.includes(';') && note.length > 15)) {
+          html += `<li><strong class="wl-detail-word">${escapeHtml(w)}</strong>`;
+          html += `<span class="wl-detail-note"> → ${escapeHtml(note)}</span></li>`;
+        }
+      });
+      html += `</ul></div>`;
+    }
     html += `</div>`;
   });
   html += '</div>';
   els.wordlistContent.innerHTML = html;
 }
 
-function toggleCatDetail(btn) {
-  const catId = btn.dataset.cat;
+function toggleCatDetail(catId) {
   const detail = document.getElementById(`wl-detail-${catId}`);
+  const header = document.querySelector(`.wordlist-cat[data-cat-id="${catId}"] .wl-coll-indicator`);
   if (detail) {
     detail.hidden = !detail.hidden;
-    btn.textContent = detail.hidden ? '콜로케이션 보기 ▸' : '콜로케이션 닫기 ▾';
+    if (header) header.textContent = detail.hidden ? '▸' : '▾';
   }
 }
 
