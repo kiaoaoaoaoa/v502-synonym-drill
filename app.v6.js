@@ -1309,16 +1309,36 @@ async function savePublicScore(entry) {
   const client = await getSupabaseClient();
   if (!client) return null;
 
-  // Upsert: only keep best accuracy per (nickname, quiz_set)
+  // Check if a score already exists for this (nickname, quiz_set)
+  const { data: existing } = await client
+    .from(getLeaderboardTable())
+    .select("id,accuracy")
+    .eq("nickname", entry.name)
+    .eq("quiz_set", entry.setId)
+    .maybeSingle();
+
+  if (existing) {
+    // Only update if new score is better
+    if (entry.accuracy > existing.accuracy) {
+      const { error } = await client
+        .from(getLeaderboardTable())
+        .update({ correct_count: entry.correct, total_count: entry.total, accuracy: entry.accuracy })
+        .eq("id", existing.id);
+      if (error) throw error;
+    }
+    return existing.id;
+  }
+
+  // Insert new score
   const { data, error } = await client
     .from(getLeaderboardTable())
-    .upsert({
+    .insert({
       nickname: entry.name,
       quiz_set: entry.setId,
       correct_count: entry.correct,
       total_count: entry.total,
       accuracy: entry.accuracy,
-    }, { onConflict: 'nickname,quiz_set' })
+    })
     .select("id")
     .single();
 
