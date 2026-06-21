@@ -598,6 +598,10 @@ const els = {
   myinfoContent: document.querySelector("#myinfoContent"),
   myinfoCloseBtn: document.querySelector("#myinfoCloseBtn"),
   dashboardPanel: document.querySelector("#dashboardPanel"),
+  wordlist2Btn: document.querySelector("#wordlist2Btn"),
+  wordlist2Panel: document.querySelector("#wordlist2Panel"),
+  wordlist2Content: document.querySelector("#wordlist2Content"),
+  wordlist2CloseBtn: document.querySelector("#wordlist2CloseBtn"),
   logicPanel: document.querySelector("#logicPanel"),
   logicProgressBar: document.querySelector("#logicProgressBar"),
   logicQuestionText: document.querySelector("#logicQuestionText"),
@@ -1625,6 +1629,7 @@ function switchMode(mode) {
   els.logicPanel.hidden = true;
   els.myinfoPanel.hidden = true;
   els.dashboardPanel.hidden = true;
+  els.wordlist2Panel.hidden = true;
   logicState.active = false;
   els.shuffleBtn.disabled = true;
   els.resetBtn.disabled = true;
@@ -1813,6 +1818,26 @@ function handleWordToggle(word, element) {
   }
 }
 
+/* ---- Word List 2 (MVP2 + V401 extra words) ---- */
+function showWordlist2() {
+  switchMode('wordlist');
+  els.wordlist2Panel.hidden = false;
+  const extraWords = window.__V502_EXTRA__ || [];
+
+  let html = '<div class="wordlist-scroll">';
+  html += `<div class="wordlist-cat"><h4><span class="wl-cat-num">EXTRA</span> MVP2 + V401 단어 (V502 미포함)</h4>`;
+  html += `<div class="wordlist-words">`;
+  extraWords.forEach(item => {
+    const w = item.w || '';
+    const m = item.m || '';
+    html += `<span class="wl-word">${escapeHtml(w)}`;
+    if (m) html += `<span class="wl-meaning">${escapeHtml(m)}</span>`;
+    html += `</span>`;
+  });
+  html += `</div></div></div>`;
+  els.wordlist2Content.innerHTML = html;
+}
+
 function toggleCatDetail(catId) {
   const detail = document.getElementById(`wl-detail-${catId}`);
   const header = document.querySelector(`.wordlist-cat[data-cat-id="${catId}"] .wl-coll-indicator`);
@@ -1962,6 +1987,12 @@ els.rankingCloseBtn.addEventListener("click", hideRanking);
 els.wordlistBtn.addEventListener("click", showWordlist);
 els.wordlistCloseBtn.addEventListener("click", () => {
   els.wordlistPanel.hidden = true;
+  if (state.playerName) els.quizPanel.hidden = false;
+  else els.startPanel.hidden = false;
+});
+els.wordlist2Btn.addEventListener("click", showWordlist2);
+els.wordlist2CloseBtn.addEventListener("click", () => {
+  els.wordlist2Panel.hidden = true;
   if (state.playerName) els.quizPanel.hidden = false;
   else els.startPanel.hidden = false;
 });
