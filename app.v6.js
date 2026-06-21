@@ -753,50 +753,41 @@ function renderSynonyms(word, categoryId = "") {
 function explainOption(word, question) {
   const selected = state.answers.get(question.id)?.selected.includes(word);
   const isAnswer = question.answer.includes(word);
-  const category = getCategory(word, isAnswer ? question.categoryId : "");
-  const categoryId = category?.id || "?";
-  const group = categorySummaries[categoryId] || `Category ${categoryId}`;
-  const promptGroup = categorySummaries[question.categoryId] || `Category ${question.categoryId}`;
   const meaning = wordMeanings[word] || "";
   const note = confusionNotes[word] || "";
+  const example = (window.examples && window.examples[word]) ? window.examples[word] : "";
+  const promptMeaning = wordMeanings[question.prompt] || "";
 
-  // Build a rich meaning description
+  // Korean + English contrastive meaning
   let meaningBlock = "";
   if (meaning) {
-    meaningBlock = `<p><strong>뜻:</strong> ${escapeHtml(meaning)}</p>`;
+    meaningBlock = `<p><strong>한국어 뜻:</strong> ${escapeHtml(meaning)}</p>`;
   }
   if (note) {
-    meaningBlock += `<p class="explain-note"><strong>해설:</strong> ${escapeHtml(note)}</p>`;
-  } else if (!meaning) {
-    meaningBlock = `<p class="explain-note"><strong>뜻:</strong> (사전 참조 필요)</p>`;
+    meaningBlock += `<p class="explain-note"><strong>English usage:</strong> ${escapeHtml(note)}</p>`;
   }
 
-  // Build category info
-  const sameCategoryWords = getSynonymList(word, categoryId);
-  const categoryInfo = sameCategoryWords.length
-    ? `<p class="explain-synonyms"><strong>같은 범주 단어:</strong> ${escapeHtml(sameCategoryWords.join(" / "))}</p>`
-    : "";
+  // Example sentence (same as word list)
+  let exampleBlock = "";
+  if (example) {
+    exampleBlock = `<p class="explain-example"><strong>📖 예문:</strong> ${escapeHtml(example)}</p>`;
+  }
 
-  // Build reason with college-level English explanation
+  // Reason: contrastive Korean/English explanation
   let reasonBlock;
   if (isAnswer) {
     reasonBlock = `
       <p class="explain-why correct-why">
-        <strong>✅ Correct:</strong> "${escapeHtml(word)}" is a synonym of "${escapeHtml(question.prompt)}" —
-        both belong to the semantic category <em>${escapeHtml(promptGroup)}</em>.
+        <strong>✅ Correct:</strong> "${escapeHtml(word)}" (${escapeHtml(meaning)}) is a synonym of "${escapeHtml(question.prompt)}" (${escapeHtml(promptMeaning)}). Both share the same core meaning and are interchangeable in context.
       </p>`;
   } else {
-    const promptMeaningText = wordMeanings[question.prompt] || "";
-    const wordMeaningText = wordMeanings[word] || "";
-    const wordNote = confusionNotes[word] || "";
-    const promptNote = confusionNotes[question.prompt] || "";
     reasonBlock = `
       <p class="explain-why wrong-why">
-        <strong>❌ Incorrect:</strong> "${escapeHtml(word)}" means <em>${escapeHtml(wordMeaningText || word)}</em>.${promptMeaningText ? ` This is distinct from "${escapeHtml(question.prompt)}" which means <em>${escapeHtml(promptMeaningText)}</em>.` : ''} These words belong to different semantic categories and are not interchangeable.
+        <strong>❌ Incorrect:</strong> "${escapeHtml(word)}" means <em>${escapeHtml(meaning || word)}</em>, whereas "${escapeHtml(question.prompt)}" means <em>${escapeHtml(promptMeaning || question.prompt)}</em>. Although they may appear related, their semantic fields are distinct and they are not synonymous.
       </p>`;
   }
 
-  const statusLabel = isAnswer ? "정답" : selected ? "선택한 오답" : "오답";
+  const statusLabel = isAnswer ? "Correct" : selected ? "Your pick ✗" : "";
   const statusClass = isAnswer ? "status-correct" : selected ? "status-wrong-selected" : "status-wrong";
 
   return `
@@ -807,7 +798,7 @@ function explainOption(word, question) {
       </div>
       <div class="explain-copy">
         ${meaningBlock}
-        ${categoryInfo}
+        ${exampleBlock}
         ${reasonBlock}
       </div>
     </li>
@@ -818,10 +809,9 @@ function showFeedback(correct, question) {
   els.feedback.hidden = false;
   els.feedback.className = `feedback ${correct ? "ok" : "no"}`;
   const optionRows = question.options.map((word) => explainOption(word, question)).join("");
-  const promptGroup = categorySummaries[question.categoryId] || `Category ${question.categoryId}`;
   const promptMeaning = wordMeanings[question.prompt] || "";
   const promptNote = confusionNotes[question.prompt] || "";
-  const sameCatWords = renderSynonyms(question.prompt, question.categoryId);
+  const promptExample = (window.examples && window.examples[question.prompt]) ? window.examples[question.prompt] : "";
 
   els.feedback.innerHTML = `
     <div class="feedback-header">
@@ -830,10 +820,7 @@ function showFeedback(correct, question) {
     <div class="feedback-prompt">
       <p><b>Prompt: ${escapeHtml(question.prompt)}</b> ${promptMeaning ? `— ${escapeHtml(promptMeaning)}` : ""}</p>
       ${promptNote ? `<p class="explain-note"><strong>Definition:</strong> ${escapeHtml(promptNote)}</p>` : ""}
-      <p class="prompt-explain">
-        <strong>Category:</strong> ${escapeHtml(question.categoryId)} — ${escapeHtml(promptGroup)}
-        ${sameCatWords ? ` · <strong>Siblings:</strong> ${escapeHtml(sameCatWords)}` : ""}
-      </p>
+      ${promptExample ? `<p class="explain-example"><strong>📖 예문:</strong> ${escapeHtml(promptExample)}</p>` : ""}
       <p><strong>Correct pair:</strong> ${escapeHtml(question.answer.join(" / "))}</p>
     </div>
     <p class="explain-section-label">📋 Option Analysis</p>
