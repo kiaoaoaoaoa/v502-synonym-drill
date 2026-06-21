@@ -1309,15 +1309,16 @@ async function savePublicScore(entry) {
   const client = await getSupabaseClient();
   if (!client) return null;
 
+  // Upsert: only keep best accuracy per (nickname, quiz_set)
   const { data, error } = await client
     .from(getLeaderboardTable())
-    .insert({
+    .upsert({
       nickname: entry.name,
       quiz_set: entry.setId,
       correct_count: entry.correct,
       total_count: entry.total,
       accuracy: entry.accuracy,
-    })
+    }, { onConflict: 'nickname,quiz_set' })
     .select("id")
     .single();
 
@@ -1332,11 +1333,10 @@ async function readPublicLeaderboard() {
   const { data, error } = await client
     .from(getLeaderboardTable())
     .select("id,nickname,quiz_set,correct_count,total_count,accuracy,created_at")
-    .eq("quiz_set", state.activeSetId)
     .order("accuracy", { ascending: false })
     .order("correct_count", { ascending: false })
     .order("created_at", { ascending: true })
-    .limit(500);
+    .limit(2000);
 
   if (error) throw error;
   return data.map(normalizePublicScore);
