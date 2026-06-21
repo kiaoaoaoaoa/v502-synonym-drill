@@ -599,6 +599,15 @@ const passwordStoreKey = "v502-synonym-drill-passwords";
 let supabaseClient = null;
 let supabaseSdkPromise = null;
 
+// Merge categories 21-30 if loaded
+if (window.__V502_EXT__) {
+  const ext = window.__V502_EXT__;
+  categories.push(...ext.categories);
+  Object.assign(wordMeanings, ext.wordMeanings);
+  Object.assign(categorySummaries, ext.categorySummaries);
+  Object.assign(confusionNotes, ext.confusionNotes);
+}
+
 const categorySets = {
   "001-010": {
     label: "Categories 001-010",
@@ -607,6 +616,10 @@ const categorySets = {
   "011-020": {
     label: "Categories 011-020",
     ids: ["011", "012", "013", "014", "015", "016", "017", "018", "019", "020"],
+  },
+  "021-030": {
+    label: "Categories 021-030",
+    ids: ["021", "022", "023", "024", "025", "026", "027", "028", "029", "030"],
   },
 };
 
