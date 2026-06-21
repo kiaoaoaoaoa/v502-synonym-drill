@@ -2249,7 +2249,7 @@ function finishLogicQuiz() {
       getSupabaseClient().then(client => {
         if (!client) return;
         return client.from(getLeaderboardTable()).insert({
-          nickname: entry.name, quiz_set: "LOGIC",
+          nickname: entry.name, quiz_set: entry.setId,
           correct_count: entry.correct, total_count: entry.total, accuracy: entry.accuracy,
         });
       }).catch(() => {});
