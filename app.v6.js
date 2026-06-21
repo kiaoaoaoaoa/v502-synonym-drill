@@ -725,6 +725,11 @@ const els = {
   rankingPanel: document.querySelector("#rankingPanel"),
   rankingCloseBtn: document.querySelector("#rankingCloseBtn"),
   rankingTitle: document.querySelector("#rankingTitle"),
+  wordlistBtn: document.querySelector("#wordlistBtn"),
+  wordlistPanel: document.querySelector("#wordlistPanel"),
+  wordlistTitle: document.querySelector("#wordlistTitle"),
+  wordlistContent: document.querySelector("#wordlistContent"),
+  wordlistCloseBtn: document.querySelector("#wordlistCloseBtn"),
   rankingSummary: document.querySelector("#rankingSummary"),
   rankingContent: document.querySelector("#rankingContent"),
 };
@@ -1322,6 +1327,32 @@ function showRanking() {
   }).catch(() => {});
 }
 
+function showWordlist() {
+  els.startPanel.hidden = true;
+  els.quizPanel.hidden = true;
+  els.resultPanel.hidden = true;
+  els.rankingPanel.hidden = true;
+  els.wordlistPanel.hidden = false;
+  els.wordlistTitle.textContent = `전체 단어 일람 (${categories.length}개 범주)`;
+
+  let html = '<div class="wordlist-scroll">';
+  categories.forEach(cat => {
+    const summary = categorySummaries[cat.id] || '';
+    html += `<div class="wordlist-cat">`;
+    html += `<h4>${escapeHtml(cat.id)}. ${escapeHtml(summary)}</h4>`;
+    html += `<p class="wordlist-words">`;
+    cat.words.forEach((w, i) => {
+      const m = wordMeanings[w] || '';
+      html += `<span class="wl-word">${escapeHtml(w)}</span>`;
+      if (m) html += `<span class="wl-meaning">${escapeHtml(m)}</span>`;
+      if (i < cat.words.length - 1) html += `<span class="wl-sep">·</span>`;
+    });
+    html += `</p></div>`;
+  });
+  html += '</div>';
+  els.wordlistContent.innerHTML = html;
+}
+
 function hideRanking() {
   els.rankingPanel.hidden = true;
   els.shuffleBtn.disabled = false;
@@ -1452,6 +1483,12 @@ els.resetBtn.addEventListener("click", resetAll);
 els.restartBtn.addEventListener("click", resetAll);
 els.rankingBtn.addEventListener("click", showRanking);
 els.rankingCloseBtn.addEventListener("click", hideRanking);
+els.wordlistBtn.addEventListener("click", showWordlist);
+els.wordlistCloseBtn.addEventListener("click", () => {
+  els.wordlistPanel.hidden = true;
+  if (state.playerName) els.quizPanel.hidden = false;
+  else els.startPanel.hidden = false;
+});
 els.categoryButtons.forEach((button) => {
   button.addEventListener("click", () => selectCategorySet(button.dataset.setId));
 });

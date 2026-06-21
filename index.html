@@ -111,6 +111,10 @@
           <span aria-hidden="true">🏆</span>
           View Ranking
         </button>
+        <button id="wordlistBtn" class="ranking-btn" type="button">
+          <span aria-hidden="true">📋</span>
+          단어일람보기
+        </button>
       </aside>
 
       <section class="workspace" aria-live="polite">
@@ -177,6 +181,15 @@
           <p id="resultSummary"></p>
           <div id="leaderboard" class="leaderboard"></div>
           <button id="restartBtn" type="button">Try Again</button>
+        </section>
+
+        <section id="wordlistPanel" class="ranking-panel" hidden>
+          <div class="ranking-header">
+            <p class="eyebrow">Word List</p>
+            <h3 id="wordlistTitle">전체 단어 일람</h3>
+          </div>
+          <div id="wordlistContent" class="wordlist-content"></div>
+          <button id="wordlistCloseBtn" type="button">Back</button>
         </section>
 
         <section id="rankingPanel" class="ranking-panel" hidden>

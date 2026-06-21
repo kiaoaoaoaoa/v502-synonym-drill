@@ -358,6 +358,47 @@ h2 {
   margin: -10px 0 16px;
 }
 
+.wordlist-scroll {
+  max-height: 65vh;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.wordlist-cat {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.wordlist-cat h4 {
+  margin: 0 0 6px;
+  font-size: 14px;
+  color: var(--accent);
+}
+
+.wordlist-words {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--ink);
+}
+
+.wl-word {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.wl-meaning {
+  font-weight: 400;
+  color: var(--muted);
+  margin-left: 4px;
+}
+
+.wl-sep {
+  color: var(--line);
+  margin: 0 6px;
+}
+
 .prompt-row {
   display: flex;
   justify-content: space-between;

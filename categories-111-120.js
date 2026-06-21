@@ -40,7 +40,7 @@ Object.assign(window.__V502_EXT__.wordMeanings,{
   "caterwaul":"(고양이처럼) 서로 으르렁대다",
   "composed":"(마음이) 가라앉은",
   "composure":"침착, 냉정",
-  "crestfallen":"풀이 죽은               희롱하다",
+  "crestfallen":"풀이 죽은",
   "dally":"미적거리다, (시간 등을) 허비하다",
   "damped":"풀이 죽은",
   "dampened":"풀이 죽은",
