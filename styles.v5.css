@@ -515,9 +515,9 @@ h2 {
   font-size: 13px;
   line-height: 2;
   color: var(--ink);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2px 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 12px;
 }
 
 .wl-word {

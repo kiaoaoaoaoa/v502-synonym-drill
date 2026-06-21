@@ -611,6 +611,8 @@ const els = {
   logicNextBtn: document.querySelector("#logicNextBtn"),
   logicCounter: document.querySelector("#logicCounter"),
   logicRemaining: document.querySelector("#logicRemaining"),
+  wordcheckBtn: document.querySelector("#wordcheckBtn"),
+  wordcheckPanel: document.querySelector("#wordcheckPanel"),
 };
 
 function shuffle(items) {
@@ -1672,6 +1674,7 @@ function switchMode(mode) {
   els.myinfoPanel.hidden = true;
   els.dashboardPanel.hidden = true;
   els.wordlist2Panel.hidden = true;
+  els.wordcheckPanel.hidden = true;
   logicState.active = false;
   els.shuffleBtn.disabled = true;
   els.resetBtn.disabled = true;
@@ -2538,6 +2541,118 @@ function showMyInfo() {
   });
   els.myinfoContent.innerHTML = html;
 }
+
+/* ── Word Check Quiz ── */
+const wordcheckQuestions = [
+  ...(window.__V502_WC_V101__ || []),
+  ...(window.__V502_WC_V201__ || []),
+  ...(window.__V502_WC_V401__ || [])
+];
+let wcState = { index: 0, answers: [], correct: 0, total: 0, completed: false };
+
+function showWordcheck() {
+  switchMode('wordcheck');
+  els.wordcheckPanel.hidden = false;
+  // Shuffle questions
+  wcState = { index: 0, answers: [], correct: 0, total: wordcheckQuestions.length, completed: false };
+  wordcheckQuestions.sort(() => Math.random() - 0.5);
+  document.getElementById('wordcheckResult').style.display = 'none';
+  document.getElementById('wordcheckQuiz').style.display = 'block';
+  document.getElementById('wordcheckFeedback').style.display = 'none';
+  renderWordcheckQuestion();
+}
+
+function renderWordcheckQuestion() {
+  if (wcState.index >= wordcheckQuestions.length) {
+    finishWordcheck();
+    return;
+  }
+  const q = wordcheckQuestions[wcState.index];
+  const prog = document.getElementById('wordcheckProgress');
+  prog.textContent = `${wcState.index + 1} / ${wordcheckQuestions.length} | ✅ ${wcState.correct} | ❌ ${wcState.index - wcState.correct}`;
+
+  const qEl = document.getElementById('wordcheckQuestion');
+  qEl.textContent = q.q;
+
+  const choicesEl = document.getElementById('wordcheckChoices');
+  choicesEl.innerHTML = '';
+  q.c.forEach(([letter, text]) => {
+    const btn = document.createElement('button');
+    btn.textContent = `(${letter}) ${text}`;
+    btn.style.cssText = 'min-height:40px;padding:8px 14px;border:1px solid var(--line);border-radius:6px;background:var(--panel);text-align:left;font:inherit;font-size:14px;cursor:pointer';
+    btn.onclick = () => submitWordcheckAnswer(letter);
+    choicesEl.appendChild(btn);
+  });
+
+  document.getElementById('wordcheckSubmit').style.display = 'none';
+  document.getElementById('wordcheckNext').style.display = 'none';
+  document.getElementById('wordcheckFeedback').style.display = 'none';
+}
+
+function submitWordcheckAnswer(letter) {
+  const q = wordcheckQuestions[wcState.index];
+  const correct = letter === q.a;
+  if (correct) wcState.correct++;
+  wcState.answers.push({ id: q.i, correct });
+
+  // Highlight feedback
+  const fb = document.getElementById('wordcheckFeedback');
+  fb.style.display = 'block';
+  fb.style.background = correct ? '#e8f5e9' : '#fce4ec';
+  fb.style.borderColor = correct ? '#a5d6a7' : '#ef9a9a';
+
+  // Build explanation
+  let expHTML = correct
+    ? `<strong style="color:#2e7d32">✅ Correct!</strong>`
+    : `<strong style="color:#c62828">❌ Wrong — answer is (${q.a})</strong>`;
+
+  if (q.k) {
+    expHTML += `<p style="margin:8px 0 4px;font-size:13px">📝 ${q.k}</p>`;
+  }
+
+  // Show all choices with correct/wrong markers
+  expHTML += '<div style="margin-top:8px;font-size:13px">';
+  q.c.forEach(([l, t]) => {
+    if (l === q.a) {
+      expHTML += `<div style="color:#2e7d32;padding:2px 0">✓ (${l}) ${t}</div>`;
+    } else if (l === letter && !correct) {
+      expHTML += `<div style="color:#c62828;padding:2px 0">✗ (${l}) ${t}</div>`;
+    } else {
+      expHTML += `<div style="color:#999;padding:2px 0">  (${l}) ${t}</div>`;
+    }
+  });
+  expHTML += '</div>';
+
+  fb.innerHTML = expHTML;
+
+  // Disable choice buttons
+  document.querySelectorAll('#wordcheckChoices button').forEach(b => b.disabled = true);
+  document.getElementById('wordcheckNext').style.display = 'inline-block';
+}
+
+function finishWordcheck() {
+  wcState.completed = true;
+  document.getElementById('wordcheckQuiz').style.display = 'none';
+  document.getElementById('wordcheckFeedback').style.display = 'none';
+  const result = document.getElementById('wordcheckResult');
+  result.style.display = 'block';
+  document.getElementById('wordcheckScore').innerHTML = `
+    🎯 Score: <strong>${wcState.correct}</strong> / ${wcState.total}
+    <br><small>${Math.round(wcState.correct / wcState.total * 100)}% correct</small>
+  `;
+}
+
+document.getElementById('wordcheckNext').addEventListener('click', () => {
+  wcState.index++;
+  renderWordcheckQuestion();
+});
+
+document.getElementById('wordcheckRetry').addEventListener('click', showWordcheck);
+
+els.wordcheckBtn.addEventListener('click', showWordcheck);
+els.wordcheckPanel.addEventListener('click', function(e) {
+  if (e.target === this) { this.hidden = true; els.startPanel.hidden = false; }
+});
 
 els.logicSubmitBtn.addEventListener("click", submitLogicAnswer);
 els.logicNextBtn.addEventListener("click", nextLogicQuestion);

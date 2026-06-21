@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
     <title>V502 Synonym Drill</title>
-    <link rel="stylesheet" href="styles.v5.css?v=20260622t" />
+    <link rel="stylesheet" href="styles.v5.css?v=20260622w" />
   </head>
   <body>
     <main class="app">
@@ -145,6 +145,10 @@
           <span aria-hidden="true">📋</span>
           단어일람보기2
         </button>
+        <button id="wordcheckBtn" class="ranking-btn" type="button" style="margin-top:4px">
+          <span aria-hidden="true">✅</span>
+          단어확인문제
+        </button>
         <p style="font-size:9px;color:#556;text-align:center;margin:8px 0 0">v20260622q</p>
       </aside>
 
@@ -232,6 +236,25 @@
           <div id="wordlist2Content" class="wordlist-content"></div>
         </section>
 
+        <section id="wordcheckPanel" class="ranking-panel" hidden>
+          <div class="ranking-header">
+            <p class="eyebrow">Word Check</p>
+            <h3>단어확인문제</h3>
+            <p id="wordcheckProgress" style="font-size:13px;color:var(--muted)"></p>
+          </div>
+          <div id="wordcheckQuiz">
+            <p id="wordcheckQuestion" style="font-size:17px;font-weight:600;margin:0 0 16px"></p>
+            <div id="wordcheckChoices" style="display:grid;gap:8px;margin-bottom:16px"></div>
+            <button id="wordcheckSubmit" class="text-btn" style="min-height:44px;background:var(--accent);color:#fff;border:none;border-radius:6px;font-size:15px;font-weight:700;cursor:pointer">Submit</button>
+            <button id="wordcheckNext" class="text-btn" style="display:none;min-height:40px;margin-top:8px">Next →</button>
+          </div>
+          <div id="wordcheckFeedback" style="display:none;margin-top:12px;padding:12px;border-radius:8px;border:1px solid var(--line)"></div>
+          <div id="wordcheckResult" style="display:none;text-align:center;padding:20px">
+            <h4 id="wordcheckScore"></h4>
+            <button id="wordcheckRetry" class="text-btn" style="min-height:40px;margin-top:8px">Retry</button>
+          </div>
+        </section>
+
         <section id="rankingPanel" class="ranking-panel" hidden>
           <div class="ranking-header">
             <p class="eyebrow">Ranking</p>
@@ -297,7 +320,10 @@
     <script src="categories-examples.js?v=20260621s"></script>
     <script src="categories-korean-usage.js?v=20260621q"></script>
     <script src="logic-quiz.js"></script>
-    <script src="app.v6.js?v=20260622v"></script>
+    <script src="wordcheck-v101.js"></script>
+    <script src="wordcheck-v201.js"></script>
+    <script src="wordcheck-v401.js"></script>
+    <script src="app.v6.js?v=20260622w"></script>
   </body>
 </html>
  
