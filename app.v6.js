@@ -404,6 +404,10 @@ if (window.__V502_EXT__) {
     window.examples = window.examples || {};
     Object.assign(window.examples, ext.examples);
   }
+  if (ext.koreanUsage) {
+    window.koreanUsage = window.koreanUsage || {};
+    Object.assign(window.koreanUsage, ext.koreanUsage);
+  }
 }
 // Override with Korean titles from TOC
 if (window.__V502_TOC__) {
@@ -1215,7 +1219,10 @@ function showWordlist() {
       return n.includes('의') || (n.includes('(') && n.length > 10) || n.length > 25 || n.includes(';');
     });
     const hasExamples = catWords.some(w => {
-      return window.examples && window.examples[w] && examples[w].length > 20;
+      return window.examples && window.examples[w] && window.examples[w].length > 20;
+    });
+    const hasKoreanUsage = catWords.some(w => {
+      return window.koreanUsage && window.koreanUsage[w];
     });
 
     html += `<div class="wordlist-cat" data-cat-id="${escapeHtml(cat.id)}">`;
@@ -1225,6 +1232,9 @@ function showWordlist() {
     html += `<span class="wl-cat-num">${escapeHtml(cat.id)}</span> ${escapeHtml(summary)}`;
     if (hasCollocations) html += `<span class="wl-coll-indicator">▸</span>`;
     html += `</h4>`;
+    if (hasKoreanUsage) {
+      html += `<button class="wl-usage-btn" type="button" onclick="event.stopPropagation();toggleCatKoreanUsage('${escapeHtml(cat.id)}')">용례</button>`;
+    }
     if (hasExamples) {
       html += `<button class="wl-example-btn" type="button" onclick="event.stopPropagation();toggleCatExample('${escapeHtml(cat.id)}')">예문</button>`;
     }
@@ -1252,12 +1262,25 @@ function showWordlist() {
       });
       html += `</ul></div>`;
     }
+    // Korean usage detail (hidden)
+    if (hasKoreanUsage) {
+      html += `<div class="wl-detail wl-detail-usage" id="wl-usage-${escapeHtml(cat.id)}" hidden>`;
+      html += `<ul class="wl-detail-list">`;
+      catWords.forEach((w) => {
+        const usage = (window.koreanUsage && window.koreanUsage[w]) ? window.koreanUsage[w] : '';
+        if (usage) {
+          html += `<li><strong class="wl-detail-word">${escapeHtml(w)}</strong>`;
+          html += `<p class="wl-usage">📝 ${escapeHtml(usage)}</p></li>`;
+        }
+      });
+      html += `</ul></div>`;
+    }
     // Example sentences detail (hidden, separate)
     if (hasExamples) {
       html += `<div class="wl-detail wl-detail-examples" id="wl-example-${escapeHtml(cat.id)}" hidden>`;
       html += `<ul class="wl-detail-list">`;
       catWords.forEach((w) => {
-        const example = (window.examples && window.examples[w]) ? examples[w] : '';
+        const example = (window.examples && window.examples[w]) ? window.examples[w] : '';
         if (example && example.length > 20) {
           html += `<li><strong class="wl-detail-word">${escapeHtml(w)}</strong>`;
           html += `<p class="wl-example">📖 ${escapeHtml(example)}</p></li>`;
@@ -1269,6 +1292,13 @@ function showWordlist() {
   });
   html += '</div>';
   els.wordlistContent.innerHTML = html;
+}
+
+function toggleCatKoreanUsage(catId) {
+  const detail = document.getElementById(`wl-usage-${catId}`);
+  if (detail) {
+    detail.hidden = !detail.hidden;
+  }
 }
 
 function toggleCatDetail(catId) {
