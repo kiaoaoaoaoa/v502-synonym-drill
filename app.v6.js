@@ -600,6 +600,7 @@ const els = {
   logicSubmitBtn: document.querySelector("#logicSubmitBtn"),
   logicNextBtn: document.querySelector("#logicNextBtn"),
   logicCounter: document.querySelector("#logicCounter"),
+  logicRemaining: document.querySelector("#logicRemaining"),
 };
 
 function shuffle(items) {
@@ -1971,9 +1972,9 @@ function renderLogicQuestion() {
   els.logicFeedback.hidden = true;
   els.logicFeedback.className = "feedback";
   els.logicCounter.textContent = `${logicState.currentIndex + 1} / ${logicState.questions.length}`;
-  // Total pool size
+  const mastered = getLogicCompleted().size;
   const totalPool = (window.__V502_LOGIC__ && window.__V502_LOGIC__.questions || []).length;
-  els.logicCounter.title = `${totalPool} total questions · ${getLogicCompleted().size} mastered`;
+  els.logicRemaining.textContent = `(남은 문제: ${totalPool - mastered}개)`;
   els.logicProgressBar.style.width = `${Math.round(((logicState.currentIndex) / logicState.questions.length) * 100)}%`;
 }
 
