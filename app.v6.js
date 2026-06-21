@@ -518,6 +518,7 @@ const state = {
   activeSetId: "001-010",
   questionIndex: 0,
   questions: [],
+  setQuestions: [],
   answers: new Map(),
   currentSelection: new Set(),
   playerName: "",
@@ -920,7 +921,8 @@ function submitAnswer() {
 }
 
 function renderProgress() {
-  const pct = Math.round((state.answers.size / state.questions.length) * 100);
+  const total = (state.setQuestions && state.setQuestions.length) || state.questions.length;
+  const pct = total ? Math.round((state.answers.size / total) * 100) : 0;
   els.progressBar.style.width = `${pct}%`;
 }
 
@@ -970,23 +972,23 @@ function clearSession() {
   localStorage.removeItem(sessionKey);
 }
 
-/* ---- Quiz progress save/resume ---- */
+/* ---- Quiz progress save/resume (per category set, auto-resume) ---- */
 function saveQuizProgress() {
   if (!state.playerName || state.completed || state.answers.size === 0) return;
-  const key = state.playerName.toLowerCase();
+  const userKey = state.playerName.toLowerCase();
   const data = {
     activeSetId: state.activeSetId,
-    questionIndex: state.questionIndex, // current question; resume lands on first unanswered
     totalAttempts: state.totalAttempts,
     correctAttempts: state.correctAttempts,
     streak: state.streak,
     completed: state.completed,
-    questions: state.questions,
-    answers: Array.from(state.answers.entries()),
+    questions: state.setQuestions,                 // full question set for this category
+    answers: Array.from(state.answers.entries()),  // every answer given so far in this set
     savedAt: Date.now(),
   };
   const store = readQuizProgressStore();
-  store[key] = data;
+  if (!store[userKey] || Array.isArray(store[userKey].questions)) store[userKey] = {};
+  store[userKey][state.activeSetId] = data;        // keyed per category set
   localStorage.setItem(quizProgressKey, JSON.stringify(store));
 }
 
@@ -995,107 +997,81 @@ function readQuizProgressStore() {
   catch { return {}; }
 }
 
-function getSavedProgress() {
+function getSavedProgress(setId = state.activeSetId) {
   if (!state.playerName) return null;
-  const store = readQuizProgressStore();
-  return store[state.playerName.toLowerCase()] || null;
+  const bucket = readQuizProgressStore()[state.playerName.toLowerCase()];
+  if (!bucket) return null;
+  // Legacy single-progress format: only valid for its own set
+  if (Array.isArray(bucket.questions)) return bucket.activeSetId === setId ? bucket : null;
+  return bucket[setId] || null;
 }
 
-function clearSavedProgress() {
+function clearSavedProgress(setId = state.activeSetId) {
   if (!state.playerName) return;
   const store = readQuizProgressStore();
-  delete store[state.playerName.toLowerCase()];
+  const userKey = state.playerName.toLowerCase();
+  const bucket = store[userKey];
+  if (!bucket) return;
+  if (Array.isArray(bucket.questions)) delete store[userKey]; // legacy
+  else delete bucket[setId];
   localStorage.setItem(quizProgressKey, JSON.stringify(store));
+}
+
+// Build runtime state from a full question set + prior answers. The working
+// list (state.questions) holds only the still-unanswered questions, so answered
+// ones never reappear; cumulative stats are preserved for accuracy.
+function loadSetSession(fullQuestions, answersEntries, stats) {
+  state.setQuestions = fullQuestions;
+  state.answers = new Map(answersEntries || []);
+  const remaining = fullQuestions.filter((q) => !state.answers.has(q.id));
+  state.questions = remaining.length ? remaining : [...fullQuestions];
+  state.totalAttempts = stats.totalAttempts || 0;
+  state.correctAttempts = stats.correctAttempts || 0;
+  state.streak = stats.streak || 0;
+  state.completed = false;
+  state.questionIndex = 0;
+  state.currentSelection = new Set();
 }
 
 function resumeQuiz(progress) {
   state.activeSetId = progress.activeSetId;
-  state.questions = progress.questions;
-  state.answers = new Map(progress.answers);
-  state.totalAttempts = progress.totalAttempts;
-  state.correctAttempts = progress.correctAttempts;
-  state.streak = progress.streak;
-  state.completed = false;
-  state.currentSelection = new Set();
-  // Land on the first still-unanswered question so nothing is skipped
-  const firstUnanswered = state.questions.findIndex((q) => !state.answers.has(q.id));
-  state.questionIndex = firstUnanswered === -1
-    ? Math.min(progress.questionIndex, state.questions.length - 1)
-    : firstUnanswered;
-  updateSetDisplay();
+  switchMode("quiz");
+  document.getElementById("categoryNav").hidden = false;
+  loadSetSession(progress.questions, progress.answers, progress);
   els.quizPanel.hidden = false;
-  els.startPanel.hidden = true;
-  els.resultPanel.hidden = true;
-  els.rankingPanel.hidden = true;
+  els.shuffleBtn.disabled = false;
+  els.resetBtn.disabled = false;
+  updateSetDisplay();
   renderQuestion();
 }
 
-// Holds saved progress while the resume prompt is showing; the single
-// startQuizBtn handler reads this to decide resume-vs-new at click time.
-let pendingResume = null;
-
-function clearResumePrompt() {
-  pendingResume = null;
-  els.startQuizBtn.textContent = "Start Quiz";
-  els.startPanelTitle.textContent = `Welcome, ${state.playerName}`;
-  els.startPanelHint.textContent = "Select a category set and start your quiz.";
-  const nb = document.getElementById("newQuizBtn");
-  if (nb) nb.remove();
-}
-
-function showResumePrompt(progress) {
-  const set = categorySets[progress.activeSetId];
-  const setLabel = set ? set.label : progress.activeSetId;
-  const answered = progress.totalAttempts;
-  const correct = progress.correctAttempts;
-  const pct = answered ? Math.round((correct / answered) * 100) : 0;
-  const elapsed = Math.round((Date.now() - progress.savedAt) / 60000);
-
-  pendingResume = progress;
-  els.startPanelTitle.textContent = `Continue where you left off?`;
-  els.startPanelHint.innerHTML = `
-    You were working on <b>${escapeHtml(setLabel)}</b><br>
-    Progress: ${answered} answered, ${correct} correct (${pct}%)<br>
-    <small>${elapsed} minute${elapsed !== 1 ? 's' : ''} ago</small>
-  `;
-  els.startQuizBtn.textContent = "Resume Quiz";
-
-  // Add a "Start New Quiz" button
-  let newBtn = document.getElementById("newQuizBtn");
-  if (!newBtn) {
-    newBtn = document.createElement("button");
-    newBtn.id = "newQuizBtn";
-    newBtn.type = "button";
-    newBtn.textContent = "Start New Quiz";
-    newBtn.style.cssText = "display:block;width:100%;max-width:400px;min-height:40px;margin-top:8px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);font-size:14px;cursor:pointer;";
-    newBtn.addEventListener("click", () => {
-      clearSavedProgress();
-      clearResumePrompt();
-    });
-    els.startPanel.append(newBtn);
-  }
-}
-
-// Single startQuizBtn handler: resume if a saved game is pending, else start new
-function onStartQuizClick() {
-  if (pendingResume) {
-    const progress = pendingResume;
-    clearResumePrompt();
+// Enter a category set: auto-resume its saved progress, otherwise start fresh.
+function openSet(setId) {
+  if (!categorySets[setId]) return;
+  state.activeSetId = setId;
+  updateSetDisplay();
+  const progress = getSavedProgress(setId);
+  if (state.playerName && progress && Array.isArray(progress.answers) && progress.answers.length > 0 && !progress.completed) {
     resumeQuiz(progress);
   } else {
     startQuiz();
   }
 }
 
-// Opening the synonym panel re-offers resume so in-app navigation never
-// silently drops an unfinished quiz.
+// The Start button on the start panel just enters the active category set,
+// which auto-resumes that set's saved progress (no prompt).
+function onStartQuizClick() {
+  openSet(state.activeSetId);
+}
+
+// Opening the synonym panel shows the category picker. Picking any set
+// auto-resumes its own progress, so each category continues independently.
 function openSynonymPanel() {
   const nav = document.getElementById("categoryNav");
   nav.hidden = !nav.hidden;
   if (!nav.hidden) {
     switchMode("start");
     els.startPanel.hidden = false;
-    checkAndShowResume();
   }
 }
 
@@ -1194,10 +1170,8 @@ function handleRegister() {
 }
 
 function checkAndShowResume() {
-  const progress = getSavedProgress();
-  if (progress && progress.answers && progress.answers.length > 0 && !progress.completed) {
-    showResumePrompt(progress);
-  }
+  // No-op: resume now happens automatically when a category set is opened,
+  // per set, without a prompt. Kept as a stub for existing call sites.
 }
 
 function handleLogout() {
@@ -1485,16 +1459,19 @@ async function readPublicLeaderboard() {
 }
 
 async function completeQuiz() {
-  if (state.completed || state.answers.size !== state.questions.length) return;
+  const setTotal = (state.setQuestions && state.setQuestions.length) || state.questions.length;
+  if (state.completed || state.answers.size < setTotal) return;
   state.completed = true;
-  clearSavedProgress();
+  // The whole set is done — switch the active list to the full set for review
+  if (state.setQuestions) state.questions = state.setQuestions;
+  clearSavedProgress(state.activeSetId);
 
-  const accuracy = Math.round((state.correctAttempts / state.questions.length) * 100);
+  const accuracy = Math.round((state.correctAttempts / setTotal) * 100);
   const displayName = state.playerName || "Guest";
   const entry = {
     name: displayName,
     correct: state.correctAttempts,
-    total: state.questions.length,
+    total: setTotal,
     accuracy,
     setId: state.activeSetId,
     setLabel: getActiveSet().label,
@@ -1519,7 +1496,7 @@ async function completeQuiz() {
   // Show question-by-question review
   let reviewHTML = '<div style="max-height:50vh;overflow-y:auto;margin:16px 0">';
   reviewHTML += '<h4 style="margin-bottom:8px">📋 문제별 리뷰</h4>';
-  state.questions.forEach((q, i) => {
+  (state.setQuestions || state.questions).forEach((q, i) => {
     const saved = state.answers.get(q.id);
     const isCorrect = saved?.correct;
     const selected = saved?.selected || [];
@@ -1892,26 +1869,13 @@ function hideRanking() {
 function startQuiz() {
   switchMode('quiz');
   document.getElementById("categoryNav").hidden = false;
-  clearSavedProgress();
-  state.questionIndex = 0;
-  state.currentSelection = new Set();
-  state.questions = buildQuestions();
-  state.answers.clear();
-  state.totalAttempts = 0;
-  state.correctAttempts = 0;
-  state.streak = 0;
-  state.completed = false;
+  clearSavedProgress(state.activeSetId);
+  loadSetSession(buildQuestions(), [], { totalAttempts: 0, correctAttempts: 0, streak: 0 });
   els.quizPanel.hidden = false;
   els.shuffleBtn.disabled = false;
   els.resetBtn.disabled = false;
   updateSetDisplay();
   renderQuestion();
-  // Remove resume prompt if present
-  pendingResume = null;
-  const newBtn = document.getElementById("newQuizBtn");
-  if (newBtn) newBtn.remove();
-  els.startQuizBtn.textContent = "Start Quiz";
-  saveQuizProgress();
 }
 
 function updateSetDisplay() {
@@ -1926,11 +1890,13 @@ function updateSetDisplay() {
 }
 
 function selectCategorySet(setId) {
-  if (!categorySets[setId] || setId === state.activeSetId) return;
-  state.activeSetId = setId;
-  updateSetDisplay();
+  if (!categorySets[setId]) return;
+  // Re-selecting the active set is allowed so it resumes that set's progress
   if (state.playerName) {
-    startQuiz();
+    openSet(setId);
+  } else {
+    state.activeSetId = setId;
+    updateSetDisplay();
   }
 }
 
