@@ -976,7 +976,7 @@ function saveQuizProgress() {
   const key = state.playerName.toLowerCase();
   const data = {
     activeSetId: state.activeSetId,
-    questionIndex: state.questionIndex + 1, // Next unanswered question
+    questionIndex: state.questionIndex, // current question; resume lands on first unanswered
     totalAttempts: state.totalAttempts,
     correctAttempts: state.correctAttempts,
     streak: state.streak,
@@ -1010,7 +1010,6 @@ function clearSavedProgress() {
 
 function resumeQuiz(progress) {
   state.activeSetId = progress.activeSetId;
-  state.questionIndex = progress.questionIndex;
   state.questions = progress.questions;
   state.answers = new Map(progress.answers);
   state.totalAttempts = progress.totalAttempts;
@@ -1018,6 +1017,11 @@ function resumeQuiz(progress) {
   state.streak = progress.streak;
   state.completed = false;
   state.currentSelection = new Set();
+  // Land on the first still-unanswered question so nothing is skipped
+  const firstUnanswered = state.questions.findIndex((q) => !state.answers.has(q.id));
+  state.questionIndex = firstUnanswered === -1
+    ? Math.min(progress.questionIndex, state.questions.length - 1)
+    : firstUnanswered;
   updateSetDisplay();
   els.quizPanel.hidden = false;
   els.startPanel.hidden = true;
@@ -1026,7 +1030,18 @@ function resumeQuiz(progress) {
   renderQuestion();
 }
 
-let resumeHandler = null;
+// Holds saved progress while the resume prompt is showing; the single
+// startQuizBtn handler reads this to decide resume-vs-new at click time.
+let pendingResume = null;
+
+function clearResumePrompt() {
+  pendingResume = null;
+  els.startQuizBtn.textContent = "Start Quiz";
+  els.startPanelTitle.textContent = `Welcome, ${state.playerName}`;
+  els.startPanelHint.textContent = "Select a category set and start your quiz.";
+  const nb = document.getElementById("newQuizBtn");
+  if (nb) nb.remove();
+}
 
 function showResumePrompt(progress) {
   const set = categorySets[progress.activeSetId];
@@ -1036,6 +1051,7 @@ function showResumePrompt(progress) {
   const pct = answered ? Math.round((correct / answered) * 100) : 0;
   const elapsed = Math.round((Date.now() - progress.savedAt) / 60000);
 
+  pendingResume = progress;
   els.startPanelTitle.textContent = `Continue where you left off?`;
   els.startPanelHint.innerHTML = `
     You were working on <b>${escapeHtml(setLabel)}</b><br>
@@ -1044,21 +1060,7 @@ function showResumePrompt(progress) {
   `;
   els.startQuizBtn.textContent = "Resume Quiz";
 
-  // Remove normal startQuiz listener, install resume handler
-  els.startQuizBtn.removeEventListener("click", startQuiz);
-  resumeHandler = () => {
-    resumeQuiz(progress);
-    els.startQuizBtn.removeEventListener("click", resumeHandler);
-    els.startQuizBtn.addEventListener("click", startQuiz);
-    els.startQuizBtn.textContent = "Start Quiz";
-    els.startPanelTitle.textContent = `Welcome, ${state.playerName}`;
-    els.startPanelHint.textContent = "Select a category set and start your quiz.";
-    const nb = document.getElementById("newQuizBtn");
-    if (nb) nb.remove();
-  };
-  els.startQuizBtn.addEventListener("click", resumeHandler);
-
-  // Add a "New Quiz" button
+  // Add a "Start New Quiz" button
   let newBtn = document.getElementById("newQuizBtn");
   if (!newBtn) {
     newBtn = document.createElement("button");
@@ -1068,14 +1070,32 @@ function showResumePrompt(progress) {
     newBtn.style.cssText = "display:block;width:100%;max-width:400px;min-height:40px;margin-top:8px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);font-size:14px;cursor:pointer;";
     newBtn.addEventListener("click", () => {
       clearSavedProgress();
-      els.startQuizBtn.removeEventListener("click", resumeHandler);
-      els.startQuizBtn.addEventListener("click", startQuiz);
-      els.startQuizBtn.textContent = "Start Quiz";
-      els.startPanelTitle.textContent = `Welcome, ${state.playerName}`;
-      els.startPanelHint.textContent = "Select a category set and start your quiz.";
-      if (newBtn) newBtn.remove();
+      clearResumePrompt();
     });
     els.startPanel.append(newBtn);
+  }
+}
+
+// Single startQuizBtn handler: resume if a saved game is pending, else start new
+function onStartQuizClick() {
+  if (pendingResume) {
+    const progress = pendingResume;
+    clearResumePrompt();
+    resumeQuiz(progress);
+  } else {
+    startQuiz();
+  }
+}
+
+// Opening the synonym panel re-offers resume so in-app navigation never
+// silently drops an unfinished quiz.
+function openSynonymPanel() {
+  const nav = document.getElementById("categoryNav");
+  nav.hidden = !nav.hidden;
+  if (!nav.hidden) {
+    switchMode("start");
+    els.startPanel.hidden = false;
+    checkAndShowResume();
   }
 }
 
@@ -1882,10 +1902,10 @@ function startQuiz() {
   updateSetDisplay();
   renderQuestion();
   // Remove resume prompt if present
+  pendingResume = null;
   const newBtn = document.getElementById("newQuizBtn");
   if (newBtn) newBtn.remove();
   els.startQuizBtn.textContent = "Start Quiz";
-  els.startQuizBtn.onclick = startQuiz;
   saveQuizProgress();
 }
 
@@ -1973,7 +1993,7 @@ function startWithName(event) {
 els.authLoginBtn.addEventListener("click", handleLogin);
 els.authRegisterBtn.addEventListener("click", handleRegister);
 els.authLogoutBtn.addEventListener("click", handleLogout);
-els.startQuizBtn.addEventListener("click", startQuiz);
+els.startQuizBtn.addEventListener("click", onStartQuizClick);
 
 els.prevBtn.addEventListener("click", prevQuestion);
 els.submitBtn.addEventListener("click", submitAnswer);
