@@ -507,7 +507,7 @@ h2 {
 .explain-copy {
   color: var(--muted);
   display: grid;
-  gap: 4px;
+  gap: 6px;
 }
 
 .explain-copy p {
@@ -516,6 +516,83 @@ h2 {
 
 .explain-copy strong {
   color: var(--ink);
+}
+
+.explain-note {
+  border-left: 3px solid var(--accent-soft);
+  padding-left: 10px;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.explain-synonyms {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.explain-why {
+  margin-top: 2px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.explain-why em {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.correct-why {
+  background: #e9f6ef;
+  color: var(--ok);
+}
+
+.wrong-why {
+  background: #fff0ea;
+  color: var(--warn);
+}
+
+.status-correct {
+  background: #d4edda;
+  color: var(--ok);
+}
+
+.status-wrong-selected {
+  background: #ffe0d6;
+  color: var(--warn);
+}
+
+.status-wrong {
+  background: #f0f0f0;
+  color: var(--muted);
+}
+
+.feedback-header {
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.feedback-prompt {
+  margin-bottom: 16px;
+  padding: 14px;
+  background: #f6f8fb;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+.feedback-prompt p {
+  margin: 4px 0;
+}
+
+.explain-section-label {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  margin: 16px 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .leaderboard {
