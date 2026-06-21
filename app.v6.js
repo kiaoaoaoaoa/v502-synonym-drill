@@ -571,6 +571,21 @@ const els = {
   wordlistCloseBtn: document.querySelector("#wordlistCloseBtn"),
   rankingSummary: document.querySelector("#rankingSummary"),
   rankingContent: document.querySelector("#rankingContent"),
+  // Auth
+  authSection: document.querySelector("#authSection"),
+  authLoggedOut: document.querySelector("#authLoggedOut"),
+  authLoggedIn: document.querySelector("#authLoggedIn"),
+  authNicknameInput: document.querySelector("#authNicknameInput"),
+  authPasswordInput: document.querySelector("#authPasswordInput"),
+  authError: document.querySelector("#authError"),
+  authLoginBtn: document.querySelector("#authLoginBtn"),
+  authRegisterBtn: document.querySelector("#authRegisterBtn"),
+  authPlayerName: document.querySelector("#authPlayerName"),
+  authLogoutBtn: document.querySelector("#authLogoutBtn"),
+  // New start panel
+  startQuizBtn: document.querySelector("#startQuizBtn"),
+  startPanelTitle: document.querySelector("#startPanelTitle"),
+  startPanelHint: document.querySelector("#startPanelHint"),
 };
 
 function shuffle(items) {
@@ -879,12 +894,125 @@ function writeLeaderboard(entries) {
   localStorage.setItem(leaderboardKey, JSON.stringify(entries));
 }
 
+const sessionKey = "v502-synonym-drill-session";
+
 function readPasswordStore() {
   try {
     return JSON.parse(localStorage.getItem(passwordStoreKey)) || {};
   } catch {
     return {};
   }
+}
+
+function getSession() {
+  try {
+    return JSON.parse(localStorage.getItem(sessionKey)) || null;
+  } catch {
+    return null;
+  }
+}
+
+function saveSession(name) {
+  localStorage.setItem(sessionKey, JSON.stringify({ name, loggedAt: Date.now() }));
+}
+
+function clearSession() {
+  localStorage.removeItem(sessionKey);
+}
+
+function renderAuthUI() {
+  if (state.playerName) {
+    els.authLoggedOut.hidden = true;
+    els.authLoggedIn.hidden = false;
+    els.authPlayerName.textContent = state.playerName;
+    els.startPanelTitle.textContent = `Welcome, ${state.playerName}`;
+    els.startPanelHint.textContent = "Select a category set and start your quiz.";
+  } else {
+    els.authLoggedOut.hidden = false;
+    els.authLoggedIn.hidden = true;
+    els.startPanelTitle.textContent = "Login to save progress";
+    els.startPanelHint.textContent = "Login from the sidebar to track scores and known words.";
+  }
+}
+
+function handleLogin() {
+  const name = els.authNicknameInput.value.trim();
+  const pw = els.authPasswordInput.value.trim();
+  els.authError.hidden = true;
+
+  if (!name || name.length < 1) {
+    els.authError.textContent = "닉네임을 입력하세요.";
+    els.authError.hidden = false;
+    return;
+  }
+  if (!pw || pw.length < 4) {
+    els.authError.textContent = "비밀번호는 4자 이상이어야 합니다.";
+    els.authError.hidden = false;
+    return;
+  }
+
+  const store = readPasswordStore();
+  const key = name.toLowerCase();
+  if (!store[key]) {
+    els.authError.textContent = "등록되지 않은 닉네임입니다. '계정등록'을 먼저 해주세요.";
+    els.authError.hidden = false;
+    return;
+  }
+  if (store[key] !== pw) {
+    els.authError.textContent = "비밀번호가 일치하지 않습니다.";
+    els.authError.hidden = false;
+    return;
+  }
+
+  state.playerName = name;
+  saveSession(name);
+  renderAuthUI();
+  els.authNicknameInput.value = "";
+  els.authPasswordInput.value = "";
+}
+
+function handleRegister() {
+  const name = els.authNicknameInput.value.trim();
+  const pw = els.authPasswordInput.value.trim();
+  els.authError.hidden = true;
+
+  if (!name || name.length < 1) {
+    els.authError.textContent = "닉네임을 입력하세요.";
+    els.authError.hidden = false;
+    return;
+  }
+  if (!pw || pw.length < 4) {
+    els.authError.textContent = "비밀번호는 4자 이상이어야 합니다.";
+    els.authError.hidden = false;
+    return;
+  }
+
+  const store = readPasswordStore();
+  const key = name.toLowerCase();
+  if (store[key]) {
+    els.authError.textContent = "이미 등록된 닉네임입니다. '로그인'을 해주세요.";
+    els.authError.hidden = false;
+    return;
+  }
+
+  store[key] = pw;
+  localStorage.setItem(passwordStoreKey, JSON.stringify(store));
+  state.playerName = name;
+  saveSession(name);
+  renderAuthUI();
+  els.authNicknameInput.value = "";
+  els.authPasswordInput.value = "";
+}
+
+function handleLogout() {
+  state.playerName = null;
+  state.answers.clear();
+  clearSession();
+  renderAuthUI();
+  els.quizPanel.hidden = true;
+  els.resultPanel.hidden = true;
+  els.rankingPanel.hidden = true;
+  els.startPanel.hidden = false;
 }
 
 function readWordKnowledge() {
@@ -1095,8 +1223,9 @@ async function completeQuiz() {
   state.completed = true;
 
   const accuracy = Math.round((state.correctAttempts / state.questions.length) * 100);
+  const displayName = state.playerName || "Guest";
   const entry = {
-    name: state.playerName,
+    name: displayName,
     correct: state.correctAttempts,
     total: state.questions.length,
     accuracy,
@@ -1105,17 +1234,27 @@ async function completeQuiz() {
     completedAt: new Date().toISOString(),
   };
 
-  // Upsert: keep only best score per (name, setId)
-  upsertLocalScore(entry);
-  // Unified ranking across ALL sets
+  // Only save scores if logged in
+  if (state.playerName) {
+    upsertLocalScore(entry);
+  }
   const cumulative = cumulativeLeaderboard(readLeaderboard(), null);
-  const cumEntry = cumulative.find((e) => e.name.toLowerCase() === state.playerName.toLowerCase()) || entry;
-  const rank = cumulative.findIndex((e) => e.name.toLowerCase() === state.playerName.toLowerCase()) + 1;
+  const cumEntry = state.playerName
+    ? (cumulative.find((e) => e.name.toLowerCase() === state.playerName.toLowerCase()) || entry)
+    : entry;
+  const rank = state.playerName
+    ? cumulative.findIndex((e) => e.name.toLowerCase() === state.playerName.toLowerCase()) + 1
+    : cumulative.length + 1;
 
   els.quizPanel.hidden = true;
   els.resultPanel.hidden = false;
-  els.resultTitle.textContent = `${state.playerName}'s Result`;
+  els.resultTitle.textContent = `${displayName}'s Result`;
   renderCumulativeLeaderboard(cumulative.slice(0, 30), "통합 랭킹", rank, cumEntry);
+
+  if (!state.playerName) {
+    els.resultSummary.textContent = "Login to save your scores and appear on the leaderboard!";
+    return;
+  }
 
   if (!hasPublicConfig()) return;
 
@@ -1487,18 +1626,12 @@ function startWithName(event) {
   startQuiz();
 }
 
-els.nicknameInput.addEventListener("input", () => {
-  const name = els.nicknameInput.value.trim().toLowerCase();
-  if (name && hasPassword(name)) {
-    els.passwordRow.hidden = false;
-    els.passwordHint.textContent = "This nickname has scores. Enter password to continue.";
-  } else {
-    els.passwordRow.hidden = false;
-    els.passwordHint.textContent = "";
-  }
-});
+// Auth event listeners
+els.authLoginBtn.addEventListener("click", handleLogin);
+els.authRegisterBtn.addEventListener("click", handleRegister);
+els.authLogoutBtn.addEventListener("click", handleLogout);
+els.startQuizBtn.addEventListener("click", startQuiz);
 
-els.nameForm.addEventListener("submit", startWithName);
 els.prevBtn.addEventListener("click", prevQuestion);
 els.submitBtn.addEventListener("click", submitAnswer);
 els.nextBtn.addEventListener("click", nextQuestion);
@@ -1515,10 +1648,19 @@ els.wordlistCloseBtn.addEventListener("click", () => {
 });
 els.categoryButtons.forEach((button) => {
   button.addEventListener("click", () => selectCategorySet(button.dataset.setId));
-  // All sets now have 30 questions (extra rounds distributed to larger categories)
   const smallEl = button.querySelector("small");
   if (smallEl) smallEl.textContent = "30 questions";
 });
 
+// Restore session on page load
+const savedSession = getSession();
+if (savedSession && savedSession.name) {
+  const store = readPasswordStore();
+  if (store[savedSession.name.toLowerCase()]) {
+    state.playerName = savedSession.name;
+  }
+}
+
 els.quizPanel.hidden = true;
+renderAuthUI();
 updateSetDisplay();

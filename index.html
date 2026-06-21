@@ -134,9 +134,22 @@
           </div>
         </section>
 
-        <section class="player-card" aria-label="Player">
-          <small>Player</small>
-          <strong id="playerNameLabel">Not started</strong>
+        <section id="authSection" class="auth-section" aria-label="Account">
+          <div id="authLoggedOut">
+            <p class="auth-label">Login / Register</p>
+            <input id="authNicknameInput" type="text" maxlength="24" placeholder="닉네임" autocomplete="nickname" />
+            <input id="authPasswordInput" type="password" minlength="4" maxlength="32" placeholder="비밀번호 (4자 이상)" autocomplete="current-password" />
+            <p id="authError" class="auth-error" hidden></p>
+            <div class="auth-btns">
+              <button id="authLoginBtn" type="button">로그인</button>
+              <button id="authRegisterBtn" type="button">계정등록</button>
+            </div>
+          </div>
+          <div id="authLoggedIn" hidden>
+            <p class="auth-label">Logged in as</p>
+            <strong id="authPlayerName">—</strong>
+            <button id="authLogoutBtn" class="auth-logout-btn" type="button">로그아웃</button>
+          </div>
         </section>
 
         <button id="rankingBtn" class="ranking-btn" type="button">
@@ -168,20 +181,10 @@
         </div>
 
         <section id="startPanel" class="start-panel">
-          <p class="eyebrow">Before You Start</p>
-          <h3>Enter a nickname</h3>
-          <form id="nameForm" class="name-form">
-            <label for="nicknameInput">Nickname</label>
-            <div>
-              <input id="nicknameInput" name="nickname" type="text" maxlength="24" autocomplete="nickname" required />
-              <button type="submit">Start</button>
-            </div>
-            <div id="passwordRow" class="password-row" hidden>
-              <label for="passwordInput">Password <small>(to claim this nickname)</small></label>
-              <input id="passwordInput" name="password" type="password" minlength="4" maxlength="32" autocomplete="new-password" />
-              <p id="passwordHint" class="password-hint"></p>
-            </div>
-          </form>
+          <p class="eyebrow">Ready to Quiz</p>
+          <h3 id="startPanelTitle">Start a new quiz</h3>
+          <p id="startPanelHint">Login from the sidebar to save your scores and word progress.</p>
+          <button id="startQuizBtn" type="button">Start Quiz</button>
         </section>
 
         <section id="quizPanel" class="quiz-panel" hidden>
