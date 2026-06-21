@@ -160,6 +160,10 @@
           <span aria-hidden="true">📋</span>
           단어일람보기
         </button>
+        <button id="logicModeBtn" class="ranking-btn logic-mode-btn" type="button">
+          <span aria-hidden="true">🧩</span>
+          논리문제
+        </button>
       </aside>
 
       <section class="workspace" aria-live="polite">
@@ -236,6 +240,26 @@
           <div id="rankingContent" class="leaderboard"></div>
           <button id="rankingCloseBtn" type="button">Back</button>
         </section>
+
+        <section id="logicPanel" class="quiz-panel" hidden>
+          <div class="logic-header">
+            <p class="eyebrow">Logic Quiz</p>
+            <h3>논리문제 (숭실대 편입 기출)</h3>
+          </div>
+          <div id="logicProgress" class="progress" aria-label="Progress">
+            <div id="logicProgressBar"></div>
+          </div>
+          <div id="logicQuestionArea">
+            <p id="logicQuestionText" class="logic-question"></p>
+            <div id="logicOptions" class="options" role="list"></div>
+            <div id="logicFeedback" class="feedback" hidden></div>
+          </div>
+          <footer class="actions">
+            <span id="logicCounter" class="logic-counter">1 / 50</span>
+            <button id="logicSubmitBtn" type="button">Submit</button>
+            <button id="logicNextBtn" type="button" disabled>Next</button>
+          </footer>
+        </section>
       </section>
     </main>
 
@@ -261,7 +285,8 @@
     <script src="categories-confusion-notes.js?v=20260621q"></script>
     <script src="categories-examples.js?v=20260621s"></script>
     <script src="categories-korean-usage.js?v=20260621q"></script>
-    <script src="app.v6.js?v=20260621s"></script>
+    <script src="logic-quiz.js"></script>
+    <script src="app.v6.js?v=20260621t"></script>
   </body>
 </html>
  

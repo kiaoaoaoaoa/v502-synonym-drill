@@ -587,6 +587,16 @@ const els = {
   startQuizBtn: document.querySelector("#startQuizBtn"),
   startPanelTitle: document.querySelector("#startPanelTitle"),
   startPanelHint: document.querySelector("#startPanelHint"),
+  // Logic Quiz
+  logicModeBtn: document.querySelector("#logicModeBtn"),
+  logicPanel: document.querySelector("#logicPanel"),
+  logicProgressBar: document.querySelector("#logicProgressBar"),
+  logicQuestionText: document.querySelector("#logicQuestionText"),
+  logicOptions: document.querySelector("#logicOptions"),
+  logicFeedback: document.querySelector("#logicFeedback"),
+  logicSubmitBtn: document.querySelector("#logicSubmitBtn"),
+  logicNextBtn: document.querySelector("#logicNextBtn"),
+  logicCounter: document.querySelector("#logicCounter"),
 };
 
 function shuffle(items) {
@@ -1850,3 +1860,115 @@ updateSetDisplay();
 // Save quiz progress on tab close / navigation away
 window.addEventListener("beforeunload", () => saveQuizProgress());
 window.addEventListener("pagehide", () => saveQuizProgress());
+
+/* ======== Logic Quiz ======== */
+let logicState = {
+  questions: [],
+  currentIndex: 0,
+  selectedOption: null,
+  answered: false,
+  correctCount: 0,
+  active: false,
+};
+
+function shuffleLogicQuestions() {
+  const raw = (window.__V502_LOGIC__ && window.__V502_LOGIC__.questions) || [];
+  logicState.questions = [...raw].sort(() => Math.random() - 0.5);
+}
+
+function startLogicQuiz() {
+  shuffleLogicQuestions();
+  logicState.currentIndex = 0;
+  logicState.correctCount = 0;
+  logicState.active = true;
+  els.startPanel.hidden = true;
+  els.quizPanel.hidden = true;
+  els.resultPanel.hidden = true;
+  els.rankingPanel.hidden = true;
+  els.wordlistPanel.hidden = true;
+  els.logicPanel.hidden = false;
+  renderLogicQuestion();
+}
+
+function renderLogicQuestion() {
+  const q = logicState.questions[logicState.currentIndex];
+  if (!q) return;
+  logicState.selectedOption = null;
+  logicState.answered = false;
+  els.logicQuestionText.innerHTML = `<strong>Q${logicState.currentIndex + 1}.</strong> ${escapeHtml(q.question)}`;
+  els.logicOptions.innerHTML = "";
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement("button");
+    btn.className = "option";
+    btn.type = "button";
+    btn.innerHTML = `<span>${String.fromCharCode(65 + i)}. ${escapeHtml(opt)}</span>`;
+    btn.addEventListener("click", () => {
+      if (logicState.answered) return;
+      logicState.selectedOption = opt;
+      els.logicOptions.querySelectorAll(".option").forEach(b => b.classList.remove("selected"));
+      btn.classList.add("selected");
+      els.logicSubmitBtn.disabled = false;
+    });
+    els.logicOptions.appendChild(btn);
+  });
+  els.logicSubmitBtn.disabled = true;
+  els.logicNextBtn.disabled = true;
+  els.logicFeedback.hidden = true;
+  els.logicFeedback.className = "feedback";
+  els.logicCounter.textContent = `${logicState.currentIndex + 1} / ${logicState.questions.length}`;
+  els.logicProgressBar.style.width = `${Math.round(((logicState.currentIndex) / logicState.questions.length) * 100)}%`;
+}
+
+function submitLogicAnswer() {
+  if (logicState.answered || !logicState.selectedOption) return;
+  logicState.answered = true;
+  const q = logicState.questions[logicState.currentIndex];
+  const correct = logicState.selectedOption === q.answer;
+  if (correct) logicState.correctCount++;
+
+  els.logicFeedback.hidden = false;
+  els.logicFeedback.className = `feedback ${correct ? "ok" : "no"}`;
+  els.logicFeedback.innerHTML = `
+    <strong>${correct ? "✅ Correct!" : "❌ Incorrect."}</strong>
+    <p style="margin-top:8px">${escapeHtml(q.explanation)}</p>
+  `;
+
+  // Highlight correct/wrong options
+  els.logicOptions.querySelectorAll(".option").forEach(btn => {
+    const optText = btn.querySelector("span")?.textContent?.replace(/^[A-D]\. /, "");
+    if (optText === q.answer) btn.classList.add("correct");
+    else if (optText === logicState.selectedOption && !correct) btn.classList.add("wrong");
+    btn.disabled = true;
+  });
+
+  els.logicSubmitBtn.disabled = true;
+  els.logicNextBtn.disabled = logicState.currentIndex >= logicState.questions.length - 1;
+  els.logicNextBtn.textContent = logicState.currentIndex >= logicState.questions.length - 1 ? "Finish" : "Next";
+}
+
+function nextLogicQuestion() {
+  if (logicState.currentIndex < logicState.questions.length - 1) {
+    logicState.currentIndex++;
+    renderLogicQuestion();
+  } else {
+    finishLogicQuiz();
+  }
+}
+
+function finishLogicQuiz() {
+  logicState.active = false;
+  const pct = Math.round((logicState.correctCount / logicState.questions.length) * 100);
+  els.logicPanel.hidden = true;
+  els.resultPanel.hidden = false;
+  els.resultTitle.textContent = "Logic Quiz Result";
+  els.resultSummary.textContent = `${logicState.correctCount}/${logicState.questions.length} correct — ${pct}% accuracy`;
+  els.leaderboard.innerHTML = "";
+}
+
+// Logic mode toggle
+els.logicModeBtn.addEventListener("click", () => {
+  startLogicQuiz();
+});
+
+els.logicSubmitBtn.addEventListener("click", submitLogicAnswer);
+els.logicNextBtn.addEventListener("click", nextLogicQuestion);

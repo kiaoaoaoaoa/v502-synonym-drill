@@ -1240,3 +1240,72 @@ h2 {
     max-width: 330px;
   }
 }
+
+/* Logic Quiz */
+.logic-mode-btn {
+  border-color: rgba(255,255,255,0.2) !important;
+  background: rgba(100,150,200,0.15) !important;
+}
+
+.logic-header {
+  margin-bottom: 16px;
+}
+
+.logic-header h3 {
+  margin-bottom: 4px;
+  font-size: 24px;
+}
+
+.logic-question {
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 16px 0 20px;
+  padding: 14px 18px;
+  background: #f8fafb;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent);
+  color: var(--ink);
+}
+
+#logicOptions .option {
+  text-align: left;
+  padding: 14px 18px;
+  font-size: 16px;
+}
+
+#logicOptions .option:hover {
+  background: #f0f4f8;
+}
+
+#logicOptions .option.selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+#logicOptions .option.correct {
+  border-color: #8fc7a8;
+  background: #ecf8f1;
+}
+
+#logicOptions .option.wrong {
+  border-color: #dda08c;
+  background: #fff1ec;
+}
+
+.logic-counter {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--muted);
+  min-width: 60px;
+}
+
+@media (max-width: 840px) {
+  .logic-question {
+    font-size: 15px;
+    padding: 10px 14px;
+  }
+  #logicOptions .option {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+}
