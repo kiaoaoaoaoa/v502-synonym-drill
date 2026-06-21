@@ -1479,13 +1479,22 @@ function renderPublicResult(displayName, accuracy, correct, total) {
   });
 }
 
-function showRanking() {
+/* ---- Mode switching: only one panel active at a time ---- */
+function switchMode(mode) {
   els.startPanel.hidden = true;
   els.quizPanel.hidden = true;
   els.resultPanel.hidden = true;
-  els.rankingPanel.hidden = false;
+  els.rankingPanel.hidden = true;
+  els.wordlistPanel.hidden = true;
+  els.logicPanel.hidden = true;
+  logicState.active = false;
   els.shuffleBtn.disabled = true;
   els.resetBtn.disabled = true;
+}
+
+function showRanking() {
+  switchMode('ranking');
+  els.rankingPanel.hidden = false;
 
   els.rankingTitle.textContent = "통합 랭킹 (전체 범주)";
   els.rankingSummary.textContent = "Loading public rankings…";
@@ -1530,10 +1539,7 @@ function getActiveSetCount() {
 }
 
 function showWordlist() {
-  els.startPanel.hidden = true;
-  els.quizPanel.hidden = true;
-  els.resultPanel.hidden = true;
-  els.rankingPanel.hidden = true;
+  switchMode('wordlist');
   els.wordlistPanel.hidden = false;
   els.wordlistTitle.textContent = `전체 단어 일람 (${categories.length}개 범주)`;
 
@@ -1670,20 +1676,14 @@ function toggleCatExample(catId) {
 }
 
 function hideRanking() {
-  els.rankingPanel.hidden = true;
+  switchMode('start');
+  els.startPanel.hidden = false;
   els.shuffleBtn.disabled = false;
   els.resetBtn.disabled = false;
-
-  if (state.completed) {
-    els.resultPanel.hidden = false;
-  } else if (state.playerName) {
-    els.quizPanel.hidden = false;
-  } else {
-    els.startPanel.hidden = false;
-  }
 }
 
 function startQuiz() {
+  switchMode('quiz');
   clearSavedProgress();
   state.questionIndex = 0;
   state.currentSelection = new Set();
@@ -1693,9 +1693,9 @@ function startQuiz() {
   state.correctAttempts = 0;
   state.streak = 0;
   state.completed = false;
-  els.resultPanel.hidden = true;
-  els.rankingPanel.hidden = true;
   els.quizPanel.hidden = false;
+  els.shuffleBtn.disabled = false;
+  els.resetBtn.disabled = false;
   updateSetDisplay();
   renderQuestion();
   // Remove resume prompt if present
@@ -1902,15 +1902,11 @@ function shuffleLogicQuestions() {
 }
 
 function startLogicQuiz() {
+  switchMode('logic');
   shuffleLogicQuestions();
   logicState.currentIndex = 0;
   logicState.correctCount = 0;
   logicState.active = true;
-  els.startPanel.hidden = true;
-  els.quizPanel.hidden = true;
-  els.resultPanel.hidden = true;
-  els.rankingPanel.hidden = true;
-  els.wordlistPanel.hidden = true;
   els.logicPanel.hidden = false;
   renderLogicQuestion();
 }
