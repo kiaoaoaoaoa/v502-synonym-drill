@@ -139,6 +139,9 @@ h1 {
 .category-nav {
   display: grid;
   gap: 8px;
+  overflow-y: auto;
+  max-height: 60vh;
+  padding-right: 4px;
 }
 
 .category-btn {
