@@ -1745,7 +1745,16 @@ function getActiveSetCount() {
 function showWordlist() {
   switchMode('wordlist');
   els.wordlistPanel.hidden = false;
-  els.wordlistTitle.innerHTML = `전체 단어 일람 (${categories.length}개 범주) <button class="wl-jump-btn" onclick="jumpToCategory('200')" title="범주 200번으로 이동">범주200</button> <button class="wl-jump-btn" onclick="jumpToCategory('400')" title="범주 400번으로 이동">범주400</button>`;
+  els.wordlistTitle.innerHTML = `
+    <span class="wl-title-main">전체 단어 일람 (${categories.length}개 범주)</span>
+    <span class="wl-jump-controls">
+      <button class="wl-jump-btn" type="button" data-jump-target="200" title="범주 200번으로 이동">범주200</button>
+      <button class="wl-jump-btn" type="button" data-jump-target="400" title="범주 400번으로 이동">범주400</button>
+    </span>
+  `;
+  els.wordlistTitle.querySelectorAll('.wl-jump-btn').forEach((button) => {
+    button.addEventListener('click', () => jumpToCategory(button.dataset.jumpTarget));
+  });
 
   let html = '<div class="wordlist-scroll">';
   categories.forEach(cat => {
@@ -1893,11 +1902,8 @@ function showWordlist2() {
 function jumpToCategory(targetId) {
   const targetEl = document.querySelector(`.wordlist-cat[data-cat-id="${targetId}"]`);
   if (targetEl) {
-    // Direct scroll to element's offset position relative to document
-    const rect = targetEl.getBoundingClientRect();
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const targetY = rect.top + scrollTop - 20; // 20px padding from top
-    window.scrollTo({ top: targetY, behavior: 'smooth' });
+    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.setTimeout(() => window.scrollBy({ top: -20, behavior: 'smooth' }), 180);
   }
 }
 
