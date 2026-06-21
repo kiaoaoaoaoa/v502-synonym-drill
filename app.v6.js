@@ -804,6 +804,8 @@ function buildQuestions() {
     sourceCategories.flatMap((category) => {
       const words = shuffle(category.words);
       const currentWords = new Set(category.words);
+      // Skip categories with fewer than 3 words (can't form valid 2-answer questions)
+      if (words.length < 3) return [];
       return [0, 1, 2].map((round) => {
         const prompt = words[round % words.length];
         const answer = [words[(round + 1) % words.length], words[(round + 2) % words.length]];
@@ -1424,10 +1426,15 @@ function startQuiz() {
 
 function updateSetDisplay() {
   const activeSet = getActiveSet();
+  // Count actual questions: 3 per category with >= 3 words, skip smaller ones
+  const actualQuestions = activeSet.ids.reduce((sum, cid) => {
+    const cat = categories.find(c => c.id === cid);
+    return sum + (cat && cat.words.length >= 3 ? 3 : 0);
+  }, 0);
   els.activeSetLabel.textContent = activeSet.label;
-  els.activeSetMeta.textContent = "30 questions";
+  els.activeSetMeta.textContent = `${actualQuestions} questions`;
   els.categoryLabel.textContent = activeSet.label;
-  els.questionTotal.textContent = `/ ${activeSet.ids.length * 3}`;
+  els.questionTotal.textContent = `/ ${actualQuestions}`;
   els.categoryButtons.forEach((button) => {
     button.setAttribute("aria-current", String(button.dataset.setId === state.activeSetId));
   });
@@ -1530,6 +1537,17 @@ els.wordlistCloseBtn.addEventListener("click", () => {
 });
 els.categoryButtons.forEach((button) => {
   button.addEventListener("click", () => selectCategorySet(button.dataset.setId));
+  // Update question count per button dynamically
+  const setId = button.dataset.setId;
+  const set = categorySets[setId];
+  if (set) {
+    const qCount = set.ids.reduce((sum, cid) => {
+      const cat = categories.find(c => c.id === cid);
+      return sum + (cat && cat.words.length >= 3 ? 3 : 0);
+    }, 0);
+    const smallEl = button.querySelector("small");
+    if (smallEl) smallEl.textContent = `${qCount} questions`;
+  }
 });
 
 els.quizPanel.hidden = true;
