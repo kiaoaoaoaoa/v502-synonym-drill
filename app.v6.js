@@ -777,23 +777,22 @@ function explainOption(word, question) {
     ? `<p class="explain-synonyms"><strong>같은 범주 단어:</strong> ${escapeHtml(sameCategoryWords.join(" / "))}</p>`
     : "";
 
-  // Build reason with dictionary-style explanation
+  // Build reason with college-level English explanation
   let reasonBlock;
   if (isAnswer) {
     reasonBlock = `
       <p class="explain-why correct-why">
-        <strong>✅ 정답:</strong> "${escapeHtml(word)}"은(는) "${escapeHtml(question.prompt)}"과(와)
-        <em>${escapeHtml(promptGroup)}</em>라는 같은 의미 범주에 속하는 동의어입니다.
+        <strong>✅ Correct:</strong> "${escapeHtml(word)}" is a synonym of "${escapeHtml(question.prompt)}" —
+        both belong to the semantic category <em>${escapeHtml(promptGroup)}</em>.
       </p>`;
   } else {
-    // Build dictionary-style wrong answer explanation
     const promptMeaningText = wordMeanings[question.prompt] || "";
     const wordMeaningText = wordMeanings[word] || "";
+    const wordNote = confusionNotes[word] || "";
+    const promptNote = confusionNotes[question.prompt] || "";
     reasonBlock = `
       <p class="explain-why wrong-why">
-        <strong>❌ 오답:</strong> "${escapeHtml(word)}"${wordMeaningText ? `은(는) <b>${escapeHtml(wordMeaningText)}</b>라는 뜻입니다.` : '의 뜻을 확인하세요.'}
-        ${promptMeaningText ? `제시어 "${escapeHtml(question.prompt)}"은(는) <b>${escapeHtml(promptMeaningText)}</b>라는 뜻으로,` : ''}
-        서로 의미가 다르므로 동의어가 아닙니다.
+        <strong>❌ Incorrect:</strong> "${escapeHtml(word)}" means <em>${escapeHtml(wordMeaningText || word)}</em>.${promptMeaningText ? ` This is distinct from "${escapeHtml(question.prompt)}" which means <em>${escapeHtml(promptMeaningText)}</em>.` : ''} These words belong to different semantic categories and are not interchangeable.
       </p>`;
   }
 
@@ -826,18 +825,18 @@ function showFeedback(correct, question) {
 
   els.feedback.innerHTML = `
     <div class="feedback-header">
-      <strong>${correct ? "✅ 정답입니다!" : "❌ 오답입니다."}</strong>
+      <strong>${correct ? "✅ Correct!" : "❌ Incorrect."}</strong>
     </div>
     <div class="feedback-prompt">
-      <p><b>제시어: ${escapeHtml(question.prompt)}</b> ${promptMeaning ? `— ${escapeHtml(promptMeaning)}` : ""}</p>
-      ${promptNote ? `<p class="explain-note"><strong>해설:</strong> ${escapeHtml(promptNote)}</p>` : ""}
+      <p><b>Prompt: ${escapeHtml(question.prompt)}</b> ${promptMeaning ? `— ${escapeHtml(promptMeaning)}` : ""}</p>
+      ${promptNote ? `<p class="explain-note"><strong>Definition:</strong> ${escapeHtml(promptNote)}</p>` : ""}
       <p class="prompt-explain">
-        <strong>범주:</strong> Category ${escapeHtml(question.categoryId)} — ${escapeHtml(promptGroup)}
-        ${sameCatWords ? ` · <strong>같은 범주 단어:</strong> ${escapeHtml(sameCatWords)}` : ""}
+        <strong>Category:</strong> ${escapeHtml(question.categoryId)} — ${escapeHtml(promptGroup)}
+        ${sameCatWords ? ` · <strong>Siblings:</strong> ${escapeHtml(sameCatWords)}` : ""}
       </p>
-      <p><strong>정답 페어:</strong> ${escapeHtml(question.answer.join(" / "))}</p>
+      <p><strong>Correct pair:</strong> ${escapeHtml(question.answer.join(" / "))}</p>
     </div>
-    <p class="explain-section-label">📋 각 선지 상세 해설</p>
+    <p class="explain-section-label">📋 Option Analysis</p>
     <ul class="explain-list detailed">${optionRows}</ul>
   `;
 }
