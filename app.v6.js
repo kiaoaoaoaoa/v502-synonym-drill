@@ -386,6 +386,7 @@ const confusionNotes = {
 const leaderboardKey = "v502-synonym-drill-leaderboard";
 const passwordStoreKey = "v502-synonym-drill-passwords";
 const wordKnowledgeKey = "v502-synonym-drill-word-knowledge";
+const quizProgressKey = "v502-synonym-drill-quiz-progress";
 let supabaseClient = null;
 let supabaseSdkPromise = null;
 
@@ -866,6 +867,7 @@ function submitAnswer() {
   state.correctAttempts += correct ? 1 : 0;
   state.streak = correct ? state.streak + 1 : 0;
   state.currentSelection = new Set();
+  saveQuizProgress();
   renderQuestion();
 }
 
@@ -920,6 +922,102 @@ function clearSession() {
   localStorage.removeItem(sessionKey);
 }
 
+/* ---- Quiz progress save/resume ---- */
+function saveQuizProgress() {
+  if (!state.playerName || state.completed || state.answers.size === 0) return;
+  const key = state.playerName.toLowerCase();
+  const data = {
+    activeSetId: state.activeSetId,
+    questionIndex: state.questionIndex,
+    totalAttempts: state.totalAttempts,
+    correctAttempts: state.correctAttempts,
+    streak: state.streak,
+    completed: state.completed,
+    questions: state.questions,
+    answers: Array.from(state.answers.entries()),
+    savedAt: Date.now(),
+  };
+  const store = readQuizProgressStore();
+  store[key] = data;
+  localStorage.setItem(quizProgressKey, JSON.stringify(store));
+}
+
+function readQuizProgressStore() {
+  try { return JSON.parse(localStorage.getItem(quizProgressKey)) || {}; }
+  catch { return {}; }
+}
+
+function getSavedProgress() {
+  if (!state.playerName) return null;
+  const store = readQuizProgressStore();
+  return store[state.playerName.toLowerCase()] || null;
+}
+
+function clearSavedProgress() {
+  if (!state.playerName) return;
+  const store = readQuizProgressStore();
+  delete store[state.playerName.toLowerCase()];
+  localStorage.setItem(quizProgressKey, JSON.stringify(store));
+}
+
+function resumeQuiz(progress) {
+  state.activeSetId = progress.activeSetId;
+  state.questionIndex = progress.questionIndex;
+  state.questions = progress.questions;
+  state.answers = new Map(progress.answers);
+  state.totalAttempts = progress.totalAttempts;
+  state.correctAttempts = progress.correctAttempts;
+  state.streak = progress.streak;
+  state.completed = false;
+  state.currentSelection = new Set();
+  updateSetDisplay();
+  els.quizPanel.hidden = false;
+  els.startPanel.hidden = true;
+  els.resultPanel.hidden = true;
+  els.rankingPanel.hidden = true;
+  renderQuestion();
+}
+
+function showResumePrompt(progress) {
+  const set = categorySets[progress.activeSetId];
+  const setLabel = set ? set.label : progress.activeSetId;
+  const answered = progress.totalAttempts;
+  const correct = progress.correctAttempts;
+  const pct = answered ? Math.round((correct / answered) * 100) : 0;
+  const elapsed = Math.round((Date.now() - progress.savedAt) / 60000);
+
+  els.startPanelTitle.textContent = `Continue where you left off?`;
+  els.startPanelHint.innerHTML = `
+    You were working on <b>${escapeHtml(setLabel)}</b><br>
+    Progress: ${answered} answered, ${correct} correct (${pct}%)<br>
+    <small>${elapsed} minute${elapsed !== 1 ? 's' : ''} ago</small>
+  `;
+  els.startQuizBtn.textContent = "Resume Quiz";
+  els.startQuizBtn.onclick = () => {
+    resumeQuiz(progress);
+    els.startQuizBtn.textContent = "Start Quiz";
+    els.startQuizBtn.onclick = startQuiz;
+  };
+  // Add a "New Quiz" button
+  let newBtn = document.getElementById("newQuizBtn");
+  if (!newBtn) {
+    newBtn = document.createElement("button");
+    newBtn.id = "newQuizBtn";
+    newBtn.type = "button";
+    newBtn.textContent = "Start New Quiz";
+    newBtn.style.cssText = "display:block;width:100%;max-width:400px;min-height:40px;margin-top:8px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);font-size:14px;cursor:pointer;";
+    newBtn.onclick = () => {
+      clearSavedProgress();
+      els.startQuizBtn.textContent = "Start Quiz";
+      els.startQuizBtn.onclick = startQuiz;
+      els.startPanelTitle.textContent = `Welcome, ${state.playerName}`;
+      els.startPanelHint.textContent = "Select a category set and start your quiz.";
+      if (newBtn) newBtn.remove();
+    };
+    els.startPanel.append(newBtn);
+  }
+}
+
 function renderAuthUI() {
   if (state.playerName) {
     els.authLoggedOut.hidden = true;
@@ -969,6 +1067,7 @@ function handleLogin() {
   renderAuthUI();
   els.authNicknameInput.value = "";
   els.authPasswordInput.value = "";
+  checkAndShowResume();
 }
 
 function handleRegister() {
@@ -1002,6 +1101,14 @@ function handleRegister() {
   renderAuthUI();
   els.authNicknameInput.value = "";
   els.authPasswordInput.value = "";
+  checkAndShowResume();
+}
+
+function checkAndShowResume() {
+  const progress = getSavedProgress();
+  if (progress && progress.answers && progress.answers.length > 0 && !progress.completed) {
+    showResumePrompt(progress);
+  }
 }
 
 function handleLogout() {
@@ -1221,6 +1328,7 @@ async function readPublicLeaderboard() {
 async function completeQuiz() {
   if (state.completed || state.answers.size !== state.questions.length) return;
   state.completed = true;
+  clearSavedProgress();
 
   const accuracy = Math.round((state.correctAttempts / state.questions.length) * 100);
   const displayName = state.playerName || "Guest";
@@ -1530,6 +1638,7 @@ function hideRanking() {
 }
 
 function startQuiz() {
+  clearSavedProgress();
   state.questionIndex = 0;
   state.currentSelection = new Set();
   state.questions = buildQuestions();
@@ -1543,6 +1652,12 @@ function startQuiz() {
   els.quizPanel.hidden = false;
   updateSetDisplay();
   renderQuestion();
+  // Remove resume prompt if present
+  const newBtn = document.getElementById("newQuizBtn");
+  if (newBtn) newBtn.remove();
+  els.startQuizBtn.textContent = "Start Quiz";
+  els.startQuizBtn.onclick = startQuiz;
+  saveQuizProgress();
 }
 
 function updateSetDisplay() {
@@ -1658,9 +1773,15 @@ if (savedSession && savedSession.name) {
   const store = readPasswordStore();
   if (store[savedSession.name.toLowerCase()]) {
     state.playerName = savedSession.name;
+    // Check for saved quiz progress after a short delay (DOM ready)
+    setTimeout(checkAndShowResume, 100);
   }
 }
 
 els.quizPanel.hidden = true;
 renderAuthUI();
 updateSetDisplay();
+
+// Save quiz progress on tab close / navigation away
+window.addEventListener("beforeunload", () => saveQuizProgress());
+window.addEventListener("pagehide", () => saveQuizProgress());
