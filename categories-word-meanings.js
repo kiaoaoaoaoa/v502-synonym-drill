@@ -1,7 +1,6 @@
 // LOGIC TREE V502 — Complete word meanings from PDF
 window.__V502_EXT__=window.__V502_EXT__||{};
 window.__V502_EXT__.wordMeanings=window.__V502_EXT__.wordMeanings||{};
-
 Object.assign(window.__V502_EXT__.wordMeanings,{
   "Ignominious":"수치스러운",
   "Lilliputian":"소인국의; 편협한 사람",

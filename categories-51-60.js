@@ -15,7 +15,7 @@ window.__V502_EXT__.categories.push(
   {id:"057",words:["disinterested", "dispassionate", "unimpassioned", "equitable", "evenhanded"]},
   {id:"058",words:["amplify", "magnify", "overblow", "overemphasize", "overestimate", "overrate", "overstate", "bombast", "fustian", "grandiloquence", "hyperbole", "overstatement", "pomposity"]},
   {id:"059",words:["belittle", "decry", "depreciate", "discredit", "disparage", "minimize", "underestimate", "underrate", "understate"]},
-  {id:"060",words:["glut", "over-abundance", "plethora", "superabundance", "surfeit"]}
+  {id:"060",words:["glut", "over-abundance", "plethora", "surfeit"]}
 );
 
 Object.assign(window.__V502_EXT__.wordMeanings,{

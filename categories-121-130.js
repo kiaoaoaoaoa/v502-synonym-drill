@@ -95,7 +95,9 @@ Object.assign(window.__V502_EXT__.wordMeanings,{
 });
 
 Object.assign(window.__V502_EXT__.categorySummaries,{
+  "121":"넓은",
   "122":"노쇠한, 노후한",
+  "123":"논문",
   "124":"논박하다, 거짓임을 입증하다",
   "125":"논쟁을 좋아하는",
   "126":"눈물을 잘 흘리는, 지나치게 감상적인",
