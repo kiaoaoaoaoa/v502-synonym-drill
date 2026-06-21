@@ -1731,20 +1731,23 @@ function showWordlist() {
     }
     html += `</div>`;
 
-    html += `<div class="wordlist-words">`;
-    catWords.forEach((w) => {
+    html += `<ol class="wordlist-words">`;
+    catWords.forEach((w, idx) => {
       const m = wordMeanings[w] || '';
+      const example = (window.examples && window.examples[w]) ? window.examples[w] : '';
       const known = state.playerName && isWordKnown(w);
-      html += `<span class="wl-word${known ? ' wl-known' : ''}${state.playerName ? ' wl-clickable' : ''}"`;
+      html += `<li class="wl-word${known ? ' wl-known' : ''}${state.playerName ? ' wl-clickable' : ''}"`;
       if (state.playerName) {
         html += ` onclick="handleWordToggle('${escapeHtml(w)}', this)" title="클릭하여 안다/모른다 표시"`;
       }
-      html += `>${escapeHtml(w)}`;
+      html += `>`;
       if (known) html += `<span class="wl-check">✓</span>`;
-      if (m) html += `<span class="wl-meaning">${escapeHtml(m)}</span>`;
-      html += `</span>`;
+      html += `<strong>${escapeHtml(w)}</strong>`;
+      if (m) html += ` <span class="wl-meaning">— ${escapeHtml(m)}</span>`;
+      if (example) html += ` <span class="wl-example-inline">📖 ${escapeHtml(example)}</span>`;
+      html += `</li>`;
     });
-    html += `</div>`;
+    html += `</ol>`;
     // Collocation detail (hidden)
     if (hasCollocations) {
       html += `<div class="wl-detail" id="wl-detail-${escapeHtml(cat.id)}" hidden>`;
@@ -1820,13 +1823,13 @@ function showWordlist2() {
   switchMode('wordlist');
   els.wordlist2Panel.hidden = false;
   const extraWords = window.__V502_EXTRA__ || [];
-  let html = '<div class="wordlist-scroll"><div class="wordlist-cat"><h4><span class="wl-cat-num">EXTRA</span> MVP2 + V401 (V502 미포함)</h4><div class="wordlist-words">';
-  extraWords.forEach(item => {
-    html += '<span class="wl-word">' + escapeHtml(item.w || '') + '';
-    if (item.m) html += '<span class="wl-meaning">' + escapeHtml(item.m) + '</span>';
-    html += '</span>';
+  let html = '<div class="wordlist-scroll"><div class="wordlist-cat"><h4><span class="wl-cat-num">EXTRA</span> MVP2 + V401 (V502 미포함)</h4><ol class="wordlist-words">';
+  extraWords.forEach((item, idx) => {
+    html += '<li class="wl-word"><strong>' + escapeHtml(item.w || '') + '</strong>';
+    if (item.m) html += ' <span class="wl-meaning">— ' + escapeHtml(item.m) + '</span>';
+    html += '</li>';
   });
-  html += '</div></div></div>';
+  html += '</ol></div></div>';
   els.wordlist2Content.innerHTML = html;
 }
 
