@@ -1852,15 +1852,14 @@ function showWordlist2() {
   const extraWords = window.__V502_EXTRA__ || [];
   let html = '<div class="wordlist-scroll"><div class="wordlist-cat">';
   html += '<h4><span class="wl-cat-num">EXTRA</span> MVP2 + V401 (V502 미포함) — ' + extraWords.length + ' words</h4>';
-  html += '<div class="wordlist-words">';
+  html += '<div class="wordlist2-entries">';
   extraWords.forEach((item, idx) => {
     const hasEx = item.ex && item.ex.length > 20;
-    html += '<span class="wl-word"';
-    if (hasEx) html += ' title="' + escapeHtml(item.ex) + '"';
-    html += '>' + escapeHtml(item.w || '');
-    if (item.m) html += '<span class="wl-meaning">' + escapeHtml(item.m) + '</span>';
-    if (hasEx) html += '<span class="wl-has-ex" style="color:var(--accent);font-size:10px;margin-left:2px">📖</span>';
-    html += '</span>';
+    html += '<div class="wl2-entry">';
+    html += '<span class="wl2-word">' + escapeHtml(item.w || '') + '</span>';
+    if (item.m) html += '<span class="wl2-meaning">' + escapeHtml(item.m) + '</span>';
+    if (hasEx) html += '<div class="wl2-example">' + escapeHtml(item.ex) + '</div>';
+    html += '</div>';
   });
   html += '</div></div></div>';
   els.wordlist2Content.innerHTML = html;

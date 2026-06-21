@@ -566,6 +566,46 @@ h2 {
   display: none;
 }
 
+/* ── Wordlist2 (extra words) ── */
+.wordlist2-entries {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--ink);
+}
+
+.wl2-entry {
+  margin-bottom: 10px;
+  padding: 4px 0;
+}
+
+.wl2-word {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 13px;
+  background: #fff;
+  padding: 1px 6px;
+  border-radius: 4px;
+  border: 1px solid #eef1f5;
+  display: inline-block;
+}
+
+.wl2-meaning {
+  font-weight: 400;
+  color: var(--muted);
+  margin-left: 4px;
+  font-size: 12px;
+}
+
+.wl2-example {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 3px;
+  margin-left: 2px;
+  line-height: 1.5;
+  font-style: italic;
+}
+
 @media (max-width: 840px) {
   .wordlist-scroll {
     padding-right: 4px;
@@ -594,6 +634,25 @@ h2 {
 
   .wl-meaning {
     font-size: 12px;
+  }
+
+  .wl2-entry {
+    margin-bottom: 8px;
+  }
+
+  .wl2-word {
+    font-size: 13px;
+    padding: 2px 7px;
+  }
+
+  .wl2-meaning {
+    font-size: 12px;
+  }
+
+  .wl2-example {
+    font-size: 12px;
+    margin-top: 2px;
+    margin-left: 4px;
   }
 
   .wl-cat-header-row {
