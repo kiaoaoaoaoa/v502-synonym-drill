@@ -1076,7 +1076,7 @@ async function completeQuiz() {
   els.quizPanel.hidden = true;
   els.resultPanel.hidden = false;
   els.resultTitle.textContent = `${state.playerName}'s Result`;
-  renderCumulativeLeaderboard(cumulative.slice(0, 30), "통합 랭킹 (전체 범주)", rank, cumEntry);
+  renderCumulativeLeaderboard(cumulative.slice(0, 30), "통합 랭킹", rank, cumEntry);
 
   if (!hasPublicConfig()) return;
 
@@ -1114,7 +1114,7 @@ function renderCumulativeLeaderboard(leaderboard, title, rank, cumEntry) {
     `${cumEntry.correct}/${cumEntry.total} cumulative — ${cumEntry.accuracy}% accuracy — Rank #${rank}`;
   els.leaderboard.innerHTML = `
     <h4>${escapeHtml(title)}</h4>
-    <p class="ranking-note">Best attempt per set, cumulative totals.</p>
+    <p class="ranking-note">Best attempt per set · All 62 sets combined</p>
     <ol>
       ${leaderboard.map((item) => `
         <li>
@@ -1142,7 +1142,7 @@ function showRanking() {
   const allEntries = readLeaderboard();
   // Pass null for setId → aggregate across ALL sets
   const cumulative = cumulativeLeaderboard(allEntries, null).slice(0, 30);
-  els.rankingSummary.textContent = `${cumulative.length} player${cumulative.length !== 1 ? "s" : ""} on the board · All ${getActiveSetCount()} sets combined`;
+  els.rankingSummary.textContent = `${cumulative.length} player${cumulative.length !== 1 ? "s" : ""} on the board · Best per set · All ${getActiveSetCount()} sets combined`;
 
   if (cumulative.length === 0) {
     els.rankingContent.innerHTML = "<p>No scores yet. Complete a quiz to appear here!</p>";
