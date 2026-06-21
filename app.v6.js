@@ -804,7 +804,7 @@ function buildQuestions() {
     sourceCategories.flatMap((category) => {
       const words = shuffle(category.words);
       const currentWords = new Set(category.words);
-      return [0, 1].map((round) => {
+      return [0, 1, 2].map((round) => {
         const prompt = words[round % words.length];
         const answer = [words[(round + 1) % words.length], words[(round + 2) % words.length]];
         const distractors = [];
@@ -1422,9 +1422,9 @@ function startQuiz() {
 function updateSetDisplay() {
   const activeSet = getActiveSet();
   els.activeSetLabel.textContent = activeSet.label;
-  els.activeSetMeta.textContent = "20 questions";
+  els.activeSetMeta.textContent = "30 questions";
   els.categoryLabel.textContent = activeSet.label;
-  els.questionTotal.textContent = `/ ${activeSet.ids.length * 2}`;
+  els.questionTotal.textContent = `/ ${activeSet.ids.length * 3}`;
   els.categoryButtons.forEach((button) => {
     button.setAttribute("aria-current", String(button.dataset.setId === state.activeSetId));
   });
