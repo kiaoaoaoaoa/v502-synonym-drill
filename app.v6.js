@@ -1375,15 +1375,15 @@ function showWordlist() {
   categories.forEach(cat => {
     const summary = categorySummaries[cat.id] || '';
     html += `<div class="wordlist-cat">`;
-    html += `<h4>${escapeHtml(cat.id)}. ${escapeHtml(summary)}</h4>`;
-    html += `<p class="wordlist-words">`;
-    cat.words.forEach((w, i) => {
+    html += `<h4><span class="wl-cat-num">${escapeHtml(cat.id)}</span> ${escapeHtml(summary)}</h4>`;
+    html += `<div class="wordlist-words">`;
+    cat.words.forEach((w) => {
       const m = wordMeanings[w] || '';
-      html += `<span class="wl-word">${escapeHtml(w)}</span>`;
+      html += `<span class="wl-word">${escapeHtml(w)}`;
       if (m) html += `<span class="wl-meaning">${escapeHtml(m)}</span>`;
-      if (i < cat.words.length - 1) html += `<span class="wl-sep">·</span>`;
+      html += `</span>`;
     });
-    html += `</p></div>`;
+    html += `</div></div>`;
   });
   html += '</div>';
   els.wordlistContent.innerHTML = html;
