@@ -2482,6 +2482,7 @@ function showMyReview() {
     const existing = best.get(key);
     if (!existing || e.accuracy > existing.accuracy) best.set(key, e);
   }
+  const wcProgress = getWordcheckProgress();
   let totalCorrect = 0, totalQuestions = 0;
   for (const e of best.values()) { totalCorrect += e.correct; totalQuestions += e.total; }
 
@@ -2490,7 +2491,8 @@ function showMyReview() {
   html += `<div style="display:grid;gap:12px;grid-template-columns:1fr 1fr">`;
   html += `<div style="padding:16px;background:#f0f8f0;border-radius:8px;text-align:center"><strong style="font-size:24px">${completed}</strong><br><small>단어 마스터</small><br><small style="color:var(--muted)">/ ${totalSyn} (${pct}%)</small></div>`;
   html += `<div style="padding:16px;background:#f0f0f8;border-radius:8px;text-align:center"><strong style="font-size:24px">${logicMastered}</strong><br><small>논리 마스터</small><br><small style="color:var(--muted)">/ ${logicTotal}</small></div>`;
-  html += `<div style="padding:16px;background:#fff8f0;border-radius:8px;text-align:center;grid-column:1/-1"><strong style="font-size:24px">${totalCorrect}/${totalQuestions}</strong><br><small>통합랭킹 점수</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'}</small></div>`;
+  html += `<div style="padding:16px;background:#e8f0e8;border-radius:8px;text-align:center"><strong style="font-size:24px">${wcProgress.correct}/${wcProgress.total}</strong><br><small>단어확인</small><br><small style="color:var(--muted)">${wcProgress.total > 0 ? Math.round(wcProgress.correct/wcProgress.total*100) + '%' : 'No data'}</small></div>`;
+  html += `<div style="padding:16px;background:#fff8f0;border-radius:8px;text-align:center"><strong style="font-size:24px">${totalCorrect}/${totalQuestions}</strong><br><small>통합랭킹 점수</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'}</small></div>`;
   html += '</div>';
 
   // List of memorized (mastered) words, grouped by category
@@ -2642,10 +2644,50 @@ function finishWordcheck() {
   document.getElementById('wordcheckFeedback').style.display = 'none';
   const result = document.getElementById('wordcheckResult');
   result.style.display = 'block';
+  const pct = Math.round(wcState.correct / wcState.total * 100);
   document.getElementById('wordcheckScore').innerHTML = `
     🎯 Score: <strong>${wcState.correct}</strong> / ${wcState.total}
-    <br><small>${Math.round(wcState.correct / wcState.total * 100)}% correct</small>
+    <br><small>${pct}% correct</small>
   `;
+
+  // Save to leaderboard for unified ranking
+  if (state.playerName) {
+    const entry = {
+      name: state.playerName,
+      setId: 'WORDCHECK',
+      correct: wcState.correct,
+      total: wcState.total,
+      accuracy: pct,
+      date: new Date().toISOString()
+    };
+    upsertLocalScore(entry);
+    // Also save wordcheck progress separately
+    saveWordcheckProgress();
+    updateSidebarCompletion();
+  }
+}
+
+function saveWordcheckProgress() {
+  if (!state.playerName) return;
+  const key = 'v502-wordcheck-progress';
+  let store = {};
+  try { store = JSON.parse(localStorage.getItem(key)) || {}; } catch {}
+  const nameKey = state.playerName.toLowerCase();
+  store[nameKey] = {
+    correct: wcState.correct,
+    total: wcState.total,
+    date: new Date().toISOString()
+  };
+  localStorage.setItem(key, JSON.stringify(store));
+}
+
+function getWordcheckProgress() {
+  if (!state.playerName) return { correct: 0, total: 0 };
+  const key = 'v502-wordcheck-progress';
+  try {
+    const store = JSON.parse(localStorage.getItem(key)) || {};
+    return store[state.playerName.toLowerCase()] || { correct: 0, total: 0 };
+  } catch { return { correct: 0, total: 0 }; }
 }
 
 document.getElementById('wordcheckNext').addEventListener('click', () => {
