@@ -930,20 +930,23 @@ function explainOption(word, question) {
     ? `<p class="explain-synonyms"><strong>같은 범주 단어:</strong> ${escapeHtml(sameCategoryWords.join(" / "))}</p>`
     : "";
 
-  // Build reason with full context
+  // Build reason with dictionary-style explanation
   let reasonBlock;
   if (isAnswer) {
     reasonBlock = `
       <p class="explain-why correct-why">
-        <strong>✅ 정답 이유:</strong> "${escapeHtml(word)}"은(는) 제시어 "${escapeHtml(question.prompt)}"과(와) 같은
-        <em>Category ${escapeHtml(question.categoryId)} — ${escapeHtml(promptGroup)}</em>에 속하는 동의어입니다.
+        <strong>✅ 정답:</strong> "${escapeHtml(word)}"은(는) "${escapeHtml(question.prompt)}"과(와)
+        <em>${escapeHtml(promptGroup)}</em>라는 같은 의미 범주에 속하는 동의어입니다.
       </p>`;
   } else {
+    // Build dictionary-style wrong answer explanation
+    const promptMeaningText = wordMeanings[question.prompt] || "";
+    const wordMeaningText = wordMeanings[word] || "";
     reasonBlock = `
       <p class="explain-why wrong-why">
-        <strong>❌ 오답 이유:</strong> "${escapeHtml(word)}"은(는)
-        <em>Category ${escapeHtml(categoryId)} — ${escapeHtml(group)}</em>에 속하는 단어로,
-        제시어가 속한 <em>Category ${escapeHtml(question.categoryId)} — ${escapeHtml(promptGroup)}</em>의 동의어가 아닙니다.
+        <strong>❌ 오답:</strong> "${escapeHtml(word)}"${wordMeaningText ? `은(는) <b>${escapeHtml(wordMeaningText)}</b>라는 뜻입니다.` : '의 뜻을 확인하세요.'}
+        ${promptMeaningText ? `제시어 "${escapeHtml(question.prompt)}"은(는) <b>${escapeHtml(promptMeaningText)}</b>라는 뜻으로,` : ''}
+        서로 의미가 다르므로 동의어가 아닙니다.
       </p>`;
   }
 
