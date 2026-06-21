@@ -1890,16 +1890,11 @@ function showWordlist2() {
 function jumpToCategory(targetId) {
   const targetEl = document.querySelector(`.wordlist-cat[data-cat-id="${targetId}"]`);
   if (targetEl) {
-    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    // Also scroll the wordlist panel itself if needed
-    const panel = document.getElementById('wordlistPanel');
-    if (panel) {
-      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-    // Ensure the target element is visible after both scrolls
-    setTimeout(() => {
-      targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 100);
+    // Direct scroll to element's offset position relative to document
+    const rect = targetEl.getBoundingClientRect();
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const targetY = rect.top + scrollTop - 20; // 20px padding from top
+    window.scrollTo({ top: targetY, behavior: 'smooth' });
   }
 }
 
