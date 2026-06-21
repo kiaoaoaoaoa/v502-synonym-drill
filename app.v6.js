@@ -773,17 +773,20 @@ function explainOption(word, question) {
     exampleBlock = `<p class="explain-example"><strong>📖 예문:</strong> ${escapeHtml(example)}</p>`;
   }
 
-  // Reason: contrastive Korean/English explanation
+  // Reason: logical contrast explanation
   let reasonBlock;
   if (isAnswer) {
     reasonBlock = `
       <p class="explain-why correct-why">
-        <strong>✅ Correct:</strong> "${escapeHtml(word)}" (${escapeHtml(meaning)}) is a synonym of "${escapeHtml(question.prompt)}" (${escapeHtml(promptMeaning)}). Both share the same core meaning and are interchangeable in context.
+        <strong>✅ Correct:</strong> "${escapeHtml(word)}" (${escapeHtml(meaning)}) and "${escapeHtml(question.prompt)}" (${escapeHtml(promptMeaning)}) share the same underlying concept: both describe <em>${escapeHtml(promptMeaning || question.prompt)}</em>. They are interchangeable in this context.
       </p>`;
   } else {
+    const meaningA = meaning || word;
+    const meaningB = promptMeaning || question.prompt;
     reasonBlock = `
       <p class="explain-why wrong-why">
-        <strong>❌ Incorrect:</strong> "${escapeHtml(word)}" means <em>${escapeHtml(meaning || word)}</em>, whereas "${escapeHtml(question.prompt)}" means <em>${escapeHtml(promptMeaning || question.prompt)}</em>. Although they may appear related, their semantic fields are distinct and they are not synonymous.
+        <strong>❌ Incorrect:</strong> "${escapeHtml(word)}" means <em>${escapeHtml(meaningA)}</em>. "${escapeHtml(question.prompt)}" means <em>${escapeHtml(meaningB)}</em>.<br>
+        <span class="wrong-contrast">→ "${escapeHtml(word)}" is about ${escapeHtml(meaningA)}, while "${escapeHtml(question.prompt)}" is about ${escapeHtml(meaningB)}. These refer to fundamentally different concepts — ${escapeHtml(meaningA)} ≠ ${escapeHtml(meaningB)} — so they cannot be used as synonyms.</span>
       </p>`;
   }
 

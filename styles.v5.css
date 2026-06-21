@@ -1012,6 +1012,17 @@ h2 {
   color: var(--ok);
 }
 
+.wrong-contrast {
+  display: block;
+  margin-top: 4px;
+  padding: 6px 10px;
+  background: #fff5f5;
+  border-radius: 4px;
+  color: #8b0000;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
 .wrong-why {
   background: #fff0ea;
   color: var(--warn);
