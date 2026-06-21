@@ -15,13 +15,12 @@
           <p class="range">Choose a category set</p>
         </div>
 
-        <section class="set-card" aria-label="Current quiz set">
-          <span>Current Set</span>
-          <strong id="activeSetLabel">Categories 001-010</strong>
-          <small id="activeSetMeta">30 questions</small>
-        </section>
+        <button id="synonymDrillBtn" class="ranking-btn" type="button">
+          <span aria-hidden="true">📝</span>
+          단어문제
+        </button>
 
-        <section class="category-nav" id="categoryNav" aria-label="Category set selector">
+        <section class="category-nav" id="categoryNav" aria-label="Category set selector" hidden>
           <button class="category-btn cat-set-btn" type="button" data-set-id="001-010" aria-current="true"><span>001-010</span><small>30</small></button>
           <button class="category-btn cat-set-btn" type="button" data-set-id="011-020" aria-current="false"><span>011-020</span><small>30</small></button>
           <button class="category-btn cat-set-btn" type="button" data-set-id="021-030" aria-current="false"><span>021-030</span><small>30</small></button>
@@ -119,6 +118,10 @@
           </div>
         </section>
 
+        <button id="myinfoBtn" class="ranking-btn" type="button" hidden>
+          <span aria-hidden="true">👤</span>
+          내정보
+        </button>
         <button id="rankingBtn" class="ranking-btn" type="button">
           <span aria-hidden="true">🏆</span>
           통합 랭킹
@@ -212,6 +215,15 @@
           <p id="rankingSummary" class="ranking-summary"></p>
           <div id="rankingContent" class="leaderboard"></div>
           <button id="rankingCloseBtn" type="button">Back</button>
+        </section>
+
+        <section id="myinfoPanel" class="quiz-panel" hidden>
+          <div class="logic-header">
+            <p class="eyebrow">My Info</p>
+            <h3>내정보 — 틀린 논리문제</h3>
+          </div>
+          <div id="myinfoContent"></div>
+          <button id="myinfoCloseBtn" type="button" style="margin-top:16px">Back</button>
         </section>
 
         <section id="logicPanel" class="quiz-panel" hidden>

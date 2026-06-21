@@ -592,6 +592,11 @@ const els = {
   startPanelHint: document.querySelector("#startPanelHint"),
   // Logic Quiz
   logicModeBtn: document.querySelector("#logicModeBtn"),
+  synonymDrillBtn: document.querySelector("#synonymDrillBtn"),
+  myinfoBtn: document.querySelector("#myinfoBtn"),
+  myinfoPanel: document.querySelector("#myinfoPanel"),
+  myinfoContent: document.querySelector("#myinfoContent"),
+  myinfoCloseBtn: document.querySelector("#myinfoCloseBtn"),
   logicPanel: document.querySelector("#logicPanel"),
   logicProgressBar: document.querySelector("#logicProgressBar"),
   logicQuestionText: document.querySelector("#logicQuestionText"),
@@ -1068,11 +1073,13 @@ function renderAuthUI() {
     els.authLoggedOut.hidden = true;
     els.authLoggedIn.hidden = false;
     els.authPlayerName.textContent = state.playerName;
+    els.myinfoBtn.hidden = false;
     els.startPanelTitle.textContent = `Welcome, ${state.playerName}`;
     els.startPanelHint.textContent = "Select a category set and start your quiz.";
   } else {
     els.authLoggedOut.hidden = false;
     els.authLoggedIn.hidden = true;
+    els.myinfoBtn.hidden = true;
     els.startPanelTitle.textContent = "Login to save progress";
     els.startPanelHint.textContent = "Login from the sidebar to track scores and known words.";
   }
@@ -1496,9 +1503,12 @@ function switchMode(mode) {
   els.rankingPanel.hidden = true;
   els.wordlistPanel.hidden = true;
   els.logicPanel.hidden = true;
+  els.myinfoPanel.hidden = true;
   logicState.active = false;
   els.shuffleBtn.disabled = true;
   els.resetBtn.disabled = true;
+  // Hide category nav except for quiz/start modes
+  document.getElementById("categoryNav").hidden = (mode !== 'quiz' && mode !== 'start');
   // Update current set display
   if (mode === 'logic') {
     els.activeSetLabel.textContent = "논리문제";
@@ -1509,6 +1519,9 @@ function switchMode(mode) {
   } else if (mode === 'ranking') {
     els.activeSetLabel.textContent = "통합랭킹";
     els.activeSetMeta.textContent = "All sets";
+  } else if (mode === 'myinfo') {
+    els.activeSetLabel.textContent = "내정보";
+    els.activeSetMeta.textContent = "틀린 문제";
   }
 }
 
@@ -1697,6 +1710,7 @@ function toggleCatExample(catId) {
 
 function hideRanking() {
   switchMode('start');
+  document.getElementById("categoryNav").hidden = false;
   els.startPanel.hidden = false;
   els.shuffleBtn.disabled = false;
   els.resetBtn.disabled = false;
@@ -1704,6 +1718,7 @@ function hideRanking() {
 
 function startQuiz() {
   switchMode('quiz');
+  document.getElementById("categoryNav").hidden = false;
   clearSavedProgress();
   state.questionIndex = 0;
   state.currentSelection = new Set();
@@ -2071,6 +2086,46 @@ function finishLogicQuiz() {
 els.logicModeBtn.addEventListener("click", () => {
   startLogicQuiz();
 });
+
+els.synonymDrillBtn.addEventListener("click", () => {
+  const nav = document.getElementById("categoryNav");
+  nav.hidden = !nav.hidden;
+  if (!nav.hidden) {
+    // Ensure synonym drill mode
+    switchMode('quiz');
+    els.startPanel.hidden = false;
+  }
+});
+
+els.myinfoBtn.addEventListener("click", showMyInfo);
+els.myinfoCloseBtn.addEventListener("click", () => {
+  els.myinfoPanel.hidden = true;
+  els.startPanel.hidden = false;
+});
+
+function showMyInfo() {
+  switchMode('myinfo');
+  els.myinfoPanel.hidden = false;
+
+  const allQuestions = (window.__V502_LOGIC__ && window.__V502_LOGIC__.questions) || [];
+  const wrong = getLogicWrong();
+  const wrongQuestions = allQuestions.filter(q => wrong.has(q.id));
+
+  if (wrongQuestions.length === 0) {
+    els.myinfoContent.innerHTML = "<p style='color:var(--muted)'>틀린 문제가 없습니다! 🎉</p>";
+    return;
+  }
+
+  let html = `<p style="margin-bottom:12px;color:var(--muted)">총 <b>${wrongQuestions.length}</b>개의 틀린 문제</p>`;
+  wrongQuestions.forEach((q, i) => {
+    html += `<div style="margin-bottom:12px;padding:12px;background:#fff8f0;border-radius:8px;border:1px solid #f0d8c0">`;
+    html += `<p style="font-weight:700;margin:0 0 6px">Q${i+1}. ${escapeHtml(q.question)}</p>`;
+    html += `<p style="font-size:12px;color:var(--muted);margin:0 0 4px"><b>정답:</b> ${escapeHtml(q.answer)}</p>`;
+    html += `<p style="font-size:12px;color:var(--muted);margin:0">${escapeHtml(q.explanation)}</p>`;
+    html += `</div>`;
+  });
+  els.myinfoContent.innerHTML = html;
+}
 
 els.logicSubmitBtn.addEventListener("click", submitLogicAnswer);
 els.logicNextBtn.addEventListener("click", nextLogicQuestion);
