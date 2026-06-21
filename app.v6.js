@@ -2109,6 +2109,13 @@ function addLogicDifficulty() {
   }
 }
 
+function setBtnDisabled(btn, isDisabled) {
+  // Avoid toggling the native `disabled` attribute: iOS Safari can fail to
+  // re-register taps on a button re-enabled this way until the next reflow.
+  if (isDisabled) btn.setAttribute("aria-disabled", "true");
+  else btn.removeAttribute("aria-disabled");
+}
+
 function renderLogicQuestion() {
   const q = logicState.questions[logicState.currentIndex];
   if (!q) return;
@@ -2127,12 +2134,12 @@ function renderLogicQuestion() {
       logicState.selectedOption = opt;
       els.logicOptions.querySelectorAll(".option").forEach(b => b.classList.remove("selected"));
       btn.classList.add("selected");
-      els.logicSubmitBtn.disabled = false;
+      setBtnDisabled(els.logicSubmitBtn, false);
     });
     els.logicOptions.appendChild(btn);
   });
-  els.logicSubmitBtn.disabled = true;
-  els.logicNextBtn.disabled = true;
+  setBtnDisabled(els.logicSubmitBtn, true);
+  setBtnDisabled(els.logicNextBtn, true);
   els.logicFeedback.hidden = true;
   els.logicFeedback.className = "feedback";
   els.logicCounter.textContent = `${logicState.currentIndex + 1} / ${logicState.questions.length}`;
@@ -2171,8 +2178,8 @@ function submitLogicAnswer() {
     btn.disabled = true;
   });
 
-  els.logicSubmitBtn.disabled = true;
-  els.logicNextBtn.disabled = logicState.currentIndex >= logicState.questions.length - 1;
+  setBtnDisabled(els.logicSubmitBtn, true);
+  setBtnDisabled(els.logicNextBtn, logicState.currentIndex >= logicState.questions.length - 1);
   els.logicNextBtn.textContent = logicState.currentIndex >= logicState.questions.length - 1 ? "Finish" : "Next";
 }
 
