@@ -551,6 +551,9 @@ const els = {
   prevBtn: document.querySelector("#prevBtn"),
   submitBtn: document.querySelector("#submitBtn"),
   nextBtn: document.querySelector("#nextBtn"),
+  prevTopBtn: document.querySelector("#prevTopBtn"),
+  submitTopBtn: document.querySelector("#submitTopBtn"),
+  nextTopBtn: document.querySelector("#nextTopBtn"),
   shuffleBtn: document.querySelector("#shuffleBtn"),
   resetBtn: document.querySelector("#resetBtn"),
   progressBar: document.querySelector("#progressBar"),
@@ -704,6 +707,11 @@ function renderQuestion() {
   els.submitBtn.disabled = Boolean(saved) || state.currentSelection.size !== 2;
   els.nextBtn.disabled = !saved;
   els.nextBtn.textContent = state.questionIndex === state.questions.length - 1 ? "Finish" : "Next";
+  // Sync top buttons
+  els.prevTopBtn.disabled = els.prevBtn.disabled;
+  els.submitTopBtn.disabled = els.submitBtn.disabled;
+  els.nextTopBtn.disabled = els.nextBtn.disabled;
+  els.nextTopBtn.textContent = els.nextBtn.textContent;
 
   els.options.innerHTML = "";
   question.options.forEach((word) => {
@@ -1806,6 +1814,9 @@ els.startQuizBtn.addEventListener("click", startQuiz);
 els.prevBtn.addEventListener("click", prevQuestion);
 els.submitBtn.addEventListener("click", submitAnswer);
 els.nextBtn.addEventListener("click", nextQuestion);
+els.prevTopBtn.addEventListener("click", prevQuestion);
+els.submitTopBtn.addEventListener("click", submitAnswer);
+els.nextTopBtn.addEventListener("click", nextQuestion);
 els.shuffleBtn.addEventListener("click", resetAll);
 els.resetBtn.addEventListener("click", resetAll);
 els.restartBtn.addEventListener("click", resetAll);
@@ -1889,14 +1900,26 @@ function readLogicProgress() {
 function saveLogicCorrect(qid) {
   const p = readLogicProgress();
   const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
-  if (!p[key]) p[key] = [];
-  if (!p[key].includes(qid)) p[key].push(qid);
+  if (!p[key]) p[key] = { correct: [], wrong: [] };
+  if (!p[key].correct.includes(qid)) p[key].correct.push(qid);
+  localStorage.setItem(logicProgressKey, JSON.stringify(p));
+}
+function saveLogicWrong(qid) {
+  const p = readLogicProgress();
+  const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
+  if (!p[key]) p[key] = { correct: [], wrong: [] };
+  if (!p[key].wrong.includes(qid) && !p[key].correct.includes(qid)) p[key].wrong.push(qid);
   localStorage.setItem(logicProgressKey, JSON.stringify(p));
 }
 function getLogicCompleted() {
   const p = readLogicProgress();
   const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
-  return new Set(p[key] || []);
+  return new Set((p[key] && p[key].correct) || []);
+}
+function getLogicWrong() {
+  const p = readLogicProgress();
+  const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
+  return new Set((p[key] && p[key].wrong) || []);
 }
 
 function shuffleLogicQuestions() {
@@ -1962,12 +1985,16 @@ function submitLogicAnswer() {
   if (correct) {
     logicState.correctCount++;
     saveLogicCorrect(q.id);
+  } else {
+    saveLogicWrong(q.id);
   }
 
   els.logicFeedback.hidden = false;
   els.logicFeedback.className = `feedback ${correct ? "ok" : "no"}`;
+  const wasWrong = getLogicWrong().has(q.id);
   els.logicFeedback.innerHTML = `
     <strong>${correct ? "✅ Correct!" : "❌ Incorrect."}</strong>
+    ${wasWrong && !correct ? '<p style="color:#a2431f;font-weight:700;margin-top:4px">⚠ 이전에 틀린문제</p>' : ''}
     <p style="margin-top:8px">${escapeHtml(q.explanation)}</p>
   `;
 
@@ -2003,18 +2030,22 @@ function finishLogicQuiz() {
   const remaining = 300 - totalSaved;
   els.resultSummary.textContent = `${logicState.correctCount}/${logicState.questions.length} correct — ${pct}% accuracy · ${remaining} remaining out of 300 total`;
 
-  // Save to unified ranking (1 point per correct answer)
-  if (state.playerName && logicState.correctCount > 0) {
+  // Save to unified ranking (each session is a separate entry, all accumulated)
+  if (state.playerName && logicState.questions.length > 0) {
+    const sessionId = "LOGIC-" + Date.now();
     const entry = {
       name: state.playerName,
       correct: logicState.correctCount,
       total: logicState.questions.length,
       accuracy: pct,
-      setId: "LOGIC",
+      setId: sessionId,
       setLabel: "Logic Quiz",
       completedAt: new Date().toISOString(),
     };
-    upsertLocalScore(entry);
+    // Always push new entry (don't upsert — accumulate all sessions)
+    const entries = readLeaderboard();
+    entries.push(entry);
+    writeLeaderboard(entries);
     if (hasPublicConfig()) {
       getSupabaseClient().then(client => {
         if (!client) return;
