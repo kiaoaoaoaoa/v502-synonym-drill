@@ -799,57 +799,90 @@ function explainOption(word, question) {
   const note = confusionNotes[word] || "";
   const example = (window.examples && window.examples[word]) ? window.examples[word] : "";
   const promptMeaning = wordMeanings[question.prompt] || "";
+  const promptNote = confusionNotes[question.prompt] || "";
   const wordCat = getWordCategory(word);
   const wordCatSummary = wordCat ? (categorySummaries[wordCat] || `Category ${wordCat}`) : "";
+  const promptCatSummary = categorySummaries[question.categoryId] || "";
 
-  // Korean + English contrastive meaning
+  // Korean meaning block
   let meaningBlock = "";
   if (meaning) {
-    meaningBlock = `<p><strong>뜻:</strong> ${escapeHtml(meaning)}</p>`;
+    meaningBlock = `<p><strong>Meaning:</strong> ${escapeHtml(meaning)}</p>`;
   }
   if (wordCatSummary) {
-    meaningBlock += `<p class="explain-cat"><strong>범주:</strong> ${escapeHtml(wordCat)} — ${escapeHtml(wordCatSummary)}</p>`;
+    meaningBlock += `<p class="explain-cat"><strong>Category:</strong> ${escapeHtml(wordCat)} — ${escapeHtml(wordCatSummary)}</p>`;
   }
   if (note) {
-    meaningBlock += `<p class="explain-note"><strong>English usage:</strong> ${escapeHtml(note)}</p>`;
+    meaningBlock += `<p class="explain-note"><strong>Collocation:</strong> ${escapeHtml(note)}</p>`;
   }
 
-  // Example sentence (same as word list)
+  // Example sentence
   let exampleBlock = "";
   if (example) {
-    exampleBlock = `<p class="explain-example"><strong>📖 예문:</strong> ${escapeHtml(example)}</p>`;
+    exampleBlock = `<p class="explain-example"><strong>📖 Example:</strong> ${escapeHtml(example)}</p>`;
   }
 
-  // Reason: logical contrast explanation
+  // Detailed English explanation
   let reasonBlock;
   if (isAnswer) {
-    const sameConcept = categorySummaries[question.categoryId] || promptMeaning || question.prompt;
+    // Build a rich explanation for WHY this word is a correct synonym
+    const othersInGroup = question.answer.filter(w => w !== word);
+    let groupText = "";
+    if (othersInGroup.length > 0) {
+      groupText = ` Together with "${escapeHtml(othersInGroup.join('", "'))}", it forms the correct synonym pair for this question.`;
+    }
+    let conceptText = promptCatSummary
+      ? `Both belong to the semantic field of <em>${escapeHtml(promptCatSummary)}</em>.`
+      : `Both are members of the same synonym group.`;
+    let promptNoteText = promptNote
+      ? `<br><br><strong>Definition of "${escapeHtml(question.prompt)}":</strong> ${escapeHtml(promptNote)}`
+      : "";
+    let wordNoteText = note
+      ? `<br><br><strong>Definition of "${escapeHtml(word)}":</strong> ${escapeHtml(note)}`
+      : "";
+
     reasonBlock = `
       <p class="explain-why correct-why">
-        <strong>✅ Correct:</strong> "${escapeHtml(word)}" and "${escapeHtml(question.prompt)}" are both members of the same synonym group: <em>${escapeHtml(sameConcept)}</em>. They share the same semantic field and can substitute for each other in this context.
+        <strong>✅ Why this is correct:</strong><br>
+        "${escapeHtml(word)}" is a synonym of "${escapeHtml(question.prompt)}" because ${conceptText}${groupText} In standard English usage, these words can be used interchangeably in contexts where the intended meaning involves the concept of ${escapeHtml(promptCatSummary || promptMeaning || 'this semantic group')}.${promptNoteText}${wordNoteText}
       </p>`;
   } else {
-    // Build a logical contrast between the wrong word and the prompt
-    const wrongMeaning = meaning || `"${word}"`;
-    const rightConcept = promptMeaning || question.prompt;
-    const wrongNoteBrief = note ? note.split('.')[0].split(';')[0].trim() : '';
-    const promptNoteBrief = confusionNotes[question.prompt] ? confusionNotes[question.prompt].split('.')[0].split(';')[0].trim() : '';
+    // Detailed contrast for wrong options
+    let wrongMeaningText = meaning
+      ? `"${escapeHtml(word)}" means <em>${escapeHtml(meaning)}</em>`
+      : `"${escapeHtml(word)}"`;
+    let rightMeaningText = promptMeaning
+      ? `"${escapeHtml(question.prompt)}" means <em>${escapeHtml(promptMeaning)}</em>`
+      : `"${escapeHtml(question.prompt)}"`;
 
-    // Create a more detailed logical contrast
-    let contrastText = `<strong>❌ Why this is wrong:</strong> "${escapeHtml(word)}" refers to <em>${escapeHtml(wrongMeaning)}</em>`;
-    if (wrongNoteBrief && wrongNoteBrief.length > 10) {
-      contrastText += ` — ${escapeHtml(wrongNoteBrief)}`;
+    // Get the wrong word's category for contrast
+    let wrongCatText = "";
+    if (wordCatSummary && wordCatSummary !== promptCatSummary) {
+      wrongCatText = `<br><br><strong>Key distinction:</strong> "${escapeHtml(word)}" belongs to the semantic category of <em>${escapeHtml(wordCatSummary)}</em>, while "${escapeHtml(question.prompt)}" belongs to <em>${escapeHtml(promptCatSummary || 'a different semantic field')}</em>. These categories represent fundamentally different concepts.`;
+    } else if (wordCatSummary && wordCatSummary === promptCatSummary) {
+      wrongCatText = `<br><br><strong>Note:</strong> Although "${escapeHtml(word)}" appears in the same general category as "${escapeHtml(question.prompt)}", it does not share a direct synonym relationship with it. Words within a category may be related but not interchangeable.`;
     }
-    contrastText += `. Meanwhile, "${escapeHtml(question.prompt)}" refers to <em>${escapeHtml(rightConcept)}</em>`;
-    if (promptNoteBrief && promptNoteBrief.length > 10) {
-      contrastText += ` — ${escapeHtml(promptNoteBrief)}`;
-    }
-    contrastText += `. These are logically distinct concepts with no semantic overlap, so they cannot function as synonyms.`;
 
-    reasonBlock = `<p class="explain-why wrong-why">${contrastText}</p>`;
+    // Add definition contrast
+    let defContrast = "";
+    if (note && promptNote) {
+      defContrast = `<br><br><strong>Definition contrast:</strong><br>• "${escapeHtml(word)}": ${escapeHtml(note)}<br>• "${escapeHtml(question.prompt)}": ${escapeHtml(promptNote)}`;
+    } else if (note) {
+      defContrast = `<br><br><strong>Definition:</strong> "${escapeHtml(word)}" — ${escapeHtml(note)}`;
+    }
+
+    let conclusionText = wrongCatText
+      ? `Therefore, "${escapeHtml(word)}" cannot function as a synonym for "${escapeHtml(question.prompt)}".`
+      : `Thus, there is no semantic overlap that would make "${escapeHtml(word)}" a valid synonym for "${escapeHtml(question.prompt)}".`;
+
+    reasonBlock = `
+      <p class="explain-why wrong-why">
+        <strong>❌ Why this is wrong:</strong><br>
+        ${wrongMeaningText} whereas ${rightMeaningText}.${wrongCatText}${defContrast}<br><br>${conclusionText}
+      </p>`;
   }
 
-  const statusLabel = isAnswer ? "Correct" : selected ? "Your pick ✗" : "";
+  const statusLabel = isAnswer ? "CORRECT" : selected ? "YOUR PICK ✗" : "WRONG";
   const statusClass = isAnswer ? "status-correct" : selected ? "status-wrong-selected" : "status-wrong";
 
   return `
@@ -1709,7 +1742,7 @@ function getActiveSetCount() {
 function showWordlist() {
   switchMode('wordlist');
   els.wordlistPanel.hidden = false;
-  els.wordlistTitle.textContent = `전체 단어 일람 (${categories.length}개 범주)`;
+  els.wordlistTitle.innerHTML = `전체 단어 일람 (${categories.length}개 범주) <button class="wl-jump-btn" onclick="jumpToCategory('200')" title="범주 200번으로 이동">범주200</button> <button class="wl-jump-btn" onclick="jumpToCategory('400')" title="범주 400번으로 이동">범주400</button>`;
 
   let html = '<div class="wordlist-scroll">';
   categories.forEach(cat => {
@@ -1835,14 +1868,31 @@ function showWordlist2() {
   html += '<div class="wordlist2-entries">';
   extraWords.forEach((item, idx) => {
     const hasEx = item.ex && item.ex.length > 20;
+    const w = item.w || '';
+    const m = item.m || '';
+    const known = state.playerName && isWordKnown(w);
     html += '<div class="wl2-entry">';
-    html += '<span class="wl2-word">' + escapeHtml(item.w || '') + '</span>';
-    if (item.m) html += '<span class="wl2-meaning">' + escapeHtml(item.m) + '</span>';
+    html += '<span class="wl2-word' + (known ? ' wl-known' : '') + (state.playerName ? ' wl-clickable' : '') + '"';
+    if (state.playerName) {
+      html += ' onclick="handleWordToggle(\'' + escapeHtml(w) + '\', this)" title="클릭하여 안다/모른다 표시"';
+    }
+    html += '>';
+    if (known) html += '<span class="wl-check">✓</span>';
+    html += escapeHtml(w) + '</span>';
+    if (m) html += '<span class="wl2-meaning">' + escapeHtml(m) + '</span>';
     if (hasEx) html += '<div class="wl2-example">' + escapeHtml(item.ex) + '</div>';
     html += '</div>';
   });
   html += '</div></div></div>';
   els.wordlist2Content.innerHTML = html;
+}
+
+function jumpToCategory(targetId) {
+  const scrollContainer = document.querySelector('.wordlist-scroll');
+  const targetEl = document.querySelector(`.wordlist-cat[data-cat-id="${targetId}"]`);
+  if (targetEl && scrollContainer) {
+    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }
 
 function toggleCatDetail(catId) {
