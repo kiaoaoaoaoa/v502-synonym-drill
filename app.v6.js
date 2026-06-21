@@ -1745,8 +1745,8 @@ function showWordlist() {
       if (known) html += `<span class="wl-check">✓</span>`;
       html += `<strong>${escapeHtml(w)}</strong>`;
       if (m) html += ` <span class="wl-meaning">${escapeHtml(m)}</span>`;
-      html += ` <span class="wl-synonym">(유의어 == ${synonyms})</span>`;
-      if (example) html += `<br><span class="wl-example-inline">　예문: ${escapeHtml(example)}</span>`;
+      html += `<br><span class="wl-synonym">(유의어 == ${synonyms})</span>`;
+      if (example) html += `<br><span class="wl-example-inline">예문: ${escapeHtml(example)}</span>`;
       html += `</li>`;
     });
     html += `</ol>`;
