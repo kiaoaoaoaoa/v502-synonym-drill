@@ -1379,57 +1379,23 @@ async function completeQuiz() {
     completedAt: new Date().toISOString(),
   };
 
-  // Only save scores if logged in
-  if (state.playerName) {
-    upsertLocalScore(entry);
+  // Save public score if logged in
+  if (state.playerName && hasPublicConfig()) {
+    savePublicScore(entry).catch(() => {});
   }
-  const cumulative = cumulativeLeaderboard(readLeaderboard(), null);
-  const cumEntry = state.playerName
-    ? (cumulative.find((e) => e.name.toLowerCase() === state.playerName.toLowerCase()) || entry)
-    : entry;
-  const rank = state.playerName
-    ? cumulative.findIndex((e) => e.name.toLowerCase() === state.playerName.toLowerCase()) + 1
-    : cumulative.length + 1;
 
   els.quizPanel.hidden = true;
   els.resultPanel.hidden = false;
   els.resultTitle.textContent = `${displayName}'s Result`;
-  renderCumulativeLeaderboard(cumulative.slice(0, 30), "통합 랭킹", rank, cumEntry);
 
   if (!state.playerName) {
-    els.resultSummary.textContent = "Login to save your scores and appear on the leaderboard!";
+    els.resultSummary.textContent = "Login to save your scores and appear on the public ranking!";
+    els.leaderboard.innerHTML = "";
     return;
   }
 
-  if (!hasPublicConfig()) return;
-
-  els.resultSummary.textContent = `${cumEntry.correct}/${cumEntry.total} cumulative — saving public rank...`;
-
-  try {
-    const savedId = await savePublicScore(entry);
-    const publicData = await readPublicLeaderboard();
-    const pubCumulative = cumulativeLeaderboard(publicData, null);
-    const pubRank = pubCumulative.findIndex((e) => e.name.toLowerCase() === state.playerName.toLowerCase()) + 1;
-
-    els.leaderboard.innerHTML = `
-      <h4>Public Ranking</h4>
-      <p class="ranking-note">Shared ranking for everyone using this link.</p>
-      <ol>
-        ${pubCumulative.slice(0, 30).map((item) => `
-          <li>
-            <span>${escapeHtml(item.name)}</span>
-            <b>${item.accuracy}%</b>
-            <small>${item.correct}/${item.total}</small>
-          </li>
-        `).join("")}
-      </ol>
-    `;
-    els.resultSummary.textContent = `${cumEntry.correct}/${cumEntry.total} cumulative — Rank #${pubRank || pubCumulative.length}`;
-  } catch (error) {
-    els.leaderboard.innerHTML += `
-      <p class="ranking-note">Public ranking sync failed. Your local score is saved.</p>
-    `;
-  }
+  // Show public ranking
+  renderPublicResult(displayName, accuracy, entry.correct, entry.total);
 }
 
 function renderCumulativeLeaderboard(leaderboard, title, rank, cumEntry) {
@@ -1450,6 +1416,39 @@ function renderCumulativeLeaderboard(leaderboard, title, rank, cumEntry) {
   `;
 }
 
+/* ---- Public ranking only (no local leaderboard) ---- */
+function renderPublicResult(displayName, accuracy, correct, total) {
+  els.resultSummary.textContent = "";
+  els.leaderboard.innerHTML = `<p class="ranking-note">Loading public ranking…</p>`;
+
+  getSupabaseClient().then((client) => {
+    if (!client) {
+      els.leaderboard.innerHTML = `<p class="ranking-note">Public ranking not connected.</p>`;
+      return;
+    }
+    readPublicLeaderboard().then((data) => {
+      const cumulative = cumulativeLeaderboard(data, null);
+      const rank = cumulative.findIndex(e => e.name.toLowerCase() === displayName.toLowerCase()) + 1;
+      els.resultSummary.textContent = `${correct}/${total} — ${accuracy}% — Public Rank #${rank || cumulative.length + 1}`;
+      els.leaderboard.innerHTML = `
+        <h4>🌐 Public Ranking</h4>
+        <p class="ranking-note">Best per set · All 62 sets</p>
+        <ol>
+          ${cumulative.slice(0, 20).map((item, idx) => `
+            <li>
+              <span>${idx + 1}. ${escapeHtml(item.name)}</span>
+              <b>${item.accuracy}%</b>
+              <small>${item.correct}/${item.total}</small>
+            </li>
+          `).join("")}
+        </ol>
+      `;
+    }).catch(() => {
+      els.leaderboard.innerHTML = `<p class="ranking-note">Public ranking sync failed.</p>`;
+    });
+  });
+}
+
 function showRanking() {
   els.startPanel.hidden = true;
   els.quizPanel.hidden = true;
@@ -1459,50 +1458,29 @@ function showRanking() {
   els.resetBtn.disabled = true;
 
   els.rankingTitle.textContent = "통합 랭킹 (전체 범주)";
-  els.rankingSummary.textContent = "Loading rankings...";
+  els.rankingSummary.textContent = "Loading public rankings…";
   els.rankingContent.innerHTML = "";
 
-  const allEntries = readLeaderboard();
-  // Pass null for setId → aggregate across ALL sets
-  const cumulative = cumulativeLeaderboard(allEntries, null).slice(0, 30);
-  els.rankingSummary.textContent = `${cumulative.length} player${cumulative.length !== 1 ? "s" : ""} on the board · Best per set · All ${getActiveSetCount()} sets combined`;
-
-  if (cumulative.length === 0) {
-    els.rankingContent.innerHTML = "<p>No scores yet. Complete a quiz to appear here!</p>";
-  } else {
-    els.rankingContent.innerHTML = `
-      <h4>Local Ranking</h4>
-      <ol>
-        ${cumulative.map((item, idx) => `
-          <li>
-            <span>${idx + 1}. ${escapeHtml(item.name)}</span>
-            <b>${item.accuracy}%</b>
-            <small>${item.correct}/${item.total}</small>
-          </li>
-        `).join("")}
-      </ol>
-    `;
-  }
-
   if (!hasPublicConfig()) {
-    const note = document.createElement("p");
-    note.className = "ranking-note";
-    note.textContent = "Public ranking is not connected yet. Set up db-config.js to enable.";
-    els.rankingContent.append(note);
+    els.rankingContent.innerHTML = "<p>Public ranking is not connected yet. Set up db-config.js to enable.</p>";
     return;
   }
 
   getSupabaseClient().then((client) => {
-    if (!client) return;
-    return readPublicLeaderboard().then((publicData) => {
-      if (!publicData.length) return;
-      const pubCumulative = cumulativeLeaderboard(publicData, null);
-      if (!pubCumulative.length) return;
-      const publicSection = document.createElement("div");
-      publicSection.innerHTML = `
-        <h4 style="margin-top:18px;">Public Ranking</h4>
+    if (!client) {
+      els.rankingContent.innerHTML = "<p>Cannot connect to ranking server.</p>";
+      return;
+    }
+    readPublicLeaderboard().then((data) => {
+      const cumulative = cumulativeLeaderboard(data, null);
+      els.rankingSummary.textContent = `${cumulative.length} player${cumulative.length !== 1 ? "s" : ""} on the board · Best per set · All ${getActiveSetCount()} sets combined`;
+      if (!cumulative.length) {
+        els.rankingContent.innerHTML = "<p>No scores yet. Complete a quiz to appear here!</p>";
+        return;
+      }
+      els.rankingContent.innerHTML = `
         <ol>
-          ${pubCumulative.slice(0, 30).map((item, idx) => `
+          ${cumulative.slice(0, 30).map((item, idx) => `
             <li>
               <span>${idx + 1}. ${escapeHtml(item.name)}</span>
               <b>${item.accuracy}%</b>
@@ -1511,9 +1489,10 @@ function showRanking() {
           `).join("")}
         </ol>
       `;
-      els.rankingContent.append(publicSection);
+    }).catch(() => {
+      els.rankingContent.innerHTML = "<p>Failed to load rankings.</p>";
     });
-  }).catch(() => {});
+  });
 }
 
 function getActiveSetCount() {
