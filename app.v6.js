@@ -385,6 +385,7 @@ const confusionNotes = {
 
 const leaderboardKey = "v502-synonym-drill-leaderboard";
 const passwordStoreKey = "v502-synonym-drill-passwords";
+const wordKnowledgeKey = "v502-synonym-drill-word-knowledge";
 let supabaseClient = null;
 let supabaseSdkPromise = null;
 
@@ -886,6 +887,40 @@ function readPasswordStore() {
   }
 }
 
+function readWordKnowledge() {
+  try {
+    return JSON.parse(localStorage.getItem(wordKnowledgeKey)) || {};
+  } catch {
+    return {};
+  }
+}
+
+function writeWordKnowledge(store) {
+  localStorage.setItem(wordKnowledgeKey, JSON.stringify(store));
+}
+
+function isWordKnown(word) {
+  if (!state.playerName) return false;
+  const store = readWordKnowledge();
+  const userWords = store[state.playerName.toLowerCase()] || [];
+  return userWords.includes(word);
+}
+
+function toggleWordKnown(word) {
+  if (!state.playerName) return false;
+  const store = readWordKnowledge();
+  const key = state.playerName.toLowerCase();
+  if (!store[key]) store[key] = [];
+  const idx = store[key].indexOf(word);
+  if (idx >= 0) {
+    store[key].splice(idx, 1);
+  } else {
+    store[key].push(word);
+  }
+  writeWordKnowledge(store);
+  return idx < 0; // true if now known
+}
+
 function writePasswordStore(store) {
   localStorage.setItem(passwordStoreKey, JSON.stringify(store));
 }
@@ -1243,7 +1278,13 @@ function showWordlist() {
     html += `<div class="wordlist-words">`;
     catWords.forEach((w) => {
       const m = wordMeanings[w] || '';
-      html += `<span class="wl-word">${escapeHtml(w)}`;
+      const known = state.playerName && isWordKnown(w);
+      html += `<span class="wl-word${known ? ' wl-known' : ''}${state.playerName ? ' wl-clickable' : ''}"`;
+      if (state.playerName) {
+        html += ` onclick="handleWordToggle('${escapeHtml(w)}', this)" title="클릭하여 안다/모른다 표시"`;
+      }
+      html += `>${escapeHtml(w)}`;
+      if (known) html += `<span class="wl-check">✓</span>`;
       if (m) html += `<span class="wl-meaning">${escapeHtml(m)}</span>`;
       html += `</span>`;
     });
@@ -1298,6 +1339,24 @@ function toggleCatKoreanUsage(catId) {
   const detail = document.getElementById(`wl-usage-${catId}`);
   if (detail) {
     detail.hidden = !detail.hidden;
+  }
+}
+
+function handleWordToggle(word, element) {
+  const becameKnown = toggleWordKnown(word);
+  if (becameKnown) {
+    element.classList.add('wl-known');
+    // Add checkmark if not present
+    if (!element.querySelector('.wl-check')) {
+      const check = document.createElement('span');
+      check.className = 'wl-check';
+      check.textContent = '✓';
+      element.insertBefore(check, element.firstChild);
+    }
+  } else {
+    element.classList.remove('wl-known');
+    const check = element.querySelector('.wl-check');
+    if (check) check.remove();
   }
 }
 
