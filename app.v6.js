@@ -1888,10 +1888,18 @@ function showWordlist2() {
 }
 
 function jumpToCategory(targetId) {
-  const scrollContainer = document.querySelector('.wordlist-scroll');
   const targetEl = document.querySelector(`.wordlist-cat[data-cat-id="${targetId}"]`);
-  if (targetEl && scrollContainer) {
+  if (targetEl) {
     targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Also scroll the wordlist panel itself if needed
+    const panel = document.getElementById('wordlistPanel');
+    if (panel) {
+      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    // Ensure the target element is visible after both scrolls
+    setTimeout(() => {
+      targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
   }
 }
 
