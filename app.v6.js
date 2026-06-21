@@ -1937,6 +1937,9 @@ function renderLogicQuestion() {
   els.logicFeedback.hidden = true;
   els.logicFeedback.className = "feedback";
   els.logicCounter.textContent = `${logicState.currentIndex + 1} / ${logicState.questions.length}`;
+  // Total pool size
+  const totalPool = (window.__V502_LOGIC__ && window.__V502_LOGIC__.questions || []).length;
+  els.logicCounter.title = `${totalPool} total questions · ${getLogicCompleted().size} mastered`;
   els.logicProgressBar.style.width = `${Math.round(((logicState.currentIndex) / logicState.questions.length) * 100)}%`;
 }
 
@@ -1985,9 +1988,40 @@ function finishLogicQuiz() {
   els.logicPanel.hidden = true;
   els.resultPanel.hidden = false;
   els.resultTitle.textContent = "Logic Quiz Result";
-  const remaining = 150 - getLogicCompleted().size;
-  els.resultSummary.textContent = `${logicState.correctCount}/${logicState.questions.length} correct — ${pct}% accuracy · ${remaining} remaining`;
-  els.leaderboard.innerHTML = "";
+  const totalSaved = getLogicCompleted().size;
+  const remaining = 300 - totalSaved;
+  els.resultSummary.textContent = `${logicState.correctCount}/${logicState.questions.length} correct — ${pct}% accuracy · ${remaining} remaining out of 300 total`;
+
+  // Save to unified ranking (1 point per correct answer)
+  if (state.playerName && logicState.correctCount > 0) {
+    const entry = {
+      name: state.playerName,
+      correct: logicState.correctCount,
+      total: logicState.questions.length,
+      accuracy: pct,
+      setId: "LOGIC",
+      setLabel: "Logic Quiz",
+      completedAt: new Date().toISOString(),
+    };
+    upsertLocalScore(entry);
+    if (hasPublicConfig()) {
+      getSupabaseClient().then(client => {
+        if (!client) return;
+        return client.from(getLeaderboardTable()).insert({
+          nickname: entry.name, quiz_set: "LOGIC",
+          correct_count: entry.correct, total_count: entry.total, accuracy: entry.accuracy,
+        });
+      }).catch(() => {});
+    }
+  }
+
+  // Show unified ranking including logic scores
+  const cumulative = cumulativeLeaderboard(readLeaderboard(), null);
+  const cumEntry = state.playerName
+    ? (cumulative.find(e => e.name.toLowerCase() === state.playerName.toLowerCase()) || { name: state.playerName, correct: logicState.correctCount, total: logicState.questions.length, accuracy: pct })
+    : { name: "Guest", correct: logicState.correctCount, total: logicState.questions.length, accuracy: pct };
+  const rank = state.playerName ? cumulative.findIndex(e => e.name.toLowerCase() === state.playerName.toLowerCase()) + 1 : cumulative.length + 1;
+  renderCumulativeLeaderboard(cumulative.slice(0, 30), "통합 랭킹", rank, cumEntry);
 }
 
 // Logic mode toggle
