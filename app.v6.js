@@ -1490,6 +1490,17 @@ function switchMode(mode) {
   logicState.active = false;
   els.shuffleBtn.disabled = true;
   els.resetBtn.disabled = true;
+  // Update current set display
+  if (mode === 'logic') {
+    els.activeSetLabel.textContent = "논리문제";
+    els.activeSetMeta.textContent = "300 questions";
+  } else if (mode === 'wordlist') {
+    els.activeSetLabel.textContent = "단어일람보기";
+    els.activeSetMeta.textContent = "620 categories";
+  } else if (mode === 'ranking') {
+    els.activeSetLabel.textContent = "통합랭킹";
+    els.activeSetMeta.textContent = "All sets";
+  }
 }
 
 function showRanking() {
