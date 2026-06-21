@@ -567,6 +567,12 @@ h2 {
   color: #2e7d32;
 }
 
+.wl-word.wl-wrong {
+  background: #ffebee;
+  border-color: #ef9a9a;
+  color: #c62828;
+}
+
 .wl-check {
   display: inline-block;
   margin-right: 2px;

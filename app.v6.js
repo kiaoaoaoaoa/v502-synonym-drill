@@ -953,6 +953,13 @@ function submitAnswer() {
   // Track synonym progress for logged-in users
   if (state.playerName) {
     saveSynonymResult(question.categoryId, question.prompt, correct);
+    // If wrong, also mark the wrong choices
+    if (!correct) {
+      const wrongSelections = selected.filter(w => !question.answer.includes(w));
+      wrongSelections.forEach(w => {
+        saveSynonymResult(question.categoryId, w, false);
+      });
+    }
   }
   saveQuizProgress();
   renderQuestion();
@@ -1790,12 +1797,16 @@ function showWordlist() {
     catWords.forEach((w) => {
       const m = wordMeanings[w] || '';
       const known = state.playerName && isWordKnown(w);
-      html += `<span class="wl-word${known ? ' wl-known' : ''}${state.playerName ? ' wl-clickable' : ''}"`;
+      const wrong = state.playerName && isSynonymWrong(cat.id, w);
+      const wrongClass = wrong ? ' wl-wrong' : '';
+      const knownClass = (known && !wrong) ? ' wl-known' : '';
+      html += `<span class="wl-word${knownClass}${wrongClass}${state.playerName ? ' wl-clickable' : ''}"`;
       if (state.playerName) {
         html += ` onclick="handleWordToggle('${escapeHtml(w)}', this)" title="클릭하여 안다/모른다 표시"`;
       }
       html += `>${escapeHtml(w)}`;
       if (known) html += `<span class="wl-check">✓</span>`;
+      if (wrong) html += `<span class="wl-wrong-mark" style="color:#c62828;font-weight:800;margin-left:2px">✗</span>`;
       if (m) html += `<span class="wl-meaning">${escapeHtml(m)}</span>`;
       html += `</span>`;
     });
