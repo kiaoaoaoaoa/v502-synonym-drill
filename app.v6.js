@@ -1915,7 +1915,7 @@ function renderLogicQuestion() {
   els.logicNextBtn.disabled = true;
   els.logicFeedback.hidden = true;
   els.logicFeedback.className = "feedback";
-  els.logicCounter.textContent = `${logicState.currentIndex + 1} / ${logicState.questions.length}`;
+  els.logicCounter.textContent = `${logicState.currentIndex + 1} / 150`;
   els.logicProgressBar.style.width = `${Math.round(((logicState.currentIndex) / logicState.questions.length) * 100)}%`;
 }
 
