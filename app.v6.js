@@ -400,6 +400,10 @@ if (window.__V502_EXT__) {
       if (!confusionNotes[k]) confusionNotes[k] = v;
     }
   }
+  if (ext.examples) {
+    window.examples = window.examples || {};
+    Object.assign(window.examples, ext.examples);
+  }
 }
 // Override with Korean titles from TOC
 if (window.__V502_TOC__) {
@@ -1226,10 +1230,13 @@ function showWordlist() {
       html += `<ul class="wl-detail-list">`;
       catWords.forEach((w) => {
         const note = confusionNotes[w] || '';
+        const example = (typeof examples !== 'undefined' && examples[w]) ? examples[w] : '';
         const hasColl = note && note.length >= 8 && (note.includes('의') || (note.includes('(') && note.length > 10) || note.length > 25 || note.includes(';'));
-        if (hasColl) {
+        if (hasColl || example) {
           html += `<li><strong class="wl-detail-word">${escapeHtml(w)}</strong>`;
-          html += `<span class="wl-detail-note"> → ${escapeHtml(note)}</span></li>`;
+          if (note && hasColl) html += `<span class="wl-detail-note"> → ${escapeHtml(note)}</span>`;
+          if (example) html += `<p class="wl-example">📖 ${escapeHtml(example)}</p>`;
+          html += `</li>`;
         }
       });
       html += `</ul></div>`;

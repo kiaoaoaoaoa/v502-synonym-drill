@@ -523,6 +523,16 @@ h2 {
   color: var(--ink);
 }
 
+.wl-example {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+  font-style: italic;
+  padding-left: 4px;
+  border-left: 2px solid var(--accent-soft);
+}
+
 @media (max-width: 840px) {
   .wl-detail {
     padding: 8px 10px;
