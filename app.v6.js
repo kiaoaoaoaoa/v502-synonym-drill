@@ -1736,6 +1736,7 @@ function showWordlist() {
       const m = wordMeanings[w] || '';
       const example = (window.examples && window.examples[w]) ? window.examples[w] : '';
       const known = state.playerName && isWordKnown(w);
+      const synonyms = catWords.filter(x => x !== w).map(x => escapeHtml(x)).join(', ');
       html += `<li class="wl-word${known ? ' wl-known' : ''}${state.playerName ? ' wl-clickable' : ''}"`;
       if (state.playerName) {
         html += ` onclick="handleWordToggle('${escapeHtml(w)}', this)" title="클릭하여 안다/모른다 표시"`;
@@ -1743,8 +1744,9 @@ function showWordlist() {
       html += `>`;
       if (known) html += `<span class="wl-check">✓</span>`;
       html += `<strong>${escapeHtml(w)}</strong>`;
-      if (m) html += ` <span class="wl-meaning">— ${escapeHtml(m)}</span>`;
-      if (example) html += ` <span class="wl-example-inline">📖 ${escapeHtml(example)}</span>`;
+      if (m) html += ` <span class="wl-meaning">${escapeHtml(m)}</span>`;
+      html += ` <span class="wl-synonym">(유의어 == ${synonyms})</span>`;
+      if (example) html += `<br><span class="wl-example-inline">　예문: ${escapeHtml(example)}</span>`;
       html += `</li>`;
     });
     html += `</ol>`;
@@ -1826,7 +1828,7 @@ function showWordlist2() {
   let html = '<div class="wordlist-scroll"><div class="wordlist-cat"><h4><span class="wl-cat-num">EXTRA</span> MVP2 + V401 (V502 미포함)</h4><ol class="wordlist-words">';
   extraWords.forEach((item, idx) => {
     html += '<li class="wl-word"><strong>' + escapeHtml(item.w || '') + '</strong>';
-    if (item.m) html += ' <span class="wl-meaning">— ' + escapeHtml(item.m) + '</span>';
+    if (item.m) html += ' <span class="wl-meaning">' + escapeHtml(item.m) + '</span>';
     html += '</li>';
   });
   html += '</ol></div></div>';
