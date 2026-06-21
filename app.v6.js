@@ -597,6 +597,7 @@ const els = {
   myinfoPanel: document.querySelector("#myinfoPanel"),
   myinfoContent: document.querySelector("#myinfoContent"),
   myinfoCloseBtn: document.querySelector("#myinfoCloseBtn"),
+  dashboardPanel: document.querySelector("#dashboardPanel"),
   logicPanel: document.querySelector("#logicPanel"),
   logicProgressBar: document.querySelector("#logicProgressBar"),
   logicQuestionText: document.querySelector("#logicQuestionText"),
@@ -664,7 +665,11 @@ function buildQuestions() {
   const questions = [];
   for (const alloc of allocations) {
     const category = alloc.category;
-    const words = shuffle([...category.words]);
+    // Filter out prompts the user has already mastered (for logged-in users)
+    const mastered = state.playerName ? getCompletedPromptWords(category.id) : new Set();
+    let words = shuffle([...category.words]);
+    // If user has mastered all words in this category, skip
+    if (mastered.size > 0 && words.every(w => mastered.has(w))) continue;
     const currentWords = new Set(category.words);
 
     for (let r = 0; r < alloc.rounds; r++) {
@@ -904,6 +909,10 @@ function submitAnswer() {
   state.correctAttempts += correct ? 1 : 0;
   state.streak = correct ? state.streak + 1 : 0;
   state.currentSelection = new Set();
+  // Track synonym progress for logged-in users
+  if (state.playerName) {
+    saveSynonymResult(question.categoryId, question.prompt, correct);
+  }
   saveQuizProgress();
   renderQuestion();
 }
@@ -1197,6 +1206,45 @@ function isWordKnown(word) {
   const store = readWordKnowledge();
   const userWords = store[state.playerName.toLowerCase()] || [];
   return userWords.includes(word);
+}
+
+/* ---- Synonym quiz progress tracking ---- */
+function readSynonymProgress() {
+  try { return JSON.parse(localStorage.getItem(synonymProgressKey)) || {}; }
+  catch { return {}; }
+}
+function getSynonymUserKey() {
+  return state.playerName ? state.playerName.toLowerCase() : "_guest";
+}
+function isSynonymCompleted(categoryId, word) {
+  const p = readSynonymProgress();
+  const key = getSynonymUserKey();
+  return p[key] && p[key][categoryId] && p[key][categoryId].includes(word);
+}
+function isSynonymWrong(categoryId, word) {
+  const p = readSynonymProgress();
+  const key = getSynonymUserKey();
+  return p[key] && p[key].wrong && p[key].wrong[categoryId] && p[key].wrong[categoryId].includes(word);
+}
+function saveSynonymResult(categoryId, word, correct) {
+  if (!state.playerName) return;
+  const p = readSynonymProgress();
+  const key = getSynonymUserKey();
+  if (!p[key]) p[key] = {};
+  if (correct) {
+    if (!p[key][categoryId]) p[key][categoryId] = [];
+    if (!p[key][categoryId].includes(word)) p[key][categoryId].push(word);
+  } else {
+    if (!p[key].wrong) p[key].wrong = {};
+    if (!p[key].wrong[categoryId]) p[key].wrong[categoryId] = [];
+    if (!p[key].wrong[categoryId].includes(word)) p[key].wrong[categoryId].push(word);
+  }
+  localStorage.setItem(synonymProgressKey, JSON.stringify(p));
+}
+function getCompletedPromptWords(categoryId) {
+  const p = readSynonymProgress();
+  const key = getSynonymUserKey();
+  return new Set((p[key] && p[key][categoryId]) || []);
 }
 
 function toggleWordKnown(word) {
@@ -1504,6 +1552,7 @@ function switchMode(mode) {
   els.wordlistPanel.hidden = true;
   els.logicPanel.hidden = true;
   els.myinfoPanel.hidden = true;
+  els.dashboardPanel.hidden = true;
   logicState.active = false;
   els.shuffleBtn.disabled = true;
   els.resetBtn.disabled = true;
@@ -1900,6 +1949,7 @@ window.addEventListener("pagehide", () => saveQuizProgress());
 
 /* ======== Logic Quiz ======== */
 const logicProgressKey = "v502-logic-progress";
+const synonymProgressKey = "v502-synonym-progress";
 let logicState = {
   questions: [],
   currentIndex: 0,
@@ -1953,6 +2003,8 @@ function shuffleLogicQuestions() {
 
 function startLogicQuiz() {
   switchMode('logic');
+  // Add difficulty labels
+  addLogicDifficulty();
   shuffleLogicQuestions();
   logicState.currentIndex = 0;
   logicState.correctCount = 0;
@@ -1961,12 +2013,43 @@ function startLogicQuiz() {
   renderLogicQuestion();
 }
 
+function addLogicDifficulty() {
+  const raw = window.__V502_LOGIC__?.questions;
+  if (!raw || raw[0]?.difficulty) return;
+  // Classify each question by difficulty based on answer word complexity
+  const easyWords = new Set(['encourage','mitigate','neglect','amplify','common','famous','notorious','powerful',
+    'flexible','productive','rewarding','secure','conflicting','deliberate','natural','ultimate','idealistic',
+    'rigid','visionary','destroy','reclaim','stimulate','simple','ambiguous','condescending','distorted',
+    'express','surprise','discourage','dry','extreme','humid','fertile','gradual','abrupt','inevitable',
+    'catastrophic','delaying','immediate','generous','organized','detailed','obscure','disdainful',
+    'premature','protect','decorate','preserve','expand','complicate','outsource','ignore','calculate',
+    'ignore','abandon','hidden','damage','restore','promote','monitor','support','encourage','oppose',
+    'reduce','increase','devalue','simplify','neglect','update','develop','distribute','ban','promote',
+    'demolished','renovated','expanded','extracted','buried','destroyed','photographed','activate',
+    'deactivate','malfunction','overheat','halted','accelerated','completed','uphold','delay','transfer',
+    'valid','binding','renewable','allocated','withdrawn','wasted','invest','liquidate','leverage',
+    'accept','reinforce','challenge','question','demand','instill','suppress','discourage','foster',
+    'punish','voluntary','mandatory','government','corporate','donated','distributed','modern','replica']);
+
+  for (const q of raw) {
+    const ansWord = q.answer.toLowerCase();
+    if (easyWords.has(ansWord)) {
+      q.difficulty = '🟢 쉬움';
+    } else if (ansWord.length <= 7 && !ansWord.includes('-') && !ansWord.includes(' ')) {
+      q.difficulty = '🟡 중간';
+    } else {
+      q.difficulty = '🔴 높음';
+    }
+  }
+}
+
 function renderLogicQuestion() {
   const q = logicState.questions[logicState.currentIndex];
   if (!q) return;
   logicState.selectedOption = null;
   logicState.answered = false;
-  els.logicQuestionText.innerHTML = `<strong>Q${logicState.currentIndex + 1}.</strong> ${escapeHtml(q.question)}`;
+  const diff = q.difficulty || '';
+  els.logicQuestionText.innerHTML = `<strong>Q${logicState.currentIndex + 1}.</strong> ${diff ? `<span style="font-size:11px;margin-right:4px">${escapeHtml(diff)}</span>` : ''}${escapeHtml(q.question)}`;
   els.logicOptions.innerHTML = "";
   q.options.forEach((opt, i) => {
     const btn = document.createElement("button");
@@ -2087,15 +2170,129 @@ els.logicModeBtn.addEventListener("click", () => {
   startLogicQuiz();
 });
 
+// Category nav visible by default for synonym drill
+document.getElementById("categoryNav").hidden = false;
+
 els.synonymDrillBtn.addEventListener("click", () => {
   const nav = document.getElementById("categoryNav");
   nav.hidden = !nav.hidden;
   if (!nav.hidden) {
-    // Ensure synonym drill mode
-    switchMode('quiz');
+    switchMode('start');
     els.startPanel.hidden = false;
   }
 });
+
+/* ---- Dashboard ---- */
+function showDashboard() {
+  switchMode('dashboard');
+  els.dashboardPanel.hidden = false;
+  const loggedIn = !!state.playerName;
+
+  let html = '';
+  html += `<button class="ranking-btn" onclick="document.getElementById('synonymDrillBtn').click()" style="width:100%;min-height:48px;font-size:15px"><span>📝</span> 단어문제</button>`;
+  html += `<button class="ranking-btn" onclick="document.getElementById('logicModeBtn').click()" style="width:100%;min-height:48px;font-size:15px"><span>🧩</span> 논리문제</button>`;
+  html += `<button class="ranking-btn" onclick="document.getElementById('wordlistBtn').click()" style="width:100%;min-height:48px;font-size:15px"><span>📋</span> 단어일람보기</button>`;
+  html += `<button class="ranking-btn" onclick="document.getElementById('rankingBtn').click()" style="width:100%;min-height:48px;font-size:15px"><span>🏆</span> 통합랭킹</button>`;
+  if (loggedIn) {
+    html += `<button class="ranking-btn" onclick="document.getElementById('myinfoBtn').click()" style="width:100%;min-height:48px;font-size:15px"><span>👤</span> 내정보</button>`;
+    // 오답노트
+    const wrong = getSynonymWrongCount();
+    html += `<button class="ranking-btn" onclick="showWrongNotes()" style="width:100%;min-height:48px;font-size:15px"><span>📕</span> 오답노트${wrong > 0 ? ` (${wrong}개)` : ''}</button>`;
+    // 지금까지 푼 문제
+    const completed = getCompletedPromptWordsCount();
+    const totalSyn = 3980;
+    html += `<button class="ranking-btn" onclick="showMyReview()" style="width:100%;min-height:48px;font-size:15px"><span>📊</span> 내 리뷰 (${completed}/${totalSyn} 단어)</button>`;
+  } else {
+    html += `<button class="ranking-btn" style="width:100%;min-height:48px;font-size:15px;opacity:0.5"><span>🔒</span> 로그인하여 더 많은 기능 이용</button>`;
+  }
+  document.getElementById('dashboardContent').innerHTML = html;
+}
+
+function getSynonymWrongCount() {
+  const p = readSynonymProgress();
+  const key = getSynonymUserKey();
+  if (!p[key] || !p[key].wrong) return 0;
+  let count = 0;
+  for (const catId in p[key].wrong) count += p[key].wrong[catId].length;
+  return count;
+}
+
+function getCompletedPromptWordsCount() {
+  const p = readSynonymProgress();
+  const key = getSynonymUserKey();
+  if (!p[key]) return 0;
+  let count = 0;
+  for (const catId in p[key]) {
+    if (catId === 'wrong') continue;
+    count += p[key][catId].length;
+  }
+  return count;
+}
+
+function showWrongNotes() {
+  switchMode('myinfo');
+  els.myinfoPanel.hidden = false;
+  const p = readSynonymProgress();
+  const key = getSynonymUserKey();
+  const wrong = (p[key] && p[key].wrong) || {};
+
+  let totalWrong = 0;
+  let html = '<div style="max-width:600px">';
+  html += '<h3 style="margin-bottom:12px">📕 오답노트</h3>';
+
+  for (const catId in wrong) {
+    const words = wrong[catId];
+    if (words.length === 0) continue;
+    totalWrong += words.length;
+    const title = categorySummaries[catId] || `Category ${catId}`;
+    html += `<div style="margin-bottom:8px;padding:10px;background:#fff8f0;border-radius:6px;border:1px solid #f0d8c0">`;
+    html += `<strong style="font-size:13px">${escapeHtml(catId)} — ${escapeHtml(title)}</strong><br>`;
+    html += `<span style="font-size:12px;color:var(--muted)">`;
+    words.forEach(w => {
+      const m = wordMeanings[w] || '';
+      html += `${escapeHtml(w)}${m ? ` (${escapeHtml(m)})` : ''}, `;
+    });
+    html += `</span></div>`;
+  }
+
+  if (totalWrong === 0) {
+    html += '<p style="color:var(--muted)">틀린 단어가 없습니다! 🎉</p>';
+  }
+  html += '</div>';
+  els.myinfoContent.innerHTML = html;
+}
+
+function showMyReview() {
+  switchMode('myinfo');
+  els.myinfoPanel.hidden = false;
+  const completed = getCompletedPromptWordsCount();
+  const totalSyn = 3980;
+  const pct = Math.round((completed / totalSyn) * 100);
+
+  // Logic progress
+  const logicMastered = getLogicCompleted().size;
+  const logicTotal = 300;
+
+  // Ranking
+  const entries = readLeaderboard().filter(e => state.playerName && e.name.toLowerCase() === state.playerName.toLowerCase());
+  const best = new Map();
+  for (const e of entries) {
+    const key = `${e.setId}`;
+    const existing = best.get(key);
+    if (!existing || e.accuracy > existing.accuracy) best.set(key, e);
+  }
+  let totalCorrect = 0, totalQuestions = 0;
+  for (const e of best.values()) { totalCorrect += e.correct; totalQuestions += e.total; }
+
+  let html = '<div style="max-width:600px">';
+  html += '<h3 style="margin-bottom:12px">📊 내 리뷰</h3>';
+  html += `<div style="display:grid;gap:12px;grid-template-columns:1fr 1fr">`;
+  html += `<div style="padding:16px;background:#f0f8f0;border-radius:8px;text-align:center"><strong style="font-size:24px">${completed}</strong><br><small>단어 마스터</small><br><small style="color:var(--muted)">/ ${totalSyn} (${pct}%)</small></div>`;
+  html += `<div style="padding:16px;background:#f0f0f8;border-radius:8px;text-align:center"><strong style="font-size:24px">${logicMastered}</strong><br><small>논리 마스터</small><br><small style="color:var(--muted)">/ ${logicTotal}</small></div>`;
+  html += `<div style="padding:16px;background:#fff8f0;border-radius:8px;text-align:center;grid-column:1/-1"><strong style="font-size:24px">${totalCorrect}/${totalQuestions}</strong><br><small>통합랭킹 점수</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'}</small></div>`;
+  html += '</div></div>';
+  els.myinfoContent.innerHTML = html;
+}
 
 els.myinfoBtn.addEventListener("click", showMyInfo);
 els.myinfoCloseBtn.addEventListener("click", () => {

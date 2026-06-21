@@ -11,7 +11,7 @@
       <aside class="sidebar" aria-label="Quiz set">
         <div>
           <p class="eyebrow">LOGIC TREE V502</p>
-          <h1>Synonym Drill</h1>
+          <h1 id="mainTitle" style="cursor:pointer" onclick="showDashboard()">Synonym Drill</h1>
           <p class="range">Choose a category set</p>
         </div>
 
@@ -159,6 +159,12 @@
         <div class="progress" aria-label="Progress">
           <div id="progressBar"></div>
         </div>
+
+        <section id="dashboardPanel" class="start-panel" hidden>
+          <p class="eyebrow">Main Menu</p>
+          <h3>V502 학습 대시보드</h3>
+          <div id="dashboardContent" style="display:grid;gap:12px;max-width:500px"></div>
+        </section>
 
         <section id="startPanel" class="start-panel">
           <p class="eyebrow">Ready to Quiz</p>
