@@ -1,0 +1,88 @@
+// LOGIC TREE V502 — Categories 061-070
+window.__V502_EXT__ = window.__V502_EXT__ || {};
+window.__V502_EXT__.categories = window.__V502_EXT__.categories || [];
+window.__V502_EXT__.wordMeanings = window.__V502_EXT__.wordMeanings || {};
+window.__V502_EXT__.categorySummaries = window.__V502_EXT__.categorySummaries || {};
+window.__V502_EXT__.confusionNotes = window.__V502_EXT__.confusionNotes || {};
+
+window.__V502_EXT__.categories.push(
+  {id:"061",words:["bountiful","freehanded","generous","hospitable","lavish","liberal","magnanimous","munificent","openhanded","ungrudging","unstinting","Lilliputian","narrow-minded","hidebound","indulgent","permissive","tolerant","countenance","indulge","tolerate","humor","baby","coddle","cosset","mollycoddle","pamper"]},
+  {id:"062",words:["apposite","appropriate","apt","germane","meet","pertinent","proper","relevant","suitable"]},
+  {id:"063",words:["extraneous","extrinsic","impertinent","improper","inappropriate","inapt","irrelevant","unsuitable"]},
+  {id:"064",words:["buffoon","clown","pantaloon","rogue","wag","zany"]},
+  {id:"065",words:["agog","febrile","feral","ferocious","fierce","frantic","frenetic","frenzied"]},
+  {id:"066",words:["afflict","aggrieve","annoy","bait","distress","excruciate","gruel","infest","molest","persecute","pester","rankle","torment","torture","tribulate","wreak","harass","harrow","harry","haze"]},
+  {id:"067",words:["credo","creed","doctrine","tenet"]},
+  {id:"068",words:["amend","correct","debug","disabuse","emend","qualify","recast","reclaim","rectify","redress","revamp"]},
+  {id:"069",words:["curmudgeon","hoarder","miser","niggard","skinflint"]},
+  {id:"070",words:["classify","demarcate","discriminate","ramify"]}
+);
+
+Object.assign(window.__V502_EXT__.wordMeanings,{
+  "Lilliputian":"소인국의; 편협한 사람","narrow-minded":"마음이 좁은",hidebound:"편협한",
+  bountiful:"관대한",freehanded:"아낌없이 쓰는",generous:"아량 있는",hospitable:"후히 대접하는",
+  lavish:"아낌없는",liberal:"관대한",magnanimous:"도량이 넓은",munificent:"인색하지 않은",
+  openhanded:"손이 큰, 아끼지 않는",ungrudging:"아끼지 않는",unstinting:"무제한으로 주어진, 무조건의",
+  indulgent:"눈감아 주는",permissive:"응석을 받아주는",tolerant:"관대한",
+  countenance:"용모; 동의하다",indulge:"버릇을 잘못 들이다",tolerate:"관대히 다루다",humor:"-의 비위를 맞추다",
+  baby:"어린 애 취급하다, 응석 받다",coddle:"어하여 소중히 기르다",cosset:"응석받이로 기르다",
+  mollycoddle:"지나치게 떠받들다",pamper:"하고 싶은 대로 하게 하다",
+  apposite:"적절한",appropriate:"-에 적합한",apt:"적절한",germane:"밀접한 관계가 있는",
+  meet:"적합한, 어울리는",pertinent:"타당한",proper:"적당한",relevant:"(당면한 문제에) 관련된",suitable:"-에 적당한",
+  extraneous:"무관계한; 연고 없는",extrinsic:"비본질적인",impertinent:"적절하지 않은",
+  improper:"부적당한",inappropriate:"온당치 않은",inapt:"부적당한",irrelevant:"부적절한; 무관계한",unsuitable:"부적당한",
+  buffoon:"어릿광대",clown:"광대",pantaloon:"늙은 광대",rogue:"악한; 개구쟁이",wag:"익살꾸러기",zany:"바보",
+  agog:"(열망·호기심·기대 등으로) 열광하여",febrile:"열광적인",feral:"야성적인",
+  ferocious:"사나운",fierce:"흉포한",frantic:"미친 듯 날뛰는",frenetic:"발광한",frenzied:"열광한",
+  afflict:"괴롭히다",aggrieve:"(사람을) 학대하다",annoy:"괴롭히다, 귀찮게 하다",bait:"괴롭히다",
+  distress:"고통",excruciate:"몹시 고통을 주다",gruel:"호되게 벌주다",
+  infest:"(해충·동물 등이) 떼 지어 몰려들다",molest:"(짓궂게) 괴롭히다",persecute:"(종교·주의 따위를 이유로) 박해하다",
+  pester:"고통을 주다",rankle:"(불쾌한 감정·경험 따위가) 끊임없이 괴롭히다",
+  torment:"고문하다",torture:"고문하다",tribulate:"억압하다",wreak:"(고통, 해를) 가하다",
+  harass:"괴롭히다",harrow:"약탈하다",harry:"(공격 등의 반복으로) -을 괴롭히다",haze:"(선원을) 혹사시키다",
+  credo:"신조",creed:"교의",doctrine:"교리",tenet:"주의(doctrine)",
+  amend:"(의안 등을) 수정하다",correct:"바로잡다",debug:"-의 결함을 조사하여 제거하다",
+  disabuse:"-의 어리석음을 깨우치다",emend:"(문서·잘못 따위를) 교정하다",
+  qualify:"수식하다, 꾸미다(modify)",recast:"고쳐 만들다",reclaim:"교정하다",rectify:"개정하다",
+  redress:"(부정·불균형 따위를) 고치다",revamp:"개조하다, 수리하다",
+  curmudgeon:"구두쇠",hoarder:"축적가",miser:"구두쇠",niggard:"인색한 사람",skinflint:"인색한 사람",
+  classify:"분류하다",demarcate:"-을 분리하다",discriminate:"구별하다",ramify:"작게 구분되다"
+});
+
+Object.assign(window.__V502_EXT__.categorySummaries,{
+  "061":"generous / liberal","062":"relevant / suitable","063":"irrelevant / extraneous",
+  "064":"clown / buffoon","065":"frenzied / ferocious","066":"torment / harass",
+  "067":"creed / doctrine","068":"amend / rectify","069":"miser / skinflint","070":"classify / discriminate"
+});
+
+Object.assign(window.__V502_EXT__.confusionNotes,{
+  Lilliputian:"Gulliver 여행기의 소인국. 편협한 소인배를 가리키는 문학적 표현.",
+  magnanimous:"큰(magna) 마음(animus). 도량이 넓은. generous의 격식어.",
+  munificent:"선물·기부가 아주 후한. 'munificent donation'.",
+  indulge:"방종하게 하다, 응석받이로 키우다. 'indulge a child'.",
+  pamper:"마음껏 하게 하다. 애지중지 응석받이로 기르다.",
+  germane:"'German'과 혼동 주의. 밀접한 관련이 있다는 뜻.",
+  apposite:"적절한, 꼭 맞는. opposite(반대)와 혼동 주의.",
+  extraneous:"외부에서 온, 관계없는. 'extraneous noise(잡음)'.",
+  extrinsic:"외부에서 비롯된. intrinsic(본질적인)의 반대.",
+  pantaloon:"이탈리아 희극 Commedia dell'arte의 캐릭터에서 유래.",
+  buffoon:"우스꽝스러운 행동으로 남을 웃기는 사람. clown과 유사.",
+  agog:"기대·호기심으로 열광하여. 'all agog' 구문.",
+  febrile:"열(fever)이 있는. 비유적 열광·흥분.",
+  feral:"야생으로 되돌아간. 길들여졌다가 다시 야생화된.",
+  frenetic:"정신없이 바쁘고 흥분한. 'frenetic pace'.",
+  excruciate:"극심한 고통을 주다. 'excruciating pain'.",
+  rankle:"계속 마음을 괴롭히다. 상처가 곪듯.",
+  wreak:"(분노·복수를) 가하다. 'wreak havoc(큰 피해를 입히다)'.",
+  harass:"반복적으로 괴롭히다. 성희롱(sexual harassment).",
+  harry:"harass와 자주 혼동. 지속적 공격으로 괴롭히다.",
+  credo:"라틴어 '나는 믿는다'. 신조, 신념.",
+  tenet:"신조, 주의. tenant(세입자)와 혼동 주의.",
+  emend:"텍스트를 교정하다. amend(법률 수정)와 용법 다름.",
+  disabuse:"잘못된 믿음에서 깨우치다. 'disabuse someone of a notion'.",
+  redress:"불공정을 바로잡다. 'redress the balance(균형 회복)'.",
+  curmudgeon:"심술궂고 인색한 노인을 가리키는 전형적 표현.",
+  niggard:"인색한 사람. 인종차별적 단어(n-word)와 발음 유사 주의.",
+  demarcate:"경계를 긋다. 'line of demarcation(경계선)'.",
+  ramify:"가지처럼 갈라지다. 비유적 영향·결과의 확산.",
+});
