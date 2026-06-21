@@ -1304,12 +1304,23 @@ function cumulativeLeaderboard(entries, setId = null) {
   const filtered = setId ? entries.filter((e) => e.setId === setId || (!e.setId && setId === "001-010")) : entries;
 
   for (const entry of filtered) {
-    const key = `${entry.name.toLowerCase()}|${entry.setId || "001-010"}`;
+    const rawSet = String(entry.setId || "001-010");
+    // All logic rows (legacy "LOGIC", per-session "LOGIC-<ts>", cumulative) share one bucket
+    const isLogic = rawSet.startsWith("LOGIC");
+    const key = `${entry.name.toLowerCase()}|${isLogic ? "LOGIC" : rawSet}`;
     const existing = best.get(key);
-    if (!existing || entry.accuracy > existing.accuracy ||
-        (entry.accuracy === existing.accuracy && entry.correct > existing.correct)) {
-      best.set(key, entry);
+    let better;
+    if (!existing) {
+      better = true;
+    } else if (isLogic) {
+      // The cumulative logic row has the most questions attempted — pick the largest
+      better = entry.total > existing.total ||
+               (entry.total === existing.total && entry.correct > existing.correct);
+    } else {
+      better = entry.accuracy > existing.accuracy ||
+               (entry.accuracy === existing.accuracy && entry.correct > existing.correct);
     }
+    if (better) best.set(key, entry);
   }
 
   // Aggregate by nickname across sets
@@ -2055,6 +2066,8 @@ function saveLogicCorrect(qid) {
   const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
   if (!p[key]) p[key] = { correct: [], wrong: [] };
   if (!p[key].correct.includes(qid)) p[key].correct.push(qid);
+  // Keep correct/wrong disjoint so cumulative total never double-counts a question
+  p[key].wrong = (p[key].wrong || []).filter((id) => id !== qid);
   try { localStorage.setItem(logicProgressKey, JSON.stringify(p)); } catch {}
 }
 function saveLogicWrong(qid) {
@@ -2075,17 +2088,63 @@ function getLogicWrong() {
   return new Set((p[key] && p[key].wrong) || []);
 }
 
+/* Push the player's *cumulative* logic stats to the ranking, immediately after
+   each answer. One row per user (quiz_set "LOGIC") holding the running total:
+   correct answers raise the numerator, every answer raises the denominator. */
+function persistLogicRanking() {
+  if (!state.playerName) return;
+  const correct = getLogicCompleted().size;
+  const total = correct + getLogicWrong().size;
+  if (total === 0) return;
+  const accuracy = Math.round((correct / total) * 100);
+
+  // Local: replace any prior logic entries with a single cumulative one
+  const nameKey = state.playerName.toLowerCase();
+  const entries = readLeaderboard().filter(
+    (e) => !(e.name.toLowerCase() === nameKey && String(e.setId || "").startsWith("LOGIC")),
+  );
+  entries.push({
+    name: state.playerName, correct, total, accuracy,
+    setId: "LOGIC", setLabel: "Logic Quiz", completedAt: new Date().toISOString(),
+  });
+  writeLeaderboard(entries);
+
+  // Public: overwrite the single (nickname, LOGIC) cumulative row
+  if (hasPublicConfig()) {
+    getSupabaseClient().then((client) => {
+      if (!client) return;
+      return saveLogicPublicCumulative(client, state.playerName, correct, total, accuracy);
+    }).catch(() => {});
+  }
+}
+
+async function saveLogicPublicCumulative(client, name, correct, total, accuracy) {
+  const table = getLeaderboardTable();
+  const { data: existing } = await client
+    .from(table)
+    .select("id")
+    .eq("nickname", name)
+    .eq("quiz_set", "LOGIC");
+  if (existing && existing.length) {
+    // Update every matching row so whichever the leaderboard picks is correct
+    return client
+      .from(table)
+      .update({ correct_count: correct, total_count: total, accuracy })
+      .eq("nickname", name)
+      .eq("quiz_set", "LOGIC");
+  }
+  return client
+    .from(table)
+    .insert({ nickname: name, quiz_set: "LOGIC", correct_count: correct, total_count: total, accuracy });
+}
+
 function shuffleLogicQuestions() {
   const raw = (window.__V502_LOGIC__ && window.__V502_LOGIC__.questions) || [];
   const completed = getLogicCompleted();
-  // Filter out already-correct questions
-  const remaining = raw.filter(q => !completed.has(q.id));
-  if (remaining.length === 0) {
-    // All done — reset and show all
-    logicState.questions = [...raw].sort(() => Math.random() - 0.5);
-  } else {
-    logicState.questions = [...remaining].sort(() => Math.random() - 0.5);
-  }
+  const wrong = getLogicWrong();
+  // Exclude every question already answered (correct OR wrong) so none repeats
+  const remaining = raw.filter(q => !completed.has(q.id) && !wrong.has(q.id));
+  logicState.questions = [...remaining].sort(() => Math.random() - 0.5);
 }
 
 function startLogicQuiz() {
@@ -2097,7 +2156,25 @@ function startLogicQuiz() {
   logicState.correctCount = 0;
   logicState.active = true;
   els.logicPanel.hidden = false;
+  if (logicState.questions.length === 0) {
+    // Every question already answered — nothing left to show
+    showLogicAllDone();
+    return;
+  }
   renderLogicQuestion();
+}
+
+function showLogicAllDone() {
+  logicState.active = false;
+  const correct = getLogicCompleted().size;
+  const wrong = getLogicWrong().size;
+  const total = correct + wrong;
+  const pct = total ? Math.round((correct / total) * 100) : 0;
+  els.logicPanel.hidden = true;
+  els.resultPanel.hidden = false;
+  els.resultTitle.textContent = "Logic Quiz Result";
+  els.resultSummary.textContent = `모든 문제를 푸셨습니다! 누적 ${correct}/${total} 정답 — ${pct}% 정확도`;
+  showLogicRanking(correct, total, pct);
 }
 
 function addLogicDifficulty() {
@@ -2164,9 +2241,9 @@ function renderLogicQuestion() {
   els.logicFeedback.hidden = true;
   els.logicFeedback.className = "feedback";
   els.logicCounter.textContent = `${logicState.currentIndex + 1} / ${logicState.questions.length}`;
-  const mastered = getLogicCompleted().size;
+  const answered = getLogicCompleted().size + getLogicWrong().size;
   const totalPool = (window.__V502_LOGIC__ && window.__V502_LOGIC__.questions || []).length;
-  els.logicRemaining.textContent = `(남은 문제: ${totalPool - mastered}개)`;
+  els.logicRemaining.textContent = `(남은 문제: ${totalPool - answered}개)`;
   els.logicProgressBar.style.width = `${Math.round(((logicState.currentIndex) / logicState.questions.length) * 100)}%`;
 }
 
@@ -2181,13 +2258,13 @@ function submitLogicAnswer() {
   } else {
     saveLogicWrong(q.id);
   }
+  // Reflect this answer in the unified ranking right away
+  persistLogicRanking();
 
   els.logicFeedback.hidden = false;
   els.logicFeedback.className = `feedback ${correct ? "ok" : "no"}`;
-  const wasWrong = getLogicWrong().has(q.id);
   els.logicFeedback.innerHTML = `
     <strong>${correct ? "✅ Correct!" : "❌ Incorrect."}</strong>
-    ${wasWrong && !correct ? '<p style="color:#a2431f;font-weight:700;margin-top:4px">⚠ 이전에 틀린문제</p>' : ''}
     <p style="margin-top:8px">${escapeHtml(q.explanation)}</p>
   `;
 
@@ -2215,46 +2292,29 @@ function nextLogicQuestion() {
 
 function finishLogicQuiz() {
   logicState.active = false;
-  const pct = Math.round((logicState.correctCount / logicState.questions.length) * 100);
+  // Ranking was already updated per question; ensure it's current, then summarize
+  persistLogicRanking();
+  const sessionPct = logicState.questions.length
+    ? Math.round((logicState.correctCount / logicState.questions.length) * 100)
+    : 0;
+  const cumCorrect = getLogicCompleted().size;
+  const cumTotal = cumCorrect + getLogicWrong().size;
+  const cumPct = cumTotal ? Math.round((cumCorrect / cumTotal) * 100) : 0;
+  const remaining = 300 - cumTotal;
   els.logicPanel.hidden = true;
   els.resultPanel.hidden = false;
   els.resultTitle.textContent = "Logic Quiz Result";
-  const totalSaved = getLogicCompleted().size;
-  const remaining = 300 - totalSaved;
-  els.resultSummary.textContent = `${logicState.correctCount}/${logicState.questions.length} correct — ${pct}% accuracy · ${remaining} remaining out of 300 total`;
+  els.resultSummary.textContent = `이번 세션 ${logicState.correctCount}/${logicState.questions.length} (${sessionPct}%) · 누적 ${cumCorrect}/${cumTotal} (${cumPct}%) · 남은 ${remaining}문제`;
+  showLogicRanking(cumCorrect, cumTotal, cumPct);
+}
 
-  // Save to unified ranking (each session is a separate entry, all accumulated)
-  if (state.playerName && logicState.questions.length > 0) {
-    const sessionId = "LOGIC-" + Date.now();
-    const entry = {
-      name: state.playerName,
-      correct: logicState.correctCount,
-      total: logicState.questions.length,
-      accuracy: pct,
-      setId: sessionId,
-      setLabel: "Logic Quiz",
-      completedAt: new Date().toISOString(),
-    };
-    // Always push new entry (don't upsert — accumulate all sessions)
-    const entries = readLeaderboard();
-    entries.push(entry);
-    writeLeaderboard(entries);
-    if (hasPublicConfig()) {
-      getSupabaseClient().then(client => {
-        if (!client) return;
-        return client.from(getLeaderboardTable()).insert({
-          nickname: entry.name, quiz_set: entry.setId,
-          correct_count: entry.correct, total_count: entry.total, accuracy: entry.accuracy,
-        });
-      }).catch(() => {});
-    }
-  }
-
-  // Show unified ranking including logic scores
+/* Render the unified ranking on the result panel, falling back to the player's
+   own cumulative numbers if they aren't on the board yet. */
+function showLogicRanking(cumCorrect, cumTotal, cumPct) {
   const cumulative = cumulativeLeaderboard(readLeaderboard(), null);
   const cumEntry = state.playerName
-    ? (cumulative.find(e => e.name.toLowerCase() === state.playerName.toLowerCase()) || { name: state.playerName, correct: logicState.correctCount, total: logicState.questions.length, accuracy: pct })
-    : { name: "Guest", correct: logicState.correctCount, total: logicState.questions.length, accuracy: pct };
+    ? (cumulative.find(e => e.name.toLowerCase() === state.playerName.toLowerCase()) || { name: state.playerName, correct: cumCorrect, total: cumTotal, accuracy: cumPct })
+    : { name: "Guest", correct: cumCorrect, total: cumTotal, accuracy: cumPct };
   const rank = state.playerName ? cumulative.findIndex(e => e.name.toLowerCase() === state.playerName.toLowerCase()) + 1 : cumulative.length + 1;
   renderCumulativeLeaderboard(cumulative.slice(0, 30), "통합 랭킹", rank, cumEntry);
 }
