@@ -1066,8 +1066,9 @@ function handleLogin() {
   }
 
   state.playerName = storedDisplayName;
-  saveSession(displayName);
+  saveSession(storedDisplayName);
   renderAuthUI();
+  updateSidebarCompletion();
   els.authNicknameInput.value = "";
   els.authPasswordInput.value = "";
   checkAndShowResume();
@@ -1102,6 +1103,7 @@ function handleRegister() {
   state.playerName = name;
   saveSession(name);
   renderAuthUI();
+  updateSidebarCompletion();
   els.authNicknameInput.value = "";
   els.authPasswordInput.value = "";
   checkAndShowResume();
@@ -1365,6 +1367,11 @@ async function completeQuiz() {
     completedAt: new Date().toISOString(),
   };
 
+  // Save locally for sidebar completion tracking
+  if (state.playerName) {
+    upsertLocalScore(entry);
+    updateSidebarCompletion();
+  }
   // Save public score if logged in
   if (state.playerName && hasPublicConfig()) {
     savePublicScore(entry).catch(() => {});
@@ -1769,6 +1776,31 @@ els.categoryButtons.forEach((button) => {
   if (smallEl) smallEl.textContent = "30 questions";
 });
 
+function updateSidebarCompletion() {
+  if (!state.playerName) return;
+  const entries = readLeaderboard().filter(e => e.name.toLowerCase() === state.playerName.toLowerCase());
+  const completed = new Map();
+  for (const e of entries) {
+    const existing = completed.get(e.setId);
+    if (!existing || e.accuracy > existing.accuracy) {
+      completed.set(e.setId, e);
+    }
+  }
+  els.categoryButtons.forEach((button) => {
+    const setId = button.dataset.setId;
+    const entry = completed.get(setId);
+    const smallEl = button.querySelector("small");
+    if (!smallEl) return;
+    if (entry) {
+      smallEl.textContent = `✓ ${entry.accuracy}% (${entry.correct}/${entry.total})`;
+      button.style.borderColor = "rgba(20,108,108,0.5)";
+    } else {
+      smallEl.textContent = "30 questions";
+      button.style.borderColor = "";
+    }
+  });
+}
+
 // Restore session on page load
 const savedSession = getSession();
 if (savedSession && savedSession.name) {
@@ -1777,7 +1809,10 @@ if (savedSession && savedSession.name) {
   if (store[key]) {
     const stored = store[key];
     state.playerName = (typeof stored === 'object' && stored.displayName) ? stored.displayName : savedSession.name;
-    setTimeout(checkAndShowResume, 100);
+    setTimeout(() => {
+      updateSidebarCompletion();
+      checkAndShowResume();
+    }, 100);
   }
 }
 
