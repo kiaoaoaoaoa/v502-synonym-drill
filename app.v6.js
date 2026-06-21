@@ -1065,7 +1065,7 @@ async function readPublicLeaderboard() {
     .order("accuracy", { ascending: false })
     .order("correct_count", { ascending: false })
     .order("created_at", { ascending: true })
-    .limit(20);
+    .limit(500);
 
   if (error) throw error;
   return data.map(normalizePublicScore);
