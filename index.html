@@ -15,7 +15,7 @@
           <p class="range">Choose a category set</p>
         </div>
 
-        <button id="synonymDrillBtn" class="ranking-btn" type="button">
+        <button id="synonymDrillBtn" class="ranking-btn" type="button" onclick="var n=document.getElementById('categoryNav');n.hidden=!n.hidden;if(!n.hidden){switchMode('start');document.getElementById('startPanel').hidden=false;}">
           <span aria-hidden="true">📝</span>
           단어문제
         </button>
@@ -140,6 +140,7 @@
           <span aria-hidden="true">🧩</span>
           논리문제
         </button>
+        <p style="font-size:9px;color:#556;text-align:center;margin:8px 0 0">v20260622g</p>
       </aside>
 
       <section class="workspace" aria-live="polite">
@@ -283,7 +284,7 @@
     <script src="categories-examples.js?v=20260621s"></script>
     <script src="categories-korean-usage.js?v=20260621q"></script>
     <script src="logic-quiz.js"></script>
-    <script src="app.v6.js?v=20260622f"></script>
+    <script src="app.v6.js?v=20260622g"></script>
   </body>
 </html>
  
