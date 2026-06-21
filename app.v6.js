@@ -1709,27 +1709,11 @@ function showWordlist() {
       if (!n || n.length < 8) return false;
       return n.includes('의') || (n.includes('(') && n.length > 10) || n.length > 25 || n.includes(';');
     });
-    const hasExamples = catWords.some(w => {
-      return window.examples && window.examples[w] && window.examples[w].length > 20;
-    });
-    const hasKoreanUsage = catWords.some(w => {
-      return window.koreanUsage && window.koreanUsage[w];
-    });
-
     html += `<div class="wordlist-cat" data-cat-id="${escapeHtml(cat.id)}">`;
-    // Header row with category number, title, and action buttons
-    html += `<div class="wl-cat-header-row">`;
     html += `<h4 class="wl-cat-header${hasCollocations ? ' wl-has-coll' : ''}"${hasCollocations ? ` onclick="toggleCatDetail('${escapeHtml(cat.id)}')"` : ''}>`;
     html += `<span class="wl-cat-num">${escapeHtml(cat.id)}</span> ${escapeHtml(summary)}`;
     if (hasCollocations) html += `<span class="wl-coll-indicator">▸</span>`;
     html += `</h4>`;
-    if (hasKoreanUsage) {
-      html += `<button class="wl-usage-btn" type="button" onclick="event.stopPropagation();toggleCatKoreanUsage('${escapeHtml(cat.id)}')">📖 용례</button>`;
-    }
-    if (hasExamples) {
-      html += `<button class="wl-example-btn" type="button" onclick="event.stopPropagation();toggleCatExample('${escapeHtml(cat.id)}')">예문</button>`;
-    }
-    html += `</div>`;
 
     html += `<div class="wordlist-words">`;
     catWords.forEach((w) => {
@@ -1755,32 +1739,6 @@ function showWordlist() {
         if (hasColl) {
           html += `<li><strong class="wl-detail-word">${escapeHtml(w)}</strong>`;
           html += `<span class="wl-detail-note"> → ${escapeHtml(note)}</span></li>`;
-        }
-      });
-      html += `</ul></div>`;
-    }
-    // Korean usage detail (hidden)
-    if (hasKoreanUsage) {
-      html += `<div class="wl-detail wl-detail-usage" id="wl-usage-${escapeHtml(cat.id)}" hidden>`;
-      html += `<ul class="wl-detail-list">`;
-      catWords.forEach((w) => {
-        const usage = (window.koreanUsage && window.koreanUsage[w]) ? window.koreanUsage[w] : '';
-        if (usage) {
-          html += `<li><strong class="wl-detail-word">${escapeHtml(w)}</strong>`;
-          html += `<p class="wl-usage">📝 ${escapeHtml(usage)}</p></li>`;
-        }
-      });
-      html += `</ul></div>`;
-    }
-    // Example sentences detail (hidden, separate)
-    if (hasExamples) {
-      html += `<div class="wl-detail wl-detail-examples" id="wl-example-${escapeHtml(cat.id)}" hidden>`;
-      html += `<ul class="wl-detail-list">`;
-      catWords.forEach((w) => {
-        const example = (window.examples && window.examples[w]) ? window.examples[w] : '';
-        if (example && example.length > 20) {
-          html += `<li><strong class="wl-detail-word">${escapeHtml(w)}</strong>`;
-          html += `<p class="wl-example">📖 ${escapeHtml(example)}</p></li>`;
         }
       });
       html += `</ul></div>`;
