@@ -1583,19 +1583,20 @@ function renderCumulativeLeaderboard(leaderboard, title, rank, cumEntry) {
 
 /* ---- Public ranking only (no local leaderboard) ---- */
 function renderPublicResult(displayName, accuracy, correct, total) {
-  els.resultSummary.textContent = "";
-  els.leaderboard.innerHTML = `<p class="ranking-note">Loading public ranking…</p>`;
+  // Append public ranking below existing content (don't overwrite review)
+  const existingHTML = els.leaderboard.innerHTML;
+  els.leaderboard.innerHTML = existingHTML + `<p class="ranking-note" style="margin-top:12px">Loading public ranking…</p>`;
 
   getSupabaseClient().then((client) => {
     if (!client) {
-      els.leaderboard.innerHTML = `<p class="ranking-note">Public ranking not connected.</p>`;
+      els.leaderboard.innerHTML = existingHTML + `<p class="ranking-note">Public ranking not connected.</p>`;
       return;
     }
     readPublicLeaderboard().then((data) => {
       const cumulative = cumulativeLeaderboard(data, null);
       const rank = cumulative.findIndex(e => e.name.toLowerCase() === displayName.toLowerCase()) + 1;
       els.resultSummary.textContent = `${correct}/${total} — ${accuracy}% — Public Rank #${rank || cumulative.length + 1}`;
-      els.leaderboard.innerHTML = `
+      els.leaderboard.innerHTML = existingHTML + `
         <h4>🌐 Public Ranking</h4>
         <p class="ranking-note">Best per set · All 62 sets</p>
         <ol>
