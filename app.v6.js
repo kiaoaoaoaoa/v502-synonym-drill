@@ -2426,7 +2426,30 @@ function showMyReview() {
   html += `<div style="padding:16px;background:#f0f8f0;border-radius:8px;text-align:center"><strong style="font-size:24px">${completed}</strong><br><small>단어 마스터</small><br><small style="color:var(--muted)">/ ${totalSyn} (${pct}%)</small></div>`;
   html += `<div style="padding:16px;background:#f0f0f8;border-radius:8px;text-align:center"><strong style="font-size:24px">${logicMastered}</strong><br><small>논리 마스터</small><br><small style="color:var(--muted)">/ ${logicTotal}</small></div>`;
   html += `<div style="padding:16px;background:#fff8f0;border-radius:8px;text-align:center;grid-column:1/-1"><strong style="font-size:24px">${totalCorrect}/${totalQuestions}</strong><br><small>통합랭킹 점수</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'}</small></div>`;
-  html += '</div></div>';
+  html += '</div>';
+
+  // List of memorized (mastered) words, grouped by category
+  const p = readSynonymProgress();
+  const key = getSynonymUserKey();
+  const mastered = p[key] || {};
+  const catIds = Object.keys(mastered).filter((c) => c !== 'wrong' && mastered[c] && mastered[c].length).sort();
+  html += '<h4 style="margin:18px 0 8px">📖 외운 단어</h4>';
+  if (catIds.length === 0) {
+    html += '<p style="color:var(--muted)">아직 외운 단어가 없습니다. 단어문제를 풀어보세요!</p>';
+  } else {
+    for (const catId of catIds) {
+      const title = categorySummaries[catId] || `Category ${catId}`;
+      html += `<div style="margin-bottom:8px;padding:10px;background:#f0f8f0;border-radius:6px;border:1px solid #cfe6cf">`;
+      html += `<strong style="font-size:13px">${escapeHtml(catId)} — ${escapeHtml(title)}</strong><br>`;
+      html += `<span style="font-size:12px;color:var(--muted)">`;
+      html += mastered[catId].map((w) => {
+        const m = wordMeanings[w] || '';
+        return `${escapeHtml(w)}${m ? ` (${escapeHtml(m)})` : ''}`;
+      }).join(', ');
+      html += `</span></div>`;
+    }
+  }
+  html += '</div>';
   els.myinfoContent.innerHTML = html;
 }
 
