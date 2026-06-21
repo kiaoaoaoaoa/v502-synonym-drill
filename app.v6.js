@@ -394,7 +394,12 @@ if (window.__V502_EXT__) {
   if (ext.categories) categories.push(...ext.categories);
   if (ext.wordMeanings) Object.assign(wordMeanings, ext.wordMeanings);
   if (ext.categorySummaries) Object.assign(categorySummaries, ext.categorySummaries);
-  if (ext.confusionNotes) Object.assign(confusionNotes, ext.confusionNotes);
+  if (ext.confusionNotes) {
+    // Only add notes for words not already covered (preserve hand-written notes)
+    for (const [k, v] of Object.entries(ext.confusionNotes)) {
+      if (!confusionNotes[k]) confusionNotes[k] = v;
+    }
+  }
 }
 // Override with Korean titles from TOC
 if (window.__V502_TOC__) {
@@ -1194,19 +1199,44 @@ function showWordlist() {
   let html = '<div class="wordlist-scroll">';
   categories.forEach(cat => {
     const summary = categorySummaries[cat.id] || '';
-    html += `<div class="wordlist-cat">`;
+    const catWords = cat.words;
+    html += `<div class="wordlist-cat" data-cat-id="${escapeHtml(cat.id)}">`;
     html += `<h4><span class="wl-cat-num">${escapeHtml(cat.id)}</span> ${escapeHtml(summary)}</h4>`;
+    // Toggle button to show/hide detailed collocation notes for this category
+    html += `<button class="wl-detail-btn" type="button" onclick="toggleCatDetail(this)" data-cat="${escapeHtml(cat.id)}">콜로케이션 보기 ▸</button>`;
     html += `<div class="wordlist-words">`;
-    cat.words.forEach((w) => {
+    catWords.forEach((w) => {
       const m = wordMeanings[w] || '';
-      html += `<span class="wl-word">${escapeHtml(w)}`;
+      const note = confusionNotes[w] || m || '';
+      html += `<span class="wl-word" title="${escapeHtml(note)}">${escapeHtml(w)}`;
       if (m) html += `<span class="wl-meaning">${escapeHtml(m)}</span>`;
       html += `</span>`;
     });
-    html += `</div></div>`;
+    html += `</div>`;
+    // Hidden detail panel for collocations
+    html += `<div class="wl-detail" id="wl-detail-${escapeHtml(cat.id)}" hidden>`;
+    html += `<p class="wl-detail-title">📝 "${escapeHtml(summary)}" 콜로케이션 / 용법 비교</p>`;
+    html += `<ul class="wl-detail-list">`;
+    catWords.forEach((w) => {
+      const note = confusionNotes[w] || wordMeanings[w] || '';
+      html += `<li><strong class="wl-detail-word">${escapeHtml(w)}</strong>`;
+      if (note) html += `<span class="wl-detail-note"> → ${escapeHtml(note)}</span>`;
+      html += `</li>`;
+    });
+    html += `</ul></div>`;
+    html += `</div>`;
   });
   html += '</div>';
   els.wordlistContent.innerHTML = html;
+}
+
+function toggleCatDetail(btn) {
+  const catId = btn.dataset.cat;
+  const detail = document.getElementById(`wl-detail-${catId}`);
+  if (detail) {
+    detail.hidden = !detail.hidden;
+    btn.textContent = detail.hidden ? '콜로케이션 보기 ▸' : '콜로케이션 닫기 ▾';
+  }
 }
 
 function hideRanking() {
