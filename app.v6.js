@@ -1210,7 +1210,7 @@ function showWordlist() {
       return n.includes('의') || (n.includes('(') && n.length > 10) || n.length > 25 || n.includes(';');
     });
     const hasExamples = catWords.some(w => {
-      return typeof examples !== 'undefined' && examples[w] && examples[w].length > 20;
+      return window.examples && window.examples[w] && examples[w].length > 20;
     });
 
     html += `<div class="wordlist-cat" data-cat-id="${escapeHtml(cat.id)}">`;
@@ -1252,7 +1252,7 @@ function showWordlist() {
       html += `<div class="wl-detail wl-detail-examples" id="wl-example-${escapeHtml(cat.id)}" hidden>`;
       html += `<ul class="wl-detail-list">`;
       catWords.forEach((w) => {
-        const example = (typeof examples !== 'undefined' && examples[w]) ? examples[w] : '';
+        const example = (window.examples && window.examples[w]) ? examples[w] : '';
         if (example && example.length > 20) {
           html += `<li><strong class="wl-detail-word">${escapeHtml(w)}</strong>`;
           html += `<p class="wl-example">📖 ${escapeHtml(example)}</p></li>`;
