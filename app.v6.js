@@ -750,6 +750,13 @@ function renderSynonyms(word, categoryId = "") {
   return synonyms.length ? synonyms.join(" / ") : "No same-category words listed.";
 }
 
+function getWordCategory(word) {
+  for (const cat of categories) {
+    if (cat.words.includes(word)) return cat.id;
+  }
+  return null;
+}
+
 function explainOption(word, question) {
   const selected = state.answers.get(question.id)?.selected.includes(word);
   const isAnswer = question.answer.includes(word);
@@ -757,11 +764,16 @@ function explainOption(word, question) {
   const note = confusionNotes[word] || "";
   const example = (window.examples && window.examples[word]) ? window.examples[word] : "";
   const promptMeaning = wordMeanings[question.prompt] || "";
+  const wordCat = getWordCategory(word);
+  const wordCatSummary = wordCat ? (categorySummaries[wordCat] || `Category ${wordCat}`) : "";
 
   // Korean + English contrastive meaning
   let meaningBlock = "";
   if (meaning) {
-    meaningBlock = `<p><strong>한국어 뜻:</strong> ${escapeHtml(meaning)}</p>`;
+    meaningBlock = `<p><strong>뜻:</strong> ${escapeHtml(meaning)}</p>`;
+  }
+  if (wordCatSummary) {
+    meaningBlock += `<p class="explain-cat"><strong>범주:</strong> ${escapeHtml(wordCat)} — ${escapeHtml(wordCatSummary)}</p>`;
   }
   if (note) {
     meaningBlock += `<p class="explain-note"><strong>English usage:</strong> ${escapeHtml(note)}</p>`;
@@ -776,18 +788,30 @@ function explainOption(word, question) {
   // Reason: logical contrast explanation
   let reasonBlock;
   if (isAnswer) {
+    const sameConcept = categorySummaries[question.categoryId] || promptMeaning || question.prompt;
     reasonBlock = `
       <p class="explain-why correct-why">
-        <strong>✅ Correct:</strong> "${escapeHtml(word)}" (${escapeHtml(meaning)}) and "${escapeHtml(question.prompt)}" (${escapeHtml(promptMeaning)}) share the same underlying concept: both describe <em>${escapeHtml(promptMeaning || question.prompt)}</em>. They are interchangeable in this context.
+        <strong>✅ Correct:</strong> "${escapeHtml(word)}" and "${escapeHtml(question.prompt)}" are both members of the same synonym group: <em>${escapeHtml(sameConcept)}</em>. They share the same semantic field and can substitute for each other in this context.
       </p>`;
   } else {
-    const meaningA = meaning || word;
-    const meaningB = promptMeaning || question.prompt;
-    reasonBlock = `
-      <p class="explain-why wrong-why">
-        <strong>❌ Incorrect:</strong> "${escapeHtml(word)}" means <em>${escapeHtml(meaningA)}</em>. "${escapeHtml(question.prompt)}" means <em>${escapeHtml(meaningB)}</em>.<br>
-        <span class="wrong-contrast">→ "${escapeHtml(word)}" is about ${escapeHtml(meaningA)}, while "${escapeHtml(question.prompt)}" is about ${escapeHtml(meaningB)}. These refer to fundamentally different concepts — ${escapeHtml(meaningA)} ≠ ${escapeHtml(meaningB)} — so they cannot be used as synonyms.</span>
-      </p>`;
+    // Build a logical contrast between the wrong word and the prompt
+    const wrongMeaning = meaning || `"${word}"`;
+    const rightConcept = promptMeaning || question.prompt;
+    const wrongNoteBrief = note ? note.split('.')[0].split(';')[0].trim() : '';
+    const promptNoteBrief = confusionNotes[question.prompt] ? confusionNotes[question.prompt].split('.')[0].split(';')[0].trim() : '';
+
+    // Create a more detailed logical contrast
+    let contrastText = `<strong>❌ Why this is wrong:</strong> "${escapeHtml(word)}" refers to <em>${escapeHtml(wrongMeaning)}</em>`;
+    if (wrongNoteBrief && wrongNoteBrief.length > 10) {
+      contrastText += ` — ${escapeHtml(wrongNoteBrief)}`;
+    }
+    contrastText += `. Meanwhile, "${escapeHtml(question.prompt)}" refers to <em>${escapeHtml(rightConcept)}</em>`;
+    if (promptNoteBrief && promptNoteBrief.length > 10) {
+      contrastText += ` — ${escapeHtml(promptNoteBrief)}`;
+    }
+    contrastText += `. These are logically distinct concepts with no semantic overlap, so they cannot function as synonyms.`;
+
+    reasonBlock = `<p class="explain-why wrong-why">${contrastText}</p>`;
   }
 
   const statusLabel = isAnswer ? "Correct" : selected ? "Your pick ✗" : "";

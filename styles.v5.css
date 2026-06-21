@@ -940,6 +940,12 @@ h2 {
   gap: 6px;
 }
 
+.explain-cat {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 2px 0;
+}
+
 .explain-term b {
   overflow-wrap: anywhere;
 }
@@ -1026,6 +1032,13 @@ h2 {
 .wrong-why {
   background: #fff0ea;
   color: var(--warn);
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.correct-why {
+  line-height: 1.7;
+  font-size: 14px;
 }
 
 .status-correct {
