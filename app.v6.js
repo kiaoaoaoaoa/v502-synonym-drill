@@ -652,6 +652,12 @@ const els = {
   resultSummary: document.querySelector("#resultSummary"),
   leaderboard: document.querySelector("#leaderboard"),
   restartBtn: document.querySelector("#restartBtn"),
+  rankingBtn: document.querySelector("#rankingBtn"),
+  rankingPanel: document.querySelector("#rankingPanel"),
+  rankingCloseBtn: document.querySelector("#rankingCloseBtn"),
+  rankingTitle: document.querySelector("#rankingTitle"),
+  rankingSummary: document.querySelector("#rankingSummary"),
+  rankingContent: document.querySelector("#rankingContent"),
 };
 
 function shuffle(items) {
@@ -1049,6 +1055,84 @@ async function completeQuiz() {
   }
 }
 
+function showRanking() {
+  els.startPanel.hidden = true;
+  els.quizPanel.hidden = true;
+  els.resultPanel.hidden = true;
+  els.rankingPanel.hidden = false;
+  els.shuffleBtn.disabled = true;
+  els.resetBtn.disabled = true;
+
+  const activeSet = getActiveSet();
+  els.rankingTitle.textContent = `${activeSet.label} Leaderboard`;
+  els.rankingSummary.textContent = "Loading rankings...";
+  els.rankingContent.innerHTML = "";
+
+  const localEntries = currentSetLeaderboard();
+  const leaderboard = sortedLeaderboard(localEntries).slice(0, 20);
+  els.rankingSummary.textContent = `${leaderboard.length} player${leaderboard.length !== 1 ? "s" : ""} on the board`;
+
+  if (leaderboard.length === 0) {
+    els.rankingContent.innerHTML = "<p>No scores yet. Complete a quiz to appear here!</p>";
+  } else {
+    els.rankingContent.innerHTML = `
+      <h4>Local Ranking</h4>
+      <ol>
+        ${leaderboard.map((item, idx) => `
+          <li>
+            <span>${idx + 1}. ${escapeHtml(item.name)}</span>
+            <b>${item.accuracy}%</b>
+            <small>${item.correct}/${item.total}</small>
+          </li>
+        `).join("")}
+      </ol>
+    `;
+  }
+
+  if (!hasPublicConfig()) {
+    const note = document.createElement("p");
+    note.className = "ranking-note";
+    note.textContent = "Public ranking is not connected yet. Set up db-config.js to enable.";
+    els.rankingContent.append(note);
+    return;
+  }
+
+  getSupabaseClient().then((client) => {
+    if (!client) return;
+    return readPublicLeaderboard().then((publicData) => {
+      if (!publicData.length) return;
+      const publicSection = document.createElement("div");
+      publicSection.innerHTML = `
+        <h4 style="margin-top:18px;">Public Ranking</h4>
+        <ol>
+          ${publicData.map((item, idx) => `
+            <li>
+              <span>${idx + 1}. ${escapeHtml(item.name)}</span>
+              <b>${item.accuracy}%</b>
+              <small>${item.correct}/${item.total}</small>
+            </li>
+          `).join("")}
+        </ol>
+      `;
+      els.rankingContent.append(publicSection);
+    });
+  }).catch(() => {});
+}
+
+function hideRanking() {
+  els.rankingPanel.hidden = true;
+  els.shuffleBtn.disabled = false;
+  els.resetBtn.disabled = false;
+
+  if (state.completed) {
+    els.resultPanel.hidden = false;
+  } else if (state.playerName) {
+    els.quizPanel.hidden = false;
+  } else {
+    els.startPanel.hidden = false;
+  }
+}
+
 function startQuiz() {
   state.questionIndex = 0;
   state.currentSelection = new Set();
@@ -1059,6 +1143,7 @@ function startQuiz() {
   state.streak = 0;
   state.completed = false;
   els.resultPanel.hidden = true;
+  els.rankingPanel.hidden = true;
   els.quizPanel.hidden = false;
   updateSetDisplay();
   renderQuestion();
@@ -1126,6 +1211,8 @@ els.nextBtn.addEventListener("click", nextQuestion);
 els.shuffleBtn.addEventListener("click", resetAll);
 els.resetBtn.addEventListener("click", resetAll);
 els.restartBtn.addEventListener("click", resetAll);
+els.rankingBtn.addEventListener("click", showRanking);
+els.rankingCloseBtn.addEventListener("click", hideRanking);
 els.categoryButtons.forEach((button) => {
   button.addEventListener("click", () => selectCategorySet(button.dataset.setId));
 });

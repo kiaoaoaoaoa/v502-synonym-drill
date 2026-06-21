@@ -51,6 +51,11 @@
           <small>Player</small>
           <strong id="playerNameLabel">Not started</strong>
         </section>
+
+        <button id="rankingBtn" class="ranking-btn" type="button">
+          <span aria-hidden="true">🏆</span>
+          View Ranking
+        </button>
       </aside>
 
       <section class="workspace" aria-live="polite">
@@ -112,6 +117,16 @@
           <p id="resultSummary"></p>
           <div id="leaderboard" class="leaderboard"></div>
           <button id="restartBtn" type="button">Try Again</button>
+        </section>
+
+        <section id="rankingPanel" class="ranking-panel" hidden>
+          <div class="ranking-header">
+            <p class="eyebrow">Ranking</p>
+            <h3 id="rankingTitle">Leaderboard</h3>
+          </div>
+          <p id="rankingSummary" class="ranking-summary"></p>
+          <div id="rankingContent" class="leaderboard"></div>
+          <button id="rankingCloseBtn" type="button">Back</button>
         </section>
       </section>
     </main>

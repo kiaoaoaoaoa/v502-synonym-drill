@@ -98,6 +98,32 @@ h1 {
   padding: 14px;
 }
 
+.ranking-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #eef4fb;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+
+.ranking-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.ranking-btn:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
 .set-card span,
 .set-card small,
 .player-card small {
@@ -230,7 +256,8 @@ h2 {
 .quiz-panel,
 .word-list,
 .start-panel,
-.result-panel {
+.result-panel,
+.ranking-panel {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
@@ -238,12 +265,14 @@ h2 {
 
 .quiz-panel,
 .start-panel,
-.result-panel {
+.result-panel,
+.ranking-panel {
   padding: 24px;
 }
 
 .start-panel h3,
-.result-panel h3 {
+.result-panel h3,
+.ranking-panel h3 {
   margin-bottom: 16px;
   font-size: 26px;
 }
@@ -275,12 +304,24 @@ h2 {
 }
 
 .name-form button,
-#restartBtn {
+#restartBtn,
+#rankingCloseBtn {
   min-height: 44px;
   border-color: var(--accent);
   background: var(--accent);
   color: white;
   padding: 0 16px;
+}
+
+.ranking-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ranking-summary {
+  color: var(--muted);
+  margin: -10px 0 16px;
 }
 
 .prompt-row {
