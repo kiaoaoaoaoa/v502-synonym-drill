@@ -572,7 +572,6 @@ const els = {
   wordlistPanel: document.querySelector("#wordlistPanel"),
   wordlistTitle: document.querySelector("#wordlistTitle"),
   wordlistContent: document.querySelector("#wordlistContent"),
-  wordlistCloseBtn: document.querySelector("#wordlistCloseBtn"),
   rankingSummary: document.querySelector("#rankingSummary"),
   rankingContent: document.querySelector("#rankingContent"),
   // Auth
@@ -598,10 +597,6 @@ const els = {
   myinfoContent: document.querySelector("#myinfoContent"),
   myinfoCloseBtn: document.querySelector("#myinfoCloseBtn"),
   dashboardPanel: document.querySelector("#dashboardPanel"),
-  wordlist2Btn: document.querySelector("#wordlist2Btn"),
-  wordlist2Panel: document.querySelector("#wordlist2Panel"),
-  wordlist2Content: document.querySelector("#wordlist2Content"),
-  wordlist2CloseBtn: document.querySelector("#wordlist2CloseBtn"),
   logicPanel: document.querySelector("#logicPanel"),
   logicProgressBar: document.querySelector("#logicProgressBar"),
   logicQuestionText: document.querySelector("#logicQuestionText"),
@@ -1629,7 +1624,6 @@ function switchMode(mode) {
   els.logicPanel.hidden = true;
   els.myinfoPanel.hidden = true;
   els.dashboardPanel.hidden = true;
-  els.wordlist2Panel.hidden = true;
   logicState.active = false;
   els.shuffleBtn.disabled = true;
   els.resetBtn.disabled = true;
@@ -1818,26 +1812,6 @@ function handleWordToggle(word, element) {
   }
 }
 
-/* ---- Word List 2 (MVP2 + V401 extra words) ---- */
-function showWordlist2() {
-  switchMode('wordlist');
-  els.wordlist2Panel.hidden = false;
-  const extraWords = window.__V502_EXTRA__ || [];
-
-  let html = '<div class="wordlist-scroll">';
-  html += `<div class="wordlist-cat"><h4><span class="wl-cat-num">EXTRA</span> MVP2 + V401 단어 (V502 미포함)</h4>`;
-  html += `<div class="wordlist-words">`;
-  extraWords.forEach(item => {
-    const w = item.w || '';
-    const m = item.m || '';
-    html += `<span class="wl-word">${escapeHtml(w)}`;
-    if (m) html += `<span class="wl-meaning">${escapeHtml(m)}</span>`;
-    html += `</span>`;
-  });
-  html += `</div></div></div>`;
-  els.wordlist2Content.innerHTML = html;
-}
-
 function toggleCatDetail(catId) {
   const detail = document.getElementById(`wl-detail-${catId}`);
   const header = document.querySelector(`.wordlist-cat[data-cat-id="${catId}"] .wl-coll-indicator`);
@@ -1985,17 +1959,6 @@ els.restartBtn.addEventListener("click", resetAll);
 els.rankingBtn.addEventListener("click", showRanking);
 els.rankingCloseBtn.addEventListener("click", hideRanking);
 els.wordlistBtn.addEventListener("click", showWordlist);
-els.wordlistCloseBtn.addEventListener("click", () => {
-  els.wordlistPanel.hidden = true;
-  if (state.playerName) els.quizPanel.hidden = false;
-  else els.startPanel.hidden = false;
-});
-els.wordlist2Btn.addEventListener("click", showWordlist2);
-els.wordlist2CloseBtn.addEventListener("click", () => {
-  els.wordlist2Panel.hidden = true;
-  if (state.playerName) els.quizPanel.hidden = false;
-  else els.startPanel.hidden = false;
-});
 els.categoryButtons.forEach((button) => {
   button.addEventListener("click", () => selectCategorySet(button.dataset.setId));
   const smallEl = button.querySelector("small");
@@ -2071,14 +2034,14 @@ function saveLogicCorrect(qid) {
   const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
   if (!p[key]) p[key] = { correct: [], wrong: [] };
   if (!p[key].correct.includes(qid)) p[key].correct.push(qid);
-  localStorage.setItem(logicProgressKey, JSON.stringify(p));
+  try { localStorage.setItem(logicProgressKey, JSON.stringify(p)); } catch {}
 }
 function saveLogicWrong(qid) {
   const p = readLogicProgress();
   const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
   if (!p[key]) p[key] = { correct: [], wrong: [] };
   if (!p[key].wrong.includes(qid) && !p[key].correct.includes(qid)) p[key].wrong.push(qid);
-  localStorage.setItem(logicProgressKey, JSON.stringify(p));
+  try { localStorage.setItem(logicProgressKey, JSON.stringify(p)); } catch {}
 }
 function getLogicCompleted() {
   const p = readLogicProgress();
@@ -2146,6 +2109,13 @@ function addLogicDifficulty() {
   }
 }
 
+function setBtnDisabled(btn, isDisabled) {
+  // Avoid toggling the native `disabled` attribute: iOS Safari can fail to
+  // re-register taps on a button re-enabled this way until the next reflow.
+  if (isDisabled) btn.setAttribute("aria-disabled", "true");
+  else btn.removeAttribute("aria-disabled");
+}
+
 function renderLogicQuestion() {
   const q = logicState.questions[logicState.currentIndex];
   if (!q) return;
@@ -2164,12 +2134,12 @@ function renderLogicQuestion() {
       logicState.selectedOption = opt;
       els.logicOptions.querySelectorAll(".option").forEach(b => b.classList.remove("selected"));
       btn.classList.add("selected");
-      els.logicSubmitBtn.disabled = false;
+      setBtnDisabled(els.logicSubmitBtn, false);
     });
     els.logicOptions.appendChild(btn);
   });
-  els.logicSubmitBtn.disabled = true;
-  els.logicNextBtn.disabled = true;
+  setBtnDisabled(els.logicSubmitBtn, true);
+  setBtnDisabled(els.logicNextBtn, true);
   els.logicFeedback.hidden = true;
   els.logicFeedback.className = "feedback";
   els.logicCounter.textContent = `${logicState.currentIndex + 1} / ${logicState.questions.length}`;
@@ -2208,8 +2178,8 @@ function submitLogicAnswer() {
     btn.disabled = true;
   });
 
-  els.logicSubmitBtn.disabled = true;
-  els.logicNextBtn.disabled = logicState.currentIndex >= logicState.questions.length - 1;
+  setBtnDisabled(els.logicSubmitBtn, true);
+  setBtnDisabled(els.logicNextBtn, logicState.currentIndex >= logicState.questions.length - 1);
   els.logicNextBtn.textContent = logicState.currentIndex >= logicState.questions.length - 1 ? "Finish" : "Next";
 }
 

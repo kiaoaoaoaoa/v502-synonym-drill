@@ -15,9 +15,31 @@
           <p class="range">Choose a category set</p>
         </div>
 
+        <section id="authSection" class="auth-section" aria-label="Account">
+          <div id="authLoggedOut">
+            <p class="auth-label">Login / Register</p>
+            <input id="authNicknameInput" type="text" maxlength="24" placeholder="닉네임" autocomplete="nickname" />
+            <input id="authPasswordInput" type="password" minlength="4" maxlength="32" placeholder="비밀번호 (4자 이상)" autocomplete="current-password" />
+            <p id="authError" class="auth-error" hidden></p>
+            <div class="auth-btns">
+              <button id="authLoginBtn" type="button">로그인</button>
+              <button id="authRegisterBtn" type="button">계정등록</button>
+            </div>
+          </div>
+          <div id="authLoggedIn" hidden>
+            <p class="auth-label">Logged in as</p>
+            <strong id="authPlayerName">—</strong>
+            <button id="authLogoutBtn" class="auth-logout-btn" type="button">로그아웃</button>
+          </div>
+        </section>
+
         <button id="synonymDrillBtn" class="ranking-btn" type="button" onclick="var n=document.getElementById('categoryNav');n.hidden=!n.hidden;if(!n.hidden){switchMode('start');document.getElementById('startPanel').hidden=false;}">
           <span aria-hidden="true">📝</span>
           단어문제
+        </button>
+        <button id="logicModeBtn" class="ranking-btn logic-mode-btn" type="button">
+          <span aria-hidden="true">🧩</span>
+          논리문제
         </button>
 
         <section class="set-card" aria-label="Current quiz set" style="display:none">
@@ -106,24 +128,6 @@
           </div>
         </section>
 
-        <section id="authSection" class="auth-section" aria-label="Account">
-          <div id="authLoggedOut">
-            <p class="auth-label">Login / Register</p>
-            <input id="authNicknameInput" type="text" maxlength="24" placeholder="닉네임" autocomplete="nickname" />
-            <input id="authPasswordInput" type="password" minlength="4" maxlength="32" placeholder="비밀번호 (4자 이상)" autocomplete="current-password" />
-            <p id="authError" class="auth-error" hidden></p>
-            <div class="auth-btns">
-              <button id="authLoginBtn" type="button">로그인</button>
-              <button id="authRegisterBtn" type="button">계정등록</button>
-            </div>
-          </div>
-          <div id="authLoggedIn" hidden>
-            <p class="auth-label">Logged in as</p>
-            <strong id="authPlayerName">—</strong>
-            <button id="authLogoutBtn" class="auth-logout-btn" type="button">로그아웃</button>
-          </div>
-        </section>
-
         <button id="myinfoBtn" class="ranking-btn" type="button" hidden>
           <span aria-hidden="true">👤</span>
           내정보
@@ -135,14 +139,6 @@
         <button id="wordlistBtn" class="ranking-btn" type="button">
           <span aria-hidden="true">📋</span>
           단어일람보기
-        </button>
-        <button id="wordlist2Btn" class="ranking-btn" type="button">
-          <span aria-hidden="true">📋</span>
-          단어일람보기2
-        </button>
-        <button id="logicModeBtn" class="ranking-btn logic-mode-btn" type="button">
-          <span aria-hidden="true">🧩</span>
-          논리문제
         </button>
         <p style="font-size:9px;color:#556;text-align:center;margin:8px 0 0">v20260622j</p>
       </aside>
@@ -221,16 +217,6 @@
             <h3 id="wordlistTitle">전체 단어 일람</h3>
           </div>
           <div id="wordlistContent" class="wordlist-content"></div>
-          <button id="wordlistCloseBtn" type="button">Back</button>
-        </section>
-
-        <section id="wordlist2Panel" class="ranking-panel" hidden>
-          <div class="ranking-header">
-            <p class="eyebrow">Word List 2</p>
-            <h3>단어일람보기2 (MVP2 + V401)</h3>
-          </div>
-          <div id="wordlist2Content" class="wordlist-content"></div>
-          <button id="wordlist2CloseBtn" type="button">Back</button>
         </section>
 
         <section id="rankingPanel" class="ranking-panel" hidden>
@@ -268,7 +254,7 @@
           <footer class="actions">
             <span id="logicCounter" class="logic-counter">1 / 50</span>
             <button id="logicSubmitBtn" type="button">Submit</button>
-            <button id="logicNextBtn" type="button" disabled>Next</button>
+            <button id="logicNextBtn" type="button" aria-disabled="true">Next</button>
           </footer>
         </section>
       </section>
@@ -293,7 +279,6 @@
     <script src="categories-251-300.js"></script>
     <script src="categories-291-620.js"></script>
     <script src="categories-word-meanings.js?v=20260621q"></script>
-    <script src="categories-extra-words.js"></script>
     <script src="categories-confusion-notes.js?v=20260621q"></script>
     <script src="categories-examples.js?v=20260621s"></script>
     <script src="categories-korean-usage.js?v=20260621q"></script>

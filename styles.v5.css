@@ -31,6 +31,7 @@ button {
   color: var(--ink);
   cursor: pointer;
   font: inherit;
+  touch-action: manipulation;
 }
 
 button:focus-visible {
@@ -223,6 +224,10 @@ h1 {
   overflow-y: auto;
   max-height: 60vh;
   padding-right: 4px;
+}
+
+.category-nav[hidden] {
+  display: none;
 }
 
 .category-btn {
@@ -466,11 +471,7 @@ h2 {
 }
 
 .wordlist-scroll {
-  max-height: 65vh;
-  overflow-y: auto;
   padding-right: 8px;
-  scrollbar-width: thin;
-  scrollbar-color: var(--line) transparent;
 }
 
 .wordlist-cat {
@@ -567,7 +568,6 @@ h2 {
 
 @media (max-width: 840px) {
   .wordlist-scroll {
-    max-height: 55vh;
     padding-right: 4px;
   }
 
@@ -622,7 +622,6 @@ h2 {
 
 @media (max-width: 480px) {
   .wordlist-scroll {
-    max-height: 50vh;
     padding-right: 2px;
   }
 
@@ -1128,9 +1127,11 @@ h2 {
   color: white;
 }
 
-.actions button:disabled {
+.actions button:disabled,
+.actions button[aria-disabled="true"] {
   cursor: not-allowed;
   opacity: 0.52;
+  pointer-events: none;
 }
 
 .word-list {
