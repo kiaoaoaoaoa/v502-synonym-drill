@@ -1481,15 +1481,86 @@ async function completeQuiz() {
   els.quizPanel.hidden = true;
   els.resultPanel.hidden = false;
   els.resultTitle.textContent = `${displayName}'s Result`;
+  els.resultSummary.textContent = `${entry.correct}/${entry.total} correct — ${accuracy}% accuracy`;
+
+  // Show question-by-question review
+  let reviewHTML = '<div style="max-height:50vh;overflow-y:auto;margin:16px 0">';
+  reviewHTML += '<h4 style="margin-bottom:8px">📋 문제별 리뷰</h4>';
+  state.questions.forEach((q, i) => {
+    const saved = state.answers.get(q.id);
+    const isCorrect = saved?.correct;
+    const selected = saved?.selected || [];
+    reviewHTML += `<div style="margin-bottom:6px;padding:8px 10px;border-radius:6px;font-size:13px;background:${isCorrect?'#ecf8f1':'#fff1ec'};border-left:3px solid ${isCorrect?'#8fc7a8':'#dda08c'}">`;
+    reviewHTML += `<a href="#" onclick="reviewQuestion(${i});return false" style="font-weight:700;color:var(--ink);text-decoration:none">Q${i+1}.</a> `;
+    reviewHTML += `<span style="color:var(--muted)">${escapeHtml(q.prompt)} — ${wordMeanings[q.prompt]||''}</span>`;
+    reviewHTML += `<span style="float:right;font-weight:700;color:${isCorrect?'var(--ok)':'var(--warn)'}">${isCorrect?'✅':'❌'}</span>`;
+    reviewHTML += `<br><small>선택: ${selected.map(w=>`${escapeHtml(w)}(${wordMeanings[w]||'?'})`).join(', ')}</small>`;
+    if (!isCorrect) {
+      reviewHTML += `<br><small style="color:var(--ok)">정답: ${q.answer.map(w=>`${escapeHtml(w)}(${wordMeanings[w]||'?'})`).join(', ')}</small>`;
+    }
+    reviewHTML += `</div>`;
+  });
+  reviewHTML += '</div>';
+  els.leaderboard.innerHTML = reviewHTML;
 
   if (!state.playerName) {
-    els.resultSummary.textContent = "Login to save your scores and appear on the public ranking!";
-    els.leaderboard.innerHTML = "";
+    els.resultSummary.textContent += " · Login to save your scores!";
     return;
   }
 
+  // Show ranking below review
+  const cumulative = cumulativeLeaderboard(readLeaderboard(), null);
+  const cumEntry = cumulative.find(e => e.name.toLowerCase() === state.playerName.toLowerCase()) || entry;
+  const rank = cumulative.findIndex(e => e.name.toLowerCase() === state.playerName.toLowerCase()) + 1;
+  const rankHTML = renderCumulativeLeaderboardHTML(cumulative.slice(0, 10), "통합 랭킹", rank, cumEntry);
+  els.leaderboard.innerHTML += rankHTML;
+
   // Show public ranking
   renderPublicResult(displayName, accuracy, entry.correct, entry.total);
+}
+
+function renderCumulativeLeaderboardHTML(leaderboard, title, rank, cumEntry) {
+  return `
+    <h4 style="margin-top:16px">${escapeHtml(title)}</h4>
+    <p class="ranking-note">Best attempt per set · All 62 sets combined</p>
+    <ol>
+      ${leaderboard.map((item) => `
+        <li>
+          <span>${escapeHtml(item.name)}</span>
+          <b>${item.accuracy}%</b>
+          <small>${item.correct}/${item.total}</small>
+        </li>
+      `).join("")}
+    </ol>`;
+}
+
+function reviewQuestion(index) {
+  // Navigate to the question in review mode (read-only)
+  state.questionIndex = index;
+  state.currentSelection = new Set();
+  els.resultPanel.hidden = true;
+  els.quizPanel.hidden = false;
+  renderQuestion();
+  // Disable interaction
+  els.submitBtn.disabled = true;
+  els.submitTopBtn.disabled = true;
+  els.options.querySelectorAll('.option').forEach(b => b.disabled = true);
+  // Add a "back to results" button
+  els.nextBtn.textContent = "Back to Results";
+  els.nextBtn.disabled = false;
+  els.nextTopBtn.textContent = "Back to Results";
+  els.nextTopBtn.disabled = false;
+  const origNextHandler = els.nextBtn.onclick;
+  els.nextBtn.onclick = () => {
+    els.quizPanel.hidden = true;
+    els.resultPanel.hidden = false;
+    els.nextBtn.textContent = "Next";
+    els.nextTopBtn.textContent = "Next";
+    // Reset buttons
+    els.submitBtn.disabled = true;
+    els.submitTopBtn.disabled = true;
+  };
+  els.nextTopBtn.onclick = els.nextBtn.onclick;
 }
 
 function renderCumulativeLeaderboard(leaderboard, title, rank, cumEntry) {
@@ -2170,9 +2241,7 @@ els.logicModeBtn.addEventListener("click", () => {
   startLogicQuiz();
 });
 
-// Category nav visible by default for synonym drill
-document.getElementById("categoryNav").hidden = false;
-
+// Category nav HIDDEN by default - click 단어문제 to show
 els.synonymDrillBtn.addEventListener("click", () => {
   const nav = document.getElementById("categoryNav");
   nav.hidden = !nav.hidden;
