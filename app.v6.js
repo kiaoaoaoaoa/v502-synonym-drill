@@ -599,13 +599,17 @@ const passwordStoreKey = "v502-synonym-drill-passwords";
 let supabaseClient = null;
 let supabaseSdkPromise = null;
 
-// Merge categories 21-30 if loaded
+// Merge categories 21-30+ if loaded
 if (window.__V502_EXT__) {
   const ext = window.__V502_EXT__;
-  categories.push(...ext.categories);
-  Object.assign(wordMeanings, ext.wordMeanings);
-  Object.assign(categorySummaries, ext.categorySummaries);
-  Object.assign(confusionNotes, ext.confusionNotes);
+  if (ext.categories) categories.push(...ext.categories);
+  if (ext.wordMeanings) Object.assign(wordMeanings, ext.wordMeanings);
+  if (ext.categorySummaries) Object.assign(categorySummaries, ext.categorySummaries);
+  if (ext.confusionNotes) Object.assign(confusionNotes, ext.confusionNotes);
+}
+// Override with Korean titles from TOC
+if (window.__V502_TOC__) {
+  Object.assign(categorySummaries, window.__V502_TOC__);
 }
 
 const categorySets = {
