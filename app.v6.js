@@ -1731,25 +1731,20 @@ function showWordlist() {
     }
     html += `</div>`;
 
-    html += `<ol class="wordlist-words">`;
-    catWords.forEach((w, idx) => {
+    html += `<div class="wordlist-words">`;
+    catWords.forEach((w) => {
       const m = wordMeanings[w] || '';
-      const example = (window.examples && window.examples[w]) ? window.examples[w] : '';
       const known = state.playerName && isWordKnown(w);
-      const synonyms = catWords.filter(x => x !== w).map(x => escapeHtml(x)).join(', ');
-      html += `<li class="wl-word${known ? ' wl-known' : ''}${state.playerName ? ' wl-clickable' : ''}"`;
+      html += `<span class="wl-word${known ? ' wl-known' : ''}${state.playerName ? ' wl-clickable' : ''}"`;
       if (state.playerName) {
         html += ` onclick="handleWordToggle('${escapeHtml(w)}', this)" title="클릭하여 안다/모른다 표시"`;
       }
-      html += `>`;
+      html += `>${escapeHtml(w)}`;
       if (known) html += `<span class="wl-check">✓</span>`;
-      html += `<strong>${escapeHtml(w)}</strong>`;
-      if (m) html += ` <span class="wl-meaning">${escapeHtml(m)}</span>`;
-      html += `<br><span class="wl-synonym">(유의어 == ${synonyms})</span>`;
-      if (example) html += `<br><span class="wl-example-inline">예문: ${escapeHtml(example)}</span>`;
-      html += `</li>`;
+      if (m) html += `<span class="wl-meaning">${escapeHtml(m)}</span>`;
+      html += `</span>`;
     });
-    html += `</ol>`;
+    html += `</div>`;
     // Collocation detail (hidden)
     if (hasCollocations) {
       html += `<div class="wl-detail" id="wl-detail-${escapeHtml(cat.id)}" hidden>`;
