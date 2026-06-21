@@ -1068,14 +1068,15 @@ async function completeQuiz() {
 
   // Upsert: keep only best score per (name, setId)
   upsertLocalScore(entry);
-  const cumulative = cumulativeLeaderboard(readLeaderboard(), state.activeSetId);
+  // Unified ranking across ALL sets
+  const cumulative = cumulativeLeaderboard(readLeaderboard(), null);
   const cumEntry = cumulative.find((e) => e.name.toLowerCase() === state.playerName.toLowerCase()) || entry;
   const rank = cumulative.findIndex((e) => e.name.toLowerCase() === state.playerName.toLowerCase()) + 1;
 
   els.quizPanel.hidden = true;
   els.resultPanel.hidden = false;
   els.resultTitle.textContent = `${state.playerName}'s Result`;
-  renderCumulativeLeaderboard(cumulative.slice(0, 20), "Local Ranking", rank, cumEntry);
+  renderCumulativeLeaderboard(cumulative.slice(0, 30), "통합 랭킹 (전체 범주)", rank, cumEntry);
 
   if (!hasPublicConfig()) return;
 
@@ -1084,14 +1085,14 @@ async function completeQuiz() {
   try {
     const savedId = await savePublicScore(entry);
     const publicData = await readPublicLeaderboard();
-    const pubCumulative = cumulativeLeaderboard(publicData, state.activeSetId);
+    const pubCumulative = cumulativeLeaderboard(publicData, null);
     const pubRank = pubCumulative.findIndex((e) => e.name.toLowerCase() === state.playerName.toLowerCase()) + 1;
 
     els.leaderboard.innerHTML = `
       <h4>Public Ranking</h4>
       <p class="ranking-note">Shared ranking for everyone using this link.</p>
       <ol>
-        ${pubCumulative.slice(0, 20).map((item) => `
+        ${pubCumulative.slice(0, 30).map((item) => `
           <li>
             <span>${escapeHtml(item.name)}</span>
             <b>${item.accuracy}%</b>
@@ -1134,14 +1135,14 @@ function showRanking() {
   els.shuffleBtn.disabled = true;
   els.resetBtn.disabled = true;
 
-  const activeSet = getActiveSet();
-  els.rankingTitle.textContent = `${activeSet.label} Leaderboard`;
+  els.rankingTitle.textContent = "통합 랭킹 (전체 범주)";
   els.rankingSummary.textContent = "Loading rankings...";
   els.rankingContent.innerHTML = "";
 
   const allEntries = readLeaderboard();
-  const cumulative = cumulativeLeaderboard(allEntries, state.activeSetId).slice(0, 20);
-  els.rankingSummary.textContent = `${cumulative.length} player${cumulative.length !== 1 ? "s" : ""} on the board · Best per set, cumulative totals`;
+  // Pass null for setId → aggregate across ALL sets
+  const cumulative = cumulativeLeaderboard(allEntries, null).slice(0, 30);
+  els.rankingSummary.textContent = `${cumulative.length} player${cumulative.length !== 1 ? "s" : ""} on the board · All ${getActiveSetCount()} sets combined`;
 
   if (cumulative.length === 0) {
     els.rankingContent.innerHTML = "<p>No scores yet. Complete a quiz to appear here!</p>";
@@ -1172,13 +1173,13 @@ function showRanking() {
     if (!client) return;
     return readPublicLeaderboard().then((publicData) => {
       if (!publicData.length) return;
-      const pubCumulative = cumulativeLeaderboard(publicData, state.activeSetId);
+      const pubCumulative = cumulativeLeaderboard(publicData, null);
       if (!pubCumulative.length) return;
       const publicSection = document.createElement("div");
       publicSection.innerHTML = `
         <h4 style="margin-top:18px;">Public Ranking</h4>
         <ol>
-          ${pubCumulative.slice(0, 20).map((item, idx) => `
+          ${pubCumulative.slice(0, 30).map((item, idx) => `
             <li>
               <span>${idx + 1}. ${escapeHtml(item.name)}</span>
               <b>${item.accuracy}%</b>
@@ -1190,6 +1191,10 @@ function showRanking() {
       els.rankingContent.append(publicSection);
     });
   }).catch(() => {});
+}
+
+function getActiveSetCount() {
+  return Object.keys(categorySets).length;
 }
 
 function showWordlist() {
