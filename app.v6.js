@@ -2034,14 +2034,14 @@ function saveLogicCorrect(qid) {
   const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
   if (!p[key]) p[key] = { correct: [], wrong: [] };
   if (!p[key].correct.includes(qid)) p[key].correct.push(qid);
-  localStorage.setItem(logicProgressKey, JSON.stringify(p));
+  try { localStorage.setItem(logicProgressKey, JSON.stringify(p)); } catch {}
 }
 function saveLogicWrong(qid) {
   const p = readLogicProgress();
   const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
   if (!p[key]) p[key] = { correct: [], wrong: [] };
   if (!p[key].wrong.includes(qid) && !p[key].correct.includes(qid)) p[key].wrong.push(qid);
-  localStorage.setItem(logicProgressKey, JSON.stringify(p));
+  try { localStorage.setItem(logicProgressKey, JSON.stringify(p)); } catch {}
 }
 function getLogicCompleted() {
   const p = readLogicProgress();
