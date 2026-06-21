@@ -1203,7 +1203,9 @@ function showWordlist() {
     // Only show collocation toggle if ANY word has meaningful collocation info
     const hasCollocations = catWords.some(w => {
       const n = confusionNotes[w] || '';
-      return n && (n.includes('(') || n.includes('의') || n.includes('대가') || n.includes(';') && n.length > 15);
+      if (!n || n.length < 8) return false;
+      // Has real collocation info: contains 의, parentheses, detailed explanation
+      return n.includes('의') || (n.includes('(') && n.length > 10) || n.length > 25 || n.includes(';');
     });
     html += `<div class="wordlist-cat" data-cat-id="${escapeHtml(cat.id)}">`;
     html += `<h4 class="wl-cat-header${hasCollocations ? ' wl-has-coll' : ''}"${hasCollocations ? ` onclick="toggleCatDetail('${escapeHtml(cat.id)}')"` : ''}>`;
@@ -1224,7 +1226,8 @@ function showWordlist() {
       html += `<ul class="wl-detail-list">`;
       catWords.forEach((w) => {
         const note = confusionNotes[w] || '';
-        if (note && (note.includes('(') || note.includes('의') || note.includes(';') && note.length > 15)) {
+        const hasColl = note && note.length >= 8 && (note.includes('의') || (note.includes('(') && note.length > 10) || note.length > 25 || note.includes(';'));
+        if (hasColl) {
           html += `<li><strong class="wl-detail-word">${escapeHtml(w)}</strong>`;
           html += `<span class="wl-detail-note"> → ${escapeHtml(note)}</span></li>`;
         }
