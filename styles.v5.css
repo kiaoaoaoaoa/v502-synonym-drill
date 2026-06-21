@@ -578,22 +578,83 @@ h2 {
   }
 
   .wordlist-cat h4 {
+    font-size: 13px;
+  }
+
+  .wordlist-words {
+    font-size: 13px;
+    line-height: 2.2;
+    gap: 3px 10px;
+  }
+
+  .wl-word {
+    font-size: 13px;
+    padding: 2px 7px;
+  }
+
+  .wl-meaning {
+    font-size: 12px;
+  }
+
+  .wl-cat-header-row {
+    gap: 4px;
+  }
+
+  .wl-example-btn,
+  .wl-usage-btn {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .wl-detail {
+    padding: 8px 10px;
+  }
+
+  .wl-detail-list li {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .wl-coll-indicator {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wordlist-scroll {
+    max-height: 50vh;
+    padding-right: 2px;
+  }
+
+  .wordlist-cat {
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+  }
+
+  .wordlist-cat h4 {
     font-size: 12px;
   }
 
   .wordlist-words {
-    font-size: 12px;
-    line-height: 1.8;
-    gap: 1px 8px;
+    font-size: 14px;
+    line-height: 2.4;
+    gap: 4px 10px;
   }
 
   .wl-word {
-    font-size: 12px;
-    padding: 1px 4px;
+    font-size: 14px;
+    padding: 3px 8px;
   }
 
   .wl-meaning {
-    font-size: 11px;
+    font-size: 12px;
+  }
+
+  .wl-example-btn,
+  .wl-usage-btn {
+    font-size: 10px;
+    padding: 3px 7px;
   }
 }
 
