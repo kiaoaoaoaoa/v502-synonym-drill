@@ -2243,14 +2243,7 @@ els.logicModeBtn.addEventListener("click", () => {
 });
 
 // Category nav HIDDEN by default - click 단어문제 to show
-els.synonymDrillBtn.addEventListener("click", () => {
-  const nav = document.getElementById("categoryNav");
-  nav.hidden = !nav.hidden;
-  if (!nav.hidden) {
-    switchMode('start');
-    els.startPanel.hidden = false;
-  }
-});
+// Toggle handled by inline onclick in index.html — no addEventListener needed
 
 /* ---- Dashboard ---- */
 function showDashboard() {
