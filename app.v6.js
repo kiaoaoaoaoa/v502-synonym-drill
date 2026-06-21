@@ -1204,18 +1204,27 @@ function showWordlist() {
   categories.forEach(cat => {
     const summary = categorySummaries[cat.id] || '';
     const catWords = cat.words;
-    // Only show collocation toggle if ANY word has meaningful collocation info
     const hasCollocations = catWords.some(w => {
       const n = confusionNotes[w] || '';
       if (!n || n.length < 8) return false;
-      // Has real collocation info: contains 의, parentheses, detailed explanation
       return n.includes('의') || (n.includes('(') && n.length > 10) || n.length > 25 || n.includes(';');
     });
+    const hasExamples = catWords.some(w => {
+      return typeof examples !== 'undefined' && examples[w] && examples[w].length > 20;
+    });
+
     html += `<div class="wordlist-cat" data-cat-id="${escapeHtml(cat.id)}">`;
+    // Header row with category number, title, and action buttons
+    html += `<div class="wl-cat-header-row">`;
     html += `<h4 class="wl-cat-header${hasCollocations ? ' wl-has-coll' : ''}"${hasCollocations ? ` onclick="toggleCatDetail('${escapeHtml(cat.id)}')"` : ''}>`;
     html += `<span class="wl-cat-num">${escapeHtml(cat.id)}</span> ${escapeHtml(summary)}`;
     if (hasCollocations) html += `<span class="wl-coll-indicator">▸</span>`;
     html += `</h4>`;
+    if (hasExamples) {
+      html += `<button class="wl-example-btn" type="button" onclick="event.stopPropagation();toggleCatExample('${escapeHtml(cat.id)}')">예문</button>`;
+    }
+    html += `</div>`;
+
     html += `<div class="wordlist-words">`;
     catWords.forEach((w) => {
       const m = wordMeanings[w] || '';
@@ -1224,19 +1233,29 @@ function showWordlist() {
       html += `</span>`;
     });
     html += `</div>`;
-    // Collocation detail (hidden, only for categories that have them)
+    // Collocation detail (hidden)
     if (hasCollocations) {
       html += `<div class="wl-detail" id="wl-detail-${escapeHtml(cat.id)}" hidden>`;
       html += `<ul class="wl-detail-list">`;
       catWords.forEach((w) => {
         const note = confusionNotes[w] || '';
-        const example = (typeof examples !== 'undefined' && examples[w]) ? examples[w] : '';
         const hasColl = note && note.length >= 8 && (note.includes('의') || (note.includes('(') && note.length > 10) || note.length > 25 || note.includes(';'));
-        if (hasColl || example) {
+        if (hasColl) {
           html += `<li><strong class="wl-detail-word">${escapeHtml(w)}</strong>`;
-          if (note && hasColl) html += `<span class="wl-detail-note"> → ${escapeHtml(note)}</span>`;
-          if (example) html += `<p class="wl-example">📖 ${escapeHtml(example)}</p>`;
-          html += `</li>`;
+          html += `<span class="wl-detail-note"> → ${escapeHtml(note)}</span></li>`;
+        }
+      });
+      html += `</ul></div>`;
+    }
+    // Example sentences detail (hidden, separate)
+    if (hasExamples) {
+      html += `<div class="wl-detail wl-detail-examples" id="wl-example-${escapeHtml(cat.id)}" hidden>`;
+      html += `<ul class="wl-detail-list">`;
+      catWords.forEach((w) => {
+        const example = (typeof examples !== 'undefined' && examples[w]) ? examples[w] : '';
+        if (example && example.length > 20) {
+          html += `<li><strong class="wl-detail-word">${escapeHtml(w)}</strong>`;
+          html += `<p class="wl-example">📖 ${escapeHtml(example)}</p></li>`;
         }
       });
       html += `</ul></div>`;
@@ -1253,6 +1272,13 @@ function toggleCatDetail(catId) {
   if (detail) {
     detail.hidden = !detail.hidden;
     if (header) header.textContent = detail.hidden ? '▸' : '▾';
+  }
+}
+
+function toggleCatExample(catId) {
+  const detail = document.getElementById(`wl-example-${catId}`);
+  if (detail) {
+    detail.hidden = !detail.hidden;
   }
 }
 
