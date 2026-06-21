@@ -978,6 +978,8 @@ function resumeQuiz(progress) {
   renderQuestion();
 }
 
+let resumeHandler = null;
+
 function showResumePrompt(progress) {
   const set = categorySets[progress.activeSetId];
   const setLabel = set ? set.label : progress.activeSetId;
@@ -993,11 +995,21 @@ function showResumePrompt(progress) {
     <small>${elapsed} minute${elapsed !== 1 ? 's' : ''} ago</small>
   `;
   els.startQuizBtn.textContent = "Resume Quiz";
-  els.startQuizBtn.onclick = () => {
+
+  // Remove normal startQuiz listener, install resume handler
+  els.startQuizBtn.removeEventListener("click", startQuiz);
+  resumeHandler = () => {
     resumeQuiz(progress);
+    els.startQuizBtn.removeEventListener("click", resumeHandler);
+    els.startQuizBtn.addEventListener("click", startQuiz);
     els.startQuizBtn.textContent = "Start Quiz";
-    els.startQuizBtn.onclick = startQuiz;
+    els.startPanelTitle.textContent = `Welcome, ${state.playerName}`;
+    els.startPanelHint.textContent = "Select a category set and start your quiz.";
+    const nb = document.getElementById("newQuizBtn");
+    if (nb) nb.remove();
   };
+  els.startQuizBtn.addEventListener("click", resumeHandler);
+
   // Add a "New Quiz" button
   let newBtn = document.getElementById("newQuizBtn");
   if (!newBtn) {
@@ -1006,14 +1018,15 @@ function showResumePrompt(progress) {
     newBtn.type = "button";
     newBtn.textContent = "Start New Quiz";
     newBtn.style.cssText = "display:block;width:100%;max-width:400px;min-height:40px;margin-top:8px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);font-size:14px;cursor:pointer;";
-    newBtn.onclick = () => {
+    newBtn.addEventListener("click", () => {
       clearSavedProgress();
+      els.startQuizBtn.removeEventListener("click", resumeHandler);
+      els.startQuizBtn.addEventListener("click", startQuiz);
       els.startQuizBtn.textContent = "Start Quiz";
-      els.startQuizBtn.onclick = startQuiz;
       els.startPanelTitle.textContent = `Welcome, ${state.playerName}`;
       els.startPanelHint.textContent = "Select a category set and start your quiz.";
       if (newBtn) newBtn.remove();
-    };
+    });
     els.startPanel.append(newBtn);
   }
 }
