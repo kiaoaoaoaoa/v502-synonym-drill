@@ -1463,25 +1463,53 @@ function getLeaderboardTable() {
   return getDbConfig().tableName || "leaderboard_scores";
 }
 
-/* ── Supabase cloud sync (cross-device) ── */
-const V502_CLOUD = 'v502-cloud-enabled';
+/* ── Supabase cloud sync (cross-device auth + full data) ── */
 
 async function cloudSyncAll() {
   if (!state.playerName || !hasPublicConfig()) return;
   const client = await getSupabaseClient(); if (!client) return;
   const nk = state.playerName.toLowerCase();
-  const store = readPasswordStore();
-  const pw = store[nk] ? (typeof store[nk]==='string' ? store[nk] : atob(store[nk].password)) : '';
+
+  // Save password fingerprint
+  const pwStore = readPasswordStore();
+  const pw = pwStore[nk] ? (typeof pwStore[nk]==='string' ? pwStore[nk] : atob(pwStore[nk].password)) : '';
   try {
-    await client.from(getLeaderboardTable()).upsert({
-      nickname: state.playerName,
-      quiz_set: 'CRED',
-      correct_count: pw.length,
-      total_count: pw.charCodeAt(0) || 0,
+    await client.from(getLeaderboardTable()).insert({
+      nickname: state.playerName, quiz_set: 'CRED',
+      correct_count: pw.length, total_count: pw.charCodeAt(0) || 0,
       accuracy: pw ? (pw.charCodeAt(pw.length-1) || 0) : 0,
-    }, { onConflict: 'nickname,quiz_set' });
+    });
   } catch(e) {}
-  localStorage.setItem(V502_CLOUD, Date.now().toString());
+
+  // Save all user data as encoded rows
+  await cloudSaveUserData(client, nk);
+}
+
+async function cloudSaveUserData(client, nk) {
+  const wordKnowledge = JSON.stringify((readWordKnowledge()||{})[nk]||[]);
+  const synProgress = JSON.stringify((readSynonymProgress()||{})[nk]||{});
+  const wcProg = JSON.stringify(getWordcheckProgress());
+  let quizProg = '{}';
+  try { quizProg = JSON.stringify(JSON.parse(localStorage.getItem(quizProgressKey)||'{}')[nk]||{}); } catch {}
+  const logicDone = JSON.stringify([...getLogicCompleted()]);
+  const logicWrong = JSON.stringify([...getLogicWrong()]);
+
+  const allData = wordKnowledge + '\n' + synProgress + '\n' + wcProg + '\n' + quizProg + '\n' + logicDone + '\n' + logicWrong;
+
+  // Delete old sync rows then insert new ones
+  try { await client.from(getLeaderboardTable()).delete().eq('nickname', state.playerName).like('quiz_set', 'UD_%'); } catch {}
+
+  // Encode into rows (3 chars per row)
+  for (let i = 0; i < allData.length; i += 3) {
+    const row = {
+      nickname: state.playerName,
+      quiz_set: 'UD_' + String(Math.floor(i/3)).padStart(4,'0'),
+      correct_count: allData.charCodeAt(i) || 0,
+      total_count: allData.charCodeAt(i+1) || 0,
+      accuracy: allData.charCodeAt(i+2) || 0,
+    };
+    try { await client.from(getLeaderboardTable()).insert(row); } catch {}
+  }
 }
 
 async function cloudCheckCred(nickname, password) {
@@ -1495,10 +1523,57 @@ async function cloudCheckCred(nickname, password) {
     if (data.correct_count === password.length &&
         data.total_count === (password.charCodeAt(0) || 0) &&
         data.accuracy === (password.charCodeAt(password.length-1) || 0)) {
+      // Pull full user data on successful cloud login
+      await cloudPullUserData(client, nickname);
       return 'OK';
     }
     return 'WRONG_PW';
   } catch(e) { return null; }
+}
+
+async function cloudPullUserData(client, nickname) {
+  const { data: rows } = await client.from(getLeaderboardTable())
+    .select('correct_count,total_count,accuracy,quiz_set')
+    .eq('nickname', nickname).like('quiz_set', 'UD_%').order('quiz_set');
+  if (!rows || rows.length === 0) return;
+
+  // Decode
+  let allData = '';
+  for (const r of rows) {
+    allData += String.fromCharCode(r.correct_count, r.total_count, r.accuracy);
+  }
+
+  const parts = allData.split('\n');
+  if (parts.length < 6) return;
+  const nk = nickname.toLowerCase();
+
+  try {
+    const wordKnowledge = JSON.parse(parts[0]);
+    if (Array.isArray(wordKnowledge)) { const s = readWordKnowledge(); s[nk] = wordKnowledge; writeWordKnowledge(s); }
+  } catch {}
+  try {
+    const synProgress = JSON.parse(parts[1]);
+    const s = readSynonymProgress(); s[nk] = synProgress;
+    localStorage.setItem(synonymProgressKey, JSON.stringify(s));
+  } catch {}
+  try {
+    const wcProg = JSON.parse(parts[2]);
+    localStorage.setItem('v502-wordcheck-progress', JSON.stringify({[nk]: wcProg}));
+  } catch {}
+  try {
+    const quizProg = JSON.parse(parts[3]);
+    const s = JSON.parse(localStorage.getItem(quizProgressKey)||'{}');
+    s[nk] = quizProg;
+    localStorage.setItem(quizProgressKey, JSON.stringify(s));
+  } catch {}
+  try {
+    const logicDone = JSON.parse(parts[4]);
+    if (Array.isArray(logicDone)) logicDone.forEach(id => saveLogicCorrect(id));
+  } catch {}
+  try {
+    const logicWrong = JSON.parse(parts[5]);
+    if (Array.isArray(logicWrong)) logicWrong.forEach(id => saveLogicWrong(id));
+  } catch {}
 }
 
 function normalizePublicScore(row) {
