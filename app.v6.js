@@ -3321,7 +3321,9 @@ function renderExamTab() {
     if (q.p && q.p.length > 30) {
       html += `<div style="margin:0 0 12px;padding:10px 14px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;font-size:14px;line-height:1.7">${escapeHtml(q.p)}</div>`;
     }
-    html += `<p style="font-weight:600;margin:0 0 10px">${escapeHtml(q.q)}</p>`;
+    // Underline quoted words (target vocabulary)
+    var qHtml = escapeHtml(q.q).replace(/'([^']+)'/g, "'<u>$1</u>'");
+    html += `<p style="font-weight:600;margin:0 0 10px">${qHtml}</p>`;
     if (q.c && q.c.length > 0) {
       html += '<div style="display:grid;gap:4px">';
       q.c.forEach(([letter, text]) => {
