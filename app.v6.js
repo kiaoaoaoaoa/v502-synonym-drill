@@ -411,6 +411,19 @@ if (window.__V502_EXT__) {
     Object.assign(window.koreanUsage, ext.koreanUsage);
   }
 }
+// Some category ranges are defined in more than one data file (e.g. 291-300
+// appear in both categories-251-300.js and categories-291-620.js). Drop any
+// duplicate category ids, keeping the first, so a set never quizzes the same
+// category twice.
+(function dedupeCategories() {
+  const seen = new Set();
+  for (let i = 0; i < categories.length; i++) {
+    const id = categories[i].id;
+    if (seen.has(id)) { categories.splice(i, 1); i--; }
+    else seen.add(id);
+  }
+})();
+
 // Override with Korean titles from TOC
 if (window.__V502_TOC__) {
   Object.assign(categorySummaries, window.__V502_TOC__);
@@ -704,9 +717,16 @@ function buildQuestions() {
     }
   }
 
+  // allPossible holds several answer pairs per prompt, all sharing the same id
+  // (`${cat}-${prompt}`). Keep just one per id so no prompt is ever asked twice.
+  const byId = new Map();
+  for (const q of shuffle(allPossible)) {
+    if (!byId.has(q.id)) byId.set(q.id, q);
+  }
+
   // Second pass: pick up to TARGET questions, distributing across categories
   const byCategory = new Map();
-  for (const q of allPossible) {
+  for (const q of byId.values()) {
     if (!byCategory.has(q.categoryId)) byCategory.set(q.categoryId, []);
     byCategory.get(q.categoryId).push(q);
   }
@@ -716,8 +736,11 @@ function buildQuestions() {
     byCategory.set(catId, shuffle(qs));
   }
 
-  // Round-robin selection from categories until we have TARGET questions
+  // Round-robin selection from categories until we have TARGET questions.
+  // The same word can be a synonym in two categories; skip a prompt we've
+  // already used so the user never sees the same word twice in one set.
   const questions = [];
+  const usedPrompts = new Set();
   const catIds = shuffle([...byCategory.keys()]);
   let idx = 0;
 
@@ -725,12 +748,16 @@ function buildQuestions() {
     const catId = catIds[idx % catIds.length];
     const qs = byCategory.get(catId);
     if (qs && qs.length > 0) {
-      questions.push(qs.shift());
+      const q = qs.shift();
+      if (!usedPrompts.has(q.prompt)) {
+        usedPrompts.add(q.prompt);
+        questions.push(q);
+      }
       if (qs.length === 0) byCategory.delete(catId);
     }
     idx++;
-    // Safety: break if all exhausted
-    if (idx > TARGET * 5) break;
+    // Safety: break if all exhausted (extra room for skipped duplicate prompts)
+    if (idx > TARGET * 20) break;
   }
 
   return shuffle(questions);

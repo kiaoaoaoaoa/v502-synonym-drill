@@ -6,7 +6,7 @@ window.__V502_EXT__.categorySummaries=window.__V502_EXT__.categorySummaries||{};
 window.__V502_EXT__.confusionNotes=window.__V502_EXT__.confusionNotes||{};
 
 window.__V502_EXT__.categories.push(
-  {id:"201",words:["arid", "muggy", "sulky", "sweltering", "torrid"]},
+  {id:"201",words:["arid", "muggy", "sultry", "sweltering", "torrid"]},
   {id:"202",words:["abrupt", "bluff", "blunt", "brusque", "coarse", "cross", "curt", "glum", "gruff", "harsh", "point-blank", "unaffable", "saturnine", "surly", "sullen", "sulky"]},
   {id:"203",words:["affront", "chutzpa", "chutzpah", "contumely", "effrontery", "hubris", "insolence", "presumption", "presumptuousness", "indecorum", "impropriety"]},
   {id:"204",words:["boorish", "churlish", "contumelious", "haughty", "imperious", "impertinent", "impolite", "improper", "indecent", "indecorous", "insolent", "loutish", "presumptuous", "unseemly"]},
@@ -389,6 +389,7 @@ Object.assign(window.__V502_EXT__.wordMeanings,{
   "submissive":"복종하는",
   "subvert":"(체제를) 전복시키다",
   "sulky":"뾰루퉁한",
+  "sultry":"무더운, 후덥지근한",
   "sullen":"언짢은",
   "supple":"유연한; 순응성이 있는",
   "surfeit":"과다",
