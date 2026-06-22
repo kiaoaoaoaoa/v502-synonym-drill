@@ -2869,7 +2869,7 @@ function showDashboard() {
   html += dashCard({ icon: '🧩', title: '논리문제', desc: '문맥 속 어휘 추론', accent: 'indigo', onclick: "startLogicQuiz()" });
   html += dashCard({ icon: '📘', title: '201 단어퀴즈', desc: '4지선다 어휘 체크', accent: 'blue', onclick: "showWordcheck201()" });
   html += dashCard({ icon: '📝', title: '문법 201', desc: '442개 문법 문제', accent: 'plum', onclick: "showGrammar201()" });
-  html += dashCard({ icon: '📄', title: '기출문제', desc: '2012 가천대 22문제', accent: 'slate', onclick: "showExam()" });
+  html += dashCard({ icon: '📄', title: '기출문제', desc: '2011-2026 성균관대 + 가천대', accent: 'slate', onclick: "showExam()" });
   html += dashCard({ icon: '✅', title: '단어확인문제', desc: '전체 어휘 확인', accent: 'green', onclick: "showWordcheck()" });
   html += '</div>';
 
@@ -3530,7 +3530,7 @@ function finishGrammarQuiz() {
 els.grammar201Btn.addEventListener('click', showGrammar201);
 
 /* ── 기출문제 ── */
-let examTab = 'gachon';
+let examTab = 'gachon2012';
 
 function showExam() {
   switchMode('exam');
@@ -3538,23 +3538,43 @@ function showExam() {
   renderExamTab();
 }
 
-function renderExamTab() {
-  const exams = {
-    gachon: { title: '2012 가천대', data: window.__V502_EXAM_GACHON2012__ || [] },
-    skku: { title: '2011 성균관대', data: window.__V502_EXAM_SKKU2011__ || [] },
-    skku2011pm: { title: '성균관대 2011 오후', data: window.__V502_EXAM_SKKU2011PM__ || [] }
-  };
+/* ── Exam Registry ── */
+var EXAM_REGISTRY = {
+  gachon2012:     { title: '2012 가천대',          data: function(){return window.__V502_EXAM_GACHON2012__||[]} },
+  skku2011:       { title: '2011 성균관대 오전',    data: function(){return window.__V502_EXAM_SKKU2011__||[]} },
+  skku2011pm:     { title: '2011 성균관대 오후',    data: function(){return window.__V502_EXAM_SKKU2011PM__||[]} },
+  skku2012am:     { title: '2012 성균관대 오전',    data: function(){return window.__V502_EXAM_SKKU2012AM__||[]} },
+  skku2012pm:     { title: '2012 성균관대 오후',    data: function(){return window.__V502_EXAM_SKKU2012PM__||[]} },
+  skku2013am:     { title: '2013 성균관대 오전',    data: function(){return window.__V502_EXAM_SKKU2013AM__||[]} },
+  skku2013pm:     { title: '2013 성균관대 오후',    data: function(){return window.__V502_EXAM_SKKU2013PM__||[]} },
+  skku2014:       { title: '2014 성균관대',         data: function(){return window.__V502_EXAM_SKKU2014__||[]} },
+  skku2015:       { title: '2015 성균관대',         data: function(){return window.__V502_EXAM_SKKU2015__||[]} },
+  skku2016:       { title: '2016 성균관대',         data: function(){return window.__V502_EXAM_SKKU2016__||[]} },
+  skku2017:       { title: '2017 성균관대',         data: function(){return window.__V502_EXAM_SKKU2017__||[]} },
+  skku2018:       { title: '2018 성균관대',         data: function(){return window.__V502_EXAM_SKKU2018__||[]} },
+  skku2019:       { title: '2019 성균관대 인문',    data: function(){return window.__V502_EXAM_SKKU2019__||[]} },
+  skku2021:       { title: '2021 성균관대',         data: function(){return window.__V502_EXAM_SKKU2021__||[]} },
+  skku2022:       { title: '2022 성균관대',         data: function(){return window.__V502_EXAM_SKKU2022__||[]} },
+  skku2023:       { title: '2023 성균관대',         data: function(){return window.__V502_EXAM_SKKU2023__||[]} },
+  skku2024:       { title: '2024 성균관대',         data: function(){return window.__V502_EXAM_SKKU2024__||[]} },
+  skku2025:       { title: '2025 성균관대 인문',    data: function(){return window.__V502_EXAM_SKKU2025__||[]} },
+  skku2026mock:   { title: '2026 대비 예상문제',    data: function(){return window.__V502_EXAM_SKKU2026MOCK__||[]} }
+};
 
-  let html = '<div style="max-width:700px">';
-  // Tab buttons
-  html += '<div style="display:flex;gap:8px;margin-bottom:16px">';
-  for (var key in exams) {
+function renderExamTab() {
+  var html = '<div style="max-width:700px">';
+  html += '<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:16px">';
+  var keys = Object.keys(EXAM_REGISTRY);
+  for (var i = 0; i < keys.length; i++) {
+    var key = keys[i];
     var sel = examTab === key;
-    html += `<button onclick="examTab='${key}';renderExamTab()" style="flex:1;min-height:36px;border:1px solid var(--line);border-radius:2px;font-size:13px;font-weight:600;cursor:pointer;${sel?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">${exams[key].title} (${exams[key].data.length}문제)</button>`;
+    var entry = EXAM_REGISTRY[key];
+    var count = entry.data().length;
+    html += `<button onclick="examTab='${key}';renderExamTab()" style="min-height:32px;padding:3px 8px;border:1px solid var(--line);border-radius:2px;font-size:11px;font-weight:600;cursor:pointer;${sel?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">${entry.title} (${count})</button>`;
   }
   html += '</div>';
 
-  var questions = exams[examTab].data;
+  var questions = EXAM_REGISTRY[examTab] ? EXAM_REGISTRY[examTab].data() : [];
   questions.forEach((q, i) => {
     html += `<div style="margin-bottom:16px;padding:16px;border-radius:2px;border:1px solid var(--line)" id="examQ${i}">`;
     html += `<p style="font-weight:700;margin:0 0 8px;color:var(--accent)">${i+1}.</p>`;
@@ -3584,8 +3604,8 @@ function renderExamTab() {
   els.examContent.innerHTML = html;
 }
 function checkExamAnswer(tab, idx, letter, btn) {
-  var exams = { gachon: window.__V502_EXAM_GACHON2012__ || [], skku: window.__V502_EXAM_SKKU2011__ || [], skku2011pm: window.__V502_EXAM_SKKU2011PM__ || [] };
-  var q = exams[tab][idx];
+  var questions = EXAM_REGISTRY[tab] ? EXAM_REGISTRY[tab].data() : [];
+  var q = questions[idx];
   if (!q || !q.a) return;
 
   var correct = letter === q.a;
@@ -3596,7 +3616,6 @@ function checkExamAnswer(tab, idx, letter, btn) {
       : '<span style="color:#c62828;font-weight:700">❌ 오답 — 정답은 (' + q.a + ')</span>';
     var exp = '';
     if (q.k) {
-      // full HTML explanation (2012 가천대 — 유형/해석/정답근거/어휘)
       exp = '<div style="margin-top:8px;padding:10px 12px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;line-height:1.7">' + q.k + '</div>';
     } else if (q.explanation) {
       exp = '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation) + '</div>';
