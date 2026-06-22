@@ -12,7 +12,7 @@
       <aside class="sidebar" aria-label="Quiz set">
         <div>
           <p class="eyebrow">VOCABULARY</p>
-          <h1 id="mainTitle" style="cursor:pointer" onclick="showDashboard()">Synonym Drill</h1>
+          <h1 id="mainTitle" onclick="showDashboard()">Synonym Drill</h1>
           <p class="range">Choose a category set</p>
         </div>
 
@@ -44,7 +44,7 @@
           논리문제
         </button>
 
-        <section class="set-card" aria-label="Current quiz set" style="display:none">
+        <section class="set-card" aria-label="Current quiz set" hidden>
           <span>Current Set</span>
           <strong id="activeSetLabel">Categories 001-010</strong>
           <small id="activeSetMeta">30 questions</small>
@@ -162,17 +162,17 @@
           <span aria-hidden="true">📄</span>
           기출문제
         </button>
-        <p style="font-size:9px;color:#556;text-align:center;margin:8px 0 0">v20260622t</p>
+        <p class="version-tag">v20260622t</p>
       </aside>
 
       <section class="workspace" aria-live="polite">
         <div class="appbar">
           <button class="appbrand" type="button" onclick="showDashboard()"><span aria-hidden="true">📚</span></button>
-          <span id="noExplainIndicator" style="display:none;font-size:11px;color:#ff3b30;font-weight:600;margin-left:8px;padding:3px 8px;background:#fff0f0;border-radius:6px;border:1px solid #ffcdd2">⚡OFF</span>
-          <div class="progress" aria-label="Progress" style="flex:1;height:4px;margin:0 12px">
+          <span id="noExplainIndicator">⚡OFF</span>
+          <div class="progress" aria-label="Progress">
             <div id="progressBar"></div>
           </div>
-          <span id="quizModeLabel" style="font-size:11px;color:var(--muted);font-weight:600;white-space:nowrap"></span>
+          <span id="quizModeLabel"></span>
         </div>
 
         <section id="dashboardPanel" class="start-panel dashboard-panel" hidden>
@@ -251,18 +251,18 @@
           <div class="ranking-header">
             <p class="eyebrow">Word Check</p>
             <h3>단어확인문제</h3>
-            <p id="wordcheckProgress" style="font-size:13px;color:var(--muted)"></p>
+            <p id="wordcheckProgress" class="wc-progress"></p>
           </div>
           <div id="wordcheckQuiz">
-            <p id="wordcheckQuestion" style="font-size:17px;font-weight:600;margin:0 0 16px"></p>
-            <div id="wordcheckChoices" style="display:grid;gap:8px;margin-bottom:16px"></div>
-            <button id="wordcheckSubmit" class="text-btn" style="min-height:44px;background:var(--accent);color:#fff;border:none;border-radius:6px;font-size:15px;font-weight:700;cursor:pointer">Submit</button>
-            <button id="wordcheckNext" class="text-btn" style="display:none;min-height:40px;margin-top:8px">Next →</button>
+            <p id="wordcheckQuestion" class="wc-question"></p>
+            <div id="wordcheckChoices" class="wc-choices"></div>
+            <button id="wordcheckSubmit" class="text-btn wc-submit">Submit</button>
+            <button id="wordcheckNext" class="text-btn wc-next">Next →</button>
           </div>
-          <div id="wordcheckFeedback" style="display:none;margin-top:12px;padding:12px;border-radius:8px;border:1px solid var(--line)"></div>
-          <div id="wordcheckResult" style="display:none;text-align:center;padding:20px">
+          <div id="wordcheckFeedback" class="wc-feedback"></div>
+          <div id="wordcheckResult" class="wc-result">
             <h4 id="wordcheckScore"></h4>
-            <button id="wordcheckRetry" class="text-btn" style="min-height:40px;margin-top:8px">Retry</button>
+            <button id="wordcheckRetry" class="text-btn wc-retry">Retry</button>
           </div>
         </section>
 
@@ -279,7 +279,7 @@
             <p class="eyebrow">Grammar 201</p>
             <h3>문법 201</h3>
           </div>
-          <div id="grammar201Content" style="max-height:70vh;overflow-y:auto"></div>
+          <div id="grammar201Content" class="grammar-content"></div>
         </section>
 
         <section id="rankingPanel" class="ranking-panel" hidden>
@@ -297,7 +297,7 @@
             <h3>내정보 — 틀린 논리문제</h3>
           </div>
           <div id="myinfoContent"></div>
-          <button id="myinfoCloseBtn" type="button" style="margin-top:16px">Back</button>
+          <button id="myinfoCloseBtn" type="button" class="panel-close-btn">Back</button>
         </section>
 
         <section id="logicPanel" class="quiz-panel" hidden>
