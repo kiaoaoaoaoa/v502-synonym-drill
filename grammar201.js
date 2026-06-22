@@ -1108,7 +1108,7 @@ window.__V502_GRAMMAR__ = [
         "ago."
       ]
     ],
-    "a": "1",
+    "a": "3",
     "t": "분사구문 시제/수동/부정",
     "exp": "Having finished. 완료분사구문."
   },
@@ -1133,7 +1133,7 @@ window.__V502_GRAMMAR__ = [
         "considered for publication."
       ]
     ],
-    "a": "3",
+    "a": "2",
     "t": "주어 불일치 분사구문",
     "exp": "Weather permitting. 독립분사구문."
   },
@@ -1308,7 +1308,7 @@ window.__V502_GRAMMAR__ = [
         "which were"
       ]
     ],
-    "a": "1",
+    "a": "2",
     "t": "동명사 목적어 동사",
     "exp": "Five miles=단수취급(거리). was a fire."
   },
@@ -2071,7 +2071,7 @@ window.__V502_GRAMMAR__ = [
         "am completed"
       ]
     ],
-    "a": "1",
+    "a": "3",
     "t": "many vs. much",
     "exp": "much money. money = 불가산."
   },
@@ -2096,7 +2096,7 @@ window.__V502_GRAMMAR__ = [
         "will be able to proceed."
       ]
     ],
-    "a": "1",
+    "a": "3",
     "t": "이중소유격",
     "exp": "a friend of my father's. 이중소유격."
   },
@@ -6232,7 +6232,7 @@ window.__V502_GRAMMAR__ = [
         "I considered marrying with her, but decided not to."
       ]
     ],
-    "a": "4",
+    "a": "1",
     "exp": "CORRECT: I considered marrying her. consider+~ing. ①맞음. ④ marrying with(X).",
     "t": "문법"
   },
