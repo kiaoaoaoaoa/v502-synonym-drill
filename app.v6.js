@@ -1561,7 +1561,7 @@ async function cloudPullScores() {
 }
 
 /* Debounced cloudSyncAll — coalesces per-action calls into a single write.
-   200 ms fires quickly after the last action while still grouping rapid taps. */
+   100 ms — imperceptible delay, fires near-instantly after last action. */
 let _cloudSyncTimer = null;
 function scheduleCloudSync() {
   if (_cloudSyncTimer) {
@@ -1571,7 +1571,7 @@ function scheduleCloudSync() {
   _cloudSyncTimer = setTimeout(() => {
     _cloudSyncTimer = null;
     cloudSyncAll().catch((e) => { console.warn('scheduleCloudSync failed', e); });
-  }, 200);
+  }, 100);
 }
 function flushCloudSync() {
   if (!_cloudSyncTimer) return;
