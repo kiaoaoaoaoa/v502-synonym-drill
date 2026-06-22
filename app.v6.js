@@ -1949,10 +1949,21 @@ function showWordlist2() {
   switchMode('wordlist');
   els.wordlist2Panel.hidden = false;
   const extraWords = window.__V502_EXTRA__ || [];
+  const hideKnown = wlHideKnown && state.playerName;
+  const visible = hideKnown ? extraWords.filter(item => !isWordKnown(item.w || '')) : extraWords;
+  const hiddenCount = extraWords.length - visible.length;
+
   let html = '<div class="wordlist-scroll"><div class="wordlist-cat">';
-  html += '<h4><span class="wl-cat-num">EXTRA</span> MVP2 + V401 (V502 미포함) — ' + extraWords.length + ' words</h4>';
+  html += '<h4><span class="wl-cat-num">EXTRA</span> MVP2 + V401 (V502 미포함) — ' + visible.length + ' words';
+  if (hiddenCount > 0) html += ' <small style="color:var(--muted);font-weight:400">(' + hiddenCount + ' hidden)</small>';
+  html += '</h4>';
+  html += '<div style="margin-bottom:8px">';
+  if (state.playerName) {
+    html += '<button class="wl-jump-btn wl-hideknown-btn' + (wlHideKnown ? ' wl-hideknown-on' : '') + '" type="button" id="wl2HideBtn" title="아는 단어(✓) 숨기기">' + (wlHideKnown ? '✓ 아는 단어 숨김' : '아는 단어 안보기') + '</button>';
+  }
+  html += '</div>';
   html += '<div class="wordlist2-entries">';
-  extraWords.forEach((item, idx) => {
+  visible.forEach((item, idx) => {
     const hasEx = item.ex && item.ex.length > 20;
     const w = item.w || '';
     const m = item.m || '';
@@ -1971,6 +1982,12 @@ function showWordlist2() {
   });
   html += '</div></div></div>';
   els.wordlist2Content.innerHTML = html;
+
+  // Attach hide button listener after DOM is set
+  const hideBtn = document.getElementById('wl2HideBtn');
+  if (hideBtn) {
+    hideBtn.addEventListener('click', () => { wlHideKnown = !wlHideKnown; showWordlist2(); });
+  }
 }
 
 function jumpToCategory(targetId) {
