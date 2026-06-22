@@ -1596,20 +1596,16 @@ async function savePublicScore(entry) {
     .maybeSingle();
 
   if (existing) {
-    // For cumulative quizzes (LOGIC, WORDCHECK), always update (total grows over time)
-    // For regular quizzes, only update if accuracy is better
+    // For cumulative quizzes (LOGIC, WORDCHECK), always insert new row (total grows over time)
+    // For regular quizzes, only insert if accuracy is better
     const isCumulative = entry.setId === 'LOGIC' || entry.setId === 'WORDCHECK';
-    if (isCumulative || entry.accuracy > existing.accuracy) {
-      const { error } = await client
-        .from(getLeaderboardTable())
-        .update({ correct_count: entry.correct, total_count: entry.total, accuracy: entry.accuracy })
-        .eq("id", existing.id);
-      if (error) throw error;
+    if (!isCumulative && entry.accuracy <= existing.accuracy) {
+      return existing.id; // Keep existing better score
     }
-    return existing.id;
+    // Fall through: insert new row (RLS only allows INSERT, not UPDATE/DELETE)
   }
 
-  // Insert new score
+  // Insert new score (always works — RLS allows INSERT)
   const { data, error } = await client
     .from(getLeaderboardTable())
     .insert({
