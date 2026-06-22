@@ -1695,3 +1695,63 @@ h2 {
 #wordcheck201Btn {
   display: none !important;
 }
+
+/* ===== Sidebar removed — single-column layout ===== */
+.sidebar { display: none !important; }
+.app { grid-template-columns: 1fr; }
+
+.appbar {
+  display: flex;
+  align-items: center;
+}
+.appbrand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  padding: 2px 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--accent);
+  cursor: pointer;
+}
+.appbrand:hover { color: #0f5555; }
+
+/* Login / 내정보 box relocated into the dashboard (light surface) */
+.dashboard-panel #authSection {
+  max-width: 420px;
+  margin-bottom: 4px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+.dashboard-panel .auth-label { color: var(--muted); }
+.dashboard-panel .auth-section input {
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+.dashboard-panel .auth-section input::placeholder { color: var(--muted); }
+.dashboard-panel #authLoggedIn strong { color: var(--ink); }
+.dashboard-panel .auth-logout-btn {
+  color: var(--muted);
+  border-color: var(--line);
+}
+
+/* Category picker relocated into the workspace (light surface) */
+.workspace .category-nav {
+  grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+  max-width: 100%;
+  margin-bottom: 12px;
+}
+.workspace .category-btn {
+  border-color: var(--line);
+  background: var(--panel);
+  color: var(--ink);
+}
+.workspace .category-btn[aria-current="true"] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: #103737;
+}
+.workspace .category-btn small { color: var(--muted); opacity: 1; }

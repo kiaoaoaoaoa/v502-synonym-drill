@@ -2882,6 +2882,20 @@ els.wordcheckPanel.addEventListener('click', function(e) {
 els.logicSubmitBtn.addEventListener("click", submitLogicAnswer);
 els.logicNextBtn.addEventListener("click", nextLogicQuestion);
 
+// Sidebar is removed — relocate its still-needed pieces (with their event
+// listeners intact, since we move the live DOM nodes) into the workspace:
+//  • the login / 내정보 section goes to the top of the dashboard
+//  • the category picker goes above the start panel
+(function relocateFromSidebar() {
+  const dashPanel = document.getElementById('dashboardPanel');
+  const dashContent = document.getElementById('dashboardContent');
+  const authSec = document.getElementById('authSection');
+  if (dashPanel && dashContent && authSec) dashPanel.insertBefore(authSec, dashContent);
+  const catNav = document.getElementById('categoryNav');
+  const startPanel = document.getElementById('startPanel');
+  if (catNav && startPanel && startPanel.parentNode) startPanel.parentNode.insertBefore(catNav, startPanel);
+})();
+
 // Land on the dashboard by default — the single, unified navigation hub.
 // Runs last so logicState and all handlers are initialized first.
 showDashboard();
