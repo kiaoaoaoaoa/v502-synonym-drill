@@ -2474,7 +2474,6 @@ function showDashboard() {
     const wrong = getSynonymWrongCount();
     html += dashCard({ icon: '📕', title: '오답노트', desc: '틀린 단어 모아보기', accent: 'rose', onclick: 'showWrongNotes()', badge: wrong > 0 ? `${wrong}` : '' });
     html += dashCard({ icon: '📊', title: '내 리뷰', desc: '외운 단어 한눈에', accent: 'amber', onclick: 'showMyReview()' });
-    html += dashCard({ icon: '👤', title: '내정보', desc: '틀린 논리문제', accent: 'plum', onclick: "document.getElementById('myinfoBtn').click()" });
   } else {
     html += dashCard({ icon: '🔒', title: '로그인 필요', desc: '오답노트·내 리뷰 잠금', accent: 'slate', onclick: "document.getElementById('authNicknameInput').focus()" });
   }
