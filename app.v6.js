@@ -2275,8 +2275,6 @@ function shuffleLogicQuestions() {
 
 function startLogicQuiz() {
   switchMode('logic');
-  // Add difficulty labels
-  addLogicDifficulty();
   shuffleLogicQuestions();
   logicState.currentIndex = 0;
   logicState.correctCount = 0;
@@ -2303,36 +2301,6 @@ function showLogicAllDone() {
   showLogicRanking(correct, total, pct);
 }
 
-function addLogicDifficulty() {
-  const raw = window.__V502_LOGIC__?.questions;
-  if (!raw || raw[0]?.difficulty) return;
-  // Classify each question by difficulty based on answer word complexity
-  const easyWords = new Set(['encourage','mitigate','neglect','amplify','common','famous','notorious','powerful',
-    'flexible','productive','rewarding','secure','conflicting','deliberate','natural','ultimate','idealistic',
-    'rigid','visionary','destroy','reclaim','stimulate','simple','ambiguous','condescending','distorted',
-    'express','surprise','discourage','dry','extreme','humid','fertile','gradual','abrupt','inevitable',
-    'catastrophic','delaying','immediate','generous','organized','detailed','obscure','disdainful',
-    'premature','protect','decorate','preserve','expand','complicate','outsource','ignore','calculate',
-    'ignore','abandon','hidden','damage','restore','promote','monitor','support','encourage','oppose',
-    'reduce','increase','devalue','simplify','neglect','update','develop','distribute','ban','promote',
-    'demolished','renovated','expanded','extracted','buried','destroyed','photographed','activate',
-    'deactivate','malfunction','overheat','halted','accelerated','completed','uphold','delay','transfer',
-    'valid','binding','renewable','allocated','withdrawn','wasted','invest','liquidate','leverage',
-    'accept','reinforce','challenge','question','demand','instill','suppress','discourage','foster',
-    'punish','voluntary','mandatory','government','corporate','donated','distributed','modern','replica']);
-
-  for (const q of raw) {
-    const ansWord = q.answer.toLowerCase();
-    if (easyWords.has(ansWord)) {
-      q.difficulty = '🟢 쉬움';
-    } else if (ansWord.length <= 7 && !ansWord.includes('-') && !ansWord.includes(' ')) {
-      q.difficulty = '🟡 중간';
-    } else {
-      q.difficulty = '🔴 높음';
-    }
-  }
-}
-
 function setBtnDisabled(btn, isDisabled) {
   // Avoid toggling the native `disabled` attribute: iOS Safari can fail to
   // re-register taps on a button re-enabled this way until the next reflow.
@@ -2345,8 +2313,7 @@ function renderLogicQuestion() {
   if (!q) return;
   logicState.selectedOption = null;
   logicState.answered = false;
-  const diff = q.difficulty || '';
-  els.logicQuestionText.innerHTML = `<strong>Q${logicState.currentIndex + 1}.</strong> ${diff ? `<span style="font-size:11px;margin-right:4px">${escapeHtml(diff)}</span>` : ''}${escapeHtml(q.question)}`;
+  els.logicQuestionText.innerHTML = `<strong>Q${logicState.currentIndex + 1}.</strong> ${escapeHtml(q.question)}`;
   els.logicOptions.innerHTML = "";
   q.options.forEach((opt, i) => {
     const btn = document.createElement("button");
