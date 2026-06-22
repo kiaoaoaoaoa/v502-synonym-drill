@@ -6,6 +6,28 @@
     <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
     <title>V502 Synonym Drill</title>
     <link rel="stylesheet" href="styles.v5.css?v=20260622N" />
+    <script>
+    (function(){
+      var KEY='v502-ver',href=location.href;
+      try{if(sessionStorage.getItem('v502-reloaded'))return;}catch(e){}
+      var req=new XMLHttpRequest();
+      req.open('GET','version.txt?_='+Date.now(),true);
+      req.timeout=3000;
+      req.onload=function(){
+        if(req.status===200){
+          var v=req.responseText.trim();
+          var old=localStorage.getItem(KEY);
+          if(!old){localStorage.setItem(KEY,v);return;}
+          if(old!==v){
+            localStorage.setItem(KEY,v);
+            try{sessionStorage.setItem('v502-reloaded','1');}catch(e){}
+            location.reload();
+          }
+        }
+      };
+      req.send();
+    })();
+    </script>
   </head>
   <body>
     <main class="app">
