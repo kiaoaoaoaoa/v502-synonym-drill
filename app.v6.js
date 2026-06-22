@@ -2994,7 +2994,7 @@ function renderWordcheckQuestion() {
 
   const qEl = document.getElementById('wordcheckQuestion');
   // Underline quoted words (target vocabulary)
-  qEl.innerHTML = escapeHtml(q.q).replace(/'([^']+)'/g, "'<u style='text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--accent);text-decoration-thickness:2px'>$1</u>'");
+  qEl.innerHTML = escapeHtml(q.q).replace(/'([^']+)'/g, "'<u>$1</u>'");
 
   const choicesEl = document.getElementById('wordcheckChoices');
   choicesEl.innerHTML = '';
