@@ -1354,7 +1354,7 @@ function saveSynonymResult(categoryId, word, correct) {
     if (!p[key].wrong[categoryId].includes(word)) p[key].wrong[categoryId].push(word);
   }
   try { localStorage.setItem(synonymProgressKey, JSON.stringify(p)); } catch {}
-  cloudSyncAll().catch(() => {});
+  scheduleCloudSync();
 }
 function getCompletedPromptWords(categoryId) {
   const p = readSynonymProgress();
@@ -1374,7 +1374,7 @@ function toggleWordKnown(word) {
     store[key].push(word);
   }
   writeWordKnowledge(store);
-  cloudSyncAll();
+  scheduleCloudSync();
   return idx < 0; // true if now known
 }
 
@@ -1578,6 +1578,17 @@ async function cloudPullScores() {
   } catch(e) {}
 }
 
+/* Debounced cloudSyncAll — coalesces rapid per-action calls (synonym answers,
+   word toggles, logic answers) into a single write every 700ms. */
+let _cloudSyncTimer = null;
+function scheduleCloudSync() {
+  if (_cloudSyncTimer) return; // a write is already pending
+  _cloudSyncTimer = setTimeout(() => {
+    _cloudSyncTimer = null;
+    cloudSyncAll().catch(() => {});
+  }, 700);
+}
+
 async function cloudSyncAll() {
   if (!state.playerName || !hasPublicConfig()) return;
   const client = await getSupabaseClient(); if (!client) return;
@@ -1608,14 +1619,22 @@ async function cloudSyncAll() {
 
   try {
     const table = getLeaderboardTable();
-    // Delete all previous USERDATA rows for this nickname to avoid duplicates
-    // that break maybeSingle() in cloudCheckCred
-    await client.from(table).delete().eq('nickname', nk).eq('quiz_set', 'USERDATA');
-    await client.from(table).insert({
+    // Try upsert first (single atomic operation — needs UNIQUE constraint)
+    await client.from(table).upsert({
       nickname: nk, quiz_set: 'USERDATA',
       correct_count: 1, total_count: 1, accuracy: 1, payload
-    });
-  } catch(e) {}
+    }, { onConflict: 'nickname,quiz_set' });
+  } catch(_upsertErr) {
+    // Fallback: DELETE old rows then INSERT (works without UNIQUE constraint)
+    try {
+      const table = getLeaderboardTable();
+      await client.from(table).delete().eq('nickname', nk).eq('quiz_set', 'USERDATA');
+      await client.from(table).insert({
+        nickname: nk, quiz_set: 'USERDATA',
+        correct_count: 1, total_count: 1, accuracy: 1, payload
+      });
+    } catch(e) {}
+  }
 }
 
 async function cloudCheckCred(nickname, password) {
@@ -2496,7 +2515,7 @@ function saveLogicCorrect(qid) {
   // Keep correct/wrong disjoint so cumulative total never double-counts a question
   p[key].wrong = (p[key].wrong || []).filter((id) => id !== qid);
   try { localStorage.setItem(logicProgressKey, JSON.stringify(p)); } catch {}
-  cloudSyncAll();
+  scheduleCloudSync();
 }
 function saveLogicWrong(qid) {
   const p = readLogicProgress();
@@ -2504,7 +2523,7 @@ function saveLogicWrong(qid) {
   if (!p[key]) p[key] = { correct: [], wrong: [] };
   if (!p[key].wrong.includes(qid) && !p[key].correct.includes(qid)) p[key].wrong.push(qid);
   try { localStorage.setItem(logicProgressKey, JSON.stringify(p)); } catch {}
-  cloudSyncAll();
+  scheduleCloudSync();
 }
 function getLogicCompleted() {
   const p = readLogicProgress();
