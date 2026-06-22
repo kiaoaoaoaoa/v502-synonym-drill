@@ -3359,12 +3359,15 @@ function checkExamAnswer(tab, idx, letter, btn) {
   var correct = letter === q.a;
   var fb = document.getElementById('examFeedback' + idx);
   if (fb) {
-    fb.innerHTML = correct
-      ? '<span style="color:#2e7d32">✅ 정답!</span>'
-      : '<span style="color:#c62828">❌ 오답 — 정답은 (' + q.a + ')</span>';
+    var fbHtml = correct
+      ? '<span style="color:#2e7d32;font-weight:700">✅ 정답!</span>'
+      : '<span style="color:#c62828;font-weight:700">❌ 오답 — 정답은 (' + q.a + ')</span>';
+    if (q.explanation) {
+      fbHtml += '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation.substring(0, 300)) + '</div>';
+    }
+    fb.innerHTML = fbHtml;
   }
 
-  // Highlight buttons
   var btns = document.querySelectorAll('#examQ' + idx + ' button');
   btns.forEach(function(b) {
     b.disabled = true;
