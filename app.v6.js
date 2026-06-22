@@ -988,6 +988,9 @@ function submitAnswer() {
         saveSynonymResult(question.categoryId, w, false);
       });
     }
+    // Reflect this answer in the unified ranking right away (real-time 단어문제 score)
+    saveSynonymRankResult(question.categoryId, question.prompt, correct);
+    persistSynonymRanking();
   }
   saveQuizProgress();
   if (noExplainMode) {
@@ -1399,17 +1402,20 @@ function sortedLeaderboard(entries) {
 
 /* Cumulative leaderboard: best attempt per (nickname, setId), summed across sets */
 function cumulativeLeaderboard(entries, setId = null) {
+  // Non-score buckets used for cloud backup / auth — never count toward ranking.
+  const JUNK_SETS = new Set(["USERDATA", "CRED", "SYNC"]);
   const best = new Map();
-  const hiddenNames = new Set([]); // 모든 닉네임 랭킹 표시
   const filtered = (setId ? entries.filter((e) => e.setId === setId || (!e.setId && setId === "001-010")) : entries)
     .filter(e => !!e.name);
 
   for (const entry of filtered) {
     const rawSet = String(entry.setId || "001-010");
-    // Logic and wordcheck rows are cumulative single rows — collapse each into
-    // one bucket per user and keep the largest (latest) cumulative total.
+    if (JUNK_SETS.has(rawSet)) continue;
+    // Logic, wordcheck and synonym rows are cumulative single rows — collapse
+    // each into one bucket per user and keep the largest (latest) total.
     const cumPrefix = rawSet.startsWith("LOGIC") ? "LOGIC"
-      : (rawSet.startsWith("WORDCHECK") ? "WORDCHECK" : null);
+      : rawSet.startsWith("WORDCHECK") ? "WORDCHECK"
+      : rawSet.startsWith("SYNONYM") ? "SYNONYM" : null;
     const key = `${entry.name.toLowerCase()}|${cumPrefix || rawSet}`;
     const existing = best.get(key);
     let better;
@@ -1426,10 +1432,23 @@ function cumulativeLeaderboard(entries, setId = null) {
     if (better) best.set(key, entry);
   }
 
+  // Users who now have a cumulative SYNONYM bucket: ignore their legacy per-set
+  // synonym rows so the old per-set model and the new cumulative one don't
+  // double-count. Users without a SYNONYM bucket keep their per-set scores.
+  const hasSynonymBucket = new Set();
+  for (const entry of best.values()) {
+    if (String(entry.setId || "").startsWith("SYNONYM")) hasSynonymBucket.add(entry.name.toLowerCase());
+  }
+
   // Aggregate by nickname across sets
   const aggregated = new Map();
   for (const entry of best.values()) {
     const nameKey = entry.name.toLowerCase();
+    const rawSet = String(entry.setId || "001-010");
+    const isCumBucket = rawSet.startsWith("LOGIC") || rawSet.startsWith("WORDCHECK") || rawSet.startsWith("SYNONYM");
+    // In the unified view, drop legacy per-set synonym rows once the user has a
+    // cumulative SYNONYM bucket (prevents double counting).
+    if (setId === null && !isCumBucket && hasSynonymBucket.has(nameKey)) continue;
     if (!aggregated.has(nameKey)) {
       aggregated.set(nameKey, { name: entry.name, correct: 0, total: 0 });
     }
@@ -1604,9 +1623,9 @@ async function savePublicScore(entry) {
     .maybeSingle();
 
   if (existing) {
-    // For cumulative quizzes (LOGIC, WORDCHECK), always insert new row (total grows over time)
+    // For cumulative quizzes (LOGIC, WORDCHECK, SYNONYM), always insert new row (total grows over time)
     // For regular quizzes, only insert if accuracy is better
-    const isCumulative = entry.setId === 'LOGIC' || entry.setId === 'WORDCHECK';
+    const isCumulative = entry.setId === 'LOGIC' || entry.setId === 'WORDCHECK' || entry.setId === 'SYNONYM';
     if (!isCumulative && entry.accuracy <= existing.accuracy) {
       return existing.id; // Keep existing better score
     }
@@ -1628,6 +1647,39 @@ async function savePublicScore(entry) {
 
   if (error) throw error;
   return data?.id || null;
+}
+
+/* Debounced, race-free remote writer for cumulative buckets (LOGIC / WORDCHECK /
+   SYNONYM). Rapid per-question calls coalesce into a single write of the latest
+   value, so we never race SELECT-then-INSERT into duplicate or stale rows. */
+const _cumRemoteTimers = {};
+const _cumRemoteLatest = {};
+function scheduleCumulativeRemoteWrite(quizSet, name, correct, total, accuracy) {
+  if (!hasPublicConfig() || !name) return;
+  _cumRemoteLatest[quizSet] = { name, correct, total, accuracy };
+  if (_cumRemoteTimers[quizSet]) return; // a write is already pending; it will use the latest value
+  _cumRemoteTimers[quizSet] = setTimeout(() => {
+    _cumRemoteTimers[quizSet] = null;
+    const v = _cumRemoteLatest[quizSet];
+    if (!v) return;
+    getSupabaseClient()
+      .then((client) => client && writeCumulativeRow(client, quizSet, v.name, v.correct, v.total, v.accuracy))
+      .catch(() => {});
+  }, 700);
+}
+
+async function writeCumulativeRow(client, quizSet, name, correct, total, accuracy) {
+  const table = getLeaderboardTable();
+  const { data: existing } = await client
+    .from(table).select('id').eq('nickname', name).eq('quiz_set', quizSet);
+  if (existing && existing.length) {
+    // Keep every duplicate row in sync so whichever the leaderboard picks is current.
+    return client.from(table)
+      .update({ correct_count: correct, total_count: total, accuracy })
+      .eq('nickname', name).eq('quiz_set', quizSet);
+  }
+  return client.from(table)
+    .insert({ nickname: name, quiz_set: quizSet, correct_count: correct, total_count: total, accuracy });
 }
 
 async function readPublicLeaderboard() {
@@ -2401,33 +2453,8 @@ function persistLogicRanking() {
   });
   writeLeaderboard(entries);
 
-  // Public: overwrite the single (nickname, LOGIC) cumulative row
-  if (hasPublicConfig()) {
-    getSupabaseClient().then((client) => {
-      if (!client) return;
-      return saveLogicPublicCumulative(client, state.playerName, correct, total, accuracy);
-    }).catch(() => {});
-  }
-}
-
-async function saveLogicPublicCumulative(client, name, correct, total, accuracy) {
-  const table = getLeaderboardTable();
-  const { data: existing } = await client
-    .from(table)
-    .select("id")
-    .eq("nickname", name)
-    .eq("quiz_set", "LOGIC");
-  if (existing && existing.length) {
-    // Update every matching row so whichever the leaderboard picks is correct
-    return client
-      .from(table)
-      .update({ correct_count: correct, total_count: total, accuracy })
-      .eq("nickname", name)
-      .eq("quiz_set", "LOGIC");
-  }
-  return client
-    .from(table)
-    .insert({ nickname: name, quiz_set: "LOGIC", correct_count: correct, total_count: total, accuracy });
+  // Public: coalesced, race-free write of the single (nickname, LOGIC) cumulative row
+  scheduleCumulativeRemoteWrite("LOGIC", state.playerName, correct, total, accuracy);
 }
 
 function shuffleLogicQuestions() {
@@ -3075,25 +3102,80 @@ function persistWordcheckRanking() {
     setId: 'WORDCHECK', setLabel: 'Word Check', completedAt: new Date().toISOString(),
   });
   writeLeaderboard(entries);
-  if (hasPublicConfig()) {
-    getSupabaseClient().then((client) => {
-      if (!client) return;
-      return saveWordcheckPublicCumulative(client, state.playerName, correct, total, accuracy);
-    }).catch(() => {});
-  }
+  scheduleCumulativeRemoteWrite('WORDCHECK', state.playerName, correct, total, accuracy);
 }
 
-async function saveWordcheckPublicCumulative(client, name, correct, total, accuracy) {
-  const table = getLeaderboardTable();
-  const { data: existing } = await client
-    .from(table).select('id').eq('nickname', name).eq('quiz_set', 'WORDCHECK');
-  if (existing && existing.length) {
-    return client.from(table)
-      .update({ correct_count: correct, total_count: total, accuracy })
-      .eq('nickname', name).eq('quiz_set', 'WORDCHECK');
+/* ── Per-question 단어문제(synonym) tracking + cumulative ranking ──
+   Mirrors the wordcheck model so synonym answers reflect in the ranking
+   immediately, rather than only when a whole 30-question set is completed.
+   A dedicated result log (keyed by categoryId|prompt) keeps the count exact. */
+const synonymResultKey = 'v502-synonym-result';
+function readSynonymResult() {
+  try { return JSON.parse(localStorage.getItem(synonymResultKey)) || {}; }
+  catch { return {}; }
+}
+// Seed a user's result log from their existing drill history the first time,
+// so returning players keep their accumulated score the moment they answer.
+function ensureSynonymSeed(k) {
+  const r = readSynonymResult();
+  if (r[k]) return r;
+  const prog = (readSynonymProgress() || {})[k] || {};
+  const correct = [];
+  for (const cat in prog) {
+    if (cat === 'wrong') continue;
+    (prog[cat] || []).forEach((w) => correct.push(cat + '|' + w));
   }
-  return client.from(table)
-    .insert({ nickname: name, quiz_set: 'WORDCHECK', correct_count: correct, total_count: total, accuracy });
+  r[k] = { correct, wrong: [] };
+  try { localStorage.setItem(synonymResultKey, JSON.stringify(r)); } catch {}
+  return r;
+}
+function synonymResultUserKey() {
+  return state.playerName ? state.playerName.toLowerCase() : '_guest';
+}
+function getSynonymCorrectCount() {
+  const k = synonymResultUserKey();
+  const r = ensureSynonymSeed(k);
+  return new Set((r[k] && r[k].correct) || []).size;
+}
+function getSynonymTotalCount() {
+  const k = synonymResultUserKey();
+  const r = ensureSynonymSeed(k);
+  const c = new Set((r[k] && r[k].correct) || []).size;
+  const w = new Set((r[k] && r[k].wrong) || []).size;
+  return c + w;
+}
+function saveSynonymRankResult(categoryId, prompt, correct) {
+  if (!state.playerName) return;
+  const id = categoryId + '|' + prompt;
+  const k = state.playerName.toLowerCase();
+  const r = ensureSynonymSeed(k);
+  if (!r[k]) r[k] = { correct: [], wrong: [] };
+  if (correct) {
+    if (!r[k].correct.includes(id)) r[k].correct.push(id);
+    r[k].wrong = (r[k].wrong || []).filter((x) => x !== id);
+  } else if (!r[k].correct.includes(id) && !(r[k].wrong || []).includes(id)) {
+    (r[k].wrong = r[k].wrong || []).push(id);
+  }
+  try { localStorage.setItem(synonymResultKey, JSON.stringify(r)); } catch {}
+}
+
+// Push the player's cumulative 단어문제 score to the ranking after each answer.
+function persistSynonymRanking() {
+  if (!state.playerName) return;
+  const correct = getSynonymCorrectCount();
+  const total = getSynonymTotalCount();
+  if (total === 0) return;
+  const accuracy = Math.round((correct / total) * 100);
+  const nameKey = state.playerName.toLowerCase();
+  const entries = readLeaderboard().filter(
+    (e) => !(e.name.toLowerCase() === nameKey && String(e.setId || '') === 'SYNONYM'),
+  );
+  entries.push({
+    name: state.playerName, correct, total, accuracy,
+    setId: 'SYNONYM', setLabel: '단어문제', completedAt: new Date().toISOString(),
+  });
+  writeLeaderboard(entries);
+  scheduleCumulativeRemoteWrite('SYNONYM', state.playerName, correct, total, accuracy);
 }
 
 function submitWordcheckAnswer(letter) {
