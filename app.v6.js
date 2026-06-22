@@ -816,95 +816,22 @@ function explainOption(word, question) {
   const meaning = wordMeanings[word] || "";
   const note = confusionNotes[word] || "";
   const example = (window.examples && window.examples[word]) ? window.examples[word] : "";
-  const promptMeaning = wordMeanings[question.prompt] || "";
-  const promptNote = confusionNotes[question.prompt] || "";
   const wordCat = getWordCategory(word);
-  const wordCatSummary = wordCat ? (categorySummaries[wordCat] || `Category ${wordCat}`) : "";
-  const promptCatSummary = categorySummaries[question.categoryId] || "";
+  const wordCatSummary = wordCat ? (categorySummaries[wordCat] || "") : "";
 
-  // Korean meaning block
-  let meaningBlock = "";
+  let infoBlock = "";
   if (meaning) {
-    meaningBlock = `<p><strong>Meaning:</strong> ${escapeHtml(meaning)}</p>`;
+    infoBlock += `<p><strong>Meaning:</strong> ${escapeHtml(meaning)}</p>`;
   }
   if (wordCatSummary) {
-    meaningBlock += `<p class="explain-cat"><strong>Category:</strong> ${escapeHtml(wordCat)} — ${escapeHtml(wordCatSummary)}</p>`;
+    infoBlock += `<p class="explain-cat"><strong>Category:</strong> ${escapeHtml(wordCatSummary)}</p>`;
   }
   if (note) {
-    meaningBlock += `<p class="explain-note"><strong>Collocation:</strong> ${escapeHtml(note)}</p>`;
+    infoBlock += `<p class="explain-note"><strong>Definition:</strong> ${escapeHtml(note)}</p>`;
   }
-
-  // Example sentence
-  let exampleBlock = "";
-  if (example && !noExplainMode) {
-    exampleBlock = `<p class="explain-example"><strong>📖 Example:</strong> ${escapeHtml(example)}</p>`;
+  if (example) {
+    infoBlock += `<p class="explain-example"><strong>📖 Example:</strong> ${escapeHtml(example)}</p>`;
   }
-
-  // Detailed English explanation
-  let reasonBlock;
-  if (noExplainMode) {
-    reasonBlock = isAnswer
-      ? `<p class="explain-why correct-why"><strong>✅ Correct</strong></p>`
-      : `<p class="explain-why wrong-why"><strong>❌ Wrong — answer: ${escapeHtml(question.answer.join(' / '))}</strong></p>`;
-  } else {
-  if (isAnswer) {
-    // Build a rich explanation for WHY this word is a correct synonym
-    const othersInGroup = question.answer.filter(w => w !== word);
-    let groupText = "";
-    if (othersInGroup.length > 0) {
-      groupText = ` Together with "${escapeHtml(othersInGroup.join('", "'))}", it forms the correct synonym pair for this question.`;
-    }
-    let conceptText = promptCatSummary
-      ? `Both belong to the semantic field of <em>${escapeHtml(promptCatSummary)}</em>.`
-      : `Both are members of the same synonym group.`;
-    let promptNoteText = promptNote
-      ? `<br><br><strong>Definition of "${escapeHtml(question.prompt)}":</strong> ${escapeHtml(promptNote)}`
-      : "";
-    let wordNoteText = note
-      ? `<br><br><strong>Definition of "${escapeHtml(word)}":</strong> ${escapeHtml(note)}`
-      : "";
-
-    reasonBlock = `
-      <p class="explain-why correct-why">
-        <strong>✅ Why this is correct:</strong><br>
-        "${escapeHtml(word)}" is a synonym of "${escapeHtml(question.prompt)}" because ${conceptText}${groupText} In standard English usage, these words can be used interchangeably in contexts where the intended meaning involves the concept of ${escapeHtml(promptCatSummary || promptMeaning || 'this semantic group')}.${promptNoteText}${wordNoteText}
-      </p>`;
-  } else {
-    // Detailed contrast for wrong options
-    let wrongMeaningText = meaning
-      ? `"${escapeHtml(word)}" means <em>${escapeHtml(meaning)}</em>`
-      : `"${escapeHtml(word)}"`;
-    let rightMeaningText = promptMeaning
-      ? `"${escapeHtml(question.prompt)}" means <em>${escapeHtml(promptMeaning)}</em>`
-      : `"${escapeHtml(question.prompt)}"`;
-
-    // Get the wrong word's category for contrast
-    let wrongCatText = "";
-    if (wordCatSummary && wordCatSummary !== promptCatSummary) {
-      wrongCatText = `<br><br><strong>Key distinction:</strong> "${escapeHtml(word)}" belongs to the semantic category of <em>${escapeHtml(wordCatSummary)}</em>, while "${escapeHtml(question.prompt)}" belongs to <em>${escapeHtml(promptCatSummary || 'a different semantic field')}</em>. These categories represent fundamentally different concepts.`;
-    } else if (wordCatSummary && wordCatSummary === promptCatSummary) {
-      wrongCatText = `<br><br><strong>Note:</strong> Although "${escapeHtml(word)}" appears in the same general category as "${escapeHtml(question.prompt)}", it does not share a direct synonym relationship with it. Words within a category may be related but not interchangeable.`;
-    }
-
-    // Add definition contrast
-    let defContrast = "";
-    if (note && promptNote) {
-      defContrast = `<br><br><strong>Definition contrast:</strong><br>• "${escapeHtml(word)}": ${escapeHtml(note)}<br>• "${escapeHtml(question.prompt)}": ${escapeHtml(promptNote)}`;
-    } else if (note) {
-      defContrast = `<br><br><strong>Definition:</strong> "${escapeHtml(word)}" — ${escapeHtml(note)}`;
-    }
-
-    let conclusionText = wrongCatText
-      ? `Therefore, "${escapeHtml(word)}" cannot function as a synonym for "${escapeHtml(question.prompt)}".`
-      : `Thus, there is no semantic overlap that would make "${escapeHtml(word)}" a valid synonym for "${escapeHtml(question.prompt)}".`;
-
-    reasonBlock = `
-      <p class="explain-why wrong-why">
-        <strong>❌ Why this is wrong:</strong><br>
-        ${wrongMeaningText} whereas ${rightMeaningText}.${wrongCatText}${defContrast}<br><br>${conclusionText}
-      </p>`;
-  }
-  } // end of noExplainMode else
 
   const statusLabel = isAnswer ? "CORRECT" : selected ? "YOUR PICK ✗" : "WRONG";
   const statusClass = isAnswer ? "status-correct" : selected ? "status-wrong-selected" : "status-wrong";
@@ -915,11 +842,7 @@ function explainOption(word, question) {
         <b>${escapeHtml(word)}</b>
         <span class="${statusClass}">${statusLabel}</span>
       </div>
-      <div class="explain-copy">
-        ${meaningBlock}
-        ${exampleBlock}
-        ${reasonBlock}
-      </div>
+      <div class="explain-copy">${infoBlock}</div>
     </li>
   `;
 }
