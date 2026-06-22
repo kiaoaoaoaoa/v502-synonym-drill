@@ -1755,3 +1755,44 @@ h2 {
   color: #103737;
 }
 .workspace .category-btn small { color: var(--muted); opacity: 1; }
+
+/* ===== Dashboard hero holds the greeting + login / 내정보 ===== */
+#dashHeader.dash-hero {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+}
+.dash-hero-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.dash-hero #authSection {
+  margin: 0;
+  max-width: none;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+.dash-hero .auth-label { color: rgba(255, 255, 255, 0.85); }
+.dash-hero .auth-section input {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--ink);
+}
+.dash-hero .auth-section input::placeholder { color: var(--muted); }
+.dash-hero #authLoginBtn { background: #fff; color: var(--accent); }
+.dash-hero #authRegisterBtn { background: rgba(255, 255, 255, 0.2); color: #fff; }
+
+/* Logged-in: the greeting already shows the name — keep just the logout action */
+.dash-hero #authLoggedIn:not([hidden]) { display: flex; }
+.dash-hero #authLoggedIn .auth-label,
+.dash-hero #authLoggedIn strong { display: none; }
+.dash-hero .auth-logout-btn {
+  margin: 0;
+  width: auto;
+  align-self: flex-start;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.12);
+  padding: 0 16px;
+}

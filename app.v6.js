@@ -1697,6 +1697,9 @@ function switchMode(mode) {
   const progress = document.querySelector('.workspace > .progress');
   if (toolbar) toolbar.style.display = isSynonym ? '' : 'none';
   if (progress) progress.style.display = isSynonym ? '' : 'none';
+  // The brand bar is the home button — redundant on the dashboard itself
+  const appbar = document.querySelector('.workspace > .appbar');
+  if (appbar) appbar.style.display = (mode === 'dashboard') ? 'none' : 'flex';
   // Hide category nav except for quiz/start modes
   document.getElementById("categoryNav").hidden = (mode !== 'quiz' && mode !== 'start');
   // Update current set display
@@ -2431,16 +2434,12 @@ function showDashboard() {
   els.dashboardPanel.hidden = false;
   const loggedIn = !!state.playerName;
 
-  // ---- Hero ----
+  // Greeting lives in the stable hero header (which also holds the login /
+  // 내정보 box), so it isn't wiped when the cards below re-render.
+  const greeting = document.getElementById('dashGreeting');
+  if (greeting) greeting.textContent = loggedIn ? `${state.playerName}님의 학습 대시보드` : 'V502 학습 대시보드';
+
   let html = '<div class="dash">';
-  html += `<div class="dash-hero">
-    <div class="dash-hero-icon">📚</div>
-    <div class="dash-hero-text">
-      <p class="dash-hero-eyebrow">LOGIC TREE V502</p>
-      <h2 class="dash-hero-title">${loggedIn ? `${escapeHtml(state.playerName)}님의 학습 대시보드` : 'V502 학습 대시보드'}</h2>
-      <p class="dash-hero-sub">${loggedIn ? '오늘도 한 걸음 더 — 카드를 눌러 학습을 시작하세요.' : '로그인하면 진행상황·랭킹·오답노트가 저장됩니다.'}</p>
-    </div>
-  </div>`;
 
   // ---- Progress stats (logged-in) ----
   if (loggedIn) {
@@ -2887,10 +2886,9 @@ els.logicNextBtn.addEventListener("click", nextLogicQuestion);
 //  • the login / 내정보 section goes to the top of the dashboard
 //  • the category picker goes above the start panel
 (function relocateFromSidebar() {
-  const dashPanel = document.getElementById('dashboardPanel');
-  const dashContent = document.getElementById('dashboardContent');
+  const dashHeader = document.getElementById('dashHeader');
   const authSec = document.getElementById('authSection');
-  if (dashPanel && dashContent && authSec) dashPanel.insertBefore(authSec, dashContent);
+  if (dashHeader && authSec) dashHeader.appendChild(authSec); // login / 내정보 inside the hero
   const catNav = document.getElementById('categoryNav');
   const startPanel = document.getElementById('startPanel');
   if (catNav && startPanel && startPanel.parentNode) startPanel.parentNode.insertBefore(catNav, startPanel);
