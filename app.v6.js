@@ -3508,3 +3508,4 @@ els.logicNextBtn.addEventListener("click", nextLogicQuestion);
 // Land on the dashboard by default — the single, unified navigation hub.
 // Runs last so logicState and all handlers are initialized first.
 showDashboard();
+// v20260623syncfix
