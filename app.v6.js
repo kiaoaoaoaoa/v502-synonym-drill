@@ -1849,6 +1849,8 @@ function switchMode(mode) {
 function showRanking() {
   switchMode('ranking');
   els.rankingPanel.hidden = false;
+  // Push all local scores to Supabase whenever ranking is opened
+  pushAllScoresToSupabase();
 
   els.rankingTitle.textContent = "RANKING";
   els.rankingSummary.textContent = "loading...";
