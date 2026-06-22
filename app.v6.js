@@ -1561,14 +1561,17 @@ async function cloudPullScores() {
 }
 
 /* Debounced cloudSyncAll — coalesces per-action calls into a single write.
-   Balance: 3 s groups most question bursts while keeping data safe. */
+   200 ms fires quickly after the last action while still grouping rapid taps. */
 let _cloudSyncTimer = null;
 function scheduleCloudSync() {
-  if (_cloudSyncTimer) return; // a write is already pending
+  if (_cloudSyncTimer) {
+    clearTimeout(_cloudSyncTimer);
+    _cloudSyncTimer = null;
+  }
   _cloudSyncTimer = setTimeout(() => {
     _cloudSyncTimer = null;
     cloudSyncAll().catch((e) => { console.warn('scheduleCloudSync failed', e); });
-  }, 3000);
+  }, 200);
 }
 function flushCloudSync() {
   if (!_cloudSyncTimer) return;
