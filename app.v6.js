@@ -2868,9 +2868,19 @@ function submitWordcheckAnswer(letter) {
   const correct = letter === answerLetter;
   if (correct) wcState.correct++;
   wcState.answers.push({ id: q.i, correct });
-  // Track this answer and reflect it in the unified ranking immediately
   saveWordcheckResult(q.i, correct);
   persistWordcheckRanking();
+
+  if (noExplainMode) {
+    // Skip feedback, go straight to next question
+    wcState.index++;
+    if (wcState.index >= wordcheckQuestions.length) {
+      finishWordcheck();
+    } else {
+      renderWordcheckQuestion();
+    }
+    return;
+  }
 
   // Highlight feedback
   const fb = document.getElementById('wordcheckFeedback');
@@ -2878,7 +2888,6 @@ function submitWordcheckAnswer(letter) {
   fb.style.background = correct ? '#e8f5e9' : '#fce4ec';
   fb.style.borderColor = correct ? '#a5d6a7' : '#ef9a9a';
 
-  // Build explanation
   let expHTML = correct
     ? `<strong style="color:#2e7d32">✅ Correct!</strong>`
     : `<strong style="color:#c62828">❌ Wrong — answer is (${answerLetter})</strong>`;
@@ -2887,7 +2896,6 @@ function submitWordcheckAnswer(letter) {
     expHTML += `<p style="margin:8px 0 4px;font-size:13px">📝 ${q.k}</p>`;
   }
 
-  // Show all choices with correct/wrong markers
   expHTML += '<div style="margin-top:8px;font-size:13px">';
   q.c.forEach(([l, t]) => {
     if (l === answerLetter) {
@@ -2902,7 +2910,6 @@ function submitWordcheckAnswer(letter) {
 
   fb.innerHTML = expHTML;
 
-  // Disable choice buttons
   document.querySelectorAll('#wordcheckChoices button').forEach(b => b.disabled = true);
   document.getElementById('wordcheckNext').style.display = 'inline-block';
 }
