@@ -1374,7 +1374,9 @@ function sortedLeaderboard(entries) {
 /* Cumulative leaderboard: best attempt per (nickname, setId), summed across sets */
 function cumulativeLeaderboard(entries, setId = null) {
   const best = new Map();
-  const filtered = setId ? entries.filter((e) => e.setId === setId || (!e.setId && setId === "001-010")) : entries;
+  const hiddenNames = new Set(['_sync_rls_test','_rlstest_USERDATA','_rlstest_WORDCHECK','_rlstest_CRED','_rlstest_SYNC','_rlstest_001-010','_rlstest_LOGIC','test_ranking_8568','test5678','f1','f2','f3','v1','rt1','rt4','run1','checker','fulltest','verify1','ranktest2','PublicTester','RankTest','SidebarTest','ㅇㅇ']);
+  const filtered = (setId ? entries.filter((e) => e.setId === setId || (!e.setId && setId === "001-010")) : entries)
+    .filter(e => !e.name || (!e.name.startsWith('_') && !hiddenNames.has(e.name) && !e.name.startsWith('test')));
 
   for (const entry of filtered) {
     const rawSet = String(entry.setId || "001-010");
