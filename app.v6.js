@@ -2560,7 +2560,7 @@ function showDashboard() {
     html += `<div class="dash-stats">
       <div class="dash-stat"><span class="dash-stat-num">${synMastered}</span><span class="dash-stat-label">외운 단어</span></div>
       <div class="dash-stat"><span class="dash-stat-num">${logicMastered}<small>/${getLogicTotal()}</small></span><span class="dash-stat-label">논리 마스터</span></div>
-      <div class="dash-stat"><span class="dash-stat-num">${score}</span><span class="dash-stat-label">통합 점수</span></div>
+      <div class="dash-stat" onclick="document.getElementById('rankingBtn').click()" style="cursor:pointer" title="통합랭킹 보기"><span class="dash-stat-num">${score}</span><span class="dash-stat-label">통합 점수 ▸</span></div>
     </div>`;
   }
 
@@ -2578,7 +2578,6 @@ function showDashboard() {
   html += '<div class="dash-grid">';
   html += dashCard({ icon: '📋', title: '단어일람보기', desc: '전체 단어 사전', accent: 'slate', onclick: "document.getElementById('wordlistBtn').click()" });
   html += dashCard({ icon: '🗂️', title: '단어일람보기2', desc: 'MVP2 + V401 추가 단어', accent: 'slate', onclick: "document.getElementById('wordlist2Btn').click()" });
-  html += dashCard({ icon: '🏆', title: '통합 랭킹', desc: '정답 수 순위', accent: 'gold', onclick: "document.getElementById('rankingBtn').click()" });
   if (!loggedIn) {
     html += dashCard({ icon: '🔒', title: '로그인 필요', desc: '내정보 이용 잠금', accent: 'slate', onclick: "document.getElementById('authNicknameInput').focus()" });
   }
@@ -2740,7 +2739,7 @@ function renderMyInfoTab(tab) {
     html += `<div style="padding:16px;background:#f0f8f0;border-radius:12px;text-align:center"><strong style="font-size:24px">${completed}</strong><br><small>단어 마스터</small><br><small style="color:var(--muted)">/ ${totalSyn} (${pct}%)</small></div>`;
     html += `<div style="padding:16px;background:#f0f0f8;border-radius:12px;text-align:center"><strong style="font-size:24px">${logicMastered}</strong><br><small>논리 마스터</small><br><small style="color:var(--muted)">/ ${logicTotal}</small></div>`;
     html += `<div style="padding:16px;background:#e8f0e8;border-radius:12px;text-align:center"><strong style="font-size:24px">${wcProgress.correct}/${wcProgress.total}</strong><br><small>단어확인</small><br><small style="color:var(--muted)">${wcProgress.total > 0 ? Math.round(wcProgress.correct/wcProgress.total*100) + '%' : 'No data'}</small></div>`;
-    html += `<div style="padding:16px;background:#fff8f0;border-radius:12px;text-align:center"><strong style="font-size:24px">${totalCorrect}/${totalQuestions}</strong><br><small>통합랭킹 점수</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'}</small></div>`;
+    html += `<div style="padding:16px;background:#fff8f0;border-radius:12px;text-align:center;cursor:pointer" onclick="document.getElementById('rankingBtn').click()" title="통합랭킹 보기"><strong style="font-size:24px">${totalCorrect}/${totalQuestions}</strong><br><small>통합랭킹 점수 ▸</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'}</small></div>`;
     html += '</div>';
 
     const p = readSynonymProgress();
