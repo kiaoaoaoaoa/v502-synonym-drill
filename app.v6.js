@@ -2988,6 +2988,12 @@ function showWordcheck201() {
   startWordcheck(wordcheckRemaining(window.__V502_WC_V201__ || []), { shuffle: false });
 }
 
+// [가천대 2012] — 2012학년도 일반·학사편입 A형 기출 40문항 (출제 순서대로)
+function showWordcheckGachon2012() {
+  lastWordcheckLauncher = showWordcheckGachon2012;
+  startWordcheck([...(window.__V502_WC_GACHON2012__ || [])], { shuffle: false });
+}
+
 function renderWordcheckQuestion() {
   if (wcState.index >= wordcheckQuestions.length) {
     finishWordcheck();
@@ -2998,8 +3004,15 @@ function renderWordcheckQuestion() {
   prog.textContent = `${wcState.index + 1} / ${wordcheckQuestions.length} | ✅ ${wcState.correct} | ❌ ${wcState.index - wcState.correct}`;
 
   const qEl = document.getElementById('wordcheckQuestion');
-  // Underline quoted words (target vocabulary)
-  qEl.innerHTML = escapeHtml(q.q).replace(/'([^']+)'/g, "'<u>$1</u>'");
+  if (q.i && q.i.startsWith('GACHON2012')) {
+    // 가천대 2012: passages with line breaks; underline targets marked with 「」
+    qEl.style.whiteSpace = 'pre-wrap';
+    qEl.innerHTML = escapeHtml(q.q).replace(/「([^」]+)」/g, '<u>$1</u>');
+  } else {
+    // Underline quoted words (target vocabulary)
+    qEl.style.whiteSpace = '';
+    qEl.innerHTML = escapeHtml(q.q).replace(/'([^']+)'/g, "'<u>$1</u>'");
+  }
 
   const choicesEl = document.getElementById('wordcheckChoices');
   choicesEl.innerHTML = '';
@@ -3234,6 +3247,8 @@ document.getElementById('wordcheckRetry').addEventListener('click', () => lastWo
 els.wordcheckBtn.addEventListener('click', showWordcheck);
 const wc201Btn = document.getElementById('wordcheck201Btn');
 if (wc201Btn) wc201Btn.addEventListener('click', showWordcheck201);
+const wcGachon2012Btn = document.getElementById('wordcheckGachon2012Btn');
+if (wcGachon2012Btn) wcGachon2012Btn.addEventListener('click', showWordcheckGachon2012);
 els.wordcheckPanel.addEventListener('click', function(e) {
   if (e.target === this) { this.hidden = true; els.startPanel.hidden = false; }
 });
