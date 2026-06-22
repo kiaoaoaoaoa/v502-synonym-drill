@@ -1786,6 +1786,22 @@ h2 {
   align-items: center;
   gap: 16px;
 }
+.dash-hero-mypage {
+  margin-left: auto;
+  padding: 8px 16px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.dash-hero-mypage:hover {
+  background: rgba(255,255,255,0.25);
+}
 .dash-hero #authSection {
   margin: 0;
   max-width: none;
