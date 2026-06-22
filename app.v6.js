@@ -1495,10 +1495,12 @@ async function cloudSyncAll() {
   });
 
   try {
-    await client.from(getLeaderboardTable()).upsert({
+    // Delete old row first, then insert (table has no unique constraint for upsert)
+    await client.from(getLeaderboardTable()).delete().eq('nickname', state.playerName).eq('quiz_set', 'USERDATA');
+    await client.from(getLeaderboardTable()).insert({
       nickname: state.playerName, quiz_set: 'USERDATA',
       correct_count: 0, total_count: 0, accuracy: 0, payload
-    }, { onConflict: 'nickname,quiz_set' });
+    });
   } catch(e) {}
 }
 
