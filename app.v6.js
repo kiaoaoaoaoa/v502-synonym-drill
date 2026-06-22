@@ -2012,7 +2012,7 @@ function showRanking() {
         const tier = getTierForRanking(item.correct, item.total);
         const sizes = ['160%','130%','110%'];
         const color = colors[idx];
-        html += `<div style="background:${color};border-radius:16px;padding:20px 14px;text-align:center;color:#fff;position:relative;overflow:hidden">
+        html += `<div style="background:${color};border-radius:2px;padding:20px 14px;text-align:center;color:#fff;position:relative;overflow:hidden">
           <div style="font-size:${sizes[idx]};font-weight:900;line-height:1;opacity:0.25;position:absolute;top:4px;right:8px">${medals[idx]}</div>
           <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;opacity:0.7;margin-bottom:4px">#${idx+1}</div>
           <div style="font-size:16px;font-weight:800;margin-bottom:2px;word-break:break-all">${escapeHtml(item.name)}</div>
@@ -3020,9 +3020,9 @@ function showMyInfo() {
 function renderMyInfoTab(tab) {
   let html = '<div style="max-width:600px">';
   html += '<div style="display:flex;gap:8px;margin-bottom:16px">';
-  html += `<button onclick="renderMyInfoTab('review')" style="flex:1;min-height:36px;border:none;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;${tab==='review'?'background:var(--accent);color:#fff':'background:#f2f2f7;color:var(--ink)'}">📊 내 리뷰</button>`;
-  html += `<button onclick="renderMyInfoTab('wrong')" style="flex:1;min-height:36px;border:none;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;${tab==='wrong'?'background:var(--accent);color:#fff':'background:#f2f2f7;color:var(--ink)'}">📕 오답노트</button>`;
-  html += `<button onclick="renderMyInfoTab('logic')" style="flex:1;min-height:36px;border:none;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;${tab==='logic'?'background:var(--accent);color:#fff':'background:#f2f2f7;color:var(--ink)'}">🧩 논리오답</button>`;
+  html += `<button onclick="renderMyInfoTab('review')" style="flex:1;min-height:36px;border:1px solid var(--line);border-radius:2px;font-size:13px;font-weight:600;cursor:pointer;${tab==='review'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📊 내 리뷰</button>`;
+  html += `<button onclick="renderMyInfoTab('wrong')" style="flex:1;min-height:36px;border:1px solid var(--line);border-radius:2px;font-size:13px;font-weight:600;cursor:pointer;${tab==='wrong'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📕 오답노트</button>`;
+  html += `<button onclick="renderMyInfoTab('logic')" style="flex:1;min-height:36px;border:1px solid var(--line);border-radius:2px;font-size:13px;font-weight:600;cursor:pointer;${tab==='logic'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">🧩 논리오답</button>`;
   html += '</div>';
 
   if (tab === 'review') {
@@ -3042,11 +3042,11 @@ function renderMyInfoTab(tab) {
     let totalCorrect = 0, totalQuestions = 0;
     for (const e of best.values()) { totalCorrect += e.correct; totalQuestions += e.total; }
 
-    html += `<div style="display:grid;gap:12px;grid-template-columns:1fr 1fr">`;
-    html += `<div style="padding:16px;background:#f0f8f0;border-radius:12px;text-align:center"><strong style="font-size:24px">${completed}</strong><br><small>단어 마스터</small><br><small style="color:var(--muted)">/ ${totalSyn} (${pct}%)</small></div>`;
-    html += `<div style="padding:16px;background:#f0f0f8;border-radius:12px;text-align:center"><strong style="font-size:24px">${logicMastered}</strong><br><small>논리 마스터</small><br><small style="color:var(--muted)">/ ${logicTotal}</small></div>`;
-    html += `<div style="padding:16px;background:#e8f0e8;border-radius:12px;text-align:center"><strong style="font-size:24px">${wcProgress.correct}/${wcProgress.total}</strong><br><small>단어확인</small><br><small style="color:var(--muted)">${wcProgress.total > 0 ? Math.round(wcProgress.correct/wcProgress.total*100) + '%' : 'No data'}</small></div>`;
-    html += `<div style="padding:16px;background:#fff8f0;border-radius:12px;text-align:center;cursor:pointer" onclick="showRanking()" title="통합랭킹 보기"><strong style="font-size:24px">${totalCorrect}/${totalQuestions}</strong><br><small>통합랭킹 점수 ▸</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'}</small></div>`;
+    html += `<div style="display:grid;gap:8px;grid-template-columns:1fr 1fr">`;
+    html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid var(--ok);border-radius:2px;text-align:center"><strong style="font-size:24px">${completed}</strong><br><small>단어 마스터</small><br><small style="color:var(--muted)">/ ${totalSyn} (${pct}%)</small></div>`;
+    html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid #4f46e5;border-radius:2px;text-align:center"><strong style="font-size:24px">${logicMastered}</strong><br><small>논리 마스터</small><br><small style="color:var(--muted)">/ ${logicTotal}</small></div>`;
+    html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid var(--ink);border-radius:2px;text-align:center"><strong style="font-size:24px">${wcProgress.correct}/${wcProgress.total}</strong><br><small>단어확인</small><br><small style="color:var(--muted)">${wcProgress.total > 0 ? Math.round(wcProgress.correct/wcProgress.total*100) + '%' : 'No data'}</small></div>`;
+    html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:2px;text-align:center;cursor:pointer" onclick="showRanking()" title="통합랭킹 보기"><strong style="font-size:24px">${totalCorrect}/${totalQuestions}</strong><br><small>통합랭킹 점수 ▸</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'}</small></div>`;
     html += '</div>';
 
     const p = readSynonymProgress();
@@ -3181,7 +3181,7 @@ function renderWordcheckQuestion() {
   q.c.forEach(([letter, text]) => {
     const btn = document.createElement('button');
     btn.textContent = `(${letter}) ${text}`;
-    btn.style.cssText = 'min-height:40px;padding:8px 14px;border:1px solid var(--line);border-radius:6px;background:var(--panel);text-align:left;font:inherit;font-size:14px;cursor:pointer';
+    btn.style.cssText = 'min-height:40px;padding:8px 14px;border:1px solid var(--line);border-radius:2px;background:var(--panel);text-align:left;font:inherit;font-size:14px;cursor:pointer';
     btn.onclick = () => submitWordcheckAnswer(letter);
     choicesEl.appendChild(btn);
   });
@@ -3503,13 +3503,13 @@ function renderGrammarQuestion() {
   if (q.c && q.c.length >= 2) {
     html += '<div style="display:grid;gap:8px;margin-bottom:16px">';
     q.c.forEach(([letter, text]) => {
-      html += `<button onclick="submitGrammarAnswer('${escapeHtml(letter)}')" style="min-height:40px;padding:8px 14px;border:1px solid var(--line);border-radius:8px;background:var(--panel);text-align:left;font:inherit;font-size:14px;cursor:pointer">(${escapeHtml(letter)}) ${escapeHtml(text)}</button>`;
+      html += `<button onclick="submitGrammarAnswer('${escapeHtml(letter)}')" style="min-height:40px;padding:8px 14px;border:1px solid var(--line);border-radius:2px;background:var(--panel);text-align:left;font:inherit;font-size:14px;cursor:pointer">(${escapeHtml(letter)}) ${escapeHtml(text)}</button>`;
     });
     html += '</div>';
   }
 
   // For no-choice questions, add navigation
-  html += `<button onclick="grammarState.index++; if(grammarState.index>=grammarState.total)finishGrammarQuiz();else renderGrammarQuestion();" style="min-height:36px;padding:0 16px;border:1px solid var(--line);border-radius:8px;background:var(--panel);cursor:pointer;font:inherit">다음 ▸</button>`;
+  html += `<button onclick="grammarState.index++; if(grammarState.index>=grammarState.total)finishGrammarQuiz();else renderGrammarQuestion();" style="min-height:36px;padding:0 16px;border:1px solid var(--line);border-radius:2px;background:var(--panel);cursor:pointer;font:inherit">다음 ▸</button>`;
   html += '</div>';
   els.grammar201Content.innerHTML = html;
 }
@@ -3550,13 +3550,13 @@ function renderExamTab() {
   html += '<div style="display:flex;gap:8px;margin-bottom:16px">';
   for (var key in exams) {
     var sel = examTab === key;
-    html += `<button onclick="examTab='${key}';renderExamTab()" style="flex:1;min-height:36px;border:none;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;${sel?'background:var(--accent);color:#fff':'background:#f2f2f7;color:var(--ink)'}">${exams[key].title} (${exams[key].data.length}문제)</button>`;
+    html += `<button onclick="examTab='${key}';renderExamTab()" style="flex:1;min-height:36px;border:1px solid var(--line);border-radius:2px;font-size:13px;font-weight:600;cursor:pointer;${sel?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">${exams[key].title} (${exams[key].data.length}문제)</button>`;
   }
   html += '</div>';
 
   var questions = exams[examTab].data;
   questions.forEach((q, i) => {
-    html += `<div style="margin-bottom:16px;padding:16px;background:#fff;border-radius:12px;border:1px solid var(--line);box-shadow:0 1px 4px rgba(0,0,0,0.04)" id="examQ${i}">`;
+    html += `<div style="margin-bottom:16px;padding:16px;border-radius:2px;border:1px solid var(--line)" id="examQ${i}">`;
     html += `<p style="font-weight:700;margin:0 0 8px;color:var(--accent)">${i+1}.</p>`;
     if (q.p && q.p.length > 30) {
       var pHtml = escapeHtml(q.p).replace(/「([^」]+)」/g, '<u>$1</u>');
@@ -3573,7 +3573,7 @@ function renderExamTab() {
     if (q.c && q.c.length > 0) {
       html += '<div style="display:grid;gap:4px">';
       q.c.forEach(([letter, text]) => {
-        html += `<button onclick="checkExamAnswer('${examTab}',${i},'${escapeHtml(letter)}',this)" style="font-size:14px;padding:4px 8px;background:#f9f9fb;border:1px solid var(--line);border-radius:6px;text-align:left;cursor:pointer;font:inherit">(${escapeHtml(letter)}) ${escapeHtml(text)}</button>`;
+        html += `<button onclick="checkExamAnswer('${examTab}',${i},'${escapeHtml(letter)}',this)" style="font-size:14px;padding:4px 8px;background:transparent;border:1px solid var(--line);border-radius:2px;text-align:left;cursor:pointer;font:inherit">(${escapeHtml(letter)}) ${escapeHtml(text)}</button>`;
       });
       html += '</div>';
     }
