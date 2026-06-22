@@ -623,7 +623,7 @@ const els = {
   logicSubmitBtn: document.querySelector("#logicSubmitBtn"),
   logicNextBtn: document.querySelector("#logicNextBtn"),
   logicCounter: document.querySelector("#logicCounter"),
-  logicRemaining: document.querySelector("#logicRemaining"),
+  quizModeLabel: document.querySelector("#quizModeLabel"),
   wordcheckBtn: document.querySelector("#wordcheckBtn"),
   wordcheckPanel: document.querySelector("#wordcheckPanel"),
   grammar201Btn: document.querySelector("#grammar201Btn"),
@@ -721,8 +721,7 @@ function renderQuestion() {
   const activeSelection = saved ? new Set(saved.selected) : state.currentSelection;
 
   const activeSet = getActiveSet();
-  els.categoryLabel.textContent = activeSet.label;
-  els.categoryTitle.textContent = "Synonym Pair Challenge";
+  els.quizModeLabel.textContent = activeSet.label;
   els.meaningPrompt.textContent = question.prompt;
   els.questionIndex.textContent = String(state.questionIndex + 1);
   els.questionTotal.textContent = `/ ${state.questions.length}`;
@@ -1836,6 +1835,9 @@ function switchMode(mode) {
   if (mode === 'logic') {
     els.activeSetLabel.textContent = "논리문제";
     els.activeSetMeta.textContent = `${getLogicTotal()} questions`;
+    els.quizModeLabel.textContent = '논리';
+  } else if (mode === 'quiz') {
+    els.quizModeLabel.textContent = state.activeSetId || '';
   } else if (mode === 'wordlist') {
     els.activeSetLabel.textContent = "단어일람보기";
     els.activeSetMeta.textContent = "620 categories";
@@ -2164,7 +2166,6 @@ function updateSetDisplay() {
   const activeSet = getActiveSet();
   els.activeSetLabel.textContent = activeSet.label;
   els.activeSetMeta.textContent = "30 questions";
-  els.categoryLabel.textContent = activeSet.label;
   els.questionTotal.textContent = "/ 30";
   els.categoryButtons.forEach((button) => {
     button.setAttribute("aria-current", String(button.dataset.setId === state.activeSetId));
@@ -2498,11 +2499,8 @@ function renderLogicQuestion() {
   setBtnDisabled(els.logicNextBtn, true);
   els.logicFeedback.hidden = true;
   els.logicFeedback.className = "feedback";
-  els.logicCounter.textContent = `${logicState.currentIndex + 1} / ${logicState.questions.length}`;
-  const answered = getLogicCompleted().size + getLogicWrong().size;
-  const totalPool = (window.__V502_LOGIC__ && window.__V502_LOGIC__.questions || []).length;
-  els.logicRemaining.textContent = `(남은 문제: ${totalPool - answered}개)`;
-  els.logicProgressBar.style.width = `${Math.round(((logicState.currentIndex) / logicState.questions.length) * 100)}%`;
+  els.logicCounter.textContent = `${logicState.currentIndex + 1}/${logicState.questions.length}`;
+  els.quizModeLabel.textContent = '논리';
 }
 
 function logicSubmitNoExplain(opt, clickedBtn, q) {

@@ -184,14 +184,12 @@
 
       <section class="workspace" aria-live="polite">
         <div class="appbar">
-          <button class="appbrand" type="button" onclick="showDashboard()"><span aria-hidden="true">📚</span> V502 학습</button>
-          <span id="noExplainIndicator" style="display:none;font-size:11px;color:#ff3b30;font-weight:600;margin-left:12px;padding:3px 10px;background:#fff0f0;border-radius:6px;border:1px solid #ffcdd2">⚡ 해설OFF 모드</span>
-          <span id="categoryLabel" class="eyebrow" style="margin-left:auto;margin-right:0">001-010</span>
-          <div class="progress" aria-label="Progress" style="width:120px;height:5px;margin:0 12px">
+          <button class="appbrand" type="button" onclick="showDashboard()"><span aria-hidden="true">📚</span></button>
+          <span id="noExplainIndicator" style="display:none;font-size:11px;color:#ff3b30;font-weight:600;margin-left:8px;padding:3px 8px;background:#fff0f0;border-radius:6px;border:1px solid #ffcdd2">⚡OFF</span>
+          <div class="progress" aria-label="Progress" style="flex:1;height:4px;margin:0 12px">
             <div id="progressBar"></div>
           </div>
-          <button id="shuffleBtn" class="appbar-btn" type="button" title="Shuffle">↻</button>
-          <button id="resetBtn" class="appbar-btn" type="button">Reset</button>
+          <span id="quizModeLabel" style="font-size:11px;color:var(--muted);font-weight:600;white-space:nowrap"></span>
         </div>
 
         <section id="dashboardPanel" class="start-panel dashboard-panel" hidden>
@@ -300,7 +298,6 @@
           </div>
           <p id="rankingSummary" class="ranking-summary"></p>
           <div id="rankingContent" class="leaderboard"></div>
-          <button id="rankingCloseBtn" type="button">Back</button>
         </section>
 
         <section id="myinfoPanel" class="quiz-panel" hidden>
@@ -313,20 +310,13 @@
         </section>
 
         <section id="logicPanel" class="quiz-panel" hidden>
-          <div class="logic-header">
-            <p class="eyebrow">Logic Quiz</p>
-            <h3>논리문제 <small id="logicRemaining" style="color:var(--muted);font-size:14px;font-weight:400"></small></h3>
-          </div>
-          <div id="logicProgress" class="progress" aria-label="Progress">
-            <div id="logicProgressBar"></div>
-          </div>
           <div id="logicQuestionArea">
             <p id="logicQuestionText" class="logic-question"></p>
             <div id="logicOptions" class="options" role="list"></div>
             <div id="logicFeedback" class="feedback" hidden></div>
           </div>
           <footer class="actions">
-            <span id="logicCounter" class="logic-counter">1 / 50</span>
+            <span id="logicCounter" class="logic-counter">1/50</span>
             <button id="logicSubmitBtn" type="button">Submit</button>
             <button id="logicNextBtn" type="button" aria-disabled="true">Next</button>
           </footer>
@@ -362,7 +352,7 @@
     <script src="wordcheck-v201.js?v=20260622rebuilt"></script>
     <script src="wordcheck-v401.js"></script>
     <script src="grammar201.js"></script>
-    <script src="app.v6.js?v=20260622Y"></script>
+    <script src="app.v6.js?v=20260622ZA"></script>
   </body>
 </html>
  
