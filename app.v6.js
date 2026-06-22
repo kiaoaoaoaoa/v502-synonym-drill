@@ -990,9 +990,9 @@ function submitAnswer() {
     }
     // Reflect this answer in the unified ranking right away (real-time 단어문제 score)
     saveSynonymRankResult(question.categoryId, question.prompt, correct);
-    persistSynonymRanking();
+    try { persistSynonymRanking(); } catch {}
   }
-  saveQuizProgress();
+  try { saveQuizProgress(); } catch {}
   if (noExplainMode) {
     // 해설OFF: advance immediately to the next question (or finish the quiz)
     if (state.questionIndex >= state.questions.length - 1) {
@@ -1029,7 +1029,7 @@ function readLeaderboard() {
 }
 
 function writeLeaderboard(entries) {
-  localStorage.setItem(leaderboardKey, JSON.stringify(entries));
+  try { localStorage.setItem(leaderboardKey, JSON.stringify(entries)); } catch {}
 }
 
 const sessionKey = "v502-synonym-drill-session";
@@ -1075,7 +1075,7 @@ function saveQuizProgress() {
   const store = readQuizProgressStore();
   if (!store[userKey] || Array.isArray(store[userKey].questions)) store[userKey] = {};
   store[userKey][state.activeSetId] = data;        // keyed per category set
-  localStorage.setItem(quizProgressKey, JSON.stringify(store));
+  try { localStorage.setItem(quizProgressKey, JSON.stringify(store)); } catch {}
 }
 
 function readQuizProgressStore() {
@@ -1191,37 +1191,40 @@ async function handleLogin() {
     return;
   }
 
-  const store = readPasswordStore();
-  const key = name.toLowerCase();
-  if (!store[key]) {
-    // Check cloud (cross-device)
-    const cloudResult = await cloudCheckCred(name, pw);
-    if (cloudResult === 'OK') {
-      store[key] = { password: btoa(pw), displayName: name };
-      localStorage.setItem(passwordStoreKey, JSON.stringify(store));
-      // Fall through to login below
-    } else if (cloudResult === 'WRONG_PW') {
-      els.authError.textContent = "비밀번호가 일치하지 않습니다.";
-      els.authError.hidden = false;
-      return;
-    } else {
-      els.authError.textContent = "등록되지 않은 닉네임입니다. '계정등록'을 먼저 해주세요.";
-      els.authError.hidden = false;
-      return;
-    }
-  }
-  // Support both old plain-text and new btoa-encoded passwords
-  const stored = store[key];
-  const storedPw = typeof stored === 'string' ? stored : stored.password;
-  const storedDisplayName = typeof stored === 'string' ? name : (stored.displayName || name);
-  if (typeof stored === 'string' ? stored !== pw : storedPw !== btoa(pw)) {
+  // Always pull latest cloud data first — cloud is source of truth
+  const cloudResult = await cloudCheckCred(name, pw);
+
+  if (cloudResult === 'WRONG_PW') {
     els.authError.textContent = "비밀번호가 일치하지 않습니다.";
     els.authError.hidden = false;
     return;
   }
 
-  state.playerName = storedDisplayName;
-  saveSession(storedDisplayName);
+  if (cloudResult !== 'OK') {
+    // Cloud not available — fall back to local password store
+    const store = readPasswordStore();
+    const key = name.toLowerCase();
+    if (!store[key]) {
+      els.authError.textContent = "등록되지 않은 닉네임입니다. '계정등록'을 먼저 해주세요.";
+      els.authError.hidden = false;
+      return;
+    }
+    const stored = store[key];
+    const storedPw = typeof stored === 'string' ? stored : stored.password;
+    if (typeof stored === 'string' ? stored !== pw : storedPw !== btoa(pw)) {
+      els.authError.textContent = "비밀번호가 일치하지 않습니다.";
+      els.authError.hidden = false;
+      return;
+    }
+  }
+
+  // Update local password store
+  const store = readPasswordStore();
+  store[name.toLowerCase()] = { password: btoa(pw), displayName: name };
+  localStorage.setItem(passwordStoreKey, JSON.stringify(store));
+
+  state.playerName = name;
+  saveSession(name);
   renderAuthUI();
   updateSidebarCompletion();
   els.authNicknameInput.value = "";
@@ -1250,6 +1253,14 @@ async function handleRegister() {
   const store = readPasswordStore();
   const key = name.toLowerCase();
   if (store[key]) {
+    els.authError.textContent = "이미 등록된 닉네임입니다. '로그인'을 해주세요.";
+    els.authError.hidden = false;
+    return;
+  }
+
+  // Also check cloud for case-insensitive duplicate
+  const cloudCheck = await cloudCheckCred(name, '');
+  if (cloudCheck === 'WRONG_PW' || cloudCheck === 'OK') {
     els.authError.textContent = "이미 등록된 닉네임입니다. '로그인'을 해주세요.";
     els.authError.hidden = false;
     return;
@@ -1546,6 +1557,7 @@ async function cloudSyncAll() {
 
   const payload = JSON.stringify({
     pw,
+    displayName: state.playerName,
     word_knowledge: wordKnowledge,
     synonym_progress: synProgress,
     wordcheck_progress: wcProg,
@@ -1556,9 +1568,12 @@ async function cloudSyncAll() {
   });
 
   try {
-    // Insert new row (previous rows remain, cumulative leaderboard picks latest)
-    await client.from(getLeaderboardTable()).insert({
-      nickname: state.playerName, quiz_set: 'USERDATA',
+    const table = getLeaderboardTable();
+    // Delete all previous USERDATA rows for this nickname to avoid duplicates
+    // that break maybeSingle() in cloudCheckCred
+    await client.from(table).delete().eq('nickname', nk).eq('quiz_set', 'USERDATA');
+    await client.from(table).insert({
+      nickname: nk, quiz_set: 'USERDATA',
       correct_count: 1, total_count: 1, accuracy: 1, payload
     });
   } catch(e) {}
@@ -1568,9 +1583,11 @@ async function cloudCheckCred(nickname, password) {
   if (!hasPublicConfig()) return null;
   const client = await getSupabaseClient(); if (!client) return null;
   try {
+    const nkLower = nickname.toLowerCase();
     const { data } = await client.from(getLeaderboardTable())
       .select('payload')
-      .eq('nickname', nickname).eq('quiz_set', 'USERDATA').maybeSingle();
+      .eq('nickname', nkLower).eq('quiz_set', 'USERDATA')
+      .order('created_at', { ascending: false }).limit(1).maybeSingle();
     if (!data || !data.payload) return 'NOT_FOUND';
     const obj = JSON.parse(data.payload);
     if (obj.pw !== password) return 'WRONG_PW';
@@ -1590,10 +1607,14 @@ function cloudPullUserData(payload, nickname) {
     state.playerName = nickname || prevName;
     if (obj.word_knowledge) { const s = readWordKnowledge(); s[nk] = JSON.parse(obj.word_knowledge); writeWordKnowledge(s); }
     if (obj.synonym_progress) { const s = readSynonymProgress(); s[nk] = JSON.parse(obj.synonym_progress); localStorage.setItem(synonymProgressKey, JSON.stringify(s)); }
-    if (obj.wordcheck_progress) { localStorage.setItem('v502-wordcheck-progress', JSON.stringify({[nk]: JSON.parse(obj.wordcheck_progress)})); }
+    if (obj.wordcheck_progress) { const s = JSON.parse(localStorage.getItem('v502-wordcheck-progress')||'{}'); s[nk] = JSON.parse(obj.wordcheck_progress); localStorage.setItem('v502-wordcheck-progress', JSON.stringify(s)); }
     if (obj.quiz_progress) { const s = JSON.parse(localStorage.getItem(quizProgressKey)||'{}'); s[nk] = JSON.parse(obj.quiz_progress); localStorage.setItem(quizProgressKey, JSON.stringify(s)); }
-    if (obj.logic_completed) { JSON.parse(obj.logic_completed).forEach(id => saveLogicCorrect(id)); }
-    if (obj.logic_wrong) { JSON.parse(obj.logic_wrong).forEach(id => saveLogicWrong(id)); }
+    // Write logic data directly to avoid triggering cloudSyncAll cascade
+    if (obj.logic_completed || obj.logic_wrong) {
+      const lp = readLogicProgress();
+      lp[nk] = { correct: obj.logic_completed ? JSON.parse(obj.logic_completed) : [], wrong: obj.logic_wrong ? JSON.parse(obj.logic_wrong) : [] };
+      try { localStorage.setItem(logicProgressKey, JSON.stringify(lp)); } catch {}
+    }
     state.playerName = prevName;
   } catch(e) {}
 }
@@ -3185,7 +3206,7 @@ function submitWordcheckAnswer(letter) {
   if (correct) wcState.correct++;
   wcState.answers.push({ id: q.i, correct });
   saveWordcheckResult(q.i, correct);
-  persistWordcheckRanking();
+  try { persistWordcheckRanking(); } catch {}
 
   if (noExplainMode) {
     const buttons = document.querySelectorAll('#wordcheckChoices button');
