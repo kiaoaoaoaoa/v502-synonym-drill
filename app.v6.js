@@ -2685,13 +2685,13 @@ function showDashboard() {
 
   // ---- Progress stats (logged-in) ----
   if (loggedIn) {
-    const synMastered = getCompletedPromptWordsCount();
+    const knownCount = getWordKnowledgeCount();
     const logicMastered = getLogicCompleted().size;
     const cum = cumulativeLeaderboard(readLeaderboard(), null)
       .find((e) => e.name.toLowerCase() === state.playerName.toLowerCase());
     const score = cum ? cum.correct : 0;
     html += `<div class="dash-stats">
-      <div class="dash-stat" onclick="document.getElementById('wordlistBtn').click()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-num">${synMastered}</span><span class="dash-stat-label">외운 단어 ▸</span></div>
+      <div class="dash-stat" onclick="document.getElementById('wordlistBtn').click()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-num">${knownCount}</span><span class="dash-stat-label">외운 단어 ▸</span></div>
       <div class="dash-stat"><span class="dash-stat-num">${logicMastered}<small>/${getLogicTotal()}</small></span><span class="dash-stat-label">논리 마스터</span></div>
       <div class="dash-stat" onclick="document.getElementById('rankingBtn').click()" style="cursor:pointer" title="통합랭킹 보기"><span class="dash-stat-num">${score}</span><span class="dash-stat-label">통합 점수 ▸</span></div>
     </div>`;
@@ -2740,6 +2740,13 @@ function getCompletedPromptWordsCount() {
     count += p[key][catId].length;
   }
   return count;
+}
+
+function getWordKnowledgeCount() {
+  if (!state.playerName) return 0;
+  const store = readWordKnowledge();
+  const words = store[state.playerName.toLowerCase()] || [];
+  return words.length;
 }
 
 function showWrongNotes() {
