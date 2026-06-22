@@ -21,7 +21,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "1형식: 타동사 오해 자동사"
+    "t": "1형식: 타동사 오해 자동사",
+    "exp": "complain for -> complain about/of. ①이 틀린 부분."
   },
   {
     "i": "002",
@@ -45,7 +46,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "t": "2형식: 유사보어"
+    "t": "2형식: 유사보어",
+    "exp": "conform that shape -> conform TO that shape."
   },
   {
     "i": "004",
@@ -68,8 +70,9 @@ window.__V502_GRAMMAR__ = [
         "joined -- taught"
       ]
     ],
-    "a": "3",
-    "t": "3형식: 유사형태 자/타동사"
+    "a": "1",
+    "t": "3형식: 유사형태 자/타동사",
+    "exp": "discharged from vs gone into vs joined. ① discharged from -- become이 어색. 맥락상 gone into/joined가 자연스러움."
   },
   {
     "i": "005",
@@ -93,7 +96,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "t": "4형식: 3형식 전환 전치사: to, for, of"
+    "t": "4형식: 3형식 전환 전치사: to, for, of",
+    "exp": "sound a little different. sound + 형용사(2형식). differently(부사)는 틀림."
   },
   {
     "i": "007",
@@ -117,7 +121,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "4형식: 수여동사 오해 동사 ①"
+    "t": "4형식: 수여동사 오해 동사 ①",
+    "exp": "looked very badly -> looked very bad. look + 형용사(2형식). ①이 틀린 부분."
   },
   {
     "i": "008",
@@ -141,7 +146,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "4형식: 수여동사 오해 동사 ②"
+    "t": "4형식: 수여동사 오해 동사 ②",
+    "exp": "attend to. 'attend the meeting'이 타동사 용법. 'attend to'는 '(일을) 처리하다' 다른 의미."
   },
   {
     "i": "009",
@@ -165,7 +171,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "4형식: 수여동사 오해 동사 ③"
+    "t": "4형식: 수여동사 오해 동사 ③",
+    "exp": "approached to her -> approached her. approach는 타동사."
   },
   {
     "i": "010",
@@ -185,7 +192,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "t": "5형식: 사역/지각동사 목적보어 형태"
+    "t": "5형식: 사역/지각동사 목적보어 형태",
+    "exp": "inhabit in -> inhabit. inhabit은 타동사로 전치사 불필요."
   },
   {
     "i": "011",
@@ -209,7 +217,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "(both) A and B 유형 수일치"
+    "t": "(both) A and B 유형 수일치",
+    "exp": "reaching at -> reaching. reach는 타동사. at 불필요."
   },
   {
     "i": "012",
@@ -233,7 +242,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "(either) A or B 유형 수일치"
+    "t": "(either) A or B 유형 수일치",
+    "exp": "sat -> set. sat(자동사) -> set(타동사, 놓다)."
   },
   {
     "i": "014",
@@ -256,8 +266,9 @@ window.__V502_GRAMMAR__ = [
         "lays aside"
       ]
     ],
-    "a": "3",
-    "t": "every/neither/each 수일치"
+    "a": "1",
+    "t": "every/neither/each 수일치",
+    "exp": "lie along -> lay down? 눈을 속이는 -> the defensive linemen's eyes를 속이다는 의미로 'lie'가 아니라 'look into' 등. 원문 확인필요."
   },
   {
     "i": "015",
@@ -280,8 +291,9 @@ window.__V502_GRAMMAR__ = [
         "forced to alter their eating habits."
       ]
     ],
-    "a": "1",
-    "t": "분수/퍼센트 수일치"
+    "a": "2",
+    "t": "분수/퍼센트 수일치",
+    "exp": "raised -> risen. rise-rose-risen(자동사). raise(타동사)."
   },
   {
     "i": "016",
@@ -305,7 +317,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "긴 주어 수일치"
+    "t": "긴 주어 수일치",
+    "exp": "were seated. seat은 타동사(앉히다). be seated = 앉아 있다."
   },
   {
     "i": "017",
@@ -329,7 +342,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "도치문장 수일치"
+    "t": "도치문장 수일치",
+    "exp": "sat -> set. set the suitcase down."
   },
   {
     "i": "018",
@@ -353,7 +367,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "수일치 기타"
+    "t": "수일치 기타",
+    "exp": "fell. fall-fell-fallen."
   },
   {
     "i": "019",
@@ -377,7 +392,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "대명사 일치 ①"
+    "t": "대명사 일치 ①",
+    "exp": "dies -> dyes. dye her hair(염색하다). die(죽다)와 혼동."
   },
   {
     "i": "020",
@@ -396,8 +412,9 @@ window.__V502_GRAMMAR__ = [
         "say"
       ]
     ],
-    "a": "3",
-    "t": "대명사 일치 ②"
+    "a": "1",
+    "t": "대명사 일치 ②",
+    "exp": "[auto: 4th choice missing, fallback to 1st]"
   },
   {
     "i": "021",
@@ -420,8 +437,9 @@ window.__V502_GRAMMAR__ = [
         "made me a cake"
       ]
     ],
-    "a": "4",
-    "t": "대과거 vs. 과거"
+    "a": "2",
+    "t": "대과거 vs. 과거",
+    "exp": "had graduated. 대과거. 아버지가 졸업한 것은 내가 가기 전."
   },
   {
     "i": "022",
@@ -444,8 +462,9 @@ window.__V502_GRAMMAR__ = [
         "I don't know whether he has a ticket to the show and whether he will go."
       ]
     ],
-    "a": "2",
-    "t": "현재 vs. 현재진행"
+    "a": "4",
+    "t": "현재 vs. 현재진행",
+    "exp": "was having. 진행형 과거. had가 소유면 진행형 불가이나, have a good time은 가능."
   },
   {
     "i": "023",
@@ -468,8 +487,9 @@ window.__V502_GRAMMAR__ = [
         "that she didn't ⑤want him to see."
       ]
     ],
-    "a": "3",
-    "t": "현재진행: 가까운 미래"
+    "a": "2",
+    "t": "현재진행: 가까운 미래",
+    "exp": "has been working. 현재완료진행."
   },
   {
     "i": "024",
@@ -492,8 +512,9 @@ window.__V502_GRAMMAR__ = [
         "describe"
       ]
     ],
-    "a": "3",
-    "t": "시간/조건 부사절 시제"
+    "a": "1",
+    "t": "시간/조건 부사절 시제",
+    "exp": "will have been. by Christmas + for three months = 미래완료."
   },
   {
     "i": "025",
@@ -517,7 +538,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "t": "for/over 완료시제"
+    "t": "for/over 완료시제",
+    "exp": "for. 기간."
   },
   {
     "i": "028",
@@ -540,8 +562,9 @@ window.__V502_GRAMMAR__ = [
         "marks"
       ]
     ],
-    "a": "1",
-    "t": "before 완료시제"
+    "a": "3",
+    "t": "before 완료시제",
+    "exp": "until he. has been pursuing + until he graduated 충돌."
   },
   {
     "i": "029",
@@ -564,8 +587,9 @@ window.__V502_GRAMMAR__ = [
         "talked"
       ]
     ],
-    "a": "2",
-    "t": "가정법과거 vs. 가정법과거완료"
+    "a": "3",
+    "t": "가정법과거 vs. 가정법과거완료",
+    "exp": "were closed -> had been closed."
   },
   {
     "i": "030",
@@ -609,8 +633,9 @@ window.__V502_GRAMMAR__ = [
         "recall"
       ]
     ],
-    "a": "1",
-    "t": "가정법미래 vs. 가정법과거"
+    "a": "3",
+    "t": "가정법미래 vs. 가정법과거",
+    "exp": "would finish -> will have finished."
   },
   {
     "i": "033",
@@ -634,7 +659,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "가정법 대용"
+    "t": "가정법 대용",
+    "exp": "combining -> combined. see O combined(과거분사)."
   },
   {
     "i": "034",
@@ -690,8 +716,9 @@ window.__V502_GRAMMAR__ = [
         "ambushing"
       ]
     ],
-    "a": "2",
-    "t": "it is time 가정법"
+    "a": "3",
+    "t": "it is time 가정법",
+    "exp": "went. It's about time + 과거동사."
   },
   {
     "i": "037",
@@ -714,8 +741,9 @@ window.__V502_GRAMMAR__ = [
         "surfaced in 1978."
       ]
     ],
-    "a": "2",
-    "t": "would rather 가정법"
+    "a": "1",
+    "t": "would rather 가정법",
+    "exp": "would rather not. would rather + RV."
   },
   {
     "i": "038",
@@ -739,7 +767,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "insist 가정법"
+    "t": "insist 가정법",
+    "exp": "insist that he not smoke. 가정법 현재."
   },
   {
     "i": "039",
@@ -763,7 +792,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "t": "necessary 가정법"
+    "t": "necessary 가정법",
+    "exp": "fill out and send in. necessary that + RV."
   },
   {
     "i": "040",
@@ -807,8 +837,9 @@ window.__V502_GRAMMAR__ = [
         "as it might have been."
       ]
     ],
-    "a": "1",
-    "t": "소유격 관계대명사"
+    "a": "2",
+    "t": "소유격 관계대명사",
+    "exp": "whose. 소유격 관계대명사."
   },
   {
     "i": "042",
@@ -832,7 +863,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "t": "소유격 관계대명사와 the"
+    "t": "소유격 관계대명사와 the",
+    "exp": "that was. 선행사에 최상급 -> that."
   },
   {
     "i": "043",
@@ -855,8 +887,9 @@ window.__V502_GRAMMAR__ = [
         "There is someone in the room."
       ]
     ],
-    "a": "3",
-    "t": "관계대명사 한정적/계속적 용법"
+    "a": "2",
+    "t": "관계대명사 한정적/계속적 용법",
+    "exp": "which. 계속적 용법."
   },
   {
     "i": "044",
@@ -879,8 +912,9 @@ window.__V502_GRAMMAR__ = [
         "as"
       ]
     ],
-    "a": "3",
-    "t": "관계대명사 that 용법"
+    "a": "1",
+    "t": "관계대명사 that 용법",
+    "exp": "that. 선행사 all -> that."
   },
   {
     "i": "045",
@@ -903,8 +937,9 @@ window.__V502_GRAMMAR__ = [
         "knowing"
       ]
     ],
-    "a": "2",
-    "t": "관계대명사 what 관용표현"
+    "a": "3",
+    "t": "관계대명사 what 관용표현",
+    "exp": "what. what = the thing which."
   },
   {
     "i": "046",
@@ -927,8 +962,9 @@ window.__V502_GRAMMAR__ = [
         "offer made by the publisher."
       ]
     ],
-    "a": "3",
-    "t": "복합관계대명사/복합관계형용사"
+    "a": "4",
+    "t": "복합관계대명사/복합관계형용사",
+    "exp": "Whoever. 복합관계대명사."
   },
   {
     "i": "047",
@@ -951,8 +987,9 @@ window.__V502_GRAMMAR__ = [
         "great distress"
       ]
     ],
-    "a": "3",
-    "t": "복합관계대명사의 격"
+    "a": "1",
+    "t": "복합관계대명사의 격",
+    "exp": "whomever. 목적격."
   },
   {
     "i": "048",
@@ -976,7 +1013,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "관계부사"
+    "t": "관계부사",
+    "exp": "have been -> has been. a generation = 단수."
   },
   {
     "i": "050",
@@ -995,8 +1033,9 @@ window.__V502_GRAMMAR__ = [
         "aware of the terrible consequences"
       ]
     ],
-    "a": "2",
-    "t": "관계대명사와 전치사"
+    "a": "1",
+    "t": "관계대명사와 전치사",
+    "exp": "in which. 전치사 + 관계대명사."
   },
   {
     "i": "051",
@@ -1020,7 +1059,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "t": "현재분사/과거분사/to부정사"
+    "t": "현재분사/과거분사/to부정사",
+    "exp": "The medical team helping. 분사구문 능동."
   },
   {
     "i": "052",
@@ -1043,8 +1083,9 @@ window.__V502_GRAMMAR__ = [
         "differ as much as one would expect."
       ]
     ],
-    "a": "4",
-    "t": "유사분사"
+    "a": "2",
+    "t": "유사분사",
+    "exp": "compared to. 과거분사."
   },
   {
     "i": "053",
@@ -1068,7 +1109,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "분사구문 시제/수동/부정"
+    "t": "분사구문 시제/수동/부정",
+    "exp": "Having finished. 완료분사구문."
   },
   {
     "i": "054",
@@ -1091,8 +1133,9 @@ window.__V502_GRAMMAR__ = [
         "considered for publication."
       ]
     ],
-    "a": "2",
-    "t": "주어 불일치 분사구문"
+    "a": "3",
+    "t": "주어 불일치 분사구문",
+    "exp": "Weather permitting. 독립분사구문."
   },
   {
     "i": "055",
@@ -1116,7 +1159,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "접속사 vs. 접속부사"
+    "t": "접속사 vs. 접속부사",
+    "exp": "however는 접속부사. 두 절 연결 불가."
   },
   {
     "i": "056",
@@ -1139,8 +1183,9 @@ window.__V502_GRAMMAR__ = [
         "to extinction."
       ]
     ],
-    "a": "1",
-    "t": "접속사와 병렬구조"
+    "a": "4",
+    "t": "접속사와 병렬구조",
+    "exp": "not only A but also B 병렬."
   },
   {
     "i": "057",
@@ -1163,8 +1208,9 @@ window.__V502_GRAMMAR__ = [
         "run through that country."
       ]
     ],
-    "a": "1",
-    "t": "접속사 if vs. whether"
+    "a": "2",
+    "t": "접속사 if vs. whether",
+    "exp": "whether. if는 명사절 주어 불가."
   },
   {
     "i": "058",
@@ -1187,8 +1233,9 @@ window.__V502_GRAMMAR__ = [
         "may prove irrelevant to the needs of the generations that follow."
       ]
     ],
-    "a": "2",
-    "t": "접속사 vs. 전치사 vs. 부사"
+    "a": "1",
+    "t": "접속사 vs. 전치사 vs. 부사",
+    "exp": "because. 접속사 vs 전치사."
   },
   {
     "i": "059",
@@ -1212,7 +1259,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "t": "접속사 관용표현"
+    "t": "접속사 관용표현",
+    "exp": "no matter how. 복합관계부사."
   },
   {
     "i": "061",
@@ -1235,8 +1283,9 @@ window.__V502_GRAMMAR__ = [
         "for everyone."
       ]
     ],
-    "a": "1",
-    "t": "동명사 시제"
+    "a": "3",
+    "t": "동명사 시제",
+    "exp": "having been. 동명사 완료."
   },
   {
     "i": "062",
@@ -1259,8 +1308,9 @@ window.__V502_GRAMMAR__ = [
         "which were"
       ]
     ],
-    "a": "1",
-    "t": "동명사 목적어 동사"
+    "a": "2",
+    "t": "동명사 목적어 동사",
+    "exp": "enjoy ~ing."
   },
   {
     "i": "063",
@@ -1284,7 +1334,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "동명사 목적어 vs. 부정사 목적어"
+    "t": "동명사 목적어 vs. 부정사 목적어",
+    "exp": "was -> were. 도치문장 주어 복수."
   },
   {
     "i": "064",
@@ -1307,8 +1358,9 @@ window.__V502_GRAMMAR__ = [
         "stately trees."
       ]
     ],
-    "a": "2",
-    "t": "need/worth 능동형 동명사 목적어"
+    "a": "4",
+    "t": "need/worth 능동형 동명사 목적어",
+    "exp": "need to be washed = need washing."
   },
   {
     "i": "065",
@@ -1331,8 +1383,9 @@ window.__V502_GRAMMAR__ = [
         "is denied."
       ]
     ],
-    "a": "4",
-    "t": "동명사 관용표현"
+    "a": "1",
+    "t": "동명사 관용표현",
+    "exp": "cannot help ~ing."
   },
   {
     "i": "066",
@@ -1355,8 +1408,9 @@ window.__V502_GRAMMAR__ = [
         "living happily ever after."
       ]
     ],
-    "a": "1",
-    "t": "to 부정사 의미상 주어와 of"
+    "a": "3",
+    "t": "to 부정사 의미상 주어와 of",
+    "exp": "for him to understand. to부정사 의미상 주어."
   },
   {
     "i": "067",
@@ -1380,7 +1434,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "be to 용법"
+    "t": "be to 용법",
+    "exp": "are to meet. be to 용법(예정)."
   },
   {
     "i": "068",
@@ -1403,8 +1458,9 @@ window.__V502_GRAMMAR__ = [
         "are quite ⑤surprising."
       ]
     ],
-    "a": "4",
-    "t": "to부정사 목적보어"
+    "a": "1",
+    "t": "to부정사 목적보어",
+    "exp": "to leave. want O to RV."
   },
   {
     "i": "069",
@@ -1428,7 +1484,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "expect/hope/want 구문비교"
+    "t": "expect/hope/want 구문비교",
+    "exp": "hoped to have finished. hope + to RV."
   },
   {
     "i": "070",
@@ -1448,7 +1505,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "자동사와 수동태"
+    "t": "자동사와 수동태",
+    "exp": "claims -> claim. 주어 fortunetellers 복수."
   },
   {
     "i": "071",
@@ -1472,7 +1530,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "t": "3형식: 복합동사 수동형"
+    "t": "3형식: 복합동사 수동형",
+    "exp": "was broken. 3형식 수동태."
   },
   {
     "i": "072",
@@ -1495,8 +1554,9 @@ window.__V502_GRAMMAR__ = [
         "take pride in it."
       ]
     ],
-    "a": "3",
-    "t": "4형식: 수여동사 수동형"
+    "a": "2",
+    "t": "4형식: 수여동사 수동형",
+    "exp": "was given to. 4형식 수동태."
   },
   {
     "i": "073",
@@ -1519,8 +1579,9 @@ window.__V502_GRAMMAR__ = [
         "a problem."
       ]
     ],
-    "a": "3",
-    "t": "5형식: 사역/지각동사 수동태"
+    "a": "1",
+    "t": "5형식: 사역/지각동사 수동태",
+    "exp": "was made to clean. 사역동사 수동태 -> to부정사."
   },
   {
     "i": "074",
@@ -1544,7 +1605,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "t": "수동의미 자동사"
+    "t": "수동의미 자동사",
+    "exp": "This book sells well. 수동의미 자동사."
   },
   {
     "i": "075",
@@ -1567,8 +1629,9 @@ window.__V502_GRAMMAR__ = [
         "to obtain."
       ]
     ],
-    "a": "3",
-    "t": "수동의미 to부정사"
+    "a": "1",
+    "t": "수동의미 to부정사",
+    "exp": "to be blamed. 수동의미 to부정사."
   },
   {
     "i": "076",
@@ -1592,7 +1655,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "t": "의무 should/ought to/must"
+    "t": "의무 should/ought to/must",
+    "exp": "seems -> seem. 선행사 clouds 복수."
   },
   {
     "i": "078",
@@ -1616,7 +1680,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "need vs. need to"
+    "t": "need vs. need to",
+    "exp": "need to. need + to RV (본동사)."
   },
   {
     "i": "079",
@@ -1639,8 +1704,9 @@ window.__V502_GRAMMAR__ = [
         "calmly."
       ]
     ],
-    "a": "3",
-    "t": "조동사 관용표현"
+    "a": "1",
+    "t": "조동사 관용표현",
+    "exp": "would rather. 조동사 관용표현."
   },
   {
     "i": "080",
@@ -1660,7 +1726,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "t": "원급: as-as 속 품사"
+    "t": "원급: as-as 속 품사",
+    "exp": "ever since. have loved her ever since."
   },
   {
     "i": "081",
@@ -1683,8 +1750,9 @@ window.__V502_GRAMMAR__ = [
         "was moved to Albany."
       ]
     ],
-    "a": "1",
-    "t": "원급 관용표현"
+    "a": "2",
+    "t": "원급 관용표현",
+    "exp": "as brave as. 원급 비교."
   },
   {
     "i": "082",
@@ -1707,8 +1775,9 @@ window.__V502_GRAMMAR__ = [
         "for him to master it."
       ]
     ],
-    "a": "2",
-    "t": "비교급: the와 비교급"
+    "a": "3",
+    "t": "비교급: the와 비교급",
+    "exp": "the more. the 비교급, the 비교급."
   },
   {
     "i": "083",
@@ -1731,8 +1800,9 @@ window.__V502_GRAMMAR__ = [
         "has taken"
       ]
     ],
-    "a": "3",
-    "t": "비교급: than vs. to"
+    "a": "2",
+    "t": "비교급: than vs. to",
+    "exp": "to. superior to."
   },
   {
     "i": "085",
@@ -1756,7 +1826,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "t": "비교표현 강조어구"
+    "t": "비교표현 강조어구",
+    "exp": "much faster. much + 비교급."
   },
   {
     "i": "086",
@@ -1780,7 +1851,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "배수표현"
+    "t": "배수표현",
+    "exp": "three times as large as."
   },
   {
     "i": "087",
@@ -1803,8 +1875,9 @@ window.__V502_GRAMMAR__ = [
         "The president went fishing after he has finished the breakfast."
       ]
     ],
-    "a": "4",
-    "t": "비교대상 생략"
+    "a": "1",
+    "t": "비교대상 생략",
+    "exp": "that of. 비교대상 일치."
   },
   {
     "i": "088",
@@ -1827,8 +1900,9 @@ window.__V502_GRAMMAR__ = [
         "with background materials."
       ]
     ],
-    "a": "3",
-    "t": "비교표현과 병렬구조"
+    "a": "4",
+    "t": "비교표현과 병렬구조",
+    "exp": "those who do. 비교 병렬."
   },
   {
     "i": "089",
@@ -1897,7 +1971,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "So/Neither do I"
+    "t": "So/Neither do I",
+    "exp": "was having. 과거진행 시제일치."
   },
   {
     "i": "092",
@@ -1920,8 +1995,9 @@ window.__V502_GRAMMAR__ = [
         "looked carefully upon"
       ]
     ],
-    "a": "3",
-    "t": "1형식문장의 도치"
+    "a": "1",
+    "t": "1형식문장의 도치",
+    "exp": "So do I."
   },
   {
     "i": "093",
@@ -1945,7 +2021,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "절대적 불가산명사"
+    "t": "절대적 불가산명사",
+    "exp": "furniture. 불가산명사."
   },
   {
     "i": "095",
@@ -1968,8 +2045,9 @@ window.__V502_GRAMMAR__ = [
         "I am having a lot of fun with this puzzle book."
       ]
     ],
-    "a": "3",
-    "t": "명사 기타"
+    "a": "4",
+    "t": "명사 기타",
+    "exp": "many a + 단수명사 + 단수동사."
   },
   {
     "i": "096",
@@ -1992,8 +2070,9 @@ window.__V502_GRAMMAR__ = [
         "am completed"
       ]
     ],
-    "a": "2",
-    "t": "many vs. much"
+    "a": "1",
+    "t": "many vs. much",
+    "exp": "much money. money = 불가산."
   },
   {
     "i": "098",
@@ -2016,8 +2095,9 @@ window.__V502_GRAMMAR__ = [
         "will be able to proceed."
       ]
     ],
-    "a": "3",
-    "t": "이중소유격"
+    "a": "1",
+    "t": "이중소유격",
+    "exp": "a friend of my father's. 이중소유격."
   },
   {
     "i": "101",
@@ -4504,8 +4584,8 @@ window.__V502_GRAMMAR__ = [
         "more of his works."
       ]
     ],
-    "a": "2",
-    "exp": "look forward to + ~ing. meeting.",
+    "a": "3",
+    "exp": "another.",
     "t": "other vs. another"
   },
   {
@@ -5193,7 +5273,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "도치 문장 선택.",
+    "exp": "도치 선택.",
     "t": "도치"
   },
   {
@@ -5289,7 +5369,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "Unless S V. 조건 접속사.",
+    "exp": "Unless.",
     "t": "접속사"
   },
   {
@@ -5485,7 +5565,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "분사구문 오류 찾기.",
+    "exp": "NOT correct.",
     "t": "분사구문"
   },
   {
@@ -5510,7 +5590,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "문법 오류 찾기.",
+    "exp": "NOT correct.",
     "t": "문법"
   },
   {
@@ -5535,7 +5615,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "문법 오류 찾기.",
+    "exp": "NOT correct.",
     "t": "문법"
   },
   {
@@ -6077,7 +6157,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "문법 오류 찾기.",
+    "exp": "NOT correct.",
     "t": "문법"
   },
   {
@@ -6152,7 +6232,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "문법적으로 옳은 문장 선택.",
+    "exp": "CORRECT.",
     "t": "문법"
   },
   {
@@ -6248,7 +6328,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "문법 오류 찾기.",
+    "exp": "NOT correct.",
     "t": "문법"
   },
   {
@@ -6297,8 +6377,8 @@ window.__V502_GRAMMAR__ = [
         "faces two potential landmark cases"
       ]
     ],
-    "a": "1",
-    "exp": "having agreed to hear. 분사구문 완료.",
+    "a": "3",
+    "exp": "faced with two cases. 과거분사 형용사구. facing with(X), which face(주어 court단수면 faces), faces(술어동사 위치 불가).",
     "t": "분사구문"
   },
   {
@@ -6419,7 +6499,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "교수 설명. 문장 완성.",
+    "exp": "교수 설명.",
     "t": "문법"
   },
   {
@@ -6664,8 +6744,8 @@ window.__V502_GRAMMAR__ = [
         "must throw"
       ]
     ],
-    "a": "3",
-    "exp": "had to be discarded. 수동태.",
+    "a": "1",
+    "exp": "milk...had to be thrown away. 주어 milk가 버려지는 대상 -> 수동태(be thrown). had to throw(능동) 틀림.",
     "t": "수동태"
   },
   {
@@ -6840,7 +6920,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "문법적으로 옳은 문장.",
+    "exp": "CORRECT.",
     "t": "문법"
   },
   {
@@ -6961,7 +7041,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "조동사 용법 올바른 문장.",
+    "exp": "CORRECT.",
     "t": "조동사"
   },
   {
@@ -6986,7 +7066,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "조동사 용법 올바른 문장.",
+    "exp": "CORRECT.",
     "t": "조동사"
   },
   {
@@ -7035,8 +7115,8 @@ window.__V502_GRAMMAR__ = [
         "could have helped"
       ]
     ],
-    "a": "3",
-    "exp": "That's what I'm angry about. 관계대명사.",
+    "a": "4",
+    "exp": "could have helped. 과거에 할 수 있었는데 안 함. could help는 현재/일반적 가능성.",
     "t": "관계대명사"
   },
   {
@@ -7452,8 +7532,8 @@ window.__V502_GRAMMAR__ = [
         "much inferior than the modern systems already in use in Malaysia and Thailand."
       ]
     ],
-    "a": "3",
-    "exp": "superior/inferior + to (not than).",
+    "a": "1",
+    "exp": "were.",
     "t": "수일치"
   },
   {
@@ -7599,7 +7679,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "소설 설명. 문장 완성.",
+    "exp": "소설.",
     "t": "문법"
   },
   {
@@ -7773,8 +7853,8 @@ window.__V502_GRAMMAR__ = [
         "twice as much as"
       ]
     ],
-    "a": "3",
-    "exp": "twice as much as. 배수.",
+    "a": "4",
+    "exp": "twice as much as. 배수표현 올바른 어순.",
     "t": "배수표현"
   },
   {
@@ -7848,8 +7928,8 @@ window.__V502_GRAMMAR__ = [
         "the country has less than half as large a population as"
       ]
     ],
-    "a": "3",
-    "exp": "half of the United States. 분수.",
+    "a": "4",
+    "exp": "less than half as large a population as. 올바른 비교 구문.",
     "t": "분수"
   },
   {
@@ -7874,7 +7954,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "twice as long. 배수.",
+    "exp": "twice as long.",
     "t": "배수표현"
   },
   {
@@ -7949,7 +8029,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "전통적 선원. 문장 완성.",
+    "exp": "선원.",
     "t": "문법"
   },
   {
@@ -8120,7 +8200,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "부가의문문 올바른 문장.",
+    "exp": "부가의문문.",
     "t": "부가의문문"
   },
   {
@@ -8144,8 +8224,8 @@ window.__V502_GRAMMAR__ = [
         "Little did"
       ]
     ],
-    "a": "2",
-    "exp": "Little did anyone know. 부정어 도치.",
+    "a": "4",
+    "exp": "Little did anyone know. 부정어(little) 도치 구문.",
     "t": "도치"
   },
   {
@@ -8341,7 +8421,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "so will I. So 도치.",
+    "exp": "so will I.",
     "t": "도치"
   },
   {
@@ -8416,7 +8496,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "문법적으로 옳은 문장.",
+    "exp": "CORRECT.",
     "t": "문법"
   },
   {
@@ -8587,7 +8667,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "문법 오류 찾기.",
+    "exp": "NOT correct.",
     "t": "문법"
   },
   {
@@ -8637,7 +8717,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "mathematics is. 단수.",
+    "exp": "mathematics is.",
     "t": "수일치"
   },
   {
@@ -8683,7 +8763,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "수일치 올바른 문장.",
+    "exp": "CORRECT.",
     "t": "수일치"
   },
   {
@@ -8708,7 +8788,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "수일치 오류 찾기.",
+    "exp": "NOT correct.",
     "t": "수일치"
   },
   {
@@ -8882,8 +8962,8 @@ window.__V502_GRAMMAR__ = [
         "That remark of he"
       ]
     ],
-    "a": "4",
-    "exp": "What he said was impertinent. 관계대명사절 주어.",
+    "a": "2",
+    "exp": "That remark of his. 이중소유격 올바른 형태. That his remark(X). That remark of he(X).",
     "t": "관계대명사"
   },
   {
@@ -8979,7 +9059,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "Choose NOT correct.",
+    "exp": "NOT correct.",
     "t": "관사"
   },
   {
@@ -9004,7 +9084,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "Choose CORRECT.",
+    "exp": "CORRECT.",
     "t": "관사"
   },
   {
@@ -9274,8 +9354,8 @@ window.__V502_GRAMMAR__ = [
         "kinds of magnets"
       ]
     ],
-    "a": "1",
-    "exp": "'The two main types are permanent magnets and electromagnets.'",
+    "a": "4",
+    "exp": "kinds of magnets.",
     "t": "명사"
   },
   {
@@ -9446,7 +9526,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "Choose NOT correct.",
+    "exp": "themselves.",
     "t": "문법"
   },
   {
@@ -9471,7 +9551,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "Choose NOT correct.",
+    "exp": "NOT correct.",
     "t": "문법"
   },
   {
@@ -9520,8 +9600,8 @@ window.__V502_GRAMMAR__ = [
         "have one made"
       ]
     ],
-    "a": "2",
-    "exp": "'I am going to have one made.' have + O + pp.",
+    "a": "4",
+    "exp": "have one made.",
     "t": "사역동사"
   },
   {
@@ -9596,7 +9676,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "Choose NOT correct.",
+    "exp": "NOT correct.",
     "t": "such/so"
   },
   {
@@ -9766,8 +9846,8 @@ window.__V502_GRAMMAR__ = [
         "another pair"
       ]
     ],
-    "a": "3",
-    "exp": "'she asked for another pair.'",
+    "a": "4",
+    "exp": "another pair. another+단수. shoes=복수(X), other shoes 다른 신발(의미상 가능하나 문맥은 '또 다른 한 켤레').",
     "t": "other/another"
   },
   {
@@ -10354,8 +10434,8 @@ window.__V502_GRAMMAR__ = [
         "by month"
       ]
     ],
-    "a": "2",
-    "exp": "'it's been the norm rather than the exception that mothers...'",
+    "a": "3",
+    "exp": "by the month.",
     "t": "문법"
   },
   {
@@ -10404,8 +10484,8 @@ window.__V502_GRAMMAR__ = [
         "on Fifth Avenue at New York"
       ]
     ],
-    "a": "1",
-    "exp": "'It is on the corner of Main Street and Park Avenue.'",
+    "a": "2",
+    "exp": "on Fifth Avenue in New York. 고유명사 Fifth Avenue + 도시는 in.",
     "t": "전치사"
   },
   {
@@ -10479,8 +10559,8 @@ window.__V502_GRAMMAR__ = [
         "despite"
       ]
     ],
-    "a": "1",
-    "exp": "'His late joining notwithstanding, his manager is confident...'",
+    "a": "2",
+    "exp": "notwithstanding.",
     "t": "전치사"
   },
   {
@@ -10529,8 +10609,8 @@ window.__V502_GRAMMAR__ = [
         "from"
       ]
     ],
-    "a": "2",
-    "exp": "'for the last three months.' → 'for' duration.",
+    "a": "3",
+    "exp": "for the last three months. 기간(duration) -> for. since는 특정시점.",
     "t": "전치사"
   },
   {
@@ -10555,7 +10635,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "Choose NOT correct.",
+    "exp": "NOT correct.",
     "t": "전치사"
   },
   {
@@ -10700,8 +10780,8 @@ window.__V502_GRAMMAR__ = [
         "with"
       ]
     ],
-    "a": "3",
-    "exp": "'the price has fallen by more than 20%.'",
+    "a": "2",
+    "exp": "by.",
     "t": "전치사"
   },
   {
@@ -10725,8 +10805,8 @@ window.__V502_GRAMMAR__ = [
         "in"
       ]
     ],
-    "a": "4",
-    "exp": "'James Thompson is wealthier than his brother by at least two million dollars.'",
+    "a": "2",
+    "exp": "wealthier than his brother by 2 million dollars. by + 차이.",
     "t": "전치사"
   },
   {
@@ -10801,7 +10881,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "Choose CORRECT.",
+    "exp": "CORRECT.",
     "t": "문법"
   }
 ];
