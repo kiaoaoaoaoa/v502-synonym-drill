@@ -1237,6 +1237,13 @@ function handleLogout() {
   els.resultPanel.hidden = true;
   els.rankingPanel.hidden = true;
   els.startPanel.hidden = false;
+  // Reset dashboard greeting
+  const greeting = document.getElementById('dashGreeting');
+  if (greeting) greeting.textContent = 'V502 학습 대시보드';
+  // Hide noExplainMode button
+  const noExBtn = document.getElementById('dashNoExplainBtn');
+  if (noExBtn) noExBtn.style.display = 'none';
+  updateNoExplainIndicator();
 }
 
 function readWordKnowledge() {
@@ -2120,6 +2127,9 @@ function startWithName(event) {
 els.authLoginBtn.addEventListener("click", handleLogin);
 els.authRegisterBtn.addEventListener("click", handleRegister);
 els.authLogoutBtn.addEventListener("click", handleLogout);
+// Enter key to login
+els.authNicknameInput.addEventListener("keydown", (e) => { if (e.key === 'Enter') els.authPasswordInput.focus(); });
+els.authPasswordInput.addEventListener("keydown", (e) => { if (e.key === 'Enter') handleLogin(); });
 els.startQuizBtn.addEventListener("click", onStartQuizClick);
 
 els.prevBtn.addEventListener("click", prevQuestion);
