@@ -1047,7 +1047,6 @@ function loadSetSession(fullQuestions, answersEntries, stats) {
 function resumeQuiz(progress) {
   state.activeSetId = progress.activeSetId;
   switchMode("quiz");
-  document.getElementById("categoryNav").hidden = false;
   loadSetSession(progress.questions, progress.answers, progress);
   els.quizPanel.hidden = false;
   els.shuffleBtn.disabled = false;
@@ -1078,8 +1077,6 @@ function onStartQuizClick() {
 // Opening the synonym panel immediately starts the quiz with current set,
 // and shows the category nav so the user can switch sets.
 function openSynonymPanel() {
-  const nav = document.getElementById("categoryNav");
-  nav.hidden = false;
   openSet(state.activeSetId);
 }
 
@@ -1921,8 +1918,9 @@ function switchMode(mode) {
   // The brand bar is the home button — redundant on the dashboard itself
   const appbar = document.querySelector('.workspace > .appbar');
   if (appbar) appbar.style.display = (mode === 'dashboard') ? 'none' : 'flex';
-  // Hide category nav except for quiz/start modes
-  document.getElementById("categoryNav").hidden = (mode !== 'quiz' && mode !== 'start');
+  // Hide category nav wrapper except for quiz/start modes
+  const catWrapper = document.querySelector('.cat-nav-wrapper');
+  if (catWrapper) catWrapper.style.display = (mode === 'quiz' || mode === 'start') ? '' : 'none';
   // Update current set display
   if (mode === 'logic') {
     els.activeSetLabel.textContent = "논리문제";
@@ -2236,7 +2234,6 @@ function toggleCatExample(catId) {
 
 function hideRanking() {
   switchMode('start');
-  document.getElementById("categoryNav").hidden = false;
   els.startPanel.hidden = false;
   els.shuffleBtn.disabled = false;
   els.resetBtn.disabled = false;
@@ -2244,7 +2241,6 @@ function hideRanking() {
 
 function startQuiz() {
   switchMode('quiz');
-  document.getElementById("categoryNav").hidden = false;
   clearSavedProgress(state.activeSetId);
   loadSetSession(buildQuestions(), [], { totalAttempts: 0, correctAttempts: 0, streak: 0 });
   els.quizPanel.hidden = false;
@@ -3602,8 +3598,30 @@ els.logicNextBtn.addEventListener("click", nextLogicQuestion);
   const authSec = document.getElementById('authSection');
   if (dashHeader && authSec) dashHeader.appendChild(authSec); // login / 내정보 inside the hero
   const catNav = document.getElementById('categoryNav');
-  const startPanel = document.getElementById('startPanel');
-  if (catNav && startPanel && startPanel.parentNode) startPanel.parentNode.insertBefore(catNav, startPanel);
+  const quizPanel = document.getElementById('quizPanel');
+  if (catNav && quizPanel && quizPanel.parentNode) {
+    // Wrap category nav in a collapsible bottom section
+    const wrapper = document.createElement('div');
+    wrapper.className = 'cat-nav-wrapper';
+    const toggle = document.createElement('button');
+    toggle.className = 'cat-nav-toggle';
+    toggle.type = 'button';
+    toggle.textContent = '카테고리 선택 ▾';
+    toggle.setAttribute('aria-expanded', 'false');
+    const body = document.createElement('div');
+    body.className = 'cat-nav-body';
+    catNav.parentNode.insertBefore(wrapper, catNav);
+    wrapper.appendChild(toggle);
+    wrapper.appendChild(body);
+    body.appendChild(catNav);
+    toggle.addEventListener('click', function() {
+      const open = body.classList.toggle('open');
+      toggle.classList.toggle('expanded', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? '카테고리 접기 ▾' : '카테고리 선택 ▾';
+    });
+    quizPanel.parentNode.insertBefore(wrapper, quizPanel.nextElementSibling);
+  }
 })();
 
 // Land on the dashboard by default — the single, unified navigation hub.
