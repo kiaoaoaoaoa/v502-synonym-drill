@@ -1722,40 +1722,72 @@ function showRanking() {
   switchMode('ranking');
   els.rankingPanel.hidden = false;
 
-  els.rankingTitle.textContent = "통합 랭킹 (전체 범주)";
-  els.rankingSummary.textContent = "Loading public rankings…";
+  els.rankingTitle.textContent = "RANKING";
+  els.rankingSummary.textContent = "loading...";
   els.rankingContent.innerHTML = "";
 
   if (!hasPublicConfig()) {
-    els.rankingContent.innerHTML = "<p>Public ranking is not connected yet. Set up db-config.js to enable.</p>";
+    els.rankingContent.innerHTML = "<p style='color:var(--muted);font-style:italic'>ranking offline — configure db-config.js</p>";
     return;
   }
 
   getSupabaseClient().then((client) => {
     if (!client) {
-      els.rankingContent.innerHTML = "<p>Cannot connect to ranking server.</p>";
+      els.rankingContent.innerHTML = "<p style='color:var(--muted)'>cannot connect</p>";
       return;
     }
     readPublicLeaderboard().then((data) => {
       const cumulative = cumulativeLeaderboard(data, null);
-      els.rankingSummary.textContent = `${cumulative.length} player${cumulative.length !== 1 ? "s" : ""} on the board · Best per set · All ${getActiveSetCount()} sets combined`;
+      const totalPlayers = cumulative.length;
       if (!cumulative.length) {
-        els.rankingContent.innerHTML = "<p>No scores yet. Complete a quiz to appear here!</p>";
+        els.rankingContent.innerHTML = "<p style='color:var(--muted);font-style:italic'>no scores yet</p>";
         return;
       }
-      els.rankingContent.innerHTML = `
-        <ol>
-          ${cumulative.slice(0, 30).map((item, idx) => `
-            <li>
-              <span>${idx + 1}. ${escapeHtml(item.name)}</span>
-              <b>${item.accuracy}%</b>
-              <small>${item.correct}/${item.total}</small>
-            </li>
-          `).join("")}
-        </ol>
-      `;
+      els.rankingSummary.innerHTML = `<span style="font-size:11px;letter-spacing:0.1em;opacity:0.5">${totalPlayers} PLAYERS</span>`;
+
+      const colors = ['#FF6B35','#FFD449','#06D6A0','#118AB2','#EF476F','#073B4C','#8338EC','#FF006E'];
+      const top3 = cumulative.slice(0, 3);
+      const rest = cumulative.slice(3, 30);
+
+      let html = '';
+      // Top 3 — hero blocks
+      html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:32px">';
+      top3.forEach((item, idx) => {
+        const medals = ['🥇','🥈','🥉'];
+        const sizes = ['160%','130%','110%'];
+        const color = colors[idx];
+        html += `<div style="background:${color};border-radius:16px;padding:20px 14px;text-align:center;color:#fff;position:relative;overflow:hidden">
+          <div style="font-size:${sizes[idx]};font-weight:900;line-height:1;opacity:0.25;position:absolute;top:4px;right:8px">${medals[idx]}</div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;opacity:0.7;margin-bottom:4px">#${idx+1}</div>
+          <div style="font-size:16px;font-weight:800;margin-bottom:6px;word-break:break-all">${escapeHtml(item.name)}</div>
+          <div style="font-size:28px;font-weight:900;line-height:1">${item.accuracy}<span style="font-size:14px;font-weight:400">%</span></div>
+          <div style="font-size:11px;opacity:0.7">${item.correct}/${item.total}</div>
+        </div>`;
+      });
+      html += '</div>';
+
+      // Rest — brutalist list
+      if (rest.length) {
+        html += '<div style="display:grid;gap:6px">';
+        rest.forEach((item, idx) => {
+          const rank = idx + 4;
+          const barW = Math.min(100, item.accuracy);
+          html += `<div style="display:grid;grid-template-columns:28px 1fr 60px 50px;align-items:center;gap:10px;padding:8px 12px;background:#fff;border-radius:10px;border:1px solid #eee">
+            <span style="font-size:12px;font-weight:700;color:var(--muted);text-align:right">${rank}</span>
+            <div style="min-width:0">
+              <div style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${escapeHtml(item.name)}</div>
+              <div style="height:4px;border-radius:2px;background:#f0f0f0;margin-top:4px"><div style="height:100%;width:${barW}%;border-radius:2px;background:${colors[rank % colors.length]}"></div></div>
+            </div>
+            <span style="font-size:18px;font-weight:800;text-align:right">${item.accuracy}<span style="font-size:10px;font-weight:400;color:var(--muted)">%</span></span>
+            <span style="font-size:11px;color:var(--muted);text-align:right">${item.correct}/${item.total}</span>
+          </div>`;
+        });
+        html += '</div>';
+      }
+
+      els.rankingContent.innerHTML = html;
     }).catch(() => {
-      els.rankingContent.innerHTML = "<p>Failed to load rankings.</p>";
+      els.rankingContent.innerHTML = "<p style='color:var(--muted)'>failed to load</p>";
     });
   });
 }
