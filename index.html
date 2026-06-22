@@ -228,30 +228,27 @@
 
         <section id="quizPanel" class="quiz-panel" hidden>
           <div class="prompt-row">
-            <div>
-              <p class="prompt-kicker">Select two synonyms of the prompt word</p>
-              <p id="meaningPrompt" class="meaning">abound</p>
-            </div>
+            <p class="prompt-kicker">Pick 2 synonyms for:</p>
+            <p id="meaningPrompt" class="meaning">abound</p>
             <div class="counter">
-              <span id="questionIndex">1</span>
-              <small id="questionTotal">/ 20</small>
+              <span id="questionIndex">1</span><small id="questionTotal">/30</small>
             </div>
           </div>
 
-          <footer class="actions actions-top">
+          <div id="options" class="options" role="list"></div>
+
+          <div style="display:none">
             <button id="prevTopBtn" type="button">Previous</button>
             <button id="submitTopBtn" type="button">Submit</button>
             <button id="nextTopBtn" type="button">Next</button>
-          </footer>
-
-          <div id="options" class="options" role="list"></div>
+          </div>
 
           <div id="feedback" class="feedback" hidden></div>
 
-          <footer id="postFeedbackActions" class="actions" hidden>
-            <button id="prevBtn" type="button">Previous</button>
-            <button id="submitBtn" type="button">Submit</button>
-            <button id="nextBtn" type="button">Next</button>
+          <footer id="postFeedbackActions" class="actions">
+            <button id="prevBtn" type="button" class="quiz-nav-btn">◀</button>
+            <button id="submitBtn" type="button" class="quiz-submit-btn">Submit</button>
+            <button id="nextBtn" type="button" class="quiz-nav-btn">▶</button>
           </footer>
         </section>
 
