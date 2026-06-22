@@ -1353,8 +1353,8 @@ function saveSynonymResult(categoryId, word, correct) {
     if (!p[key].wrong[categoryId]) p[key].wrong[categoryId] = [];
     if (!p[key].wrong[categoryId].includes(word)) p[key].wrong[categoryId].push(word);
   }
-  localStorage.setItem(synonymProgressKey, JSON.stringify(p));
-  cloudSyncAll();
+  try { localStorage.setItem(synonymProgressKey, JSON.stringify(p)); } catch {}
+  cloudSyncAll().catch(() => {});
 }
 function getCompletedPromptWords(categoryId) {
   const p = readSynonymProgress();
