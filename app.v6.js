@@ -1578,15 +1578,15 @@ async function cloudPullScores() {
   } catch(e) {}
 }
 
-/* Debounced cloudSyncAll — coalesces rapid per-action calls (synonym answers,
-   word toggles, logic answers) into a single write every 700ms. */
+/* Debounced cloudSyncAll — coalesces per-action calls into a single write.
+   Balance: 3 s groups most question bursts while keeping data safe. */
 let _cloudSyncTimer = null;
 function scheduleCloudSync() {
   if (_cloudSyncTimer) return; // a write is already pending
   _cloudSyncTimer = setTimeout(() => {
     _cloudSyncTimer = null;
     cloudSyncAll().catch(() => {});
-  }, 700);
+  }, 3000);
 }
 function flushCloudSync() {
   if (!_cloudSyncTimer) return;
