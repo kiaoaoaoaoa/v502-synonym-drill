@@ -823,12 +823,17 @@ function explainOption(word, question) {
 
   // Example sentence
   let exampleBlock = "";
-  if (example) {
+  if (example && !noExplainMode) {
     exampleBlock = `<p class="explain-example"><strong>📖 Example:</strong> ${escapeHtml(example)}</p>`;
   }
 
   // Detailed English explanation
   let reasonBlock;
+  if (noExplainMode) {
+    reasonBlock = isAnswer
+      ? `<p class="explain-why correct-why"><strong>✅ Correct</strong></p>`
+      : `<p class="explain-why wrong-why"><strong>❌ Wrong — answer: ${escapeHtml(question.answer.join(' / '))}</strong></p>`;
+  } else {
   if (isAnswer) {
     // Build a rich explanation for WHY this word is a correct synonym
     const othersInGroup = question.answer.filter(w => w !== word);
@@ -886,6 +891,7 @@ function explainOption(word, question) {
         ${wrongMeaningText} whereas ${rightMeaningText}.${wrongCatText}${defContrast}<br><br>${conclusionText}
       </p>`;
   }
+  } // end of noExplainMode else
 
   const statusLabel = isAnswer ? "CORRECT" : selected ? "YOUR PICK ✗" : "WRONG";
   const statusClass = isAnswer ? "status-correct" : selected ? "status-wrong-selected" : "status-wrong";
@@ -2431,10 +2437,25 @@ function dashCard({ icon, title, desc, accent, onclick, badge }) {
   </button>`;
 }
 
+let noExplainMode = localStorage.getItem('v502-noexplain') === '1';
+
+function toggleNoExplainMode() {
+  noExplainMode = !noExplainMode;
+  localStorage.setItem('v502-noexplain', noExplainMode ? '1' : '0');
+  const btn = document.getElementById('dashNoExplainBtn');
+  if (btn) btn.textContent = noExplainMode ? '⚡ 해설ON' : '⚡ 해설OFF';
+}
+
 function showDashboard() {
   switchMode('dashboard');
   els.dashboardPanel.hidden = false;
   const loggedIn = !!state.playerName;
+  // Update 해설 button visibility and state
+  const noExBtn = document.getElementById('dashNoExplainBtn');
+  if (noExBtn) {
+    noExBtn.style.display = loggedIn ? '' : 'none';
+    noExBtn.textContent = noExplainMode ? '⚡ 해설ON' : '⚡ 해설OFF';
+  }
 
   // Greeting lives in the stable hero header (which also holds the login /
   // 내정보 box), so it isn't wiped when the cards below re-render.
