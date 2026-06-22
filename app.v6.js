@@ -1153,6 +1153,8 @@ async function handleLogin() {
   els.authPasswordInput.value = "";
   checkAndShowResume();
   await cloudPullScores();
+  // Cancel any pending debounced sync to avoid double writes
+  if (_cloudSyncTimer) { clearTimeout(_cloudSyncTimer); _cloudSyncTimer = null; }
   cloudSyncAll();
   pushAllScoresToSupabase();
 }
@@ -1458,7 +1460,7 @@ async function pushAllScoresToSupabase() {
   if (!state.playerName || !hasPublicConfig()) return;
   var entries = readLeaderboard().filter(function(e) { return e.name.toLowerCase() === state.playerName.toLowerCase(); });
   for (var i = 0; i < entries.length; i++) {
-    try { await savePublicScore(entries[i]); } catch(e) {}
+    try { await savePublicScore(entries[i]); } catch(e) { console.warn('pushAllScoresToSupabase failed', e); }
   }
 }
 
@@ -1497,7 +1499,7 @@ async function cloudPullScores() {
       }
     }
     writeLeaderboard(entries);
-  } catch(e) {}
+  } catch(e) { console.warn('cloudPullScores failed', e); }
 }
 
 /* Debounced cloudSyncAll — coalesces per-action calls into a single write.
@@ -1507,14 +1509,14 @@ function scheduleCloudSync() {
   if (_cloudSyncTimer) return; // a write is already pending
   _cloudSyncTimer = setTimeout(() => {
     _cloudSyncTimer = null;
-    cloudSyncAll().catch(() => {});
+    cloudSyncAll().catch((e) => { console.warn('scheduleCloudSync failed', e); });
   }, 3000);
 }
 function flushCloudSync() {
   if (!_cloudSyncTimer) return;
   clearTimeout(_cloudSyncTimer);
   _cloudSyncTimer = null;
-  cloudSyncAll().catch(() => {});
+  cloudSyncAll().catch((e) => { console.warn('flushCloudSync failed', e); });
 }
 
 async function cloudSyncAll() {
@@ -1553,15 +1555,20 @@ async function cloudSyncAll() {
       correct_count: 1, total_count: 1, accuracy: 1, payload
     }, { onConflict: 'nickname,quiz_set' });
   } catch(_upsertErr) {
-    // Fallback: DELETE old rows then INSERT (works without UNIQUE constraint)
-    try {
-      const table = getLeaderboardTable();
-      await client.from(table).delete().eq('nickname', nk).eq('quiz_set', 'USERDATA');
-      await client.from(table).insert({
-        nickname: nk, quiz_set: 'USERDATA',
-        correct_count: 1, total_count: 1, accuracy: 1, payload
-      });
-    } catch(e) {}
+    // Fallback: DELETE old rows then INSERT with retry (works without UNIQUE constraint)
+    const table = getLeaderboardTable();
+    try { await client.from(table).delete().eq('nickname', nk).eq('quiz_set', 'USERDATA'); } catch(e) { console.warn('cloudSyncAll delete failed', e); }
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        await client.from(table).insert({
+          nickname: nk, quiz_set: 'USERDATA',
+          correct_count: 1, total_count: 1, accuracy: 1, payload
+        });
+        return;
+      } catch(insertErr) {
+        if (attempt === 2) console.warn('cloudSyncAll insert failed after 3 attempts', insertErr);
+      }
+    }
   }
 }
 
@@ -1580,7 +1587,7 @@ async function cloudCheckCred(nickname, password) {
     // Restore all data
     cloudPullUserData(data.payload, nickname);
     return 'OK';
-  } catch(e) { return null; }
+  } catch(e) { console.warn('cloudCheckCred failed', e); return null; }
 }
 
 function cloudPullUserData(payload, nickname) {
@@ -1602,8 +1609,8 @@ function cloudPullUserData(payload, nickname) {
       try { localStorage.setItem(logicProgressKey, JSON.stringify(lp)); } catch {}
     }
     state.playerName = prevName;
-  } catch(e) {}
-}
+  } catch(e) { console.warn('cloudPullUserData failed', e); }
+	}
 
 function normalizePublicScore(row) {
   return {
@@ -1691,7 +1698,7 @@ function scheduleCumulativeRemoteWrite(quizSet, name, correct, total, accuracy) 
     if (!v) return;
     getSupabaseClient()
       .then((client) => client && writeCumulativeRow(client, quizSet, v.name, v.correct, v.total, v.accuracy))
-      .catch(() => {});
+.catch((e) => { console.warn('cumulativeRemoteWrite failed', e); });
   }, 700);
 }
 
@@ -1752,7 +1759,7 @@ async function completeQuiz() {
   }
   // Save public score if logged in
   if (state.playerName && hasPublicConfig()) {
-    savePublicScore(entry).catch(() => {});
+    savePublicScore(entry).catch((e) => { console.warn('completeQuiz savePublicScore failed', e); });
   }
 
   els.quizPanel.hidden = true;
@@ -2411,7 +2418,7 @@ if (savedSession && savedSession.name) {
     }).then(() => {
       cloudSyncAll();
       pushAllScoresToSupabase();
-    }).catch(() => {});
+    }).catch((e) => { console.warn('session restore sync failed', e); });
     setTimeout(() => {
       updateSidebarCompletion();
       checkAndShowResume();
@@ -2803,7 +2810,7 @@ function showDashboard() {
         if (!els.dashboardPanel.hidden) {
           setTimeout(() => showDashboard(), 50); // break call-stack recursion
         }
-      }).catch(() => { state._dashSyncing = false; });
+      }).catch((e) => { console.warn('dashboard sync failed', e); state._dashSyncing = false; });
     }
   }
   // Update 해설 button visibility and state
@@ -3507,7 +3514,8 @@ function showExam() {
 function renderExamTab() {
   const exams = {
     gachon: { title: '2012 가천대', data: window.__V502_EXAM_GACHON2012__ || [] },
-    skku: { title: '2011 성균관대', data: window.__V502_EXAM_SKKU2011__ || [] }
+    skku: { title: '2011 성균관대', data: window.__V502_EXAM_SKKU2011__ || [] },
+    skku2011pm: { title: '성균관대 2011 오후', data: window.__V502_EXAM_SKKU2011PM__ || [] }
   };
 
   let html = '<div style="max-width:700px">';
@@ -3549,7 +3557,7 @@ function renderExamTab() {
   els.examContent.innerHTML = html;
 }
 function checkExamAnswer(tab, idx, letter, btn) {
-  var exams = { gachon: window.__V502_EXAM_GACHON2012__ || [], skku: window.__V502_EXAM_SKKU2011__ || [] };
+  var exams = { gachon: window.__V502_EXAM_GACHON2012__ || [], skku: window.__V502_EXAM_SKKU2011__ || [], skku2011pm: window.__V502_EXAM_SKKU2011PM__ || [] };
   var q = exams[tab][idx];
   if (!q || !q.a) return;
 
