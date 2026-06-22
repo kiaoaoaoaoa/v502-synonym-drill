@@ -1309,6 +1309,14 @@ h2 {
   margin: 16px 0 8px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  cursor: pointer;
+  user-select: none;
+}
+.explain-section-label.collapsed {
+  opacity: 0.6;
+}
+.explain-list.detailed.hidden {
+  display: none;
 }
 
 .leaderboard {
@@ -1854,8 +1862,22 @@ h2 {
   .dash-stat-num { font-size: 22px; }
 }
 
-/* Navigation buttons in sidebar — kept visible for direct access.
-   Dashboard cards provide alternative entry points via onclick handlers. */
+/* Navigation lives in the dashboard now — hide the duplicate sidebar buttons
+   (kept in the DOM so the dashboard cards can still trigger them). */
+#synonymDrillBtn,
+#logicModeBtn,
+#myinfoBtn,
+#rankingBtn,
+#wordlistBtn,
+#wordlist2Btn,
+#wordcheckBtn,
+#wordcheck201Btn {
+  display: none !important;
+}
+
+/* ===== Sidebar removed — single-column layout ===== */
+.sidebar { display: none !important; }
+.app { grid-template-columns: 1fr; }
 
 .appbar {
   display: flex;
@@ -2048,16 +2070,25 @@ h2 {
 .dash-hero #authLoginBtn { background: #fff; color: var(--accent); }
 .dash-hero #authRegisterBtn { background: rgba(255, 255, 255, 0.2); color: #fff; }
 
-/* Logged-in: the greeting already shows the name — keep just the logout action */
-.dash-hero #authLoggedIn:not([hidden]) { display: flex; }
-.dash-hero #authLoggedIn .auth-label,
-.dash-hero #authLoggedIn strong { display: none; }
+/* Logged-in: show name + logout, spaced nicely across the hero bar */
+.dash-hero #authLoggedIn:not([hidden]) {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.dash-hero #authLoggedIn .auth-label { display: none; }
+.dash-hero #authLoggedIn strong {
+  color: #fff;
+  font-size: 14px;
+  margin-right: auto;
+}
 .dash-hero .auth-logout-btn {
   margin: 0;
   width: auto;
-  align-self: flex-start;
   color: #fff;
   border-color: rgba(255, 255, 255, 0.4);
   background: rgba(255, 255, 255, 0.12);
-  padding: 0 16px;
+  padding: 6px 18px;
+  font-size: 13px;
 }
