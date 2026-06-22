@@ -2262,7 +2262,7 @@ if (els.shuffleBtn) els.shuffleBtn.addEventListener("click", resetAll);
 if (els.resetBtn) els.resetBtn.addEventListener("click", resetAll);
 els.restartBtn.addEventListener("click", resetAll);
 els.rankingBtn.addEventListener("click", showRanking);
-els.rankingCloseBtn.addEventListener("click", hideRanking);
+if (els.rankingCloseBtn) els.rankingCloseBtn.addEventListener("click", hideRanking);
 els.wordlistBtn.addEventListener("click", showWordlist);
 els.wordlist2Btn.addEventListener("click", showWordlist2);
 els.wordlist2Panel.addEventListener("click", function(e) {
