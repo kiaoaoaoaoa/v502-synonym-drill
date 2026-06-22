@@ -15,7 +15,7 @@ window.__V502_EXT__.categories.push(
   {id:"037",words:["border", "bound", "boundary", "brim", "brink", "edge"]},
   {id:"038",words:["alert", "vigilant", "wary", "watchful", "wide-awake"]},
   {id:"039",words:["abase", "belittle", "contemn", "debase", "degrade", "deprecate", "despise", "disdain", "disparage", "scorn", "underestimate", "underrate", "understate", "contemptuous", "disdainful", "scornful", "contemptible", "despicable", "ignominious", "ignoble", "humble", "scurvy"]},
-  {id:"040",words:["brash", "rash", "headlong", "heady", "impetuous", "imprudent", "impulsive", "precipitant", "precipitate", "precipitous", "flippant", "frivolous", "giddy", "nervous", "restive", "skittish", "levity"]}
+  {id:"040",words:["brash", "rash", "headlong", "heady", "impetuous", "imprudent", "impulsive", "precipitant", "precipitate", "precipitous", "flippant", "frivolous", "giddy", "nervous", "restive", "levity"]}
 );
 
 Object.assign(window.__V502_EXT__.wordMeanings,{

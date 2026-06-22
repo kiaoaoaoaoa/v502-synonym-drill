@@ -754,8 +754,25 @@ function renderQuestion() {
   });
 
   if (saved) {
-    showFeedback(saved.correct, question);
-    els.postFeedbackActions.hidden = false;
+    if (noExplainMode) {
+      // Brief flash + auto-advance
+      els.feedback.hidden = false;
+      els.feedback.className = `feedback ${saved.correct ? "ok" : "no"}`;
+      els.feedback.innerHTML = saved.correct ? '<strong>✅ Correct</strong>' : `<strong>❌ Incorrect — answer: ${escapeHtml(question.answer.join(" / "))}</strong>`;
+      els.postFeedbackActions.hidden = true;
+      // Auto-advance after delay
+      setTimeout(() => {
+        if (state.questionIndex === state.questions.length - 1) {
+          completeQuiz();
+        } else {
+          state.questionIndex++;
+          renderQuestion();
+        }
+      }, 500);
+    } else {
+      showFeedback(saved.correct, question);
+      els.postFeedbackActions.hidden = false;
+    }
   } else {
     els.feedback.hidden = true;
     els.feedback.className = "feedback";
