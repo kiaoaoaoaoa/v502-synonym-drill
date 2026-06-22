@@ -2367,12 +2367,25 @@ function logicSubmitNoExplain(opt, clickedBtn, q) {
   }
   persistLogicRanking();
 
-  // Flash feedback on clicked button
-  const origBg = clickedBtn.style.background;
-  clickedBtn.style.background = correct ? '#e8f5e9' : '#fce4ec';
-  clickedBtn.textContent = (correct ? '✓ ' : '✗ ') + clickedBtn.textContent;
+  // Dramatic overlay toast
+  const toast = document.createElement('div');
+  const bg = correct ? '#34c759' : '#ff3b30';
+  toast.style.cssText = `
+    position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.3);
+    width:140px;height:140px;border-radius:70px;
+    background:${bg};color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:64px;font-weight:900;
+    z-index:9999;pointer-events:none;
+    box-shadow:0 20px 60px ${bg}44;
+    transition:transform 0.25s cubic-bezier(0.175,0.885,0.32,1.275);
+  `;
+  toast.textContent = correct ? '✓' : '✗';
+  document.body.appendChild(toast);
+  requestAnimationFrame(() => { toast.style.transform = 'translate(-50%,-50%) scale(1)'; });
 
-  // Also highlight correct answer
+  // Tint clicked button + highlight correct
+  clickedBtn.style.background = correct ? '#e8f5e9' : '#fce4ec';
   if (!correct) {
     els.logicOptions.querySelectorAll(".option").forEach(b => {
       const optText = b.querySelector("span")?.textContent?.replace(/^[A-D]\. /, "");
@@ -2382,13 +2395,16 @@ function logicSubmitNoExplain(opt, clickedBtn, q) {
   }
 
   setTimeout(() => {
+    toast.style.transform = 'translate(-50%,-50%) scale(0.3)';
+    toast.style.opacity = '0';
+    setTimeout(() => toast.remove(), 200);
     logicState.currentIndex++;
     if (logicState.currentIndex >= logicState.questions.length) {
       finishLogicQuiz();
     } else {
       renderLogicQuestion();
     }
-  }, 350);
+  }, 400);
 }
 
 function submitLogicAnswer() {
@@ -2917,29 +2933,48 @@ function submitWordcheckAnswer(letter) {
   persistWordcheckRanking();
 
   if (noExplainMode) {
-    // Quick flash: show correct/wrong on the clicked button, then auto-advance
     const buttons = document.querySelectorAll('#wordcheckChoices button');
     buttons.forEach(b => b.disabled = true);
+
+    // Dramatic overlay toast
+    const toast = document.createElement('div');
+    const isDark = document.querySelector('.sidebar') && getComputedStyle(document.querySelector('.sidebar')).backgroundColor.includes('32');
+    const bg = correct ? '#34c759' : '#ff3b30';
+    toast.style.cssText = `
+      position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.3);
+      width:140px;height:140px;border-radius:70px;
+      background:${bg};color:#fff;
+      display:flex;align-items:center;justify-content:center;
+      font-size:64px;font-weight:900;
+      z-index:9999;pointer-events:none;
+      box-shadow:0 20px 60px ${bg}44;
+      transition:transform 0.25s cubic-bezier(0.175,0.885,0.32,1.275);
+    `;
+    toast.textContent = correct ? '✓' : '✗';
+    document.body.appendChild(toast);
+    requestAnimationFrame(() => { toast.style.transform = 'translate(-50%,-50%) scale(1)'; });
+
+    // Also briefly tint the clicked button
     const clickedBtn = [...buttons].find(b => b.textContent.startsWith(`(${letter})`));
     if (clickedBtn) {
-      const origBg = clickedBtn.style.background;
       clickedBtn.style.background = correct ? '#e8f5e9' : '#fce4ec';
-      clickedBtn.style.borderColor = correct ? '#a5d6a7' : '#ef9a9a';
-      clickedBtn.textContent = (correct ? '✓ ' : '✗ ') + clickedBtn.textContent;
       if (!correct) {
-        // Also highlight the correct answer briefly
         const correctBtn = [...buttons].find(b => b.textContent.startsWith(`(${answerLetter})`));
         if (correctBtn) correctBtn.style.background = '#e8f5e9';
       }
     }
+
     setTimeout(() => {
+      toast.style.transform = 'translate(-50%,-50%) scale(0.3)';
+      toast.style.opacity = '0';
+      setTimeout(() => toast.remove(), 200);
       wcState.index++;
       if (wcState.index >= wordcheckQuestions.length) {
         finishWordcheck();
       } else {
         renderWordcheckQuestion();
       }
-    }, 300);
+    }, 400);
     return;
   }
 
