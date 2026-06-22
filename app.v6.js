@@ -1198,6 +1198,8 @@ async function handleLogin() {
   els.authNicknameInput.value = "";
   els.authPasswordInput.value = "";
   checkAndShowResume();
+  cloudSyncAll();
+  pushAllScoresToSupabase();
 }
 
 function handleRegister() {
@@ -1234,6 +1236,7 @@ function handleRegister() {
   els.authPasswordInput.value = "";
   checkAndShowResume();
   cloudSyncAll();
+  pushAllScoresToSupabase();
 }
 
 function checkAndShowResume() {
@@ -1469,6 +1472,14 @@ function getLeaderboardTable() {
 }
 
 /* ── Supabase cloud sync (full data, payload column) ── */
+
+async function pushAllScoresToSupabase() {
+  if (!state.playerName || !hasPublicConfig()) return;
+  var entries = readLeaderboard().filter(function(e) { return e.name.toLowerCase() === state.playerName.toLowerCase(); });
+  for (var i = 0; i < entries.length; i++) {
+    try { await savePublicScore(entries[i]); } catch(e) {}
+  }
+}
 
 async function cloudSyncAll() {
   if (!state.playerName || !hasPublicConfig()) return;
