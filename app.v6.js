@@ -1552,21 +1552,26 @@ async function cloudCheckCred(nickname, password) {
     const obj = JSON.parse(data.payload);
     if (obj.pw !== password) return 'WRONG_PW';
     // Restore all data
-    await cloudPullUserData(data.payload);
+    cloudPullUserData(data.payload, nickname);
     return 'OK';
   } catch(e) { return null; }
 }
 
-function cloudPullUserData(payload) {
+function cloudPullUserData(payload, nickname) {
   try {
     const obj = typeof payload === 'string' ? JSON.parse(payload) : payload;
-    const nk = state.playerName.toLowerCase();
+    const nk = (nickname || state.playerName || '').toLowerCase();
+    if (!nk) return;
+    // Temporarily set playerName so saveLogic* functions use the right key
+    const prevName = state.playerName;
+    state.playerName = nickname || prevName;
     if (obj.word_knowledge) { const s = readWordKnowledge(); s[nk] = JSON.parse(obj.word_knowledge); writeWordKnowledge(s); }
     if (obj.synonym_progress) { const s = readSynonymProgress(); s[nk] = JSON.parse(obj.synonym_progress); localStorage.setItem(synonymProgressKey, JSON.stringify(s)); }
     if (obj.wordcheck_progress) { localStorage.setItem('v502-wordcheck-progress', JSON.stringify({[nk]: JSON.parse(obj.wordcheck_progress)})); }
     if (obj.quiz_progress) { const s = JSON.parse(localStorage.getItem(quizProgressKey)||'{}'); s[nk] = JSON.parse(obj.quiz_progress); localStorage.setItem(quizProgressKey, JSON.stringify(s)); }
     if (obj.logic_completed) { JSON.parse(obj.logic_completed).forEach(id => saveLogicCorrect(id)); }
     if (obj.logic_wrong) { JSON.parse(obj.logic_wrong).forEach(id => saveLogicWrong(id)); }
+    state.playerName = prevName;
   } catch(e) {}
 }
 
