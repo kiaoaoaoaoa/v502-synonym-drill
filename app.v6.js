@@ -1752,24 +1752,33 @@ function getActiveSetCount() {
   return Object.keys(categorySets).length;
 }
 
+let wlHideKnown = false;
+
 function showWordlist() {
   switchMode('wordlist');
   els.wordlistPanel.hidden = false;
   els.wordlistTitle.innerHTML = `
     <span class="wl-title-main">전체 단어 일람 (${categories.length}개 범주)</span>
     <span class="wl-jump-controls">
+      ${state.playerName ? `<button class="wl-jump-btn wl-hideknown-btn${wlHideKnown ? ' wl-hideknown-on' : ''}" type="button" title="아는 단어(✓) 숨기기">${wlHideKnown ? '✓ 아는 단어 숨김' : '아는 단어 안보기'}</button>` : ''}
       <button class="wl-jump-btn" type="button" data-jump-target="200" title="범주 200번으로 이동">범주200</button>
       <button class="wl-jump-btn" type="button" data-jump-target="400" title="범주 400번으로 이동">범주400</button>
     </span>
   `;
-  els.wordlistTitle.querySelectorAll('.wl-jump-btn').forEach((button) => {
+  els.wordlistTitle.querySelectorAll('.wl-jump-btn[data-jump-target]').forEach((button) => {
     button.addEventListener('click', () => jumpToCategory(button.dataset.jumpTarget));
   });
+  const hideBtn = els.wordlistTitle.querySelector('.wl-hideknown-btn');
+  if (hideBtn) hideBtn.addEventListener('click', () => { wlHideKnown = !wlHideKnown; showWordlist(); });
 
+  const hideKnown = wlHideKnown && state.playerName;
   let html = '<div class="wordlist-scroll">';
   categories.forEach(cat => {
     const summary = categorySummaries[cat.id] || '';
-    const catWords = cat.words;
+    // When hiding known words, drop checked (✓) words; if the whole category is
+    // known, skip it entirely — name included — so only unknown words remain.
+    const catWords = hideKnown ? cat.words.filter(w => !isWordKnown(w)) : cat.words;
+    if (catWords.length === 0) return;
     const hasCollocations = catWords.some(w => {
       const n = confusionNotes[w] || '';
       if (!n || n.length < 8) return false;

@@ -827,6 +827,10 @@ h2 {
   background: var(--accent);
   color: #fff;
 }
+.wl-hideknown-btn.wl-hideknown-on {
+  background: var(--accent);
+  color: #fff;
+}
 
 .wl-coll-indicator {
   display: inline-block;
