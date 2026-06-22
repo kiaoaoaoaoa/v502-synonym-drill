@@ -24,7 +24,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "3",
-    "explanation": "해석 영화에서 아이의 죽음은 폭력적 복수의 심각한 행위와 심각한 연기의 폭력적 표현을 정당화한다.\n어휘 justify = 옳다고 하다, 정당화하다(=validate, vindicate)\nviolent = 격렬한, 폭력적인(=brutal, savage, vicious)\nrevenge = 복수, 앙갚음(=retaliation, vengeance, reprisal)"
+    "explanation": "영화에서 아이의 죽음은 폭력적 복수의 심각한 행위와 심각한 연기의 폭력적 표현을 정당화한다.\n\njustify v 옳다고 하다, 정당화하다(=validate, vindicate)\nviolent a 격렬한, 폭력적인(=brutal, savage, vicious)\nrevenge n 복수, 앙갚음(=retaliation, vengeance, reprisal)"
   },
   {
     "q": "He describes the confusion and emotional chaos of dealing with the mentally ill with 'riveting' precision.",
@@ -51,7 +51,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "2",
-    "explanation": "해석 그는 정신질환자들을 다룰 때의 혼란과 정서적 혼돈을 마음을 사로잡을 정도로 정확하게 묘사한다.\n어휘 riveting = 매혹적인(=fascinating, enchanting)\nprecision = 정확, 정밀, 꼼꼼함\ndisgusting = 혐오스런(=revolting, nauseating, repulsive)"
+    "explanation": "그는 정신질환자들을 다룰 때의 혼란과 정서적 혼돈을 마음을 사로잡을 정도로 정확하게 묘사한다.\n\nriveting a 매혹적인(=fascinating, enchanting)\nprecision n 정확, 정밀, 꼼꼼함\ndisgusting a 혐오스런(=revolting, nauseating, repulsive)"
   },
   {
     "q": "Mr. Brady has done something to 'bring home to us' the terrible reality of war.",
@@ -78,7 +78,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "5",
-    "explanation": "해석 브래디(Brady) 씨는 전쟁의 끔찍한 참상을 우리에게 깨닫게 해 줄 어떤 일을 했다.\n어휘 bring home to a person = ~에게 깨닫게 하다(=lead ~ to realize)\nfamiliarize oneself with = ~에 정통하다[익숙하다]\nneglect = 무시하다(=ignore, disregard)"
+    "explanation": "브래디(Brady) 씨는 전쟁의 끔찍한 참상을 우리에게 깨닫게 해 줄 어떤 일을 했다.\n\nbring home to a person ~에게 깨닫게 하다(=lead ~ to realize)\nfamiliarize oneself with ~에 정통하다[익숙하다]\nneglect v 무시하다(=ignore, disregard)"
   },
   {
     "q": "Perhaps some will say that animals have some 'inherent' value, only less than we have.",
@@ -105,7 +105,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "1",
-    "explanation": "해석 아마도 어떤 사람들은 동물도 단지 우리보다 더 적기는 하지만 얼마간의 내재적 가치를 갖고 있다고 말할 것이다.\n어휘 inherent = 타고난(=inborn, innate, natural), 내재한\nsuperficial = 표면상의; 피상적인, 천박한(=shallow, frivolous)\nextraordinary = 비상한, 보통이 아닌"
+    "explanation": "아마도 어떤 사람들은 동물도 단지 우리보다 더 적기는 하지만 얼마간의 내재적 가치를 갖고 있다고 말할 것이다.\n\ninherent a 타고난(=inborn, innate, natural), 내재한\nsuperficial a 표면상의; 피상적인, 천박한(=shallow, frivolous)\nextraordinary a 비상한, 보통이 아닌"
   },
   {
     "q": "The three facets of the great writer ― magic, story, lesson ― are 'prone to blend' in one impression of unified and unique radiance.",
@@ -132,7 +132,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "4",
-    "explanation": "해석 위대한 작가의 세 가지 측면인 마법, 이야기, 교훈은 통일되고 독특한 광채라는 하나의 인상 속에 혼합되는 경향이 있다.\n어휘 prone = 경향이 있는(=likely, liable)\nradiance = 광휘, 광채\nresistant = 저항하는, 내성이 있는"
+    "explanation": "위대한 작가의 세 가지 측면인 마법, 이야기, 교훈은 통일되고 독특한 광채라는 하나의 인상 속에 혼합되는 경향이 있다.\n\nprone a 경향이 있는(=likely, liable)\nradiance n 광휘, 광채\nresistant a 저항하는, 내성이 있는"
   },
   {
     "q": "Laurie has an _______ command of the Italian language.",
@@ -159,7 +159,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "2",
-    "explanation": "해석 로리(Laurie)는 이탈리아어를 자유자재로 구사할 수 있다. 여기서 command는 \"(언어의) 구사력\"을 의미하며 이것을 수식하기에 적절한 형용사는 good, outstanding, excellent(뛰어난) 등이다.\n어휘 have a command of~ = ~를 마음대로 사용할 수 있다\nabundant = 많은, 풍부한(=plentiful, copious, ample, profuse)"
+    "explanation": "로리(Laurie)는 이탈리아어를 자유자재로 구사할 수 있다. 여기서 command는 '(언어의) 구사력'을 의미하며 이것을 수식하기에 적절한 형용사는 good, outstanding, excellent(뛰어난) 등이다.\n\nhave a command of~ ~를 마음대로 사용할 수 있다\nabundant a 많은, 풍부한(=plentiful, copious, ample, profuse)"
   },
   {
     "q": "Richard lost his job and his home and eventually _______ up living on the streets.",
@@ -186,7 +186,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "3",
-    "explanation": "해석 리처드(Richard)는 직장과 집을 잃었고 결국 길거리에서 사는 것으로 끝났다. (길거리에 나앉는 신세가 되었다.)\n어휘 wind[end] up ~ing = ~하는 것으로 끝나다"
+    "explanation": "리처드(Richard)는 직장과 집을 잃었고 결국 길거리에서 사는 것으로 끝났다. (길거리에 나앉는 신세가 되었다.)\n\nwind[end] up ~ing ~하는 것으로 끝나다"
   },
   {
     "q": "People who have claustrophobia are afraid of being in _______ spaces.",
@@ -213,7 +213,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "5",
-    "explanation": "해석 폐소 공포증이 있는 사람들은 비좁은 장소에 있기를 두려워한다.\n어휘 claustrophobia = 폐소[밀실] 공포증\ncompressed = 압축[압착]된; 간결한\nconfined = 제한된, 좁은(=restricted, limited)\nscary = 무서운, 겁나는(=frightening, spooky, creepy)"
+    "explanation": "폐소 공포증이 있는 사람들은 비좁은 장소에 있기를 두려워한다.\n\nclaustrophobia n 폐소[밀실] 공포증\ncompressed a 압축[압착]된; 간결한\nconfined a 제한된, 좁은(=restricted, limited)\nscary a 무서운, 겁나는(=frightening, spooky, creepy)"
   },
   {
     "q": "I wanted to build a desk, but I couldn't make _______ of the instructions.",
@@ -240,7 +240,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "1",
-    "explanation": "해석 나는 책상을 조립하고 싶었으나 제품 설명서를 이해할 수 없었다.\n어휘 make sense of~ = ~를 이해하다"
+    "explanation": "나는 책상을 조립하고 싶었으나 제품 설명서를 이해할 수 없었다.\n\nmake sense of~ ~를 이해하다\n정답 ①"
   },
   {
     "q": "The extreme weather conditions _______ their toll on the inhabitants.",
@@ -267,7 +267,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "4",
-    "explanation": "해석 극단적인 날씨가 주민들에게 피해를 주었다.\n어휘 take one's[a] toll on~ = ~에 손상[피해]을 입히다"
+    "explanation": "극단적인 날씨가 주민들에게 피해를 주었다.\n\ntake one's[a] toll on~ ~에 손상[피해]을 입히다\n정답 ④"
   },
   {
     "q": "The general ①acceptance of the view created an ②expanded sense of guilt, ③for if the plague ④had been punishment there had to be terrible sin ⑤to have occasioned it.",
@@ -294,7 +294,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "4",
-    "explanation": "직설법 과거시제\n\n해석 그 견해를 사람들이 널리 받아들임으로써 광범위한 죄의식이 생겼는데, 왜냐하면 만일 전염병이 벌이었다고 한다면 그 병을 유발시킨 끔찍한 죄가 있었음에 틀림없기 때문이었다.\n\n분석 ③ for 이하의 내용이 이미 발생한 과거 사실을 반대로 가정하는 것이 아니라 단순히 과거의 여러 가능한 경우들 중의 하나를 상정해본 것이므로 if절은 직설법의 조건절이다. 따라서 if절의 동사 ④ had been은 과거 시제인 was로 고쳐야 한다."
+    "explanation": "그 견해를 사람들이 널리 받아들임으로써 광범위한 죄의식이 생겼는데, 왜냐하면 만일 전염병이 벌이었다고 한다면 그 병을 유발시킨 끔찍한 죄가 있었음에 틀림없기 때문이었다.\n\n③ for 이하의 내용이 이미 발생한 과거 사실을 반대로 가정하는 것이 아니라 단순히 과거의 여러 가능한 경우들 중의 하나를 상정해본 것이므로 if절은 직설법의 조건절이다. 따라서 if절의 동사 ④ had been은 과거 시제인 was로 고쳐야 한다. We think that there had to be some sort of support network for bin Laden inside of Pakistan. (우리는 파키스탄 내에 모종의 빈 라덴 지원망이 있었음에 틀림없다고 생각한다.)와 Since the universe exists, there must have been something to have caused it to exist.(우주가 존재하니까 우주를 존재하게 만든 무엇인가가 있었음에 틀림없다.)에서처럼 there had to be는 there must have been과 같은 뜻으로 ⑤ 완료부정사도 맞다.\n\n① 형용사 general의 수식을 받을 수 있는 것은 명사이다. ② 뒤의 명사 sense of guilt를 수식하는 것으로 expanded는 '확대된, 확장된'의 의미를 가지는 형용사이다. ③ 이 문장에서 for는 접속사로 보통 앞에 콤마 또는 세미콜론이 오고, 부가적 이유·설명 따위를 말할 때 쓰인다.\nadversely ad 불리하게, 반대로"
   },
   {
     "q": "The truth is that ①the commonest response to violence is ②one of repugnance, and ③that a significant number of people everywhere ④tries to oppose it ⑤in whatever ways they can.",
@@ -321,7 +321,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "4",
-    "explanation": "주어와 동사의 수일치\n\n해석 사실은 폭력에 대한 가장 보편적인 반응은 반감의 반응이고, 모든 곳의 상당한 수의 사람들이 가능한 어떤 방식으로든 폭력에 반대하려고 노력한다.\n\n분석 a number of~는 many~라는 뜻으로 복수명사가 이어지고 복수동사가 호응한다. 따라서 ④ tries를 try로 바꾸어야 한다.\n\n어휘 repugnance = 반감, 혐오 / oppose = ~에 반대하다"
+    "explanation": "사실은 폭력에 대한 가장 보편적인 반응은 반감의 반응이고, 모든 곳의 상당한 수의 사람들이 가능한 어떤 방식으로든 폭력에 반대하려고 노력한다.\n\na number of~는 many~라는 뜻으로 복수명사가 이어지고 복수동사가 호응한다. 따라서 ④ tries를 try로 바꾸어야 한다.\n\n① common의 최상급 표현으로 보통 최상급 표현 앞에 정관사 the가 온다. ② one은 대명사로 '(특정한 사람·물건 중의) 하나, 한 개'를 뜻한다. ③ 등위접속사 and에 의해 that절이 병치되고 있는 것으로 a significant~ they can이 완전한 문장이므로 명사절을 이끄는 종속접속사 that이 온 것이다. ⑤ whatever는 복합관계형용사로 뒤의 명사 ways를 수식할 수 있다.\n\nrepugnance n 반감, 혐오\noppose v ~에 반대하다"
   },
   {
     "q": "The point ①at which physical decline ②with age ③begins adversely to affect ④a driver's capability ⑤have not yet been studied.",
@@ -348,7 +348,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "5",
-    "explanation": "주어와 동사의 수일치\n\n해석 나이로 인한 신체적 쇠퇴가 운전자의 능력에 불리하게 영향을 미치기 시작하는 시점은 아직 연구되지 않았다.\n\n분석 이 문장의 주어는 The point로 단수명사이므로 ⑤ have not을 has not으로 고쳐야 한다.\n\n어휘 adversely = 불리하게, 반대로"
+    "explanation": "나이로 인한 신체적 쇠퇴가 운전자의 능력에 불리하게 영향을 미치기 시작하는 시점은 아직 연구되지 않았다.\n\n이 문장의 주어는 The point로 단수명사이므로 ⑤ have not을 has not으로 고쳐야 한다.\n\n① physical decline~driver's capability가 완전한 문장으로 관계대명사 which는 전치사의 목적어가 되어야 한다. 선행사가 the point로 '어떤 특정한 때, 시점'을 의미하므로 전치사 at이 온 것이다. ② with age는 '나이를 먹음에 따라'를 뜻하는 전치사구이다. ③ 관계대명사절의 주어는 physical decline으로 단수명사이므로 단수동사 begins가 온 것이다. ④ 뒤에 명사 capability가 있으므로 소유격 형태인 driver's는 적절하고 driver가 가산명사이므로 앞에 부정관사 a가 나올 수 있다.\n\nadversely ad 불리하게, 반대로"
   },
   {
     "q": "In both ①their public and private spheres, the nation is rightly acting to reduce ②many of the risks ③which people have no choice ④but to hazard ― on the road, in factories, in the environment, ⑤even in the field of speculative finance.",
@@ -375,7 +375,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "1",
-    "explanation": "대명사의 수일치\n\n해석 공적, 사적 양 분야에서, 국가는 국민이 도로에서, 공장에서, 환경에서, 심지어는 투기적 금융에서 어쩔 수 없이 감수해야 하는 많은 위험을 줄이려고 마땅히 노력하고 있다.\n\n분석 ①의 their는 뒤의 the nation이라는 단수명사를 가리키는 대명사이므로 its로 바꾸어야 한다."
+    "explanation": "공적, 사적 양 분야에서, 국가는 국민이 도로에서, 공장에서, 환경에서, 심지어는 투기적 금융에서 어쩔 수 없이 감수해야 하는 많은 위험을 줄이려고 마땅히 노력하고 있다.\n\n①의 their는 뒤의 the nation이라는 단수명사를 가리키는 대명사이므로 its로 바꾸어야 한다.\n\n② 'many of+한정사+복수명사'의 형태이다. ③ 타동사 hazard의 목적어가 없는 불완전한 문장으로 which는 목적격 관계대명사로 적절하다. ④ 'have no choice but to V'는 '~하지 않을 수 없다'는 뜻의 관용표현이다. ⑤ even은 '~도[조차]'의 뜻의 부사로 강조하는 말 앞에 나온다."
   },
   {
     "q": "Despite the current oil glut, ①the world's known reserves of both petroleum and natural gas ②are expected to be declining ③by the end of the century, and ④it would be folly to burn ⑤which remains to generate electricity.",
@@ -402,7 +402,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "5",
-    "explanation": "관계대명사 what\n\n해석 현재의 기름 과잉 공급에도 불구하고, 전 세계에 알려진 석유·천연 가스 매장량은 금세기 말에 감소될 것이라고 예상되고 있으므로, 남아있는 것을 전기 생산을 위해 다 써버린다면 어리석은 짓이 될 것이다.\n\n분석 ⑤ which remains가 명사절로 burn의 목적어가 되어야 하는데 which 앞에 선행사가 없으므로 선행사를 포함한 관계대명사 what로 고쳐야 한다."
+    "explanation": "현재의 기름 과잉 공급에도 불구하고, 전 세계에 알려진 석유·천연 가스 매장량은 금세기 말에 감소될 것이라고 예상되고 있으므로, 남아있는 것을 전기 생산을 위해 다 써버린다면 어리석은 짓이 될 것이다.\n\n⑤ which remains가 명사절로 burn의 목적어가 되어야 하는데 which 앞에 선행사가 없으므로 선행사를 포함한 관계대명사 what로 고쳐야 한다.\n\n① world's known은 '소유격+형용사'의 형태로 뒤의 명사 reserves를 수식할 수 있다. ② 주어가 reserves로 복수명사이므로 복수동사 are는 적절하고 'be expected to 부정사(~하기로 예상되고 있다)'는 미래 대용어로 가까운 미래를 나타낼 때 쓰인다. ③ by the end of~는 '~말 까지는'의 의미이다. ④ 뒤에 진주어 to burn~가 있으므로 가주어 it이 나왔고, 조동사 would 다음에는 동사원형이 온다."
   },
   {
     "q": "If you're an environmentalist, plastic is a word you tend to say with a sneer. It has become a symbol of our wasteful society. But there seems little concern it is here to stay, and the truth is, of course, that plastics have brought enormous benefits, even environmental ones. It's not really the plastics themselves that are the environmental disaster ― it's the way society chooses to use and ____",
@@ -429,7 +429,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "5",
-    "explanation": "빈칸완성\n\n해석 당신이 환경론자라면, 플라스틱은 당신이 조롱조로 말하는 경향이 있는 단어이다. 플라스틱은 낭비하는 우리 사회의 상징이 되어버렸다. 그러나 그것이 지속적으로 그럴 것이라는 걱정은 거의 없으며 사실은 물론, 플라스틱은 막대한 혜택을 심지어는 환경적인 혜택까지도 가져왔다. 환경재앙이 되는 것은 플라스틱 자체가 아니라 사회가 그것을 사용하고 버리는 방식인 것이다.\n\n분석 플라스틱은 사용 후 버리는 것이므로 빈칸에는 \"버리다\"의 의미를 갖는 동사가 필요하다.\n\n어휘 sneer = 비웃음, 냉소 / endanger = 위험에 빠뜨리다(=jeopardize, imperil) / accumulate = 축적하다, 모으다 / dispose = 처리하다, 버리다"
+    "explanation": "당신이 환경론자라면, 플라스틱은 당신이 조롱조로 말하는 경향이 있는 단어이다. 플라스틱은 낭비하는 우리 사회의 상징이 되어버렸다. 그러나 그것이 지속적으로 그럴 것이라는 걱정은 거의 없으며 사실은 물론, 플라스틱은 막대한 혜택을 심지어는 환경적인 혜택까지도 가져왔다. 환경재앙이 되는 것은 플라스틱 자체가 아니라 사회가 그것을 사용하고 버리는 방식인 것이다.\n\n플라스틱은 사용 후 버리는 것이므로 빈칸에는 '버리다'의 의미를 갖는 동사가 필요하다.\n\nsneer n 비웃음, 냉소\nendanger v 위험에 빠뜨리다(=jeopardize, imperil)\naccumulate v 축적하다, 모으다\ndispose v 처리하다, 버리다"
   },
   {
     "q": "A Parisian villain broke into a house at the village of Lachelle in 1978. Once inside he began to feel decidedly peckish and so went in search of the icebox. There he found his favourite cheese which it would have been a shame not to try. He then found some Bath Oliver biscuits and three bottles of champagne. After a while he began to feel sleepy and decided that he would lie down and digest his m",
@@ -456,7 +456,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "4",
-    "explanation": "파리의 한 악당이 1978년에 Lachelle이라는 한 마을의 주택에 침입했다. 일단 안으로 들어서자, 그는 몹시 배고픔을 느꼈고 아이스박스를 찾아갔다. 그는 박스 속에서 안 먹어보면 후회하게 될 그가 가장 좋아하는 치즈를 발견하였다. 그 다음에 그는 Bath Oliver 비스킷과 세 병의 샴페인도 찾아내었다. 잠시 후 그는 졸리기 시작했고 누워서 편안하게 음식을 소화시키기로 했다. 그는 위층의 빈 침실에서 곤히 잠든 채로 다음 날 아침 체포되었다.\n본분을 망각한 부주의한 도둑에 관한 이야기이므로 '가장 부주의한 도둑'이 이 글의 제목으로 알맞다.\nbreak into = 침입[난입]하다\npeckish = 배가 고픈(=hungry)\nfast asleep = 깊이 잠들어\nspare = 예비의, 여분의"
+    "explanation": "파리의 한 악당이 1978년에 Lachelle이라는 한 마을의 주택에 침입했다. 일단 안으로 들어서자, 그는 몹시 배고픔을 느꼈고 아이스박스를 찾아갔다. 그는 박스 속에서 안 먹어보면 후회하게 될 그가 가장 좋아하는 치즈를 발견하였다. 그 다음에 그는 Bath Oliver 비스킷과 세 병의 샴페인도 찾아내었다. 잠시 후 그는 졸리기 시작했고 누워서 편안하게 음식을 소화시키기로 했다. 그는 위층의 빈 침실에서 곤히 잠든 채로 다음 날 아침 체포되었다.\n\n본분을 망각한 부주의한 도둑에 관한 이야기이므로 ④의 '가장 부주의한 도둑'이 이 글의 제목으로 알맞다.\n\nbreak into 침입[난입]하다\npeckish a 배가 고픈(=hungry)\nfast asleep 깊이 잠들어\nspare a 예비의, 여분의"
   },
   {
     "q": "Women of 30 or 40 or older are apt to be juggling a career and the care of children, often without a husband. They have figured out their lives for themselves. They have style. They are grown-ups, and they don't conceal their ages; if their lives are tougher, they frequently possess a certain centeredness and strength that is unavailable to those much younger, who seem somehow unformed, incomplete",
@@ -483,7 +483,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "4",
-    "explanation": "30, 40, 혹은 더 나이든 여성들은 직업과 양육을 능숙하게 처리하는 경향이 있고 종종 남편이 없을 때도 그러하다. 그들은 스스로 인생의 의미를 알게 되었다. 그들에게는 스타일이 있다. 그들은 성숙한 사람들이고 나이를 감추지 않는다. 비록 그들의 삶은 더 힘들지라도, 그들은 종종 어느 정도 미숙하고, 불완전하고, 훨씬 덜 흥미롭고, 때로는 상당히 무지한 훨씬 더 젊은 여성에게는 없는 어떤 중심과 강인함을 갖고 있다.\n이 글의 요지가 젊은 여성과 비교되는 나이든 여성의 강점이므로 '나이든 여성에 대한 칭송'이 제목으로 알맞다.\njuggle = 절묘히 다루다, ~에 요술을 부리다, 조작하다\nfigure out = 계산하다; 이해하다, 찾다; 생각해 내다\ncourtship = 구애, 구혼\nnarcissism = 자아도취"
+    "explanation": "30, 40, 혹은 더 나이든 여성들은 직업과 양육을 능숙하게 처리하는 경향이 있고 종종 남편이 없을 때도 그러하다. 그들은 스스로 인생의 의미를 알게 되었다. 그들에게는 스타일이 있다. 그들은 성숙한 사람들이고 나이를 감추지 않는다. 비록 그들의 삶은 더 힘들지라도, 그들은 종종 어느 정도 미숙하고, 불완전하고, 훨씬 덜 흥미롭고, 때로는 상당히 무지한 훨씬 더 젊은 여성에게는 없는 어떤 중심과 강인함을 갖고 있다.\n\n이 글의 요지가 젊은 여성과 비교되는 나이든 여성의 강점이므로 ④의 '나이든 여성에 대한 칭송'이 제목으로 알맞다.\n\njuggle v 절묘히 다루다, ~에 요술을 부리다, 조작하다\nfigure out 계산하다; 이해하다, 찾다; 생각해 내다\ncourtship n 구애, 구혼\nnarcissism n 자아도취"
   },
   {
     "q": "The best title of the passage would be _______.",
@@ -510,7 +510,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "2",
-    "explanation": "틀림없다고 생각한다.)와 Since the universe exists, there must"
+    "explanation": "그것의 비판가들이 매우 정당하게 주장하였듯이, 귀납론은 과학을 기발함, 직관, 그리고 천재성에 대한 대중들의 생각에 맞는 또 다른 어떤 주관적인 속성들에게는 전혀 정당한 위치를 부여하지 않는 냉혹하고 거의 비인간적인 학문이라고 묘사했다. 귀납론의 비판가들은 위대한 과학자는 실험이나 관찰의 솜씨에 의해서라기보다는 그들의 직감의 힘에 의해 더 구별된다고 주장했다. 귀납론에 대한 비판은 확실히 옳으며 나는 지난 30년간 더 나은 이해를 위한 예비 단계로서 그것(귀납론)이 권좌에서 쫓겨난 것을 환영한다. 그러나 귀납론을 너무 강력하게 공격할 때, 일부 비판가들은 창의적 사고의 주관성을 강조하는데 있어 똑같이 극단적이고 비생산적인 대안적 견해를 사용하고자 했다. 이러한 '직관을 중시하는' 관점에서 보면, 창의성은 말로 설명할 수 없는 그 무엇인가이고, 오직 천재적인 사람들에게만 있을 수 있는 것이다. 창의성은 예측 불가능하며 예기치 않은 번개 불처럼 발생하나, 그 불은 오직 약간의 특별한 사람들에게만 발생한다.\n\n이 글은 창의성을 인정하지 않고 객관성만을 강조하는 귀납론에 대한 비판과 그에 대한 대안으로 제시되는 주관적 창의성을 극단적으로 강조하는 견해를 비판하고 있다. 따라서 이 두 가지 내용을 잘 보여주는 ②의 '과학적 창의성의 속성'이 제목으로서 알맞다.\n\ninductivism n 귀납론(모든 과학적 이론은 실험과 관찰이라는 경험에 바탕해야 된다는 과학 철학)\nlegitimate a 정당한, 옳은(=justifiable, legal)\nquirkiness n 기발함, 기이함\nintuition n 직관\nattribute n 속성, 특질, 특성\nadhere to~ ~에 부착되다, 집착하다, 고수하다\nvernacular a 통속적인, 풍토의, 특유의\nhunch n 예감, 직감, 육감\nvalid a 타당한\ndethrone v (높은 지위에서) 쫓아내다\nprelude n 전주곡, 서곡; 전조, 예고\nsubstitute v 대용하다\nineffable a 말로 표현할 수 없는\nbolt n 번개 불; (불물)의 갑작스런 분사\nascendency n 우세, 우월, 지배권"
   },
   {
     "q": "Which of the following is most appropriate for the blank?",
@@ -537,7 +537,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "4",
-    "explanation": "9-21 해석 그것의 비판가들이 매우 정당하게 주장하였듯이, 귀납론은 과학을 기발함, 직관, 그리고 천재성에 대한 대중들의 생각에 맞는 ⑤ 또 다른 어떤 주관적인 속성들에게는 전혀 정당한 위치를 부여하지"
+    "explanation": "빈칸 뒤의 than 뒤에 나오는 실험과 관찰이라는 객관적 수단과 반대되는 성격의 주관적 수단이 빈칸에 와야 한다. 따라서 '직감, 예감'의 뜻인 hunch가 적절하다."
   },
   {
     "q": "According to the passage, which of the following is true?",
@@ -564,7 +564,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "1",
-    "explanation": "9-21 해석 그것의 비판가들이 매우 정당하게 주장하였듯이, 귀납론은 과학을 기발함, 직관, 그리고 천재성에 대한 대중들의 생각에 맞는 ⑤ 또 다른 어떤 주관적인 속성들에게는 전혀 정당한 위치를 부여하지"
+    "explanation": "귀납론의 비판가들은 위대한 과학자는 실험이나 관찰의 솜씨에 의해서라기보다는 그들의 직감의 힘에 의해 구별된다고 주장한다.라고 한 것에서 inductivism은 비판가들의 말과는 반대로 위대한 과학자들이 실험이나 관찰의 솜씨로 구별된다고 생각하고 있음을 추론할 수 있다.\n\n② elitism(엘리트주의)에 대한 언급이 없다. ③ 창의성은 말로 설명할 수 없는 그 무언인가이고, 오직 천재적인 사람들에게만 있을 수 있다고 하였으므로 천재에게 접근할 수 없는 위치를 부여하는 것은 귀납론이 아니라 창의성이라 할 수 있다. ④ 귀납론이 과학에 미친 영향에 대한 언급이 없다. ⑤ 귀납론은 창의적 사고의 주관성이 아니라 실험과 관찰을 중시하는 과학 철학이다."
   },
   {
     "q": "The best title of the passage would be _______.",
@@ -591,7 +591,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "1",
-    "explanation": "9-21 해석 그것의 비판가들이 매우 정당하게 주장하였듯이, 귀납론은 과학을 기발함, 직관, 그리고 천재성에 대한 대중들의 생각에 맞는 ⑤ 또 다른 어떤 주관적인 속성들에게는 전혀 정당한 위치를 부여하지"
+    "explanation": "미국의 편집장들은 깡패들에게 결투신청을 받거나 채찍을 맞거나 흠씬 구타당하는 위험에 항상 놓여 있었다. 1812년의 전쟁 중에, 한 전쟁을 반대하던 신문사가 실제로 폭도의 총격에 박살나 버리기도 했다. 변경지역에서는, 편집자들의 몸에 타르를 칠하고 깃털을 붙여 둘러메고 다니는 린치를 가하는 것이 인기 있는 오락이기도 했다. 물론, 상징적으로는 그것이 지금도 여전히 존재한다. 언론은, 그 파급 범위가 전자매체를 통해 거의 무한히 확대되면서, 그 시절 이후로 상당히 발전하였다. 그러나 대중은, 비록 매 시간마다는 아닐지라도 매일 언론과 친밀히 접함에도 불구하고, 언론을 진정으로 아주 잘 이해하지는 못하고 있다. 비록 그것이 법률의 영역을 넘는 문제라 할지라도, 그러한 이해 부족은 법정 문제로까지 비화되어 나타난다. 부분적으로, 이것은 불가피한데, 그 이유는 언론은 정말로 자기모순으로 가득 찬 특이한 기관이기 때문이다.\n\n이 글은 처음 부분에서 과거의 언론이 처한 위험을, 중반 이후부터는 지금도 변함없이 계속되는 언론이 처한 위험을 이야기하고 있다.\n\nduel n 결투\nhorsewhip v 채찍질하다, 벌주다\nblast v 날려버리다, 폭파시키다, 망가뜨리다, 해치우다\nmob n 폭도\ncannon n 총, 대포\ntar and feather 온몸에 타르를 칠하고 새털로 씌우다, (군중들이) 사적으로 심하게 벌하다\npastime n 여가 활동, 소일거리, 오락\nintimacy n 친밀함\ncome a long way 상당히 발전하고 향상되다\nparadox n 자기모순, 역설\nlynching n 사사로이 자행되는 처벌"
   },
   {
     "q": "According to the passage, which of the following is true?",
@@ -618,7 +618,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "2",
-    "explanation": "옳은(=justifiable, legal) quirkiness 직관 attribute 기발함, 기이함 intuition 속성, 특질, 특성 adhere to~ ~에 부착되 다, 집착하다, 고수하다 vernacular 통속적인, 풍토의, 특유의 hunch 예감, 직감, 육감 valid 타당한 dethrone (높은 지위에서) 쫓아내다 prelude 전주곡, 서곡; 전조, 예고 substitute 대용하다 ineffable 말로 표현할 수 없는 bolt 번개 불; (불․물)의 갑작스런 분사 ascendency 우세, 우월, 지배권"
+    "explanation": "“물론, 상징적으로는 그것이 지금도 여전히 존재한다.”라고 한 것에서 ②가 사실임을 알 수 있다."
   },
   {
     "q": "The underlined expression means _______.",
@@ -645,7 +645,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "3",
-    "explanation": "21 내용일치 해석 이 글에 따르면, 다음 중 사실인 것은? ① 귀납론은 위대한 과학자를 위대한 관찰자라고 생각했다. ② 귀납론은 흔히 그것의 엘리트주의 때문에 비난을 받아 왔다. ③ 인권 침해의 비판 ④ 언론에서 폭력의 묘사 ⑤ 부패 기관으로서 언론의 대중적 이미지 ③ 귀납론은 천재에게 접근할 수 없는 위치를 제공한다. 분석 이 글은 처음 부분에서 과거의 언론이 처한 위험을, 중반 이후부 터는 지금도 변함없이 계속되는 언론이 처한 위험을 이야기하고 있다. ④ 귀납론은 결코 과학에 큰 영향을 미치지 못했다. 정답 ① ⑤ 귀납론은 주관성에 대한 확고한 믿음에서 발생한다. 분석 “귀납론의 비판가들은 위대한 과학자는 실험이나 관찰의 솜씨에 의해서라기보다는 그들의 직감의 힘에 의해 구별된다고 주장한다.”라 고 한 것에서 inductivism은 비판가들의 말과는 반대로 위대한 과학자 들이 실험이나 관찰의 솜씨로 구별된다고 생각하고 있음을 추론할 수 있다. ② elitism(엘리트주의)에 대한"
+    "explanation": "밑줄 친 문장은, “산다는 것에는 단순한 재미보다 훨씬 그 이상의 것이 있다.”라는 뜻이므로 ③의 “인생이 모두 재미인 것만은 아니다.”라는 의미로 바꾸어 쓸 수 있다."
   },
   {
     "q": "According to the passage, which of the following is true?",
@@ -672,7 +672,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "4",
-    "explanation": "21 내용일치 해석 이 글에 따르면, 다음 중 사실인 것은? ① 귀납론은 위대한 과학자를 위대한 관찰자라고 생각했다. ② 귀납론은 흔히 그것의 엘리트주의 때문에 비난을 받아 왔다. ③ 인권 침해의 비판 ④ 언론에서 폭력의 묘사 ⑤ 부패 기관으로서 언론의 대중적 이미지 ③ 귀납론은 천재에게 접근할 수 없는 위치를 제공한다. 분석 이 글은 처음 부분에서 과거의 언론이 처한 위험을, 중반 이후부 터는 지금도 변함없이 계속되는 언론이 처한 위험을 이야기하고 있다. ④ 귀납론은 결코 과학에 큰 영향을 미치지 못했다. 정답 ① ⑤ 귀납론은 주관성에 대한 확고한 믿음에서 발생한다. 분석 “귀납론의 비판가들은 위대한 과학자는 실험이나 관찰의 솜씨에 의해서라기보다는 그들의 직감의 힘에 의해 구별된다고 주장한다.”라 고 한 것에서 inductivism은 비판가들의 말과는 반대로 위대한 과학자 들이 실험이나 관찰의 솜씨로 구별된다고 생각하고 있음을 추론할 수 있다. ② elitism(엘리트주의)에 대한"
+    "explanation": "그녀가 카터(Carter)와 제작한 두 번째 영화는 『Angel Beach』라고 불렸고, 그 영화에서 그녀는 모터사이클 깡패들에 의해 강간당하는 한 소녀를 연기하였다. 마리아(Maria)는 그 영화를 두 번 보았고, 한 번은 제작실의 미리보기를 통해서 두 번째는 혼자서 자동차 전용 극장에서 보았는데, 어느 경우에도 화면 속의 소녀가 그녀 자신이라는 느낌을 가져본 적이 없었다. “난 너를 바라본다, 그리고 지금 막 일어난 일은 하나도 중요하지 않음을 안다. 산다는 것에는 단순한 재미보다 훨씬 그 이상의 것이 있다. 나는 지금 그것을 알게 되었고, 이 세상 어디에든 재미는 없다.”라고 화면 속의 소녀는 말하곤 했다. 카터의 최초 영화는 모터사이클 깡패들의 장면으로 끝났는데, 마치 그들이 마리아가 연기했던 소녀가 완전히는 이해하지 못했던 어떤 현실을 말해주는 것 같았다. 그러나 스튜디오에 의해 출시된 영화는 캠퍼스를 거니는 마리아의 매력적인 긴 장면으로 끝났다. 마리아는 스튜디오에서 출시된 영화를 더 좋아했다. 사실, 그녀가 그 영화를 좋아했던 것은 영화 속의 소녀가 그녀 스스로의 운명을 지배하는 확실한 요령을 가지고 있는 것처럼 보이기 때문이었다.\n\n이 글 마지막의 “영화 속의 소녀가 그녀 스스로의 운명을 지배하는 확실한 요령을 가지고 있는 것처럼 보이기 때문이었다.”라는 내용이 단서가 된다.\n\n① 어느 경우에도 화면 속의 소녀가 그녀 자신이라는 느낌을 가져본 적이 없었다고 하였다. ② 마지막 문장에서 마리아가 스튜디오에서 출시된 영화를 좋아하는 이유는 영화 속의 소녀가 그녀 스스로의 운명을 지배하는 확실한 요령을 가지고 있는 것처럼 보였다고 하였으므로 소녀의 외로움을 강조했다고 할 수 없다. ③ 본문에 이에 대한 언급이 없다. ⑤ 최초 영화와 스튜디오에서 출시된 영화는 둘 다 강간 장면을 포함하고 있었는데 마리아가 최초 영화보다 스튜디오에서 출시된 영화를 더 좋아한 이유는 영화 속의 소녀가 더 독립적으로 보였기 때문이다.\n\nrape n 강간 v 강간하다\nkick n 톡 쏘는 흥분, 재미, 활력, 원기\ndolly a 매력적인, 귀여운\nknack n 요령, 비결"
   },
   {
     "q": "The underlined expression suggests that _______.",
@@ -699,7 +699,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "5",
-    "explanation": "해석 미국의 편집장들은 깡패들에게 결투신청을 받거나 채찍을 맞거나 흠씬 구타당하는 위험에 항상 놓여 있었다. 1812년의 전쟁 24-25 중에, 한 전쟁을 반대하던 신문사가 실제로 폭도의 총격에 박살나 버리기도 했다. 변경지역에서는, 편집장들의 몸에 타르를 칠하고 해석 그녀가 카터(Carter)와 제작한 두 번째 영화는 Angel Beach라고 불렸고, 그 영화에서 그녀는 모터사이클 깡패들에 깃털을 붙여 둘러메고 다니는 린치를 가하는 것이 인기 있는 오락 의해 강간당하는 한 소녀를 연기하였다. 마리아(Maria)는 그 영화 이기도 했다. 물론, 상징적으로는 그것이 지금도 여전히 존재한다. 를 두 번 보았고, 한 번은 제작실의 미리보기를 통해서 두 번째는 언론은, 그 파급 범위가 전자매체를 통해 거의 무한히 확대되면서, 혼자서 자동차 전용 극장에서 보았는데, 어느 경우에도 화면 속의 그 시절 이후로 상당히 발전하였다. 그러나 대중은, 비록 매 시간마 소녀가 그녀 자신이라는 느낌을 "
+    "explanation": "밑줄 친 문장의 의미는 “단조로움의 벽에 난 아주 작은 틈새만으로도 괴롭힘과 격정의 끔찍한 드라마가 시작된다.”이므로 ⑤의 “사소한 일이 끔찍한 소동으로 비화될 수 있다.”는 표현으로 바꾸어 쓸 수 있다."
   },
   {
     "q": "According to the passage, the author _______.",
@@ -726,7 +726,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "1",
-    "explanation": "해석 미국의 편집장들은 깡패들에게 결투신청을 받거나 채찍을 맞거나 흠씬 구타당하는 위험에 항상 놓여 있었다. 1812년의 전쟁 24-25 중에, 한 전쟁을 반대하던 신문사가 실제로 폭도의 총격에 박살나 버리기도 했다. 변경지역에서는, 편집장들의 몸에 타르를 칠하고 해석 그녀가 카터(Carter)와 제작한 두 번째 영화는 Angel Beach라고 불렸고, 그 영화에서 그녀는 모터사이클 깡패들에 깃털을 붙여 둘러메고 다니는 린치를 가하는 것이 인기 있는 오락 의해 강간당하는 한 소녀를 연기하였다. 마리아(Maria)는 그 영화 이기도 했다. 물론, 상징적으로는 그것이 지금도 여전히 존재한다. 를 두 번 보았고, 한 번은 제작실의 미리보기를 통해서 두 번째는 언론은, 그 파급 범위가 전자매체를 통해 거의 무한히 확대되면서, 혼자서 자동차 전용 극장에서 보았는데, 어느 경우에도 화면 속의 그 시절 이후로 상당히 발전하였다. 그러나 대중은, 비록 매 시간마 소녀가 그녀 자신이라는 느낌을 "
+    "explanation": "내가 지금까지 가졌던 최고의 이웃은 한 이탈리아 식당이었다. 그곳에는 밤낮으로 이용할 수 있는 비상용 라자냐 요리, 일요일에 빨래방 갈 때 사용하기 위한 잔돈, 무전 식객과 주차 위반 딱지를 가진 경찰을 막아주는 상근 경비원이 있었다. 비록 그들이 에스프레소 기계에 물을 가득 채울 때마다 우리의 4층 욕실물이 바짝 마르기는 했지만, 나는 여전히 그들이 그립다. 나쁜 이웃들은 식물의 건부병보다도 더 집을 황폐화시킬 수 있으나 그들에 대비한 보험도 없고, 점잖은 조심과 철저하게 날씨 문제에만 국한된 대화 이외에는 강요된 친교를 막아줄 어떤 효과적인 방책도 없다. 그리고 단조로움의 벽에 난 아주 작은 틈새만으로도 괴롭힘과 격정의 끔찍한 드라마가 시작된다.\n\n“점잖은 조심과 철저하게 날씨 문제에만 국한된 대화 이외에는 강요된 친교를 막아줄 어떤 효과적인 방책도 없다.”고 하였으므로 ①이 적절하다.\n\nemergency lasagna 비상용 라자냐 요리\nlaunderette n 빨래방\ngatecrasher n 불청객, 무료 입장자\nblight v 바짝 마르게 하다, 황폐화하다, 파괴하다\ndry rot (식물의) 건부병\ncompulsory intimacy 강제적인 친교[친밀]\ncaution n 조심, 주의\nruthlessly ad 무자비하게, 잔인하게, 인정 없이\nrestricted a ~에 국한된[제한된]\nmeteorology n 기상학, 기상\nbreach n 틈[구멍]; 위반 v 돌파하다; 위반하다\nplatitude n 단조로움, 진부함, 평범함\nunleash v 풀어주다, 해방하다\npersecution n 박해, 졸라댐, 괴롭힘\npassion n 열심, 격정, 격노"
   },
   {
     "q": "Which of the following is most appropriate for the blank ⒜?",
@@ -753,7 +753,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "5",
-    "explanation": "26-27 해석 내가 지금까지 가졌던 최고의 이웃은 한 이탈리아 식당이었 다. 그곳에는 밤낮으로 이용할 수 있는 비상용 라자냐 요리, 일요일 분석 밑줄 친 문장의 의미는 “단조로움의 벽에 난 아주 작은 틈새만으 로도 괴롭힘과 격정의 끔찍한 드라마가 시작된다.”이므로 ⑤의 “사소 한 일이 끔찍한 소동으로 비화될 수 있다.”는 표현으로 바꾸어 쓸 수 있다. 정답 ⑤"
+    "explanation": "컴퓨터 번역 시스템이 지금 세상의 많은 분야에서 이용되고 있다. 그러나 기계 번역의 효율성이 급속도로 향상되고 있음에도 불구하고 인간 번역가가 불필요하게 중복되고 있다는 의심은 없다. 그와는 반대로 인간과 기계가 함께 일할 수 있다. 섬세함이 중요한 경우에는 오직 인간 번역가들만이 정확한 문서 번역을 할 수 있다."
   },
   {
     "q": "Which of the following is most appropriate for the blank ⒝?",
@@ -780,7 +780,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "4",
-    "explanation": "26-27 해석 내가 지금까지 가졌던 최고의 이웃은 한 이탈리아 식당이었 다. 그곳에는 밤낮으로 이용할 수 있는 비상용 라자냐 요리, 일요일 분석 밑줄 친 문장의 의미는 “단조로움의 벽에 난 아주 작은 틈새만으 로도 괴롭힘과 격정의 끔찍한 드라마가 시작된다.”이므로 ⑤의 “사소 한 일이 끔찍한 소동으로 비화될 수 있다.”는 표현으로 바꾸어 쓸 수 있다. 정답 ⑤"
+    "explanation": "섬세함이 중요한 경우에는 오직 인간 번역가들만이 정확한 문서 번역을 할 수 있다는 맥락에서 빈칸 ⒝에는 ‘섬세함(subtlety)’이 적절하다."
   },
   {
     "q": "According to the passage, which of the following is true of language teachers?",
@@ -807,7 +807,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "4",
-    "explanation": "에 빨래방 갈 때 사용하기 위한 잔돈, 무전 식객과 주차 위반 딱지를 가진 경찰을 막아주는 상근 경비원이 있었다. 비록 그들이 에스프 레소 기계에 물을 가득 채울 때마다 우리의 4층 욕실물이 바짝 마르기는 했지만, 나는 여전히 그들이 그립다. 나쁜 이웃들은 식물 28-30 의 건부병보다도 더 집을 황폐화시킬 수 있으나 그들에 대비한 해석 컴퓨터 번역 시스템이 지금 세상의 많은 분야에서 이용되고 있다. 그러나 기계 번역의 효율성이 급속도로 향상되고 있음에도 보험도 없고, 점잖은 조심과 철저하게 날씨 문제에만 국한된 대화 불구하고 인간 번역가가 불필요하게 중복되고 있다는 의심은 없다. 이외에는 강요된 친교를 막아줄 어떤 효과적인 방책도 없다. 그리 그와는 반대로 인간과 기계가 함께 일할 수 있다. 섬세함이 중요한 문학 작품이나 비문법적 경향이 있는 구어체 언어나 절대적 정확성 이 필수적인 중요한 문서를 번역하는 데 있어 오늘날의 컴퓨터는 거의 가치가 없다. 그러나 국제 조직의 번역일 중"
+    "explanation": "인간과 기계가 함께 일할 수 있다는 내용과 섬세함이 중요한 경우 인간 번역가가 필요하다는 내용으로 보아, 기계가 인간 번역가를 완전히 대체하지는 않을 것이다."
   },
   {
     "q": "What is the tone of the passage?",
@@ -834,7 +834,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "2",
-    "explanation": "에 빨래방 갈 때 사용하기 위한 잔돈, 무전 식객과 주차 위반 딱지를 가진 경찰을 막아주는 상근 경비원이 있었다. 비록 그들이 에스프 레소 기계에 물을 가득 채울 때마다 우리의 4층 욕실물이 바짝 마르기는 했지만, 나는 여전히 그들이 그립다. 나쁜 이웃들은 식물 28-30 의 건부병보다도 더 집을 황폐화시킬 수 있으나 그들에 대비한 해석 컴퓨터 번역 시스템이 지금 세상의 많은 분야에서 이용되고 있다. 그러나 기계 번역의 효율성이 급속도로 향상되고 있음에도 보험도 없고, 점잖은 조심과 철저하게 날씨 문제에만 국한된 대화 불구하고 인간 번역가가 불필요하게 중복되고 있다는 의심은 없다. 이외에는 강요된 친교를 막아줄 어떤 효과적인 방책도 없다. 그리 그와는 반대로 인간과 기계가 함께 일할 수 있다. 섬세함이 중요한 문학 작품이나 비문법적 경향이 있는 구어체 언어나 절대적 정확성 이 필수적인 중요한 문서를 번역하는 데 있어 오늘날의 컴퓨터는 거의 가치가 없다. 그러나 국제 조직의 번역일 중"
+    "explanation": "이 글은 컴퓨터 번역과 인간 번역의 관계에 대해 객관적인 정보를 전달하고 있으므로 어조는 ‘informative(정보를 제공하는)’이다."
   },
   {
     "q": "When the above passage can be divided into three paragraphs, which would be the best boundaries?",
@@ -861,7 +861,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "3",
-    "explanation": "장엄한 분위기를 주는 빌딩 숲을 형성할 정도로는 충분하지 않았 고, 우울한 분위기로 두세 개가 모여 있거나 완전히 따로 떨어져 있었다. 나는 이제 떠돌이 부족인 ‘Nagamas’족의 많은 사람들과 함께 있게 되었는데, 그들은 내가 피라미드를 오르는 것을 보았었 고, 이제는 탐욕스런 돈의 요구와 나의 옷을 지속적으로 당기는 것으로 거의 내가 화를 낼 상황까지 만들었다."
+    "explanation": "이 글을 세 단락으로 나눌 때 가장 적절한 구분은 ⒞와 ⒟이다."
   },
   {
     "q": "According to the passage, the author chose the north-west corner to climb the Pyramid because _______.",
@@ -888,7 +888,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "2",
-    "explanation": "해석 이 글에 따르면, 다음 중 언어를 가르치는 선생들에 관한 설명으 로 맞는 것은? ① 그들은 컴퓨터를 좋아하지 않는다. ② 그들은 결코 번역의 중요성을 알 수 없을 것이다."
+    "explanation": "저자가 북서 해안을 선택한 이유는 그가 경찰을 피하기를 원했기 때문이다."
   },
   {
     "q": "According to the passage, which of the following is true?",
@@ -915,7 +915,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "2",
-    "explanation": "해석 이 글에 따르면, 다음 중 언어를 가르치는 선생들에 관한 설명으 로 맞는 것은? ① 그들은 컴퓨터를 좋아하지 않는다. ② 그들은 결코 번역의 중요성을 알 수 없을 것이다."
+    "explanation": "“Mokattam Hills의 절벽들 밑에 아프리카에서 가장 큰 도시인 무슬림 카이로의 회교 사원들과 장대한 첨탑들 그리고 얽히고설킨 거대한 공동묘지들이 있었다.”고 했다. 따라서 저자는 꼭대기에서 매장지를 볼 수 있었다.\n\n① 여행 책자의 조언과 달리 저자는 피라미드를 올라가는 데 도우미 없이 제안된 10분의 시간이 걸렸다고 하였다. ③ 이 글에 이에 대한 언급이 없다. ④ 구 카이로의 북쪽으로 높은 건물을 가진 현대 도시가 있었는데, 그 건물들은 맨해튼에서처럼 장엄한 분위기를 주는 빌딩 숲을 형성할 정도로는 충분하지 않았다고 하였다. ⑤ Nagamas족은 친절하게도 저자에게 약간의 음식을 주었다고 하였다."
   },
   {
     "q": "The best title of the passage would be _______.",
@@ -942,7 +942,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "2",
-    "explanation": "③ 33 내용파악 그것이 처해 있었던 곤경에서 벗어날 수 있었겠는가? 해석 이 글에 따르면, 저자는 피라미드에 오르기 위해 북서부 모퉁이 를 선택했는데 왜냐하면 _______. ① 여행 책자는 그에게 그렇게 하도록 추천했다 ② 그는 경찰을 피하기를 원했다 ③ 그는 더 많은 도우미를 데리고 갈 수 있었다 어휘 apprehension 이상한 husbandry 불안, 염려 novel 새로운, 신기한; 경작, 재배, 관리 feeding stuff 사료 That’s that 그것으로 끝이다 hydrogenate 수소처리하다 if it had not been for ~이 없었더라면(=without) ④ 그것이 더 넓은 시야를 제공했다 ⑤ 그것이 가장 쉬운 방법이었다 분석 “나는 동쪽 면 밑의 고원 가장자리에 위치한 피라미드 경찰서의 시야에서 벗어나고 싶었다.”라고 한 것이 단서이다. 정답 ②"
+    "explanation": "이 글은 새로운 식품의 마케팅에 관한 내용이므로 ‘Marketing of Novelty Foods’가 제목으로 적절하다."
   },
   {
     "q": "According to the passage, the success of new food products depends mainly on _______.",
@@ -969,7 +969,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "2",
-    "explanation": "③ 33 내용파악 그것이 처해 있었던 곤경에서 벗어날 수 있었겠는가? 해석 이 글에 따르면, 저자는 피라미드에 오르기 위해 북서부 모퉁이 를 선택했는데 왜냐하면 _______. ① 여행 책자는 그에게 그렇게 하도록 추천했다 ② 그는 경찰을 피하기를 원했다 ③ 그는 더 많은 도우미를 데리고 갈 수 있었다 어휘 apprehension 이상한 husbandry 불안, 염려 novel 새로운, 신기한; 경작, 재배, 관리 feeding stuff 사료 That’s that 그것으로 끝이다 hydrogenate 수소처리하다 if it had not been for ~이 없었더라면(=without) ④ 그것이 더 넓은 시야를 제공했다 ⑤ 그것이 가장 쉬운 방법이었다 분석 “나는 동쪽 면 밑의 고원 가장자리에 위치한 피라미드 경찰서의 시야에서 벗어나고 싶었다.”라고 한 것이 단서이다. 정답 ②"
+    "explanation": "이 글에 따르면, 새로운 식품의 성공은 광고에 달려있다."
   },
   {
     "q": "The underlined expression in ⒜ implies that _______.",
@@ -996,7 +996,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "3",
-    "explanation": "④ 현대 카이로는 맨해튼만큼 숲이 있다. ⑤ Nagamas족은 친절하게도 저자에게 약간의 음식을 주었다. 분석 “Mokattam Hills의 절벽들 밑에 아프리카에서 가장 큰 도시인 무슬림 카이로의 회교 사원들과 장대한 첨탑들 그리고 얽히고설킨 거대한 공동묘지들이 있었다.”고 했다. ① 여행 책자의 조언과 달리 저자는 피라미드를 올라가는 데 도우미 없이 제안된 10분의 시간이 걸렸다고 하였다. ③ 이 글에 KY’s Tip 이에 대한 언급이 없다. ④ 구 카이로의 북쪽으로 높은 건물을 가진"
+    "explanation": "‘인상(impression)’이라고 했으므로 실제로 남자와 여자 중 어느 쪽이 가게 절도를 더 많이 하는지는 알 수 없고, 공표(publicity)는 언론 매체의 보도로 널리 알려지는 것을 말하므로, 결국 밑줄 친 부분은 언론 매체가 여성의 사례를 더 많이 보도하는 경향이 있음을 암시한다.\n\nshoplift v 가게 물건을 훔치다\npublicity n 공표, 공개, 널리 알려짐; 홍보; 명성\ncharge v 고소[고발]하다\nbrowbeat v 위협하다, 을러대다\nimmaterial a 중요하지 않은\nsolicitor n 변호사; 간청자, 강매자"
   },
   {
     "q": "Which of the following is most appropriate for the blanks ⒝ and ⒞?",
@@ -1023,7 +1023,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "4",
-    "explanation": "④ 현대 카이로는 맨해튼만큼 숲이 있다. ⑤ Nagamas족은 친절하게도 저자에게 약간의 음식을 주었다. 분석 “Mokattam Hills의 절벽들 밑에 아프리카에서 가장 큰 도시인 무슬림 카이로의 회교 사원들과 장대한 첨탑들 그리고 얽히고설킨 거대한 공동묘지들이 있었다.”고 했다. ① 여행 책자의 조언과 달리 저자는 피라미드를 올라가는 데 도우미 없이 제안된 10분의 시간이 걸렸다고 하였다. ③ 이 글에 KY’s Tip 이에 대한 언급이 없다. ④ 구 카이로의 북쪽으로 높은 건물을 가진"
+    "explanation": "빈칸 뒤에서 중산층과 하류층의 가게 절도에 대한 처벌 가능성을 비교하는 내용이 이어지므로 ①이 맞다."
   },
   {
     "q": "The underlined expression in ⒟ means _______.",
@@ -1050,7 +1050,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "3",
-    "explanation": "현대 도시가 있었는데, 그 건물들은 맨해튼에서처럼 장엄한 분위기를 주는 빌딩 숲을 형성할 정도로는 충분하지 않다고 하였다. ⑤ Nagamas족은 돈을 요구하고 옷을 지속적으로 당겨서 저자를 화가 나게 만들었다고 하였다. 정답 ② 37-39 해석 남성보다 여성이 더 많이 가게에서 물건을 훔친다는 인상은 아마도 (여성의 사례가) 널리 알려지기 때문일 것이다. 최근의 가게 에서 물건 훔치기에 대한 보도가 지적하듯이, 매주 신문들은 흠잡 을 데 없는 명성을 가진 일부 중년 여인이 전혀 설명되지 않는 35-36 해석 불행히도 식품과학이 항상 대중에게 받아들여질 수 있는 것을 다루는 것은 아니다. 다른 광고의 분야에서는 기분 좋은 개념 인 ‘new’라는 단어가 식품에 적용될 때는 불안만을 초래할 뿐이다. 새로운 식품이라고? 하면서 걱정하는 것이다. 왜냐하면 과학은 새로운 단백질, 동물 사육과 사료의 새로운 방식, 새로운 곡물, 그리고 새로운 식용 육류와 어류의 세계를 활짝 열어줄 수 있기 때문"
+    "explanation": "dock이 ‘피고석’이라는 뜻이므로 go into the dock(재판을 받다)은 be on trial(재판을 받고 있다)과 같은 뜻이다.\n\n정답 ③"
   },
   {
     "q": "The best title of the passage would be _______.",
@@ -1077,7 +1077,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "4",
-    "explanation": "현대 도시가 있었는데, 그 건물들은 맨해튼에서처럼 장엄한 분위기를 주는 빌딩 숲을 형성할 정도로는 충분하지 않다고 하였다. ⑤ Nagamas족은 돈을 요구하고 옷을 지속적으로 당겨서 저자를 화가 나게 만들었다고 하였다. 정답 ② 37-39 해석 남성보다 여성이 더 많이 가게에서 물건을 훔친다는 인상은 아마도 (여성의 사례가) 널리 알려지기 때문일 것이다. 최근의 가게 에서 물건 훔치기에 대한 보도가 지적하듯이, 매주 신문들은 흠잡 을 데 없는 명성을 가진 일부 중년 여인이 전혀 설명되지 않는 35-36 해석 불행히도 식품과학이 항상 대중에게 받아들여질 수 있는 것을 다루는 것은 아니다. 다른 광고의 분야에서는 기분 좋은 개념 인 ‘new’라는 단어가 식품에 적용될 때는 불안만을 초래할 뿐이다. 새로운 식품이라고? 하면서 걱정하는 것이다. 왜냐하면 과학은 새로운 단백질, 동물 사육과 사료의 새로운 방식, 새로운 곡물, 그리고 새로운 식용 육류와 어류의 세계를 활짝 열어줄 수 있기 때문"
+    "explanation": "이 글은 영국에 도둑맞았던 스코틀랜드 역사 유물의 반환을 계기로 본 문화재 반환 문제를 다루고 있으므로 ④의 ‘문화재를 소장할 권리’가 제목으로 가장 적합하다.\n\nculmination n 최고조, 최고점, 정상\nrepatriation n 본국 송환[귀]\ncoronation n 대관(식)\nmore often than not 자주, 빈번하게\nstraightforward a 똑바른, 정직한, 솔직한, 간단한"
   },
   {
     "q": "According to the passage, which of the following is true?",
@@ -1104,7 +1104,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "5",
-    "explanation": "해석 이 글에 따르면, 다음 중 사실인 것은? ① 운명의 돌은 그것의 예술적 아름다움 때문에 가치 있는 것으로 여겨졌다. ② 영국인들은 운명의 돌을 의례 행사에 결코 사용하지 않았다. ③ 저자는 예술품들이 현재 그들이 있는 곳에 있어야 한다고 생각한다. ④ 저자는 본국으로 예술품 반환이 전혀 불가능하다고 말한다. ⑤ 저자는 본국으로의 예술품 반환 여부를 결정하기가 쉽지 않다고 생각한다. 40-41 해석 운명의 돌(the Stone of Destiny)이 스코틀랜드로 돌아왔을 때, 그것은 그 유물을 반환받으려는 700년 운동의 절정이었다. 그 돌은 커다란 상업적 가치나 예술적 가치가 없는 돌덩어리에 불과하지만 스코틀랜드 사람들에게는 커다란 상징적 의미가 있으 니, 그들은 전설에 의하면 그 돌이 여전히 외국 땅에 보유되어 있는 동안에는 절대로 자유로울 수 없었던 사람들이다. 그 돌은 본래 1296년에 잉글랜드 왕 에드워드 1세에 의해 도둑맞은 것이었 었다. 본국으로 반환되기 전에, 그것"
+    "explanation": "이 글에 따르면, 저자는 본국으로의 예술품 반환 여부를 결정하기가 쉽지 않다고 말한다.\n① 운명의 돌은 예술적 아름다움 때문이 아니라 역사적 상징성 때문에 가치 있는 것으로 여겨진다. ② 영국인들은 운명의 돌을 의례 행사에 사용했다. ③ 저자는 예술품들이 반드시 현재 있는 곳에 있어야 한다고 생각하지 않는다. ④ 저자는 본국으로 예술품 반환이 불가능하다고 말하지 않았다."
   },
   {
     "q": "The best title of the passage would be _______.",
@@ -1131,7 +1131,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "3",
-    "explanation": "해석 이 글에 따르면, 다음 중 사실인 것은? ① 운명의 돌은 그것의 예술적 아름다움 때문에 가치 있는 것으로 여겨졌다. ② 영국인들은 운명의 돌을 의례 행사에 결코 사용하지 않았다. ③ 저자는 예술품들이 현재 그들이 있는 곳에 있어야 한다고 생각한다. ④ 저자는 본국으로 예술품 반환이 전혀 불가능하다고 말한다. ⑤ 저자는 본국으로의 예술품 반환 여부를 결정하기가 쉽지 않다고 생각한다. 40-41 해석 운명의 돌(the Stone of Destiny)이 스코틀랜드로 돌아왔을 때, 그것은 그 유물을 반환받으려는 700년 운동의 절정이었다. 그 돌은 커다란 상업적 가치나 예술적 가치가 없는 돌덩어리에 불과하지만 스코틀랜드 사람들에게는 커다란 상징적 의미가 있으 니, 그들은 전설에 의하면 그 돌이 여전히 외국 땅에 보유되어 있는 동안에는 절대로 자유로울 수 없었던 사람들이다. 그 돌은 본래 1296년에 잉글랜드 왕 에드워드 1세에 의해 도둑맞은 것이었 었다. 본국으로 반환되기 전에, 그것"
+    "explanation": "이 글은 언론의 비극 보도 방식에 대한 윤리적 딜레마를 다루고 있으므로 ③의 ‘언론 보도의 도덕적 딜레마’가 제목으로 가장 적절하다."
   },
   {
     "q": "The underlined expression implies that _______.",
@@ -1158,7 +1158,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "3",
-    "explanation": "해석 이 글에 따르면, 다음 중 사실인 것은? ① 운명의 돌은 그것의 예술적 아름다움 때문에 가치 있는 것으로 여겨졌다. ② 영국인들은 운명의 돌을 의례 행사에 결코 사용하지 않았다. ③ 저자는 예술품들이 현재 그들이 있는 곳에 있어야 한다고 생각한다. ④ 저자는 본국으로 예술품 반환이 전혀 불가능하다고 말한다. ⑤ 저자는 본국으로의 예술품 반환 여부를 결정하기가 쉽지 않다고 생각한다. 40-41 해석 운명의 돌(the Stone of Destiny)이 스코틀랜드로 돌아왔을 때, 그것은 그 유물을 반환받으려는 700년 운동의 절정이었다. 그 돌은 커다란 상업적 가치나 예술적 가치가 없는 돌덩어리에 불과하지만 스코틀랜드 사람들에게는 커다란 상징적 의미가 있으 니, 그들은 전설에 의하면 그 돌이 여전히 외국 땅에 보유되어 있는 동안에는 절대로 자유로울 수 없었던 사람들이다. 그 돌은 본래 1296년에 잉글랜드 왕 에드워드 1세에 의해 도둑맞은 것이었 었다. 본국으로 반환되기 전에, 그것"
+    "explanation": "비극을 당한 여인에 대한 보도에서 글로만 전하지 않고 사진을 1면에 크게 실으면서 그 이유로 그렇게 하는 것이 재난의 공포를 완전히 전달하는데 도움이 되어서라고 말했다는 것은 언론매체가 재난을 전하는데 있어 적정한 수단을 선택하여 적정한 정도로 전하는 것이 아니라 좀 더 쇼킹하게(과장되게) 전하려는 경향이 있음을 암시한다.\n\nwrithe v 몸을 뒤틀다\nagony n 고통, 고민(=anguish)\nout of control 통제 불능의\npress corps 보도진\ngrief-stricken a 슬픔에 젖은, 비탄에 잠긴\nbereaved a 사별한, 유족의"
   },
   {
     "q": "Which of the following is most appropriate for the blank?",
@@ -1185,7 +1185,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "3",
-    "explanation": "년 지나지 않아, 그 사상의 요점을 입증할 것이라고 기대되었던"
+    "explanation": "빈칸 바로 앞 문장에 나오는 데일리 뉴스지 편집장의 의견과 반대되는 의견이 빈칸에 들어가야 한다. “나로서는, 그 엄마의 사진 없이도 그 기자들이 적합한 이야기를 쓸 수 있었을 거라고 믿는다.”가 적절하다."
   },
   {
     "q": "The best title of the passage would be _______.",
@@ -1212,7 +1212,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "4",
-    "explanation": "년 지나지 않아, 그 사상의 요점을 입증할 것이라고 기대되었던"
+    "explanation": "이 글은 원시 상태에서의 도덕률에 관한 내용이므로 ④의 ‘원시 상태에서의 도덕률’이 제목으로 적절하다."
   },
   {
     "q": "According to the passage, which of the following is true?",
@@ -1239,7 +1239,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "2",
-    "explanation": "45-48 해석 프랑스 철학자 루소가 자연 상태의 인간은 선천적으로 선하 다는 그의 믿음을 구체화한 ‘고귀한 야만인’ 사상을 발표한 지 몇"
+    "explanation": "Victor는 적절한 교육과 모성애를 받으며 자랐다. 프랑스 철학자 루소가 자연 상태의 인간은 선천적으로 선하다는 그의 믿음을 구체화한 ‘고귀한 야만인’의 전형이다."
   },
   {
     "q": "Which of the following is most appropriate for the blanks ⒜ and ⒝?",
@@ -1266,7 +1266,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "3",
-    "explanation": "45-48 해석 프랑스 철학자 루소가 자연 상태의 인간은 선천적으로 선하 다는 그의 믿음을 구체화한 ‘고귀한 야만인’ 사상을 발표한 지 몇"
+    "explanation": "빈칸 ⒜, ⒝에는 ‘immoral — pre-moral’이 적절하다."
   },
   {
     "q": "According to the passage, the story of Victor eventually suggests that man is innately _______.",
@@ -1293,7 +1293,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "5",
-    "explanation": "③ ⑤ 49-50 해석 베트남전과 워터게이트는 미국 기관들의 권위를 상당히 훼손하였다. 그것들은 미국인들이 할 역할과 참여할 전쟁을 고르 고 선택하도록 조장하였다. 적어도 그것들은 참여하기를 단호하게 거부하는 것을 멋지게 정당화시켰다. 오랜 훌륭한 미국인의 속성 인 이러한 도덕적 개인주의가 과거에는 종종 국가에 대한 책임감에 의해 균형 잡혀 왔다. 이제 그러한 책임감은 부서져 사라져 버렸다. 미국은 지독히도 자기 모순적인 부족들의 집합체가 되어 버렸다. 대다수의 사람들이 현실적이라고 간주하는 극단적 위협이 없는 상태에서, 미국인들은 이제 내부에서 끼리끼리 적대하는 정신 상 태를 보여주었다. 미국의 다원주의는 일관성 없는 개인주의가 되 었다. 국가의 사회 비전은 단지 안락과 안전을 위한 욕망에 불과하 게 되었다. 만약 희생이 요구된다면, 어느 미국인들이 기꺼이 공공 의 이익을 위해 그들의 특권의 일부를 포기하고자 할까하는 고통스 러운 의문이 생겨난다. 그들은 자신이 다른 미국인들보다 "
+    "explanation": "이 글에 따르면, Victor의 이야기는 결국 인간이 본질적으로 자기중심적(self-centered)임을 암시한다."
   },
   {
     "q": "The underlined expression implies that _______.",
@@ -1320,7 +1320,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "5",
-    "explanation": "③ ⑤ 49-50 해석 베트남전과 워터게이트는 미국 기관들의 권위를 상당히 훼손하였다. 그것들은 미국인들이 할 역할과 참여할 전쟁을 고르 고 선택하도록 조장하였다. 적어도 그것들은 참여하기를 단호하게 거부하는 것을 멋지게 정당화시켰다. 오랜 훌륭한 미국인의 속성 인 이러한 도덕적 개인주의가 과거에는 종종 국가에 대한 책임감에 의해 균형 잡혀 왔다. 이제 그러한 책임감은 부서져 사라져 버렸다. 미국은 지독히도 자기 모순적인 부족들의 집합체가 되어 버렸다. 대다수의 사람들이 현실적이라고 간주하는 극단적 위협이 없는 상태에서, 미국인들은 이제 내부에서 끼리끼리 적대하는 정신 상 태를 보여주었다. 미국의 다원주의는 일관성 없는 개인주의가 되 었다. 국가의 사회 비전은 단지 안락과 안전을 위한 욕망에 불과하 게 되었다. 만약 희생이 요구된다면, 어느 미국인들이 기꺼이 공공 의 이익을 위해 그들의 특권의 일부를 포기하고자 할까하는 고통스 러운 의문이 생겨난다. 그들은 자신이 다른 미국인들보다 "
+    "explanation": "베트남전과 워터게이트는 미국 기관들의 권위를 상당히 훼손하였다. 그것들은 미국인들이 자신들의 국가를 위해 싸우기를 거부하는 것을 정당화시켜 주었다.\n\n밑줄 친 표현은 “베트남과 워터게이트가 미국인들이 국가를 위해 싸우기를 거부하는 것을 정당화시켜 주었다”는 의미를 암시한다."
   },
   {
     "q": "According to the passage, the author suggests that Americans are getting more _______.",
@@ -1347,7 +1347,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "3",
-    "explanation": "덕적 이었다기보다는 도덕심이 형성되기 이전 단계에 있었던 것이"
+    "explanation": "이 글에 따르면, 저자는 미국인들이 편협한(narrow-minded) 태도를 가지고 있다고 암시한다."
   }
 ]
 ;;
