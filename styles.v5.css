@@ -1740,6 +1740,9 @@ h2 {
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
 }
+.dash-stats-xl {
+  grid-template-columns: repeat(6, 1fr);
+}
 .dash-stat {
   display: grid;
   gap: 2px;
@@ -1748,6 +1751,12 @@ h2 {
   background: var(--panel);
   border: 1px solid var(--line);
   text-align: center;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.dash-stat[cursor="pointer"]:hover,
+.dash-stat[onclick]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px -8px rgba(0,0,0,0.18);
 }
 .dash-stat-num {
   font-size: 26px;
@@ -1764,6 +1773,11 @@ h2 {
   font-size: 12px;
   font-weight: 600;
   color: var(--muted);
+}
+.dash-stat-icon {
+  font-size: 28px;
+  line-height: 1.1;
+  display: block;
 }
 .dash-section-label {
   margin: 6px 0 -4px;
@@ -1853,6 +1867,12 @@ h2 {
 .dash-card[data-accent="amber"]  { --c: #d97706; }
 .dash-card[data-accent="plum"]   { --c: #9333ea; }
 
+@media (max-width: 840px) {
+  .dash-stats-xl {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 480px) {
   .dash-hero { padding: 18px; gap: 12px; }
   .dash-hero-icon { width: 48px; height: 48px; font-size: 26px; }
@@ -1860,6 +1880,16 @@ h2 {
   .dash-grid { grid-template-columns: 1fr 1fr; }
   .dash-card { min-height: 60px; padding: 12px; }
   .dash-stat-num { font-size: 22px; }
+  .dash-stats-xl {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+  .dash-stat {
+    padding: 10px 6px;
+  }
+  .dash-stat-icon {
+    font-size: 22px;
+  }
 }
 
 /* Navigation lives in the dashboard now — hide the duplicate sidebar buttons

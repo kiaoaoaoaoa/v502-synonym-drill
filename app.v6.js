@@ -918,8 +918,8 @@ function showFeedback(correct, question) {
       ${promptExample ? `<p class="explain-example"><strong>📖 예문:</strong> ${escapeHtml(promptExample)}</p>` : ""}
       <p><strong>Correct pair:</strong> ${escapeHtml(question.answer.join(" / "))}</p>
     </div>
-    <p class="explain-section-label" onclick="this.classList.toggle('collapsed');this.nextElementSibling.classList.toggle('hidden')">📋 Option Analysis ▾</p>
-    <ul class="explain-list detailed">${optionRows}</ul>
+    <p class="explain-section-label collapsed" onclick="this.classList.toggle('collapsed');this.nextElementSibling.classList.toggle('hidden')">📋 Option Analysis ▾</p>
+    <ul class="explain-list detailed hidden">${optionRows}</ul>
   `;
 }
 
@@ -2849,12 +2849,14 @@ function showDashboard() {
       .find((e) => e.name.toLowerCase() === state.playerName.toLowerCase());
     const score = cum ? cum.correct : 0;
     const tier = getTier(readIrtAbility());
-    html += `<div class="dash-stats">
-      <div class="dash-stat" onclick="showWordlist()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-num">${knownCount}</span><span class="dash-stat-label">외운 단어 ▸</span></div>
-      <div class="dash-stat" onclick="startLogicQuiz()" style="cursor:pointer" title="논리문제"><span class="dash-stat-num">${logicMastered}<small>/${getLogicTotal()}</small></span><span class="dash-stat-label">논리 마스터 ▸</span></div>
-      <div class="dash-stat" onclick="showRanking()" style="cursor:pointer" title="통합랭킹 보기"><span class="dash-stat-num">${score}</span><span class="dash-stat-label">통합 점수 ▸</span></div>
-      <div class="dash-stat" style="cursor:default"><span class="dash-stat-num" style="font-size:18px">${tier.icon}</span><span class="dash-stat-label">${tier.name}</span></div>
-    </div>`;
+    html += `<div class="dash-stats dash-stats-xl">`;
+    html += `<div class="dash-stat" onclick="showWordlist()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-num">${knownCount}</span><span class="dash-stat-label">📋 외운 단어</span></div>`;
+    html += `<div class="dash-stat" onclick="startLogicQuiz()" style="cursor:pointer" title="논리문제"><span class="dash-stat-num">${logicMastered}<small>/${getLogicTotal()}</small></span><span class="dash-stat-label">🧩 논리 마스터</span></div>`;
+    html += `<div class="dash-stat" onclick="showRanking()" style="cursor:pointer" title="통합랭킹 보기"><span class="dash-stat-num">${score}</span><span class="dash-stat-label">🏆 통합 점수</span></div>`;
+    html += `<div class="dash-stat" style="cursor:default"><span class="dash-stat-num" style="font-size:18px">${tier.icon}</span><span class="dash-stat-label">${tier.name}</span></div>`;
+    html += `<div class="dash-stat" onclick="showWordlist()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-icon">📋</span><span class="dash-stat-label">단어일람</span></div>`;
+    html += `<div class="dash-stat" onclick="showWordlist2()" style="cursor:pointer" title="단어일람보기2"><span class="dash-stat-icon">🗂️</span><span class="dash-stat-label">단어일람2</span></div>`;
+    html += `</div>`;
   }
 
   // ---- Study cards ----
@@ -2868,15 +2870,15 @@ function showDashboard() {
   html += dashCard({ icon: '✅', title: '단어확인문제', desc: '전체 어휘 확인', accent: 'green', onclick: "showWordcheck()" });
   html += '</div>';
 
-  // ---- Review & info cards ----
-  html += '<p class="dash-section-label">복습 & 정보</p>';
-  html += '<div class="dash-grid">';
-  html += dashCard({ icon: '📋', title: '단어일람보기', desc: '전체 단어 사전', accent: 'slate', onclick: "showWordlist()" });
-  html += dashCard({ icon: '🗂️', title: '단어일람보기2', desc: 'MVP2 + V401 추가 단어', accent: 'slate', onclick: "showWordlist2()" });
+  // ---- Review & info cards (logged-out only) ----
   if (!loggedIn) {
-    html += dashCard({ icon: '🔒', title: '로그인 필요', desc: '내정보 이용 잠금', accent: 'slate', onclick: "document.getElementById('authNicknameInput').focus()" });
+    html += '<p class="dash-section-label">계정</p>';
+    html += '<div class="dash-grid">';
+    html += dashCard({ icon: '🔒', title: '로그인 필요', desc: '내정보 / 랭킹 이용 잠금', accent: 'slate', onclick: "document.getElementById('authNicknameInput').focus()" });
+    html += dashCard({ icon: '📋', title: '단어일람보기', desc: '전체 단어 사전', accent: 'slate', onclick: "showWordlist()" });
+    html += dashCard({ icon: '🗂️', title: '단어일람보기2', desc: 'MVP2 + V401 추가 단어', accent: 'slate', onclick: "showWordlist2()" });
+    html += '</div>';
   }
-  html += '</div>';
 
   html += '</div>';
   document.getElementById('dashboardContent').innerHTML = html;
