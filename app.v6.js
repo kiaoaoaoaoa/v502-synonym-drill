@@ -387,6 +387,57 @@ const leaderboardKey = "v502-synonym-drill-leaderboard";
 const passwordStoreKey = "v502-synonym-drill-passwords";
 const wordKnowledgeKey = "v502-synonym-drill-word-knowledge";
 const quizProgressKey = "v502-synonym-drill-quiz-progress";
+const irtAbilityKey = "v502-irt-ability";            // IRT-based cumulative ability score
+
+// IRT 난이도 평가 — 7-factor regression formula
+function rateQuestion({X1, X2, X3, X4, X5, X6, X7}) {
+  const raw = 118 - 3.0*X1 - 1.5*X2 - 2.5*X3 - 2.5*X4
+              - 2.5*(10-X5) - 2.5*X6 - 2.0*X7;
+  return Math.max(1, Math.min(99, Math.round(raw)));
+}
+
+function getScoreDelta(isCorrect, rate) {
+  return isCorrect ? +(1.5 * rate / 100) : -(rate / 100);
+}
+
+function readIrtAbility() {
+  try { return parseFloat(localStorage.getItem(irtAbilityKey)) || 0; } catch { return 0; }
+}
+
+function writeIrtAbility(v) {
+  const capped = Math.max(0, Math.min(1000, v));
+  try { localStorage.setItem(irtAbilityKey, String(Math.round(capped * 1000) / 1000)); } catch {}
+}
+
+// Tier thresholds scaled to 0–1000 (cap), proportional to original 0–2000 distribution
+function getTier(score) {
+  const s = Math.max(0, Math.min(1000, score));
+  if (s >= 1000) return { name: '서성한메이저',     icon: '👑' };
+  if (s >= 840)  return { name: '서성한',           icon: '💠' };
+  if (s >= 690)  return { name: '서성한하위',       icon: '💎' };
+  if (s >= 530)  return { name: '중경외시 메이저',  icon: '🥇' };
+  if (s >= 370)  return { name: '중경외시 하위',    icon: '🥈' };
+  if (s >= 210)  return { name: '건동홍',           icon: '🥉' };
+  if (s >= 150)  return { name: '국숭세단',         icon: '📗' };
+  if (s >= 100)  return { name: '인가경',           icon: '📘' };
+  if (s >= 50)   return { name: '정붕이 파이팅', icon: '📙' };
+  return { name: '정붕이', icon: '🌱' };
+}
+
+// Estimate IRT ability from public stats (correct/total) — assumes rate≈50
+function getTierForRanking(correct, total) {
+  const estAbility = correct * 0.75 - (total - correct) * 0.5;
+  return getTier(estAbility);
+}
+
+function updateTierDisplay() {
+  const el = document.getElementById('authTier');
+  if (!el) return;
+  const ability = readIrtAbility();
+  const tier = getTier(ability);
+  el.textContent = `${tier.icon} ${tier.name}`;
+  el.title = `IRT Ability: ${ability.toFixed(1)}`;
+}
 let supabaseClient = null;
 let supabaseSdkPromise = null;
 
@@ -916,6 +967,12 @@ function submitAnswer() {
     // Reflect this answer in the unified ranking right away (real-time 단어문제 score)
     saveSynonymRankResult(question.categoryId, question.prompt, correct);
     try { persistSynonymRanking(); } catch {}
+    // IRT ability score tracking
+    const rate = (question.difficulty && typeof question.difficulty === 'object')
+      ? rateQuestion(question.difficulty) : 50; // default 50% if no per-question rating
+    const ability = readIrtAbility() + getScoreDelta(correct, rate);
+    writeIrtAbility(ability);
+    updateTierDisplay();
   }
   try { saveQuizProgress(); } catch {}
   if (noExplainMode) {
@@ -1088,6 +1145,7 @@ function renderAuthUI() {
     els.myinfoBtn.hidden = false;
     els.startPanelTitle.textContent = `Welcome, ${state.playerName}`;
     els.startPanelHint.textContent = "Select a category set and start your quiz.";
+    updateTierDisplay();
   } else {
     els.authLoggedOut.hidden = false;
     els.authLoggedIn.hidden = true;
@@ -1757,8 +1815,9 @@ async function completeQuiz() {
 
   els.quizPanel.hidden = true;
   els.resultPanel.hidden = false;
+  const tier = getTier(readIrtAbility());
   els.resultTitle.textContent = `${displayName}'s Result`;
-  els.resultSummary.textContent = `${entry.correct}/${entry.total} correct — ${accuracy}% accuracy`;
+  els.resultSummary.textContent = `${entry.correct}/${entry.total} correct — ${accuracy}% accuracy — ${tier.icon} ${tier.name}`;
 
   // Show question-by-question review
   let reviewHTML = '<div style="max-height:50vh;overflow-y:auto;margin:16px 0">';
@@ -1785,30 +1844,8 @@ async function completeQuiz() {
     return;
   }
 
-  // Show ranking below review
-  const cumulative = cumulativeLeaderboard(readLeaderboard(), null);
-  const cumEntry = cumulative.find(e => e.name.toLowerCase() === state.playerName.toLowerCase()) || entry;
-  const rank = cumulative.findIndex(e => e.name.toLowerCase() === state.playerName.toLowerCase()) + 1;
-  const rankHTML = renderCumulativeLeaderboardHTML(cumulative.slice(0, 10), "통합 랭킹", rank, cumEntry);
-  els.leaderboard.innerHTML += rankHTML;
-
   // Show public ranking
   renderPublicResult(displayName, accuracy, entry.correct, entry.total);
-}
-
-function renderCumulativeLeaderboardHTML(leaderboard, title, rank, cumEntry) {
-  return `
-    <h4 style="margin-top:16px">${escapeHtml(title)}</h4>
-    <p class="ranking-note">Best attempt per set · All 62 sets combined</p>
-    <ol>
-      ${leaderboard.map((item) => `
-        <li>
-          <span>${escapeHtml(item.name)}</span>
-          <b>${item.accuracy}%</b>
-          <small>${item.correct}/${item.total}</small>
-        </li>
-      `).join("")}
-    </ol>`;
 }
 
 function reviewQuestion(index) {
@@ -1840,25 +1877,7 @@ function reviewQuestion(index) {
   els.nextTopBtn.onclick = els.nextBtn.onclick;
 }
 
-function renderCumulativeLeaderboard(leaderboard, title, rank, cumEntry) {
-  els.resultSummary.textContent =
-    `${cumEntry.correct}/${cumEntry.total} cumulative — ${cumEntry.accuracy}% accuracy — Rank #${rank}`;
-  els.leaderboard.innerHTML = `
-    <h4>${escapeHtml(title)}</h4>
-    <p class="ranking-note">Best attempt per set · All 62 sets combined</p>
-    <ol>
-      ${leaderboard.map((item) => `
-        <li>
-          <span>${escapeHtml(item.name)}</span>
-          <b>${item.accuracy}%</b>
-          <small>${item.correct}/${item.total}</small>
-        </li>
-      `).join("")}
-    </ol>
-  `;
-}
-
-/* ---- Public ranking only (no local leaderboard) ---- */
+/* ---- Public ranking only ---- */
 function renderPublicResult(displayName, accuracy, correct, total) {
   // Append public ranking below existing content (don't overwrite review)
   const existingHTML = els.leaderboard.innerHTML;
@@ -1968,7 +1987,8 @@ function showRanking() {
         els.rankingContent.innerHTML = "<p style='color:var(--muted);font-style:italic'>no scores yet</p>";
         return;
       }
-      els.rankingSummary.innerHTML = `<span style="font-size:11px;letter-spacing:0.1em;opacity:0.5">${totalPlayers} PLAYERS</span>`;
+      els.rankingSummary.innerHTML = `<span style="font-size:11px;letter-spacing:0.1em;opacity:0.5">${totalPlayers} PLAYERS</span>` +
+        (state.playerName ? (() => { const t = getTier(readIrtAbility()); return ` <span style="font-size:12px;font-weight:700;color:var(--accent)">내 등급: ${t.icon} ${t.name}</span>`; })() : '');
 
       const colors = ['#FF6B35','#FFD449','#06D6A0','#118AB2','#EF476F','#073B4C','#8338EC','#FF006E'];
       const top3 = cumulative.slice(0, 3);
@@ -1979,12 +1999,14 @@ function showRanking() {
       html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:32px">';
       top3.forEach((item, idx) => {
         const medals = ['🥇','🥈','🥉'];
+        const tier = getTierForRanking(item.correct, item.total);
         const sizes = ['160%','130%','110%'];
         const color = colors[idx];
         html += `<div style="background:${color};border-radius:16px;padding:20px 14px;text-align:center;color:#fff;position:relative;overflow:hidden">
           <div style="font-size:${sizes[idx]};font-weight:900;line-height:1;opacity:0.25;position:absolute;top:4px;right:8px">${medals[idx]}</div>
           <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;opacity:0.7;margin-bottom:4px">#${idx+1}</div>
-          <div style="font-size:16px;font-weight:800;margin-bottom:6px;word-break:break-all">${escapeHtml(item.name)}</div>
+          <div style="font-size:16px;font-weight:800;margin-bottom:2px;word-break:break-all">${escapeHtml(item.name)}</div>
+          <div style="font-size:11px;opacity:0.85;margin-bottom:6px">${tier.icon} ${tier.name}</div>
           <div style="font-size:28px;font-weight:900;line-height:1">${item.accuracy}<span style="font-size:14px;font-weight:400">%</span></div>
           <div style="font-size:11px;opacity:0.7">${item.correct}/${item.total}</div>
         </div>`;
@@ -1996,11 +2018,12 @@ function showRanking() {
         html += '<div style="display:grid;gap:6px">';
         rest.forEach((item, idx) => {
           const rank = idx + 4;
+          const tier = getTierForRanking(item.correct, item.total);
           const barW = Math.min(100, item.accuracy);
           html += `<div style="display:grid;grid-template-columns:28px 1fr 60px 50px;align-items:center;gap:10px;padding:8px 12px;background:#fff;border-radius:10px;border:1px solid #eee">
             <span style="font-size:12px;font-weight:700;color:var(--muted);text-align:right">${rank}</span>
             <div style="min-width:0">
-              <div style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${escapeHtml(item.name)}</div>
+              <div style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${escapeHtml(item.name)} <span style="font-size:11px;opacity:0.6">${tier.icon} ${tier.name}</span></div>
               <div style="height:4px;border-radius:2px;background:#f0f0f0;margin-top:4px"><div style="height:100%;width:${barW}%;border-radius:2px;background:${colors[rank % colors.length]}"></div></div>
             </div>
             <span style="font-size:18px;font-weight:800;text-align:right">${item.accuracy}<span style="font-size:10px;font-weight:400;color:var(--muted)">%</span></span>
@@ -2574,7 +2597,6 @@ function showLogicAllDone() {
   els.resultPanel.hidden = false;
   els.resultTitle.textContent = "Logic Quiz Result";
   els.resultSummary.textContent = `모든 문제 완료! ${correct}/${total} 정답 (${pct}%) · 난이도 가중 점수: ${ws.score.toFixed(2)} (${ws.questions}문제)`;
-  showLogicRanking(correct, total, pct, ws);
 }
 
 function setBtnDisabled(btn, isDisabled) {
@@ -2732,18 +2754,6 @@ function finishLogicQuiz() {
   els.resultPanel.hidden = false;
   els.resultTitle.textContent = "Logic Quiz Result";
   els.resultSummary.textContent = `이번 세션 ${logicState.correctCount}/${logicState.questions.length} (${sessionPct}%) · 누적 ${cumCorrect}/${cumTotal} (${cumPct}%) · 가중점수 ${ws.score.toFixed(2)} · 남은 ${remaining}문제`;
-  showLogicRanking(cumCorrect, cumTotal, cumPct, ws);
-}
-
-/* Render the unified ranking on the result panel, including weighted logic score. */
-function showLogicRanking(cumCorrect, cumTotal, cumPct, ws) {
-  const cumulative = cumulativeLeaderboard(readLeaderboard(), null);
-  const displayScore = ws ? (ws.score * 40).toFixed(1) : "0.0";
-  const cumEntry = state.playerName
-    ? (cumulative.find(e => e.name.toLowerCase() === state.playerName.toLowerCase()) || { name: state.playerName, correct: parseFloat(displayScore), total: cumTotal, accuracy: cumPct })
-    : { name: "Guest", correct: parseFloat(displayScore), total: cumTotal, accuracy: cumPct };
-  const rank = state.playerName ? cumulative.findIndex(e => e.name.toLowerCase() === state.playerName.toLowerCase()) + 1 : cumulative.length + 1;
-  renderCumulativeLeaderboard(cumulative.slice(0, 30), "통합 랭킹 (가중점수)", rank, cumEntry);
 }
 
 // Logic mode toggle
@@ -2784,6 +2794,7 @@ function showDashboard() {
   switchMode('dashboard');
   els.dashboardPanel.hidden = false;
   const loggedIn = !!state.playerName;
+  if (loggedIn) updateTierDisplay();
 
   if (loggedIn) flushCloudSync();
 
@@ -2828,29 +2839,31 @@ function showDashboard() {
     const cum = cumulativeLeaderboard(readLeaderboard(), null)
       .find((e) => e.name.toLowerCase() === state.playerName.toLowerCase());
     const score = cum ? cum.correct : 0;
+    const tier = getTier(readIrtAbility());
     html += `<div class="dash-stats">
-      <div class="dash-stat" onclick="document.getElementById('wordlistBtn').click()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-num">${knownCount}</span><span class="dash-stat-label">외운 단어 ▸</span></div>
-      <div class="dash-stat" onclick="document.getElementById('logicModeBtn').click()" style="cursor:pointer" title="논리문제"><span class="dash-stat-num">${logicMastered}<small>/${getLogicTotal()}</small></span><span class="dash-stat-label">논리 마스터 ▸</span></div>
-      <div class="dash-stat" onclick="document.getElementById('rankingBtn').click()" style="cursor:pointer" title="통합랭킹 보기"><span class="dash-stat-num">${score}</span><span class="dash-stat-label">통합 점수 ▸</span></div>
+      <div class="dash-stat" onclick="showWordlist()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-num">${knownCount}</span><span class="dash-stat-label">외운 단어 ▸</span></div>
+      <div class="dash-stat" onclick="startLogicQuiz()" style="cursor:pointer" title="논리문제"><span class="dash-stat-num">${logicMastered}<small>/${getLogicTotal()}</small></span><span class="dash-stat-label">논리 마스터 ▸</span></div>
+      <div class="dash-stat" onclick="showRanking()" style="cursor:pointer" title="통합랭킹 보기"><span class="dash-stat-num">${score}</span><span class="dash-stat-label">통합 점수 ▸</span></div>
+      <div class="dash-stat" style="cursor:default"><span class="dash-stat-num" style="font-size:18px">${tier.icon}</span><span class="dash-stat-label">${tier.name}</span></div>
     </div>`;
   }
 
   // ---- Study cards ----
   html += '<p class="dash-section-label">학습</p>';
   html += '<div class="dash-grid">';
-  html += dashCard({ icon: '📝', title: '단어문제', desc: '동의어 짝 맞추기', accent: 'teal', onclick: "document.getElementById('synonymDrillBtn').click()" });
-  html += dashCard({ icon: '🧩', title: '논리문제', desc: '문맥 속 어휘 추론', accent: 'indigo', onclick: "document.getElementById('logicModeBtn').click()" });
-  html += dashCard({ icon: '📘', title: '201 단어퀴즈', desc: '4지선다 어휘 체크', accent: 'blue', onclick: "document.getElementById('wordcheck201Btn').click()" });
-  html += dashCard({ icon: '📝', title: '문법 201', desc: '442개 문법 문제', accent: 'plum', onclick: "document.getElementById('grammar201Btn').click()" });
-  html += dashCard({ icon: '📄', title: '기출문제', desc: '2012 가천대 22문제', accent: 'slate', onclick: "document.getElementById('examBtn').click()" });
-  html += dashCard({ icon: '✅', title: '단어확인문제', desc: '전체 어휘 확인', accent: 'green', onclick: "document.getElementById('wordcheckBtn').click()" });
+  html += dashCard({ icon: '📝', title: '단어문제', desc: '동의어 짝 맞추기', accent: 'teal', onclick: "openSynonymPanel()" });
+  html += dashCard({ icon: '🧩', title: '논리문제', desc: '문맥 속 어휘 추론', accent: 'indigo', onclick: "startLogicQuiz()" });
+  html += dashCard({ icon: '📘', title: '201 단어퀴즈', desc: '4지선다 어휘 체크', accent: 'blue', onclick: "showWordcheck201()" });
+  html += dashCard({ icon: '📝', title: '문법 201', desc: '442개 문법 문제', accent: 'plum', onclick: "showGrammar201()" });
+  html += dashCard({ icon: '📄', title: '기출문제', desc: '2012 가천대 22문제', accent: 'slate', onclick: "showExam()" });
+  html += dashCard({ icon: '✅', title: '단어확인문제', desc: '전체 어휘 확인', accent: 'green', onclick: "showWordcheck()" });
   html += '</div>';
 
   // ---- Review & info cards ----
   html += '<p class="dash-section-label">복습 & 정보</p>';
   html += '<div class="dash-grid">';
-  html += dashCard({ icon: '📋', title: '단어일람보기', desc: '전체 단어 사전', accent: 'slate', onclick: "document.getElementById('wordlistBtn').click()" });
-  html += dashCard({ icon: '🗂️', title: '단어일람보기2', desc: 'MVP2 + V401 추가 단어', accent: 'slate', onclick: "document.getElementById('wordlist2Btn').click()" });
+  html += dashCard({ icon: '📋', title: '단어일람보기', desc: '전체 단어 사전', accent: 'slate', onclick: "showWordlist()" });
+  html += dashCard({ icon: '🗂️', title: '단어일람보기2', desc: 'MVP2 + V401 추가 단어', accent: 'slate', onclick: "showWordlist2()" });
   if (!loggedIn) {
     html += dashCard({ icon: '🔒', title: '로그인 필요', desc: '내정보 이용 잠금', accent: 'slate', onclick: "document.getElementById('authNicknameInput').focus()" });
   }
@@ -3019,7 +3032,7 @@ function renderMyInfoTab(tab) {
     html += `<div style="padding:16px;background:#f0f8f0;border-radius:12px;text-align:center"><strong style="font-size:24px">${completed}</strong><br><small>단어 마스터</small><br><small style="color:var(--muted)">/ ${totalSyn} (${pct}%)</small></div>`;
     html += `<div style="padding:16px;background:#f0f0f8;border-radius:12px;text-align:center"><strong style="font-size:24px">${logicMastered}</strong><br><small>논리 마스터</small><br><small style="color:var(--muted)">/ ${logicTotal}</small></div>`;
     html += `<div style="padding:16px;background:#e8f0e8;border-radius:12px;text-align:center"><strong style="font-size:24px">${wcProgress.correct}/${wcProgress.total}</strong><br><small>단어확인</small><br><small style="color:var(--muted)">${wcProgress.total > 0 ? Math.round(wcProgress.correct/wcProgress.total*100) + '%' : 'No data'}</small></div>`;
-    html += `<div style="padding:16px;background:#fff8f0;border-radius:12px;text-align:center;cursor:pointer" onclick="document.getElementById('rankingBtn').click()" title="통합랭킹 보기"><strong style="font-size:24px">${totalCorrect}/${totalQuestions}</strong><br><small>통합랭킹 점수 ▸</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'}</small></div>`;
+    html += `<div style="padding:16px;background:#fff8f0;border-radius:12px;text-align:center;cursor:pointer" onclick="showRanking()" title="통합랭킹 보기"><strong style="font-size:24px">${totalCorrect}/${totalQuestions}</strong><br><small>통합랭킹 점수 ▸</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'}</small></div>`;
     html += '</div>';
 
     const p = readSynonymProgress();
@@ -3064,9 +3077,16 @@ function renderMyInfoTab(tab) {
       html += `<p style="margin-bottom:12px;color:var(--muted)">총 <b>${wrongQuestions.length}</b>개의 틀린 문제</p>`;
       wrongQuestions.forEach((q, i) => {
         html += `<div style="margin-bottom:12px;padding:12px;background:#fff8f0;border-radius:8px;border:1px solid #f0d8c0">`;
-        html += `<p style="font-weight:700;margin:0 0 6px">Q${i+1}. ${escapeHtml(q.question)}</p>`;
-        html += `<p style="font-size:12px;color:var(--muted);margin:0 0 4px"><b>정답:</b> ${escapeHtml(q.answer)}</p>`;
-        html += `<p style="font-size:12px;color:var(--muted);margin:0">${escapeHtml(q.explanation)}</p>`;
+        html += `<p style="font-weight:700;margin:0 0 8px">Q${i+1}. ${escapeHtml(q.question)}</p>`;
+        if (q.options && q.options.length) {
+          html += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:8px">`;
+          q.options.forEach(opt => {
+            const isCorrect = opt === q.answer;
+            html += `<span style="display:block;padding:6px 10px;border-radius:6px;font-size:13px;font-weight:600;${isCorrect ? 'background:#d4edda;color:#155724;border:1px solid #8fc7a8' : 'background:#f0f0f0;color:#666;border:1px solid #ddd'}">${isCorrect ? '✓ ' : ''}${escapeHtml(opt)}</span>`;
+          });
+          html += `</div>`;
+        }
+        html += `<p style="font-size:12px;color:var(--muted);margin:0">💡 ${escapeHtml(q.explanation)}</p>`;
         html += `</div>`;
       });
     }
