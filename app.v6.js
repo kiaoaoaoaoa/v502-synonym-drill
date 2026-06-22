@@ -2410,28 +2410,71 @@ els.logicModeBtn.addEventListener("click", () => {
 // Toggle handled by inline onclick in index.html — no addEventListener needed
 
 /* ---- Dashboard ---- */
+function dashCard({ icon, title, desc, accent, onclick, badge }) {
+  return `<button class="dash-card" data-accent="${accent}" onclick="${onclick}">
+    <span class="dash-card-icon">${icon}</span>
+    <span class="dash-card-body">
+      <span class="dash-card-title">${escapeHtml(title)}${badge ? `<span class="dash-card-badge">${escapeHtml(badge)}</span>` : ''}</span>
+      <span class="dash-card-desc">${escapeHtml(desc)}</span>
+    </span>
+  </button>`;
+}
+
 function showDashboard() {
   switchMode('dashboard');
   els.dashboardPanel.hidden = false;
   const loggedIn = !!state.playerName;
 
-  let html = '';
-  html += `<button class="ranking-btn" onclick="document.getElementById('synonymDrillBtn').click()" style="width:100%;min-height:48px;font-size:15px"><span>📝</span> 단어문제</button>`;
-  html += `<button class="ranking-btn" onclick="document.getElementById('logicModeBtn').click()" style="width:100%;min-height:48px;font-size:15px"><span>🧩</span> 논리문제</button>`;
-  html += `<button class="ranking-btn" onclick="document.getElementById('wordlistBtn').click()" style="width:100%;min-height:48px;font-size:15px"><span>📋</span> 단어일람보기</button>`;
-  html += `<button class="ranking-btn" onclick="document.getElementById('rankingBtn').click()" style="width:100%;min-height:48px;font-size:15px"><span>🏆</span> 통합랭킹</button>`;
+  // ---- Hero ----
+  let html = '<div class="dash">';
+  html += `<div class="dash-hero">
+    <div class="dash-hero-icon">📚</div>
+    <div class="dash-hero-text">
+      <p class="dash-hero-eyebrow">LOGIC TREE V502</p>
+      <h2 class="dash-hero-title">${loggedIn ? `${escapeHtml(state.playerName)}님의 학습 대시보드` : 'V502 학습 대시보드'}</h2>
+      <p class="dash-hero-sub">${loggedIn ? '오늘도 한 걸음 더 — 카드를 눌러 학습을 시작하세요.' : '로그인하면 진행상황·랭킹·오답노트가 저장됩니다.'}</p>
+    </div>
+  </div>`;
+
+  // ---- Progress stats (logged-in) ----
   if (loggedIn) {
-    html += `<button class="ranking-btn" onclick="document.getElementById('myinfoBtn').click()" style="width:100%;min-height:48px;font-size:15px"><span>👤</span> 내정보</button>`;
-    // 오답노트
-    const wrong = getSynonymWrongCount();
-    html += `<button class="ranking-btn" onclick="showWrongNotes()" style="width:100%;min-height:48px;font-size:15px"><span>📕</span> 오답노트${wrong > 0 ? ` (${wrong}개)` : ''}</button>`;
-    // 지금까지 푼 문제
-    const completed = getCompletedPromptWordsCount();
-    const totalSyn = 3980;
-    html += `<button class="ranking-btn" onclick="showMyReview()" style="width:100%;min-height:48px;font-size:15px"><span>📊</span> 내 리뷰 (${completed}/${totalSyn} 단어)</button>`;
-  } else {
-    html += `<button class="ranking-btn" style="width:100%;min-height:48px;font-size:15px;opacity:0.5"><span>🔒</span> 로그인하여 더 많은 기능 이용</button>`;
+    const synMastered = getCompletedPromptWordsCount();
+    const logicMastered = getLogicCompleted().size;
+    const cum = cumulativeLeaderboard(readLeaderboard(), null)
+      .find((e) => e.name.toLowerCase() === state.playerName.toLowerCase());
+    const score = cum ? cum.correct : 0;
+    html += `<div class="dash-stats">
+      <div class="dash-stat"><span class="dash-stat-num">${synMastered}</span><span class="dash-stat-label">외운 단어</span></div>
+      <div class="dash-stat"><span class="dash-stat-num">${logicMastered}<small>/300</small></span><span class="dash-stat-label">논리 마스터</span></div>
+      <div class="dash-stat"><span class="dash-stat-num">${score}</span><span class="dash-stat-label">통합 점수</span></div>
+    </div>`;
   }
+
+  // ---- Study cards ----
+  html += '<p class="dash-section-label">학습</p>';
+  html += '<div class="dash-grid">';
+  html += dashCard({ icon: '📝', title: '단어문제', desc: '동의어 짝 맞추기', accent: 'teal', onclick: "document.getElementById('synonymDrillBtn').click()" });
+  html += dashCard({ icon: '🧩', title: '논리문제', desc: '문맥 속 어휘 추론', accent: 'indigo', onclick: "document.getElementById('logicModeBtn').click()" });
+  html += dashCard({ icon: '📘', title: '201 단어퀴즈', desc: '4지선다 어휘 체크', accent: 'blue', onclick: "document.getElementById('wordcheck201Btn').click()" });
+  html += dashCard({ icon: '✅', title: '단어확인문제', desc: '전체 어휘 확인', accent: 'green', onclick: "document.getElementById('wordcheckBtn').click()" });
+  html += '</div>';
+
+  // ---- Review & info cards ----
+  html += '<p class="dash-section-label">복습 & 정보</p>';
+  html += '<div class="dash-grid">';
+  html += dashCard({ icon: '📋', title: '단어일람보기', desc: '전체 단어 사전', accent: 'slate', onclick: "document.getElementById('wordlistBtn').click()" });
+  html += dashCard({ icon: '🏆', title: '통합 랭킹', desc: '정답 수 순위', accent: 'gold', onclick: "document.getElementById('rankingBtn').click()" });
+  if (loggedIn) {
+    const wrong = getSynonymWrongCount();
+    html += dashCard({ icon: '📕', title: '오답노트', desc: '틀린 단어 모아보기', accent: 'rose', onclick: 'showWrongNotes()', badge: wrong > 0 ? `${wrong}` : '' });
+    html += dashCard({ icon: '📊', title: '내 리뷰', desc: '외운 단어 한눈에', accent: 'amber', onclick: 'showMyReview()' });
+    html += dashCard({ icon: '👤', title: '내정보', desc: '틀린 논리문제', accent: 'plum', onclick: "document.getElementById('myinfoBtn').click()" });
+  } else {
+    html += dashCard({ icon: '🔒', title: '로그인 필요', desc: '오답노트·내 리뷰 잠금', accent: 'slate', onclick: "document.getElementById('authNicknameInput').focus()" });
+  }
+  html += '</div>';
+
+  html += '</div>';
   document.getElementById('dashboardContent').innerHTML = html;
 }
 

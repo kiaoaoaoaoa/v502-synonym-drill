@@ -1504,3 +1504,181 @@ h2 {
     padding: 12px 14px;
   }
 }
+
+/* ===== Study Dashboard ===== */
+.dashboard-panel {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+.dash {
+  display: grid;
+  gap: 18px;
+  max-width: 760px;
+}
+.dash-hero {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 24px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #146c6c 0%, #1d8a8a 55%, #2aa6a6 100%);
+  color: #fff;
+  box-shadow: 0 10px 24px -12px rgba(20, 108, 108, 0.55);
+}
+.dash-hero-icon {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.18);
+}
+.dash-hero-text { min-width: 0; }
+.dash-hero-eyebrow {
+  margin: 0 0 2px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+.dash-hero-title {
+  margin: 0 0 4px;
+  font-size: 22px;
+  line-height: 1.2;
+  color: #fff;
+}
+.dash-hero-sub {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+}
+.dash-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.dash-stat {
+  display: grid;
+  gap: 2px;
+  padding: 14px 12px;
+  border-radius: 12px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  text-align: center;
+}
+.dash-stat-num {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.1;
+}
+.dash-stat-num small {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+.dash-stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}
+.dash-section-label {
+  margin: 6px 0 -4px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.dash-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  gap: 12px;
+}
+.dash-card {
+  --c: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  padding: 14px 14px;
+  min-height: 64px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--c);
+  border-radius: 12px;
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+}
+.dash-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -10px rgba(29, 36, 48, 0.35);
+  border-color: var(--c);
+}
+.dash-card:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+.dash-card-icon {
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  background: color-mix(in srgb, var(--c) 14%, white);
+}
+.dash-card-body {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.dash-card-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.dash-card-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  background: #c0392b;
+  border-radius: 999px;
+  padding: 1px 7px;
+  line-height: 1.5;
+}
+.dash-card-desc {
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dash-card[data-accent="teal"]   { --c: #146c6c; }
+.dash-card[data-accent="indigo"] { --c: #4f46e5; }
+.dash-card[data-accent="blue"]   { --c: #2563eb; }
+.dash-card[data-accent="green"]  { --c: #16a34a; }
+.dash-card[data-accent="slate"]  { --c: #64748b; }
+.dash-card[data-accent="gold"]   { --c: #d4a017; }
+.dash-card[data-accent="rose"]   { --c: #e11d48; }
+.dash-card[data-accent="amber"]  { --c: #d97706; }
+.dash-card[data-accent="plum"]   { --c: #9333ea; }
+
+@media (max-width: 480px) {
+  .dash-hero { padding: 18px; gap: 12px; }
+  .dash-hero-icon { width: 48px; height: 48px; font-size: 26px; }
+  .dash-hero-title { font-size: 18px; }
+  .dash-grid { grid-template-columns: 1fr 1fr; }
+  .dash-card { min-height: 60px; padding: 12px; }
+  .dash-stat-num { font-size: 22px; }
+}
