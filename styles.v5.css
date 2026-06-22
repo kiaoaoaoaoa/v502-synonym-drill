@@ -1794,6 +1794,21 @@ h2 {
 }
 .appbrand:hover { color: #0f5555; }
 
+.appbar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; height: 32px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.appbar-btn:hover { background: #f0f0f0; color: var(--ink); }
+
 /* Login / 내정보 box relocated into the dashboard (light surface) */
 .dashboard-panel #authSection {
   max-width: 420px;

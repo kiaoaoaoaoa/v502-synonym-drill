@@ -186,22 +186,12 @@
         <div class="appbar">
           <button class="appbrand" type="button" onclick="showDashboard()"><span aria-hidden="true">📚</span> V502 학습</button>
           <span id="noExplainIndicator" style="display:none;font-size:11px;color:#ff3b30;font-weight:600;margin-left:12px;padding:3px 10px;background:#fff0f0;border-radius:6px;border:1px solid #ffcdd2">⚡ 해설OFF 모드</span>
-        </div>
-        <header class="toolbar">
-          <div>
-            <p id="categoryLabel" class="eyebrow">Categories 001-010</p>
-            <h2 id="categoryTitle">Synonym Pair Challenge</h2>
+          <span id="categoryLabel" class="eyebrow" style="margin-left:auto;margin-right:0">001-010</span>
+          <div class="progress" aria-label="Progress" style="width:120px;height:5px;margin:0 12px">
+            <div id="progressBar"></div>
           </div>
-          <div class="controls" role="group" aria-label="Quiz controls">
-            <button id="shuffleBtn" class="icon-btn" type="button" title="Shuffle" aria-label="Shuffle">
-              <span aria-hidden="true">↻</span>
-            </button>
-            <button id="resetBtn" class="text-btn" type="button">Reset</button>
-          </div>
-        </header>
-
-        <div class="progress" aria-label="Progress">
-          <div id="progressBar"></div>
+          <button id="shuffleBtn" class="appbar-btn" type="button" title="Shuffle">↻</button>
+          <button id="resetBtn" class="appbar-btn" type="button">Reset</button>
         </div>
 
         <section id="dashboardPanel" class="start-panel dashboard-panel" hidden>
@@ -372,7 +362,7 @@
     <script src="wordcheck-v201.js?v=20260622rebuilt"></script>
     <script src="wordcheck-v401.js"></script>
     <script src="grammar201.js"></script>
-    <script src="app.v6.js?v=20260622U"></script>
+    <script src="app.v6.js?v=20260622V"></script>
   </body>
 </html>
  
