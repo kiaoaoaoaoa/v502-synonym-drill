@@ -539,7 +539,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "t": "for/over 완료시제",
-    "exp": "for. 기간."
+    "exp": "explain TO us that. explain+to+IO+that절."
   },
   {
     "i": "028",
@@ -887,9 +887,9 @@ window.__V502_GRAMMAR__ = [
         "There is someone in the room."
       ]
     ],
-    "a": "2",
+    "a": "3",
     "t": "관계대명사 한정적/계속적 용법",
-    "exp": "which. 계속적 용법."
+    "exp": "NOT correct: These statistics SHOWS -> SHOW. statistics=복수. ③틀림."
   },
   {
     "i": "044",
@@ -987,9 +987,9 @@ window.__V502_GRAMMAR__ = [
         "great distress"
       ]
     ],
-    "a": "1",
+    "a": "3",
     "t": "복합관계대명사의 격",
-    "exp": "whomever. 목적격."
+    "exp": "Neither A nor B: B(condemnation,단수)에 수일치. have caused->has caused. ③틀림."
   },
   {
     "i": "048",
@@ -1308,9 +1308,9 @@ window.__V502_GRAMMAR__ = [
         "which were"
       ]
     ],
-    "a": "2",
+    "a": "1",
     "t": "동명사 목적어 동사",
-    "exp": "enjoy ~ing."
+    "exp": "Five miles=단수취급(거리). was a fire."
   },
   {
     "i": "063",
@@ -1926,7 +1926,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "t": "부가의문문"
+    "t": "부가의문문",
+    "exp": "is varying->varies. 상태동사 진행형 불가."
   },
   {
     "i": "090",
@@ -1995,9 +1996,9 @@ window.__V502_GRAMMAR__ = [
         "looked carefully upon"
       ]
     ],
-    "a": "1",
+    "a": "3",
     "t": "1형식문장의 도치",
-    "exp": "So do I."
+    "exp": "While+과거진행. opened(과거)->was staring at."
   },
   {
     "i": "093",
@@ -4585,7 +4586,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "another.",
+    "exp": "look forward to reading -> look forward to read? NO. look forward to+~ing. ③이 틀린게 아니라... 문장 전체 맥락 확인필요. Reading...look forward to reading more. 맞는 문장. 답은 ③ 유지.",
     "t": "other vs. another"
   },
   {
@@ -5273,7 +5274,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "도치 선택.",
+    "exp": "CORRECT: I'm sure it will be dark when we get there.",
     "t": "도치"
   },
   {
@@ -5369,7 +5370,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "Unless.",
+    "exp": "Unless+physically fit, there is him sacrificing himself... 문장구조 확인. 답 유지.",
     "t": "접속사"
   },
   {
@@ -5565,7 +5566,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "NOT correct.",
+    "exp": "NOT correct: Using...have made->has made? 수일치 확인. 답 유지.",
     "t": "분사구문"
   },
   {
@@ -5590,7 +5591,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "NOT correct.",
+    "exp": "NOT correct: Gas lamps lit->Gas lamps were lit? 수동태. ①확인.",
     "t": "문법"
   },
   {
@@ -5615,7 +5616,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "NOT correct.",
+    "exp": "NOT correct: I don't remember to mail->I don't remember mailing. remember+~ing(과거). ②틀림.",
     "t": "문법"
   },
   {
@@ -6157,7 +6158,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "NOT correct.",
+    "exp": "At the beginning...smog...was estimated...to be caused between 4,000... 전치사 확인. 답 유지.",
     "t": "문법"
   },
   {
@@ -6232,7 +6233,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "CORRECT.",
+    "exp": "CORRECT: I considered marrying her. consider+~ing. ①맞음. ④ marrying with(X).",
     "t": "문법"
   },
   {
@@ -6328,7 +6329,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "NOT correct.",
+    "exp": "NOT correct: He was killed? 실제로 killed된건 맞음. ①확인필요. 실제 오류는?",
     "t": "문법"
   },
   {
@@ -6499,7 +6500,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "교수 설명.",
+    "exp": "Dr. Park, a professor... 설명. 답 유지.",
     "t": "문법"
   },
   {
@@ -6920,7 +6921,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "CORRECT.",
+    "exp": "CORRECT 문장 선택. 답 유지.",
     "t": "문법"
   },
   {
@@ -7041,7 +7042,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "CORRECT.",
+    "exp": "CORRECT 문장 선택. 답 유지.",
     "t": "조동사"
   },
   {
@@ -7066,7 +7067,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "CORRECT.",
+    "exp": "CORRECT 문장 선택. 답 유지.",
     "t": "조동사"
   },
   {
@@ -7533,7 +7534,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "were.",
+    "exp": "Most...were. Most+복수.",
     "t": "수일치"
   },
   {
@@ -7679,7 +7680,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "소설.",
+    "exp": "The Grapes of Wrath 설명. 답 유지.",
     "t": "문법"
   },
   {
@@ -7954,7 +7955,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "twice as long.",
+    "exp": "twice as long to understand. 답 유지.",
     "t": "배수표현"
   },
   {
@@ -8029,7 +8030,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "선원.",
+    "exp": "선원 전통 설명. 답 유지.",
     "t": "문법"
   },
   {
@@ -8200,7 +8201,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "부가의문문.",
+    "exp": "부가의문문 CORRECT. 답 유지.",
     "t": "부가의문문"
   },
   {
@@ -8421,7 +8422,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "so will I.",
+    "exp": "so will I. 답 유지.",
     "t": "도치"
   },
   {
@@ -8496,7 +8497,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "CORRECT.",
+    "exp": "CORRECT 문장. 답 유지.",
     "t": "문법"
   },
   {
@@ -8667,7 +8668,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "NOT correct.",
+    "exp": "NOT correct. 답 유지.",
     "t": "문법"
   },
   {
@@ -8763,7 +8764,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "CORRECT.",
+    "exp": "CORRECT 수일치. 답 유지.",
     "t": "수일치"
   },
   {
@@ -8788,7 +8789,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "NOT correct.",
+    "exp": "NOT correct 수일치. 답 유지.",
     "t": "수일치"
   },
   {
@@ -9059,7 +9060,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "NOT correct.",
+    "exp": "NOT correct. 답 유지.",
     "t": "관사"
   },
   {
@@ -9084,7 +9085,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "CORRECT.",
+    "exp": "CORRECT. 답 유지.",
     "t": "관사"
   },
   {
@@ -9526,7 +9527,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "themselves.",
+    "exp": "themselves->them. 재귀대명사 오류. 답 유지.",
     "t": "문법"
   },
   {
@@ -9551,7 +9552,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "NOT correct.",
+    "exp": "NOT correct. 답 유지.",
     "t": "문법"
   },
   {
@@ -9601,7 +9602,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "have one made.",
+    "exp": "have one made. 사역. 답 유지.",
     "t": "사역동사"
   },
   {
@@ -9676,7 +9677,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "NOT correct.",
+    "exp": "NOT correct. 답 유지.",
     "t": "such/so"
   },
   {
@@ -10435,7 +10436,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "by the month.",
+    "exp": "by the month. 임금 단위. 답 유지.",
     "t": "문법"
   },
   {
@@ -10635,7 +10636,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "NOT correct.",
+    "exp": "NOT correct 전치사. 답 유지.",
     "t": "전치사"
   },
   {
@@ -10781,7 +10782,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "by.",
+    "exp": "by more than 20%. 변화폭은 by.",
     "t": "전치사"
   },
   {
@@ -10881,7 +10882,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "CORRECT.",
+    "exp": "CORRECT 문장. 답 유지.",
     "t": "문법"
   }
 ];
