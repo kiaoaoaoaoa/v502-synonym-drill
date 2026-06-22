@@ -24,7 +24,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "3",
-    "explanation": "영화에서 아이의 죽음은 폭력적 복수의 심각한 행위와 심각한 연기의 폭력적 표현을 정당화한다.\njustify = 옳다고 하다, 정당화하다(=validate, vindicate)\nviolent = 격렬한, 폭력적인(=brutal, savage, vicious)\nrevenge = 복수, 앙갚음(=retaliation, vengeance, reprisal)"
+    "explanation": "해석 영화에서 아이의 죽음은 폭력적 복수의 심각한 행위와 심각한 연기의 폭력적 표현을 정당화한다.\n어휘 justify = 옳다고 하다, 정당화하다(=validate, vindicate)\nviolent = 격렬한, 폭력적인(=brutal, savage, vicious)\nrevenge = 복수, 앙갚음(=retaliation, vengeance, reprisal)"
   },
   {
     "q": "He describes the confusion and emotional chaos of dealing with the mentally ill with 'riveting' precision.",
@@ -51,7 +51,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "2",
-    "explanation": "사로잡을 정도로 정확하게 묘사한다. riveting 매혹적인(=fascinating, enchanting) precision 정확, 정밀, 꼼꼼함 disgusting 혐오스런(=revolting, nauseating, repulsive) 어휘 정답 ②"
+    "explanation": "해석 그는 정신질환자들을 다룰 때의 혼란과 정서적 혼돈을 마음을 사로잡을 정도로 정확하게 묘사한다.\n어휘 riveting = 매혹적인(=fascinating, enchanting)\nprecision = 정확, 정밀, 꼼꼼함\ndisgusting = 혐오스런(=revolting, nauseating, repulsive)"
   },
   {
     "q": "Mr. Brady has done something to 'bring home to us' the terrible reality of war.",
@@ -78,7 +78,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "5",
-    "explanation": "사로잡을 정도로 정확하게 묘사한다. riveting 매혹적인(=fascinating, enchanting) precision 정확, 정밀, 꼼꼼함 disgusting 혐오스런(=revolting, nauseating, repulsive) 어휘 정답 ②"
+    "explanation": "해석 브래디(Brady) 씨는 전쟁의 끔찍한 참상을 우리에게 깨닫게 해 줄 어떤 일을 했다.\n어휘 bring home to a person = ~에게 깨닫게 하다(=lead ~ to realize)\nfamiliarize oneself with = ~에 정통하다[익숙하다]\nneglect = 무시하다(=ignore, disregard)"
   },
   {
     "q": "Perhaps some will say that animals have some 'inherent' value, only less than we have.",
@@ -105,7 +105,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "1",
-    "explanation": "wind[end] up ~ing ~하는 것으로 끝나다"
+    "explanation": "해석 아마도 어떤 사람들은 동물도 단지 우리보다 더 적기는 하지만 얼마간의 내재적 가치를 갖고 있다고 말할 것이다.\n어휘 inherent = 타고난(=inborn, innate, natural), 내재한\nsuperficial = 표면상의; 피상적인, 천박한(=shallow, frivolous)\nextraordinary = 비상한, 보통이 아닌"
   },
   {
     "q": "The three facets of the great writer ― magic, story, lesson ― are 'prone to blend' in one impression of unified and unique radiance.",
@@ -132,7 +132,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "4",
-    "explanation": "위대한 작가의 세 가지 측면인 마법, 이야기, 교훈은 통일되고 독특한 광채라는 하나의 인상 속에 혼합되는 경향이 있다.\nprone = 경향이 있는(=likely, liable)\nradiance = 광휘, 광채\nresistant = 저항하는, 내성이 있는"
+    "explanation": "해석 위대한 작가의 세 가지 측면인 마법, 이야기, 교훈은 통일되고 독특한 광채라는 하나의 인상 속에 혼합되는 경향이 있다.\n어휘 prone = 경향이 있는(=likely, liable)\nradiance = 광휘, 광채\nresistant = 저항하는, 내성이 있는"
   },
   {
     "q": "Laurie has an _______ command of the Italian language.",
@@ -159,7 +159,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "2",
-    "explanation": "Laurie는 이탈리아어를 자유자재로 구사할 수 있다.\ncommand = (언어의) 구사력. 이를 수식하기에 적절한 형용사는 good, outstanding, excellent(뛰어난) 등이다.\nhave a command of~ = ~를 마음대로 사용할 수 있다\nabundant = 많은, 풍부한(=plentiful, copious, ample, profuse)"
+    "explanation": "해석 로리(Laurie)는 이탈리아어를 자유자재로 구사할 수 있다. 여기서 command는 \"(언어의) 구사력\"을 의미하며 이것을 수식하기에 적절한 형용사는 good, outstanding, excellent(뛰어난) 등이다.\n어휘 have a command of~ = ~를 마음대로 사용할 수 있다\nabundant = 많은, 풍부한(=plentiful, copious, ample, profuse)"
   },
   {
     "q": "Richard lost his job and his home and eventually _______ up living on the streets.",
@@ -186,7 +186,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "3",
-    "explanation": "Richard는 직장과 집을 잃었고 결국 길거리에서 사는 것으로 끝났다.\nwind[end] up ~ing = ~하는 것으로 끝나다"
+    "explanation": "해석 리처드(Richard)는 직장과 집을 잃었고 결국 길거리에서 사는 것으로 끝났다. (길거리에 나앉는 신세가 되었다.)\n어휘 wind[end] up ~ing = ~하는 것으로 끝나다"
   },
   {
     "q": "People who have claustrophobia are afraid of being in _______ spaces.",
@@ -213,7 +213,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "5",
-    "explanation": "폐소 공포증이 있는 사람들은 비좁은 장소에 있기를 두려워한다.\nclaustrophobia = 폐소[밀실] 공포증\ncompressed = 압축[압착]된; 간결한\nconfined = 제한된, 좁은(=restricted, limited)\nscary = 무서운, 겁나는(=frightening, spooky, creepy)"
+    "explanation": "해석 폐소 공포증이 있는 사람들은 비좁은 장소에 있기를 두려워한다.\n어휘 claustrophobia = 폐소[밀실] 공포증\ncompressed = 압축[압착]된; 간결한\nconfined = 제한된, 좁은(=restricted, limited)\nscary = 무서운, 겁나는(=frightening, spooky, creepy)"
   },
   {
     "q": "I wanted to build a desk, but I couldn't make _______ of the instructions.",
@@ -240,7 +240,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "1",
-    "explanation": "1 직설법 과거시제 해석 그 견해를 사람들이 널리 받아들임으로써 광범위한 죄의식이 생겼는데, 왜냐하면 만일 전염병이 벌이었다고 한다면 그 병을 유발시 킨 끔찍한 죄가 있었음에 틀림없기 때문이었다. 다. ② with age는 ‘나이를 먹음에 따라’를 뜻하는 전치사구이다. ③ 관계대명사절의 주어는 physical decline으로 단수명사이므로 단수 동사 begins가 온 것이다. ④ 뒤에 명사 capability가 있으므로 소유격 형태인 driver’s는 적절하고 driver가 가산명사이므로 앞에 부정관사 a가 나올 수 있다. 분석 ③ for 이하의 내용이 이미 발생한 과거 사실을 반대로 가정하는 어휘 것이 아니라 단순히 과거의 여러 가능한 경우들 중의 하나를 상정해본 정답 것이므로 if절은 직설법의 조건절이다. 따라서 if절의 동사 ④ had been은 과거 시제인 was로 고쳐야 한다. We think that there had to be some sort of support ne"
+    "explanation": "해석 나는 책상을 조립하고 싶었으나 제품 설명서를 이해할 수 없었다.\n어휘 make sense of~ = ~를 이해하다"
   },
   {
     "q": "The extreme weather conditions _______ their toll on the inhabitants.",
@@ -267,7 +267,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "4",
-    "explanation": "극단적인 날씨가 주민들에게 피해를 입혔다.\ntake one's[a] toll on~ = ~에 손상[피해]를 입히다"
+    "explanation": "해석 극단적인 날씨가 주민들에게 피해를 주었다.\n어휘 take one's[a] toll on~ = ~에 손상[피해]을 입히다"
   },
   {
     "q": "The general ①acceptance of the view created an ②expanded sense of guilt, ③for if the plague ④had been punishment there had to be terrible sin ⑤to have occasioned it.",
@@ -294,7 +294,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "4",
-    "explanation": "③ for 이하의 내용이 이미 발생한 과거 사실을 반대로 가정하는 것이 아니라 단순히 과거의 여러 가능한 경우들 중의 하나를 상정해본 것이므로 if절은 직설법의 조건절이다. 따라서 if절의 동사 ④ had been은 과거 시제인 was로 고쳐야 한다. ① 형용사 general의 수식을 받을 수 있는 것은 명사이다. ② 뒤의 명사 sense of guilt를 수식하는 것으로 expanded는 '확대된, 확장된'의 의미를 가지는 형용사이다. ③ 이 문장에서 for는 접속사로 보통 앞에 콤마 또는 세미콜론이 오고, 부가적 이유·설명 따위를 말할 때 쓰인다. ⑤ 완료부정사도 맞다. There had to be는 there must have been과 같은 뜻이다."
+    "explanation": "직설법 과거시제\n\n해석 그 견해를 사람들이 널리 받아들임으로써 광범위한 죄의식이 생겼는데, 왜냐하면 만일 전염병이 벌이었다고 한다면 그 병을 유발시킨 끔찍한 죄가 있었음에 틀림없기 때문이었다.\n\n분석 ③ for 이하의 내용이 이미 발생한 과거 사실을 반대로 가정하는 것이 아니라 단순히 과거의 여러 가능한 경우들 중의 하나를 상정해본 것이므로 if절은 직설법의 조건절이다. 따라서 if절의 동사 ④ had been은 과거 시제인 was로 고쳐야 한다."
   },
   {
     "q": "The truth is that ①the commonest response to violence is ②one of repugnance, and ③that a significant number of people everywhere ④tries to oppose it ⑤in whatever ways they can.",
@@ -321,7 +321,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "4",
-    "explanation": "a number of~는 many~라는 뜻으로 복수명사가 이어지고 복수동사가 호응한다. 따라서 ④ tries를 try로 바꾸어야 한다. ① common의 최상급 표현으로 보통 최상급 표현 앞에 정관사 the가 온다. ② one은 대명사로 '(특정한 사람·물건 중의) 하나, 한 개'를 뜻한다. ③ 등위접속사 and에 의해 that절이 병치되고 있는 것으로 a significant~ they can이 완전한 문장이므로 명사절을 이끄는 종속접속사 that이 온 것이다. ⑤ whatever는 복합관계형용사로 뒤의 명사 ways를 수식할 수 있다. repugnance = 반감, 혐오 / oppose = ~에 반대하다"
+    "explanation": "주어와 동사의 수일치\n\n해석 사실은 폭력에 대한 가장 보편적인 반응은 반감의 반응이고, 모든 곳의 상당한 수의 사람들이 가능한 어떤 방식으로든 폭력에 반대하려고 노력한다.\n\n분석 a number of~는 many~라는 뜻으로 복수명사가 이어지고 복수동사가 호응한다. 따라서 ④ tries를 try로 바꾸어야 한다.\n\n어휘 repugnance = 반감, 혐오 / oppose = ~에 반대하다"
   },
   {
     "q": "The point ①at which physical decline ②with age ③begins adversely to affect ④a driver's capability ⑤have not yet been studied.",
@@ -348,7 +348,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "5",
-    "explanation": "이 문장의 주어는 The point로 단수명사이므로 ⑤ have not을 has not으로 고쳐야 한다. ① physical decline~driver's capability가 완전한 문장으로 관계대명사 which는 전치사의 목적어가 되어야 한다. 선행사가 the point로 '어떤 특정한 때, 시점'을 의미하므로 전치사 at이 온 것이다. ② with age는 '나이를 먹음에 따라'를 뜻하는 전치사구이다. ③ 관계대명사절의 주어는 physical decline으로 단수명사이므로 단수동사 begins가 온 것이다. ④ 뒤에 명사 capability가 있으므로 소유격 형태인 driver's는 적절하고 driver가 가산명사이므로 앞에 부정관사 a가 나올 수 있다. adversely = 불리하게, 반대로"
+    "explanation": "주어와 동사의 수일치\n\n해석 나이로 인한 신체적 쇠퇴가 운전자의 능력에 불리하게 영향을 미치기 시작하는 시점은 아직 연구되지 않았다.\n\n분석 이 문장의 주어는 The point로 단수명사이므로 ⑤ have not을 has not으로 고쳐야 한다.\n\n어휘 adversely = 불리하게, 반대로"
   },
   {
     "q": "In both ①their public and private spheres, the nation is rightly acting to reduce ②many of the risks ③which people have no choice ④but to hazard ― on the road, in factories, in the environment, ⑤even in the field of speculative finance.",
@@ -375,7 +375,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "1",
-    "explanation": "①의 their는 뒤의 the nation이라는 단수명사를 가리키는 대명사이므로 its로 바꾸어야 한다. ② 'many of+한정사+복수명사'의 형태이다. ③ 타동사 hazard의 목적어가 없는 불완전한 문장으로 which는 목적격 관계대명사로 적절하다. ④ 'have no choice but to V'는 '~하지 않을 수 없다'는 뜻의 관용표현이다. ⑤ even은 '~도[조차]'의 뜻의 부사로 강조하는 말 앞에 나온다."
+    "explanation": "대명사의 수일치\n\n해석 공적, 사적 양 분야에서, 국가는 국민이 도로에서, 공장에서, 환경에서, 심지어는 투기적 금융에서 어쩔 수 없이 감수해야 하는 많은 위험을 줄이려고 마땅히 노력하고 있다.\n\n분석 ①의 their는 뒤의 the nation이라는 단수명사를 가리키는 대명사이므로 its로 바꾸어야 한다."
   },
   {
     "q": "Despite the current oil glut, ①the world's known reserves of both petroleum and natural gas ②are expected to be declining ③by the end of the century, and ④it would be folly to burn ⑤which remains to generate electricity.",
@@ -402,7 +402,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "5",
-    "explanation": "⑤ which remains가 명사절로 burn의 목적어가 되어야 하는데 which 앞에 선행사가 없으므로 선행사를 포함한 관계대명사 what으로 고쳐야 한다. ① world's known은 '소유격+형용사'의 형태로 뒤의 명사 reserves를 수식할 수 있다. ② 주어가 reserves로 복수명사이므로 복수동사 are는 적절하고 'be expected to 부정사'는 미래 대용어로 가까운 미래를 나타낼 때 쓰인다. ③ by the end of~는 '~말 까지는'의 의미이다. ④ 뒤에 진주어 to burn~가 있으므로 가주어 it이 나왔고, 조동사 would 다음에는 동사원형이 온다."
+    "explanation": "관계대명사 what\n\n해석 현재의 기름 과잉 공급에도 불구하고, 전 세계에 알려진 석유·천연 가스 매장량은 금세기 말에 감소될 것이라고 예상되고 있으므로, 남아있는 것을 전기 생산을 위해 다 써버린다면 어리석은 짓이 될 것이다.\n\n분석 ⑤ which remains가 명사절로 burn의 목적어가 되어야 하는데 which 앞에 선행사가 없으므로 선행사를 포함한 관계대명사 what로 고쳐야 한다."
   },
   {
     "q": "If you're an environmentalist, plastic is a word you tend to say with a sneer. It has become a symbol of our wasteful society. But there seems little concern it is here to stay, and the truth is, of course, that plastics have brought enormous benefits, even environmental ones. It's not really the plastics themselves that are the environmental disaster ― it's the way society chooses to use and ____",
@@ -429,7 +429,7 @@ window.__V502_EXAM_SKKU2011__ = [
       ]
     ],
     "a": "5",
-    "explanation": "당신이 환경론자라면, 플라스틱은 당신이 조롱조로 말하는 경향이 있는 단어이다. 플라스틱은 낭비하는 우리 사회의 상징이 되어버렸다. 그러나 그것이 지속적으로 그럴 것이라는 걱정은 거의 없으며 사실은 물론, 플라스틱은 막대한 혜택을 심지어는 환경적인 혜택까지도 가져왔다. 환경재앙이 되는 것은 플라스틱 자체가 아니라 사회가 그것을 사용하고 버리는 방식인 것이다.\n플라스틱은 사용 후 버리는 것이므로 빈칸에는 '버리다'의 의미를 갖는 동사가 필요하다.\nsneer = 비웃음, 냉소\nendanger = 위험에 빠뜨리다(=jeopardize, imperil)\naccumulate = 축적하다, 모으다\ndispose = 처리하다, 버리다"
+    "explanation": "빈칸완성\n\n해석 당신이 환경론자라면, 플라스틱은 당신이 조롱조로 말하는 경향이 있는 단어이다. 플라스틱은 낭비하는 우리 사회의 상징이 되어버렸다. 그러나 그것이 지속적으로 그럴 것이라는 걱정은 거의 없으며 사실은 물론, 플라스틱은 막대한 혜택을 심지어는 환경적인 혜택까지도 가져왔다. 환경재앙이 되는 것은 플라스틱 자체가 아니라 사회가 그것을 사용하고 버리는 방식인 것이다.\n\n분석 플라스틱은 사용 후 버리는 것이므로 빈칸에는 \"버리다\"의 의미를 갖는 동사가 필요하다.\n\n어휘 sneer = 비웃음, 냉소 / endanger = 위험에 빠뜨리다(=jeopardize, imperil) / accumulate = 축적하다, 모으다 / dispose = 처리하다, 버리다"
   },
   {
     "q": "A Parisian villain broke into a house at the village of Lachelle in 1978. Once inside he began to feel decidedly peckish and so went in search of the icebox. There he found his favourite cheese which it would have been a shame not to try. He then found some Bath Oliver biscuits and three bottles of champagne. After a while he began to feel sleepy and decided that he would lie down and digest his m",
