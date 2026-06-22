@@ -2707,7 +2707,8 @@ function showDashboard() {
   html += dashCard({ icon: '📝', title: '단어문제', desc: '동의어 짝 맞추기', accent: 'teal', onclick: "document.getElementById('synonymDrillBtn').click()" });
   html += dashCard({ icon: '🧩', title: '논리문제', desc: '문맥 속 어휘 추론', accent: 'indigo', onclick: "document.getElementById('logicModeBtn').click()" });
   html += dashCard({ icon: '📘', title: '201 단어퀴즈', desc: '4지선다 어휘 체크', accent: 'blue', onclick: "document.getElementById('wordcheck201Btn').click()" });
-  html += dashCard({ icon: '📝', title: '문법 201', desc: '119개 문법 개념+예문', accent: 'plum', onclick: "document.getElementById('grammar201Btn').click()" });
+  html += dashCard({ icon: '📝', title: '문법 201', desc: '442개 문법 문제', accent: 'plum', onclick: "document.getElementById('grammar201Btn').click()" });
+  html += dashCard({ icon: '📄', title: '기출문제', desc: '2012 가천대 22문제', accent: 'slate', onclick: "document.getElementById('examBtn').click()" });
   html += dashCard({ icon: '✅', title: '단어확인문제', desc: '전체 어휘 확인', accent: 'green', onclick: "document.getElementById('wordcheckBtn').click()" });
   html += '</div>';
 
