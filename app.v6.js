@@ -1118,15 +1118,12 @@ function onStartQuizClick() {
   openSet(state.activeSetId);
 }
 
-// Opening the synonym panel shows the category picker. Picking any set
-// auto-resumes its own progress, so each category continues independently.
+// Opening the synonym panel immediately starts the quiz with current set,
+// and shows the category nav so the user can switch sets.
 function openSynonymPanel() {
   const nav = document.getElementById("categoryNav");
-  nav.hidden = !nav.hidden;
-  if (!nav.hidden) {
-    switchMode("start");
-    els.startPanel.hidden = false;
-  }
+  nav.hidden = false;
+  openSet(state.activeSetId);
 }
 
 function renderAuthUI() {
