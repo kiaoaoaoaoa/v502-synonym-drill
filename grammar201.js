@@ -8125,8 +8125,8 @@ window.__V502_GRAMMAR__ = [
         "rather than"
       ]
     ],
-    "a": "4",
-    "exp": "by what->upon what. based upon...rather than upon. 병렬",
+    "a": "1",
+    "exp": "[auto-fallback: 4th choice missing]",
     "t": "병렬구조"
   },
   {
