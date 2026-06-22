@@ -2988,12 +2988,6 @@ function showWordcheck201() {
   startWordcheck(wordcheckRemaining(window.__V502_WC_V201__ || []), { shuffle: false });
 }
 
-// [가천대 2012] — 2012학년도 일반·학사편입 A형 기출 40문항 (출제 순서대로)
-function showWordcheckGachon2012() {
-  lastWordcheckLauncher = showWordcheckGachon2012;
-  startWordcheck([...(window.__V502_WC_GACHON2012__ || [])], { shuffle: false });
-}
-
 function renderWordcheckQuestion() {
   if (wcState.index >= wordcheckQuestions.length) {
     finishWordcheck();
@@ -3004,15 +2998,8 @@ function renderWordcheckQuestion() {
   prog.textContent = `${wcState.index + 1} / ${wordcheckQuestions.length} | ✅ ${wcState.correct} | ❌ ${wcState.index - wcState.correct}`;
 
   const qEl = document.getElementById('wordcheckQuestion');
-  if (q.i && q.i.startsWith('GACHON2012')) {
-    // 가천대 2012: passages with line breaks; underline targets marked with 「」
-    qEl.style.whiteSpace = 'pre-wrap';
-    qEl.innerHTML = escapeHtml(q.q).replace(/「([^」]+)」/g, '<u>$1</u>');
-  } else {
-    // Underline quoted words (target vocabulary)
-    qEl.style.whiteSpace = '';
-    qEl.innerHTML = escapeHtml(q.q).replace(/'([^']+)'/g, "'<u>$1</u>'");
-  }
+  // Underline quoted words (target vocabulary)
+  qEl.innerHTML = escapeHtml(q.q).replace(/'([^']+)'/g, "'<u>$1</u>'");
 
   const choicesEl = document.getElementById('wordcheckChoices');
   choicesEl.innerHTML = '';
@@ -3247,8 +3234,6 @@ document.getElementById('wordcheckRetry').addEventListener('click', () => lastWo
 els.wordcheckBtn.addEventListener('click', showWordcheck);
 const wc201Btn = document.getElementById('wordcheck201Btn');
 if (wc201Btn) wc201Btn.addEventListener('click', showWordcheck201);
-const wcGachon2012Btn = document.getElementById('wordcheckGachon2012Btn');
-if (wcGachon2012Btn) wcGachon2012Btn.addEventListener('click', showWordcheckGachon2012);
 els.wordcheckPanel.addEventListener('click', function(e) {
   if (e.target === this) { this.hidden = true; els.startPanel.hidden = false; }
 });
@@ -3334,9 +3319,10 @@ function renderExamTab() {
     html += `<div style="margin-bottom:16px;padding:16px;background:#fff;border-radius:12px;border:1px solid var(--line);box-shadow:0 1px 4px rgba(0,0,0,0.04)" id="examQ${i}">`;
     html += `<p style="font-weight:700;margin:0 0 8px;color:var(--accent)">${i+1}.</p>`;
     if (q.p && q.p.length > 30) {
-      html += `<div style="margin:0 0 12px;padding:10px 14px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;font-size:14px;line-height:1.7">${escapeHtml(q.p)}</div>`;
+      var pHtml = escapeHtml(q.p).replace(/「([^」]+)」/g, '<u>$1</u>');
+      html += `<div style="margin:0 0 12px;padding:10px 14px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;font-size:14px;line-height:1.7">${pHtml}</div>`;
     }
-    var qHtml = escapeHtml(q.q).replace(/'([^']+)'/g, "'<u>$1</u>'");
+    var qHtml = escapeHtml(q.q).replace(/'([^']+)'/g, "'<u>$1</u>'").replace(/「([^」]+)」/g, '<u>$1</u>');
     html += `<p style="font-weight:600;margin:0 0 10px">${qHtml}</p>`;
     if (q.c && q.c.length > 0) {
       html += '<div style="display:grid;gap:4px">';
@@ -3359,13 +3345,17 @@ function checkExamAnswer(tab, idx, letter, btn) {
   var correct = letter === q.a;
   var fb = document.getElementById('examFeedback' + idx);
   if (fb) {
-    var fbHtml = correct
+    var head = correct
       ? '<span style="color:#2e7d32;font-weight:700">✅ 정답!</span>'
       : '<span style="color:#c62828;font-weight:700">❌ 오답 — 정답은 (' + q.a + ')</span>';
-    if (q.explanation) {
-      fbHtml += '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation.substring(0, 300)) + '</div>';
+    var exp = '';
+    if (q.k) {
+      // full HTML explanation (2012 가천대 — 유형/해석/정답근거/어휘)
+      exp = '<div style="margin-top:8px;padding:10px 12px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;line-height:1.7">' + q.k + '</div>';
+    } else if (q.explanation) {
+      exp = '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation) + '</div>';
     }
-    fb.innerHTML = fbHtml;
+    fb.innerHTML = head + exp;
   }
 
   var btns = document.querySelectorAll('#examQ' + idx + ' button');
