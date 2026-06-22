@@ -2692,7 +2692,7 @@ function showDashboard() {
     const score = cum ? cum.correct : 0;
     html += `<div class="dash-stats">
       <div class="dash-stat" onclick="document.getElementById('wordlistBtn').click()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-num">${knownCount}</span><span class="dash-stat-label">외운 단어 ▸</span></div>
-      <div class="dash-stat"><span class="dash-stat-num">${logicMastered}<small>/${getLogicTotal()}</small></span><span class="dash-stat-label">논리 마스터</span></div>
+      <div class="dash-stat" onclick="document.getElementById('logicModeBtn').click()" style="cursor:pointer" title="논리문제"><span class="dash-stat-num">${logicMastered}<small>/${getLogicTotal()}</small></span><span class="dash-stat-label">논리 마스터 ▸</span></div>
       <div class="dash-stat" onclick="document.getElementById('rankingBtn').click()" style="cursor:pointer" title="통합랭킹 보기"><span class="dash-stat-num">${score}</span><span class="dash-stat-label">통합 점수 ▸</span></div>
     </div>`;
   }
@@ -2993,7 +2993,8 @@ function renderWordcheckQuestion() {
   prog.textContent = `${wcState.index + 1} / ${wordcheckQuestions.length} | ✅ ${wcState.correct} | ❌ ${wcState.index - wcState.correct}`;
 
   const qEl = document.getElementById('wordcheckQuestion');
-  qEl.textContent = q.q;
+  // Underline quoted words (target vocabulary)
+  qEl.innerHTML = escapeHtml(q.q).replace(/'([^']+)'/g, "'<u style='text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--accent);text-decoration-thickness:2px'>$1</u>'");
 
   const choicesEl = document.getElementById('wordcheckChoices');
   choicesEl.innerHTML = '';
