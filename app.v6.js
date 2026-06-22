@@ -2832,7 +2832,8 @@ function showDashboard() {
         cloudSyncAll();
         pushAllScoresToSupabase();
         state._dashSyncing = false;
-        showDashboard(); // re-render with fresh data
+        // Only re-render if still on dashboard — don't yank user from quiz
+        if (!els.dashboardPanel.hidden) showDashboard();
       }).catch(() => { state._dashSyncing = false; });
     }
   }
