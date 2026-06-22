@@ -3135,8 +3135,12 @@ function renderWordcheckQuestion() {
   const qEl = document.getElementById('wordcheckQuestion');
   // Underline quoted words (target vocabulary)
   qEl.innerHTML = (() => {
-    const raw = q.q.replace(/'([^']+)'/g, "'\uE000$1\uE001'");
-    return escapeHtml(raw).replace(/\uE000/g, '<u>').replace(/\uE001/g, '</u>');
+    const raw = q.q
+      .replace(/'([^']+)'/g, "'\uE000$1\uE001'")
+      .replace(/(_{2,})/g, '\uE002$1\uE003');
+    return escapeHtml(raw)
+      .replace(/\uE000/g, '<u>').replace(/\uE001/g, '</u>')
+      .replace(/\uE002/g, '<u>').replace(/\uE003/g, '</u>');
   })();
 
   const choicesEl = document.getElementById('wordcheckChoices');
@@ -3526,10 +3530,11 @@ function renderExamTab() {
     }
     var qHtml = q.q
       .replace(/'([^']+)'/g, "'\uE000$1\uE001'")
-      .replace(/「([^」]+)」/g, '\uE000$1\uE001');
+      .replace(/「([^」]+)」/g, '\uE000$1\uE001')
+      .replace(/(_{2,})/g, '\uE002$1\uE003');
     qHtml = escapeHtml(qHtml)
-      .replace(/\uE000/g, '<u>')
-      .replace(/\uE001/g, '</u>');
+      .replace(/\uE000/g, '<u>').replace(/\uE001/g, '</u>')
+      .replace(/\uE002/g, '<u>').replace(/\uE003/g, '</u>');
     html += `<p style="font-weight:600;margin:0 0 10px">${qHtml}</p>`;
     if (q.c && q.c.length > 0) {
       html += '<div style="display:grid;gap:4px">';
