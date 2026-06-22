@@ -1347,15 +1347,17 @@ function cumulativeLeaderboard(entries, setId = null) {
 
   for (const entry of filtered) {
     const rawSet = String(entry.setId || "001-010");
-    // All logic rows (legacy "LOGIC", per-session "LOGIC-<ts>", cumulative) share one bucket
-    const isLogic = rawSet.startsWith("LOGIC");
-    const key = `${entry.name.toLowerCase()}|${isLogic ? "LOGIC" : rawSet}`;
+    // Logic and wordcheck rows are cumulative single rows — collapse each into
+    // one bucket per user and keep the largest (latest) cumulative total.
+    const cumPrefix = rawSet.startsWith("LOGIC") ? "LOGIC"
+      : (rawSet.startsWith("WORDCHECK") ? "WORDCHECK" : null);
+    const key = `${entry.name.toLowerCase()}|${cumPrefix || rawSet}`;
     const existing = best.get(key);
     let better;
     if (!existing) {
       better = true;
-    } else if (isLogic) {
-      // The cumulative logic row has the most questions attempted — pick the largest
+    } else if (cumPrefix) {
+      // The cumulative row has the most questions attempted — pick the largest
       better = entry.total > existing.total ||
                (entry.total === existing.total && entry.correct > existing.correct);
     } else {
@@ -1379,7 +1381,8 @@ function cumulativeLeaderboard(entries, setId = null) {
 
   return [...aggregated.values()]
     .map((a) => ({ ...a, accuracy: a.total ? Math.round((a.correct / a.total) * 100) : 0 }))
-    .sort((a, b) => b.accuracy - a.accuracy || b.correct - a.correct);
+    // Rank by total correct answers (score); tie-break by accuracy
+    .sort((a, b) => b.correct - a.correct || b.accuracy - a.accuracy);
 }
 
 /* Upsert: replace existing entry for same (name, setId) if new is better */
@@ -2594,19 +2597,29 @@ function startWordcheck(questions, { shuffle = true } = {}) {
   renderWordcheckQuestion();
 }
 
+// Drop questions the logged-in user has already answered correctly so they
+// only study what they don't yet know. Falls back to the full set if every
+// question is already correct (so the quiz never opens empty).
+function wordcheckRemaining(all) {
+  if (!state.playerName) return [...all];
+  const done = getWordcheckCorrect();
+  const remaining = all.filter((q) => !done.has(q.i));
+  return remaining.length ? remaining : [...all];
+}
+
 function showWordcheck() {
   lastWordcheckLauncher = showWordcheck;
-  startWordcheck([
+  startWordcheck(wordcheckRemaining([
     ...(window.__V502_WC_V101__ || []),
     ...(window.__V502_WC_V201__ || []),
     ...(window.__V502_WC_V401__ || [])
-  ]);
+  ]));
 }
 
 // [201 단어퀴즈] — V201 set only (200 문제), presented in order
 function showWordcheck201() {
   lastWordcheckLauncher = showWordcheck201;
-  startWordcheck([...(window.__V502_WC_V201__ || [])], { shuffle: false });
+  startWordcheck(wordcheckRemaining(window.__V502_WC_V201__ || []), { shuffle: false });
 }
 
 function renderWordcheckQuestion() {
@@ -2646,12 +2659,83 @@ function wordcheckCorrectLetter(q) {
   return a;
 }
 
+/* ── Per-question wordcheck tracking + cumulative ranking ── */
+const wordcheckResultKey = 'v502-wordcheck-result';
+function readWordcheckResult() {
+  try { return JSON.parse(localStorage.getItem(wordcheckResultKey)) || {}; }
+  catch { return {}; }
+}
+function getWordcheckCorrect() {
+  const r = readWordcheckResult();
+  const k = state.playerName ? state.playerName.toLowerCase() : '_guest';
+  return new Set((r[k] && r[k].correct) || []);
+}
+function getWordcheckWrong() {
+  const r = readWordcheckResult();
+  const k = state.playerName ? state.playerName.toLowerCase() : '_guest';
+  return new Set((r[k] && r[k].wrong) || []);
+}
+function saveWordcheckResult(qid, correct) {
+  if (!state.playerName) return;
+  const r = readWordcheckResult();
+  const k = state.playerName.toLowerCase();
+  if (!r[k]) r[k] = { correct: [], wrong: [] };
+  if (correct) {
+    if (!r[k].correct.includes(qid)) r[k].correct.push(qid);
+    r[k].wrong = (r[k].wrong || []).filter((id) => id !== qid);
+  } else if (!r[k].correct.includes(qid) && !(r[k].wrong || []).includes(qid)) {
+    (r[k].wrong = r[k].wrong || []).push(qid);
+  }
+  try { localStorage.setItem(wordcheckResultKey, JSON.stringify(r)); } catch {}
+}
+
+// Push the player's cumulative wordcheck score to the ranking right after each
+// answer: correct answers raise the numerator, every answer raises the total.
+function persistWordcheckRanking() {
+  if (!state.playerName) return;
+  const correct = getWordcheckCorrect().size;
+  const total = correct + getWordcheckWrong().size;
+  if (total === 0) return;
+  const accuracy = Math.round((correct / total) * 100);
+  const nameKey = state.playerName.toLowerCase();
+  const entries = readLeaderboard().filter(
+    (e) => !(e.name.toLowerCase() === nameKey && String(e.setId || '').startsWith('WORDCHECK')),
+  );
+  entries.push({
+    name: state.playerName, correct, total, accuracy,
+    setId: 'WORDCHECK', setLabel: 'Word Check', completedAt: new Date().toISOString(),
+  });
+  writeLeaderboard(entries);
+  if (hasPublicConfig()) {
+    getSupabaseClient().then((client) => {
+      if (!client) return;
+      return saveWordcheckPublicCumulative(client, state.playerName, correct, total, accuracy);
+    }).catch(() => {});
+  }
+}
+
+async function saveWordcheckPublicCumulative(client, name, correct, total, accuracy) {
+  const table = getLeaderboardTable();
+  const { data: existing } = await client
+    .from(table).select('id').eq('nickname', name).eq('quiz_set', 'WORDCHECK');
+  if (existing && existing.length) {
+    return client.from(table)
+      .update({ correct_count: correct, total_count: total, accuracy })
+      .eq('nickname', name).eq('quiz_set', 'WORDCHECK');
+  }
+  return client.from(table)
+    .insert({ nickname: name, quiz_set: 'WORDCHECK', correct_count: correct, total_count: total, accuracy });
+}
+
 function submitWordcheckAnswer(letter) {
   const q = wordcheckQuestions[wcState.index];
   const answerLetter = wordcheckCorrectLetter(q);
   const correct = letter === answerLetter;
   if (correct) wcState.correct++;
   wcState.answers.push({ id: q.i, correct });
+  // Track this answer and reflect it in the unified ranking immediately
+  saveWordcheckResult(q.i, correct);
+  persistWordcheckRanking();
 
   // Highlight feedback
   const fb = document.getElementById('wordcheckFeedback');
@@ -2700,18 +2784,9 @@ function finishWordcheck() {
     <br><small>${pct}% correct</small>
   `;
 
-  // Save to leaderboard for unified ranking
+  // Ranking is updated per question; ensure it's current and refresh the sidebar
   if (state.playerName) {
-    const entry = {
-      name: state.playerName,
-      setId: 'WORDCHECK',
-      correct: wcState.correct,
-      total: wcState.total,
-      accuracy: pct,
-      date: new Date().toISOString()
-    };
-    upsertLocalScore(entry);
-    // Also save wordcheck progress separately
+    persistWordcheckRanking();
     saveWordcheckProgress();
     updateSidebarCompletion();
   }
