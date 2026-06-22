@@ -962,9 +962,9 @@ window.__V502_GRAMMAR__ = [
         "offer made by the publisher."
       ]
     ],
-    "a": "4",
+    "a": "3",
     "t": "복합관계대명사/복합관계형용사",
-    "exp": "Whoever. 복합관계대명사."
+    "exp": "were->was(B에수일치:editor)"
   },
   {
     "i": "047",
@@ -1108,9 +1108,9 @@ window.__V502_GRAMMAR__ = [
         "ago."
       ]
     ],
-    "a": "3",
+    "a": "1",
     "t": "분사구문 시제/수동/부정",
-    "exp": "Having finished. 완료분사구문."
+    "exp": "is->are(Most people 복수)"
   },
   {
     "i": "054",
@@ -1283,9 +1283,9 @@ window.__V502_GRAMMAR__ = [
         "for everyone."
       ]
     ],
-    "a": "3",
+    "a": "1",
     "t": "동명사 시제",
-    "exp": "having been. 동명사 완료."
+    "exp": "There are->There is(no argument=단수)"
   },
   {
     "i": "062",
@@ -1358,9 +1358,9 @@ window.__V502_GRAMMAR__ = [
         "stately trees."
       ]
     ],
-    "a": "4",
+    "a": "2",
     "t": "need/worth 능동형 동명사 목적어",
-    "exp": "need to be washed = need washing."
+    "exp": "are->is(a fortress=단수)"
   },
   {
     "i": "065",
@@ -1408,9 +1408,9 @@ window.__V502_GRAMMAR__ = [
         "living happily ever after."
       ]
     ],
-    "a": "3",
+    "a": "1",
     "t": "to 부정사 의미상 주어와 of",
-    "exp": "for him to understand. to부정사 의미상 주어."
+    "exp": "There are->There is(many a+단수)"
   },
   {
     "i": "067",
@@ -1458,9 +1458,9 @@ window.__V502_GRAMMAR__ = [
         "are quite ⑤surprising."
       ]
     ],
-    "a": "1",
+    "a": "4",
     "t": "to부정사 목적보어",
-    "exp": "to leave. want O to RV."
+    "exp": "are->is(the number=단수)"
   },
   {
     "i": "069",
@@ -1554,9 +1554,9 @@ window.__V502_GRAMMAR__ = [
         "take pride in it."
       ]
     ],
-    "a": "2",
+    "a": "3",
     "t": "4형식: 수여동사 수동형",
-    "exp": "was given to. 4형식 수동태."
+    "exp": "are->is(to부정사주어=단수)"
   },
   {
     "i": "073",
@@ -1579,9 +1579,9 @@ window.__V502_GRAMMAR__ = [
         "a problem."
       ]
     ],
-    "a": "1",
+    "a": "3",
     "t": "5형식: 사역/지각동사 수동태",
-    "exp": "was made to clean. 사역동사 수동태 -> to부정사."
+    "exp": "are->is(Where절주어=단수)"
   },
   {
     "i": "074",
@@ -1629,9 +1629,9 @@ window.__V502_GRAMMAR__ = [
         "to obtain."
       ]
     ],
-    "a": "1",
+    "a": "3",
     "t": "수동의미 to부정사",
-    "exp": "to be blamed. 수동의미 to부정사."
+    "exp": "is->are(선행사jobs/careers=복수)"
   },
   {
     "i": "076",
@@ -1775,9 +1775,9 @@ window.__V502_GRAMMAR__ = [
         "for him to master it."
       ]
     ],
-    "a": "3",
+    "a": "2",
     "t": "비교급: the와 비교급",
-    "exp": "the more. the 비교급, the 비교급."
+    "exp": "has been studying->had been studying(before he came=대과거)"
   },
   {
     "i": "083",
@@ -1900,9 +1900,9 @@ window.__V502_GRAMMAR__ = [
         "with background materials."
       ]
     ],
-    "a": "4",
+    "a": "3",
     "t": "비교표현과 병렬구조",
-    "exp": "those who do. 비교 병렬."
+    "exp": "are dealing->deal(일반적사실,진행형불필요)"
   },
   {
     "i": "089",
@@ -4435,8 +4435,8 @@ window.__V502_GRAMMAR__ = [
         "a loud, shrill cry."
       ]
     ],
-    "a": "1",
-    "exp": "이중소유격: a friend of mine / of my father's.",
+    "a": "2",
+    "exp": "frightening->frightened(과거분사:겁먹은)",
     "t": "이중소유격"
   },
   {
@@ -4510,8 +4510,8 @@ window.__V502_GRAMMAR__ = [
         "instead of tap water."
       ]
     ],
-    "a": "2",
-    "exp": "무관사: 식사/운동/학문명. have breakfast (no article).",
+    "a": "3",
+    "exp": "bottling->bottled(과거분사:병에담긴)",
     "t": "무관사"
   },
   {
@@ -4560,8 +4560,8 @@ window.__V502_GRAMMAR__ = [
         "those of the United States and Great britain."
       ]
     ],
-    "a": "4",
-    "exp": "one(불특정) vs. it(특정).",
+    "a": "3",
+    "exp": "developing->developed(과거분사:발달된)",
     "t": "one vs. it"
   },
   {
@@ -4656,8 +4656,8 @@ window.__V502_GRAMMAR__ = [
         "Danes communicate in stolen glances and occasional whispered words. This is not "
       ]
     ],
-    "a": "2",
-    "exp": "형용사 어순: Opinion-Size-Age-Color-Origin-Material.",
+    "a": "1",
+    "exp": "Forbidding to speak->Forbidden to speak(과거분사)",
     "t": "형용사 나열순서"
   },
   {
@@ -4681,8 +4681,8 @@ window.__V502_GRAMMAR__ = [
         "subtly changing the colors."
       ]
     ],
-    "a": "3",
-    "exp": "난이 형용사: difficult/easy + to RV.",
+    "a": "1",
+    "exp": "Properly using->Properly used(과거분사)",
     "t": "난이 형용사"
   },
   {
@@ -4706,8 +4706,8 @@ window.__V502_GRAMMAR__ = [
         "joining to many other movements, it ⑤came to full flower and found a wide public"
       ]
     ],
-    "a": "2",
-    "exp": "worth ~ing: 능동형 동명사.",
+    "a": "4",
+    "exp": "joining->joined(과거분사)",
     "t": "worth 용법"
   },
   {
@@ -5002,8 +5002,8 @@ window.__V502_GRAMMAR__ = [
         "throughout the centuries."
       ]
     ],
-    "a": "1",
-    "exp": "has been expressed. 수동태.",
+    "a": "3",
+    "exp": "educations->educators(교육자들). education=불가산",
     "t": "수일치"
   },
   {
@@ -5986,8 +5986,8 @@ window.__V502_GRAMMAR__ = [
         "continue to working."
       ]
     ],
-    "a": "2",
-    "exp": "allows people who are away. 오류 찾기.",
+    "a": "4",
+    "exp": "continue to working->continue working(to+동명사X)",
     "t": "문법"
   },
   {
@@ -6157,8 +6157,8 @@ window.__V502_GRAMMAR__ = [
         "to be caused between 4,000 and 8,000 deaths."
       ]
     ],
-    "a": "1",
-    "exp": "At the beginning...smog...was estimated...to be caused between 4,000... 전치사 확인. 답 유지.",
+    "a": "4",
+    "exp": "to be caused between->to have caused(추정완료). between->about",
     "t": "문법"
   },
   {
@@ -6253,8 +6253,8 @@ window.__V502_GRAMMAR__ = [
         "than we have given"
       ]
     ],
-    "a": "3",
-    "exp": "To completely solve. 분리부정사.",
+    "a": "1",
+    "exp": "To completely solve->Split infinitive. ①유지(분리부정사허용)",
     "t": "to부정사"
   },
   {
@@ -6574,8 +6574,8 @@ window.__V502_GRAMMAR__ = [
         "own products."
       ]
     ],
-    "a": "4",
-    "exp": "many other software companies were. 수일치.",
+    "a": "3",
+    "exp": "forced upgrade->forced TO upgrade(to부정사)",
     "t": "수일치"
   },
   {
@@ -7237,8 +7237,8 @@ window.__V502_GRAMMAR__ = [
         "on its stone facades."
       ]
     ],
-    "a": "1",
-    "exp": "Until Napoleon's dreams... 오류 찾기.",
+    "a": "3",
+    "exp": "as obscurely as->as obscure as(형용사). obscurely(부사)X",
     "t": "문법"
   },
   {
@@ -7533,8 +7533,8 @@ window.__V502_GRAMMAR__ = [
         "much inferior than the modern systems already in use in Malaysia and Thailand."
       ]
     ],
-    "a": "1",
-    "exp": "Most...were. Most+복수.",
+    "a": "4",
+    "exp": "much inferior than->much inferior TO",
     "t": "수일치"
   },
   {
@@ -7729,8 +7729,8 @@ window.__V502_GRAMMAR__ = [
         "did."
       ]
     ],
-    "a": "1",
-    "exp": "much greater salaries. much + 비교급.",
+    "a": "2",
+    "exp": "great->greater(비교급). much greater salaries than",
     "t": "비교급"
   },
   {
@@ -8125,8 +8125,8 @@ window.__V502_GRAMMAR__ = [
         "rather than"
       ]
     ],
-    "a": "3",
-    "exp": "rather than what is popular. 병렬구조.",
+    "a": "4",
+    "exp": "by what->upon what. based upon...rather than upon. 병렬",
     "t": "병렬구조"
   },
   {
@@ -8938,8 +8938,8 @@ window.__V502_GRAMMAR__ = [
         "the way he did ⑤hundred of years ago."
       ]
     ],
-    "a": "3",
-    "exp": "the seabed -> 해저. 오류 찾기.",
+    "a": "4",
+    "exp": "hundred->hundreds(hundreds of)",
     "t": "문법"
   },
   {
@@ -9059,8 +9059,8 @@ window.__V502_GRAMMAR__ = [
         "on his face."
       ]
     ],
-    "a": "1",
-    "exp": "NOT correct. 답 유지.",
+    "a": "4",
+    "exp": "on his face->in the face(관용구)",
     "t": "관사"
   },
   {
@@ -9230,8 +9230,8 @@ window.__V502_GRAMMAR__ = [
         "regional, and national events."
       ]
     ],
-    "a": "4",
-    "exp": "Choose NOT correct. 'by the yard' → 'by the yard' is correct for 'per yard'.",
+    "a": "2",
+    "exp": "by two yards->by the yard(단위당 정관사)",
     "t": "관사"
   },
   {
@@ -9797,8 +9797,8 @@ window.__V502_GRAMMAR__ = [
         "other."
       ]
     ],
-    "a": "3",
-    "exp": "Choose NOT correct. 'others need more attention' → 'other plants need'.",
+    "a": "4",
+    "exp": "than other->than the others(정관사+복수)",
     "t": "other"
   },
   {
@@ -10339,8 +10339,8 @@ window.__V502_GRAMMAR__ = [
         "go them through just by sticking together."
       ]
     ],
-    "a": "2",
-    "exp": "Choose NOT correct. 'such harsh situations that others deemed impossible.'",
+    "a": "4",
+    "exp": "go them through->go through them(대명사목적어위치)",
     "t": "such/so"
   },
   {
