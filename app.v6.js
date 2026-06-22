@@ -651,59 +651,86 @@ function buildQuestions() {
   const viable = sourceCategories.filter(c => c.words.length >= 3);
   const skipped = sourceCategories.filter(c => c.words.length < 3);
 
-  // Base: 3 rounds per viable category
-  const baseTotal = viable.length * 3;
-  const shortfall = Math.max(0, TARGET - baseTotal);
-
-  // Distribute shortfall as extra rounds to categories with most words
-  const allocations = viable.map(cat => ({
-    category: cat,
-    rounds: 3,
-    wordCount: cat.words.length,
-  }));
-  // Sort by word count descending for extra round distribution
-  allocations.sort((a, b) => b.wordCount - a.wordCount);
-  for (let i = 0; i < shortfall; i++) {
-    allocations[i % allocations.length].rounds++;
+  // Track generated (prompt, answer-set) combos to avoid duplicates
+  const seenCombos = new Set();
+  function comboKey(prompt, answers) {
+    return prompt + '|' + [...answers].sort().join('|');
   }
 
-  // Generate all questions
-  const questions = [];
-  for (const alloc of allocations) {
-    const category = alloc.category;
-    // Filter out prompts the user has already mastered (for logged-in users)
-    const mastered = state.playerName ? getCompletedPromptWords(category.id) : new Set();
-    let words = shuffle([...category.words]);
-    // If user has mastered all words in this category, skip
-    if (mastered.size > 0 && words.every(w => mastered.has(w))) continue;
-    const currentWords = new Set(category.words);
+  // First pass: generate all possible unique questions from each category
+  const allPossible = [];
+  for (const cat of viable) {
+    const words = cat.words;
+    if (words.length < 3) continue;
+    const mastered = state.playerName ? getCompletedPromptWords(cat.id) : new Set();
 
-    for (let r = 0; r < alloc.rounds; r++) {
-      const prompt = words[r % words.length];
-      // Pick 2 other words as answers (never the prompt)
+    for (let i = 0; i < words.length; i++) {
+      const prompt = words[i];
+      if (mastered.has(prompt)) continue;
+
+      // Generate all possible answer pairs for this prompt
       const candidates = words.filter(w => w !== prompt);
-      const answer = [candidates[r % candidates.length], candidates[(r + 1) % candidates.length]];
-      const distractors = [];
+      for (let j = 0; j < candidates.length; j++) {
+        for (let k = j + 1; k < candidates.length; k++) {
+          const answer = [candidates[j], candidates[k]];
+          const key = comboKey(prompt, answer);
+          if (!seenCombos.has(key)) {
+            seenCombos.add(key);
 
-      for (const item of shuffle(bank.filter((entry) => entry.categoryId !== category.id))) {
-        if (
-          item.word === prompt ||
-          answer.includes(item.word) ||
-          currentWords.has(item.word) ||
-          distractors.includes(item.word)
-        ) continue;
-        distractors.push(item.word);
-        if (distractors.length === 4) break;
+            // Find distractors from other categories
+            const distractors = [];
+            const currentWords = new Set(cat.words);
+            for (const item of shuffle([...bank])) {
+              if (
+                item.word === prompt ||
+                answer.includes(item.word) ||
+                currentWords.has(item.word) ||
+                distractors.includes(item.word)
+              ) continue;
+              distractors.push(item.word);
+              if (distractors.length === 4) break;
+            }
+
+            allPossible.push({
+              id: `${cat.id}-${prompt}`,
+              categoryId: cat.id,
+              prompt,
+              answer,
+              options: shuffle([...answer, ...distractors]),
+            });
+          }
+        }
       }
-
-      questions.push({
-        id: `${category.id}-${r + 1}`,
-        categoryId: category.id,
-        prompt,
-        answer,
-        options: shuffle([...answer, ...distractors]),
-      });
     }
+  }
+
+  // Second pass: pick up to TARGET questions, distributing across categories
+  const byCategory = new Map();
+  for (const q of allPossible) {
+    if (!byCategory.has(q.categoryId)) byCategory.set(q.categoryId, []);
+    byCategory.get(q.categoryId).push(q);
+  }
+
+  // Shuffle each category's questions
+  for (const [catId, qs] of byCategory) {
+    byCategory.set(catId, shuffle(qs));
+  }
+
+  // Round-robin selection from categories until we have TARGET questions
+  const questions = [];
+  const catIds = shuffle([...byCategory.keys()]);
+  let idx = 0;
+
+  while (questions.length < TARGET && byCategory.size > 0) {
+    const catId = catIds[idx % catIds.length];
+    const qs = byCategory.get(catId);
+    if (qs && qs.length > 0) {
+      questions.push(qs.shift());
+      if (qs.length === 0) byCategory.delete(catId);
+    }
+    idx++;
+    // Safety: break if all exhausted
+    if (idx > TARGET * 5) break;
   }
 
   return shuffle(questions);
