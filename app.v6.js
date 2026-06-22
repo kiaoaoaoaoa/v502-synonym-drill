@@ -1230,6 +1230,7 @@ async function handleLogin() {
   els.authNicknameInput.value = "";
   els.authPasswordInput.value = "";
   checkAndShowResume();
+  await cloudPullScores();
   cloudSyncAll();
   pushAllScoresToSupabase();
 }
@@ -1537,6 +1538,44 @@ async function pushAllScoresToSupabase() {
   for (var i = 0; i < entries.length; i++) {
     try { await savePublicScore(entries[i]); } catch(e) {}
   }
+}
+
+async function cloudPullScores() {
+  if (!state.playerName || !hasPublicConfig()) return;
+  const client = await getSupabaseClient(); if (!client) return;
+  try {
+    const nk = state.playerName.toLowerCase();
+    const { data } = await client.from(getLeaderboardTable())
+      .select('nickname,quiz_set,correct_count,total_count,accuracy')
+      .eq('nickname', nk)
+      .neq('quiz_set', 'USERDATA')
+      .order('created_at', { ascending: false });
+    if (!data || !data.length) return;
+    const entries = readLeaderboard();
+    for (var i = 0; i < data.length; i++) {
+      var row = data[i];
+      var setId = row.quiz_set;
+      var existingIdx = entries.findIndex(function(e) {
+        return e.name.toLowerCase() === nk && String(e.setId || '') === setId;
+      });
+      var entry = {
+        name: row.nickname,
+        setId: setId,
+        correct: row.correct_count,
+        total: row.total_count,
+        accuracy: row.accuracy,
+        completedAt: new Date().toISOString()
+      };
+      if (existingIdx >= 0) {
+        if (entry.accuracy > (entries[existingIdx].accuracy || 0)) {
+          entries[existingIdx] = entry;
+        }
+      } else {
+        entries.push(entry);
+      }
+    }
+    writeLeaderboard(entries);
+  } catch(e) {}
 }
 
 async function cloudSyncAll() {
@@ -2390,9 +2429,11 @@ if (savedSession && savedSession.name) {
   if (store[key]) {
     const stored = store[key];
     state.playerName = (typeof stored === 'object' && stored.displayName) ? stored.displayName : savedSession.name;
-    // Pull latest cloud data, then push local state
+    // Pull latest cloud data + scores, then push local state
     const pw = typeof stored === 'string' ? stored : atob(stored.password);
     cloudCheckCred(state.playerName, pw).then(() => {
+      return cloudPullScores();
+    }).then(() => {
       cloudSyncAll();
       pushAllScoresToSupabase();
     }).catch(() => {});
@@ -2737,6 +2778,8 @@ function showDashboard() {
       state._dashSyncing = true;
       const pw = typeof stored === 'string' ? stored : atob(stored.password);
       cloudCheckCred(state.playerName, pw).then(() => {
+        return cloudPullScores();
+      }).then(() => {
         cloudSyncAll();
         pushAllScoresToSupabase();
         state._dashSyncing = false;
