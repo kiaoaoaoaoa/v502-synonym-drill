@@ -1183,7 +1183,6 @@ function handleLogin() {
   els.authNicknameInput.value = "";
   els.authPasswordInput.value = "";
   checkAndShowResume();
-  cloudSyncOnLogin();
 }
 
 function handleRegister() {
@@ -1219,7 +1218,6 @@ function handleRegister() {
   els.authNicknameInput.value = "";
   els.authPasswordInput.value = "";
   checkAndShowResume();
-  cloudSyncPush();
 }
 
 function checkAndShowResume() {
@@ -1452,57 +1450,10 @@ function getLeaderboardTable() {
   return getDbConfig().tableName || "leaderboard_scores";
 }
 
-/* ── Supabase cloud sync ── */
-async function sha256(message) {
-  const buf = new TextEncoder().encode(message);
-  const hash = await crypto.subtle.digest('SHA-256', buf);
-  return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2,'0')).join('');
-}
-
-async function cloudSyncPush() {
-  if (!state.playerName || !hasPublicConfig()) return;
-  const client = await getSupabaseClient(); if (!client) return;
-  const nk = state.playerName.toLowerCase();
-  const wordKnowledge = JSON.stringify((readWordKnowledge()||{})[nk]||[]);
-  const synProgress = JSON.stringify((readSynonymProgress()||{})[nk]||{});
-  const wcProg = JSON.stringify(getWordcheckProgress());
-  const quizProg = JSON.stringify(((function(){ try { return JSON.parse(localStorage.getItem(quizProgressKey)||'{}')[nk]||{}; } catch { return {}; } })()));
-  const pwStore = readPasswordStore();
-  const pwHash = pwStore[nk] ? (typeof pwStore[nk]==='string' ? await sha256(pwStore[nk]) : await sha256(atob(pwStore[nk].password))) : '';
-  const payload = JSON.stringify({ word_knowledge: wordKnowledge, synonym_progress: synProgress, wordcheck_progress: wcProg, quiz_progress: quizProg, password_hash: pwHash, display_name: state.playerName, updated_at: new Date().toISOString() });
-  try {
-    await client.from(getLeaderboardTable()).upsert({ nickname: state.playerName, quiz_set: 'USERDATA', correct_count: 0, total_count: 0, accuracy: 0, payload }, { onConflict: 'nickname,quiz_set' });
-  } catch(e) {}
-}
-
-async function cloudSyncPull(nickname) {
-  if (!hasPublicConfig()) return null;
-  const client = await getSupabaseClient(); if (!client) return null;
-  try {
-    const { data } = await client.from(getLeaderboardTable()).select('payload').eq('nickname', nickname).eq('quiz_set', 'USERDATA').maybeSingle();
-    if (data && data.payload) return JSON.parse(data.payload);
-  } catch(e) {}
-  return null;
-}
-
-function applyCloudData(nickname, cloud) {
-  if (!cloud) return;
-  const nk = nickname.toLowerCase();
-  try {
-    if (cloud.word_knowledge) { const s = readWordKnowledge(); s[nk] = JSON.parse(cloud.word_knowledge); localStorage.setItem(wordKnowledgeKey, JSON.stringify(s)); }
-    if (cloud.synonym_progress) { const s = readSynonymProgress(); s[nk] = JSON.parse(cloud.synonym_progress); localStorage.setItem(synonymProgressKey, JSON.stringify(s)); }
-    if (cloud.wordcheck_progress) localStorage.setItem('v502-wordcheck-progress', JSON.stringify({[nk]: JSON.parse(cloud.wordcheck_progress)}));
-    if (cloud.quiz_progress) { const s = (function(){try{return JSON.parse(localStorage.getItem(quizProgressKey)||'{}')}catch{return{}}}()); s[nk] = JSON.parse(cloud.quiz_progress); localStorage.setItem(quizProgressKey, JSON.stringify(s)); }
-  } catch(e) {}
-}
-
-async function cloudSyncOnLogin() {
-  const cloud = await cloudSyncPull(state.playerName);
-  if (cloud) { applyCloudData(state.playerName, cloud); await cloudSyncPush(); }
-}
-
-// Periodic sync
-setInterval(() => { if (state.playerName && hasPublicConfig() && state.answers.size > 0) cloudSyncPush(); }, 120000);
+/* ── Supabase: leaderboard scores already sync automatically ──
+   Cross-device auth requires a 'payload' text column in leaderboard_scores.
+   To enable: ALTER TABLE leaderboard_scores ADD COLUMN payload TEXT;
+   Then uncomment the cloud auth functions below. */
 
 function normalizePublicScore(row) {
   return {
