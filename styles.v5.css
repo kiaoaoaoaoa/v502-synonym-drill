@@ -1854,22 +1854,8 @@ h2 {
   .dash-stat-num { font-size: 22px; }
 }
 
-/* Navigation lives in the dashboard now — hide the duplicate sidebar buttons
-   (kept in the DOM so the dashboard cards can still trigger them). */
-#synonymDrillBtn,
-#logicModeBtn,
-#myinfoBtn,
-#rankingBtn,
-#wordlistBtn,
-#wordlist2Btn,
-#wordcheckBtn,
-#wordcheck201Btn {
-  display: none !important;
-}
-
-/* ===== Sidebar removed — single-column layout ===== */
-.sidebar { display: none !important; }
-.app { grid-template-columns: 1fr; }
+/* Navigation buttons in sidebar — kept visible for direct access.
+   Dashboard cards provide alternative entry points via onclick handlers. */
 
 .appbar {
   display: flex;
