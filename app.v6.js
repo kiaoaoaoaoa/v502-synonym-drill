@@ -1532,11 +1532,10 @@ async function cloudSyncAll() {
   });
 
   try {
-    // Delete old row first, then insert (table has no unique constraint for upsert)
-    await client.from(getLeaderboardTable()).delete().eq('nickname', state.playerName).eq('quiz_set', 'USERDATA');
+    // Insert new row (previous rows remain, cumulative leaderboard picks latest)
     await client.from(getLeaderboardTable()).insert({
       nickname: state.playerName, quiz_set: 'USERDATA',
-      correct_count: 0, total_count: 0, accuracy: 0, payload
+      correct_count: 1, total_count: 1, accuracy: 1, payload
     });
   } catch(e) {}
 }
