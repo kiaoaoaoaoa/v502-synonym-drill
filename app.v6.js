@@ -578,8 +578,9 @@ const categorySets = {
   "611-620":{label:"Categories 611-620",ids:["611","612","613","614","615","616","617","618","619","620"]},
 };
 
+const lastSetKey = 'v502-last-set';
 const state = {
-  activeSetId: "001-010",
+  activeSetId: (() => { try { const v = localStorage.getItem(lastSetKey); return v && categorySets[v] ? v : "001-010"; } catch { return "001-010"; } })(),
   questionIndex: 0,
   questions: [],
   setQuestions: [],
@@ -674,6 +675,7 @@ const els = {
   logicSubmitBtn: document.querySelector("#logicSubmitBtn"),
   logicNextBtn: document.querySelector("#logicNextBtn"),
   logicCounter: document.querySelector("#logicCounter"),
+  logicRate: document.querySelector("#logicRate"),
   quizModeLabel: document.querySelector("#quizModeLabel"),
   wordcheckBtn: document.querySelector("#wordcheckBtn"),
   wordcheckPanel: document.querySelector("#wordcheckPanel"),
@@ -1116,6 +1118,7 @@ function resumeQuiz(progress) {
 function openSet(setId) {
   if (!categorySets[setId]) return;
   state.activeSetId = setId;
+  try { localStorage.setItem(lastSetKey, setId); } catch {}
   updateSetDisplay();
   const progress = getSavedProgress(setId);
   if (state.playerName && progress && Array.isArray(progress.answers) && progress.answers.length > 0 && !progress.completed) {
@@ -2309,6 +2312,7 @@ function selectCategorySet(setId) {
     openSet(setId);
   } else {
     state.activeSetId = setId;
+    try { localStorage.setItem(lastSetKey, setId); } catch {}
     updateSetDisplay();
   }
 }
@@ -3478,14 +3482,21 @@ els.wordcheckPanel.addEventListener('click', function(e) {
 });
 
 /* ── Grammar 201 ── */
-let grammarState = { index: 0, correct: 0, total: 0 };
+let grammarState = { index: 0, correct: 0, total: 0, answered: false };
 
 function showGrammar201() {
   switchMode('grammar');
   els.grammar201Panel.hidden = false;
   const items = window.__V502_GRAMMAR__ || [];
-  grammarState = { index: 0, correct: 0, total: items.length };
+  grammarState = { index: 0, correct: 0, total: items.length, answered: false };
   renderGrammarQuestion();
+}
+
+// Escape, then underline 「...」 segments and ______ blanks.
+function grammarFormat(text) {
+  return escapeHtml(String(text))
+    .replace(/「([^」]+)」/g, '<u>$1</u>')
+    .replace(/(_{2,})/g, '<u>$1</u>');
 }
 
 function renderGrammarQuestion() {
@@ -3494,37 +3505,64 @@ function renderGrammarQuestion() {
     finishGrammarQuiz();
     return;
   }
+  grammarState.answered = false;
   const q = items[grammarState.index];
   let html = `<div style="max-width:700px">`;
   html += `<p style="font-size:12px;color:var(--muted);margin:0 0 8px">${grammarState.index + 1} / ${items.length} | ✅ ${grammarState.correct} | ❌ ${grammarState.index - grammarState.correct}</p>`;
-  html += `<p style="font-size:13px;color:var(--accent);font-weight:600;margin:0 0 4px">${escapeHtml(q.i)}. ${escapeHtml(q.t)}</p>`;
-  html += `<p style="font-size:15px;line-height:1.7;margin:0 0 16px">${escapeHtml(q.q)}</p>`;
+  html += `<p style="font-size:13px;color:var(--accent);font-weight:600;margin:0 0 6px">${escapeHtml(q.i)}. ${escapeHtml(q.t || '')}</p>`;
+  html += `<p style="font-size:15px;line-height:1.8;margin:0 0 16px">${grammarFormat(q.q)}</p>`;
 
   if (q.c && q.c.length >= 2) {
-    html += '<div style="display:grid;gap:8px;margin-bottom:16px">';
+    html += '<div id="grammarChoices" style="display:grid;gap:8px;margin-bottom:12px">';
     q.c.forEach(([letter, text]) => {
-      html += `<button onclick="submitGrammarAnswer('${escapeHtml(letter)}')" style="min-height:40px;padding:8px 14px;border:1px solid var(--line);border-radius:2px;background:var(--panel);text-align:left;font:inherit;font-size:14px;cursor:pointer">(${escapeHtml(letter)}) ${escapeHtml(text)}</button>`;
+      html += `<button data-letter="${escapeHtml(letter)}" onclick="submitGrammarAnswer('${escapeHtml(letter)}')" style="min-height:40px;padding:8px 14px;border:1px solid var(--line);border-radius:8px;background:var(--panel);text-align:left;font:inherit;font-size:14px;cursor:pointer">(${escapeHtml(letter)}) ${grammarFormat(text)}</button>`;
     });
     html += '</div>';
   }
 
-  // For no-choice questions, add navigation
-  html += `<button onclick="grammarState.index++; if(grammarState.index>=grammarState.total)finishGrammarQuiz();else renderGrammarQuestion();" style="min-height:36px;padding:0 16px;border:1px solid var(--line);border-radius:2px;background:var(--panel);cursor:pointer;font:inherit">다음 ▸</button>`;
+  html += `<div id="grammarFeedback" style="margin:0 0 12px;min-height:20px"></div>`;
+  html += `<button id="grammarNextBtn" onclick="grammarNext()" style="min-height:36px;padding:0 16px;border:1px solid var(--line);border-radius:8px;background:var(--panel);cursor:pointer;font:inherit">다음 ▸</button>`;
   html += '</div>';
   els.grammar201Content.innerHTML = html;
 }
 
 function submitGrammarAnswer(letter) {
-  grammarState.index++;
-  if (grammarState.index >= grammarState.total) {
-    finishGrammarQuiz();
-  } else {
-    renderGrammarQuestion();
+  if (grammarState.answered) return;
+  const items = window.__V502_GRAMMAR__ || [];
+  const q = items[grammarState.index];
+  if (!q) return;
+  grammarState.answered = true;
+  const correct = letter === q.a;
+  if (correct) grammarState.correct++;
+
+  const fb = document.getElementById('grammarFeedback');
+  if (fb) {
+    const head = correct
+      ? '<span style="color:#2e7d32;font-weight:700">✅ 정답!</span>'
+      : `<span style="color:#c62828;font-weight:700">❌ 오답 — 정답은 (${escapeHtml(q.a)})</span>`;
+    const exp = q.exp
+      ? `<div style="margin-top:8px;padding:10px 12px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;font-size:13px;line-height:1.7">📝 ${grammarFormat(q.exp)}</div>`
+      : '';
+    fb.innerHTML = head + exp;
   }
+
+  document.querySelectorAll('#grammarChoices button').forEach(function(b) {
+    b.disabled = true;
+    const bLetter = b.getAttribute('data-letter');
+    if (bLetter === q.a) b.style.background = '#e8f5e9';
+    else if (bLetter === letter && !correct) b.style.background = '#fce4ec';
+  });
+}
+
+function grammarNext() {
+  grammarState.index++;
+  if (grammarState.index >= grammarState.total) finishGrammarQuiz();
+  else renderGrammarQuestion();
 }
 
 function finishGrammarQuiz() {
-  els.grammar201Content.innerHTML = `<div style="text-align:center;padding:40px"><h3>문법 201 완료</h3><p>${grammarState.total}개 항목 확인 완료</p><button onclick="showGrammar201()" class="text-btn" style="min-height:40px;margin-top:12px">다시 보기</button></div>`;
+  const pct = grammarState.total ? Math.round(grammarState.correct / grammarState.total * 100) : 0;
+  els.grammar201Content.innerHTML = `<div style="text-align:center;padding:40px"><h3>문법 201 완료</h3><p>${grammarState.total}문제 중 ✅ ${grammarState.correct}개 정답 (${pct}%)</p><button onclick="showGrammar201()" class="text-btn" style="min-height:40px;margin-top:12px">다시 풀기</button></div>`;
 }
 
 els.grammar201Btn.addEventListener('click', showGrammar201);
@@ -3668,6 +3706,7 @@ els.logicNextBtn.addEventListener("click", nextLogicQuestion);
     wrapper.appendChild(toggle);
     wrapper.appendChild(body);
     body.appendChild(catNav);
+    catNav.removeAttribute('hidden'); // visibility now controlled by .cat-nav-body toggle
     toggle.addEventListener('click', function() {
       const open = body.classList.toggle('open');
       toggle.classList.toggle('expanded', open);
