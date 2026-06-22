@@ -626,6 +626,9 @@ const els = {
   logicRemaining: document.querySelector("#logicRemaining"),
   wordcheckBtn: document.querySelector("#wordcheckBtn"),
   wordcheckPanel: document.querySelector("#wordcheckPanel"),
+  grammar201Btn: document.querySelector("#grammar201Btn"),
+  grammar201Panel: document.querySelector("#grammar201Panel"),
+  grammar201Content: document.querySelector("#grammar201Content"),
 };
 
 function shuffle(items) {
@@ -1781,6 +1784,7 @@ function switchMode(mode) {
   els.dashboardPanel.hidden = true;
   els.wordlist2Panel.hidden = true;
   els.wordcheckPanel.hidden = true;
+  els.grammar201Panel.hidden = true;
   logicState.active = false;
   els.shuffleBtn.disabled = true;
   els.resetBtn.disabled = true;
@@ -3180,6 +3184,26 @@ els.wordcheckBtn.addEventListener('click', showWordcheck);
 const wc201Btn = document.getElementById('wordcheck201Btn');
 if (wc201Btn) wc201Btn.addEventListener('click', showWordcheck201);
 els.wordcheckPanel.addEventListener('click', function(e) {
+  if (e.target === this) { this.hidden = true; els.startPanel.hidden = false; }
+});
+
+/* ── Grammar 201 ── */
+function showGrammar201() {
+  switchMode('grammar');
+  els.grammar201Panel.hidden = false;
+  const items = window.__V502_GRAMMAR__ || [];
+  let html = '<div style="max-width:700px">';
+  items.forEach(item => {
+    html += `<div style="margin-bottom:16px;padding:16px;background:#fff;border-radius:12px;border:1px solid var(--line);box-shadow:0 1px 4px rgba(0,0,0,0.04)">`;
+    html += `<strong style="font-size:15px;color:var(--accent)">${escapeHtml(item.i)}. ${escapeHtml(item.t)}</strong>`;
+    html += `<p style="margin-top:8px;font-size:13px;line-height:1.7;color:var(--ink);white-space:pre-wrap">${escapeHtml(item.q || '')}</p>`;
+    html += '</div>';
+  });
+  html += '</div>';
+  els.grammar201Content.innerHTML = html;
+}
+els.grammar201Btn.addEventListener('click', showGrammar201);
+els.grammar201Panel.addEventListener('click', function(e) {
   if (e.target === this) { this.hidden = true; els.startPanel.hidden = false; }
 });
 
