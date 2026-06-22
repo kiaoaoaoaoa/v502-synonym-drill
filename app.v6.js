@@ -3189,20 +3189,55 @@ els.wordcheckPanel.addEventListener('click', function(e) {
 });
 
 /* ── Grammar 201 ── */
+let grammarState = { index: 0, correct: 0, total: 0 };
+
 function showGrammar201() {
   switchMode('grammar');
   els.grammar201Panel.hidden = false;
   const items = window.__V502_GRAMMAR__ || [];
-  let html = '<div style="max-width:700px">';
-  items.forEach(item => {
-    html += `<div style="margin-bottom:16px;padding:16px;background:#fff;border-radius:12px;border:1px solid var(--line);box-shadow:0 1px 4px rgba(0,0,0,0.04)">`;
-    html += `<strong style="font-size:15px;color:var(--accent)">${escapeHtml(item.i)}. ${escapeHtml(item.t)}</strong>`;
-    html += `<p style="margin-top:8px;font-size:13px;line-height:1.7;color:var(--ink);white-space:pre-wrap">${escapeHtml(item.q || '')}</p>`;
+  grammarState = { index: 0, correct: 0, total: items.length };
+  renderGrammarQuestion();
+}
+
+function renderGrammarQuestion() {
+  const items = window.__V502_GRAMMAR__ || [];
+  if (grammarState.index >= items.length) {
+    finishGrammarQuiz();
+    return;
+  }
+  const q = items[grammarState.index];
+  let html = `<div style="max-width:700px">`;
+  html += `<p style="font-size:12px;color:var(--muted);margin:0 0 8px">${grammarState.index + 1} / ${items.length} | ✅ ${grammarState.correct} | ❌ ${grammarState.index - grammarState.correct}</p>`;
+  html += `<p style="font-size:13px;color:var(--accent);font-weight:600;margin:0 0 4px">${escapeHtml(q.i)}. ${escapeHtml(q.t)}</p>`;
+  html += `<p style="font-size:15px;line-height:1.7;margin:0 0 16px">${escapeHtml(q.q)}</p>`;
+
+  if (q.c && q.c.length >= 2) {
+    html += '<div style="display:grid;gap:8px;margin-bottom:16px">';
+    q.c.forEach(([letter, text]) => {
+      html += `<button onclick="submitGrammarAnswer('${escapeHtml(letter)}')" style="min-height:40px;padding:8px 14px;border:1px solid var(--line);border-radius:8px;background:var(--panel);text-align:left;font:inherit;font-size:14px;cursor:pointer">(${escapeHtml(letter)}) ${escapeHtml(text)}</button>`;
+    });
     html += '</div>';
-  });
+  }
+
+  // For no-choice questions, add navigation
+  html += `<button onclick="grammarState.index++; if(grammarState.index>=grammarState.total)finishGrammarQuiz();else renderGrammarQuestion();" style="min-height:36px;padding:0 16px;border:1px solid var(--line);border-radius:8px;background:var(--panel);cursor:pointer;font:inherit">다음 ▸</button>`;
   html += '</div>';
   els.grammar201Content.innerHTML = html;
 }
+
+function submitGrammarAnswer(letter) {
+  grammarState.index++;
+  if (grammarState.index >= grammarState.total) {
+    finishGrammarQuiz();
+  } else {
+    renderGrammarQuestion();
+  }
+}
+
+function finishGrammarQuiz() {
+  els.grammar201Content.innerHTML = `<div style="text-align:center;padding:40px"><h3>문법 201 완료</h3><p>${grammarState.total}개 항목 확인 완료</p><button onclick="showGrammar201()" class="text-btn" style="min-height:40px;margin-top:12px">다시 보기</button></div>`;
+}
+
 els.grammar201Btn.addEventListener('click', showGrammar201);
 els.grammar201Panel.addEventListener('click', function(e) {
   if (e.target === this) { this.hidden = true; els.startPanel.hidden = false; }
