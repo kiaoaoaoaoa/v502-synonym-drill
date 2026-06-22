@@ -116,7 +116,8 @@ window.__V502_GRAMMAR__ = [
         "worried."
       ]
     ],
-    "a": "1"
+    "a": "1",
+    "t": "4형식: 수여동사 오해 동사 ①"
   },
   {
     "i": "008",
@@ -207,7 +208,8 @@ window.__V502_GRAMMAR__ = [
         "in a month."
       ]
     ],
-    "a": "2"
+    "a": "2",
+    "t": "(both) A and B 유형 수일치"
   },
   {
     "i": "012",
@@ -230,7 +232,8 @@ window.__V502_GRAMMAR__ = [
         "a bomb blast ripped through a busy street in Jerusalem."
       ]
     ],
-    "a": "1"
+    "a": "1",
+    "t": "(either) A or B 유형 수일치"
   },
   {
     "i": "014",
@@ -325,7 +328,8 @@ window.__V502_GRAMMAR__ = [
         "called a taxi."
       ]
     ],
-    "a": "1"
+    "a": "1",
+    "t": "도치문장 수일치"
   },
   {
     "i": "018",
@@ -372,7 +376,8 @@ window.__V502_GRAMMAR__ = [
         "every month."
       ]
     ],
-    "a": "1"
+    "a": "1",
+    "t": "대명사 일치 ①"
   },
   {
     "i": "020",
@@ -463,7 +468,8 @@ window.__V502_GRAMMAR__ = [
         "that she didn't ⑤want him to see."
       ]
     ],
-    "a": "3"
+    "a": "3",
+    "t": "현재진행: 가까운 미래"
   },
   {
     "i": "024",
@@ -626,7 +632,8 @@ window.__V502_GRAMMAR__ = [
         "of foresight is really disquieting for us Europeans."
       ]
     ],
-    "a": "2"
+    "a": "2",
+    "t": "가정법 대용"
   },
   {
     "i": "034",
@@ -657,7 +664,8 @@ window.__V502_GRAMMAR__ = [
         "complaining"
       ]
     ],
-    "a": "3"
+    "a": "3",
+    "t": "wish 가정법"
   },
   {
     "i": "036",
@@ -704,7 +712,8 @@ window.__V502_GRAMMAR__ = [
         "surfaced in 1978."
       ]
     ],
-    "a": "2"
+    "a": "2",
+    "t": "would rather 가정법"
   },
   {
     "i": "038",
@@ -819,7 +828,8 @@ window.__V502_GRAMMAR__ = [
         "in common."
       ]
     ],
-    "a": "4"
+    "a": "4",
+    "t": "소유격 관계대명사와 the"
   },
   {
     "i": "043",
@@ -914,7 +924,8 @@ window.__V502_GRAMMAR__ = [
         "offer made by the publisher."
       ]
     ],
-    "a": "3"
+    "a": "3",
+    "t": "복합관계대명사/복합관계형용사"
   },
   {
     "i": "047",
@@ -1053,7 +1064,8 @@ window.__V502_GRAMMAR__ = [
         "ago."
       ]
     ],
-    "a": "1"
+    "a": "1",
+    "t": "분사구문 시제/수동/부정"
   },
   {
     "i": "054",
@@ -1100,7 +1112,8 @@ window.__V502_GRAMMAR__ = [
         "to the government."
       ]
     ],
-    "a": "2"
+    "a": "2",
+    "t": "접속사 vs. 접속부사"
   },
   {
     "i": "056",
@@ -1171,7 +1184,8 @@ window.__V502_GRAMMAR__ = [
         "may prove irrelevant to the needs of the generations that follow."
       ]
     ],
-    "a": "2"
+    "a": "2",
+    "t": "접속사 vs. 전치사 vs. 부사"
   },
   {
     "i": "059",
@@ -1194,7 +1208,8 @@ window.__V502_GRAMMAR__ = [
         "were ineffective."
       ]
     ],
-    "a": "4"
+    "a": "4",
+    "t": "접속사 관용표현"
   },
   {
     "i": "061",
@@ -1217,7 +1232,8 @@ window.__V502_GRAMMAR__ = [
         "for everyone."
       ]
     ],
-    "a": "1"
+    "a": "1",
+    "t": "동명사 시제"
   },
   {
     "i": "062",
@@ -1264,7 +1280,8 @@ window.__V502_GRAMMAR__ = [
         "apparently been left in the library."
       ]
     ],
-    "a": "2"
+    "a": "2",
+    "t": "동명사 목적어 vs. 부정사 목적어"
   },
   {
     "i": "064",
@@ -1287,7 +1304,8 @@ window.__V502_GRAMMAR__ = [
         "stately trees."
       ]
     ],
-    "a": "2"
+    "a": "2",
+    "t": "need/worth 능동형 동명사 목적어"
   },
   {
     "i": "065",
@@ -1334,7 +1352,8 @@ window.__V502_GRAMMAR__ = [
         "living happily ever after."
       ]
     ],
-    "a": "1"
+    "a": "1",
+    "t": "to 부정사 의미상 주어와 of"
   },
   {
     "i": "067",
@@ -1357,7 +1376,8 @@ window.__V502_GRAMMAR__ = [
         "overgrazed marsh and dune grasses."
       ]
     ],
-    "a": "2"
+    "a": "2",
+    "t": "be to 용법"
   },
   {
     "i": "068",
@@ -1380,7 +1400,8 @@ window.__V502_GRAMMAR__ = [
         "are quite ⑤surprising."
       ]
     ],
-    "a": "4"
+    "a": "4",
+    "t": "to부정사 목적보어"
   },
   {
     "i": "069",
@@ -1423,7 +1444,8 @@ window.__V502_GRAMMAR__ = [
         "there is no scientific evidence of"
       ]
     ],
-    "a": "2"
+    "a": "2",
+    "t": "자동사와 수동태"
   },
   {
     "i": "071",
@@ -1470,7 +1492,8 @@ window.__V502_GRAMMAR__ = [
         "take pride in it."
       ]
     ],
-    "a": "3"
+    "a": "3",
+    "t": "4형식: 수여동사 수동형"
   },
   {
     "i": "073",
@@ -1493,7 +1516,8 @@ window.__V502_GRAMMAR__ = [
         "a problem."
       ]
     ],
-    "a": "3"
+    "a": "3",
+    "t": "5형식: 사역/지각동사 수동태"
   },
   {
     "i": "074",
@@ -1516,7 +1540,8 @@ window.__V502_GRAMMAR__ = [
         "their nature that ⑤is friendly and gregarious."
       ]
     ],
-    "a": "4"
+    "a": "4",
+    "t": "수동의미 자동사"
   },
   {
     "i": "075",
@@ -1539,7 +1564,8 @@ window.__V502_GRAMMAR__ = [
         "to obtain."
       ]
     ],
-    "a": "3"
+    "a": "3",
+    "t": "수동의미 to부정사"
   },
   {
     "i": "076",
@@ -1562,7 +1588,8 @@ window.__V502_GRAMMAR__ = [
         "which ⑤seems to injure man and deface nature."
       ]
     ],
-    "a": "4"
+    "a": "4",
+    "t": "의무 should/ought to/must"
   },
   {
     "i": "078",
@@ -1629,7 +1656,8 @@ window.__V502_GRAMMAR__ = [
         "they have loved her"
       ]
     ],
-    "a": "3"
+    "a": "3",
+    "t": "원급: as-as 속 품사"
   },
   {
     "i": "081",
@@ -1652,7 +1680,8 @@ window.__V502_GRAMMAR__ = [
         "was moved to Albany."
       ]
     ],
-    "a": "1"
+    "a": "1",
+    "t": "원급 관용표현"
   },
   {
     "i": "082",
@@ -1675,7 +1704,8 @@ window.__V502_GRAMMAR__ = [
         "for him to master it."
       ]
     ],
-    "a": "2"
+    "a": "2",
+    "t": "비교급: the와 비교급"
   },
   {
     "i": "083",
@@ -1722,7 +1752,8 @@ window.__V502_GRAMMAR__ = [
         "to my old address."
       ]
     ],
-    "a": "3"
+    "a": "3",
+    "t": "비교표현 강조어구"
   },
   {
     "i": "086",
@@ -1745,7 +1776,8 @@ window.__V502_GRAMMAR__ = [
         "more efficient computers."
       ]
     ],
-    "a": "2"
+    "a": "2",
+    "t": "배수표현"
   },
   {
     "i": "087",
@@ -1792,7 +1824,8 @@ window.__V502_GRAMMAR__ = [
         "with background materials."
       ]
     ],
-    "a": "3"
+    "a": "3",
+    "t": "비교표현과 병렬구조"
   },
   {
     "i": "089",
@@ -1835,7 +1868,8 @@ window.__V502_GRAMMAR__ = [
         "decide, to some extent, what our health"
       ]
     ],
-    "a": ""
+    "a": "",
+    "t": "도치 일반원칙"
   },
   {
     "i": "091",
@@ -1906,7 +1940,8 @@ window.__V502_GRAMMAR__ = [
         "three-quarters of her intelligence."
       ]
     ],
-    "a": "2"
+    "a": "2",
+    "t": "절대적 불가산명사"
   },
   {
     "i": "095",
@@ -1977,7 +2012,8 @@ window.__V502_GRAMMAR__ = [
         "will be able to proceed."
       ]
     ],
-    "a": "3"
+    "a": "3",
+    "t": "이중소유격"
   },
   {
     "i": "101",
@@ -2096,7 +2132,8 @@ window.__V502_GRAMMAR__ = [
         "businesses since January 1999."
       ]
     ],
-    "a": ""
+    "a": "",
+    "t": "such vs. so"
   },
   {
     "i": "107",
@@ -2167,7 +2204,8 @@ window.__V502_GRAMMAR__ = [
         "could not cash my check."
       ]
     ],
-    "a": ""
+    "a": "",
+    "t": "한정적/서술적 형용사"
   },
   {
     "i": "110",
@@ -2210,7 +2248,8 @@ window.__V502_GRAMMAR__ = [
         "their assignments."
       ]
     ],
-    "a": ""
+    "a": "",
+    "t": "난이(難易) 형용사"
   },
   {
     "i": "112",
@@ -2329,7 +2368,8 @@ window.__V502_GRAMMAR__ = [
         "one before."
       ]
     ],
-    "a": ""
+    "a": "",
+    "t": "개별 전치사 용법 ②"
   },
   {
     "i": "118",
@@ -2396,7 +2436,8 @@ window.__V502_GRAMMAR__ = [
         "there"
       ]
     ],
-    "a": ""
+    "a": "",
+    "t": "that절 목적어 전치사"
   },
   {
     "i": "121",
