@@ -1722,6 +1722,7 @@ function switchMode(mode) {
     els.activeSetLabel.textContent = "내정보";
     els.activeSetMeta.textContent = "틀린 문제";
   }
+  updateNoExplainIndicator();
 }
 
 function showRanking() {
@@ -2500,11 +2501,17 @@ function dashCard({ icon, title, desc, accent, onclick, badge }) {
 
 let noExplainMode = localStorage.getItem('v502-noexplain') === '1';
 
+function updateNoExplainIndicator() {
+  const el = document.getElementById('noExplainIndicator');
+  if (el) el.style.display = noExplainMode ? '' : 'none';
+}
+
 function toggleNoExplainMode() {
   noExplainMode = !noExplainMode;
   localStorage.setItem('v502-noexplain', noExplainMode ? '1' : '0');
   const btn = document.getElementById('dashNoExplainBtn');
   if (btn) btn.textContent = noExplainMode ? '⚡ 해설ON' : '⚡ 해설OFF';
+  updateNoExplainIndicator();
 }
 
 function showDashboard() {
@@ -2517,6 +2524,7 @@ function showDashboard() {
     noExBtn.style.display = loggedIn ? '' : 'none';
     noExBtn.textContent = noExplainMode ? '⚡ 해설ON' : '⚡ 해설OFF';
   }
+  updateNoExplainIndicator();
 
   // Greeting lives in the stable hero header (which also holds the login /
   // 내정보 box), so it isn't wiped when the cards below re-render.
