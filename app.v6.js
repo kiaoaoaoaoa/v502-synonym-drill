@@ -2870,7 +2870,9 @@ function showDashboard() {
         cloudSyncAll();
         pushAllScoresToSupabase();
         state._dashSyncing = false;
-        if (!els.dashboardPanel.hidden) showDashboard();
+        if (!els.dashboardPanel.hidden) {
+          setTimeout(() => showDashboard(), 50); // break call-stack recursion
+        }
       }).catch(() => { state._dashSyncing = false; });
     }
   }
