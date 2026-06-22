@@ -666,7 +666,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "t": "wish 가정법"
+    "t": "wish 가정법",
+    "exp": "letting colonoscopy to slip -> letting colonoscopy slip. let + O + RV (사역동사 원형부정사). to 제거해야 함."
   },
   {
     "i": "036",
@@ -2041,7 +2042,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "t": "현재완료 vs. 과거",
-    "exp": "'for the past few days'는 현재완료(have/has + pp) 신호. Mary가 3인칭 단수이므로 'has been'."
+    "exp": "for the past/last + 기간 = 현재완료(have/has + p.p.)"
   },
   {
     "i": "103",
@@ -2141,7 +2142,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "t": "since 완료시제",
-    "exp": "'since January 1999'는 현재완료 필요. ② 'it's used' → 'it has been used'여야 함."
+    "exp": "since + 과거시점 -> 현재완료. it's used(현재) -> it has been used(현재완료)."
   },
   {
     "i": "107",
@@ -2216,7 +2217,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "t": "대과거 vs. 과거",
-    "exp": "'By the time I reached'(과거) → 대과거 필요. ③ 'were closed' → 'had been closed'여야 함."
+    "exp": "By the time + 과거(reached) -> 대과거(had p.p.). were closed -> had been closed."
   },
   {
     "i": "110",
@@ -2337,7 +2338,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "4",
     "t": "현재완료 vs. 과거",
-    "exp": "half an hour ago = 명백한 과거시점 → 단순과거 finished."
+    "exp": "ago/yesterday/last night = 명백한 과거시점 -> 단순과거."
   },
   {
     "i": "116",
@@ -2482,7 +2483,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "If she were the manager. would not treat -> were",
+    "exp": "If S + were (가정법 과거). were for all persons.",
     "t": "가정법과거"
   },
   {
@@ -2532,7 +2533,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "I would -> subjunctive past. could for ability",
+    "exp": "I would(I'd) -> 가정법 과거. 능력은 could. may/can/will은 가정법 if절 불가.",
     "t": "가정법과거"
   },
   {
@@ -3124,7 +3125,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "as if she had never seen. Past perfect after past tense 'looked'.",
+    "exp": "as if + had p.p. (과거 반대). had never seen.",
     "t": "관계대명사"
   },
   {
@@ -3174,7 +3175,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "It's about time + past tense. 'you went to work' (가정법 과거).",
+    "exp": "It is about time + S + 과거동사. went.",
     "t": "관계대명사 계속적 용법"
   },
   {
@@ -3345,7 +3346,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "It is necessary that S + RV (원형). 'fill out and send in'.",
+    "exp": "It is necessary that S + RV (원형). 가정법 현재.",
     "t": "분사"
   },
   {
@@ -3637,7 +3638,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "'whose meanings we do not know'. 소유격 관계대명사 whose.",
+    "exp": "whose meanings we do not know. 소유격 관계대명사.",
     "t": "관계대명사"
   },
   {
@@ -4503,8 +4504,8 @@ window.__V502_GRAMMAR__ = [
         "more of his works."
       ]
     ],
-    "a": "3",
-    "exp": "other + 복수, another + 단수.",
+    "a": "2",
+    "exp": "look forward to + ~ing. meeting.",
     "t": "other vs. another"
   },
   {
@@ -5167,7 +5168,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "Hardly had he entered when. 도치.",
+    "exp": "Hardly had he entered (도치). Hardly he had entered (X).",
     "t": "도치"
   },
   {
@@ -5263,7 +5264,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "resented being informed. resent + ~ing.",
+    "exp": "resent + ~ing. being informed.",
     "t": "동명사"
   },
   {
@@ -5434,7 +5435,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "acknowledged receiving. acknowledge + ~ing.",
+    "exp": "acknowledge + ~ing. receiving.",
     "t": "동명사"
   },
   {
@@ -6593,7 +6594,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "Politics is said to be. Politics = 단수.",
+    "exp": "Politics = 단수취급. is said to be.",
     "t": "수일치"
   },
   {
@@ -6639,7 +6640,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "must have walked. must have p.p. 과거 강한 추측.",
+    "exp": "must have p.p. 과거 강한 추측. must have walked.",
     "t": "must have pp"
   },
   {
@@ -7131,7 +7132,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "as sweet as. 원급비교.",
+    "exp": "as + 형용사 + as 원급비교. as sweet as.",
     "t": "원급"
   },
   {
@@ -7306,7 +7307,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "the larger of which. 관계대명사.",
+    "exp": "the larger of which. 전치사 + 관계대명사.",
     "t": "관계대명사"
   },
   {
@@ -7451,8 +7452,8 @@ window.__V502_GRAMMAR__ = [
         "much inferior than the modern systems already in use in Malaysia and Thailand."
       ]
     ],
-    "a": "1",
-    "exp": "Most of the telephone systems were. 수일치.",
+    "a": "3",
+    "exp": "superior/inferior + to (not than).",
     "t": "수일치"
   },
   {
@@ -8757,7 +8758,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "The number...was. the number + 단수동사.",
+    "exp": "The number of = 단수동사. were -> was.",
     "t": "수일치"
   },
   {
@@ -9370,7 +9371,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "'Mary is the last girl to tell a lie.' the last + to RV. [4th choice lost in extraction; answer auto-set to 1st choice - verify manually]",
+    "exp": "too honest a girl to tell a lie. too + adj + a + noun. so/such need different article positions.",
     "t": "to부정사"
   },
   {
@@ -10011,8 +10012,8 @@ window.__V502_GRAMMAR__ = [
         "large five blue shoes"
       ]
     ],
-    "a": "1",
-    "exp": "'The ones on the floor.'",
+    "a": "3",
+    "exp": "Adjective order: Number(five) > Size(large) > Color(blue) > Noun(shoes). five large blue shoes.",
     "t": "대명사"
   },
   {
@@ -10328,8 +10329,8 @@ window.__V502_GRAMMAR__ = [
         "most all the money he"
       ]
     ],
-    "a": "1",
-    "exp": "'By the time he was forty, he had become one of the most celebrated...' [4th choice lost in extraction; answer auto-set to 1st choice - verify manually]",
+    "a": "2",
+    "exp": "By the time he was forty(과거) -> had become(대과거). 과거 시점까지 완료된 일.",
     "t": "시제"
   },
   {
@@ -10575,7 +10576,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "'distinguish between good and evil.' distinguish between.",
+    "exp": "distinguish between A and B.",
     "t": "전치사"
   },
   {
