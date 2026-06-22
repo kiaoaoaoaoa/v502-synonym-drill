@@ -2678,9 +2678,20 @@ function renderWordcheckQuestion() {
   document.getElementById('wordcheckFeedback').style.display = 'none';
 }
 
+// q.a may be a choice letter ("B") or a 1-based index ("2"); some data files
+// (e.g. the rebuilt v201) store the index. Resolve to the actual choice letter.
+function wordcheckCorrectLetter(q) {
+  const a = String(q.a).trim();
+  if (q.c.some(([l]) => l === a)) return a;
+  const n = parseInt(a, 10);
+  if (!isNaN(n) && q.c[n - 1]) return q.c[n - 1][0];
+  return a;
+}
+
 function submitWordcheckAnswer(letter) {
   const q = wordcheckQuestions[wcState.index];
-  const correct = letter === q.a;
+  const answerLetter = wordcheckCorrectLetter(q);
+  const correct = letter === answerLetter;
   if (correct) wcState.correct++;
   wcState.answers.push({ id: q.i, correct });
 
@@ -2693,7 +2704,7 @@ function submitWordcheckAnswer(letter) {
   // Build explanation
   let expHTML = correct
     ? `<strong style="color:#2e7d32">✅ Correct!</strong>`
-    : `<strong style="color:#c62828">❌ Wrong — answer is (${q.a})</strong>`;
+    : `<strong style="color:#c62828">❌ Wrong — answer is (${answerLetter})</strong>`;
 
   if (q.k) {
     expHTML += `<p style="margin:8px 0 4px;font-size:13px">📝 ${q.k}</p>`;
@@ -2702,7 +2713,7 @@ function submitWordcheckAnswer(letter) {
   // Show all choices with correct/wrong markers
   expHTML += '<div style="margin-top:8px;font-size:13px">';
   q.c.forEach(([l, t]) => {
-    if (l === q.a) {
+    if (l === answerLetter) {
       expHTML += `<div style="color:#2e7d32;padding:2px 0">✓ (${l}) ${t}</div>`;
     } else if (l === letter && !correct) {
       expHTML += `<div style="color:#c62828;padding:2px 0">✗ (${l}) ${t}</div>`;
