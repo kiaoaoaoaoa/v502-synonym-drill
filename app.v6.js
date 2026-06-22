@@ -770,7 +770,8 @@ function renderQuestion() {
     els.feedback.hidden = true;
     els.feedback.className = "feedback";
     els.feedback.textContent = "";
-    els.postFeedbackActions.hidden = true;
+    // 해설ON: keep postFeedbackActions visible so Submit button is shown
+    els.postFeedbackActions.hidden = noExplainMode;
   }
 
   renderProgress();
