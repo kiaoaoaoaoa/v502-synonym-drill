@@ -2729,16 +2729,19 @@ function showDashboard() {
   els.dashboardPanel.hidden = false;
   const loggedIn = !!state.playerName;
 
-  // Pull latest cloud data in background, then refresh dashboard
-  if (loggedIn) {
+  // Pull latest cloud data in background, then refresh dashboard (once)
+  if (loggedIn && !state._dashSyncing) {
     const store = readPasswordStore();
     const stored = store[state.playerName.toLowerCase()];
     if (stored) {
+      state._dashSyncing = true;
       const pw = typeof stored === 'string' ? stored : atob(stored.password);
       cloudCheckCred(state.playerName, pw).then(() => {
         cloudSyncAll();
+        pushAllScoresToSupabase();
+        state._dashSyncing = false;
         showDashboard(); // re-render with fresh data
-      }).catch(() => {});
+      }).catch(() => { state._dashSyncing = false; });
     }
   }
   // Update 해설 button visibility and state
