@@ -2321,6 +2321,11 @@ function renderLogicQuestion() {
   logicState.answered = false;
   els.logicQuestionText.innerHTML = `<strong>Q${logicState.currentIndex + 1}.</strong> ${escapeHtml(q.question)}`;
   els.logicOptions.innerHTML = "";
+
+  // Hide submit/next in noExplainMode
+  els.logicSubmitBtn.style.display = noExplainMode ? 'none' : '';
+  els.logicNextBtn.style.display = noExplainMode ? 'none' : '';
+
   q.options.forEach((opt, i) => {
     const btn = document.createElement("button");
     btn.className = "option";
@@ -2329,9 +2334,14 @@ function renderLogicQuestion() {
     btn.addEventListener("click", () => {
       if (logicState.answered) return;
       logicState.selectedOption = opt;
-      els.logicOptions.querySelectorAll(".option").forEach(b => b.classList.remove("selected"));
-      btn.classList.add("selected");
-      setBtnDisabled(els.logicSubmitBtn, false);
+      if (noExplainMode) {
+        // Immediate submit + flash + auto-advance
+        logicSubmitNoExplain(opt, btn, q);
+      } else {
+        els.logicOptions.querySelectorAll(".option").forEach(b => b.classList.remove("selected"));
+        btn.classList.add("selected");
+        setBtnDisabled(els.logicSubmitBtn, false);
+      }
     });
     els.logicOptions.appendChild(btn);
   });
@@ -2344,6 +2354,41 @@ function renderLogicQuestion() {
   const totalPool = (window.__V502_LOGIC__ && window.__V502_LOGIC__.questions || []).length;
   els.logicRemaining.textContent = `(남은 문제: ${totalPool - answered}개)`;
   els.logicProgressBar.style.width = `${Math.round(((logicState.currentIndex) / logicState.questions.length) * 100)}%`;
+}
+
+function logicSubmitNoExplain(opt, clickedBtn, q) {
+  logicState.answered = true;
+  const correct = opt === q.answer;
+  if (correct) {
+    logicState.correctCount++;
+    saveLogicCorrect(q.id);
+  } else {
+    saveLogicWrong(q.id);
+  }
+  persistLogicRanking();
+
+  // Flash feedback on clicked button
+  const origBg = clickedBtn.style.background;
+  clickedBtn.style.background = correct ? '#e8f5e9' : '#fce4ec';
+  clickedBtn.textContent = (correct ? '✓ ' : '✗ ') + clickedBtn.textContent;
+
+  // Also highlight correct answer
+  if (!correct) {
+    els.logicOptions.querySelectorAll(".option").forEach(b => {
+      const optText = b.querySelector("span")?.textContent?.replace(/^[A-D]\. /, "");
+      if (optText === q.answer) b.style.background = '#e8f5e9';
+      b.disabled = true;
+    });
+  }
+
+  setTimeout(() => {
+    logicState.currentIndex++;
+    if (logicState.currentIndex >= logicState.questions.length) {
+      finishLogicQuiz();
+    } else {
+      renderLogicQuestion();
+    }
+  }, 350);
 }
 
 function submitLogicAnswer() {
