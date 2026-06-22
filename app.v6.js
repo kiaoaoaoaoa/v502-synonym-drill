@@ -757,20 +757,11 @@ function renderQuestion() {
 
   if (saved) {
     if (noExplainMode) {
-      // Brief flash + auto-advance
-      els.feedback.hidden = false;
-      els.feedback.className = `feedback ${saved.correct ? "ok" : "no"}`;
-      els.feedback.innerHTML = saved.correct ? '<strong>✅ Correct</strong>' : `<strong>❌ Incorrect — answer: ${escapeHtml(question.answer.join(" / "))}</strong>`;
+      // 해설OFF: no explanation/feedback (submit auto-advances past answered questions)
+      els.feedback.hidden = true;
+      els.feedback.className = "feedback";
+      els.feedback.textContent = "";
       els.postFeedbackActions.hidden = true;
-      // Auto-advance after delay
-      setTimeout(() => {
-        if (state.questionIndex === state.questions.length - 1) {
-          completeQuiz();
-        } else {
-          state.questionIndex++;
-          renderQuestion();
-        }
-      }, 500);
     } else {
       showFeedback(saved.correct, question);
       els.postFeedbackActions.hidden = false;
@@ -966,12 +957,13 @@ function toggleSelection(word) {
     state.currentSelection.add(word);
   }
 
-  renderQuestion();
-
-  // Auto-submit when 2 options selected in noExplainMode
+  // 해설OFF: as soon as two are picked, submit and jump straight to the next question
   if (noExplainMode && state.currentSelection.size === 2) {
     submitAnswer();
+    return;
   }
+
+  renderQuestion();
 }
 
 function submitAnswer() {
@@ -998,7 +990,17 @@ function submitAnswer() {
     }
   }
   saveQuizProgress();
-  renderQuestion();
+  if (noExplainMode) {
+    // 해설OFF: advance immediately to the next question (or finish the quiz)
+    if (state.questionIndex >= state.questions.length - 1) {
+      completeQuiz();
+    } else {
+      state.questionIndex++;
+      renderQuestion();
+    }
+  } else {
+    renderQuestion();
+  }
 }
 
 function renderProgress() {
@@ -1398,9 +1400,9 @@ function sortedLeaderboard(entries) {
 /* Cumulative leaderboard: best attempt per (nickname, setId), summed across sets */
 function cumulativeLeaderboard(entries, setId = null) {
   const best = new Map();
-  const hiddenNames = new Set(['_sync_rls_test','_rlstest_USERDATA','_rlstest_WORDCHECK','_rlstest_CRED','_rlstest_SYNC','_rlstest_001-010','_rlstest_LOGIC','test_ranking_8568','test5678','f1','f2','f3','v1','rt1','rt4','run1','checker','fulltest','verify1','ranktest2','PublicTester','RankTest','SidebarTest','ㅇㅇ']);
+  const hiddenNames = new Set([]); // 모든 닉네임 랭킹 표시
   const filtered = (setId ? entries.filter((e) => e.setId === setId || (!e.setId && setId === "001-010")) : entries)
-    .filter(e => !e.name || (!e.name.startsWith('_') && !hiddenNames.has(e.name) && !e.name.startsWith('test')));
+    .filter(e => !!e.name);
 
   for (const entry of filtered) {
     const rawSet = String(entry.setId || "001-010");
