@@ -918,7 +918,7 @@ function showFeedback(correct, question) {
       ${promptExample ? `<p class="explain-example"><strong>📖 예문:</strong> ${escapeHtml(promptExample)}</p>` : ""}
       <p><strong>Correct pair:</strong> ${escapeHtml(question.answer.join(" / "))}</p>
     </div>
-    <p class="explain-section-label">📋 Option Analysis</p>
+    <p class="explain-section-label" onclick="this.classList.toggle('collapsed');this.nextElementSibling.classList.toggle('hidden')">📋 Option Analysis ▾</p>
     <ul class="explain-list detailed">${optionRows}</ul>
   `;
 }
@@ -2618,7 +2618,9 @@ function renderLogicQuestion() {
   if (!q) return;
   logicState.selectedOption = null;
   logicState.answered = false;
-  els.logicQuestionText.innerHTML = `<strong>Q${logicState.currentIndex + 1}.</strong> ${escapeHtml(q.question)}`;
+  const diff = window.__V502_LOGIC_DIFFICULTY__ ? window.__V502_LOGIC_DIFFICULTY__.get(q.id) : null;
+  const rateTag = diff != null ? ` <span style="font-size:12px;font-weight:600;color:${diff >= 70 ? '#34c759' : diff >= 40 ? '#d4a017' : '#e11d48'}">(예상정답률 ${diff}%)</span>` : '';
+  els.logicQuestionText.innerHTML = `<strong>Q${logicState.currentIndex + 1}.</strong>${rateTag} ${escapeHtml(q.question)}`;
   els.logicOptions.innerHTML = "";
 
   // Hide submit/next in noExplainMode
