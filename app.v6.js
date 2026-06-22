@@ -1143,7 +1143,7 @@ function renderAuthUI() {
   }
 }
 
-function handleLogin() {
+async function handleLogin() {
   const name = els.authNicknameInput.value.trim();
   const pw = els.authPasswordInput.value.trim();
   els.authError.hidden = true;
@@ -1162,9 +1162,21 @@ function handleLogin() {
   const store = readPasswordStore();
   const key = name.toLowerCase();
   if (!store[key]) {
-    els.authError.textContent = "등록되지 않은 닉네임입니다. '계정등록'을 먼저 해주세요.";
-    els.authError.hidden = false;
-    return;
+    // Check cloud (cross-device)
+    const cloudResult = await cloudCheckCred(name, pw);
+    if (cloudResult === 'OK') {
+      store[key] = { password: btoa(pw), displayName: name };
+      localStorage.setItem(passwordStoreKey, JSON.stringify(store));
+      // Fall through to login below
+    } else if (cloudResult === 'WRONG_PW') {
+      els.authError.textContent = "비밀번호가 일치하지 않습니다.";
+      els.authError.hidden = false;
+      return;
+    } else {
+      els.authError.textContent = "등록되지 않은 닉네임입니다. '계정등록'을 먼저 해주세요.";
+      els.authError.hidden = false;
+      return;
+    }
   }
   // Support both old plain-text and new btoa-encoded passwords
   const stored = store[key];
@@ -1218,6 +1230,7 @@ function handleRegister() {
   els.authNicknameInput.value = "";
   els.authPasswordInput.value = "";
   checkAndShowResume();
+  cloudSyncAll();
 }
 
 function checkAndShowResume() {
@@ -1450,10 +1463,43 @@ function getLeaderboardTable() {
   return getDbConfig().tableName || "leaderboard_scores";
 }
 
-/* ── Supabase: leaderboard scores already sync automatically ──
-   Cross-device auth requires a 'payload' text column in leaderboard_scores.
-   To enable: ALTER TABLE leaderboard_scores ADD COLUMN payload TEXT;
-   Then uncomment the cloud auth functions below. */
+/* ── Supabase cloud sync (cross-device) ── */
+const V502_CLOUD = 'v502-cloud-enabled';
+
+async function cloudSyncAll() {
+  if (!state.playerName || !hasPublicConfig()) return;
+  const client = await getSupabaseClient(); if (!client) return;
+  const nk = state.playerName.toLowerCase();
+  const store = readPasswordStore();
+  const pw = store[nk] ? (typeof store[nk]==='string' ? store[nk] : atob(store[nk].password)) : '';
+  try {
+    await client.from(getLeaderboardTable()).upsert({
+      nickname: state.playerName,
+      quiz_set: 'CRED',
+      correct_count: pw.length,
+      total_count: pw.charCodeAt(0) || 0,
+      accuracy: pw ? (pw.charCodeAt(pw.length-1) || 0) : 0,
+    }, { onConflict: 'nickname,quiz_set' });
+  } catch(e) {}
+  localStorage.setItem(V502_CLOUD, Date.now().toString());
+}
+
+async function cloudCheckCred(nickname, password) {
+  if (!hasPublicConfig()) return null;
+  const client = await getSupabaseClient(); if (!client) return null;
+  try {
+    const { data } = await client.from(getLeaderboardTable())
+      .select('correct_count,total_count,accuracy')
+      .eq('nickname', nickname).eq('quiz_set', 'CRED').maybeSingle();
+    if (!data) return 'NOT_FOUND';
+    if (data.correct_count === password.length &&
+        data.total_count === (password.charCodeAt(0) || 0) &&
+        data.accuracy === (password.charCodeAt(password.length-1) || 0)) {
+      return 'OK';
+    }
+    return 'WRONG_PW';
+  } catch(e) { return null; }
+}
 
 function normalizePublicScore(row) {
   return {
