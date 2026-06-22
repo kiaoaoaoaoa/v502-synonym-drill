@@ -6,7 +6,7 @@ window.__V502_EXT__.categorySummaries=window.__V502_EXT__.categorySummaries||{};
 window.__V502_EXT__.confusionNotes=window.__V502_EXT__.confusionNotes||{};
 
 window.__V502_EXT__.categories.push(
-  {id:"061",words:["bountiful", "freehanded", "generous", "hospitable", "lavish", "liberal", "magnanimous", "munificent", "openhanded", "ungrudging", "unstinting", "Lilliputian", "narrow-minded", "hidebound", "indulgent", "permissive", "tolerant"]},
+  {id:"061",words:["bountiful", "freehanded", "generous", "hospitable", "lavish", "liberal", "magnanimous", "munificent", "openhanded", "ungrudging", "unstinting", "indulgent", "permissive", "tolerant"]},
   {id:"062",words:["apposite", "appropriate", "apt", "germane", "meet", "pertinent", "proper", "relevant", "suitable"]},
   {id:"063",words:["extraneous", "extrinsic", "impertinent", "improper", "inappropriate", "inapt", "irrelevant", "unsuitable"]},
   {id:"064",words:["buffoon", "clown", "motley"]},
