@@ -1875,9 +1875,9 @@ window.__V502_GRAMMAR__ = [
         "The president went fishing after he has finished the breakfast."
       ]
     ],
-    "a": "1",
+    "a": "4",
     "t": "비교대상 생략",
-    "exp": "that of. 비교대상 일치."
+    "exp": "after he has finished -> after he HAD finished. Speaker went fishing(past) after earlier action."
   },
   {
     "i": "088",
@@ -2046,9 +2046,9 @@ window.__V502_GRAMMAR__ = [
         "I am having a lot of fun with this puzzle book."
       ]
     ],
-    "a": "4",
+    "a": "3",
     "t": "명사 기타",
-    "exp": "many a + 단수명사 + 단수동사."
+    "exp": "I am having this apartment -> I HAVE this apartment. have=possession cannot be progressive."
   },
   {
     "i": "096",
@@ -3009,8 +3009,8 @@ window.__V502_GRAMMAR__ = [
         "Had it not been for"
       ]
     ],
-    "a": "4",
-    "exp": "Had it not been for = correct. But for/Without/If it were not for all valid for present. Q asks NOT correct - Had it not been for is past, context needs present.",
+    "a": "3",
+    "exp": "If it WERE not for(now) + should have failed(past)=tense mismatch. Should be If it HAD not been for.",
     "t": "가정법과거완료"
   },
   {
@@ -4411,7 +4411,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "many + 가산복수, much + 불가산. many books, much water.",
+    "exp": "Actually review: 96.5 FM is one radio station that I listen a lot. Needs TO: listen TO. But Q may be corrupted. Leaving a=3.",
     "t": "many vs. much"
   },
   {
@@ -5173,8 +5173,8 @@ window.__V502_GRAMMAR__ = [
         "I don't know if this answer is correct."
       ]
     ],
-    "a": "1",
-    "exp": "문법 오류 찾기. 수일치/시제 확인.",
+    "a": "3",
+    "exp": "I dont know THAT this answer is correct OR NOT -> know WHETHER. know that+or not is wrong.",
     "t": "수일치"
   },
   {
@@ -5590,8 +5590,8 @@ window.__V502_GRAMMAR__ = [
         "We enjoyed too much and we nearly missed the plane."
       ]
     ],
-    "a": "1",
-    "exp": "NOT correct: Gas lamps lit->Gas lamps were lit? 수동태. ①확인.",
+    "a": "2",
+    "exp": "must remember SEEING him next Sunday -> must remember TO SEE. remember+Ving=past, but next Sunday=future.",
     "t": "문법"
   },
   {
@@ -6328,8 +6328,8 @@ window.__V502_GRAMMAR__ = [
         "This bed was not slept in."
       ]
     ],
-    "a": "1",
-    "exp": "NOT correct: He was killed? 실제로 killed된건 맞음. ①확인필요. 실제 오류는?",
+    "a": "3",
+    "exp": "His father IS RESEMBLED by John -> resemble cannot be passive. His father resembles John.",
     "t": "문법"
   },
   {
@@ -6921,7 +6921,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "CORRECT 문장 선택. 답 유지.",
+    "exp": "All 4 options are unnatural. must+be+having+been+interrogated is least ungrammatical. Q possibly corrupted.",
     "t": "문법"
   },
   {
@@ -7041,8 +7041,8 @@ window.__V502_GRAMMAR__ = [
         "They always speak low lest they should not be overheard."
       ]
     ],
-    "a": "1",
-    "exp": "CORRECT 문장 선택. 답 유지.",
+    "a": "3",
+    "exp": "lest they be overheard. lest+S+RV = so that S not RV. speak low lest they be overheard = correct.",
     "t": "조동사"
   },
   {
@@ -8496,8 +8496,8 @@ window.__V502_GRAMMAR__ = [
         "They didn't read the play. Nor did they act it."
       ]
     ],
-    "a": "3",
-    "exp": "CORRECT 문장. 답 유지.",
+    "a": "4",
+    "exp": "Nor did they act it. After negative, inversion required. Neither/Nor + auxiliary + subject.",
     "t": "문법"
   },
   {
@@ -8667,8 +8667,8 @@ window.__V502_GRAMMAR__ = [
         "Three days is not long enough for a good holiday."
       ]
     ],
-    "a": "4",
-    "exp": "NOT correct. 답 유지.",
+    "a": "1",
+    "exp": "The police WANTS -> The police WANT. police=plural.",
     "t": "문법"
   },
   {
@@ -8788,8 +8788,8 @@ window.__V502_GRAMMAR__ = [
         "How much sugar do you want?"
       ]
     ],
-    "a": "4",
-    "exp": "NOT correct 수일치. 답 유지.",
+    "a": "3",
+    "exp": "a LITTLE bananas -> a FEW bananas. little+uncountable, bananas=countable.",
     "t": "수일치"
   },
   {
@@ -10635,8 +10635,8 @@ window.__V502_GRAMMAR__ = [
         "I hope to get to your house by 7:00 at the latest."
       ]
     ],
-    "a": "4",
-    "exp": "NOT correct 전치사. 답 유지.",
+    "a": "2",
+    "exp": "I have known her DURING a very long time -> FOR a very long time. during+specific period, for+duration.",
     "t": "전치사"
   },
   {
