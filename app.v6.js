@@ -1674,25 +1674,45 @@ async function savePublicScore(entry) {
   const client = await getSupabaseClient();
   if (!client) return null;
 
-  // Check if a score already exists for this (nickname, quiz_set)
-  const { data: existing } = await client
+  const isCumulative = entry.setId === 'LOGIC' || entry.setId === 'WORDCHECK' || entry.setId === 'SYNONYM';
+
+  // Check if any rows already exist for this (nickname, quiz_set)
+  const { data: existingRows } = await client
     .from(getLeaderboardTable())
     .select("id,accuracy")
     .eq("nickname", entry.name)
-    .eq("quiz_set", entry.setId)
-    .maybeSingle();
+    .eq("quiz_set", entry.setId);
 
-  if (existing) {
-    // For cumulative quizzes (LOGIC, WORDCHECK, SYNONYM), always insert new row (total grows over time)
-    // For regular quizzes, only insert if accuracy is better
-    const isCumulative = entry.setId === 'LOGIC' || entry.setId === 'WORDCHECK' || entry.setId === 'SYNONYM';
-    if (!isCumulative && entry.accuracy <= existing.accuracy) {
-      return existing.id; // Keep existing better score
+  const hasExisting = existingRows && existingRows.length > 0;
+
+  if (hasExisting) {
+    if (isCumulative) {
+      // Update ALL matching rows — cumulative scores grow over time
+      const { error } = await client
+        .from(getLeaderboardTable())
+        .update({
+          correct_count: entry.correct,
+          total_count: entry.total,
+          accuracy: entry.accuracy,
+        })
+        .eq("nickname", entry.name)
+        .eq("quiz_set", entry.setId);
+      if (error) throw error;
+      return existingRows[0].id;
     }
-    // Fall through: insert new row (RLS only allows INSERT, not UPDATE/DELETE)
+    // Non-cumulative: only update if new score is better
+    const bestExisting = existingRows.reduce((a, b) => a.accuracy > b.accuracy ? a : b);
+    if (entry.accuracy <= bestExisting.accuracy) {
+      return bestExisting.id;
+    }
+    // Delete old rows, insert new best score
+    await client.from(getLeaderboardTable())
+      .delete()
+      .eq("nickname", entry.name)
+      .eq("quiz_set", entry.setId);
   }
 
-  // Insert new score (always works — RLS allows INSERT)
+  // Insert new score
   const { data, error } = await client
     .from(getLeaderboardTable())
     .insert({
@@ -3114,7 +3134,10 @@ function renderWordcheckQuestion() {
 
   const qEl = document.getElementById('wordcheckQuestion');
   // Underline quoted words (target vocabulary)
-  qEl.innerHTML = escapeHtml(q.q).replace(/'([^']+)'/g, "'<u>$1</u>'");
+  qEl.innerHTML = (() => {
+    const raw = q.q.replace(/'([^']+)'/g, "'\uE000$1\uE001'");
+    return escapeHtml(raw).replace(/\uE000/g, '<u>').replace(/\uE001/g, '</u>');
+  })();
 
   const choicesEl = document.getElementById('wordcheckChoices');
   choicesEl.innerHTML = '';
@@ -3501,7 +3524,12 @@ function renderExamTab() {
       var pHtml = escapeHtml(q.p).replace(/「([^」]+)」/g, '<u>$1</u>');
       html += `<div style="margin:0 0 12px;padding:10px 14px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;font-size:14px;line-height:1.7">${pHtml}</div>`;
     }
-    var qHtml = escapeHtml(q.q).replace(/'([^']+)'/g, "'<u>$1</u>'").replace(/「([^」]+)」/g, '<u>$1</u>');
+    var qHtml = q.q
+      .replace(/'([^']+)'/g, "'\uE000$1\uE001'")
+      .replace(/「([^」]+)」/g, '\uE000$1\uE001');
+    qHtml = escapeHtml(qHtml)
+      .replace(/\uE000/g, '<u>')
+      .replace(/\uE001/g, '</u>');
     html += `<p style="font-weight:600;margin:0 0 10px">${qHtml}</p>`;
     if (q.c && q.c.length > 0) {
       html += '<div style="display:grid;gap:4px">';
