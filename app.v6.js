@@ -1705,7 +1705,7 @@ function switchMode(mode) {
   // Update current set display
   if (mode === 'logic') {
     els.activeSetLabel.textContent = "논리문제";
-    els.activeSetMeta.textContent = "300 questions";
+    els.activeSetMeta.textContent = `${getLogicTotal()} questions`;
   } else if (mode === 'wordlist') {
     els.activeSetLabel.textContent = "단어일람보기";
     els.activeSetMeta.textContent = "620 categories";
@@ -2178,6 +2178,9 @@ function getLogicWrong() {
   const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
   return new Set((p[key] && p[key].wrong) || []);
 }
+function getLogicTotal() {
+  return (window.__V502_LOGIC__ && window.__V502_LOGIC__.questions || []).length;
+}
 
 /* Push the player's *cumulative* logic stats to the ranking, immediately after
    each answer. One row per user (quiz_set "LOGIC") holding the running total:
@@ -2391,7 +2394,7 @@ function finishLogicQuiz() {
   const cumCorrect = getLogicCompleted().size;
   const cumTotal = cumCorrect + getLogicWrong().size;
   const cumPct = cumTotal ? Math.round((cumCorrect / cumTotal) * 100) : 0;
-  const remaining = 300 - cumTotal;
+  const remaining = getLogicTotal() - cumTotal;
   els.logicPanel.hidden = true;
   els.resultPanel.hidden = false;
   els.resultTitle.textContent = "Logic Quiz Result";
@@ -2450,7 +2453,7 @@ function showDashboard() {
     const score = cum ? cum.correct : 0;
     html += `<div class="dash-stats">
       <div class="dash-stat"><span class="dash-stat-num">${synMastered}</span><span class="dash-stat-label">외운 단어</span></div>
-      <div class="dash-stat"><span class="dash-stat-num">${logicMastered}<small>/300</small></span><span class="dash-stat-label">논리 마스터</span></div>
+      <div class="dash-stat"><span class="dash-stat-num">${logicMastered}<small>/${getLogicTotal()}</small></span><span class="dash-stat-label">논리 마스터</span></div>
       <div class="dash-stat"><span class="dash-stat-num">${score}</span><span class="dash-stat-label">통합 점수</span></div>
     </div>`;
   }
@@ -2542,7 +2545,7 @@ function showMyReview() {
 
   // Logic progress
   const logicMastered = getLogicCompleted().size;
-  const logicTotal = 300;
+  const logicTotal = getLogicTotal();
 
   // Ranking
   const entries = readLeaderboard().filter(e => state.playerName && e.name.toLowerCase() === state.playerName.toLowerCase());
@@ -2615,7 +2618,7 @@ function renderMyInfoTab(tab) {
     const totalSyn = 3980;
     const pct = Math.round((completed / totalSyn) * 100);
     const logicMastered = getLogicCompleted().size;
-    const logicTotal = 300;
+    const logicTotal = getLogicTotal();
     const entries = readLeaderboard().filter(e => state.playerName && e.name.toLowerCase() === state.playerName.toLowerCase());
     const best = new Map();
     for (const e of entries) {
