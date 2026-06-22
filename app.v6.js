@@ -2390,6 +2390,12 @@ if (savedSession && savedSession.name) {
   if (store[key]) {
     const stored = store[key];
     state.playerName = (typeof stored === 'object' && stored.displayName) ? stored.displayName : savedSession.name;
+    // Pull latest cloud data, then push local state
+    const pw = typeof stored === 'string' ? stored : atob(stored.password);
+    cloudCheckCred(state.playerName, pw).then(() => {
+      cloudSyncAll();
+      pushAllScoresToSupabase();
+    }).catch(() => {});
     setTimeout(() => {
       updateSidebarCompletion();
       checkAndShowResume();
@@ -2722,6 +2728,19 @@ function showDashboard() {
   switchMode('dashboard');
   els.dashboardPanel.hidden = false;
   const loggedIn = !!state.playerName;
+
+  // Pull latest cloud data in background, then refresh dashboard
+  if (loggedIn) {
+    const store = readPasswordStore();
+    const stored = store[state.playerName.toLowerCase()];
+    if (stored) {
+      const pw = typeof stored === 'string' ? stored : atob(stored.password);
+      cloudCheckCred(state.playerName, pw).then(() => {
+        cloudSyncAll();
+        showDashboard(); // re-render with fresh data
+      }).catch(() => {});
+    }
+  }
   // Update 해설 button visibility and state
   const noExBtn = document.getElementById('dashNoExplainBtn');
   if (noExBtn) {
