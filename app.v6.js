@@ -2872,13 +2872,29 @@ function submitWordcheckAnswer(letter) {
   persistWordcheckRanking();
 
   if (noExplainMode) {
-    // Skip feedback, go straight to next question
-    wcState.index++;
-    if (wcState.index >= wordcheckQuestions.length) {
-      finishWordcheck();
-    } else {
-      renderWordcheckQuestion();
+    // Quick flash: show correct/wrong on the clicked button, then auto-advance
+    const buttons = document.querySelectorAll('#wordcheckChoices button');
+    buttons.forEach(b => b.disabled = true);
+    const clickedBtn = [...buttons].find(b => b.textContent.startsWith(`(${letter})`));
+    if (clickedBtn) {
+      const origBg = clickedBtn.style.background;
+      clickedBtn.style.background = correct ? '#e8f5e9' : '#fce4ec';
+      clickedBtn.style.borderColor = correct ? '#a5d6a7' : '#ef9a9a';
+      clickedBtn.textContent = (correct ? '✓ ' : '✗ ') + clickedBtn.textContent;
+      if (!correct) {
+        // Also highlight the correct answer briefly
+        const correctBtn = [...buttons].find(b => b.textContent.startsWith(`(${answerLetter})`));
+        if (correctBtn) correctBtn.style.background = '#e8f5e9';
+      }
     }
+    setTimeout(() => {
+      wcState.index++;
+      if (wcState.index >= wordcheckQuestions.length) {
+        finishWordcheck();
+      } else {
+        renderWordcheckQuestion();
+      }
+    }, 300);
     return;
   }
 
