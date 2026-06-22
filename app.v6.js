@@ -2470,12 +2470,8 @@ function showDashboard() {
   html += dashCard({ icon: '📋', title: '단어일람보기', desc: '전체 단어 사전', accent: 'slate', onclick: "document.getElementById('wordlistBtn').click()" });
   html += dashCard({ icon: '🗂️', title: '단어일람보기2', desc: 'MVP2 + V401 추가 단어', accent: 'slate', onclick: "document.getElementById('wordlist2Btn').click()" });
   html += dashCard({ icon: '🏆', title: '통합 랭킹', desc: '정답 수 순위', accent: 'gold', onclick: "document.getElementById('rankingBtn').click()" });
-  if (loggedIn) {
-    const wrong = getSynonymWrongCount();
-    html += dashCard({ icon: '📕', title: '오답노트', desc: '틀린 단어 모아보기', accent: 'rose', onclick: 'showWrongNotes()', badge: wrong > 0 ? `${wrong}` : '' });
-    html += dashCard({ icon: '📊', title: '내 리뷰', desc: '외운 단어 한눈에', accent: 'amber', onclick: 'showMyReview()' });
-  } else {
-    html += dashCard({ icon: '🔒', title: '로그인 필요', desc: '오답노트·내 리뷰 잠금', accent: 'slate', onclick: "document.getElementById('authNicknameInput').focus()" });
+  if (!loggedIn) {
+    html += dashCard({ icon: '🔒', title: '로그인 필요', desc: '내정보 이용 잠금', accent: 'slate', onclick: "document.getElementById('authNicknameInput').focus()" });
   }
   html += '</div>';
 
@@ -2603,24 +2599,92 @@ els.myinfoCloseBtn.addEventListener("click", () => {
 function showMyInfo() {
   switchMode('myinfo');
   els.myinfoPanel.hidden = false;
+  renderMyInfoTab('review');
+}
 
-  const allQuestions = (window.__V502_LOGIC__ && window.__V502_LOGIC__.questions) || [];
-  const wrong = getLogicWrong();
-  const wrongQuestions = allQuestions.filter(q => wrong.has(q.id));
+function renderMyInfoTab(tab) {
+  let html = '<div style="max-width:600px">';
+  html += '<div style="display:flex;gap:8px;margin-bottom:16px">';
+  html += `<button onclick="renderMyInfoTab('review')" style="flex:1;min-height:36px;border:none;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;${tab==='review'?'background:var(--accent);color:#fff':'background:#f2f2f7;color:var(--ink)'}">📊 내 리뷰</button>`;
+  html += `<button onclick="renderMyInfoTab('wrong')" style="flex:1;min-height:36px;border:none;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;${tab==='wrong'?'background:var(--accent);color:#fff':'background:#f2f2f7;color:var(--ink)'}">📕 오답노트</button>`;
+  html += `<button onclick="renderMyInfoTab('logic')" style="flex:1;min-height:36px;border:none;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;${tab==='logic'?'background:var(--accent);color:#fff':'background:#f2f2f7;color:var(--ink)'}">🧩 논리오답</button>`;
+  html += '</div>';
 
-  if (wrongQuestions.length === 0) {
-    els.myinfoContent.innerHTML = "<p style='color:var(--muted)'>틀린 문제가 없습니다! 🎉</p>";
-    return;
+  if (tab === 'review') {
+    const completed = getCompletedPromptWordsCount();
+    const totalSyn = 3980;
+    const pct = Math.round((completed / totalSyn) * 100);
+    const logicMastered = getLogicCompleted().size;
+    const logicTotal = 300;
+    const entries = readLeaderboard().filter(e => state.playerName && e.name.toLowerCase() === state.playerName.toLowerCase());
+    const best = new Map();
+    for (const e of entries) {
+      const key = `${e.setId}`;
+      const existing = best.get(key);
+      if (!existing || e.accuracy > existing.accuracy) best.set(key, e);
+    }
+    const wcProgress = getWordcheckProgress();
+    let totalCorrect = 0, totalQuestions = 0;
+    for (const e of best.values()) { totalCorrect += e.correct; totalQuestions += e.total; }
+
+    html += `<div style="display:grid;gap:12px;grid-template-columns:1fr 1fr">`;
+    html += `<div style="padding:16px;background:#f0f8f0;border-radius:12px;text-align:center"><strong style="font-size:24px">${completed}</strong><br><small>단어 마스터</small><br><small style="color:var(--muted)">/ ${totalSyn} (${pct}%)</small></div>`;
+    html += `<div style="padding:16px;background:#f0f0f8;border-radius:12px;text-align:center"><strong style="font-size:24px">${logicMastered}</strong><br><small>논리 마스터</small><br><small style="color:var(--muted)">/ ${logicTotal}</small></div>`;
+    html += `<div style="padding:16px;background:#e8f0e8;border-radius:12px;text-align:center"><strong style="font-size:24px">${wcProgress.correct}/${wcProgress.total}</strong><br><small>단어확인</small><br><small style="color:var(--muted)">${wcProgress.total > 0 ? Math.round(wcProgress.correct/wcProgress.total*100) + '%' : 'No data'}</small></div>`;
+    html += `<div style="padding:16px;background:#fff8f0;border-radius:12px;text-align:center"><strong style="font-size:24px">${totalCorrect}/${totalQuestions}</strong><br><small>통합랭킹 점수</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'}</small></div>`;
+    html += '</div>';
+
+    const p = readSynonymProgress();
+    const key = getSynonymUserKey();
+    const mastered = p[key] || {};
+    const catIds = Object.keys(mastered).filter((c) => c !== 'wrong' && mastered[c] && mastered[c].length).sort();
+    html += '<h4 style="margin:18px 0 8px">📖 외운 단어</h4>';
+    if (catIds.length === 0) {
+      html += '<p style="color:var(--muted)">아직 외운 단어가 없습니다. 단어문제를 풀어보세요!</p>';
+    } else {
+      for (const catId of catIds) {
+        const title = categorySummaries[catId] || `Category ${catId}`;
+        html += `<div style="margin-bottom:8px;padding:10px;background:#f0f8f0;border-radius:6px;border:1px solid #cfe6cf">`;
+        html += `<strong style="font-size:13px">${escapeHtml(catId)} — ${escapeHtml(title)}</strong><br>`;
+        html += `<span style="font-size:12px;color:var(--muted)">${mastered[catId].map(w => { const m = wordMeanings[w]||''; return escapeHtml(w)+(m?' ('+escapeHtml(m)+')':''); }).join(', ')}</span></div>`;
+      }
+    }
+  } else if (tab === 'wrong') {
+    const p = readSynonymProgress();
+    const key = getSynonymUserKey();
+    const wrong = (p[key] && p[key].wrong) || {};
+    let totalWrong = 0;
+    for (const catId in wrong) {
+      const words = wrong[catId];
+      if (words.length === 0) continue;
+      totalWrong += words.length;
+      const title = categorySummaries[catId] || `Category ${catId}`;
+      html += `<div style="margin-bottom:8px;padding:10px;background:#fff8f0;border-radius:6px;border:1px solid #f0d8c0">`;
+      html += `<strong style="font-size:13px">${escapeHtml(catId)} — ${escapeHtml(title)}</strong><br>`;
+      html += `<span style="font-size:12px;color:var(--muted)">${words.map(w => { const m = wordMeanings[w]||''; return escapeHtml(w)+(m?' ('+escapeHtml(m)+')':''); }).join(', ')}</span></div>`;
+    }
+    if (totalWrong === 0) {
+      html += '<p style="color:var(--muted)">틀린 단어가 없습니다! 🎉</p>';
+    }
+  } else if (tab === 'logic') {
+    const allQuestions = (window.__V502_LOGIC__ && window.__V502_LOGIC__.questions) || [];
+    const wrongSet = getLogicWrong();
+    const wrongQuestions = allQuestions.filter(q => wrongSet.has(q.id));
+    if (wrongQuestions.length === 0) {
+      html += '<p style="color:var(--muted)">틀린 논리문제가 없습니다! 🎉</p>';
+    } else {
+      html += `<p style="margin-bottom:12px;color:var(--muted)">총 <b>${wrongQuestions.length}</b>개의 틀린 문제</p>`;
+      wrongQuestions.forEach((q, i) => {
+        html += `<div style="margin-bottom:12px;padding:12px;background:#fff8f0;border-radius:8px;border:1px solid #f0d8c0">`;
+        html += `<p style="font-weight:700;margin:0 0 6px">Q${i+1}. ${escapeHtml(q.question)}</p>`;
+        html += `<p style="font-size:12px;color:var(--muted);margin:0 0 4px"><b>정답:</b> ${escapeHtml(q.answer)}</p>`;
+        html += `<p style="font-size:12px;color:var(--muted);margin:0">${escapeHtml(q.explanation)}</p>`;
+        html += `</div>`;
+      });
+    }
   }
 
-  let html = `<p style="margin-bottom:12px;color:var(--muted)">총 <b>${wrongQuestions.length}</b>개의 틀린 문제</p>`;
-  wrongQuestions.forEach((q, i) => {
-    html += `<div style="margin-bottom:12px;padding:12px;background:#fff8f0;border-radius:8px;border:1px solid #f0d8c0">`;
-    html += `<p style="font-weight:700;margin:0 0 6px">Q${i+1}. ${escapeHtml(q.question)}</p>`;
-    html += `<p style="font-size:12px;color:var(--muted);margin:0 0 4px"><b>정답:</b> ${escapeHtml(q.answer)}</p>`;
-    html += `<p style="font-size:12px;color:var(--muted);margin:0">${escapeHtml(q.explanation)}</p>`;
-    html += `</div>`;
-  });
+  html += '</div>';
   els.myinfoContent.innerHTML = html;
 }
 
