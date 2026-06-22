@@ -1223,7 +1223,7 @@ async function handleLogin() {
   pushAllScoresToSupabase();
 }
 
-function handleRegister() {
+async function handleRegister() {
   const name = els.authNicknameInput.value.trim();
   const pw = els.authPasswordInput.value.trim();
   els.authError.hidden = true;
@@ -1256,7 +1256,7 @@ function handleRegister() {
   els.authNicknameInput.value = "";
   els.authPasswordInput.value = "";
   checkAndShowResume();
-  cloudSyncAll();
+  await cloudSyncAll();
   pushAllScoresToSupabase();
 }
 
