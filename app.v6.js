@@ -2562,23 +2562,39 @@ function showMyInfo() {
 }
 
 /* ── Word Check Quiz ── */
-const wordcheckQuestions = [
+let wordcheckQuestions = [
   ...(window.__V502_WC_V101__ || []),
   ...(window.__V502_WC_V201__ || []),
   ...(window.__V502_WC_V401__ || [])
 ];
 let wcState = { index: 0, answers: [], correct: 0, total: 0, completed: false };
+let lastWordcheckLauncher = showWordcheck;
 
-function showWordcheck() {
+function startWordcheck(questions, { shuffle = true } = {}) {
   switchMode('wordcheck');
   els.wordcheckPanel.hidden = false;
-  // Shuffle questions
+  wordcheckQuestions = questions;
   wcState = { index: 0, answers: [], correct: 0, total: wordcheckQuestions.length, completed: false };
-  wordcheckQuestions.sort(() => Math.random() - 0.5);
+  if (shuffle) wordcheckQuestions.sort(() => Math.random() - 0.5);
   document.getElementById('wordcheckResult').style.display = 'none';
   document.getElementById('wordcheckQuiz').style.display = 'block';
   document.getElementById('wordcheckFeedback').style.display = 'none';
   renderWordcheckQuestion();
+}
+
+function showWordcheck() {
+  lastWordcheckLauncher = showWordcheck;
+  startWordcheck([
+    ...(window.__V502_WC_V101__ || []),
+    ...(window.__V502_WC_V201__ || []),
+    ...(window.__V502_WC_V401__ || [])
+  ]);
+}
+
+// [201 단어퀴즈] — V201 set only (200 문제), presented in order
+function showWordcheck201() {
+  lastWordcheckLauncher = showWordcheck201;
+  startWordcheck([...(window.__V502_WC_V201__ || [])], { shuffle: false });
 }
 
 function renderWordcheckQuestion() {
@@ -2706,9 +2722,11 @@ document.getElementById('wordcheckNext').addEventListener('click', () => {
   renderWordcheckQuestion();
 });
 
-document.getElementById('wordcheckRetry').addEventListener('click', showWordcheck);
+document.getElementById('wordcheckRetry').addEventListener('click', () => lastWordcheckLauncher());
 
 els.wordcheckBtn.addEventListener('click', showWordcheck);
+const wc201Btn = document.getElementById('wordcheck201Btn');
+if (wc201Btn) wc201Btn.addEventListener('click', showWordcheck201);
 els.wordcheckPanel.addEventListener('click', function(e) {
   if (e.target === this) { this.hidden = true; els.startPanel.hidden = false; }
 });
