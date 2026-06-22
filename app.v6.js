@@ -3291,16 +3291,33 @@ function finishGrammarQuiz() {
 els.grammar201Btn.addEventListener('click', showGrammar201);
 
 /* ── 기출문제 ── */
+let examTab = 'gachon';
+
 function showExam() {
   switchMode('exam');
   els.examPanel.hidden = false;
-  const questions = window.__V502_EXAM_GACHON2012__ || [];
+  renderExamTab();
+}
+
+function renderExamTab() {
+  const exams = {
+    gachon: { title: '2012 가천대', data: window.__V502_EXAM_GACHON2012__ || [] },
+    skku: { title: '2011 성균관대', data: window.__V502_EXAM_SKKU2011__ || [] }
+  };
+
   let html = '<div style="max-width:700px">';
-  html += `<p style="margin-bottom:12px;color:var(--muted)">2012 가천대 — ${questions.length}문제</p>`;
+  // Tab buttons
+  html += '<div style="display:flex;gap:8px;margin-bottom:16px">';
+  for (var key in exams) {
+    var sel = examTab === key;
+    html += `<button onclick="examTab='${key}';renderExamTab()" style="flex:1;min-height:36px;border:none;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;${sel?'background:var(--accent);color:#fff':'background:#f2f2f7;color:var(--ink)'}">${exams[key].title} (${exams[key].data.length}문제)</button>`;
+  }
+  html += '</div>';
+
+  var questions = exams[examTab].data;
   questions.forEach((q, i) => {
     html += `<div style="margin-bottom:16px;padding:16px;background:#fff;border-radius:12px;border:1px solid var(--line);box-shadow:0 1px 4px rgba(0,0,0,0.04)">`;
     html += `<p style="font-weight:700;margin:0 0 8px;color:var(--accent)">${i+1}.</p>`;
-    // Show passage if exists
     if (q.p && q.p.length > 30) {
       html += `<div style="margin:0 0 12px;padding:10px 14px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;font-size:14px;line-height:1.7">${escapeHtml(q.p)}</div>`;
     }
