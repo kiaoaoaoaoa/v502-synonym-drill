@@ -629,6 +629,9 @@ const els = {
   grammar201Btn: document.querySelector("#grammar201Btn"),
   grammar201Panel: document.querySelector("#grammar201Panel"),
   grammar201Content: document.querySelector("#grammar201Content"),
+  examBtn: document.querySelector("#examBtn"),
+  examPanel: document.querySelector("#examPanel"),
+  examContent: document.querySelector("#examContent"),
 };
 
 function shuffle(items) {
@@ -1821,6 +1824,7 @@ function switchMode(mode) {
   els.wordlist2Panel.hidden = true;
   els.wordcheckPanel.hidden = true;
   els.grammar201Panel.hidden = true;
+  els.examPanel.hidden = true;
   logicState.active = false;
   els.shuffleBtn.disabled = true;
   els.resetBtn.disabled = true;
@@ -3284,6 +3288,33 @@ function finishGrammarQuiz() {
 }
 
 els.grammar201Btn.addEventListener('click', showGrammar201);
+
+/* ── 기출문제 ── */
+function showExam() {
+  switchMode('exam');
+  els.examPanel.hidden = false;
+  const questions = window.__V502_EXAM_GACHON2012__ || [];
+  let html = '<div style="max-width:700px">';
+  html += `<p style="margin-bottom:12px;color:var(--muted)">2012 가천대 — ${questions.length}문제</p>`;
+  questions.forEach((q, i) => {
+    html += `<div style="margin-bottom:16px;padding:16px;background:#fff;border-radius:12px;border:1px solid var(--line);box-shadow:0 1px 4px rgba(0,0,0,0.04)">`;
+    html += `<p style="font-weight:700;margin:0 0 8px">${i+1}. ${escapeHtml(q.q)}</p>`;
+    if (q.c && q.c.length > 0) {
+      html += '<div style="display:grid;gap:4px">';
+      q.c.forEach(([letter, text]) => {
+        html += `<div style="font-size:14px;padding:4px 8px;background:#f9f9fb;border-radius:6px">(${escapeHtml(letter)}) ${escapeHtml(text)}</div>`;
+      });
+      html += '</div>';
+    }
+    html += '</div>';
+  });
+  html += '</div>';
+  els.examContent.innerHTML = html;
+}
+els.examBtn.addEventListener('click', showExam);
+els.examPanel.addEventListener('click', function(e) {
+  if (e.target === this) { this.hidden = true; els.startPanel.hidden = false; }
+});
 els.grammar201Panel.addEventListener('click', function(e) {
   if (e.target === this) { this.hidden = true; els.startPanel.hidden = false; }
 });
