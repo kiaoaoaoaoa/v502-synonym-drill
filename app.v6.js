@@ -1588,6 +1588,12 @@ function scheduleCloudSync() {
     cloudSyncAll().catch(() => {});
   }, 700);
 }
+function flushCloudSync() {
+  if (!_cloudSyncTimer) return;
+  clearTimeout(_cloudSyncTimer);
+  _cloudSyncTimer = null;
+  cloudSyncAll().catch(() => {});
+}
 
 async function cloudSyncAll() {
   if (!state.playerName || !hasPublicConfig()) return;
@@ -2015,7 +2021,8 @@ function switchMode(mode) {
 function showRanking() {
   switchMode('ranking');
   els.rankingPanel.hidden = false;
-  // Push all local scores to Supabase whenever ranking is opened
+  // Flush any pending cloud sync before pushing scores
+  flushCloudSync();
   pushAllScoresToSupabase();
 
   els.rankingTitle.textContent = "RANKING";
@@ -2488,8 +2495,8 @@ renderAuthUI();
 updateSetDisplay();
 
 // Save quiz progress on tab close / navigation away
-window.addEventListener("beforeunload", () => saveQuizProgress());
-window.addEventListener("pagehide", () => saveQuizProgress());
+window.addEventListener("beforeunload", () => { saveQuizProgress(); flushCloudSync(); });
+window.addEventListener("pagehide", () => { saveQuizProgress(); flushCloudSync(); });
 
 /* ======== Logic Quiz ======== */
 const logicProgressKey = "v502-logic-progress";
@@ -2808,6 +2815,9 @@ function showDashboard() {
   switchMode('dashboard');
   els.dashboardPanel.hidden = false;
   const loggedIn = !!state.playerName;
+
+  // Flush any pending local changes to cloud before pulling
+  if (loggedIn) flushCloudSync();
 
   // Pull latest cloud data in background, then refresh dashboard (once)
   if (loggedIn && !state._dashSyncing) {
