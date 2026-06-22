@@ -1596,8 +1596,10 @@ async function savePublicScore(entry) {
     .maybeSingle();
 
   if (existing) {
-    // Only update if new score is better
-    if (entry.accuracy > existing.accuracy) {
+    // For cumulative quizzes (LOGIC, WORDCHECK), always update (total grows over time)
+    // For regular quizzes, only update if accuracy is better
+    const isCumulative = entry.setId === 'LOGIC' || entry.setId === 'WORDCHECK';
+    if (isCumulative || entry.accuracy > existing.accuracy) {
       const { error } = await client
         .from(getLeaderboardTable())
         .update({ correct_count: entry.correct, total_count: entry.total, accuracy: entry.accuracy })
