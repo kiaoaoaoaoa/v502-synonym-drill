@@ -1691,6 +1691,12 @@ function switchMode(mode) {
   logicState.active = false;
   els.shuffleBtn.disabled = true;
   els.resetBtn.disabled = true;
+  // The synonym-quiz toolbar/progress bar only make sense in quiz/start modes
+  const isSynonym = (mode === 'quiz' || mode === 'start');
+  const toolbar = document.querySelector('.workspace > .toolbar');
+  const progress = document.querySelector('.workspace > .progress');
+  if (toolbar) toolbar.style.display = isSynonym ? '' : 'none';
+  if (progress) progress.style.display = isSynonym ? '' : 'none';
   // Hide category nav except for quiz/start modes
   document.getElementById("categoryNav").hidden = (mode !== 'quiz' && mode !== 'start');
   // Update current set display
@@ -2463,6 +2469,7 @@ function showDashboard() {
   html += '<p class="dash-section-label">복습 & 정보</p>';
   html += '<div class="dash-grid">';
   html += dashCard({ icon: '📋', title: '단어일람보기', desc: '전체 단어 사전', accent: 'slate', onclick: "document.getElementById('wordlistBtn').click()" });
+  html += dashCard({ icon: '🗂️', title: '단어일람보기2', desc: 'MVP2 + V401 추가 단어', accent: 'slate', onclick: "document.getElementById('wordlist2Btn').click()" });
   html += dashCard({ icon: '🏆', title: '통합 랭킹', desc: '정답 수 순위', accent: 'gold', onclick: "document.getElementById('rankingBtn').click()" });
   if (loggedIn) {
     const wrong = getSynonymWrongCount();
@@ -2874,3 +2881,7 @@ els.wordcheckPanel.addEventListener('click', function(e) {
 
 els.logicSubmitBtn.addEventListener("click", submitLogicAnswer);
 els.logicNextBtn.addEventListener("click", nextLogicQuestion);
+
+// Land on the dashboard by default — the single, unified navigation hub.
+// Runs last so logicState and all handlers are initialized first.
+showDashboard();

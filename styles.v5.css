@@ -1682,3 +1682,16 @@ h2 {
   .dash-card { min-height: 60px; padding: 12px; }
   .dash-stat-num { font-size: 22px; }
 }
+
+/* Navigation lives in the dashboard now — hide the duplicate sidebar buttons
+   (kept in the DOM so the dashboard cards can still trigger them). */
+#synonymDrillBtn,
+#logicModeBtn,
+#myinfoBtn,
+#rankingBtn,
+#wordlistBtn,
+#wordlist2Btn,
+#wordcheckBtn,
+#wordcheck201Btn {
+  display: none !important;
+}
