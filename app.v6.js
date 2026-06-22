@@ -770,8 +770,7 @@ function renderQuestion() {
     els.feedback.hidden = true;
     els.feedback.className = "feedback";
     els.feedback.textContent = "";
-    // 해설ON: keep postFeedbackActions visible so Submit button is shown
-    els.postFeedbackActions.hidden = noExplainMode;
+    els.postFeedbackActions.hidden = true;
   }
 
   renderProgress();
@@ -1589,12 +1588,6 @@ function scheduleCloudSync() {
     cloudSyncAll().catch(() => {});
   }, 700);
 }
-function flushCloudSync() {
-  if (!_cloudSyncTimer) return;
-  clearTimeout(_cloudSyncTimer);
-  _cloudSyncTimer = null;
-  cloudSyncAll().catch(() => {});
-}
 
 async function cloudSyncAll() {
   if (!state.playerName || !hasPublicConfig()) return;
@@ -2022,8 +2015,7 @@ function switchMode(mode) {
 function showRanking() {
   switchMode('ranking');
   els.rankingPanel.hidden = false;
-  // Flush any pending cloud sync before pushing scores
-  flushCloudSync();
+  // Push all local scores to Supabase whenever ranking is opened
   pushAllScoresToSupabase();
 
   els.rankingTitle.textContent = "RANKING";
@@ -2496,11 +2488,12 @@ renderAuthUI();
 updateSetDisplay();
 
 // Save quiz progress on tab close / navigation away
-window.addEventListener("beforeunload", () => { saveQuizProgress(); flushCloudSync(); });
-window.addEventListener("pagehide", () => { saveQuizProgress(); flushCloudSync(); });
+window.addEventListener("beforeunload", () => saveQuizProgress());
+window.addEventListener("pagehide", () => saveQuizProgress());
 
 /* ======== Logic Quiz ======== */
 const logicProgressKey = "v502-logic-progress";
+const logicScoreKey = "v502-logic-score"; // weighted cumulative score
 const synonymProgressKey = "v502-synonym-progress";
 let logicState = {
   questions: [],
@@ -2523,6 +2516,7 @@ function saveLogicCorrect(qid) {
   // Keep correct/wrong disjoint so cumulative total never double-counts a question
   p[key].wrong = (p[key].wrong || []).filter((id) => id !== qid);
   try { localStorage.setItem(logicProgressKey, JSON.stringify(p)); } catch {}
+  addWeightedScore(qid, true);
   scheduleCloudSync();
 }
 function saveLogicWrong(qid) {
@@ -2531,7 +2525,39 @@ function saveLogicWrong(qid) {
   if (!p[key]) p[key] = { correct: [], wrong: [] };
   if (!p[key].wrong.includes(qid) && !p[key].correct.includes(qid)) p[key].wrong.push(qid);
   try { localStorage.setItem(logicProgressKey, JSON.stringify(p)); } catch {}
+  addWeightedScore(qid, false);
   scheduleCloudSync();
+}
+
+/* Weighted scoring using the 7-factor regression seed */
+function readLogicScore() {
+  try { return JSON.parse(localStorage.getItem(logicScoreKey)) || {}; }
+  catch { return {}; }
+}
+function writeLogicScore(data) {
+  try { localStorage.setItem(logicScoreKey, JSON.stringify(data)); } catch {}
+}
+function addWeightedScore(qid, isCorrect) {
+  const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
+  const scores = readLogicScore();
+  if (!scores[key]) scores[key] = { score: 0, questions: 0 };
+  // Prevent double-counting: only add if this specific qid hasn't been scored yet
+  const scoredKey = key + "_scored";
+  const scored = readLogicScore()[scoredKey] || {};
+  if (scored[qid]) return; // already counted
+  scored[qid] = true;
+  scores[scoredKey] = scored;
+  // Get difficulty-weighted delta
+  const diff = window.__V502_LOGIC_DIFFICULTY__;
+  const delta = diff && diff.getScoreDelta ? diff.getScoreDelta(isCorrect, qid) : (isCorrect ? 1.5 : -1);
+  scores[key].score = +(scores[key].score + parseFloat(delta)).toFixed(4);
+  scores[key].questions++;
+  writeLogicScore(scores);
+}
+function getLogicWeightedScore() {
+  const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
+  const scores = readLogicScore();
+  return scores[key] || { score: 0, questions: 0 };
 }
 function getLogicCompleted() {
   const p = readLogicProgress();
@@ -2547,29 +2573,33 @@ function getLogicTotal() {
   return (window.__V502_LOGIC__ && window.__V502_LOGIC__.questions || []).length;
 }
 
-/* Push the player's *cumulative* logic stats to the ranking, immediately after
-   each answer. One row per user (quiz_set "LOGIC") holding the running total:
-   correct answers raise the numerator, every answer raises the denominator. */
+/* Push the player's *cumulative* logic stats to the ranking using WEIGHTED SCORES.
+   Each answer contributes a difficulty-adjusted delta, not just +1/-0. */
 function persistLogicRanking() {
   if (!state.playerName) return;
-  const correct = getLogicCompleted().size;
-  const total = correct + getLogicWrong().size;
-  if (total === 0) return;
-  const accuracy = Math.round((correct / total) * 100);
+  const ws = getLogicWeightedScore();
+  if (ws.questions === 0) return;
+  // Scale weighted score to a display-friendly range (~0-100 for readability)
+  // Raw weighted score per question: ~0.01 to ~1.5.  Scale up ×40 → 0.4 to 60 range.
+  const displayScore = Math.round(ws.score * 40 * 100) / 100;
+  const accuracy = Math.round((getLogicCompleted().size / (getLogicCompleted().size + getLogicWrong().size || 1)) * 100);
 
-  // Local: replace any prior logic entries with a single cumulative one
+  // Local: replace any prior logic entries with a single cumulative weighted one
   const nameKey = state.playerName.toLowerCase();
   const entries = readLeaderboard().filter(
     (e) => !(e.name.toLowerCase() === nameKey && String(e.setId || "").startsWith("LOGIC")),
   );
   entries.push({
-    name: state.playerName, correct, total, accuracy,
-    setId: "LOGIC", setLabel: "Logic Quiz", completedAt: new Date().toISOString(),
+    name: state.playerName,
+    correct: displayScore,              // weighted score (scaled)
+    total: ws.questions,                // questions attempted
+    accuracy,
+    setId: "LOGIC", setLabel: "Logic Quiz (weighted)", completedAt: new Date().toISOString(),
   });
   writeLeaderboard(entries);
 
   // Public: coalesced, race-free write of the single (nickname, LOGIC) cumulative row
-  scheduleCumulativeRemoteWrite("LOGIC", state.playerName, correct, total, accuracy);
+  scheduleCumulativeRemoteWrite("LOGIC", state.playerName, displayScore, ws.questions, accuracy);
 }
 
 function shuffleLogicQuestions() {
@@ -2602,11 +2632,12 @@ function showLogicAllDone() {
   const wrong = getLogicWrong().size;
   const total = correct + wrong;
   const pct = total ? Math.round((correct / total) * 100) : 0;
+  const ws = getLogicWeightedScore();
   els.logicPanel.hidden = true;
   els.resultPanel.hidden = false;
   els.resultTitle.textContent = "Logic Quiz Result";
-  els.resultSummary.textContent = `모든 문제를 푸셨습니다! 누적 ${correct}/${total} 정답 — ${pct}% 정확도`;
-  showLogicRanking(correct, total, pct);
+  els.resultSummary.textContent = `모든 문제 완료! ${correct}/${total} 정답 (${pct}%) · 난이도 가중 점수: ${ws.score.toFixed(2)} (${ws.questions}문제)`;
+  showLogicRanking(correct, total, pct, ws);
 }
 
 function setBtnDisabled(btn, isDisabled) {
@@ -2751,7 +2782,6 @@ function nextLogicQuestion() {
 
 function finishLogicQuiz() {
   logicState.active = false;
-  // Ranking was already updated per question; ensure it's current, then summarize
   persistLogicRanking();
   const sessionPct = logicState.questions.length
     ? Math.round((logicState.correctCount / logicState.questions.length) * 100)
@@ -2760,22 +2790,23 @@ function finishLogicQuiz() {
   const cumTotal = cumCorrect + getLogicWrong().size;
   const cumPct = cumTotal ? Math.round((cumCorrect / cumTotal) * 100) : 0;
   const remaining = getLogicTotal() - cumTotal;
+  const ws = getLogicWeightedScore();
   els.logicPanel.hidden = true;
   els.resultPanel.hidden = false;
   els.resultTitle.textContent = "Logic Quiz Result";
-  els.resultSummary.textContent = `이번 세션 ${logicState.correctCount}/${logicState.questions.length} (${sessionPct}%) · 누적 ${cumCorrect}/${cumTotal} (${cumPct}%) · 남은 ${remaining}문제`;
-  showLogicRanking(cumCorrect, cumTotal, cumPct);
+  els.resultSummary.textContent = `이번 세션 ${logicState.correctCount}/${logicState.questions.length} (${sessionPct}%) · 누적 ${cumCorrect}/${cumTotal} (${cumPct}%) · 가중점수 ${ws.score.toFixed(2)} · 남은 ${remaining}문제`;
+  showLogicRanking(cumCorrect, cumTotal, cumPct, ws);
 }
 
-/* Render the unified ranking on the result panel, falling back to the player's
-   own cumulative numbers if they aren't on the board yet. */
-function showLogicRanking(cumCorrect, cumTotal, cumPct) {
+/* Render the unified ranking on the result panel, including weighted logic score. */
+function showLogicRanking(cumCorrect, cumTotal, cumPct, ws) {
   const cumulative = cumulativeLeaderboard(readLeaderboard(), null);
+  const displayScore = ws ? (ws.score * 40).toFixed(1) : "0.0";
   const cumEntry = state.playerName
-    ? (cumulative.find(e => e.name.toLowerCase() === state.playerName.toLowerCase()) || { name: state.playerName, correct: cumCorrect, total: cumTotal, accuracy: cumPct })
-    : { name: "Guest", correct: cumCorrect, total: cumTotal, accuracy: cumPct };
+    ? (cumulative.find(e => e.name.toLowerCase() === state.playerName.toLowerCase()) || { name: state.playerName, correct: parseFloat(displayScore), total: cumTotal, accuracy: cumPct })
+    : { name: "Guest", correct: parseFloat(displayScore), total: cumTotal, accuracy: cumPct };
   const rank = state.playerName ? cumulative.findIndex(e => e.name.toLowerCase() === state.playerName.toLowerCase()) + 1 : cumulative.length + 1;
-  renderCumulativeLeaderboard(cumulative.slice(0, 30), "통합 랭킹", rank, cumEntry);
+  renderCumulativeLeaderboard(cumulative.slice(0, 30), "통합 랭킹 (가중점수)", rank, cumEntry);
 }
 
 // Logic mode toggle
@@ -2817,9 +2848,6 @@ function showDashboard() {
   els.dashboardPanel.hidden = false;
   const loggedIn = !!state.playerName;
 
-  // Flush any pending local changes to cloud before pulling
-  if (loggedIn) flushCloudSync();
-
   // Pull latest cloud data in background, then refresh dashboard (once)
   if (loggedIn && !state._dashSyncing) {
     const store = readPasswordStore();
@@ -2833,8 +2861,7 @@ function showDashboard() {
         cloudSyncAll();
         pushAllScoresToSupabase();
         state._dashSyncing = false;
-        // Only re-render if still on dashboard — don't yank user from quiz
-        if (!els.dashboardPanel.hidden) showDashboard();
+        showDashboard(); // re-render with fresh data
       }).catch(() => { state._dashSyncing = false; });
     }
   }
