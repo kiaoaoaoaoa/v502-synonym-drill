@@ -2829,28 +2829,28 @@ function showDashboard() {
       .find((e) => e.name.toLowerCase() === state.playerName.toLowerCase());
     const score = cum ? cum.correct : 0;
     html += `<div class="dash-stats">
-      <div class="dash-stat" onclick="document.getElementById('wordlistBtn').click()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-num">${knownCount}</span><span class="dash-stat-label">외운 단어 ▸</span></div>
-      <div class="dash-stat" onclick="document.getElementById('logicModeBtn').click()" style="cursor:pointer" title="논리문제"><span class="dash-stat-num">${logicMastered}<small>/${getLogicTotal()}</small></span><span class="dash-stat-label">논리 마스터 ▸</span></div>
-      <div class="dash-stat" onclick="document.getElementById('rankingBtn').click()" style="cursor:pointer" title="통합랭킹 보기"><span class="dash-stat-num">${score}</span><span class="dash-stat-label">통합 점수 ▸</span></div>
+      <div class="dash-stat" onclick="showWordlist()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-num">${knownCount}</span><span class="dash-stat-label">외운 단어 ▸</span></div>
+      <div class="dash-stat" onclick="startLogicQuiz()" style="cursor:pointer" title="논리문제"><span class="dash-stat-num">${logicMastered}<small>/${getLogicTotal()}</small></span><span class="dash-stat-label">논리 마스터 ▸</span></div>
+      <div class="dash-stat" onclick="showRanking()" style="cursor:pointer" title="통합랭킹 보기"><span class="dash-stat-num">${score}</span><span class="dash-stat-label">통합 점수 ▸</span></div>
     </div>`;
   }
 
   // ---- Study cards ----
   html += '<p class="dash-section-label">학습</p>';
   html += '<div class="dash-grid">';
-  html += dashCard({ icon: '📝', title: '단어문제', desc: '동의어 짝 맞추기', accent: 'teal', onclick: "document.getElementById('synonymDrillBtn').click()" });
-  html += dashCard({ icon: '🧩', title: '논리문제', desc: '문맥 속 어휘 추론', accent: 'indigo', onclick: "document.getElementById('logicModeBtn').click()" });
-  html += dashCard({ icon: '📘', title: '201 단어퀴즈', desc: '4지선다 어휘 체크', accent: 'blue', onclick: "document.getElementById('wordcheck201Btn').click()" });
-  html += dashCard({ icon: '📝', title: '문법 201', desc: '442개 문법 문제', accent: 'plum', onclick: "document.getElementById('grammar201Btn').click()" });
-  html += dashCard({ icon: '📄', title: '기출문제', desc: '2012 가천대 22문제', accent: 'slate', onclick: "document.getElementById('examBtn').click()" });
-  html += dashCard({ icon: '✅', title: '단어확인문제', desc: '전체 어휘 확인', accent: 'green', onclick: "document.getElementById('wordcheckBtn').click()" });
+  html += dashCard({ icon: '📝', title: '단어문제', desc: '동의어 짝 맞추기', accent: 'teal', onclick: "openSynonymPanel()" });
+  html += dashCard({ icon: '🧩', title: '논리문제', desc: '문맥 속 어휘 추론', accent: 'indigo', onclick: "startLogicQuiz()" });
+  html += dashCard({ icon: '📘', title: '201 단어퀴즈', desc: '4지선다 어휘 체크', accent: 'blue', onclick: "showWordcheck201()" });
+  html += dashCard({ icon: '📝', title: '문법 201', desc: '442개 문법 문제', accent: 'plum', onclick: "showGrammar201()" });
+  html += dashCard({ icon: '📄', title: '기출문제', desc: '2012 가천대 22문제', accent: 'slate', onclick: "showExam()" });
+  html += dashCard({ icon: '✅', title: '단어확인문제', desc: '전체 어휘 확인', accent: 'green', onclick: "showWordcheck()" });
   html += '</div>';
 
   // ---- Review & info cards ----
   html += '<p class="dash-section-label">복습 & 정보</p>';
   html += '<div class="dash-grid">';
-  html += dashCard({ icon: '📋', title: '단어일람보기', desc: '전체 단어 사전', accent: 'slate', onclick: "document.getElementById('wordlistBtn').click()" });
-  html += dashCard({ icon: '🗂️', title: '단어일람보기2', desc: 'MVP2 + V401 추가 단어', accent: 'slate', onclick: "document.getElementById('wordlist2Btn').click()" });
+  html += dashCard({ icon: '📋', title: '단어일람보기', desc: '전체 단어 사전', accent: 'slate', onclick: "showWordlist()" });
+  html += dashCard({ icon: '🗂️', title: '단어일람보기2', desc: 'MVP2 + V401 추가 단어', accent: 'slate', onclick: "showWordlist2()" });
   if (!loggedIn) {
     html += dashCard({ icon: '🔒', title: '로그인 필요', desc: '내정보 이용 잠금', accent: 'slate', onclick: "document.getElementById('authNicknameInput').focus()" });
   }
@@ -3019,7 +3019,7 @@ function renderMyInfoTab(tab) {
     html += `<div style="padding:16px;background:#f0f8f0;border-radius:12px;text-align:center"><strong style="font-size:24px">${completed}</strong><br><small>단어 마스터</small><br><small style="color:var(--muted)">/ ${totalSyn} (${pct}%)</small></div>`;
     html += `<div style="padding:16px;background:#f0f0f8;border-radius:12px;text-align:center"><strong style="font-size:24px">${logicMastered}</strong><br><small>논리 마스터</small><br><small style="color:var(--muted)">/ ${logicTotal}</small></div>`;
     html += `<div style="padding:16px;background:#e8f0e8;border-radius:12px;text-align:center"><strong style="font-size:24px">${wcProgress.correct}/${wcProgress.total}</strong><br><small>단어확인</small><br><small style="color:var(--muted)">${wcProgress.total > 0 ? Math.round(wcProgress.correct/wcProgress.total*100) + '%' : 'No data'}</small></div>`;
-    html += `<div style="padding:16px;background:#fff8f0;border-radius:12px;text-align:center;cursor:pointer" onclick="document.getElementById('rankingBtn').click()" title="통합랭킹 보기"><strong style="font-size:24px">${totalCorrect}/${totalQuestions}</strong><br><small>통합랭킹 점수 ▸</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'}</small></div>`;
+    html += `<div style="padding:16px;background:#fff8f0;border-radius:12px;text-align:center;cursor:pointer" onclick="showRanking()" title="통합랭킹 보기"><strong style="font-size:24px">${totalCorrect}/${totalQuestions}</strong><br><small>통합랭킹 점수 ▸</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'}</small></div>`;
     html += '</div>';
 
     const p = readSynonymProgress();
