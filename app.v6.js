@@ -3299,7 +3299,12 @@ function showExam() {
   html += `<p style="margin-bottom:12px;color:var(--muted)">2012 가천대 — ${questions.length}문제</p>`;
   questions.forEach((q, i) => {
     html += `<div style="margin-bottom:16px;padding:16px;background:#fff;border-radius:12px;border:1px solid var(--line);box-shadow:0 1px 4px rgba(0,0,0,0.04)">`;
-    html += `<p style="font-weight:700;margin:0 0 8px">${i+1}. ${escapeHtml(q.q)}</p>`;
+    html += `<p style="font-weight:700;margin:0 0 8px;color:var(--accent)">${i+1}.</p>`;
+    // Show passage if exists
+    if (q.p && q.p.length > 30) {
+      html += `<div style="margin:0 0 12px;padding:10px 14px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;font-size:14px;line-height:1.7">${escapeHtml(q.p)}</div>`;
+    }
+    html += `<p style="font-weight:600;margin:0 0 10px">${escapeHtml(q.q)}</p>`;
     if (q.c && q.c.length > 0) {
       html += '<div style="display:grid;gap:4px">';
       q.c.forEach(([letter, text]) => {
