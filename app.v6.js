@@ -770,7 +770,7 @@ function renderQuestion() {
     els.feedback.hidden = true;
     els.feedback.className = "feedback";
     els.feedback.textContent = "";
-    els.postFeedbackActions.hidden = true;
+    els.postFeedbackActions.hidden = noExplainMode;
   }
 
   renderProgress();
@@ -1588,6 +1588,12 @@ function scheduleCloudSync() {
     cloudSyncAll().catch(() => {});
   }, 700);
 }
+function flushCloudSync() {
+  if (!_cloudSyncTimer) return;
+  clearTimeout(_cloudSyncTimer);
+  _cloudSyncTimer = null;
+  cloudSyncAll().catch(() => {});
+}
 
 async function cloudSyncAll() {
   if (!state.playerName || !hasPublicConfig()) return;
@@ -2015,7 +2021,7 @@ function switchMode(mode) {
 function showRanking() {
   switchMode('ranking');
   els.rankingPanel.hidden = false;
-  // Push all local scores to Supabase whenever ranking is opened
+  flushCloudSync();
   pushAllScoresToSupabase();
 
   els.rankingTitle.textContent = "RANKING";
@@ -2488,7 +2494,8 @@ renderAuthUI();
 updateSetDisplay();
 
 // Save quiz progress on tab close / navigation away
-window.addEventListener("beforeunload", () => saveQuizProgress());
+window.addEventListener("beforeunload", () => { saveQuizProgress(); flushCloudSync(); });
+window.addEventListener("pagehide", () => { saveQuizProgress(); flushCloudSync(); });
 window.addEventListener("pagehide", () => saveQuizProgress());
 
 /* ======== Logic Quiz ======== */
@@ -2848,6 +2855,8 @@ function showDashboard() {
   els.dashboardPanel.hidden = false;
   const loggedIn = !!state.playerName;
 
+  if (loggedIn) flushCloudSync();
+
   // Pull latest cloud data in background, then refresh dashboard (once)
   if (loggedIn && !state._dashSyncing) {
     const store = readPasswordStore();
@@ -2861,7 +2870,7 @@ function showDashboard() {
         cloudSyncAll();
         pushAllScoresToSupabase();
         state._dashSyncing = false;
-        showDashboard(); // re-render with fresh data
+        if (!els.dashboardPanel.hidden) showDashboard();
       }).catch(() => { state._dashSyncing = false; });
     }
   }
