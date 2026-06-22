@@ -23,7 +23,7 @@ window.__V502_EXAM_SKKU2011__ = [
         "dramatizes"
       ]
     ],
-    "a": "4",
+    "a": "3",
     "explanation": "영화에서 아이의 죽음은 폭력적 복수의 심각한 행위와 심각한 연기의 폭력적 표현을 정당화한다.\njustify = 옳다고 하다, 정당화하다(=validate, vindicate)\nviolent = 격렬한, 폭력적인(=brutal, savage, vicious)\nrevenge = 복수, 앙갚음(=retaliation, vengeance, reprisal)"
   },
   {
@@ -1349,4 +1349,5 @@ window.__V502_EXAM_SKKU2011__ = [
     "a": "3",
     "explanation": "덕적 이었다기보다는 도덕심이 형성되기 이전 단계에 있었던 것이"
   }
-];
+]
+;;
