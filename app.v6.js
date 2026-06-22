@@ -3240,6 +3240,15 @@ function submitWordcheckAnswer(letter) {
       }
     }
 
+    // Show text feedback so 해설OFF also tells the answer result
+    const fb = document.getElementById('wordcheckFeedback');
+    fb.style.display = 'block';
+    fb.style.background = correct ? '#e8f5e9' : '#fce4ec';
+    fb.style.borderColor = correct ? '#a5d6a7' : '#ef9a9a';
+    fb.innerHTML = correct
+      ? '<strong style="color:#2e7d32">✅ Correct!</strong>'
+      : `<strong style="color:#c62828">❌ Wrong — answer is (${answerLetter})</strong>`;
+
     setTimeout(() => {
       toast.style.transform = 'translate(-50%,-50%) scale(0.3)';
       toast.style.opacity = '0';
