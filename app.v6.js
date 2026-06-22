@@ -657,107 +657,56 @@ function allWords(sourceCategories = categories) {
 
 function buildQuestions() {
   const sourceCategories = getActiveCategories();
-  const bank = allWords(sourceCategories);
   const TARGET = 30;
-
-  // Separate viable categories (≥3 words) from too-small ones
   const viable = sourceCategories.filter(c => c.words.length >= 3);
-  const skipped = sourceCategories.filter(c => c.words.length < 3);
 
-  // Track generated (prompt, answer-set) combos to avoid duplicates
-  const seenCombos = new Set();
-  function comboKey(prompt, answers) {
-    return prompt + '|' + [...answers].sort().join('|');
-  }
+  // Distractors come from words OUTSIDE this set, so they never compete with
+  // the set's prompt/answer words and never repeat a word the user is studying.
+  const setCatIds = new Set(sourceCategories.map(c => c.id));
+  const distractorBank = allWords(categories).filter(e => !setCatIds.has(e.categoryId));
 
-  // First pass: generate all possible unique questions from each category
-  const allPossible = [];
-  for (const cat of viable) {
-    const words = cat.words;
-    if (words.length < 3) continue;
-    const mastered = state.playerName ? getCompletedPromptWords(cat.id) : new Set();
-
-    for (let i = 0; i < words.length; i++) {
-      const prompt = words[i];
-      if (mastered.has(prompt)) continue;
-
-      // Generate all possible answer pairs for this prompt
-      const candidates = words.filter(w => w !== prompt);
-      for (let j = 0; j < candidates.length; j++) {
-        for (let k = j + 1; k < candidates.length; k++) {
-          const answer = [candidates[j], candidates[k]];
-          const key = comboKey(prompt, answer);
-          if (!seenCombos.has(key)) {
-            seenCombos.add(key);
-
-            // Find distractors from other categories
-            const distractors = [];
-            const currentWords = new Set(cat.words);
-            for (const item of shuffle([...bank])) {
-              if (
-                item.word === prompt ||
-                answer.includes(item.word) ||
-                currentWords.has(item.word) ||
-                distractors.includes(item.word)
-              ) continue;
-              distractors.push(item.word);
-              if (distractors.length === 4) break;
-            }
-
-            allPossible.push({
-              id: `${cat.id}-${prompt}`,
-              categoryId: cat.id,
-              prompt,
-              answer,
-              options: shuffle([...answer, ...distractors]),
-            });
-          }
-        }
-      }
-    }
-  }
-
-  // allPossible holds several answer pairs per prompt, all sharing the same id
-  // (`${cat}-${prompt}`). Keep just one per id so no prompt is ever asked twice.
-  const byId = new Map();
-  for (const q of shuffle(allPossible)) {
-    if (!byId.has(q.id)) byId.set(q.id, q);
-  }
-
-  // Second pass: pick up to TARGET questions, distributing across categories
-  const byCategory = new Map();
-  for (const q of byId.values()) {
-    if (!byCategory.has(q.categoryId)) byCategory.set(q.categoryId, []);
-    byCategory.get(q.categoryId).push(q);
-  }
-
-  // Shuffle each category's questions
-  for (const [catId, qs] of byCategory) {
-    byCategory.set(catId, shuffle(qs));
-  }
-
-  // Round-robin selection from categories until we have TARGET questions.
-  // The same word can be a synonym in two categories; skip a prompt we've
-  // already used so the user never sees the same word twice in one set.
+  // No word may appear in more than one question across the whole set — not as a
+  // prompt, an answer, or a distractor. Each question consumes its words from
+  // this `used` set, so the same word is never shown twice.
+  const used = new Set();
   const questions = [];
-  const usedPrompts = new Set();
-  const catIds = shuffle([...byCategory.keys()]);
-  let idx = 0;
 
-  while (questions.length < TARGET && byCategory.size > 0) {
-    const catId = catIds[idx % catIds.length];
-    const qs = byCategory.get(catId);
-    if (qs && qs.length > 0) {
-      const q = qs.shift();
-      if (!usedPrompts.has(q.prompt)) {
-        usedPrompts.add(q.prompt);
-        questions.push(q);
+  // Per category: shuffled pool of still-eligible words (mastered ones excluded)
+  const pools = shuffle(viable.map(cat => {
+    const mastered = state.playerName ? getCompletedPromptWords(cat.id) : new Set();
+    return { cat, pool: shuffle(cat.words.filter(w => !mastered.has(w))) };
+  }));
+
+  let progress = true;
+  while (questions.length < TARGET && progress) {
+    progress = false;
+    for (const { cat, pool } of pools) {
+      if (questions.length >= TARGET) break;
+      // words from this category not yet used anywhere — need prompt + 2 answers
+      const avail = pool.filter(w => !used.has(w));
+      if (avail.length < 3) continue;
+      const prompt = avail[0];
+      const answer = [avail[1], avail[2]];
+
+      const distractors = [];
+      for (const item of shuffle(distractorBank)) {
+        const w = item.word;
+        if (used.has(w) || w === prompt || answer.includes(w) || distractors.includes(w)) continue;
+        distractors.push(w);
+        if (distractors.length === 4) break;
       }
-      if (qs.length === 0) byCategory.delete(catId);
+      if (distractors.length < 4) continue;
+
+      [prompt, ...answer, ...distractors].forEach(w => used.add(w));
+      questions.push({
+        id: `${cat.id}-${prompt}`,
+        categoryId: cat.id,
+        prompt,
+        answer,
+        options: shuffle([...answer, ...distractors]),
+      });
+      progress = true;
     }
-    idx++;
-    // Safety: break if all exhausted (extra room for skipped duplicate prompts)
-    if (idx > TARGET * 20) break;
   }
 
   return shuffle(questions);
