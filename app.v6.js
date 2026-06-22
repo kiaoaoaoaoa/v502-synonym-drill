@@ -3316,26 +3316,49 @@ function renderExamTab() {
 
   var questions = exams[examTab].data;
   questions.forEach((q, i) => {
-    html += `<div style="margin-bottom:16px;padding:16px;background:#fff;border-radius:12px;border:1px solid var(--line);box-shadow:0 1px 4px rgba(0,0,0,0.04)">`;
+    html += `<div style="margin-bottom:16px;padding:16px;background:#fff;border-radius:12px;border:1px solid var(--line);box-shadow:0 1px 4px rgba(0,0,0,0.04)" id="examQ${i}">`;
     html += `<p style="font-weight:700;margin:0 0 8px;color:var(--accent)">${i+1}.</p>`;
     if (q.p && q.p.length > 30) {
       html += `<div style="margin:0 0 12px;padding:10px 14px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;font-size:14px;line-height:1.7">${escapeHtml(q.p)}</div>`;
     }
-    // Underline quoted words (target vocabulary)
     var qHtml = escapeHtml(q.q).replace(/'([^']+)'/g, "'<u>$1</u>'");
     html += `<p style="font-weight:600;margin:0 0 10px">${qHtml}</p>`;
     if (q.c && q.c.length > 0) {
       html += '<div style="display:grid;gap:4px">';
       q.c.forEach(([letter, text]) => {
-        html += `<div style="font-size:14px;padding:4px 8px;background:#f9f9fb;border-radius:6px">(${escapeHtml(letter)}) ${escapeHtml(text)}</div>`;
+        html += `<button onclick="checkExamAnswer('${examTab}',${i},'${escapeHtml(letter)}',this)" style="font-size:14px;padding:4px 8px;background:#f9f9fb;border:1px solid var(--line);border-radius:6px;text-align:left;cursor:pointer;font:inherit">(${escapeHtml(letter)}) ${escapeHtml(text)}</button>`;
       });
       html += '</div>';
     }
+    html += `<div id="examFeedback${i}" style="margin-top:6px;font-size:13px;min-height:20px"></div>`;
     html += '</div>';
   });
   html += '</div>';
   els.examContent.innerHTML = html;
 }
+function checkExamAnswer(tab, idx, letter, btn) {
+  var exams = { gachon: window.__V502_EXAM_GACHON2012__ || [], skku: window.__V502_EXAM_SKKU2011__ || [] };
+  var q = exams[tab][idx];
+  if (!q || !q.a) return;
+
+  var correct = letter === q.a;
+  var fb = document.getElementById('examFeedback' + idx);
+  if (fb) {
+    fb.innerHTML = correct
+      ? '<span style="color:#2e7d32">✅ 정답!</span>'
+      : '<span style="color:#c62828">❌ 오답 — 정답은 (' + q.a + ')</span>';
+  }
+
+  // Highlight buttons
+  var btns = document.querySelectorAll('#examQ' + idx + ' button');
+  btns.forEach(function(b) {
+    b.disabled = true;
+    var bLetter = b.textContent.trim().charAt(1);
+    if (bLetter === q.a) b.style.background = '#e8f5e9';
+    else if (bLetter === letter && !correct) b.style.background = '#fce4ec';
+  });
+}
+
 els.examBtn.addEventListener('click', showExam);
 els.examPanel.addEventListener('click', function(e) {
   if (e.target === this) { this.hidden = true; els.startPanel.hidden = false; }
