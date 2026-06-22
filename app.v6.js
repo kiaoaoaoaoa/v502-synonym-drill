@@ -719,7 +719,9 @@ function buildQuestions() {
 }
 
 function renderQuestion() {
+  if (!state.questions.length) return;
   const question = state.questions[state.questionIndex];
+  if (!question) return;
   const saved = state.answers.get(question.id);
   const activeSelection = saved ? new Set(saved.selected) : state.currentSelection;
 
@@ -2249,6 +2251,15 @@ function startQuiz() {
   els.shuffleBtn.disabled = false;
   els.resetBtn.disabled = false;
   updateSetDisplay();
+  if (state.questions.length === 0) {
+    els.feedback.hidden = false;
+    els.feedback.className = "feedback ok";
+    els.feedback.innerHTML = "<strong>이 카테고리의 모든 단어를 마스터했습니다! 🎉</strong><p>다른 카테고리를 선택해 주세요.</p>";
+    els.submitBtn.disabled = true;
+    els.nextBtn.disabled = true;
+    els.postFeedbackActions.hidden = true;
+    return;
+  }
   renderQuestion();
 }
 
