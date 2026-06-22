@@ -1422,6 +1422,7 @@ h2 {
 @media (max-width: 840px) {
   .app {
     grid-template-columns: 1fr;
+    overflow-x: hidden;
   }
 
   .sidebar {
@@ -1431,6 +1432,30 @@ h2 {
     padding: 16px 20px;
     width: 100%;
     max-width: 100vw;
+  }
+
+  .workspace {
+    padding: 16px 12px;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .wordlist-words {
+    grid-template-columns: 1fr;
+    gap: 4px 0;
+  }
+
+  .wordlist-cat {
+    padding: 10px 8px;
+    margin-bottom: 8px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .wl-word {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .set-card,
