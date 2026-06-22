@@ -965,6 +965,11 @@ function toggleSelection(word) {
   }
 
   renderQuestion();
+
+  // Auto-submit when 2 options selected in noExplainMode
+  if (noExplainMode && state.currentSelection.size === 2) {
+    submitAnswer();
+  }
 }
 
 function submitAnswer() {
