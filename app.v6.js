@@ -3847,8 +3847,8 @@ function finishWordcheck() {
   result.style.display = 'block';
   const pct = Math.round(wcState.correct / wcState.total * 100);
   document.getElementById('wordcheckScore').innerHTML = `
-    ${icon('target')} Score: <strong>${wcState.correct}</strong> / ${wcState.total}
-    <br><small>${pct}% correct</small>
+    ${icon('target')} Score: <strong>${wcState.correct}</strong>문제 정답
+    <br><small>정답률 ${pct}%</small>
   `;
 
   // Ranking is updated per question; ensure it's current and refresh the sidebar
