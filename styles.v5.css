@@ -1019,6 +1019,24 @@ h2 {
   font-size: 14px;
 }
 
+.quiz-noexplain-btn {
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--muted);
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.quiz-noexplain-btn.on {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
 .options {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
