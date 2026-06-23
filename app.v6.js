@@ -2809,7 +2809,16 @@ function renderLogicQuestion() {
   logicState.answered = false;
   const diff = window.__V502_LOGIC_DIFFICULTY__ ? window.__V502_LOGIC_DIFFICULTY__.get(q.id) : null;
   const rateTag = diff != null ? ` <span style="font-size:12px;font-weight:600;color:${diff >= 70 ? '#34c759' : diff >= 40 ? '#d4a017' : '#e11d48'}">(예상정답률 ${diff}%)</span>` : '';
-  els.logicQuestionText.innerHTML = `<strong>Q${logicState.currentIndex + 1}.</strong>${rateTag} ${escapeHtml(q.question)}`;
+  let questionHtml = escapeHtml(q.question);
+  if (q.type === 'synonym') {
+    const match = q.question.match(/'([^']+)' is closest in meaning/);
+    if (match) {
+      const escaped = escapeHtml(match[1]);
+      const regex = new RegExp('\\b' + escaped.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'gi');
+      questionHtml = questionHtml.replace(regex, '<u>$&</u>');
+    }
+  }
+  els.logicQuestionText.innerHTML = `<strong>Q${logicState.currentIndex + 1}.</strong>${rateTag} ${questionHtml}`;
   els.logicOptions.innerHTML = "";
 
   // Hide submit/next in noExplainMode
@@ -3307,7 +3316,16 @@ function renderMyInfoTab(tab) {
       html += `<p style="margin-bottom:12px;color:var(--muted)">총 <b>${wrongQuestions.length}</b>개의 틀린 문제</p>`;
       wrongQuestions.forEach((q, i) => {
         html += `<div style="margin-bottom:12px;padding:12px;background:#fff8f0;border-radius:8px;border:1px solid #f0d8c0">`;
-        html += `<p style="font-weight:700;margin:0 0 8px">Q${i+1}. ${escapeHtml(q.question)}</p>`;
+        let reviewQuestionHtml = escapeHtml(q.question);
+        if (q.type === 'synonym') {
+          const m = q.question.match(/'([^']+)' is closest in meaning/);
+          if (m) {
+            const esc = escapeHtml(m[1]);
+            const re = new RegExp('\\b' + esc.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'gi');
+            reviewQuestionHtml = reviewQuestionHtml.replace(re, '<u>$&</u>');
+          }
+        }
+        html += `<p style="font-weight:700;margin:0 0 8px">Q${i+1}. ${reviewQuestionHtml}</p>`;
         if (q.options && q.options.length) {
           html += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:8px">`;
           q.options.forEach(opt => {
