@@ -2115,7 +2115,6 @@ function showWordlist() {
     <span class="wl-jump-controls">
       ${state.playerName ? `<button class="wl-jump-btn wl-hideknown-btn${wlHideKnown ? ' wl-hideknown-on' : ''}" type="button" title="아는 단어(✓) 숨기기">${wlHideKnown ? '✓ 아는 단어 숨김' : '아는 단어 안보기'}</button>` : ''}
       <button class="wl-jump-btn" type="button" data-jump-target="200" title="범주 200번으로 이동">범주200</button>
-      <button class="wl-jump-btn wl-toggle-mid-btn${wlCollapseMid ? ' wl-toggle-mid-on' : ''}" type="button" title="범주200~399 접기/펴기">${wlCollapseMid ? '범주200~399 펴기' : '범주200~399 접기'}</button>
       <button class="wl-jump-btn" type="button" data-jump-target="400" title="범주 400번으로 이동">범주400</button>
       <button class="wl-jump-btn wl-toggle-high-btn${wlCollapseHigh ? ' wl-toggle-high-on' : ''}" type="button" title="범주400~620 접기/펴기">${wlCollapseHigh ? '범주400~620 펴기' : '범주400~620 접기'}</button>
     </span>
@@ -2125,8 +2124,6 @@ function showWordlist() {
   });
   const hideBtn = els.wordlistTitle.querySelector('.wl-hideknown-btn');
   if (hideBtn) hideBtn.addEventListener('click', () => { wlHideKnown = !wlHideKnown; showWordlist(); });
-  const toggleMidBtn = els.wordlistTitle.querySelector('.wl-toggle-mid-btn');
-  if (toggleMidBtn) toggleMidBtn.addEventListener('click', () => { wlCollapseMid = !wlCollapseMid; showWordlist(); });
   const toggleHighBtn = els.wordlistTitle.querySelector('.wl-toggle-high-btn');
   if (toggleHighBtn) toggleHighBtn.addEventListener('click', () => { wlCollapseHigh = !wlCollapseHigh; showWordlist(); });
 
@@ -2141,8 +2138,10 @@ function showWordlist() {
     if (cat === null) {
       const nextIsMid = html.indexOf('wl-mid-cats') === -1 && html.indexOf('wl-high-cats') === -1;
       if (nextIsMid) {
+        // Collapsed bar sits outside the hidden div so it's always clickable
+        html += `<div id="wl-mid-collapsed"${wlCollapseMid ? '' : ' hidden'} style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404"><button type="button" class="wl-jump-btn" style="font-size:12px;padding:4px 16px" onclick="wlCollapseMid=false;showWordlist()">범주 200~399 펴기 ▸</button></div>`;
         html += `<div id="wl-mid-cats"${wlCollapseMid ? ' hidden' : ''}>`;
-        html += `<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">범주 200~399 — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 8px" onclick="document.getElementById('wl-mid-cats').hidden=true;wlCollapseMid=true;">접기</button></div>`;
+        html += `<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">범주 200~399 — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 8px" onclick="document.getElementById('wl-mid-cats').hidden=true;wlCollapseMid=true;document.getElementById('wl-mid-collapsed').hidden=false;">접기</button></div>`;
       } else {
         html += '</div>'; // close wl-mid-cats
         html += `<div id="wl-high-cats"${wlCollapseHigh ? ' hidden' : ''}>`;
