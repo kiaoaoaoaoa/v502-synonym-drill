@@ -1185,6 +1185,19 @@ async function handleLogin() {
       els.authError.hidden = false;
       return;
     }
+    // cloud auth failed but local password matched — still try to pull latest cloud data
+    if (cloudResult === null && hasPublicConfig()) {
+      try {
+        const client = await getSupabaseClient();
+        if (client) {
+          const { data } = await client.from(getLeaderboardTable())
+            .select('payload')
+            .eq('nickname', key).eq('quiz_set', 'USERDATA')
+            .order('created_at', { ascending: false }).limit(1).maybeSingle();
+          if (data && data.payload) { cloudPullUserData(data.payload, name); }
+        }
+      } catch(e) { console.warn('cloud pull on local-login fallback failed', e); }
+    }
   }
 
   const store = readPasswordStore();
@@ -1237,12 +1250,12 @@ async function handleRegister() {
 
   store[key] = { password: btoa(pw), displayName: name };
   localStorage.setItem(passwordStoreKey, JSON.stringify(store));
+  state.playerName = name;
   const syncOk = await cloudSyncAll();
   if (!syncOk) {
     els.authError.textContent = '클라우드 동기화에 실패했습니다. 인터넷 연결 확인 후 다시 로그인해주세요. (다른 기기에서 로그인이 안 될 수 있습니다)';
     els.authError.hidden = false;
   }
-  state.playerName = name;
   saveSession(name);
   renderAuthUI();
   updateSidebarCompletion();
