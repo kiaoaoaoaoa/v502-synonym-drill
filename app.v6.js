@@ -1650,46 +1650,32 @@ async function cloudSyncAll() {
   });
 
   const table = getLeaderboardTable();
-  // Try upsert first (single atomic operation — needs UNIQUE constraint on nickname,quiz_set)
-  let upsertOk = false;
-  try {
-    await client.from(table).upsert({
-      nickname: nk, quiz_set: 'USERDATA',
-      correct_count: 1, total_count: 1, accuracy: 1, payload
-    }, { onConflict: 'nickname,quiz_set' });
-    upsertOk = true;
-  } catch(upsertErr) {
-    console.warn('cloudSyncAll upsert failed (will try insert)', upsertErr);
-  }
+  const row = { nickname: nk, quiz_set: 'USERDATA', correct_count: 1, total_count: 1, accuracy: 1, payload };
 
-  if (!upsertOk) {
-    // Insert without deleting first — never destroy data before confirming write
-    for (let attempt = 0; attempt < 3; attempt++) {
-      try {
-        await client.from(table).insert({
-          nickname: nk, quiz_set: 'USERDATA',
-          correct_count: 1, total_count: 1, accuracy: 1, payload
-        });
-        upsertOk = true;
-        break;
-      } catch(insertErr) {
-        if (attempt === 2) console.warn('cloudSyncAll insert failed after 3 attempts', insertErr);
-        else await new Promise(r => setTimeout(r, 500 * (attempt + 1)));
-      }
+  // Delete ALL existing USERDATA rows for this user, then insert one fresh row.
+  // Avoids relying on a UNIQUE constraint (which the table may not have) and
+  // guarantees exactly one row per user without duplicates.
+  let ok = false;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      // Delete old rows first (if any)
+      await client.from(table).delete().eq('nickname', nk).eq('quiz_set', 'USERDATA');
+      // Insert the new row
+      await client.from(table).insert(row);
+      ok = true;
+      break;
+    } catch(e) {
+      if (attempt === 2) console.warn('cloudSyncAll failed after 3 attempts', e);
+      else await new Promise(r => setTimeout(r, 500 * (attempt + 1)));
     }
   }
 
-  // Clean up stale duplicates if any (keep only the newest row per nickname+quiz_set)
-  if (upsertOk) {
-    try {
-      const { data: rows } = await client.from(table)
-        .select('id,created_at').eq('nickname', nk).eq('quiz_set', 'USERDATA')
-        .order('created_at', { ascending: false });
-      if (rows && rows.length > 1) {
-        const idsToDelete = rows.slice(1).map(r => r.id);
-        await client.from(table).delete().in('id', idsToDelete);
-      }
-    } catch(e) { /* non-critical: duplicate cleanup failed */ }
+  if (!ok) {
+    // Show visible error so the user knows sync didn't work
+    if (els.authError) {
+      els.authError.textContent = '클라우드 동기화에 실패했습니다. 인터넷 연결을 확인해주세요.';
+      els.authError.hidden = false;
+    }
   }
 }
 
