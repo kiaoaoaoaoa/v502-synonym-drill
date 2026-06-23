@@ -2109,6 +2109,7 @@ function getActiveSetCount() {
 }
 
 let wlHideKnown = false;
+let wlCollapse80to100 = true;
 let wlCollapseLow = true;
 let wlCollapseMid = true;
 let wlCollapseHigh = true;
@@ -2131,19 +2132,25 @@ function showWordlist() {
   if (hideBtn) hideBtn.addEventListener('click', () => { wlHideKnown = !wlHideKnown; showWordlist(); });
   const hideKnown = wlHideKnown && state.playerName;
   let html = '<div class="wordlist-scroll">';
-  const catsLowLow  = categories.filter(c => parseInt(c.id) < 100);
-  const catsLowHigh = categories.filter(c => parseInt(c.id) >= 100 && parseInt(c.id) < 200);
-  const catsMid     = categories.filter(c => parseInt(c.id) >= 200 && parseInt(c.id) < 400);
-  const catsHigh    = categories.filter(c => parseInt(c.id) >= 400);
+  const catsVeryLow   = categories.filter(c => parseInt(c.id) < 80);
+  const cats80to100   = categories.filter(c => parseInt(c.id) >= 80 && parseInt(c.id) <= 100);
+  const catsLowHigh   = categories.filter(c => parseInt(c.id) >= 101 && parseInt(c.id) < 200);
+  const catsMid       = categories.filter(c => parseInt(c.id) >= 200 && parseInt(c.id) < 400);
+  const catsHigh      = categories.filter(c => parseInt(c.id) >= 400);
   let sentinelIdx = 0;
-  [...catsLowLow, null, ...catsLowHigh, null, ...catsMid, null, ...catsHigh].forEach(cat => {
+  [...catsVeryLow, null, ...cats80to100, null, ...catsLowHigh, null, ...catsMid, null, ...catsHigh].forEach(cat => {
     if (cat === null) {
       sentinelIdx++;
       if (sentinelIdx === 1) {
-        html += `<div id="wl-low-collapsed"${wlCollapseLow ? '' : ' hidden'} style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404"><button type="button" class="wl-jump-btn" style="font-size:12px;padding:4px 16px" onclick="wlCollapseLow=false;showWordlist()">범주 100~199 펴기 ▸</button></div>`;
-        html += `<div id="wl-low-cats"${wlCollapseLow ? ' hidden' : ''}>`;
-        html += `<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">범주 100~199 — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 8px" onclick="document.getElementById('wl-low-cats').hidden=true;wlCollapseLow=true;document.getElementById('wl-low-collapsed').hidden=false;">접기</button></div>`;
+        html += `<div id="wl-80to100-collapsed"${wlCollapse80to100 ? '' : ' hidden'} style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404"><button type="button" class="wl-jump-btn" style="font-size:12px;padding:4px 16px" onclick="wlCollapse80to100=false;showWordlist()">범주 080~100 펴기 ▸</button></div>`;
+        html += `<div id="wl-80to100-cats"${wlCollapse80to100 ? ' hidden' : ''}>`;
+        html += `<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">범주 080~100 — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 8px" onclick="document.getElementById('wl-80to100-cats').hidden=true;wlCollapse80to100=true;document.getElementById('wl-80to100-collapsed').hidden=false;">접기</button></div>`;
       } else if (sentinelIdx === 2) {
+        html += '</div>'; // close wl-80to100-cats
+        html += `<div id="wl-low-collapsed"${wlCollapseLow ? '' : ' hidden'} style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404"><button type="button" class="wl-jump-btn" style="font-size:12px;padding:4px 16px" onclick="wlCollapseLow=false;showWordlist()">범주 101~199 펴기 ▸</button></div>`;
+        html += `<div id="wl-low-cats"${wlCollapseLow ? ' hidden' : ''}>`;
+        html += `<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">범주 101~199 — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 8px" onclick="document.getElementById('wl-low-cats').hidden=true;wlCollapseLow=true;document.getElementById('wl-low-collapsed').hidden=false;">접기</button></div>`;
+      } else if (sentinelIdx === 3) {
         html += '</div>'; // close wl-low-cats
         html += `<div id="wl-mid-collapsed"${wlCollapseMid ? '' : ' hidden'} style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404"><button type="button" class="wl-jump-btn" style="font-size:12px;padding:4px 16px" onclick="wlCollapseMid=false;showWordlist()">범주 200~399 펴기 ▸</button></div>`;
         html += `<div id="wl-mid-cats"${wlCollapseMid ? ' hidden' : ''}>`;
