@@ -406,6 +406,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "If you're an environmentalist, plastic is a word you tend to say with a sneer. It has become a symbol of our wasteful society. But there seems little concern it is here to stay, and the truth is, of course, that plastics have brought enormous benefits, even environmental ones. It's not really the plastics themselves that are the environmental disaster ― it's the way society chooses to use and ____",
+    "p": "If you're an environmentalist, plastic is a word you tend to say with a sneer. It has become a symbol of our wasteful society. But there seems little concern it is here to stay, and the truth is, of course, that plastics have brought enormous benefits, even environmental ones. It's not really the plastics themselves that are the environmental disaster ― it's the way society chooses to use and _______ them.",
     "c": [
       [
         "1",
@@ -433,6 +434,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "A Parisian villain broke into a house at the village of Lachelle in 1978. Once inside he began to feel decidedly peckish and so went in search of the icebox. There he found his favourite cheese which it would have been a shame not to try. He then found some Bath Oliver biscuits and three bottles of champagne. After a while he began to feel sleepy and decided that he would lie down and digest his m",
+    "p": "A Parisian villain broke into a house at the village of Lachelle in 1978. Once inside he began to feel decidedly peckish and so went in search of the icebox. There he found his favourite cheese which it would have been a shame not to try. He then found some Bath Oliver biscuits and three bottles of champagne. After a while he began to feel sleepy and decided that he would lie down and digest his meal in comfort. He was arrested next morning fast asleep upstairs in the spare bedroom.",
     "c": [
       [
         "1",
@@ -460,6 +462,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "Women of 30 or 40 or older are apt to be juggling a career and the care of children, often without a husband. They have figured out their lives for themselves. They have style. They are grown-ups, and they don't conceal their ages; if their lives are tougher, they frequently possess a certain centeredness and strength that is unavailable to those much younger, who seem somehow unformed, incomplete",
+    "p": "Women of 30 or 40 or older are apt to be juggling a career and the care of children, often without a husband. They have figured out their lives for themselves. They have style. They are grown-ups, and they don't conceal their ages; if their lives are tougher, they frequently possess a certain centeredness and strength that is unavailable to those much younger, who seem somehow unformed, incomplete, far less interesting ― and sometimes unbelievably ignorant.",
     "c": [
       [
         "1",
@@ -487,6 +490,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "The best title of the passage would be _______.",
+    "p": "As its critics so rightly claimed, inductivism depicted science as a heartless, almost inhuman discipline offering no legitimate place to quirkiness, intuition, and all the other subjective attributes adhering to our vernacular notion of genius. Great scientists, the critics claimed, are distinguished more by their powers of _______, than their skill in experiment or observation. The criticisms of inductivism are certainly valid and I welcome its dethroning during the past thirty years as a necessary prelude to better understanding. Yet, in attacking it so strongly, some critics have tried to substitute an alternative equally extreme and unproductive in its emphasis on the subjectivity of creative thought. In this \"eureka\" view, creativity is an ineffable something, accessible only to persons of genius. It arises like a bolt of lightning, unpredictable and unanticipated ― but the bolts strike only a few special people.",
     "c": [
       [
         "1",
@@ -514,6 +518,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "Which of the following is most appropriate for the blank?",
+    "p": "As its critics so rightly claimed, inductivism depicted science as a heartless, almost inhuman discipline offering no legitimate place to quirkiness, intuition, and all the other subjective attributes adhering to our vernacular notion of genius. Great scientists, the critics claimed, are distinguished more by their powers of _______, than their skill in experiment or observation. The criticisms of inductivism are certainly valid and I welcome its dethroning during the past thirty years as a necessary prelude to better understanding. Yet, in attacking it so strongly, some critics have tried to substitute an alternative equally extreme and unproductive in its emphasis on the subjectivity of creative thought. In this \"eureka\" view, creativity is an ineffable something, accessible only to persons of genius. It arises like a bolt of lightning, unpredictable and unanticipated ― but the bolts strike only a few special people.",
     "c": [
       [
         "1",
@@ -541,6 +546,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "According to the passage, which of the following is true?",
+    "p": "As its critics so rightly claimed, inductivism depicted science as a heartless, almost inhuman discipline offering no legitimate place to quirkiness, intuition, and all the other subjective attributes adhering to our vernacular notion of genius. Great scientists, the critics claimed, are distinguished more by their powers of _______, than their skill in experiment or observation. The criticisms of inductivism are certainly valid and I welcome its dethroning during the past thirty years as a necessary prelude to better understanding. Yet, in attacking it so strongly, some critics have tried to substitute an alternative equally extreme and unproductive in its emphasis on the subjectivity of creative thought. In this \"eureka\" view, creativity is an ineffable something, accessible only to persons of genius. It arises like a bolt of lightning, unpredictable and unanticipated ― but the bolts strike only a few special people.",
     "c": [
       [
         "1",
@@ -568,6 +574,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "The best title of the passage would be _______.",
+    "p": "Editors in America were always in danger of being challenged to duels or horsewhipped or beaten up by gangs. During the War of 1812, one anti-war newspaper was actually blasted by a mob with a cannon. On the frontier, tarring and feathering editors was a popular pastime. Symbolically, of course, it still is. The press, its reach almost infinitely expanded by electronics, has come a long way since those days. Yet, the public, despite its daily if not hourly intimacy with the press, does not really understand it very well. That lack of understanding is reflected in the courts, although it goes for beyond matters of the law. In part, this is inevitable because the press is indeed a peculiar institution, full of paradoxes.",
     "c": [
       [
         "1",
@@ -595,6 +602,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "According to the passage, which of the following is true?",
+    "p": "Editors in America were always in danger of being challenged to duels or horsewhipped or beaten up by gangs. During the War of 1812, one anti-war newspaper was actually blasted by a mob with a cannon. On the frontier, tarring and feathering editors was a popular pastime. Symbolically, of course, it still is. The press, its reach almost infinitely expanded by electronics, has come a long way since those days. Yet, the public, despite its daily if not hourly intimacy with the press, does not really understand it very well. That lack of understanding is reflected in the courts, although it goes for beyond matters of the law. In part, this is inevitable because the press is indeed a peculiar institution, full of paradoxes.",
     "c": [
       [
         "1",
@@ -622,6 +630,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "The underlined expression means _______.",
+    "p": "The second picture she had made with Carter was called Angel Beach, and in it she played a girl who was raped by the members of a motorcycle gang. Maria had seen it twice, once at a studio preview and a second time by herself, at a drive-in, and neither time did she have any sense that the girl on the screen was herself. \"I look at you and I know that what happened just didn't mean anything,\" the girl on the screen would say, and \"「There's a lot more to living than just kicks」, I see that now, kicks are nowhere.\" Carter's original cut ended with a shot of the motorcycle gang, as if they represented some reality not fully apprehended by the girl Maria played, but the cut released by the studio ended with a long dolly shot of Maria strolling across a campus. Maria preferred the studio's cut. In fact, she liked watching the picture: the girl on the screen seemed to have a definite knack for controlling her own destiny.",
     "c": [
       [
         "1",
@@ -649,6 +658,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "According to the passage, which of the following is true?",
+    "p": "The second picture she had made with Carter was called Angel Beach, and in it she played a girl who was raped by the members of a motorcycle gang. Maria had seen it twice, once at a studio preview and a second time by herself, at a drive-in, and neither time did she have any sense that the girl on the screen was herself. \"I look at you and I know that what happened just didn't mean anything,\" the girl on the screen would say, and \"「There's a lot more to living than just kicks」, I see that now, kicks are nowhere.\" Carter's original cut ended with a shot of the motorcycle gang, as if they represented some reality not fully apprehended by the girl Maria played, but the cut released by the studio ended with a long dolly shot of Maria strolling across a campus. Maria preferred the studio's cut. In fact, she liked watching the picture: the girl on the screen seemed to have a definite knack for controlling her own destiny.",
     "c": [
       [
         "1",
@@ -676,6 +686,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "The underlined expression suggests that _______.",
+    "p": "The best neighbour I ever had was an Italian restaurant. Emergency lasagna available night and day, change for the launderette on Sundays, a permanent door-keeper against gatecrashers and policemen with parking tickets. Even if our fourth floor bath water did run dry every time they filled up the Expresso machine, I miss them still. Bad neighbours can blight a house worse than dry rot but there is no insurance against them, no effective barricades in the compulsory intimacy except a decent caution and conversation ruthlessly restricted to matters of meteorology. And 「it only takes a tiny breach in the wall of platitudes to unleash appalling dramas of persecution and passion」.",
     "c": [
       [
         "1",
@@ -703,6 +714,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "According to the passage, the author _______.",
+    "p": "The best neighbour I ever had was an Italian restaurant. Emergency lasagna available night and day, change for the launderette on Sundays, a permanent door-keeper against gatecrashers and policemen with parking tickets. Even if our fourth floor bath water did run dry every time they filled up the Expresso machine, I miss them still. Bad neighbours can blight a house worse than dry rot but there is no insurance against them, no effective barricades in the compulsory intimacy except a decent caution and conversation ruthlessly restricted to matters of meteorology. And 「it only takes a tiny breach in the wall of platitudes to unleash appalling dramas of persecution and passion」.",
     "c": [
       [
         "1",
@@ -730,6 +742,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "Which of the following is most appropriate for the blank ⒜?",
+    "p": "Computer translation systems are now in use in many parts of the world. But although the efficiency of machine translation is improving rapidly, there is no question of human translators being made redundant. On the contrary, ⒜_______. Today's computers are of little value in translating literary works, where ⒝_______ is vital, or the spoken word, which tends to be ungrammatical, or important texts, where absolute accuracy is essential. But for routine technical reports, working papers and the like, which take up so much of the translation workload of international organizations, computers are likely to play an increasing part. The method of operation will probably be for the machine to make a rough version, which the translator will then edit, correcting obvious mistakes, and where necessary referring back to the original. If machines can translate languages, could they ever teach languages? Yes, say enthusiasts, although they doubt that the teacher could ever be totally replaced by a machine in the classroom. Good old teachers know best!",
     "c": [
       [
         "1",
@@ -757,6 +770,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "Which of the following is most appropriate for the blank ⒝?",
+    "p": "Computer translation systems are now in use in many parts of the world. But although the efficiency of machine translation is improving rapidly, there is no question of human translators being made redundant. On the contrary, ⒜_______. Today's computers are of little value in translating literary works, where ⒝_______ is vital, or the spoken word, which tends to be ungrammatical, or important texts, where absolute accuracy is essential. But for routine technical reports, working papers and the like, which take up so much of the translation workload of international organizations, computers are likely to play an increasing part. The method of operation will probably be for the machine to make a rough version, which the translator will then edit, correcting obvious mistakes, and where necessary referring back to the original. If machines can translate languages, could they ever teach languages? Yes, say enthusiasts, although they doubt that the teacher could ever be totally replaced by a machine in the classroom. Good old teachers know best!",
     "c": [
       [
         "1",
@@ -784,6 +798,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "According to the passage, which of the following is true of language teachers?",
+    "p": "Computer translation systems are now in use in many parts of the world. But although the efficiency of machine translation is improving rapidly, there is no question of human translators being made redundant. On the contrary, ⒜_______. Today's computers are of little value in translating literary works, where ⒝_______ is vital, or the spoken word, which tends to be ungrammatical, or important texts, where absolute accuracy is essential. But for routine technical reports, working papers and the like, which take up so much of the translation workload of international organizations, computers are likely to play an increasing part. The method of operation will probably be for the machine to make a rough version, which the translator will then edit, correcting obvious mistakes, and where necessary referring back to the original. If machines can translate languages, could they ever teach languages? Yes, say enthusiasts, although they doubt that the teacher could ever be totally replaced by a machine in the classroom. Good old teachers know best!",
     "c": [
       [
         "1",
@@ -811,6 +826,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "What is the tone of the passage?",
+    "p": "According to the advice from the travel book, the ascent of the Great Pyramid could be made in 10-15 minutes with two or three helpers. Later that afternoon I climbed the Pyramid from the north-west corner, taking the suggested ten minutes without any helper to push, pull and support me. ⒜ The easiest way is from the north-east corner, but as it is now forbidden to climb it from any corner I wanted to be out of sight of the Pyramids police station, which is situated on the edge of the plateau below the east face. ⒝ The top, truncated by the removal of the limestone, is about twelve yards square, and I was the only one on it. ⒞ The view could scarcely have been more extensive. ⒟ Across the river, below the cliffs of the Mokattam Hills, from where much of the 6,000,000 tons of stone used to build this single pyramid were quarried, were the mosques and spectacular minarets of Muslim Cairo, the largest city in Africa, and the great labyrinthine cemeteries. ⒠ Down towards the Nile, to the north of Old Cairo, was the modern city with the high buildings rising above it, not enough of them, as in Manhattan, to form groves of forests which give them an air of majesty, but in melancholy twos or threes, or completely isolated. ⒡ I was now joined by a host of 'Nagamas', members of an itinerant tribe, who had seen me climb the pyramid, and now, with their insatiable demands for money and their constant tugging at my clothing, very nearly succeeded in making me lose my temper.",
     "c": [
       [
         "1",
@@ -838,6 +854,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "When the above passage can be divided into three paragraphs, which would be the best boundaries?",
+    "p": "According to the advice from the travel book, the ascent of the Great Pyramid could be made in 10-15 minutes with two or three helpers. Later that afternoon I climbed the Pyramid from the north-west corner, taking the suggested ten minutes without any helper to push, pull and support me. ⒜ The easiest way is from the north-east corner, but as it is now forbidden to climb it from any corner I wanted to be out of sight of the Pyramids police station, which is situated on the edge of the plateau below the east face. ⒝ The top, truncated by the removal of the limestone, is about twelve yards square, and I was the only one on it. ⒞ The view could scarcely have been more extensive. ⒟ Across the river, below the cliffs of the Mokattam Hills, from where much of the 6,000,000 tons of stone used to build this single pyramid were quarried, were the mosques and spectacular minarets of Muslim Cairo, the largest city in Africa, and the great labyrinthine cemeteries. ⒠ Down towards the Nile, to the north of Old Cairo, was the modern city with the high buildings rising above it, not enough of them, as in Manhattan, to form groves of forests which give them an air of majesty, but in melancholy twos or threes, or completely isolated. ⒡ I was now joined by a host of 'Nagamas', members of an itinerant tribe, who had seen me climb the pyramid, and now, with their insatiable demands for money and their constant tugging at my clothing, very nearly succeeded in making me lose my temper.",
     "c": [
       [
         "1",
@@ -865,6 +882,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "According to the passage, the author chose the north-west corner to climb the Pyramid because _______.",
+    "p": "According to the advice from the travel book, the ascent of the Great Pyramid could be made in 10-15 minutes with two or three helpers. Later that afternoon I climbed the Pyramid from the north-west corner, taking the suggested ten minutes without any helper to push, pull and support me. ⒜ The easiest way is from the north-east corner, but as it is now forbidden to climb it from any corner I wanted to be out of sight of the Pyramids police station, which is situated on the edge of the plateau below the east face. ⒝ The top, truncated by the removal of the limestone, is about twelve yards square, and I was the only one on it. ⒞ The view could scarcely have been more extensive. ⒟ Across the river, below the cliffs of the Mokattam Hills, from where much of the 6,000,000 tons of stone used to build this single pyramid were quarried, were the mosques and spectacular minarets of Muslim Cairo, the largest city in Africa, and the great labyrinthine cemeteries. ⒠ Down towards the Nile, to the north of Old Cairo, was the modern city with the high buildings rising above it, not enough of them, as in Manhattan, to form groves of forests which give them an air of majesty, but in melancholy twos or threes, or completely isolated. ⒡ I was now joined by a host of 'Nagamas', members of an itinerant tribe, who had seen me climb the pyramid, and now, with their insatiable demands for money and their constant tugging at my clothing, very nearly succeeded in making me lose my temper.",
     "c": [
       [
         "1",
@@ -892,6 +910,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "According to the passage, which of the following is true?",
+    "p": "According to the advice from the travel book, the ascent of the Great Pyramid could be made in 10-15 minutes with two or three helpers. Later that afternoon I climbed the Pyramid from the north-west corner, taking the suggested ten minutes without any helper to push, pull and support me. ⒜ The easiest way is from the north-east corner, but as it is now forbidden to climb it from any corner I wanted to be out of sight of the Pyramids police station, which is situated on the edge of the plateau below the east face. ⒝ The top, truncated by the removal of the limestone, is about twelve yards square, and I was the only one on it. ⒞ The view could scarcely have been more extensive. ⒟ Across the river, below the cliffs of the Mokattam Hills, from where much of the 6,000,000 tons of stone used to build this single pyramid were quarried, were the mosques and spectacular minarets of Muslim Cairo, the largest city in Africa, and the great labyrinthine cemeteries. ⒠ Down towards the Nile, to the north of Old Cairo, was the modern city with the high buildings rising above it, not enough of them, as in Manhattan, to form groves of forests which give them an air of majesty, but in melancholy twos or threes, or completely isolated. ⒡ I was now joined by a host of 'Nagamas', members of an itinerant tribe, who had seen me climb the pyramid, and now, with their insatiable demands for money and their constant tugging at my clothing, very nearly succeeded in making me lose my temper.",
     "c": [
       [
         "1",
@@ -919,6 +938,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "The best title of the passage would be _______.",
+    "p": "Food science, unfortunately, is not always dealing with what is acceptable to the public. The word 'new', such an exciting concept in other areas of advertising, causes only apprehension when applied to food. A new food? For science can open up a world of novel proteins, new methods of animal husbandry and feeding-stuffs, new crops and new meat and fish to eat. But the food trade can say no, and that is that. They know the extent to which the public attitude to food is guided by social and religious taboos, childhood conditioning, simple prejudices and preference. It is obvious that a product like hydrogenated palm and coconut and herring oil could not have achieved world-wide acceptance without a boost from the persuaders and perhaps it is there that the whole key to food acceptance lies. If it had not been for the last decade or so of brilliant advertising campaigning, how could margarine have climbed out of the hole it found itself in at the end of the war?",
     "c": [
       [
         "1",
@@ -946,6 +966,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "According to the passage, the success of new food products depends mainly on _______.",
+    "p": "Food science, unfortunately, is not always dealing with what is acceptable to the public. The word 'new', such an exciting concept in other areas of advertising, causes only apprehension when applied to food. A new food? For science can open up a world of novel proteins, new methods of animal husbandry and feeding-stuffs, new crops and new meat and fish to eat. But the food trade can say no, and that is that. They know the extent to which the public attitude to food is guided by social and religious taboos, childhood conditioning, simple prejudices and preference. It is obvious that a product like hydrogenated palm and coconut and herring oil could not have achieved world-wide acceptance without a boost from the persuaders and perhaps it is there that the whole key to food acceptance lies. If it had not been for the last decade or so of brilliant advertising campaigning, how could margarine have climbed out of the hole it found itself in at the end of the war?",
     "c": [
       [
         "1",
@@ -973,6 +994,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "The underlined expression in ⒜ implies that _______.",
+    "p": "⒜「The impression that more women shoplift than men may be due to publicity」. As a recent report on shoplifting pointed out: Every week, newspapers report the conviction of some middle-aged woman of blameless reputation who has stolen, for quite unexplained motives, some objects of little value which she could easily have afforded to buy. Most psychiatrists have at some point seen patients who were guilty of this sort of theft. This poses the question of whether ⒝_______ have a better chance of getting off shop-lifting charges than ⒞_______. The shops insist that they are concerned solely with whether customers have paid for the goods: their accent, class or ability to browbeat, is immaterial. But, once charged, the middle-class are undoubtedly in a better position. They are more likely to have, or call in, a solicitor; and they are financially able to risk paying legal costs. The solicitor may suggest a psychological assessment. And a 'respectable' first-time offender surely ⒟「goes into the dock」 with more chance of acquittal than someone lacking these attributes.",
     "c": [
       [
         "1",
@@ -1000,6 +1022,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "Which of the following is most appropriate for the blanks ⒝ and ⒞?",
+    "p": "⒜「The impression that more women shoplift than men may be due to publicity」. As a recent report on shoplifting pointed out: Every week, newspapers report the conviction of some middle-aged woman of blameless reputation who has stolen, for quite unexplained motives, some objects of little value which she could easily have afforded to buy. Most psychiatrists have at some point seen patients who were guilty of this sort of theft. This poses the question of whether ⒝_______ have a better chance of getting off shop-lifting charges than ⒞_______. The shops insist that they are concerned solely with whether customers have paid for the goods: their accent, class or ability to browbeat, is immaterial. But, once charged, the middle-class are undoubtedly in a better position. They are more likely to have, or call in, a solicitor; and they are financially able to risk paying legal costs. The solicitor may suggest a psychological assessment. And a 'respectable' first-time offender surely ⒟「goes into the dock」 with more chance of acquittal than someone lacking these attributes.",
     "c": [
       [
         "1",
@@ -1027,6 +1050,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "The underlined expression in ⒟ means _______.",
+    "p": "⒜「The impression that more women shoplift than men may be due to publicity」. As a recent report on shoplifting pointed out: Every week, newspapers report the conviction of some middle-aged woman of blameless reputation who has stolen, for quite unexplained motives, some objects of little value which she could easily have afforded to buy. Most psychiatrists have at some point seen patients who were guilty of this sort of theft. This poses the question of whether ⒝_______ have a better chance of getting off shop-lifting charges than ⒞_______. The shops insist that they are concerned solely with whether customers have paid for the goods: their accent, class or ability to browbeat, is immaterial. But, once charged, the middle-class are undoubtedly in a better position. They are more likely to have, or call in, a solicitor; and they are financially able to risk paying legal costs. The solicitor may suggest a psychological assessment. And a 'respectable' first-time offender surely ⒟「goes into the dock」 with more chance of acquittal than someone lacking these attributes.",
     "c": [
       [
         "1",
@@ -1054,6 +1078,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "The best title of the passage would be _______.",
+    "p": "When the Stone of Destiny came back to Scotland, it was the culmination of a 700-year campaign to have it returned. The Stone, which is little more than a lump of rock of no great commercial value or artistic merit, is of great symbolic significance to the Scottish people, who, according to legend, could never be free while it was still being held on foreign soil. It had originally been stolen by the English King Edward I in 1296. Prior to its repatriation, it was kept in Westminster Abbey in London, where it was used during coronations of English monarchs. The return of the Stone has once again raised the question of what should be done about other national treasures held in museums and private collections abroad. Sometimes the circumstances under which an item was acquired make the decision simple; if it was stolen, it should go back. But more often than not the situation is far less straightforward. Artistic treasures may have been bought from colonial governments who had no moral right to sell them, or donated by countries that no longer exist.",
     "c": [
       [
         "1",
@@ -1081,6 +1106,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "According to the passage, which of the following is true?",
+    "p": "When the Stone of Destiny came back to Scotland, it was the culmination of a 700-year campaign to have it returned. The Stone, which is little more than a lump of rock of no great commercial value or artistic merit, is of great symbolic significance to the Scottish people, who, according to legend, could never be free while it was still being held on foreign soil. It had originally been stolen by the English King Edward I in 1296. Prior to its repatriation, it was kept in Westminster Abbey in London, where it was used during coronations of English monarchs. The return of the Stone has once again raised the question of what should be done about other national treasures held in museums and private collections abroad. Sometimes the circumstances under which an item was acquired make the decision simple; if it was stolen, it should go back. But more often than not the situation is far less straightforward. Artistic treasures may have been bought from colonial governments who had no moral right to sell them, or donated by countries that no longer exist.",
     "c": [
       [
         "1",
@@ -1108,6 +1134,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "The best title of the passage would be _______.",
+    "p": "On 21 December 1988, I happened to stand with numerous reporters at Kennedy Airport in New York, watching a mother writhe in agony, out of control, on the floor of the Pan Am terminal. She had just heard, in full sight of the New York press corps, that her 21-year-old daughter's plane had crashed killing everyone on board. At least a dozen camera crews were zooming in on the grief-stricken mother. The press photographers started yelling at the television crews to get out of the way, so that they could get a better look. Their bosses would have been displeased if they'd returned to base empty-handed. Within minutes, TV images of the bereaved woman's anguish were being beamed round the world. The next day, a full-page photograph of the woman, lying undignified on the airport floor, appeared on the front page of the New York Daily News. 「The justification was that it helped convey, in human terms, the full horror of the disaster」. The editor of the Daily News maintains that, in putting the mother's photo on Page One, he wasn't exploiting her ― just doing his job as a professional 'picturing a tragedy.' For my part, I believe that _______. People in television argue that medium requires pictures, but does it have to be so all-devouring? Why this determination to show everything in pictures when a word, a glance, silence itself communicates more and better? Although many reporters at Kennedy felt uncomfortable, they went ahead to shoot the pictures. In beating the competition, they only added to the tragedy.",
     "c": [
       [
         "1",
@@ -1135,6 +1162,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "The underlined expression implies that _______.",
+    "p": "On 21 December 1988, I happened to stand with numerous reporters at Kennedy Airport in New York, watching a mother writhe in agony, out of control, on the floor of the Pan Am terminal. She had just heard, in full sight of the New York press corps, that her 21-year-old daughter's plane had crashed killing everyone on board. At least a dozen camera crews were zooming in on the grief-stricken mother. The press photographers started yelling at the television crews to get out of the way, so that they could get a better look. Their bosses would have been displeased if they'd returned to base empty-handed. Within minutes, TV images of the bereaved woman's anguish were being beamed round the world. The next day, a full-page photograph of the woman, lying undignified on the airport floor, appeared on the front page of the New York Daily News. 「The justification was that it helped convey, in human terms, the full horror of the disaster」. The editor of the Daily News maintains that, in putting the mother's photo on Page One, he wasn't exploiting her ― just doing his job as a professional 'picturing a tragedy.' For my part, I believe that _______. People in television argue that medium requires pictures, but does it have to be so all-devouring? Why this determination to show everything in pictures when a word, a glance, silence itself communicates more and better? Although many reporters at Kennedy felt uncomfortable, they went ahead to shoot the pictures. In beating the competition, they only added to the tragedy.",
     "c": [
       [
         "1",
@@ -1162,6 +1190,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "Which of the following is most appropriate for the blank?",
+    "p": "On 21 December 1988, I happened to stand with numerous reporters at Kennedy Airport in New York, watching a mother writhe in agony, out of control, on the floor of the Pan Am terminal. She had just heard, in full sight of the New York press corps, that her 21-year-old daughter's plane had crashed killing everyone on board. At least a dozen camera crews were zooming in on the grief-stricken mother. The press photographers started yelling at the television crews to get out of the way, so that they could get a better look. Their bosses would have been displeased if they'd returned to base empty-handed. Within minutes, TV images of the bereaved woman's anguish were being beamed round the world. The next day, a full-page photograph of the woman, lying undignified on the airport floor, appeared on the front page of the New York Daily News. 「The justification was that it helped convey, in human terms, the full horror of the disaster」. The editor of the Daily News maintains that, in putting the mother's photo on Page One, he wasn't exploiting her ― just doing his job as a professional 'picturing a tragedy.' For my part, I believe that _______. People in television argue that medium requires pictures, but does it have to be so all-devouring? Why this determination to show everything in pictures when a word, a glance, silence itself communicates more and better? Although many reporters at Kennedy felt uncomfortable, they went ahead to shoot the pictures. In beating the competition, they only added to the tragedy.",
     "c": [
       [
         "1",
@@ -1189,6 +1218,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "The best title of the passage would be _______.",
+    "p": "Not many years after the French philosopher Rousseau promulgated the idea of the 'noble savage', which embodied his belief that man in his natural state was innately good, there walked out of the woods a living specimen who, it was hoped, would prove the point. It happened at the village of Saint-Sernin in southern France on January 9, 1800. A strange creature from the forest was caught scavenging for food, and though it appeared to be a wild animal, it walked erect. As soon as those who captured the creature realized it was human, a boy of about 12 years in fact, they attempted to care for him. The 'Wild Boy of Aveyron', as he became known, could not speak and had no apparent awareness that he was human. Offered white bread, he spat it out immediately and bit anyone who approached too close. It was time to alert the scientists. Here, apparently, was the noble savage in person. Over the next few months, attempts were made to bring the boy back into the human race. With some optimism, he was given the name Victor and he had the benefit of a patient tutor and a woman who grew to love him with a mother's devotion. But the experiments to which this poor wretch was subjected met with repeated defeat, while he longed to return to his freedom and his woods. Invited to dinner, he stole everything small enough to grab and clambered up a tree, which left the astonished guests resentful that Rousseau was not alive to see his theories disproved. But were they disproved? Theft is a transgression against a specific moral rule, but does not, in itself, denote badness if the rule has no significance for the thief. What was more telling was the fact that Victor was never able to see the world through the eyes of anyone but himself and had no capacity for empathy. He certainly learned how people could hurt, but he never learned to recognize that other people existed except as satisfiers of his need. The boy didn't prove that the primitive state was one of essential goodness, but he did prove that it was selfish. Which is not to say that it was not also innocent: the boy showed no malice or cruelty, did not seek to revenge, did not direct hostility against individuals. He was not so much ⒜_______ as ⒝_______.",
     "c": [
       [
         "1",
@@ -1216,6 +1246,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "According to the passage, which of the following is true?",
+    "p": "Not many years after the French philosopher Rousseau promulgated the idea of the 'noble savage', which embodied his belief that man in his natural state was innately good, there walked out of the woods a living specimen who, it was hoped, would prove the point. It happened at the village of Saint-Sernin in southern France on January 9, 1800. A strange creature from the forest was caught scavenging for food, and though it appeared to be a wild animal, it walked erect. As soon as those who captured the creature realized it was human, a boy of about 12 years in fact, they attempted to care for him. The 'Wild Boy of Aveyron', as he became known, could not speak and had no apparent awareness that he was human. Offered white bread, he spat it out immediately and bit anyone who approached too close. It was time to alert the scientists. Here, apparently, was the noble savage in person. Over the next few months, attempts were made to bring the boy back into the human race. With some optimism, he was given the name Victor and he had the benefit of a patient tutor and a woman who grew to love him with a mother's devotion. But the experiments to which this poor wretch was subjected met with repeated defeat, while he longed to return to his freedom and his woods. Invited to dinner, he stole everything small enough to grab and clambered up a tree, which left the astonished guests resentful that Rousseau was not alive to see his theories disproved. But were they disproved? Theft is a transgression against a specific moral rule, but does not, in itself, denote badness if the rule has no significance for the thief. What was more telling was the fact that Victor was never able to see the world through the eyes of anyone but himself and had no capacity for empathy. He certainly learned how people could hurt, but he never learned to recognize that other people existed except as satisfiers of his need. The boy didn't prove that the primitive state was one of essential goodness, but he did prove that it was selfish. Which is not to say that it was not also innocent: the boy showed no malice or cruelty, did not seek to revenge, did not direct hostility against individuals. He was not so much ⒜_______ as ⒝_______.",
     "c": [
       [
         "1",
@@ -1243,6 +1274,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "Which of the following is most appropriate for the blanks ⒜ and ⒝?",
+    "p": "Not many years after the French philosopher Rousseau promulgated the idea of the 'noble savage', which embodied his belief that man in his natural state was innately good, there walked out of the woods a living specimen who, it was hoped, would prove the point. It happened at the village of Saint-Sernin in southern France on January 9, 1800. A strange creature from the forest was caught scavenging for food, and though it appeared to be a wild animal, it walked erect. As soon as those who captured the creature realized it was human, a boy of about 12 years in fact, they attempted to care for him. The 'Wild Boy of Aveyron', as he became known, could not speak and had no apparent awareness that he was human. Offered white bread, he spat it out immediately and bit anyone who approached too close. It was time to alert the scientists. Here, apparently, was the noble savage in person. Over the next few months, attempts were made to bring the boy back into the human race. With some optimism, he was given the name Victor and he had the benefit of a patient tutor and a woman who grew to love him with a mother's devotion. But the experiments to which this poor wretch was subjected met with repeated defeat, while he longed to return to his freedom and his woods. Invited to dinner, he stole everything small enough to grab and clambered up a tree, which left the astonished guests resentful that Rousseau was not alive to see his theories disproved. But were they disproved? Theft is a transgression against a specific moral rule, but does not, in itself, denote badness if the rule has no significance for the thief. What was more telling was the fact that Victor was never able to see the world through the eyes of anyone but himself and had no capacity for empathy. He certainly learned how people could hurt, but he never learned to recognize that other people existed except as satisfiers of his need. The boy didn't prove that the primitive state was one of essential goodness, but he did prove that it was selfish. Which is not to say that it was not also innocent: the boy showed no malice or cruelty, did not seek to revenge, did not direct hostility against individuals. He was not so much ⒜_______ as ⒝_______.",
     "c": [
       [
         "1",
@@ -1270,6 +1302,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "According to the passage, the story of Victor eventually suggests that man is innately _______.",
+    "p": "Not many years after the French philosopher Rousseau promulgated the idea of the 'noble savage', which embodied his belief that man in his natural state was innately good, there walked out of the woods a living specimen who, it was hoped, would prove the point. It happened at the village of Saint-Sernin in southern France on January 9, 1800. A strange creature from the forest was caught scavenging for food, and though it appeared to be a wild animal, it walked erect. As soon as those who captured the creature realized it was human, a boy of about 12 years in fact, they attempted to care for him. The 'Wild Boy of Aveyron', as he became known, could not speak and had no apparent awareness that he was human. Offered white bread, he spat it out immediately and bit anyone who approached too close. It was time to alert the scientists. Here, apparently, was the noble savage in person. Over the next few months, attempts were made to bring the boy back into the human race. With some optimism, he was given the name Victor and he had the benefit of a patient tutor and a woman who grew to love him with a mother's devotion. But the experiments to which this poor wretch was subjected met with repeated defeat, while he longed to return to his freedom and his woods. Invited to dinner, he stole everything small enough to grab and clambered up a tree, which left the astonished guests resentful that Rousseau was not alive to see his theories disproved. But were they disproved? Theft is a transgression against a specific moral rule, but does not, in itself, denote badness if the rule has no significance for the thief. What was more telling was the fact that Victor was never able to see the world through the eyes of anyone but himself and had no capacity for empathy. He certainly learned how people could hurt, but he never learned to recognize that other people existed except as satisfiers of his need. The boy didn't prove that the primitive state was one of essential goodness, but he did prove that it was selfish. Which is not to say that it was not also innocent: the boy showed no malice or cruelty, did not seek to revenge, did not direct hostility against individuals. He was not so much ⒜_______ as ⒝_______.",
     "c": [
       [
         "1",
@@ -1297,6 +1330,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "The underlined expression implies that _______.",
+    "p": "Viet Nam and Watergate greatly undermined the authority of American institutions. They encouraged people to pick and choose the parts they would play, the wars they would fight. 「At the least, they handsomely legitimized a refusal to participate at all」. This moral individualism, an old and admirable American trait, has often been balanced in the past by a sense of duty to country. That sense has chipped and faded. The U.S. has become an appallingly self-contradicting collection of tribes. Lacking an extreme threat that the majority regard as real, Americans have demonstrated an us-against-us mentality. American pluralism has become an incoherence of individualism. The nation's social vision amounts to little more than an individual passion to be comfortable and secure. If sacrifices are required, it is a painful question whether any Americans are willing to give up some of their privilege for the common good: they will certainly never do so if they think that they are sacrificing even the slightest bit more than other Americans; in a period of scarcity, the nation will become even more litigious and niggling in its collection of grievances.",
     "c": [
       [
         "1",
@@ -1324,6 +1358,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "According to the passage, the author suggests that Americans are getting more _______.",
+    "p": "Viet Nam and Watergate greatly undermined the authority of American institutions. They encouraged people to pick and choose the parts they would play, the wars they would fight. 「At the least, they handsomely legitimized a refusal to participate at all」. This moral individualism, an old and admirable American trait, has often been balanced in the past by a sense of duty to country. That sense has chipped and faded. The U.S. has become an appallingly self-contradicting collection of tribes. Lacking an extreme threat that the majority regard as real, Americans have demonstrated an us-against-us mentality. American pluralism has become an incoherence of individualism. The nation's social vision amounts to little more than an individual passion to be comfortable and secure. If sacrifices are required, it is a painful question whether any Americans are willing to give up some of their privilege for the common good: they will certainly never do so if they think that they are sacrificing even the slightest bit more than other Americans; in a period of scarcity, the nation will become even more litigious and niggling in its collection of grievances.",
     "c": [
       [
         "1",
@@ -1349,5 +1384,4 @@ window.__V502_EXAM_SKKU2011__ = [
     "a": "3",
     "explanation": "이 글에 따르면, 저자는 미국인들이 편협한(narrow-minded) 태도를 가지고 있다고 암시한다."
   }
-]
-;;
+];
