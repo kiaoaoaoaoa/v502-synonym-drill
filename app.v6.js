@@ -2012,7 +2012,7 @@ function renderPublicResult(displayName, accuracy, correct, total) {
             <li>
               <span>${idx + 1}. ${escapeHtml(item.name)}</span>
               <b>${item.correct}점</b>
-              <small>${item.accuracy}% · ${item.correct}/${item.total}</small>
+              <small>${item.accuracy}%</small>
             </li>
           `).join("")}
         </ol>
@@ -2120,7 +2120,7 @@ function showRanking() {
           <div style="font-size:16px;font-weight:800;margin-bottom:2px;word-break:break-all">${escapeHtml(item.name)}</div>
           <div style="font-size:11px;opacity:0.85;margin-bottom:6px">${tier.icon} ${tier.name}</div>
           <div style="font-size:28px;font-weight:900;line-height:1">${item.correct}<span style="font-size:14px;font-weight:400">점</span></div>
-          <div style="font-size:11px;opacity:0.7">${item.accuracy}% · ${item.correct}/${item.total}</div>
+          <div style="font-size:11px;opacity:0.7">${item.accuracy}%</div>
         </div>`;
       });
       html += '</div>';
@@ -3241,7 +3241,7 @@ function showMyReview() {
   html += `<div style="padding:16px;background:#f0f8f0;border-radius:8px;text-align:center"><strong style="font-size:24px">${completed}</strong><br><small>단어 마스터</small><br><small style="color:var(--muted)">/ ${totalSyn} (${pct}%)</small></div>`;
   html += `<div style="padding:16px;background:#f0f0f8;border-radius:8px;text-align:center"><strong style="font-size:24px">${logicMastered}</strong><br><small>논리 마스터</small><br><small style="color:var(--muted)">/ ${logicTotal}</small></div>`;
   html += `<div style="padding:16px;background:#e8f0e8;border-radius:8px;text-align:center"><strong style="font-size:24px">${wcProgress.correct}/${wcProgress.total}</strong><br><small>단어확인</small><br><small style="color:var(--muted)">${wcProgress.total > 0 ? Math.round(wcProgress.correct/wcProgress.total*100) + '%' : 'No data'}</small></div>`;
-  html += `<div style="padding:16px;background:#fff8f0;border-radius:8px;text-align:center"><strong style="font-size:24px">${totalCorrect}/${totalQuestions}</strong><br><small>통합랭킹 점수</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'}</small></div>`;
+  html += `<div style="padding:16px;background:#fff8f0;border-radius:8px;text-align:center"><strong style="font-size:24px">${totalCorrect}점</strong><br><small>통합 점수</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'} · ${totalQuestions}문제 풂</small></div>`;
   html += '</div>';
 
   // List of memorized (mastered) words, grouped by category
@@ -3312,7 +3312,7 @@ function renderMyInfoTab(tab) {
     html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid var(--ok);border-radius:2px;text-align:center"><strong style="font-size:24px">${completed}</strong><br><small>단어 마스터</small><br><small style="color:var(--muted)">/ ${totalSyn} (${pct}%)</small></div>`;
     html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid #4f46e5;border-radius:2px;text-align:center"><strong style="font-size:24px">${logicMastered}</strong><br><small>논리 마스터</small><br><small style="color:var(--muted)">/ ${logicTotal}</small></div>`;
     html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid var(--ink);border-radius:2px;text-align:center"><strong style="font-size:24px">${wcProgress.correct}/${wcProgress.total}</strong><br><small>단어확인</small><br><small style="color:var(--muted)">${wcProgress.total > 0 ? Math.round(wcProgress.correct/wcProgress.total*100) + '%' : 'No data'}</small></div>`;
-    html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:2px;text-align:center;cursor:pointer" onclick="showRanking()" title="통합랭킹 보기"><strong style="font-size:24px">${totalCorrect}/${totalQuestions}</strong><br><small>통합랭킹 점수 ▸</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'}</small></div>`;
+    html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:2px;text-align:center;cursor:pointer" onclick="showRanking()" title="통합랭킹 보기"><strong style="font-size:24px">${totalCorrect}점</strong><br><small>통합 점수 ▸</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'} · ${totalQuestions}문제 풂</small></div>`;
     html += '</div>';
 
     const p = readSynonymProgress();
