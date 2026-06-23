@@ -3005,6 +3005,7 @@ function showDashboard() {
     html += `<div class="dash-stat" style="cursor:default"><span class="dash-stat-num" style="font-size:18px">${tier.icon}</span><span class="dash-stat-label">${tier.name}</span></div>`;
     html += `<div class="dash-stat" onclick="showWordlist()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-icon">📋</span><span class="dash-stat-label">단어일람</span></div>`;
     html += `<div class="dash-stat" onclick="showWordlist2()" style="cursor:pointer" title="단어일람보기2"><span class="dash-stat-icon">🗂️</span><span class="dash-stat-label">단어일람2</span></div>`;
+	    html += `<div class="dash-stat" onclick="showWordbook3()" style="cursor:pointer" title="단어장3"><span class="dash-stat-icon">📗</span><span class="dash-stat-label">단어장3</span></div>`;
     html += `</div>`;
   }
 
@@ -3024,6 +3025,7 @@ function showDashboard() {
     html += dashCard({ icon: '🔒', title: '로그인 필요', desc: '내정보 / 랭킹 이용 잠금', accent: 'slate', onclick: "document.getElementById('authNicknameInput').focus()" });
     html += dashCard({ icon: '📋', title: '단어일람보기', desc: '전체 단어 사전', accent: 'slate', onclick: "showWordlist()" });
     html += dashCard({ icon: '🗂️', title: '단어일람보기2', desc: 'MVP2 + V401 추가 단어', accent: 'slate', onclick: "showWordlist2()" });
+	    html += dashCard({ icon: '📗', title: '단어장3', desc: 'Vocabulary Book 3 단어', accent: 'slate', onclick: "showWordbook3()" });
     html += '</div>';
   }
 
