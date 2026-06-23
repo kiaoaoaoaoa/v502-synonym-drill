@@ -1593,8 +1593,12 @@ async function cloudSyncAll() {
   let ok = false;
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
-      await client.from(table).delete().eq('nickname', nk).eq('quiz_set', 'USERDATA');
-      await client.from(table).insert(row);
+      const { data: existing } = await client.from(table).select('id').eq('nickname', nk).eq('quiz_set', 'USERDATA');
+      if (existing && existing.length > 0) {
+        await client.from(table).update(row).eq('nickname', nk).eq('quiz_set', 'USERDATA');
+      } else {
+        await client.from(table).insert(row);
+      }
       ok = true;
       break;
     } catch(e) {
