@@ -2007,7 +2007,17 @@ async function showRanking() {
       return;
     }
     readPublicLeaderboard().then((data) => {
+      const registered = new Map();
+      for (const row of data) {
+        if (row.setId === 'USERDATA') registered.set(row.name.toLowerCase(), row.name);
+      }
       const cumulative = cumulativeLeaderboard(data, null);
+      for (const [nk, displayName] of registered) {
+        if (!cumulative.find(c => c.name.toLowerCase() === nk)) {
+          cumulative.push({ name: displayName, correct: 0, total: 0, accuracy: 0 });
+        }
+      }
+      cumulative.sort((a, b) => b.correct - a.correct || b.accuracy - a.accuracy);
       const totalPlayers = cumulative.length;
       if (!cumulative.length) {
         els.rankingContent.innerHTML = "<p style='color:var(--muted);font-style:italic'>no scores yet</p>";
