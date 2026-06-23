@@ -1,23 +1,23 @@
 window.__V502_GRAMMAR__ = [
   {
     "i": "001",
-    "q": "I felt uncomfortable",
+    "q": "I felt uncomfortable ①「complaining」 for the service; after all we ②「were」 only guests ③「at」 the reception, ④「not」 the hosts.",
     "c": [
       [
         "1",
-        "complaining for the service; after all we"
+        "complaining"
       ],
       [
         "2",
-        "were only guests"
+        "were"
       ],
       [
         "3",
-        "at the reception,"
+        "at"
       ],
       [
         "4",
-        "not the hosts."
+        "not"
       ]
     ],
     "a": "1",
@@ -26,23 +26,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "002",
-    "q": "For some reason, we have ①decided that if these flesh lumps (i.e., our noses) have a certain shape, they are attractive; ②whereas lumps that do not ③conform that shape ④are considered ugly.",
+    "q": "For some reason, we have ①「decided」 that if these flesh lumps (i.e., our noses) have a certain shape, they are attractive; ②「whereas」 lumps that do not ③「conform」 that shape ④「are」 considered ugly.",
     "c": [
       [
         "1",
-        "decided that if these flesh lumps (i.e., our noses) have a certain shape, they are attractive;"
+        "decided"
       ],
       [
         "2",
-        "whereas lumps that do not"
+        "whereas"
       ],
       [
         "3",
-        "conform that shape"
+        "conform"
       ],
       [
         "4",
-        "are considered ugly."
+        "are"
       ]
     ],
     "a": "3",
@@ -51,23 +51,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "003",
-    "q": "Economic ①goods often consist ②to material items, ③but they can also be services ④to people.",
+    "q": "Economic ①「goods」 often consist ②「to」 material items, ③「but」 they can also be services ④「to」 people.",
     "c": [
       [
         "1",
-        "goods often consist"
+        "goods"
       ],
       [
         "2",
-        "to material items,"
+        "to"
       ],
       [
         "3",
-        "but they can also be services"
+        "but"
       ],
       [
         "4",
-        "to people."
+        "to"
       ]
     ],
     "a": "2",
@@ -126,23 +126,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "006",
-    "q": "People ①often seem ②anger when ③they do not get enough ④rest.",
+    "q": "People ①「often」 seem ②「anger」 when ③「they」 do not get enough ④「rest」.",
     "c": [
       [
         "1",
-        "often seem"
+        "often"
       ],
       [
         "2",
-        "anger when"
+        "anger"
       ],
       [
         "3",
-        "they do not get enough"
+        "they"
       ],
       [
         "4",
-        "rest."
+        "rest"
       ]
     ],
     "a": "2",
@@ -151,23 +151,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "007",
-    "q": "He looked very",
+    "q": "He looked very ①「badly」 after ②「the operation」, ③「and」 we were all ④「worried」.",
     "c": [
       [
         "1",
-        "badly after"
+        "badly"
       ],
       [
         "2",
-        "the operation,"
+        "the operation"
       ],
       [
         "3",
-        "and we were all"
+        "and"
       ],
       [
         "4",
-        "worried."
+        "worried"
       ]
     ],
     "a": "1",
@@ -201,23 +201,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "009",
-    "q": "Moments before Shannon Lucid departed",
+    "q": "Moments before Shannon Lucid departed ①「on her first space mission」, a reporter ②「approached to her」 and asked ③「what her thoughts were」. She replied that she was extremely proud ④「to participate」 in such an important project.",
     "c": [
       [
         "1",
-        "on her first space mission, a reporter"
+        "on her first space mission"
       ],
       [
         "2",
-        "approached to her and asked"
+        "approached to her"
       ],
       [
         "3",
-        "what her thoughts were. She replied that she was extremely proud"
+        "what her thoughts were"
       ],
       [
         "4",
-        "to participate in such an important project."
+        "to participate"
       ]
     ],
     "a": "2",
@@ -226,19 +226,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "010",
-    "q": "What happens when people of different origins,",
+    "q": "What happens when people of different origins, ①「speaking」 different languages and ②「professing」 different religions, ③「inhabit in」 the same locality and ④「live under」 the same political sovereignty?",
     "c": [
       [
         "1",
-        "speaking different languages and"
+        "speaking"
       ],
       [
         "2",
-        "professing different religions,"
+        "professing"
       ],
       [
         "3",
-        "inhabit in the same locality and"
+        "inhabit in"
+      ],
+      [
+        "4",
+        "live under"
       ]
     ],
     "a": "3",
@@ -247,23 +251,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "011",
-    "q": "①The Olympic torch will be ②reaching at Rice-Eccles Stadium ③at the University of Utah ④in a month.",
+    "q": "①「The Olympic torch」 will be ②「reaching at」 Rice-Eccles Stadium ③「at」 the University of Utah ④「in」 a month.",
     "c": [
       [
         "1",
-        "The Olympic torch will be"
+        "The Olympic torch"
       ],
       [
         "2",
-        "reaching at Rice-Eccles Stadium"
+        "reaching at"
       ],
       [
         "3",
-        "at the University of Utah"
+        "at"
       ],
       [
         "4",
-        "in a month."
+        "in"
       ]
     ],
     "a": "2",
@@ -272,23 +276,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "012",
-    "q": "An American",
+    "q": "An American ①「who survived from」 the terrorist ②「attack on」 the World Trade Center ③「escaped with his life」 again when ④「a bomb blast」 ripped through a busy street in Jerusalem.",
     "c": [
       [
         "1",
-        "who survived from the terrorist"
+        "who survived from"
       ],
       [
         "2",
-        "attack on the World Trade Center"
+        "attack on"
       ],
       [
         "3",
-        "escaped with his life again when"
+        "escaped with his life"
       ],
       [
         "4",
-        "a bomb blast ripped through a busy street in Jerusalem."
+        "a bomb blast"
       ]
     ],
     "a": "1",
@@ -297,23 +301,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "013",
-    "q": "If he ①had laid quietly ②under the tree as he ③had been instructed to do, we ④would have found him.",
+    "q": "If he ①「had laid」 quietly ②「under the tree」 as he ③「had been instructed」 to do, we ④「would have found」 him.",
     "c": [
       [
         "1",
-        "had laid quietly"
+        "had laid"
       ],
       [
         "2",
-        "under the tree as he"
+        "under the tree"
       ],
       [
         "3",
-        "had been instructed to do, we"
+        "had been instructed"
       ],
       [
         "4",
-        "would have found him."
+        "would have found"
       ]
     ],
     "a": "1",
@@ -347,7 +351,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "015",
-    "q": "Food prices have",
+    "q": "Food prices have ①「raised」 ②「so rapidly」 in the past few months ③「that」 some families have been ④「forced to alter」 their eating habits.",
     "c": [
       [
         "1",
@@ -355,15 +359,15 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "2",
-        "so rapidly in the past few months"
+        "so rapidly"
       ],
       [
         "3",
-        "that some families have been"
+        "that"
       ],
       [
         "4",
-        "forced to alter their eating habits."
+        "forced to alter"
       ]
     ],
     "a": "2",
@@ -397,23 +401,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "017",
-    "q": "I ①sat the suitcase ②down in front of a ③hotel shop and ④called a taxi.",
+    "q": "I ①「sat」 the suitcase ②「down」 in front of a ③「hotel」 shop and ④「called」 a taxi.",
     "c": [
       [
         "1",
-        "sat the suitcase"
+        "sat"
       ],
       [
         "2",
-        "down in front of a"
+        "down"
       ],
       [
         "3",
-        "hotel shop and"
+        "hotel"
       ],
       [
         "4",
-        "called a taxi."
+        "called"
       ]
     ],
     "a": "1",
@@ -447,11 +451,11 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "019",
-    "q": "My neighbor",
+    "q": "My neighbor ①「dies」 her ②「hair」 ③「two times」 ④「every month」.",
     "c": [
       [
         "1",
-        "dies her"
+        "dies"
       ],
       [
         "2",
@@ -463,7 +467,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "every month."
+        "every month"
       ]
     ],
     "a": "1",
@@ -543,23 +547,27 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "023",
-    "q": "She might never",
+    "q": "She might never ①「forgive him」 what he did to her, and it was ②「such a dark part」 of her personality that ③「cost」 a lot of fame to her and ④「that」 she didn't ⑤「want him to」 see.",
     "c": [
       [
         "1",
-        "forgive him what he did to her, and it was"
+        "forgive him"
       ],
       [
         "2",
-        "such a dark part of her personality that"
+        "such a dark part"
       ],
       [
         "3",
-        "cost a lot of fame to her and"
+        "cost"
       ],
       [
         "4",
-        "that she didn't ⑤want him to see."
+        "that"
+      ],
+      [
+        "5",
+        "want him to"
       ]
     ],
     "a": "2",
@@ -618,23 +626,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "026",
-    "q": "The robber ①admitted the detective that she was ②the one who ③had stolen the diamond necklace ④from the display.",
+    "q": "The robber ①「admitted」 the detective that she was ②「the one」 who ③「had stolen」 the diamond necklace ④「from the display」.",
     "c": [
       [
         "1",
-        "admitted the detective that she was"
+        "admitted"
       ],
       [
         "2",
-        "the one who"
+        "the one"
       ],
       [
         "3",
-        "had stolen the diamond necklace"
+        "had stolen"
       ],
       [
         "4",
-        "from the display."
+        "from the display"
       ]
     ],
     "a": "1",
@@ -643,23 +651,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "027",
-    "q": "In order ①for you to improve your memory, ②key information should be written as soon as possible after it is given, ③so the memory of the instructions is fresh and you can capture all the detail you ④were provided.",
+    "q": "In order ①「for you to improve」 your memory, ②「key information」 should be written as soon as possible after it is given, ③「so」 the memory of the instructions is fresh and you can capture all the detail you ④「were provided」.",
     "c": [
       [
         "1",
-        "for you to improve your memory,"
+        "for you to improve"
       ],
       [
         "2",
-        "key information should be written as soon as possible after it is given,"
+        "key information"
       ],
       [
         "3",
-        "so the memory of the instructions is fresh and you can capture all the detail you"
+        "so"
       ],
       [
         "4",
-        "were provided."
+        "were provided"
       ]
     ],
     "a": "4",
@@ -764,23 +772,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "032",
-    "q": "Last night ①while I was trying ②to fall asleep, I heard ③the people in the next apartment ④sang and laugh.",
+    "q": "Last night ①「while」 I was trying ②「to fall」 asleep, I heard ③「the people」 in the next apartment ④「sang and laugh」.",
     "c": [
       [
         "1",
-        "while I was trying"
+        "while"
       ],
       [
         "2",
-        "to fall asleep, I heard"
+        "to fall"
       ],
       [
         "3",
-        "the people in the next apartment"
+        "the people"
       ],
       [
         "4",
-        "sang and laugh."
+        "sang and laugh"
       ]
     ],
     "a": "4",
@@ -789,11 +797,11 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "033",
-    "q": "①To see so much power ②combining ③with such lack ④of foresight is really disquieting for us Europeans.",
+    "q": "①「To」 see so much power ②「combining」 ③「with」 such lack ④「of」 foresight is really disquieting for us Europeans.",
     "c": [
       [
         "1",
-        "To see so much power"
+        "To"
       ],
       [
         "2",
@@ -801,11 +809,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "with such lack"
+        "with"
       ],
       [
         "4",
-        "of foresight is really disquieting for us Europeans."
+        "of"
       ]
     ],
     "a": "2",
@@ -814,23 +822,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "034",
-    "q": "①Thanks to the often dreadful, although lifesaving, nature of diagnostic tests, many of us are becoming ②experts at the art of procrastination. Who can be blamed for ③letting \"colonoscopy\" to slip to the bottom of the ④to-do list?",
+    "q": "①「Thanks to」 the often dreadful, although lifesaving, nature of diagnostic tests, many of us are becoming ②「experts at the art」 of procrastination. Who can be blamed for ③「letting \"colonoscopy\" to slip」 to the bottom of the ④「to-do list」?",
     "c": [
       [
         "1",
-        "Thanks to the often dreadful, although lifesaving, nature of diagnostic tests, many of us are becoming"
+        "Thanks to"
       ],
       [
         "2",
-        "experts at the art of procrastination. Who can be blamed for"
+        "experts at the art"
       ],
       [
         "3",
-        "letting \"colonoscopy\" to slip to the bottom of the"
+        "letting \"colonoscopy\" to slip"
       ],
       [
         "4",
-        "to-do list?"
+        "to-do list"
       ]
     ],
     "a": "3",
@@ -889,23 +897,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "037",
-    "q": "The idea of",
+    "q": "The idea of ①「surrogate」 parenting has kept professional ethicists and jurists ②「wrung」 their hands ③「ever」 since the first case ④「surfaced」 in 1978.",
     "c": [
       [
         "1",
-        "surrogate parenting has kept professional ethicists and jurists"
+        "surrogate"
       ],
       [
         "2",
-        "wrung their hands"
+        "wrung"
       ],
       [
         "3",
-        "ever since the first case"
+        "ever"
       ],
       [
         "4",
-        "surfaced in 1978."
+        "surfaced"
       ]
     ],
     "a": "1",
@@ -914,23 +922,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "038",
-    "q": "Book reviewers often",
+    "q": "Book reviewers often ①「find」 themselves ②「are being carried」 away ③「by」 their own dogma and a combination of flaws that ④「is」 fatal for an impartial review.",
     "c": [
       [
         "1",
-        "find themselves"
+        "find"
       ],
       [
         "2",
-        "are being carried away"
+        "are being carried"
       ],
       [
         "3",
-        "by their own dogma and a combination of flaws that"
+        "by"
       ],
       [
         "4",
-        "is fatal for an impartial review."
+        "is"
       ]
     ],
     "a": "2",
@@ -985,23 +993,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "041",
-    "q": "Previously, Latin and French",
+    "q": "Previously, Latin and French ①「was being considered」 more ②「suitable for」 literary expression than English and consequently ③「the English language」 had not been as fully developed ④「as it might have been」.",
     "c": [
       [
         "1",
-        "was being considered more"
+        "was being considered"
       ],
       [
         "2",
-        "suitable for literary expression than English and consequently"
+        "suitable for"
       ],
       [
         "3",
-        "the English language had not been as fully developed"
+        "the English language"
       ],
       [
         "4",
-        "as it might have been."
+        "as it might have been"
       ]
     ],
     "a": "2",
@@ -1010,23 +1018,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "042",
-    "q": "The pioneer",
+    "q": "The pioneer ①「of」 long ago and ②「the」 space pioneer of today ③「has」 many things ④「in」 common.",
     "c": [
       [
         "1",
-        "of long ago and"
+        "of"
       ],
       [
         "2",
-        "the space pioneer of today"
+        "the"
       ],
       [
         "3",
-        "has many things"
+        "has"
       ],
       [
         "4",
-        "in common."
+        "in"
       ]
     ],
     "a": "4",
@@ -1110,23 +1118,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "046",
-    "q": "①Neither the reporters ②nor the editor ③were satisfied with the salary ④offer made by the publisher.",
+    "q": "①「Neither」 the reporters ②「nor」 the editor ③「were」 satisfied with the salary ④「offer」 made by the publisher.",
     "c": [
       [
         "1",
-        "Neither the reporters"
+        "Neither"
       ],
       [
         "2",
-        "nor the editor"
+        "nor"
       ],
       [
         "3",
-        "were satisfied with the salary"
+        "were"
       ],
       [
         "4",
-        "offer made by the publisher."
+        "offer"
       ]
     ],
     "a": "3",
@@ -1135,23 +1143,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "047",
-    "q": "Neither his friend's",
+    "q": "Neither his friend's ①「betrayal」 nor his ②「parents'」 condemnation ③「have caused」 him any ④「great」 distress",
     "c": [
       [
         "1",
-        "betrayal nor his"
+        "betrayal"
       ],
       [
         "2",
-        "parents' condemnation"
+        "parents'"
       ],
       [
         "3",
-        "have caused him any"
+        "have caused"
       ],
       [
         "4",
-        "great distress"
+        "great"
       ]
     ],
     "a": "3",
@@ -1160,23 +1168,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "048",
-    "q": "Not only destruction and death but also a generation of hatred",
+    "q": "Not only destruction and death but also a generation of hatred ①「between」 the two communities ②「have been」 triggered by the war that played a huge role ③「in」 establishing the gulf between the Western and the Eastern ④「communities」.",
     "c": [
       [
         "1",
-        "between the two communities"
+        "between"
       ],
       [
         "2",
-        "have been triggered by the war that played a huge role"
+        "have been"
       ],
       [
         "3",
-        "in establishing the gulf between the Western and the Eastern"
+        "in"
       ],
       [
         "4",
-        "communities."
+        "communities"
       ]
     ],
     "a": "2",
@@ -1185,23 +1193,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "049",
-    "q": "The merger ①as well as the obvious financial benefits ②are expected to allow ③us some breathing room with ④regards to R&D.",
+    "q": "The merger ①「as well as」 the obvious financial benefits ②「are expected」 to allow ③「us some breathing room」 with ④「regards to」 R&D.",
     "c": [
       [
         "1",
-        "as well as the obvious financial benefits"
+        "as well as"
       ],
       [
         "2",
-        "are expected to allow"
+        "are expected"
       ],
       [
         "3",
-        "us some breathing room with"
+        "us some breathing room"
       ],
       [
         "4",
-        "regards to R&D."
+        "regards to"
       ]
     ],
     "a": "2",
@@ -1210,7 +1218,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "050",
-    "q": "Every man, woman, and child",
+    "q": "Every man, woman, and child ①「in this community」 ②「are」 now ③「aware of」 the terrible consequences ④「of the habit」 of smoking.",
     "c": [
       [
         "1",
@@ -1218,11 +1226,15 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "2",
-        "are now"
+        "are"
       ],
       [
         "3",
-        "aware of the terrible consequences"
+        "aware of"
+      ],
+      [
+        "4",
+        "of the habit"
       ]
     ],
     "a": "1",
@@ -1231,23 +1243,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "051",
-    "q": "Each of the Medic Alert bracelets",
+    "q": "Each of the Medic Alert bracelets ①「worn」 by millions of Americans who ②「suffer from」 diabetes and drug allergic reactions ③「are」 individually engraved with ④「the wearer's」 name.",
     "c": [
       [
         "1",
-        "worn by millions of Americans who"
+        "worn"
       ],
       [
         "2",
-        "suffer from diabetes and drug allergic reactions"
+        "suffer from"
       ],
       [
         "3",
-        "are individually engraved with"
+        "are"
       ],
       [
         "4",
-        "the wearer's name."
+        "the wearer's"
       ]
     ],
     "a": "3",
@@ -1256,7 +1268,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "052",
-    "q": "When one contrasts the ideas of the Romantic William Wordsworth",
+    "q": "When one contrasts the ideas of the Romantic William Wordsworth ①「with」 ②「those of」 Neoclassicist John Dryden, ③「one finds」 that neither of the poets ④「differ」 as much as one would expect.",
     "c": [
       [
         "1",
@@ -1264,15 +1276,15 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "2",
-        "those of Neoclassicist John Dryden,"
+        "those of"
       ],
       [
         "3",
-        "one finds that neither of the poets"
+        "one finds"
       ],
       [
         "4",
-        "differ as much as one would expect."
+        "differ"
       ]
     ],
     "a": "2",
@@ -1281,15 +1293,15 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "053",
-    "q": "①Most of the English people is descended from invaders who began settling in ②the British Isles more than ③2,500 years ④ago.",
+    "q": "①「Most of the English people is descended」 from invaders who began settling in ②「the British Isles」 more than ③「2,500 years」 ④「ago」.",
     "c": [
       [
         "1",
-        "Most of the English people is descended from invaders who began settling in"
+        "Most of the English people is descended"
       ],
       [
         "2",
-        "the British Isles more than"
+        "the British Isles"
       ],
       [
         "3",
@@ -1297,7 +1309,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "ago."
+        "ago"
       ]
     ],
     "a": "1",
@@ -1306,15 +1318,15 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "054",
-    "q": "Most of the information",
+    "q": "Most of the information ①「received」 from the reporters in the field ②「have to」 be edited before ③「being」 ④「considered」 for publication.",
     "c": [
       [
         "1",
-        "received from the reporters in the field"
+        "received"
       ],
       [
         "2",
-        "have to be edited before"
+        "have to"
       ],
       [
         "3",
@@ -1322,7 +1334,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "considered for publication."
+        "considered"
       ]
     ],
     "a": "2",
@@ -1331,11 +1343,11 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "055",
-    "q": "Approximately",
+    "q": "Approximately ①「one-fourth」 of a worker's income ②「are paid」 ③「in」 taxes and social security ④「to」 the government.",
     "c": [
       [
         "1",
-        "one-fourth of a worker's income"
+        "one-fourth"
       ],
       [
         "2",
@@ -1343,11 +1355,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "in taxes and social security"
+        "in"
       ],
       [
         "4",
-        "to the government."
+        "to"
       ]
     ],
     "a": "2",
@@ -1356,23 +1368,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "056",
-    "q": "Nearly 60% of the world's tropical rain forests",
+    "q": "Nearly 60% of the world's tropical rain forests ①「has been lost」, and ②「what remains」 is under extreme pressure from logging and human population growth. ③「many of the living things it has harbored」 will be driven ④「to extinction」.",
     "c": [
       [
         "1",
-        "has been lost, and"
+        "has been lost"
       ],
       [
         "2",
-        "what remains is under extreme pressure from logging and human population growth."
+        "what remains"
       ],
       [
         "3",
-        "many of the living things it has harbored will be driven"
+        "many of the living things it has harbored"
       ],
       [
         "4",
-        "to extinction."
+        "to extinction"
       ]
     ],
     "a": "4",
@@ -1381,23 +1393,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "057",
-    "q": "A pro-American government in Afghanistan certainly",
+    "q": "A pro-American government in Afghanistan certainly ①「facilitate」 a more ②「acceptable」 agreement ③「regarding」 the new pipeline that must inevitably ④「run」 through that country.",
     "c": [
       [
         "1",
-        "facilitate a more"
+        "facilitate"
       ],
       [
         "2",
-        "acceptable agreement"
+        "acceptable"
       ],
       [
         "3",
-        "regarding the new pipeline that must inevitably"
+        "regarding"
       ],
       [
         "4",
-        "run through that country."
+        "run"
       ]
     ],
     "a": "2",
@@ -1406,23 +1418,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "058",
-    "q": "The variation",
+    "q": "The variation ①「in」 our ambition, impulses, prejudices and affections ②「have given」 us a certain acceptance of the fact ③「that」 the conventions and watch-words of one generation ④「may prove irrelevant」 to the needs of the generations that follow.",
     "c": [
       [
         "1",
-        "in our ambition, impulses, prejudices and affections"
+        "in"
       ],
       [
         "2",
-        "have given us a certain acceptance of the fact"
+        "have given"
       ],
       [
         "3",
-        "that the conventions and watch-words of one generation"
+        "that"
       ],
       [
         "4",
-        "may prove irrelevant to the needs of the generations that follow."
+        "may prove irrelevant"
       ]
     ],
     "a": "1",
@@ -1431,23 +1443,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "059",
-    "q": "Many people",
+    "q": "Many people ①「were trapped」 in the capital and ②「unable to escape」, and a humanitarian escape corridor ③「set up」 on December 6 by Russian forces to allow people to flee the fighting ④「were ineffective」.",
     "c": [
       [
         "1",
-        "were trapped in the capital and"
+        "were trapped"
       ],
       [
         "2",
-        "unable to escape, and a humanitarian escape corridor"
+        "unable to escape"
       ],
       [
         "3",
-        "set up on December 6 by Russian forces to allow people to flee the fighting"
+        "set up"
       ],
       [
         "4",
-        "were ineffective."
+        "were ineffective"
       ]
     ],
     "a": "4",
@@ -1456,23 +1468,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "060",
-    "q": "Two of the ①fungi which the researchers discovered ②was classified as new varieties ③and the botanists said that they were ④previously unknown.",
+    "q": "Two of the ①「fungi」 which the researchers discovered ②「was」 classified as new varieties ③「and」 the botanists said that they were ④「previously」 unknown.",
     "c": [
       [
         "1",
-        "fungi which the researchers discovered"
+        "fungi"
       ],
       [
         "2",
-        "was classified as new varieties"
+        "was"
       ],
       [
         "3",
-        "and the botanists said that they were"
+        "and"
       ],
       [
         "4",
-        "previously unknown."
+        "previously"
       ]
     ],
     "a": "2",
@@ -1481,23 +1493,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "061",
-    "q": "①There are no argument or proof ②that will convince most Americans that ③paying higher taxes will result in a higher standard of living ④for everyone.",
+    "q": "①「There are no」 argument or proof ②「that will convince」 most Americans that ③「paying higher」 taxes will result in a higher standard of living ④「for everyone」.",
     "c": [
       [
         "1",
-        "There are no argument or proof"
+        "There are no"
       ],
       [
         "2",
-        "that will convince most Americans that"
+        "that will convince"
       ],
       [
         "3",
-        "paying higher taxes will result in a higher standard of living"
+        "paying higher"
       ],
       [
         "4",
-        "for everyone."
+        "for everyone"
       ]
     ],
     "a": "1",
@@ -1531,23 +1543,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "063",
-    "q": "①On the desk ②was several notebooks and a book of ③poetry that had ④apparently been left in the library.",
+    "q": "①「On」 the desk ②「was」 several notebooks and a book of ③「poetry」 that had ④「apparently」 been left in the library.",
     "c": [
       [
         "1",
-        "On the desk"
+        "On"
       ],
       [
         "2",
-        "was several notebooks and a book of"
+        "was"
       ],
       [
         "3",
-        "poetry that had"
+        "poetry"
       ],
       [
         "4",
-        "apparently been left in the library."
+        "apparently"
       ]
     ],
     "a": "2",
@@ -1556,23 +1568,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "064",
-    "q": "①Just outside the ruins ②are a fortress ③surrounded by high walls and ④stately trees.",
+    "q": "①「Just outside」 the ruins ②「are」 a fortress ③「surrounded」 by high walls and ④「stately」 trees.",
     "c": [
       [
         "1",
-        "Just outside the ruins"
+        "Just outside"
       ],
       [
         "2",
-        "are a fortress"
+        "are"
       ],
       [
         "3",
-        "surrounded by high walls and"
+        "surrounded"
       ],
       [
         "4",
-        "stately trees."
+        "stately"
       ]
     ],
     "a": "2",
@@ -1581,23 +1593,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "065",
-    "q": "One principle that Jefferson stated was",
+    "q": "One principle that Jefferson stated was ①「the right to a trial」 by a fair and impartial jury. This right ②「to be judged」 by ordinary people ③「is a privilege」 many in the world ④「is denied」.",
     "c": [
       [
         "1",
-        "the right to a trial by a fair and impartial jury. This right"
+        "the right to a trial"
       ],
       [
         "2",
-        "to be judged by ordinary people"
+        "to be judged"
       ],
       [
         "3",
-        "is a privilege many in the world"
+        "is a privilege"
       ],
       [
         "4",
-        "is denied."
+        "is denied"
       ]
     ],
     "a": "1",
@@ -1606,7 +1618,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "066",
-    "q": "①There are ②many a single person who believes that ③being married doesn't necessarily mean ④living happily ever after.",
+    "q": "①「There are」 ②「many a single person」 who believes that ③「being married」 doesn't necessarily mean ④「living」 happily ever after.",
     "c": [
       [
         "1",
@@ -1614,15 +1626,15 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "2",
-        "many a single person who believes that"
+        "many a single person"
       ],
       [
         "3",
-        "being married doesn't necessarily mean"
+        "being married"
       ],
       [
         "4",
-        "living happily ever after."
+        "living"
       ]
     ],
     "a": "1",
@@ -1631,23 +1643,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "067",
-    "q": "The number of",
+    "q": "The number of ①「wild horses」 on Assateague ②「are」 increasing lately, ③「resulting」 in ④「overgrazed」 marsh and dune grasses.",
     "c": [
       [
         "1",
-        "wild horses on Assateague"
+        "wild horses"
       ],
       [
         "2",
-        "are increasing lately,"
+        "are"
       ],
       [
         "3",
-        "resulting in"
+        "resulting"
       ],
       [
         "4",
-        "overgrazed marsh and dune grasses."
+        "overgrazed"
       ]
     ],
     "a": "2",
@@ -1656,15 +1668,15 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "068",
-    "q": "①The number of Korean students coming ②to America for ③graduate training ④are quite ⑤surprising.",
+    "q": "①「The」 number of Korean students coming ②「to America」 for ③「graduate training」 ④「are」 quite ⑤「surprising」.",
     "c": [
       [
         "1",
-        "The number of Korean students coming"
+        "The"
       ],
       [
         "2",
-        "to America for"
+        "to America"
       ],
       [
         "3",
@@ -1672,11 +1684,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "are quite"
+        "are"
       ],
       [
         "5",
-        "surprising."
+        "surprising"
       ]
     ],
     "a": "4",
@@ -1685,23 +1697,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "069",
-    "q": "We would like to know if you are",
+    "q": "We would like to know if you are ①「one of」 those women ②「who is」 actively involved in politics because we need someone ③「to campaign for」 a law legalizing maternity leave for men ④「as well as」 for women.",
     "c": [
       [
         "1",
-        "one of those women"
+        "one of"
       ],
       [
         "2",
-        "who is actively involved in politics because we need someone"
+        "who is"
       ],
       [
         "3",
-        "to campaign for a law legalizing maternity leave for men"
+        "to campaign for"
       ],
       [
         "4",
-        "as well as for women."
+        "as well as"
       ]
     ],
     "a": "2",
@@ -1710,23 +1722,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "070",
-    "q": "①Although there are fortunetellers who ②claims to predict future happenings, ③there is no scientific evidence of ④their accuracy.",
+    "q": "①「Although」 there are fortunetellers who ②「claims」 to predict future happenings, ③「there is」 no scientific evidence of ④「their」 accuracy.",
     "c": [
       [
         "1",
-        "Although there are fortunetellers who"
+        "Although"
       ],
       [
         "2",
-        "claims to predict future happenings,"
+        "claims"
       ],
       [
         "3",
-        "there is no scientific evidence of"
+        "there is"
       ],
       [
         "4",
-        "their accuracy."
+        "their"
       ]
     ],
     "a": "2",
@@ -1735,23 +1747,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "071",
-    "q": "I want a wife who is a good nurturant",
+    "q": "I want a wife who is a good nurturant ①「attendant」 to my children, who arranges ②「for」 their schooling, and ③「make」 sure that ④「they」 have an adequate social life with their peers.",
     "c": [
       [
         "1",
-        "attendant to my children, who arranges"
+        "attendant"
       ],
       [
         "2",
-        "for their schooling, and"
+        "for"
       ],
       [
         "3",
-        "make sure that"
+        "make"
       ],
       [
         "4",
-        "they have an adequate social life with their peers."
+        "they"
       ]
     ],
     "a": "3",
@@ -1760,23 +1772,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "072",
-    "q": "To ①feel satisfied with your ②work published in a scholarly journal ③are to ④take pride in it.",
+    "q": "To ①「feel satisfied with」 your ②「work published」 in a scholarly journal ③「are」 to ④「take pride」 in it.",
     "c": [
       [
         "1",
-        "feel satisfied with your"
+        "feel satisfied with"
       ],
       [
         "2",
-        "work published in a scholarly journal"
+        "work published"
       ],
       [
         "3",
-        "are to"
+        "are"
       ],
       [
         "4",
-        "take pride in it."
+        "take pride"
       ]
     ],
     "a": "3",
@@ -1785,15 +1797,15 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "073",
-    "q": "①Where the school districts will find the money ②for these programs ③are ④a problem.",
+    "q": "①「Where」 the school districts will find the money ②「for」 these programs ③「are」 ④「a problem」.",
     "c": [
       [
         "1",
-        "Where the school districts will find the money"
+        "Where"
       ],
       [
         "2",
-        "for these programs"
+        "for"
       ],
       [
         "3",
@@ -1801,7 +1813,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "a problem."
+        "a problem"
       ]
     ],
     "a": "3",
@@ -1810,11 +1822,11 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "074",
-    "q": "The villainous",
+    "q": "The villainous ①「characterizations」 of the wolf ②「in numerous folktales」 ③「have ignored」 that part of ④「their nature」 that ⑤「is friendly and gregarious」.",
     "c": [
       [
         "1",
-        "characterizations of the wolf"
+        "characterizations"
       ],
       [
         "2",
@@ -1822,11 +1834,15 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "have ignored that part of"
+        "have ignored"
       ],
       [
         "4",
-        "their nature that ⑤is friendly and gregarious."
+        "their nature"
+      ],
+      [
+        "5",
+        "is friendly and gregarious"
       ]
     ],
     "a": "4",
@@ -1835,7 +1851,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "075",
-    "q": "①Most people ②aspire to good jobs or careers, which ③is increasingly difficult ④to obtain.",
+    "q": "①「Most people」 ②「aspire」 to good jobs or careers, which ③「is」 increasingly difficult ④「to obtain」.",
     "c": [
       [
         "1",
@@ -1843,15 +1859,15 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "2",
-        "aspire to good jobs or careers, which"
+        "aspire"
       ],
       [
         "3",
-        "is increasingly difficult"
+        "is"
       ],
       [
         "4",
-        "to obtain."
+        "to obtain"
       ]
     ],
     "a": "3",
@@ -1860,19 +1876,19 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "076",
-    "q": "①Contrary to our expectations we find ②ourselves these days amid ③clouds of dense pollutants, both material and spiritual, ④which ⑤seems to injure man and deface nature.",
+    "q": "①「Contrary to」 our expectations we find ②「ourselves」 these days amid ③「clouds of」 dense pollutants, both material and spiritual, ④「which」 ⑤「seems」 to injure man and deface nature.",
     "c": [
       [
         "1",
-        "Contrary to our expectations we find"
+        "Contrary to"
       ],
       [
         "2",
-        "ourselves these days amid"
+        "ourselves"
       ],
       [
         "3",
-        "clouds of dense pollutants, both material and spiritual,"
+        "clouds of"
       ],
       [
         "4",
@@ -1880,7 +1896,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "5",
-        "seems to injure man and deface nature."
+        "seems"
       ]
     ],
     "a": "4",
@@ -1889,23 +1905,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "077",
-    "q": "If you ①are to complete the task, ②one should research it ③beforehand so as to acquaint yourself ④with any possible happenings from it.",
+    "q": "If you ①「are to」 complete the task, ②「one」 should research it ③「beforehand」 so as to acquaint yourself ④「with」 any possible happenings from it.",
     "c": [
       [
         "1",
-        "are to complete the task,"
+        "are to"
       ],
       [
         "2",
-        "one should research it"
+        "one"
       ],
       [
         "3",
-        "beforehand so as to acquaint yourself"
+        "beforehand"
       ],
       [
         "4",
-        "with any possible happenings from it."
+        "with"
       ]
     ],
     "a": "2",
@@ -1914,23 +1930,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "078",
-    "q": "When one reaches the first plateau,",
+    "q": "When one reaches the first plateau, ①「it」 does not guarantee that ②「you」 will complete ③「the」 climb ④「to」 the summit.",
     "c": [
       [
         "1",
-        "it does not guarantee that"
+        "it"
       ],
       [
         "2",
-        "you will complete"
+        "you"
       ],
       [
         "3",
-        "the climb"
+        "the"
       ],
       [
         "4",
-        "to the summit."
+        "to"
       ]
     ],
     "a": "2",
@@ -1939,23 +1955,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "079",
-    "q": "After the dispute",
+    "q": "After the dispute ①「over」 the unsuccessful play, the coach and the team captain agreed ②「not to」 talk until ③「he was」 able to do so ④「calmly」.",
     "c": [
       [
         "1",
-        "over the unsuccessful play, the coach and the team captain agreed"
+        "over"
       ],
       [
         "2",
-        "not to talk until"
+        "not to"
       ],
       [
         "3",
-        "he was able to do so"
+        "he was"
       ],
       [
         "4",
-        "calmly."
+        "calmly"
       ]
     ],
     "a": "1",
@@ -1964,23 +1980,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "080",
-    "q": "①Stockard Channing, who plays the role of the formidable First Lady in the television show The West Wing, ②first came into the public eye in the movie production of the musical Grease; ③they have loved her ④ever since.",
+    "q": "①「Stockard Channing」, who plays the role of the formidable First Lady in the television show The West Wing, ②「first came」 into the public eye in the movie production of the musical Grease; ③「they have」 loved her ④「ever」 since.",
     "c": [
       [
         "1",
-        "Stockard Channing, who plays the role of the formidable First Lady in the television show The West Wing,"
+        "Stockard Channing"
       ],
       [
         "2",
-        "first came into the public eye in the movie production of the musical Grease;"
+        "first came"
       ],
       [
         "3",
-        "they have loved her"
+        "they have"
       ],
       [
         "4",
-        "ever since."
+        "ever"
       ]
     ],
     "a": "3",
@@ -1989,23 +2005,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "081",
-    "q": "New York City",
+    "q": "New York City ①「has been」 the ②「capital of」 New York State until 1797, ③「when」 the state capital ④「was moved」 to Albany.",
     "c": [
       [
         "1",
-        "has been the"
+        "has been"
       ],
       [
         "2",
-        "capital of New York State until 1797,"
+        "capital of"
       ],
       [
         "3",
-        "when the state capital"
+        "when"
       ],
       [
         "4",
-        "was moved to Albany."
+        "was moved"
       ]
     ],
     "a": "2",
@@ -2014,23 +2030,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "082",
-    "q": "①Even though Mr. Kim ②has been studying English for eight years before he came ③to the United States, it is still difficult ④for him to master it.",
+    "q": "①「Even though」 Mr. Kim ②「has been studying」 English for eight years before he came ③「to the United States」, it is still difficult ④「for him」 to master it.",
     "c": [
       [
         "1",
-        "Even though Mr. Kim"
+        "Even though"
       ],
       [
         "2",
-        "has been studying English for eight years before he came"
+        "has been studying"
       ],
       [
         "3",
-        "to the United States, it is still difficult"
+        "to the United States"
       ],
       [
         "4",
-        "for him to master it."
+        "for him"
       ]
     ],
     "a": "2",
@@ -2064,23 +2080,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "084",
-    "q": "After he ①was caught with the stolen car, the teen said he was very sorry ②for what he had done and for the damage he ③caused to the car. He realized that he had been very foolish and wanted people ④to forgive him.",
+    "q": "After he ①「was caught with」 the stolen car, the teen said he was very sorry ②「for what」 he had done and for the damage he ③「caused」 to the car. He realized that he had been very foolish and wanted people ④「to forgive」 him.",
     "c": [
       [
         "1",
-        "was caught with the stolen car, the teen said he was very sorry"
+        "was caught with"
       ],
       [
         "2",
-        "for what he had done and for the damage he"
+        "for what"
       ],
       [
         "3",
-        "caused to the car. He realized that he had been very foolish and wanted people"
+        "caused"
       ],
       [
         "4",
-        "to forgive him."
+        "to forgive"
       ]
     ],
     "a": "3",
@@ -2089,23 +2105,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "085",
-    "q": "①The letter I was waiting for ②didn't arrive because it ③has been sent ④to my old address.",
+    "q": "①「The letter」 I was waiting for ②「didn't」 arrive because it ③「has been」 sent ④「to my old」 address.",
     "c": [
       [
         "1",
-        "The letter I was waiting for"
+        "The letter"
       ],
       [
         "2",
-        "didn't arrive because it"
+        "didn't"
       ],
       [
         "3",
-        "has been sent"
+        "has been"
       ],
       [
         "4",
-        "to my old address."
+        "to my old"
       ]
     ],
     "a": "3",
@@ -2114,23 +2130,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "086",
-    "q": "Before 1970",
+    "q": "Before 1970 ①「many」 technological advances ②「have been made」 in the field of computer science, ③「which」 resulted in ④「more efficient」 computers.",
     "c": [
       [
         "1",
-        "many technological advances"
+        "many"
       ],
       [
         "2",
-        "have been made in the field of computer science,"
+        "have been made"
       ],
       [
         "3",
-        "which resulted in"
+        "which"
       ],
       [
         "4",
-        "more efficient computers."
+        "more efficient"
       ]
     ],
     "a": "2",
@@ -2164,23 +2180,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "088",
-    "q": "①In general, newspapers emphasize current news, ②whereas magazines ③are dealing more ④with background materials.",
+    "q": "①「In general」, newspapers emphasize current news, ②「whereas」 magazines ③「are dealing」 more ④「with」 background materials.",
     "c": [
       [
         "1",
-        "In general, newspapers emphasize current news,"
+        "In general"
       ],
       [
         "2",
-        "whereas magazines"
+        "whereas"
       ],
       [
         "3",
-        "are dealing more"
+        "are dealing"
       ],
       [
         "4",
-        "with background materials."
+        "with"
       ]
     ],
     "a": "3",
@@ -2189,23 +2205,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "089",
-    "q": "The adult mosquito usually lives",
+    "q": "The adult mosquito usually lives ①「for about」 thirty days, ②「although」 the life span ③「is varying widely」 with temperature, humidity, and ④「other factors」 of the environment.",
     "c": [
       [
         "1",
-        "for about thirty days,"
+        "for about"
       ],
       [
         "2",
-        "although the life span"
+        "although"
       ],
       [
         "3",
-        "is varying widely with temperature, humidity, and"
+        "is varying widely"
       ],
       [
         "4",
-        "other factors of the environment."
+        "other factors"
       ]
     ],
     "a": "3",
@@ -2214,23 +2230,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "090",
-    "q": "It ①is true that the genes we inherit ②from our parents ③decide, to some extent, what our health ④was like.",
+    "q": "It ①「is」 true that the genes we inherit ②「from」 our parents ③「decide」, to some extent, what our health ④「was」 like.",
     "c": [
       [
         "1",
-        "is true that the genes we inherit"
+        "is"
       ],
       [
         "2",
-        "from our parents"
+        "from"
       ],
       [
         "3",
-        "decide, to some extent, what our health"
+        "decide"
       ],
       [
         "4",
-        "was like."
+        "was"
       ]
     ],
     "a": "3",
@@ -2289,23 +2305,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "093",
-    "q": "①Weighed down by a mass of trivial details, a housewife ②is being fortunate if she does not soon ③lose all her charm and ④three-quarters of her intelligence.",
+    "q": "①「Weighed down」 by a mass of trivial details, a housewife ②「is being fortunate」 if she does not soon ③「lose」 all her charm and ④「three-quarters」 of her intelligence.",
     "c": [
       [
         "1",
-        "Weighed down by a mass of trivial details, a housewife"
+        "Weighed down"
       ],
       [
         "2",
-        "is being fortunate if she does not soon"
+        "is being fortunate"
       ],
       [
         "3",
-        "lose all her charm and"
+        "lose"
       ],
       [
         "4",
-        "three-quarters of her intelligence."
+        "three-quarters"
       ]
     ],
     "a": "2",
@@ -2314,23 +2330,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "094",
-    "q": "From 1923 ①to 1929, Calvin Coolidge, ②known as a man of ③few words, ④was being president of the United States.",
+    "q": "From 1923 ①「to」 1929, Calvin Coolidge, ②「known as」 a man of ③「few words」, ④「was being」 president of the United States.",
     "c": [
       [
         "1",
-        "to 1929, Calvin Coolidge,"
+        "to"
       ],
       [
         "2",
-        "known as a man of"
+        "known as"
       ],
       [
         "3",
-        "few words,"
+        "few words"
       ],
       [
         "4",
-        "was being president of the United States."
+        "was being"
       ]
     ],
     "a": "4",
@@ -2389,23 +2405,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "097",
-    "q": "Please ①make sure you ②give me ③a ring immediately after you ④will get to the destination.",
+    "q": "Please ①「make sure」 you ②「give」 me ③「a ring」 immediately after you ④「will get to」 the destination.",
     "c": [
       [
         "1",
-        "make sure you"
+        "make sure"
       ],
       [
         "2",
-        "give me"
+        "give"
       ],
       [
         "3",
-        "a ring immediately after you"
+        "a ring"
       ],
       [
         "4",
-        "will get to the destination."
+        "will get to"
       ]
     ],
     "a": "4",
@@ -2414,7 +2430,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "098",
-    "q": "①As soon as ②these misunderstandings ③will be straightened out, we ④will be able to proceed.",
+    "q": "①「As soon as」 ②「these」 misunderstandings ③「will be」 straightened out, we ④「will be able」 to proceed.",
     "c": [
       [
         "1",
@@ -2422,15 +2438,15 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "2",
-        "these misunderstandings"
+        "these"
       ],
       [
         "3",
-        "will be straightened out, we"
+        "will be"
       ],
       [
         "4",
-        "will be able to proceed."
+        "will be able"
       ]
     ],
     "a": "3",
@@ -2439,23 +2455,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "099",
-    "q": "Please ①dispose of food and ②beverage containers ③as you ④will leave the auditorium.",
+    "q": "Please ①「dispose of」 food and ②「beverage」 containers ③「as」 you ④「will leave」 the auditorium.",
     "c": [
       [
         "1",
-        "dispose of food and"
+        "dispose of"
       ],
       [
         "2",
-        "beverage containers"
+        "beverage"
       ],
       [
         "3",
-        "as you"
+        "as"
       ],
       [
         "4",
-        "will leave the auditorium."
+        "will leave"
       ]
     ],
     "a": "4",
@@ -2464,23 +2480,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "100",
-    "q": "If they ①will get a warning of a cyclone or a tidal wave, they ②will climb onto their roofs and tie ③themselves and their family down, hoping that the rushing waters will carry them away and put them ④safely.",
+    "q": "If they ①「will get」 a warning of a cyclone or a tidal wave, they ②「will climb onto」 their roofs and tie ③「themselves」 and their family down, hoping that the rushing waters will carry them away and put them ④「safely」.",
     "c": [
       [
         "1",
-        "will get a warning of a cyclone or a tidal wave, they"
+        "will get"
       ],
       [
         "2",
-        "will climb onto their roofs and tie"
+        "will climb onto"
       ],
       [
         "3",
-        "themselves and their family down, hoping that the rushing waters will carry them away and put them"
+        "themselves"
       ],
       [
         "4",
-        "safely."
+        "safely"
       ]
     ],
     "a": "1",
@@ -2514,23 +2530,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "102",
-    "q": "It has ①always been thought ②that cell mutation ③is a random event; however, geneticists ④find evidence to the contrary over the past two years.",
+    "q": "It has ①「always」 been thought ②「that」 cell mutation ③「is」 a random event; however, geneticists ④「find」 evidence to the contrary over the past two years.",
     "c": [
       [
         "1",
-        "always been thought"
+        "always"
       ],
       [
         "2",
-        "that cell mutation"
+        "that"
       ],
       [
         "3",
-        "is a random event; however, geneticists"
+        "is"
       ],
       [
         "4",
-        "find evidence to the contrary over the past two years."
+        "find"
       ]
     ],
     "a": "4",
@@ -2614,23 +2630,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "106",
-    "q": "①The euro is not new: ②it's used in electronic transactions and ③by banks and international ④businesses since January 1999.",
+    "q": "①「The euro」 is not new: ②「it's used」 in electronic transactions and ③「by banks」 and international ④「businesses」 since January 1999.",
     "c": [
       [
         "1",
-        "The euro is not new:"
+        "The euro"
       ],
       [
         "2",
-        "it's used in electronic transactions and"
+        "it's used"
       ],
       [
         "3",
-        "by banks and international"
+        "by banks"
       ],
       [
         "4",
-        "businesses since January 1999."
+        "businesses"
       ]
     ],
     "a": "2",
@@ -2664,23 +2680,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "108",
-    "q": "My brother has been",
+    "q": "My brother has been ①「pursuing」 a ②「career」 in medical research ③「until」 he ④「graduated」 last May.",
     "c": [
       [
         "1",
-        "pursuing a"
+        "pursuing"
       ],
       [
         "2",
-        "career in medical research"
+        "career"
       ],
       [
         "3",
-        "until he"
+        "until"
       ],
       [
         "4",
-        "graduated last May."
+        "graduated"
       ]
     ],
     "a": "3",
@@ -2689,23 +2705,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "109",
-    "q": "①By the time I ②reached the bank, the doors ③were closed; I ④could not cash my check.",
+    "q": "①「By the time」 I ②「reached」 the bank, the doors ③「were closed」; I ④「could not cash」 my check.",
     "c": [
       [
         "1",
-        "By the time I"
+        "By the time"
       ],
       [
         "2",
-        "reached the bank, the doors"
+        "reached"
       ],
       [
         "3",
-        "were closed; I"
+        "were closed"
       ],
       [
         "4",
-        "could not cash my check."
+        "could not cash"
       ]
     ],
     "a": "3",
@@ -2735,15 +2751,15 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "111",
-    "q": "①By the time the vacation is ②over, the children ③would finish ④their assignments.",
+    "q": "①「By」 the time the vacation is ②「over」, the children ③「would finish」 ④「their」 assignments.",
     "c": [
       [
         "1",
-        "By the time the vacation is"
+        "By"
       ],
       [
         "2",
-        "over, the children"
+        "over"
       ],
       [
         "3",
@@ -2751,7 +2767,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "their assignments."
+        "their"
       ]
     ],
     "a": "3",
@@ -2835,15 +2851,15 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "115",
-    "q": "Years ①ago the people of what is now the Pacific Northwest ②begins to develop an economic system ③based ④mostly on fishing.",
+    "q": "Years ①「ago」 the people of what is now the Pacific Northwest ②「begins」 to develop an economic system ③「based」 ④「mostly」 on fishing.",
     "c": [
       [
         "1",
-        "ago the people of what is now the Pacific Northwest"
+        "ago"
       ],
       [
         "2",
-        "begins to develop an economic system"
+        "begins"
       ],
       [
         "3",
@@ -2851,7 +2867,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "mostly on fishing."
+        "mostly"
       ]
     ],
     "a": "2",
@@ -2860,15 +2876,15 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "116",
-    "q": "For the recent exhibition, the museum",
+    "q": "For the recent exhibition, the museum ①「acquired」 a rock ②「from」 a volcano that ③「has erupted」 ④「more than」 two thousand years ago.",
     "c": [
       [
         "1",
-        "acquired a rock"
+        "acquired"
       ],
       [
         "2",
-        "from a volcano that"
+        "from"
       ],
       [
         "3",
@@ -2876,7 +2892,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "more than two thousand years ago."
+        "more than"
       ]
     ],
     "a": "3",
@@ -2885,23 +2901,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "117",
-    "q": "①Learning a foreign language is especially difficult for ②those who ③had never learned ④one before.",
+    "q": "①「Learning」 a foreign language is especially difficult for ②「those」 who ③「had」 never learned ④「one」 before.",
     "c": [
       [
         "1",
-        "Learning a foreign language is especially difficult for"
+        "Learning"
       ],
       [
         "2",
-        "those who"
+        "those"
       ],
       [
         "3",
-        "had never learned"
+        "had"
       ],
       [
         "4",
-        "one before."
+        "one"
       ]
     ],
     "a": "3",
@@ -2910,23 +2926,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "118",
-    "q": "When George Moore began to write,",
+    "q": "When George Moore began to write, ①「his style」 was poor; it gave ②「the impression that」 he ③「writes」 on wrapping paper ④「with a blunt pencil」.",
     "c": [
       [
         "1",
-        "his style was poor; it gave"
+        "his style"
       ],
       [
         "2",
-        "the impression that he"
+        "the impression that"
       ],
       [
         "3",
-        "writes on wrapping paper"
+        "writes"
       ],
       [
         "4",
-        "with a blunt pencil."
+        "with a blunt pencil"
       ]
     ],
     "a": "3",
@@ -2935,23 +2951,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "119",
-    "q": "President Lincoln, walking",
+    "q": "President Lincoln, walking ①「with」 a friend, turned back to assist a beetle that ②「lie」 on ③「its」 back, legs clawing the air, vainly ④「trying」 to turn itself over.",
     "c": [
       [
         "1",
-        "with a friend, turned back to assist a beetle that"
+        "with"
       ],
       [
         "2",
-        "lie on"
+        "lie"
       ],
       [
         "3",
-        "its back, legs clawing the air, vainly"
+        "its"
       ],
       [
         "4",
-        "trying to turn itself over."
+        "trying"
       ]
     ],
     "a": "2",
@@ -2960,19 +2976,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "120",
-    "q": "The last time",
+    "q": "The last time ①「a flu epidemic」 was named ②「after」 Hong Kong, nobody ③「there」 ④「knows」 about the ducks and chickens.",
     "c": [
       [
         "1",
-        "a flu epidemic was named"
+        "a flu epidemic"
       ],
       [
         "2",
-        "after Hong Kong, nobody"
+        "after"
       ],
       [
         "3",
         "there"
+      ],
+      [
+        "4",
+        "knows"
       ]
     ],
     "a": "3",
@@ -3006,23 +3026,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "122",
-    "q": "I ①would be able to finish ②all my work if the day ③was thirty ④hours long.",
+    "q": "I ①「would」 be able to finish ②「all my」 work if the day ③「was」 thirty ④「hours」 long.",
     "c": [
       [
         "1",
-        "would be able to finish"
+        "would"
       ],
       [
         "2",
-        "all my work if the day"
+        "all my"
       ],
       [
         "3",
-        "was thirty"
+        "was"
       ],
       [
         "4",
-        "hours long."
+        "hours"
       ]
     ],
     "a": "3",
@@ -3156,23 +3176,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "128",
-    "q": "If the United States",
+    "q": "If the United States ①「had built」 more homes for ②「the poor」 in 2000, the ③「housing」 problems in some parts of this country ④「wouldn't have been」 so serious now.",
     "c": [
       [
         "1",
-        "had built more homes for"
+        "had built"
       ],
       [
         "2",
-        "the poor in 2000, the"
+        "the poor"
       ],
       [
         "3",
-        "housing problems in some parts of this country"
+        "housing"
       ],
       [
         "4",
-        "wouldn't have been so serious now."
+        "wouldn't have been"
       ]
     ],
     "a": "4",
@@ -3227,23 +3247,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "131",
-    "q": "If any signer of the Constitution",
+    "q": "If any signer of the Constitution ①「was」 to return to life ②「for a day」, his opinion ③「of」 our amendments ④「would be」 interesting.",
     "c": [
       [
         "1",
-        "was to return to life"
+        "was"
       ],
       [
         "2",
-        "for a day, his opinion"
+        "for a day"
       ],
       [
         "3",
-        "of our amendments"
+        "of"
       ],
       [
         "4",
-        "would be interesting."
+        "would be"
       ]
     ],
     "a": "1",
@@ -3277,11 +3297,11 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "133",
-    "q": "①Should a foreign student ②needing ③help, he or she ④must see the foreign student advisor.",
+    "q": "①「Should」 a foreign student ②「needing」 ③「help」, he or she ④「must」 see the foreign student advisor.",
     "c": [
       [
         "1",
-        "Should a foreign student"
+        "Should"
       ],
       [
         "2",
@@ -3289,11 +3309,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "help, he or she"
+        "help"
       ],
       [
         "4",
-        "must see the foreign student advisor."
+        "must"
       ]
     ],
     "a": "2",
@@ -3402,23 +3422,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "138",
-    "q": "Many of our most successful men,",
+    "q": "Many of our most successful men, ①「had they been」 able to choose ②「for themselves」, ③「would selected」 some quite different profession ④「from that in which」 they have made their fortunes.",
     "c": [
       [
         "1",
-        "had they been able to choose"
+        "had they been"
       ],
       [
         "2",
-        "for themselves,"
+        "for themselves"
       ],
       [
         "3",
-        "would selected some quite different profession"
+        "would selected"
       ],
       [
         "4",
-        "from that in which they have made their fortunes."
+        "from that in which"
       ]
     ],
     "a": "3",
@@ -3548,7 +3568,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "144",
-    "q": "That American",
+    "q": "That American ①「speaks Korean」 ②「as fluently」 ③「as if」 he ④「is」 a Korean.",
     "c": [
       [
         "1",
@@ -3560,11 +3580,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "as if he"
+        "as if"
       ],
       [
         "4",
-        "is a Korean."
+        "is"
       ]
     ],
     "a": "4",
@@ -3573,23 +3593,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "145",
-    "q": "He ①looked like he were in ②some strange land where ③dwarves were ④playing about in the garden.",
+    "q": "He ①「looked like」 he were in ②「some strange」 land where ③「dwarves」 were ④「playing about」 in the garden.",
     "c": [
       [
         "1",
-        "looked like he were in"
+        "looked like"
       ],
       [
         "2",
-        "some strange land where"
+        "some strange"
       ],
       [
         "3",
-        "dwarves were"
+        "dwarves"
       ],
       [
         "4",
-        "playing about in the garden."
+        "playing about"
       ]
     ],
     "a": "1",
@@ -3794,23 +3814,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "154",
-    "q": "Many a ①scientist suggested ②to me that Agassiz go back to his fossil fish and ③left geology ④to the experts.",
+    "q": "Many a ①「scientist」 suggested ②「to」 me that Agassiz go back to his fossil fish and ③「left」 geology ④「to」 the experts.",
     "c": [
       [
         "1",
-        "scientist suggested"
+        "scientist"
       ],
       [
         "2",
-        "to me that Agassiz go back to his fossil fish and"
+        "to"
       ],
       [
         "3",
-        "left geology"
+        "left"
       ],
       [
         "4",
-        "to the experts."
+        "to"
       ]
     ],
     "a": "3",
@@ -3819,23 +3839,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "155",
-    "q": "Since his blood pressure is",
+    "q": "Since his blood pressure is ①「much」 higher ②「than」 it ③「should be」, she insists that he ④「will not」 smoke.",
     "c": [
       [
         "1",
-        "much higher"
+        "much"
       ],
       [
         "2",
-        "than it"
+        "than"
       ],
       [
         "3",
-        "should be, she insists that he"
+        "should be"
       ],
       [
         "4",
-        "will not smoke."
+        "will not"
       ]
     ],
     "a": "4",
@@ -3919,23 +3939,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "159",
-    "q": "I ①would have done the assignment ②earlier, but I ③had met an old friend of mine ④on my way home.",
+    "q": "I ①「would have done」 the assignment ②「earlier」, but I ③「had met」 an old friend of mine ④「on my way home」.",
     "c": [
       [
         "1",
-        "would have done the assignment"
+        "would have done"
       ],
       [
         "2",
-        "earlier, but I"
+        "earlier"
       ],
       [
         "3",
-        "had met an old friend of mine"
+        "had met"
       ],
       [
         "4",
-        "on my way home."
+        "on my way home"
       ]
     ],
     "a": "3",
@@ -3944,23 +3964,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "160",
-    "q": "Sue ①could have passed the exam, but she ②might not have enough time to study since her grandfather ③died three days ④before the exam.",
+    "q": "Sue ①「could have passed」 the exam, but she ②「might not have」 enough time to study since her grandfather ③「died」 three days ④「before the exam」.",
     "c": [
       [
         "1",
-        "could have passed the exam, but she"
+        "could have passed"
       ],
       [
         "2",
-        "might not have enough time to study since her grandfather"
+        "might not have"
       ],
       [
         "3",
-        "died three days"
+        "died"
       ],
       [
         "4",
-        "before the exam."
+        "before the exam"
       ]
     ],
     "a": "2",
@@ -4019,23 +4039,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "163",
-    "q": "Jane is ①the only one of the girls ②whom as you know ③is not desirable ④for the group.",
+    "q": "Jane is ①「the only one」 of the girls ②「whom」 as you know ③「is」 not desirable ④「for the」 group.",
     "c": [
       [
         "1",
-        "the only one of the girls"
+        "the only one"
       ],
       [
         "2",
-        "whom as you know"
+        "whom"
       ],
       [
         "3",
-        "is not desirable"
+        "is"
       ],
       [
         "4",
-        "for the group."
+        "for the"
       ]
     ],
     "a": "2",
@@ -4069,23 +4089,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "165",
-    "q": "A person ①which kidneys have failed cannot ②do without the medical ③treatment known ④as dialysis.",
+    "q": "A person ①「which」 kidneys have failed cannot ②「do without」 the medical ③「treatment」 known ④「as」 dialysis.",
     "c": [
       [
         "1",
-        "which kidneys have failed cannot"
+        "which"
       ],
       [
         "2",
-        "do without the medical"
+        "do without"
       ],
       [
         "3",
-        "treatment known"
+        "treatment"
       ],
       [
         "4",
-        "as dialysis."
+        "as"
       ]
     ],
     "a": "1",
@@ -4094,11 +4114,11 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "166",
-    "q": "The modern Olympic Games began in Athens in 1896 as a result",
+    "q": "The modern Olympic Games began in Athens in 1896 as a result ①「of the」 initiative of Baron Pierre de Coubertin, a French educator ②「who」 ③「desire」 was to promote international ④「understanding」 through athletics.",
     "c": [
       [
         "1",
-        "of the initiative of Baron Pierre de Coubertin, a French educator"
+        "of the"
       ],
       [
         "2",
@@ -4106,11 +4126,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "desire was to promote international"
+        "desire"
       ],
       [
         "4",
-        "understanding through athletics."
+        "understanding"
       ]
     ],
     "a": "3",
@@ -4119,23 +4139,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "167",
-    "q": "The number and percentage of patients",
+    "q": "The number and percentage of patients ①「with」 chronic disease, ②「whom」 the diagnosis ③「is already」 known, are ④「increasing」.",
     "c": [
       [
         "1",
-        "with chronic disease,"
+        "with"
       ],
       [
         "2",
-        "whom the diagnosis"
+        "whom"
       ],
       [
         "3",
-        "is already known, are"
+        "is already"
       ],
       [
         "4",
-        "increasing."
+        "increasing"
       ]
     ],
     "a": "1",
@@ -4290,23 +4310,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "174",
-    "q": "Humus, a substance",
+    "q": "Humus, a substance ①「found」 in soil, is ②「soft」 and spongy and enables plant roots to send ③「out」 tiny hairs through ④「that」 they absorb water and food.",
     "c": [
       [
         "1",
-        "found in soil, is"
+        "found"
       ],
       [
         "2",
-        "soft and spongy and enables plant roots to send"
+        "soft"
       ],
       [
         "3",
-        "out tiny hairs through"
+        "out"
       ],
       [
         "4",
-        "that they absorb water and food."
+        "that"
       ]
     ],
     "a": "3",
@@ -4315,11 +4335,11 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "175",
-    "q": "Adolescence is the time of life",
+    "q": "Adolescence is the time of life ①「between childhood and adulthood」. The word is ②「derived from」 ③「the Latin word」 adolescere, ④「that means」 \"to grow into maturity.\"",
     "c": [
       [
         "1",
-        "between childhood and adulthood. The word is"
+        "between childhood and adulthood"
       ],
       [
         "2",
@@ -4327,11 +4347,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "the Latin word adolescere,"
+        "the Latin word"
       ],
       [
         "4",
-        "that means \"to grow into maturity.\""
+        "that means"
       ]
     ],
     "a": "1",
@@ -4340,23 +4360,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "176",
-    "q": "The tax cut ①is Bush's most profound attack on Clinton's economic legacy. In 1993, without Republican support, Clinton ②pushed through a budget ③what raised taxes on the affluent and ④sliced into the burgeoning deficit.",
+    "q": "The tax cut ①「is」 Bush's most profound attack on Clinton's economic legacy. In 1993, without Republican support, Clinton ②「pushed through」 a budget ③「what」 raised taxes on the affluent and ④「sliced into」 the burgeoning deficit.",
     "c": [
       [
         "1",
-        "is Bush's most profound attack on Clinton's economic legacy. In 1993, without Republican support, Clinton"
+        "is"
       ],
       [
         "2",
-        "pushed through a budget"
+        "pushed through"
       ],
       [
         "3",
-        "what raised taxes on the affluent and"
+        "what"
       ],
       [
         "4",
-        "sliced into the burgeoning deficit."
+        "sliced into"
       ]
     ],
     "a": "3",
@@ -4561,23 +4581,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "185",
-    "q": "①Whoever inspected ②this radio ③should have put ④their identification number on the box.",
+    "q": "①「Whoever」 inspected ②「this」 radio ③「should」 have put ④「their」 identification number on the box.",
     "c": [
       [
         "1",
-        "Whoever inspected"
+        "Whoever"
       ],
       [
         "2",
-        "this radio"
+        "this"
       ],
       [
         "3",
-        "should have put"
+        "should"
       ],
       [
         "4",
-        "their identification number on the box."
+        "their"
       ]
     ],
     "a": "4",
@@ -4707,23 +4727,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "191",
-    "q": "In the multi-cultural",
+    "q": "In the multi-cultural ①「universe where I live」 in, it's safe not to worry about ②「explaining」 the story of Passover because if people don't ③「hear it from me」, they'll hear it ④「some other」 way.",
     "c": [
       [
         "1",
-        "universe where I live in, it's safe not to worry about"
+        "universe where I live"
       ],
       [
         "2",
-        "explaining the story of Passover because if people don't"
+        "explaining"
       ],
       [
         "3",
-        "hear it from me, they'll hear it"
+        "hear it from me"
       ],
       [
         "4",
-        "some other way."
+        "some other"
       ]
     ],
     "a": "3",
@@ -4782,23 +4802,27 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "194",
-    "q": "If people cannot rely on the news",
+    "q": "If people cannot rely on the news ①「for」 facts, journalism has no reason for ②「being」. The principal reason journalists ③「existing」 in society is that people have a need to ④「be informed of」 and ⑤「comprehend」 the details of experience.",
     "c": [
       [
         "1",
-        "for facts, journalism has no reason for"
+        "for"
       ],
       [
         "2",
-        "being. The principal reason journalists"
+        "being"
       ],
       [
         "3",
-        "existing in society is that people have a need to"
+        "existing"
       ],
       [
         "4",
-        "be informed of and ⑤comprehend the details of experience."
+        "be informed of"
+      ],
+      [
+        "5",
+        "comprehend"
       ]
     ],
     "a": "2",
@@ -4882,23 +4906,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "198",
-    "q": "Recently, police officers and lawyers",
+    "q": "Recently, police officers and lawyers ①「have paid」 more attention to crimes ②「associated with」 marital violence, ③「and to」 the prevention of situations in ④「which tend」 to occur.",
     "c": [
       [
         "1",
-        "have paid more attention to crimes"
+        "have paid"
       ],
       [
         "2",
-        "associated with marital violence,"
+        "associated with"
       ],
       [
         "3",
-        "and to the prevention of situations in"
+        "and to"
       ],
       [
         "4",
-        "which tend to occur."
+        "which tend"
       ]
     ],
     "a": "2",
@@ -4907,23 +4931,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "199",
-    "q": "Since I ①have been elected to do the ②duties of the President of our country, I wish to ③thank all of the people here for the great favor ④which they have looked to me.",
+    "q": "Since I ①「have been elected」 to do the ②「duties of the」 President of our country, I wish to ③「thank all of the people」 here for the great favor ④「which they」 have looked to me.",
     "c": [
       [
         "1",
-        "have been elected to do the"
+        "have been elected"
       ],
       [
         "2",
-        "duties of the President of our country, I wish to"
+        "duties of the"
       ],
       [
         "3",
-        "thank all of the people here for the great favor"
+        "thank all of the people"
       ],
       [
         "4",
-        "which they have looked to me."
+        "which they"
       ]
     ],
     "a": "4",
@@ -4957,7 +4981,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "201",
-    "q": "①When ②frightening or exciting, elephants sometimes ③use their trunks to make ④a loud, shrill cry.",
+    "q": "①「When」 ②「frightening or exciting」, elephants sometimes ③「use their trunks」 to make ④「a loud, shrill cry」.",
     "c": [
       [
         "1",
@@ -4965,15 +4989,15 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "2",
-        "frightening or exciting, elephants sometimes"
+        "frightening or exciting"
       ],
       [
         "3",
-        "use their trunks to make"
+        "use their trunks"
       ],
       [
         "4",
-        "a loud, shrill cry."
+        "a loud, shrill cry"
       ]
     ],
     "a": "2",
@@ -4982,23 +5006,27 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "202",
-    "q": "The professor",
+    "q": "The professor ①「said」 that ②「our」 examinations were ③「disappointed」 and that he ④「would」 ⑤「give a new test」.",
     "c": [
       [
         "1",
-        "said that"
+        "said"
       ],
       [
         "2",
-        "our examinations were"
+        "our"
       ],
       [
         "3",
-        "disappointed and that he"
+        "disappointed"
       ],
       [
         "4",
-        "would ⑤give a new test."
+        "would"
+      ],
+      [
+        "5",
+        "give a new test"
       ]
     ],
     "a": "4",
@@ -5007,23 +5035,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "203",
-    "q": "①Even if Detroit could provide ②nonpolluted cars by the original deadline to meet ③prescribed Federal standards for clean air, the effect in big cities would be slight because ④only new cars would be properly equipped.",
+    "q": "①「Even if」 Detroit could provide ②「nonpolluted」 cars by the original deadline to meet ③「prescribed」 Federal standards for clean air, the effect in big cities would be slight because ④「only」 new cars would be properly equipped.",
     "c": [
       [
         "1",
-        "Even if Detroit could provide"
+        "Even if"
       ],
       [
         "2",
-        "nonpolluted cars by the original deadline to meet"
+        "nonpolluted"
       ],
       [
         "3",
-        "prescribed Federal standards for clean air, the effect in big cities would be slight because"
+        "prescribed"
       ],
       [
         "4",
-        "only new cars would be properly equipped."
+        "only"
       ]
     ],
     "a": "3",
@@ -5032,23 +5060,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "204",
-    "q": "①Because of the flood, we will ②have to drink ③bottling water ④instead of tap water.",
+    "q": "①「Because of」 the flood, we will ②「have to」 drink ③「bottling」 water ④「instead of」 tap water.",
     "c": [
       [
         "1",
-        "Because of the flood, we will"
+        "Because of"
       ],
       [
         "2",
-        "have to drink"
+        "have to"
       ],
       [
         "3",
-        "bottling water"
+        "bottling"
       ],
       [
         "4",
-        "instead of tap water."
+        "instead of"
       ]
     ],
     "a": "3",
@@ -5057,11 +5085,11 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "205",
-    "q": "①Freezing foods are the ②fastest ③growing segment of the food ④industry.",
+    "q": "①「Freezing」 foods are the ②「fastest」 ③「growing」 segment of the food ④「industry」.",
     "c": [
       [
         "1",
-        "Freezing foods are the"
+        "Freezing"
       ],
       [
         "2",
@@ -5069,11 +5097,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "growing segment of the food"
+        "growing"
       ],
       [
         "4",
-        "industry."
+        "industry"
       ]
     ],
     "a": "1",
@@ -5082,11 +5110,11 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "206",
-    "q": "①Two of the oldest and ②most ③developing money markets are ④those of the United States and Great britain.",
+    "q": "①「Two of」 the oldest and ②「most」 ③「developing」 money markets are ④「those」 of the United States and Great britain.",
     "c": [
       [
         "1",
-        "Two of the oldest and"
+        "Two of"
       ],
       [
         "2",
@@ -5094,11 +5122,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "developing money markets are"
+        "developing"
       ],
       [
         "4",
-        "those of the United States and Great britain."
+        "those"
       ]
     ],
     "a": "3",
@@ -5107,23 +5135,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "207",
-    "q": "①Reading two novels ②by Hemingway during the summer vacation, I ③look forward to reading ④more of his works.",
+    "q": "①「Reading」 two novels ②「by」 Hemingway during the summer vacation, I ③「look forward to」 reading ④「more」 of his works.",
     "c": [
       [
         "1",
-        "Reading two novels"
+        "Reading"
       ],
       [
         "2",
-        "by Hemingway during the summer vacation, I"
+        "by"
       ],
       [
         "3",
-        "look forward to reading"
+        "look forward to"
       ],
       [
         "4",
-        "more of his works."
+        "more"
       ]
     ],
     "a": "3",
@@ -5132,15 +5160,15 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "208",
-    "q": "①Having eaten the cherry pie, I ②struck several pits and ③nearly ④broke a tooth.",
+    "q": "①「Having eaten」 the cherry pie, I ②「struck」 several pits and ③「nearly」 ④「broke」 a tooth.",
     "c": [
       [
         "1",
-        "Having eaten the cherry pie, I"
+        "Having eaten"
       ],
       [
         "2",
-        "struck several pits and"
+        "struck"
       ],
       [
         "3",
@@ -5148,7 +5176,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "broke a tooth."
+        "broke"
       ]
     ],
     "a": "2",
@@ -5157,7 +5185,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "209",
-    "q": "North Korea Foreign Ministry officials",
+    "q": "North Korea Foreign Ministry officials ①「were」 ②「reportedly」 left all but speechless, ③「having been」 cheerfully assumed that Kelly was coming to town with an offer of ④「renewed」 aid.",
     "c": [
       [
         "1",
@@ -5165,15 +5193,15 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "2",
-        "reportedly left all but speechless,"
+        "reportedly"
       ],
       [
         "3",
-        "having been cheerfully assumed that Kelly was coming to town with an offer of"
+        "having been"
       ],
       [
         "4",
-        "renewed aid."
+        "renewed"
       ]
     ],
     "a": "1",
@@ -5182,23 +5210,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "210",
-    "q": "①Forbidding to speak ②to each other, the ③Danes communicate in stolen glances and occasional whispered words. This is not the way their new life ④was supposed to work out.",
+    "q": "①「Forbidding」 to speak ②「to each other」, the ③「Danes communicate」 in stolen glances and occasional whispered words. This is not the way their new life ④「was supposed」 to work out.",
     "c": [
       [
         "1",
-        "Forbidding to speak"
+        "Forbidding"
       ],
       [
         "2",
-        "to each other, the"
+        "to each other"
       ],
       [
         "3",
-        "Danes communicate in stolen glances and occasional whispered words. This is not the way their new life"
+        "Danes communicate"
       ],
       [
         "4",
-        "was supposed to work out."
+        "was supposed"
       ]
     ],
     "a": "1",
@@ -5207,23 +5235,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "211",
-    "q": "①Properly using, a good quality ②polarizing filter can produce ③images of striking beauty by deepening and ④subtly changing the colors.",
+    "q": "①「Properly using」, a good quality ②「polarizing filter」 can produce ③「images of」 striking beauty by deepening and ④「subtly」 changing the colors.",
     "c": [
       [
         "1",
-        "Properly using, a good quality"
+        "Properly using"
       ],
       [
         "2",
-        "polarizing filter can produce"
+        "polarizing filter"
       ],
       [
         "3",
-        "images of striking beauty by deepening and"
+        "images of"
       ],
       [
         "4",
-        "subtly changing the colors."
+        "subtly"
       ]
     ],
     "a": "1",
@@ -5232,27 +5260,27 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "212",
-    "q": "①The side of Rousseau's thought that arouses nostalgia for nature came to the United States ②early on. ③Recently, ④joining to many other movements, it ⑤came to full flower and found a wide public.",
+    "q": "①「The side of」 Rousseau's thought that arouses nostalgia for nature came to the United States ②「early on」. ③「Recently」, ④「joining」 to many other movements, it ⑤「came to full flower」 and found a wide public.",
     "c": [
       [
         "1",
-        "The side of Rousseau's thought that arouses nostalgia for nature came to the United States"
+        "The side of"
       ],
       [
         "2",
-        "early on."
+        "early on"
       ],
       [
         "3",
-        "Recently,"
+        "Recently"
       ],
       [
         "4",
-        "joining to many other movements, it"
+        "joining"
       ],
       [
         "5",
-        "came to full flower and found a wide public."
+        "came to full flower"
       ]
     ],
     "a": "4",
@@ -5311,27 +5339,27 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "215",
-    "q": "Fortune is proud ①to announce its second annual competition for Asia's best business plans. The ②winning submission will ③advance to the semi-final round of E-Chron's annual business competition, with that winner ④walks away with up to $1,000,000 ⑤in prize awards.",
+    "q": "Fortune is proud ①「to announce」 its second annual competition for Asia's best business plans. The ②「winning」 submission will ③「advance to」 the semi-final round of E-Chron's annual business competition, with that winner ④「walks away」 with up to $1,000,000 ⑤「in」 prize awards.",
     "c": [
       [
         "1",
-        "to announce its second annual competition for Asia's best business plans. The"
+        "to announce"
       ],
       [
         "2",
-        "winning submission will"
+        "winning"
       ],
       [
         "3",
-        "advance to the semi-final round of E-Chron's annual business competition, with that winner"
+        "advance to"
       ],
       [
         "4",
-        "walks away with up to $1,000,000"
+        "walks away"
       ],
       [
         "5",
-        "in prize awards."
+        "in"
       ]
     ],
     "a": "4",
@@ -5340,15 +5368,15 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "216",
-    "q": "A few years ago,",
+    "q": "A few years ago, ①「traveling」 through Italy, the idea for a history ②「of」 Florentine architecture ③「occurred」 ④「to him」.",
     "c": [
       [
         "1",
-        "traveling through Italy, the idea for a history"
+        "traveling"
       ],
       [
         "2",
-        "of Florentine architecture"
+        "of"
       ],
       [
         "3",
@@ -5356,7 +5384,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "to him."
+        "to him"
       ]
     ],
     "a": "2",
@@ -5365,23 +5393,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "217",
-    "q": "Seriously ①burned in a terrible car accident, the doctor was not sure that John ②could be protected from infection ③long enough for his body to begin to heal ④itself.",
+    "q": "Seriously ①「burned」 in a terrible car accident, the doctor was not sure that John ②「could be protected」 from infection ③「long」 enough for his body to begin to heal ④「itself」.",
     "c": [
       [
         "1",
-        "burned in a terrible car accident, the doctor was not sure that John"
+        "burned"
       ],
       [
         "2",
-        "could be protected from infection"
+        "could be protected"
       ],
       [
         "3",
-        "long enough for his body to begin to heal"
+        "long"
       ],
       [
         "4",
-        "itself."
+        "itself"
       ]
     ],
     "a": "1",
@@ -5415,23 +5443,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "219",
-    "q": "Pyongyang ①is now pursuing a policy that ②calls for improved economic and technical ties with all nations, ③included capitalist countries that have no diplomatic ties with ④North Korea.",
+    "q": "Pyongyang ①「is now pursuing」 a policy that ②「calls for」 improved economic and technical ties with all nations, ③「included」 capitalist countries that have no diplomatic ties with ④「North Korea」.",
     "c": [
       [
         "1",
-        "is now pursuing a policy that"
+        "is now pursuing"
       ],
       [
         "2",
-        "calls for improved economic and technical ties with all nations,"
+        "calls for"
       ],
       [
         "3",
-        "included capitalist countries that have no diplomatic ties with"
+        "included"
       ],
       [
         "4",
-        "North Korea."
+        "North Korea"
       ]
     ],
     "a": "3",
@@ -5536,23 +5564,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "224",
-    "q": "\"There is ①no general mythology today\", Campbell says, \"②or can there ever be again.\" Our lives are too ③greatly various in their backgrounds, aims and possibilities for any single order of symbols to work effectively ④on us all.",
+    "q": "\"There is ①「no」 general mythology today\", Campbell says, \" ②「or」 can there ever be again.\" Our lives are too ③「greatly」 various in their backgrounds, aims and possibilities for any single order of symbols to work effectively ④「on」 us all.",
     "c": [
       [
         "1",
-        "no general mythology today\", Campbell says, \""
+        "no"
       ],
       [
         "2",
-        "or can there ever be again.\" Our lives are too"
+        "or"
       ],
       [
         "3",
-        "greatly various in their backgrounds, aims and possibilities for any single order of symbols to work effectively"
+        "greatly"
       ],
       [
         "4",
-        "on us all."
+        "on"
       ]
     ],
     "a": "3",
@@ -5561,23 +5589,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "225",
-    "q": "The adult mosquito usually lives,",
+    "q": "The adult mosquito usually lives, ①「for」 about thirty days, ②「although」 the life span varies ③「widely with」 temperature, ④「humid」 and other factors of the environment.",
     "c": [
       [
         "1",
-        "for about thirty days,"
+        "for"
       ],
       [
         "2",
-        "although the life span varies"
+        "although"
       ],
       [
         "3",
-        "widely with temperature,"
+        "widely with"
       ],
       [
         "4",
-        "humid and other factors of the environment."
+        "humid"
       ]
     ],
     "a": "4",
@@ -5586,23 +5614,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "226",
-    "q": "Standardized tests, supposed indicators",
+    "q": "Standardized tests, supposed indicators ①「of intellect」, aptitude, readiness, knowledge, or ②「to ability」, are ③「important」 in the college ④「admissions」 process.",
     "c": [
       [
         "1",
-        "of intellect, aptitude, readiness, knowledge, or"
+        "of intellect"
       ],
       [
         "2",
-        "to ability, are"
+        "to ability"
       ],
       [
         "3",
-        "important in the college"
+        "important"
       ],
       [
         "4",
-        "admissions process."
+        "admissions"
       ]
     ],
     "a": "3",
@@ -5611,15 +5639,15 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "227",
-    "q": "①The idea that learning is a lifelong process ②has been expressed by philosophers and ③educations ④throughout the centuries.",
+    "q": "①「The idea that」 learning is a lifelong process ②「has been expressed」 by philosophers and ③「educations」 ④「throughout」 the centuries.",
     "c": [
       [
         "1",
-        "The idea that learning is a lifelong process"
+        "The idea that"
       ],
       [
         "2",
-        "has been expressed by philosophers and"
+        "has been expressed"
       ],
       [
         "3",
@@ -5627,7 +5655,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "throughout the centuries."
+        "throughout"
       ]
     ],
     "a": "3",
@@ -5636,23 +5664,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "228",
-    "q": "Richard and Angela went out together several times:",
+    "q": "Richard and Angela went out together several times: ①「to a movie」, to a party with some friends, and ②「then dinner」. They seemed to have a lot ③「in common」 and Angela commented that she couldn't remember ④「having」 such a good time.",
     "c": [
       [
         "1",
-        "to a movie, to a party with some friends, and"
+        "to a movie"
       ],
       [
         "2",
-        "then dinner. They seemed to have a lot"
+        "then dinner"
       ],
       [
         "3",
-        "in common and Angela commented that she couldn't remember"
+        "in common"
       ],
       [
         "4",
-        "having such a good time."
+        "having"
       ]
     ],
     "a": "2",
@@ -5661,23 +5689,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "229",
-    "q": "\"Sexual harassment\" is a term ①that is used to describe behavior at work that is ②sexually offense or inappropriate. It includes behavior that ③makes an employee feel uncomfortable because of his or her gender, but it can also include any behavior that is sexual ④in nature.",
+    "q": "\"Sexual harassment\" is a term ①「that is used」 to describe behavior at work that is ②「sexually offense」 or inappropriate. It includes behavior that ③「makes an」 employee feel uncomfortable because of his or her gender, but it can also include any behavior that is sexual ④「in nature」.",
     "c": [
       [
         "1",
-        "that is used to describe behavior at work that is"
+        "that is used"
       ],
       [
         "2",
-        "sexually offense or inappropriate. It includes behavior that"
+        "sexually offense"
       ],
       [
         "3",
-        "makes an employee feel uncomfortable because of his or her gender, but it can also include any behavior that is sexual"
+        "makes an"
       ],
       [
         "4",
-        "in nature."
+        "in nature"
       ]
     ],
     "a": "2",
@@ -5857,15 +5885,15 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "237",
-    "q": "①Hardly he had entered ②the office when he realized that he ③had forgotten ④his wallet.",
+    "q": "①「Hardly he had」 entered ②「the office」 when he realized that he ③「had forgotten」 ④「his」 wallet.",
     "c": [
       [
         "1",
-        "Hardly he had entered"
+        "Hardly he had"
       ],
       [
         "2",
-        "the office when he realized that he"
+        "the office"
       ],
       [
         "3",
@@ -5873,7 +5901,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "his wallet."
+        "his"
       ]
     ],
     "a": "1",
@@ -5932,11 +5960,11 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "240",
-    "q": "①None until the negotiations were ②over ③did Mr. Peterson ④reveal the company's intentions.",
+    "q": "①「None」 until the negotiations were ②「over」 ③「did」 Mr. Peterson ④「reveal」 the company's intentions.",
     "c": [
       [
         "1",
-        "None until the negotiations were"
+        "None"
       ],
       [
         "2",
@@ -5944,11 +5972,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "did Mr. Peterson"
+        "did"
       ],
       [
         "4",
-        "reveal the company's intentions."
+        "reveal"
       ]
     ],
     "a": "1",
@@ -5982,23 +6010,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "242",
-    "q": "Unless an athlete is",
+    "q": "Unless an athlete is ①「physically fit」, there is no sense in ②「him」 sacrificing ③「himself」 for victory in any game and, therefore, facing a ④「lifetime injury」.",
     "c": [
       [
         "1",
-        "physically fit, there is no sense in"
+        "physically fit"
       ],
       [
         "2",
-        "him sacrificing"
+        "him"
       ],
       [
         "3",
-        "himself for victory in any game and, therefore, facing a"
+        "himself"
       ],
       [
         "4",
-        "lifetime injury."
+        "lifetime injury"
       ]
     ],
     "a": "3",
@@ -6032,23 +6060,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "244",
-    "q": "I do not understand",
+    "q": "I do not understand ①「why」 Mother ②「should object」 to ③「me having played」 the piano ④「at」 the party.",
     "c": [
       [
         "1",
-        "why Mother"
+        "why"
       ],
       [
         "2",
-        "should object to"
+        "should object"
       ],
       [
         "3",
-        "me having played the piano"
+        "me having played"
       ],
       [
         "4",
-        "at the party."
+        "at"
       ]
     ],
     "a": "4",
@@ -6082,23 +6110,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "246",
-    "q": "The director of the department",
+    "q": "The director of the department ①「advised」 the new employees to avoid ②「to waste」 time ③「studying」 methods that were ④「so」 out-of-date.",
     "c": [
       [
         "1",
-        "advised the new employees to avoid"
+        "advised"
       ],
       [
         "2",
-        "to waste time"
+        "to waste"
       ],
       [
         "3",
-        "studying methods that were"
+        "studying"
       ],
       [
         "4",
-        "so out-of-date."
+        "so"
       ]
     ],
     "a": "1",
@@ -6107,23 +6135,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "247",
-    "q": "The weekend",
+    "q": "The weekend ①「before Christmas」, she had to finish ②「to buy」 gifts, prepare a holiday dinner ③「for 10 persons」 and organize birthday parties for ④「all three of」 her young children.",
     "c": [
       [
         "1",
-        "before Christmas, she had to finish"
+        "before Christmas"
       ],
       [
         "2",
-        "to buy gifts, prepare a holiday dinner"
+        "to buy"
       ],
       [
         "3",
-        "for 10 persons and organize birthday parties for"
+        "for 10 persons"
       ],
       [
         "4",
-        "all three of her young children."
+        "all three of"
       ]
     ],
     "a": "3",
@@ -6132,11 +6160,11 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "248",
-    "q": "Koreans ①are planning to stop ②to smoke ③since the government ④has required health warnings on cigarette packages.",
+    "q": "Koreans ①「are planning」 to stop ②「to smoke」 ③「since」 the government ④「has required」 health warnings on cigarette packages.",
     "c": [
       [
         "1",
-        "are planning to stop"
+        "are planning"
       ],
       [
         "2",
@@ -6144,11 +6172,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "since the government"
+        "since"
       ],
       [
         "4",
-        "has required health warnings on cigarette packages."
+        "has required"
       ]
     ],
     "a": "2",
@@ -6157,7 +6185,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "249",
-    "q": "If you're ①planning ②to be near the post office today, ③could you stop ④buying some stamps?",
+    "q": "If you're ①「planning」 ②「to be」 near the post office today, ③「could」 you stop ④「buying」 some stamps?",
     "c": [
       [
         "1",
@@ -6165,15 +6193,15 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "2",
-        "to be near the post office today,"
+        "to be"
       ],
       [
         "3",
-        "could you stop"
+        "could"
       ],
       [
         "4",
-        "buying some stamps?"
+        "buying"
       ]
     ],
     "a": "4",
@@ -6203,23 +6231,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "251",
-    "q": "I was satisfied",
+    "q": "I was satisfied ①「with」 his devotion to ②「get」 his job ③「done」 well ④「against all odds」.",
     "c": [
       [
         "1",
-        "with his devotion to"
+        "with"
       ],
       [
         "2",
-        "get his job"
+        "get"
       ],
       [
         "3",
-        "done well"
+        "done"
       ],
       [
         "4",
-        "against all odds."
+        "against all odds"
       ]
     ],
     "a": "3",
@@ -6228,23 +6256,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "252",
-    "q": "①Using a lattice of lasers and ultra-cold temperatures, German scientists ②have made a new type of matter that could ③overcome an obstacle to ④make quantum computers.",
+    "q": "①「Using」 a lattice of lasers and ultra-cold temperatures, German scientists ②「have」 made a new type of matter that could ③「overcome」 an obstacle to ④「make」 quantum computers.",
     "c": [
       [
         "1",
-        "Using a lattice of lasers and ultra-cold temperatures, German scientists"
+        "Using"
       ],
       [
         "2",
-        "have made a new type of matter that could"
+        "have"
       ],
       [
         "3",
-        "overcome an obstacle to"
+        "overcome"
       ],
       [
         "4",
-        "make quantum computers."
+        "make"
       ]
     ],
     "a": "4",
@@ -6328,19 +6356,19 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "256",
-    "q": "①Had he not believed that ②every individual ③belongs to history, his story ④would not have been ⑤worth of telling.",
+    "q": "①「Had he not believed」 that ②「every」 individual ③「belongs to」 history, his story ④「would not have been」 ⑤「worth of telling」.",
     "c": [
       [
         "1",
-        "Had he not believed that"
+        "Had he not believed"
       ],
       [
         "2",
-        "every individual"
+        "every"
       ],
       [
         "3",
-        "belongs to history, his story"
+        "belongs to"
       ],
       [
         "4",
@@ -6348,7 +6376,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "5",
-        "worth of telling."
+        "worth of telling"
       ]
     ],
     "a": "3",
@@ -6357,15 +6385,15 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "257",
-    "q": "If you are used",
+    "q": "If you are used ①「to analyze」 texts, you will be able to formulate a clear statement of ②「what」 your draft ③「turned out」 ④「to be」 about.",
     "c": [
       [
         "1",
-        "to analyze texts, you will be able to formulate a clear statement of"
+        "to analyze"
       ],
       [
         "2",
-        "what your draft"
+        "what"
       ],
       [
         "3",
@@ -6373,7 +6401,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "to be about."
+        "to be"
       ]
     ],
     "a": "1",
@@ -6382,23 +6410,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "258",
-    "q": "Elizabeth is",
+    "q": "Elizabeth is ①「looking」 forward to ②「go」 to Europe after she ③「finishes」 her studies ④「at」 the university.",
     "c": [
       [
         "1",
-        "looking forward to"
+        "looking"
       ],
       [
         "2",
-        "go to Europe after she"
+        "go"
       ],
       [
         "3",
-        "finishes her studies"
+        "finishes"
       ],
       [
         "4",
-        "at the university."
+        "at"
       ]
     ],
     "a": "2",
@@ -6478,15 +6506,15 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "262",
-    "q": "Since money is",
+    "q": "Since money is ①「greatly」 needed, this is the time ②「for」 all of you ③「to giving」 ④「generously」 to the school.",
     "c": [
       [
         "1",
-        "greatly needed, this is the time"
+        "greatly"
       ],
       [
         "2",
-        "for all of you"
+        "for"
       ],
       [
         "3",
@@ -6494,7 +6522,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "generously to the school."
+        "generously"
       ]
     ],
     "a": "2",
@@ -6653,23 +6681,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "269",
-    "q": "①The portable computer ②allows people ③who are away from offices to ④continue to working.",
+    "q": "①「The portable」 computer ②「allows」 people ③「who are」 away from offices to ④「continue」 to working.",
     "c": [
       [
         "1",
-        "The portable computer"
+        "The portable"
       ],
       [
         "2",
-        "allows people"
+        "allows"
       ],
       [
         "3",
-        "who are away from offices to"
+        "who are"
       ],
       [
         "4",
-        "continue to working."
+        "continue"
       ]
     ],
     "a": "4",
@@ -6678,23 +6706,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "270",
-    "q": "As ①heart disease continues ②being the number-one killer in the United States, researchers ③have become increasingly interested in ④identifying the potential risk factors.",
+    "q": "As ①「heart disease」 continues ②「being」 the number-one killer in the United States, researchers ③「have become」 increasingly interested in ④「identifying」 the potential risk factors.",
     "c": [
       [
         "1",
-        "heart disease continues"
+        "heart disease"
       ],
       [
         "2",
-        "being the number-one killer in the United States, researchers"
+        "being"
       ],
       [
         "3",
-        "have become increasingly interested in"
+        "have become"
       ],
       [
         "4",
-        "identifying the potential risk factors."
+        "identifying"
       ]
     ],
     "a": "2",
@@ -6703,23 +6731,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "271",
-    "q": "Space exploration is",
+    "q": "Space exploration is ①「so costly」 that ②「no」 single nation ③「can」 hope ④「sustaining」 a major program indefinitely.",
     "c": [
       [
         "1",
-        "so costly that"
+        "so costly"
       ],
       [
         "2",
-        "no single nation"
+        "no"
       ],
       [
         "3",
-        "can hope"
+        "can"
       ],
       [
         "4",
-        "sustaining a major program indefinitely."
+        "sustaining"
       ]
     ],
     "a": "3",
@@ -6728,7 +6756,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "272",
-    "q": "①There being ②low sales, companies ③wanted that they were able to develop new ④products.",
+    "q": "①「There being」 ②「low」 sales, companies ③「wanted」 that they were able to develop new ④「products」.",
     "c": [
       [
         "1",
@@ -6736,15 +6764,15 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "2",
-        "low sales, companies"
+        "low"
       ],
       [
         "3",
-        "wanted that they were able to develop new"
+        "wanted"
       ],
       [
         "4",
-        "products."
+        "products"
       ]
     ],
     "a": "3",
@@ -6828,15 +6856,15 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "276",
-    "q": "①At the beginning of that year a particularly bad smog, ②which lasted for many weeks, ③was estimated ④to be caused between 4,000 and 8,000 deaths.",
+    "q": "①「At」 the beginning of that year a particularly bad smog, ②「which」 lasted for many weeks, ③「was estimated」 ④「to be」 caused between 4,000 and 8,000 deaths.",
     "c": [
       [
         "1",
-        "At the beginning of that year a particularly bad smog,"
+        "At"
       ],
       [
         "2",
-        "which lasted for many weeks,"
+        "which"
       ],
       [
         "3",
@@ -6844,7 +6872,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "to be caused between 4,000 and 8,000 deaths."
+        "to be"
       ]
     ],
     "a": "4",
@@ -6853,23 +6881,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "277",
-    "q": "I had hoped",
+    "q": "I had hoped ①「to have learned」 French before my trip ②「to Paris」, but I ③「did not」 have any ④「extra money」 for a course.",
     "c": [
       [
         "1",
-        "to have learned French before my trip"
+        "to have learned"
       ],
       [
         "2",
-        "to Paris, but I"
+        "to Paris"
       ],
       [
         "3",
-        "did not have any"
+        "did not"
       ],
       [
         "4",
-        "extra money for a course."
+        "extra money"
       ]
     ],
     "a": "3",
@@ -6878,23 +6906,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "278",
-    "q": "①After studying hard ②to become an accountant, he discovered that ③it was not what he wanted ④to do.",
+    "q": "①「After studying」 hard ②「to become」 an accountant, he discovered that ③「it was」 not what he wanted ④「to do」.",
     "c": [
       [
         "1",
-        "After studying hard"
+        "After studying"
       ],
       [
         "2",
-        "to become an accountant, he discovered that"
+        "to become"
       ],
       [
         "3",
-        "it was not what he wanted"
+        "it was"
       ],
       [
         "4",
-        "to do."
+        "to do"
       ]
     ],
     "a": "1",
@@ -6928,23 +6956,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "280",
-    "q": "①To completely solve the problem ②requires more thought ③than we have given ④so far.",
+    "q": "①「To completely solve」 the problem ②「requires」 more thought ③「than」 we have given ④「so far」.",
     "c": [
       [
         "1",
-        "To completely solve the problem"
+        "To completely solve"
       ],
       [
         "2",
-        "requires more thought"
+        "requires"
       ],
       [
         "3",
-        "than we have given"
+        "than"
       ],
       [
         "4",
-        "so far."
+        "so far"
       ]
     ],
     "a": "1",
@@ -6953,23 +6981,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "281",
-    "q": "①A lot of baby boomers ②feel that a terrible thing ③is happened to the ④moral fiber of this country.",
+    "q": "①「A lot of」 baby boomers ②「feel that」 a terrible thing ③「is happened to」 the ④「moral」 fiber of this country.",
     "c": [
       [
         "1",
-        "A lot of baby boomers"
+        "A lot of"
       ],
       [
         "2",
-        "feel that a terrible thing"
+        "feel that"
       ],
       [
         "3",
-        "is happened to the"
+        "is happened to"
       ],
       [
         "4",
-        "moral fiber of this country."
+        "moral"
       ]
     ],
     "a": "3",
@@ -6978,23 +7006,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "282",
-    "q": "Whenever ①election are occurred in this country, there ②is often a candidate, as well as a few media broadcasters, ③who becomes ④an immortalized figure on the landscape of American history.",
+    "q": "Whenever ①「election are occurred」 in this country, there ②「is often」 a candidate, as well as a few media broadcasters, ③「who」 becomes ④「an immortalized」 figure on the landscape of American history.",
     "c": [
       [
         "1",
-        "election are occurred in this country, there"
+        "election are occurred"
       ],
       [
         "2",
-        "is often a candidate, as well as a few media broadcasters,"
+        "is often"
       ],
       [
         "3",
-        "who becomes"
+        "who"
       ],
       [
         "4",
-        "an immortalized figure on the landscape of American history."
+        "an immortalized"
       ]
     ],
     "a": "1",
@@ -7003,23 +7031,27 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "283",
-    "q": "Classicism which",
+    "q": "Classicism which ①「was originated」 in Greece and ②「continued」 in ancient Rome, was the principal contributor ③「to」 that aspect of our life which ④「is usually」 referred to as ⑤「secular」.",
     "c": [
       [
         "1",
-        "was originated in Greece and"
+        "was originated"
       ],
       [
         "2",
-        "continued in ancient Rome, was the principal contributor"
+        "continued"
       ],
       [
         "3",
-        "to that aspect of our life which"
+        "to"
       ],
       [
         "4",
-        "is usually referred to as ⑤secular."
+        "is usually"
+      ],
+      [
+        "5",
+        "secular"
       ]
     ],
     "a": "2",
@@ -7028,23 +7060,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "284",
-    "q": "Where he ①was seemed to be is a question ②for the courts to determine, ③not television jurors ④like you and me.",
+    "q": "Where he ①「was seemed to be」 is a question ②「for the courts」 to determine, ③「not」 television jurors ④「like」 you and me.",
     "c": [
       [
         "1",
-        "was seemed to be is a question"
+        "was seemed to be"
       ],
       [
         "2",
-        "for the courts to determine,"
+        "for the courts"
       ],
       [
         "3",
-        "not television jurors"
+        "not"
       ],
       [
         "4",
-        "like you and me."
+        "like"
       ]
     ],
     "a": "1",
@@ -7078,23 +7110,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "286",
-    "q": "①Although a lawyer ②by profession and ③accustomed public speaking, Sir Robert Borden was not ④a great orator.",
+    "q": "①「Although」 a lawyer ②「by」 profession and ③「accustomed public」 speaking, Sir Robert Borden was not ④「a great orator」.",
     "c": [
       [
         "1",
-        "Although a lawyer"
+        "Although"
       ],
       [
         "2",
-        "by profession and"
+        "by"
       ],
       [
         "3",
-        "accustomed public speaking, Sir Robert Borden was not"
+        "accustomed public"
       ],
       [
         "4",
-        "a great orator."
+        "a great orator"
       ]
     ],
     "a": "3",
@@ -7153,23 +7185,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "289",
-    "q": "Though Johnson knew his serious defects, he",
+    "q": "Though Johnson knew his serious defects, he ①「was broad-minded」 enough ②「to appoint」 the man ③「to」 the important position because he ④「was convincing」 of his ability.",
     "c": [
       [
         "1",
-        "was broad-minded enough"
+        "was broad-minded"
       ],
       [
         "2",
-        "to appoint the man"
+        "to appoint"
       ],
       [
         "3",
-        "to the important position because he"
+        "to"
       ],
       [
         "4",
-        "was convincing of his ability."
+        "was convincing"
       ]
     ],
     "a": "3",
@@ -7274,23 +7306,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "294",
-    "q": "When both mother and father work outside the home, the lives of all the family members change",
+    "q": "When both mother and father work outside the home, the lives of all the family members change ①「quite a bit」. Dad must ②「help out more at home」. The older children may ③「ask to help the」 housework and ④「take care of the」 younger children.",
     "c": [
       [
         "1",
-        "quite a bit. Dad must"
+        "quite a bit"
       ],
       [
         "2",
-        "help out more at home. The older children may"
+        "help out more at home"
       ],
       [
         "3",
-        "ask to help the housework and"
+        "ask to help the"
       ],
       [
         "4",
-        "take care of the younger children."
+        "take care of the"
       ]
     ],
     "a": "2",
@@ -7299,23 +7331,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "295",
-    "q": "①With the advent of Microsoft windows, ②many other software makers were ③forced upgrade their ④own products.",
+    "q": "①「With」 the advent of Microsoft windows, ②「many other」 software makers were ③「forced upgrade」 their ④「own」 products.",
     "c": [
       [
         "1",
-        "With the advent of Microsoft windows,"
+        "With"
       ],
       [
         "2",
-        "many other software makers were"
+        "many other"
       ],
       [
         "3",
-        "forced upgrade their"
+        "forced upgrade"
       ],
       [
         "4",
-        "own products."
+        "own"
       ]
     ],
     "a": "3",
@@ -7324,23 +7356,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "296",
-    "q": "The ①children had been ②said not ③to go ④near the water.",
+    "q": "The ①「children」 had been ②「said」 not ③「to」 go ④「near」 the water.",
     "c": [
       [
         "1",
-        "children had been"
+        "children"
       ],
       [
         "2",
-        "said not"
+        "said"
       ],
       [
         "3",
-        "to go"
+        "to"
       ],
       [
         "4",
-        "near the water."
+        "near"
       ]
     ],
     "a": "2",
@@ -7445,11 +7477,11 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "301",
-    "q": "Ken ①must walk 7 miles ②yesterday ③because his car ④broke down.",
+    "q": "Ken ①「must」 walk 7 miles ②「yesterday」 ③「because」 his car ④「broke」 down.",
     "c": [
       [
         "1",
-        "must walk 7 miles"
+        "must"
       ],
       [
         "2",
@@ -7457,11 +7489,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "because his car"
+        "because"
       ],
       [
         "4",
-        "broke down."
+        "broke"
       ]
     ],
     "a": "1",
@@ -7495,7 +7527,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "303",
-    "q": "You ①had not better ②quit your job until you find another one. ③Once you are ④out of work, you may find it hard to get another.",
+    "q": "You ①「had not better」 ②「quit」 your job until you find another one. ③「Once」 you are ④「out of work」, you may find it hard to get another.",
     "c": [
       [
         "1",
@@ -7503,15 +7535,15 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "2",
-        "quit your job until you find another one."
+        "quit"
       ],
       [
         "3",
-        "Once you are"
+        "Once"
       ],
       [
         "4",
-        "out of work, you may find it hard to get another."
+        "out of work"
       ]
     ],
     "a": "1",
@@ -7816,23 +7848,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "316",
-    "q": "Some reports argue that students",
+    "q": "Some reports argue that students ①「who used to」 using a calculator ②「may」 forget ③「how to do」 mental ④「calculations」.",
     "c": [
       [
         "1",
-        "who used to using a calculator"
+        "who used to"
       ],
       [
         "2",
-        "may forget"
+        "may"
       ],
       [
         "3",
-        "how to do mental"
+        "how to do"
       ],
       [
         "4",
-        "calculations."
+        "calculations"
       ]
     ],
     "a": "4",
@@ -7891,23 +7923,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "319",
-    "q": "I ①intend to move that our committee ②appoints Tom as chairman, and I ③hope that you ④will second my motion.",
+    "q": "I ①「intend to move」 that our committee ②「appoints」 Tom as chairman, and I ③「hope」 that you ④「will second」 my motion.",
     "c": [
       [
         "1",
-        "intend to move that our committee"
+        "intend to move"
       ],
       [
         "2",
-        "appoints Tom as chairman, and I"
+        "appoints"
       ],
       [
         "3",
-        "hope that you"
+        "hope"
       ],
       [
         "4",
-        "will second my motion."
+        "will second"
       ]
     ],
     "a": "2",
@@ -7962,23 +7994,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "322",
-    "q": "①Until Napoleon's dreams of empire led him ②into the land of the pharaohs, his knowledge about Egypt had been ③as obscurely as the hieroglyphics ④on its stone facades.",
+    "q": "①「Until」 Napoleon's dreams of empire led him ②「into the land of」 the pharaohs, his knowledge about Egypt had been ③「as obscurely as」 the hieroglyphics ④「on its」 stone facades.",
     "c": [
       [
         "1",
-        "Until Napoleon's dreams of empire led him"
+        "Until"
       ],
       [
         "2",
-        "into the land of the pharaohs, his knowledge about Egypt had been"
+        "into the land of"
       ],
       [
         "3",
-        "as obscurely as the hieroglyphics"
+        "as obscurely as"
       ],
       [
         "4",
-        "on its stone facades."
+        "on its"
       ]
     ],
     "a": "3",
@@ -8233,23 +8265,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "333",
-    "q": "The more dangerous",
+    "q": "The more dangerous ①「is the sport」, the ②「more enthusiastically」 people ③「appear」 to love ④「watching」 it.",
     "c": [
       [
         "1",
-        "is the sport, the"
+        "is the sport"
       ],
       [
         "2",
-        "more enthusiastically people"
+        "more enthusiastically"
       ],
       [
         "3",
-        "appear to love"
+        "appear"
       ],
       [
         "4",
-        "watching it."
+        "watching"
       ]
     ],
     "a": "3",
@@ -8258,23 +8290,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "334",
-    "q": "①Most of the telephone ②systems in Vietnam were installed in ③the 50's and 60's and are inherently ④much inferior than the modern systems already in use in Malaysia and Thailand.",
+    "q": "①「Most of the」 telephone ②「systems」 in Vietnam were installed in ③「the 50's and」 60's and are inherently ④「much inferior」 than the modern systems already in use in Malaysia and Thailand.",
     "c": [
       [
         "1",
-        "Most of the telephone"
+        "Most of the"
       ],
       [
         "2",
-        "systems in Vietnam were installed in"
+        "systems"
       ],
       [
         "3",
-        "the 50's and 60's and are inherently"
+        "the 50's and"
       ],
       [
         "4",
-        "much inferior than the modern systems already in use in Malaysia and Thailand."
+        "much inferior"
       ]
     ],
     "a": "4",
@@ -8454,23 +8486,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "342",
-    "q": "①Modern athletes command much ②great salaries for their ③services than the athletes of past generations ④did.",
+    "q": "①「Modern」 athletes command much ②「great」 salaries for their ③「services」 than the athletes of past generations ④「did」.",
     "c": [
       [
         "1",
-        "Modern athletes command much"
+        "Modern"
       ],
       [
         "2",
-        "great salaries for their"
+        "great"
       ],
       [
         "3",
-        "services than the athletes of past generations"
+        "services"
       ],
       [
         "4",
-        "did."
+        "did"
       ]
     ],
     "a": "2",
@@ -8479,23 +8511,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "343",
-    "q": "You could stay",
+    "q": "You could stay ①「at」 the big ②「luxury」 hotels but the small hotels are ③「very」 more ④「reasonable」.",
     "c": [
       [
         "1",
-        "at the big"
+        "at"
       ],
       [
         "2",
-        "luxury hotels but the small hotels are"
+        "luxury"
       ],
       [
         "3",
-        "very more"
+        "very"
       ],
       [
         "4",
-        "reasonable."
+        "reasonable"
       ]
     ],
     "a": "3",
@@ -8504,23 +8536,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "344",
-    "q": "It's bad ①enough when you get ②divorced, but far ③bad when you lose your children ④as well.",
+    "q": "It's bad ①「enough」 when you get ②「divorced」, but far ③「bad」 when you lose your children ④「as well」.",
     "c": [
       [
         "1",
-        "enough when you get"
+        "enough"
       ],
       [
         "2",
-        "divorced, but far"
+        "divorced"
       ],
       [
         "3",
-        "bad when you lose your children"
+        "bad"
       ],
       [
         "4",
-        "as well."
+        "as well"
       ]
     ],
     "a": "3",
@@ -8654,23 +8686,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "350",
-    "q": "Researchers ①have found that children ②experience twice as much deep sleep ③than adults, ④a fact which may teach us something about the connection between age and learning ability.",
+    "q": "Researchers ①「have found」 that children ②「experience」 twice as much deep sleep ③「than」 adults, ④「a fact which」 may teach us something about the connection between age and learning ability.",
     "c": [
       [
         "1",
-        "have found that children"
+        "have found"
       ],
       [
         "2",
-        "experience twice as much deep sleep"
+        "experience"
       ],
       [
         "3",
-        "than adults,"
+        "than"
       ],
       [
         "4",
-        "a fact which may teach us something about the connection between age and learning ability."
+        "a fact which"
       ]
     ],
     "a": "3",
@@ -8754,23 +8786,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "354",
-    "q": "The climates of Venus and Mars",
+    "q": "The climates of Venus and Mars ①「are」 closest to ②「the Earth」, but they are nowhere near ③「so comfortable」 as our planet's ④「temperate climate」.",
     "c": [
       [
         "1",
-        "are closest to"
+        "are"
       ],
       [
         "2",
-        "the Earth, but they are nowhere near"
+        "the Earth"
       ],
       [
         "3",
-        "so comfortable as our planet's"
+        "so comfortable"
       ],
       [
         "4",
-        "temperate climate."
+        "temperate climate"
       ]
     ],
     "a": "1",
@@ -8779,23 +8811,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "355",
-    "q": "Because sailors",
+    "q": "Because sailors ①「are often assigned」 to ships ②「that remain」 at sea for months at a time, men in the Navy ③「spend」 more time away from home ④「than any branch of the」 service.",
     "c": [
       [
         "1",
-        "are often assigned to ships"
+        "are often assigned"
       ],
       [
         "2",
-        "that remain at sea for months at a time, men in the Navy"
+        "that remain"
       ],
       [
         "3",
-        "spend more time away from home"
+        "spend"
       ],
       [
         "4",
-        "than any branch of the service."
+        "than any branch of the"
       ]
     ],
     "a": "4",
@@ -8804,23 +8836,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "356",
-    "q": "Mr. Kim has never been",
+    "q": "Mr. Kim has never been ①「out of」 Korea, ②「yet」 his accent is very ③「similar to」 an ④「Englishman」.",
     "c": [
       [
         "1",
-        "out of Korea,"
+        "out of"
       ],
       [
         "2",
-        "yet his accent is very"
+        "yet"
       ],
       [
         "3",
-        "similar to an"
+        "similar to"
       ],
       [
         "4",
-        "Englishman."
+        "Englishman"
       ]
     ],
     "a": "3",
@@ -8858,23 +8890,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "358",
-    "q": "Because Robert",
+    "q": "Because Robert ①「ate faster」 than ②「me」, he ③「was able to」 leave the cafeteria ④「sooner」.",
     "c": [
       [
         "1",
-        "ate faster than"
+        "ate faster"
       ],
       [
         "2",
-        "me, he"
+        "me"
       ],
       [
         "3",
-        "was able to leave the cafeteria"
+        "was able to"
       ],
       [
         "4",
-        "sooner."
+        "sooner"
       ]
     ],
     "a": "1",
@@ -8883,23 +8915,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "359",
-    "q": "Venus ①approaches the Earth ②more closely ③than any other ④planet is.",
+    "q": "Venus ①「approaches」 the Earth ②「more」 closely ③「than」 any other ④「planet is」.",
     "c": [
       [
         "1",
-        "approaches the Earth"
+        "approaches"
       ],
       [
         "2",
-        "more closely"
+        "more"
       ],
       [
         "3",
-        "than any other"
+        "than"
       ],
       [
         "4",
-        "planet is."
+        "planet is"
       ]
     ],
     "a": "4",
@@ -8908,15 +8940,15 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "360",
-    "q": "The ①judges' decisions can ②be based upon what is right ③rather than ④by what is popular.",
+    "q": "The ①「judges' decisions」 can ②「be based」 upon what is right ③「rather than」 ④「by what」 is popular.",
     "c": [
       [
         "1",
-        "judges' decisions can"
+        "judges' decisions"
       ],
       [
         "2",
-        "be based upon what is right"
+        "be based"
       ],
       [
         "3",
@@ -8924,7 +8956,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "by what is popular."
+        "by what"
       ]
     ],
     "a": "1",
@@ -9008,15 +9040,15 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "364",
-    "q": "Never ①in the history of humanity ②there have been ③more people ④living on this relatively small planet.",
+    "q": "Never ①「in the history」 of humanity ②「there」 have been ③「more people」 ④「living」 on this relatively small planet.",
     "c": [
       [
         "1",
-        "in the history of humanity"
+        "in the history"
       ],
       [
         "2",
-        "there have been"
+        "there"
       ],
       [
         "3",
@@ -9024,7 +9056,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "living on this relatively small planet."
+        "living"
       ]
     ],
     "a": "2",
@@ -9058,23 +9090,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "366",
-    "q": "Hardly ever",
+    "q": "Hardly ever ①「there have」 been ②「so many」 choices for young people ③「entering」 the work force ④「as there are」 today.",
     "c": [
       [
         "1",
-        "there have been"
+        "there have"
       ],
       [
         "2",
-        "so many choices for young people"
+        "so many"
       ],
       [
         "3",
-        "entering the work force"
+        "entering"
       ],
       [
         "4",
-        "as there are today."
+        "as there are"
       ]
     ],
     "a": "3",
@@ -9108,23 +9140,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "368",
-    "q": "Not only ①the Japanese machine was judged ②easier to operate and more flexible than the American model, but ③it was priced $60,000 lower and ④could be delivered faster.",
+    "q": "Not only ①「the Japanese machine was」 judged ②「easier to operate」 and more flexible than the American model, but ③「it」 was priced $60,000 lower and ④「could be」 delivered faster.",
     "c": [
       [
         "1",
-        "the Japanese machine was judged"
+        "the Japanese machine was"
       ],
       [
         "2",
-        "easier to operate and more flexible than the American model, but"
+        "easier to operate"
       ],
       [
         "3",
-        "it was priced $60,000 lower and"
+        "it"
       ],
       [
         "4",
-        "could be delivered faster."
+        "could be"
       ]
     ],
     "a": "1",
@@ -9133,27 +9165,27 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "369",
-    "q": "①Neither in her campaign nor in her acceptance speech ②do Miss Eliot ③acknowledge those ④whose assistance had ⑤won her the nomination.",
+    "q": "①「Neither」 in her campaign nor in her acceptance speech ②「do」 Miss Eliot ③「acknowledge」 those ④「whose」 assistance had ⑤「won」 her the nomination.",
     "c": [
       [
         "1",
-        "Neither in her campaign nor in her acceptance speech"
+        "Neither"
       ],
       [
         "2",
-        "do Miss Eliot"
+        "do"
       ],
       [
         "3",
-        "acknowledge those"
+        "acknowledge"
       ],
       [
         "4",
-        "whose assistance had"
+        "whose"
       ],
       [
         "5",
-        "won her the nomination."
+        "won"
       ]
     ],
     "a": "2",
@@ -9162,11 +9194,11 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "370",
-    "q": "Disabilities do not diminish",
+    "q": "Disabilities do not diminish ①「the rights」 of individuals ②「nor」 ③「they have to」 reduce opportunities to ④「participate in or」 contribute to society.",
     "c": [
       [
         "1",
-        "the rights of individuals"
+        "the rights"
       ],
       [
         "2",
@@ -9174,7 +9206,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "they have to reduce opportunities to"
+        "they have to"
+      ],
+      [
+        "4",
+        "participate in or"
       ]
     ],
     "a": "3",
@@ -9183,7 +9219,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "371",
-    "q": "①Only then ②he became aware of the fact that there were more ③difficulties ahead than he ④had expected.",
+    "q": "①「Only then」 ②「he became」 aware of the fact that there were more ③「difficulties ahead」 than he ④「had expected」.",
     "c": [
       [
         "1",
@@ -9191,15 +9227,15 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "2",
-        "he became aware of the fact that there were more"
+        "he became"
       ],
       [
         "3",
-        "difficulties ahead than he"
+        "difficulties ahead"
       ],
       [
         "4",
-        "had expected."
+        "had expected"
       ]
     ],
     "a": "2",
@@ -9208,23 +9244,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "372",
-    "q": "Fingerprint recognition",
+    "q": "Fingerprint recognition ①「has long been」 used in high-security ②「places like」 FBI headquarters, but only now ③「it is finding」 a place ④「in the mainstream」.",
     "c": [
       [
         "1",
-        "has long been used in high-security"
+        "has long been"
       ],
       [
         "2",
-        "places like FBI headquarters, but only now"
+        "places like"
       ],
       [
         "3",
-        "it is finding a place"
+        "it is finding"
       ],
       [
         "4",
-        "in the mainstream."
+        "in the mainstream"
       ]
     ],
     "a": "1",
@@ -9283,23 +9319,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "375",
-    "q": "Mary objects",
+    "q": "Mary objects ①「to our buying」 this house ②「without the」 approval ③「of our president」, and ④「John does so」.",
     "c": [
       [
         "1",
-        "to our buying this house"
+        "to our buying"
       ],
       [
         "2",
-        "without the approval"
+        "without the"
       ],
       [
         "3",
-        "of our president, and"
+        "of our president"
       ],
       [
         "4",
-        "John does so."
+        "John does so"
       ]
     ],
     "a": "1",
@@ -9429,11 +9465,11 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "381",
-    "q": "How long ①did it take you ②to ③learn to make ④a furniture like this?",
+    "q": "How long ①「did」 it take you ②「to」 ③「learn」 to make ④「a furniture」 like this?",
     "c": [
       [
         "1",
-        "did it take you"
+        "did"
       ],
       [
         "2",
@@ -9441,11 +9477,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "learn to make"
+        "learn"
       ],
       [
         "4",
-        "a furniture like this?"
+        "a furniture"
       ]
     ],
     "a": "4",
@@ -9454,23 +9490,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "382",
-    "q": "Plenty of items of",
+    "q": "Plenty of items of ①「clothings」 and furniture ②「are」 displayed ③「at」 the fair ④「every」 Saturday.",
     "c": [
       [
         "1",
-        "clothings and furniture"
+        "clothings"
       ],
       [
         "2",
-        "are displayed"
+        "are"
       ],
       [
         "3",
-        "at the fair"
+        "at"
       ],
       [
         "4",
-        "every Saturday."
+        "every"
       ]
     ],
     "a": "2",
@@ -9504,23 +9540,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "384",
-    "q": "①This book explains ②all sorts of useful ③equipments on ④how to repair cars.",
+    "q": "①「This book」 explains ②「all sorts」 of useful ③「equipments」 on ④「how to」 repair cars.",
     "c": [
       [
         "1",
-        "This book explains"
+        "This book"
       ],
       [
         "2",
-        "all sorts of useful"
+        "all sorts"
       ],
       [
         "3",
-        "equipments on"
+        "equipments"
       ],
       [
         "4",
-        "how to repair cars."
+        "how to"
       ]
     ],
     "a": "3",
@@ -9579,15 +9615,15 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "387",
-    "q": "It is difficult to classify mathematics",
+    "q": "It is difficult to classify mathematics ①「as」 simply ②「an art or a science」 because ③「they have」 ④「elements of both」.",
     "c": [
       [
         "1",
-        "as simply"
+        "as"
       ],
       [
         "2",
-        "an art or a science because"
+        "an art or a science"
       ],
       [
         "3",
@@ -9595,7 +9631,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "elements of both."
+        "elements of both"
       ]
     ],
     "a": "3",
@@ -9604,23 +9640,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "388",
-    "q": "The statistics released",
+    "q": "The statistics released ①「by」 the state department ②「makes」 the economic situation look ③「bleaker」 than it already ④「is」.",
     "c": [
       [
         "1",
-        "by the state department"
+        "by"
       ],
       [
         "2",
-        "makes the economic situation look"
+        "makes"
       ],
       [
         "3",
-        "bleaker than it already"
+        "bleaker"
       ],
       [
         "4",
-        "is."
+        "is"
       ]
     ],
     "a": "1",
@@ -9629,23 +9665,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "389",
-    "q": "Before the ①invention of ②railroads, the only ③mean of land transportation was ④the horse.",
+    "q": "Before the ①「invention」 of ②「railroads」, the only ③「mean」 of land transportation was ④「the horse」.",
     "c": [
       [
         "1",
-        "invention of"
+        "invention"
       ],
       [
         "2",
-        "railroads, the only"
+        "railroads"
       ],
       [
         "3",
-        "mean of land transportation was"
+        "mean"
       ],
       [
         "4",
-        "the horse."
+        "the horse"
       ]
     ],
     "a": "3",
@@ -9700,23 +9736,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "392",
-    "q": "Elephants are ①capable of doing very hard work. They ②can be used in the jungles where machines cannot go. A grown elephant may consumes ③as many as 200 pounds of food a day, a disadvantage which ④tends to offset its capacity for heavy work.",
+    "q": "Elephants are ①「capable of」 doing very hard work. They ②「can be used」 in the jungles where machines cannot go. A grown elephant may consumes ③「as many as 200」 pounds of food a day, a disadvantage which ④「tends to」 offset its capacity for heavy work.",
     "c": [
       [
         "1",
-        "capable of doing very hard work. They"
+        "capable of"
       ],
       [
         "2",
-        "can be used in the jungles where machines cannot go. A grown elephant may consumes"
+        "can be used"
       ],
       [
         "3",
-        "as many as 200 pounds of food a day, a disadvantage which"
+        "as many as 200"
       ],
       [
         "4",
-        "tends to offset its capacity for heavy work."
+        "tends to"
       ]
     ],
     "a": "3",
@@ -9725,11 +9761,11 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "393",
-    "q": "①The number of battles were ②fought ③between the ④fleets of Nelson and Napoleon.",
+    "q": "①「The」 number of battles were ②「fought」 ③「between」 the ④「fleets」 of Nelson and Napoleon.",
     "c": [
       [
         "1",
-        "The number of battles were"
+        "The"
       ],
       [
         "2",
@@ -9737,11 +9773,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "between the"
+        "between"
       ],
       [
         "4",
-        "fleets of Nelson and Napoleon."
+        "fleets"
       ]
     ],
     "a": "1",
@@ -9750,23 +9786,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "394",
-    "q": "①Through the years, scientists ②have developed smaller but ③increasingly more powerful batteries for the growing number of portable electrical ④device.",
+    "q": "①「Through」 the years, scientists ②「have」 developed smaller but ③「increasingly」 more powerful batteries for the growing number of portable electrical ④「device」.",
     "c": [
       [
         "1",
-        "Through the years, scientists"
+        "Through"
       ],
       [
         "2",
-        "have developed smaller but"
+        "have"
       ],
       [
         "3",
-        "increasingly more powerful batteries for the growing number of portable electrical"
+        "increasingly"
       ],
       [
         "4",
-        "device."
+        "device"
       ]
     ],
     "a": "4",
@@ -9775,23 +9811,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "395",
-    "q": "The mayor ①expressed concern about the large ②amount of ③people injured at ④crossings.",
+    "q": "The mayor ①「expressed」 concern about the large ②「amount」 of ③「people」 injured at ④「crossings」.",
     "c": [
       [
         "1",
-        "expressed concern about the large"
+        "expressed"
       ],
       [
         "2",
-        "amount of"
+        "amount"
       ],
       [
         "3",
-        "people injured at"
+        "people"
       ],
       [
         "4",
-        "crossings."
+        "crossings"
       ]
     ],
     "a": "2",
@@ -9800,11 +9836,11 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "396",
-    "q": "The government",
+    "q": "The government ①「expects」 to attract foreign investment ②「of」 ③「as much as」 $15 ④「billions」 this year.",
     "c": [
       [
         "1",
-        "expects to attract foreign investment"
+        "expects"
       ],
       [
         "2",
@@ -9812,11 +9848,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "as much as $15"
+        "as much as"
       ],
       [
         "4",
-        "billions this year."
+        "billions"
       ]
     ],
     "a": "2",
@@ -9825,23 +9861,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "397",
-    "q": "In Africa and Asia, five",
+    "q": "In Africa and Asia, five ①「percents」 of babies ②「die」 before ③「they」 are ④「one year」 old.",
     "c": [
       [
         "1",
-        "percents of babies"
+        "percents"
       ],
       [
         "2",
-        "die before"
+        "die"
       ],
       [
         "3",
-        "they are"
+        "they"
       ],
       [
         "4",
-        "one year old."
+        "one year"
       ]
     ],
     "a": "1",
@@ -9850,27 +9886,27 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "398",
-    "q": "In ①spite of all the recent ②advances in opening up ③the sea, man still uses it pretty much ④the way he did ⑤hundred of years ago.",
+    "q": "In ①「spite of」 all the recent ②「advances」 in opening up ③「the sea」, man still uses it pretty much ④「the way」 he did ⑤「hundred」 of years ago.",
     "c": [
       [
         "1",
-        "spite of all the recent"
+        "spite of"
       ],
       [
         "2",
-        "advances in opening up"
+        "advances"
       ],
       [
         "3",
-        "the sea, man still uses it pretty much"
+        "the sea"
       ],
       [
         "4",
-        "the way he did"
+        "the way"
       ],
       [
         "5",
-        "hundred of years ago."
+        "hundred"
       ]
     ],
     "a": "4",
@@ -9925,23 +9961,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "401",
-    "q": "You ①should sit on ②a left side ③of my father ④at the dinner table.",
+    "q": "You ①「should sit」 on ②「a」 left side ③「of」 my father ④「at the dinner table」.",
     "c": [
       [
         "1",
-        "should sit on"
+        "should sit"
       ],
       [
         "2",
-        "a left side"
+        "a"
       ],
       [
         "3",
-        "of my father"
+        "of"
       ],
       [
         "4",
-        "at the dinner table."
+        "at the dinner table"
       ]
     ],
     "a": "2",
@@ -9950,23 +9986,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "402",
-    "q": "①A size of the United States Supreme Court ②was the focal point ③of one of the most famous ④attacks on the federal judiciary.",
+    "q": "①「A size」 of the United States Supreme Court ②「was the」 focal point ③「of one」 of the most famous ④「attacks」 on the federal judiciary.",
     "c": [
       [
         "1",
-        "A size of the United States Supreme Court"
+        "A size"
       ],
       [
         "2",
-        "was the focal point"
+        "was the"
       ],
       [
         "3",
-        "of one of the most famous"
+        "of one"
       ],
       [
         "4",
-        "attacks on the federal judiciary."
+        "attacks"
       ]
     ],
     "a": "1",
@@ -9975,23 +10011,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "403",
-    "q": "Although ①many of his songs are well known to the public, ②little is known about ③his early childhood and college background ④of country singer Johnny Lee.",
+    "q": "Although ①「many」 of his songs are well known to the public, ②「little」 is known about ③「his」 early childhood and college background ④「of」 country singer Johnny Lee.",
     "c": [
       [
         "1",
-        "many of his songs are well known to the public,"
+        "many"
       ],
       [
         "2",
-        "little is known about"
+        "little"
       ],
       [
         "3",
-        "his early childhood and college background"
+        "his"
       ],
       [
         "4",
-        "of country singer Johnny Lee."
+        "of"
       ]
     ],
     "a": "3",
@@ -10000,23 +10036,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "404",
-    "q": "①All of a sudden the young woman ②rose to ③her feet and struck him ④on his face.",
+    "q": "①「All of a sudden」 the young woman ②「rose」 to ③「her feet」 and struck him ④「on his face」.",
     "c": [
       [
         "1",
-        "All of a sudden the young woman"
+        "All of a sudden"
       ],
       [
         "2",
-        "rose to"
+        "rose"
       ],
       [
         "3",
-        "her feet and struck him"
+        "her feet"
       ],
       [
         "4",
-        "on his face."
+        "on his face"
       ]
     ],
     "a": "4",
@@ -10050,23 +10086,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "406",
-    "q": "①The English has both regular and irregular verbs. Learn ②the basic verb forms of these words ③in order to form the tenses and avoid ④mixing tenses in writing.",
+    "q": "①「The English」 has both regular and irregular verbs. Learn ②「the basic verb」 forms of these words ③「in order to form」 the tenses and avoid ④「mixing tenses」 in writing.",
     "c": [
       [
         "1",
-        "The English has both regular and irregular verbs. Learn"
+        "The English"
       ],
       [
         "2",
-        "the basic verb forms of these words"
+        "the basic verb"
       ],
       [
         "3",
-        "in order to form the tenses and avoid"
+        "in order to form"
       ],
       [
         "4",
-        "mixing tenses in writing."
+        "mixing tenses"
       ]
     ],
     "a": "1",
@@ -10075,7 +10111,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "407",
-    "q": "Jack London's",
+    "q": "Jack London's ①「tour」 ②「of Rocky Mountains」 ③「was delayed」 by his illness and the ④「San Francisco」 earthquake of 1906.",
     "c": [
       [
         "1",
@@ -10087,11 +10123,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "was delayed by his illness and the"
+        "was delayed"
       ],
       [
         "4",
-        "San Francisco earthquake of 1906."
+        "San Francisco"
       ]
     ],
     "a": "4",
@@ -10100,23 +10136,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "408",
-    "q": "Annie Smith Peck was",
+    "q": "Annie Smith Peck was ①「the first woman in」 Netherlands to navigate through ②「the Nile」 and scale the Matterhorn, ③「the」 height and beauty ④「of」 which have made them the goal of all adventurers.",
     "c": [
       [
         "1",
-        "the first woman in Netherlands to navigate through"
+        "the first woman in"
       ],
       [
         "2",
-        "the Nile and scale the Matterhorn,"
+        "the Nile"
       ],
       [
         "3",
-        "the height and beauty"
+        "the"
       ],
       [
         "4",
-        "of which have made them the goal of all adventurers."
+        "of"
       ]
     ],
     "a": "2",
@@ -10171,11 +10207,11 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "411",
-    "q": "For ①half a century, Samuel Dulles has sold the fabric ②by two yards ③in local, ④regional, and national events.",
+    "q": "For ①「half a century」, Samuel Dulles has sold the fabric ②「by two yards」 ③「in」 local, ④「regional」, and national events.",
     "c": [
       [
         "1",
-        "half a century, Samuel Dulles has sold the fabric"
+        "half a century"
       ],
       [
         "2",
@@ -10183,11 +10219,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "in local,"
+        "in"
       ],
       [
         "4",
-        "regional, and national events."
+        "regional"
       ]
     ],
     "a": "2",
@@ -10196,23 +10232,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "412",
-    "q": "At seven o'clock in the morning, guards",
+    "q": "At seven o'clock in the morning, guards ①「rouse」 prisoners from ②「the door to the」 door, ③「leading the inmates」 into the dusty exercise yard of ④「a」 Lao prison.",
     "c": [
       [
         "1",
-        "rouse prisoners from"
+        "rouse"
       ],
       [
         "2",
-        "the door to the door,"
+        "the door to the"
       ],
       [
         "3",
-        "leading the inmates into the dusty exercise yard of"
+        "leading the inmates"
       ],
       [
         "4",
-        "a Lao prison."
+        "a"
       ]
     ],
     "a": "3",
@@ -10221,23 +10257,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "413",
-    "q": "Some people",
+    "q": "Some people ①「are allergic」 to ②「certain」 type of food, ③「for example」, strawberries or ④「seafood」.",
     "c": [
       [
         "1",
-        "are allergic to"
+        "are allergic"
       ],
       [
         "2",
-        "certain type of food,"
+        "certain"
       ],
       [
         "3",
-        "for example, strawberries or"
+        "for example"
       ],
       [
         "4",
-        "seafood."
+        "seafood"
       ]
     ],
     "a": "2",
@@ -10246,23 +10282,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "414",
-    "q": "①That is ②the kind of a house in ③which I ④should like to live.",
+    "q": "①「That」 is ②「the kind of a house」 in ③「which」 I ④「should」 like to live.",
     "c": [
       [
         "1",
-        "That is"
+        "That"
       ],
       [
         "2",
-        "the kind of a house in"
+        "the kind of a house"
       ],
       [
         "3",
-        "which I"
+        "which"
       ],
       [
         "4",
-        "should like to live."
+        "should"
       ]
     ],
     "a": "2",
@@ -10371,15 +10407,15 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "419",
-    "q": "①Exercising is as ②good as a way as any ③to lose ④unwanted weight.",
+    "q": "①「Exercising」 is as ②「good as a way」 as any ③「to lose」 ④「unwanted weight」.",
     "c": [
       [
         "1",
-        "Exercising is as"
+        "Exercising"
       ],
       [
         "2",
-        "good as a way as any"
+        "good as a way"
       ],
       [
         "3",
@@ -10387,7 +10423,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "unwanted weight."
+        "unwanted weight"
       ]
     ],
     "a": "2",
@@ -10417,11 +10453,11 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "421",
-    "q": "The property insurance industry has",
+    "q": "The property insurance industry has ①「flourished」 because people do not want ②「to expose」 ③「itself」 to ④「the risk」 of catastrophic loss.",
     "c": [
       [
         "1",
-        "flourished because people do not want"
+        "flourished"
       ],
       [
         "2",
@@ -10429,11 +10465,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "itself to"
+        "itself"
       ],
       [
         "4",
-        "the risk of catastrophic loss."
+        "the risk"
       ]
     ],
     "a": "1",
@@ -10442,23 +10478,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "422",
-    "q": "Ants are blind to red light, so",
+    "q": "Ants are blind to red light, so ①「it is」 possible to observe ②「themselves」 in an artificial nest ③「without」 disturbing ④「their」 activities.",
     "c": [
       [
         "1",
-        "it is possible to observe"
+        "it is"
       ],
       [
         "2",
-        "themselves in an artificial nest"
+        "themselves"
       ],
       [
         "3",
-        "without disturbing"
+        "without"
       ],
       [
         "4",
-        "their activities."
+        "their"
       ]
     ],
     "a": "3",
@@ -10467,23 +10503,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "423",
-    "q": "①Lawyers with the American Civil Liberties Union ②are compiling statistics that ③may help ④themselves to repeal the death penalty.",
+    "q": "①「Lawyers」 with the American Civil Liberties Union ②「are compiling」 statistics that ③「may」 help ④「themselves」 to repeal the death penalty.",
     "c": [
       [
         "1",
-        "Lawyers with the American Civil Liberties Union"
+        "Lawyers"
       ],
       [
         "2",
-        "are compiling statistics that"
+        "are compiling"
       ],
       [
         "3",
-        "may help"
+        "may"
       ],
       [
         "4",
-        "themselves to repeal the death penalty."
+        "themselves"
       ]
     ],
     "a": "4",
@@ -10492,23 +10528,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "424",
-    "q": "①Even though home schoolers are not ②under the rigid curricular of traditional schools, they often spend more time ③on the subjects or topics that really interest ④themselves.",
+    "q": "①「Even though」 home schoolers are not ②「under」 the rigid curricular of traditional schools, they often spend more time ③「on」 the subjects or topics that really interest ④「themselves」.",
     "c": [
       [
         "1",
-        "Even though home schoolers are not"
+        "Even though"
       ],
       [
         "2",
-        "under the rigid curricular of traditional schools, they often spend more time"
+        "under"
       ],
       [
         "3",
-        "on the subjects or topics that really interest"
+        "on"
       ],
       [
         "4",
-        "themselves."
+        "themselves"
       ]
     ],
     "a": "1",
@@ -10592,15 +10628,15 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "428",
-    "q": "The ①first three books are math books, the ②next two ones are psychology books and ③the last ④book is about art.",
+    "q": "The ①「first three」 books are math books, the ②「next two ones」 are psychology books and ③「the last」 ④「book」 is about art.",
     "c": [
       [
         "1",
-        "first three books are math books, the"
+        "first three"
       ],
       [
         "2",
-        "next two ones are psychology books and"
+        "next two ones"
       ],
       [
         "3",
@@ -10608,7 +10644,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "book is about art."
+        "book"
       ]
     ],
     "a": "2",
@@ -10617,23 +10653,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "429",
-    "q": "①Modern poets have ②experimented with ③poetic devices ④such alliteration and assonance.",
+    "q": "①「Modern poets」 have ②「experimented」 with ③「poetic」 devices ④「such alliteration」 and assonance.",
     "c": [
       [
         "1",
-        "Modern poets have"
+        "Modern poets"
       ],
       [
         "2",
-        "experimented with"
+        "experimented"
       ],
       [
         "3",
-        "poetic devices"
+        "poetic"
       ],
       [
         "4",
-        "such alliteration and assonance."
+        "such alliteration"
       ]
     ],
     "a": "4",
@@ -10642,19 +10678,27 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "430",
-    "q": "It began to be denied that there is",
+    "q": "It began to be denied that there is ①「such a thing like」 human nature. ②「Rather」, man grows and ③「grows into」 culture; cultures are, ④「as is obvious」 from the word, ⑤「growths」.",
     "c": [
       [
         "1",
-        "such a thing like human nature."
+        "such a thing like"
       ],
       [
         "2",
-        "Rather, man grows and"
+        "Rather"
       ],
       [
         "3",
-        "grows into culture; cultures are,"
+        "grows into"
+      ],
+      [
+        "4",
+        "as is obvious"
+      ],
+      [
+        "5",
+        "growths"
       ]
     ],
     "a": "3",
@@ -10688,23 +10732,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "432",
-    "q": "Let me give you two of the",
+    "q": "Let me give you two of the ①「consequences」 of ②「which」 I would guess that one will shock you while ③「another」 may perhaps surprise you more ④「favorably」.",
     "c": [
       [
         "1",
-        "consequences of"
+        "consequences"
       ],
       [
         "2",
-        "which I would guess that one will shock you while"
+        "which"
       ],
       [
         "3",
-        "another may perhaps surprise you more"
+        "another"
       ],
       [
         "4",
-        "favorably."
+        "favorably"
       ]
     ],
     "a": "4",
@@ -10738,23 +10782,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "434",
-    "q": "①Some of the plants in this shop ②require very little care, but ③this one needs much more sunlight than ④other.",
+    "q": "①「Some」 of the plants in this shop ②「require」 very little care, but ③「this one」 needs much more sunlight than ④「other」.",
     "c": [
       [
         "1",
-        "Some of the plants in this shop"
+        "Some"
       ],
       [
         "2",
-        "require very little care, but"
+        "require"
       ],
       [
         "3",
-        "this one needs much more sunlight than"
+        "this one"
       ],
       [
         "4",
-        "other."
+        "other"
       ]
     ],
     "a": "4",
@@ -10813,23 +10857,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "437",
-    "q": "When a group of people",
+    "q": "When a group of people ①「go Dutch」, each ②「pay」 only for ③「what」 the person ④「has」 eaten.",
     "c": [
       [
         "1",
-        "go Dutch, each"
+        "go Dutch"
       ],
       [
         "2",
-        "pay only for"
+        "pay"
       ],
       [
         "3",
-        "what the person"
+        "what"
       ],
       [
         "4",
-        "has eaten."
+        "has"
       ]
     ],
     "a": "2",
@@ -10838,23 +10882,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "438",
-    "q": "All objects",
+    "q": "All objects ①「are composed of」 many molecules, and the ②「force」 of gravity ③「pulls」 on ④「every of」 them.",
     "c": [
       [
         "1",
-        "are composed of many molecules, and the"
+        "are composed of"
       ],
       [
         "2",
-        "force of gravity"
+        "force"
       ],
       [
         "3",
-        "pulls on"
+        "pulls"
       ],
       [
         "4",
-        "every of them."
+        "every of"
       ]
     ],
     "a": "1",
@@ -10863,23 +10907,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "439",
-    "q": "①Skim lengthy reading passages before ②you begin reading to get a general idea of ③what the selection is about. When you skim a reading passage, you read the most important parts of it quickly, ④without reading every words.",
+    "q": "①「Skim lengthy reading passages」 before ②「you begin reading」 to get a general idea of ③「what the selection is」 about. When you skim a reading passage, you read the most important parts of it quickly, ④「without reading every words」.",
     "c": [
       [
         "1",
-        "Skim lengthy reading passages before"
+        "Skim lengthy reading passages"
       ],
       [
         "2",
-        "you begin reading to get a general idea of"
+        "you begin reading"
       ],
       [
         "3",
-        "what the selection is about. When you skim a reading passage, you read the most important parts of it quickly,"
+        "what the selection is"
       ],
       [
         "4",
-        "without reading every words."
+        "without reading every words"
       ]
     ],
     "a": "4",
@@ -10888,7 +10932,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "440",
-    "q": "Every fuel has",
+    "q": "Every fuel has ①「their own」 ②「particular」 temperature ③「at which」 it ④「begins」 to burn.",
     "c": [
       [
         "1",
@@ -10896,11 +10940,15 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "2",
-        "particular temperature"
+        "particular"
       ],
       [
         "3",
-        "at which it"
+        "at which"
+      ],
+      [
+        "4",
+        "begins"
       ]
     ],
     "a": "2",
@@ -10909,23 +10957,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "441",
-    "q": "Animism is the",
+    "q": "Animism is the ①「belief」 that objects and natural ②「phenomena」 such as rivers, rocks, and wind are ③「live」 and have ④「feelings」.",
     "c": [
       [
         "1",
-        "belief that objects and natural"
+        "belief"
       ],
       [
         "2",
-        "phenomena such as rivers, rocks, and wind are"
+        "phenomena"
       ],
       [
         "3",
-        "live and have"
+        "live"
       ],
       [
         "4",
-        "feelings."
+        "feelings"
       ]
     ],
     "a": "3",
@@ -10934,15 +10982,15 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "442",
-    "q": "①Alive animals are ②greatly diversified ③in ④their sizes and shapes.",
+    "q": "①「Alive」 animals are ②「greatly」 diversified ③「in」 ④「their sizes and shapes」.",
     "c": [
       [
         "1",
-        "Alive animals are"
+        "Alive"
       ],
       [
         "2",
-        "greatly diversified"
+        "greatly"
       ],
       [
         "3",
@@ -10950,7 +10998,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "their sizes and shapes."
+        "their sizes and shapes"
       ]
     ],
     "a": "1",
@@ -10984,7 +11032,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "444",
-    "q": "The bones of mammals,",
+    "q": "The bones of mammals, ①「not alike」 ②「those」 of ③「other」 vertebrates, ④「show」 a high degree of differentiation.",
     "c": [
       [
         "1",
@@ -10992,15 +11040,15 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "2",
-        "those of"
+        "those"
       ],
       [
         "3",
-        "other vertebrates,"
+        "other"
       ],
       [
         "4",
-        "show a high degree of differentiation."
+        "show"
       ]
     ],
     "a": "2",
@@ -11255,27 +11303,27 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "455",
-    "q": "Blowing ①out the birthday candles is ②an ancient test to see if a ③growing child is ④enough strong to blow out ⑤a greater number each year.",
+    "q": "Blowing ①「out」 the birthday candles is ②「an」 ancient test to see if a ③「growing」 child is ④「enough strong」 to blow out ⑤「a greater」 number each year.",
     "c": [
       [
         "1",
-        "out the birthday candles is"
+        "out"
       ],
       [
         "2",
-        "an ancient test to see if a"
+        "an"
       ],
       [
         "3",
-        "growing child is"
+        "growing"
       ],
       [
         "4",
-        "enough strong to blow out"
+        "enough strong"
       ],
       [
         "5",
-        "a greater number each year."
+        "a greater"
       ]
     ],
     "a": "4",
@@ -11309,7 +11357,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "457",
-    "q": "①Confronted with ②such harsh situations that others ③deemed informidable, we could ④go them through just by sticking together.",
+    "q": "①「Confronted with」 ②「such」 harsh situations that others ③「deemed informidable」, we could ④「go them through」 just by sticking together.",
     "c": [
       [
         "1",
@@ -11317,15 +11365,15 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "2",
-        "such harsh situations that others"
+        "such"
       ],
       [
         "3",
-        "deemed informidable, we could"
+        "deemed informidable"
       ],
       [
         "4",
-        "go them through just by sticking together."
+        "go them through"
       ]
     ],
     "a": "4",
@@ -11384,11 +11432,11 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "460",
-    "q": "By the time he was",
+    "q": "By the time he was ①「finally」 captured, the thief ②「had spent」 ③「most」 all the money he ④「had stolen」.",
     "c": [
       [
         "1",
-        "finally captured, the thief"
+        "finally"
       ],
       [
         "2",
@@ -11396,7 +11444,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "most all the money he"
+        "most"
+      ],
+      [
+        "4",
+        "had stolen"
       ]
     ],
     "a": "2",
@@ -11651,23 +11703,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "471",
-    "q": "The spinal cord is",
+    "q": "The spinal cord is ①「the」 main pathway ②「for」 messages ③「travelling」 between the brain ④「to」 the rest of the body.",
     "c": [
       [
         "1",
-        "the main pathway"
+        "the"
       ],
       [
         "2",
-        "for messages"
+        "for"
       ],
       [
         "3",
-        "travelling between the brain"
+        "travelling"
       ],
       [
         "4",
-        "to the rest of the body."
+        "to"
       ]
     ],
     "a": "3",
@@ -11676,15 +11728,15 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "472",
-    "q": "①The Metropolitan Museum of Art ②in New York City is ③located ④nearby Central Park.",
+    "q": "①「The」 Metropolitan Museum of Art ②「in」 New York City is ③「located」 ④「nearby」 Central Park.",
     "c": [
       [
         "1",
-        "The Metropolitan Museum of Art"
+        "The"
       ],
       [
         "2",
-        "in New York City is"
+        "in"
       ],
       [
         "3",
@@ -11692,7 +11744,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "nearby Central Park."
+        "nearby"
       ]
     ],
     "a": "4",
@@ -11751,23 +11803,23 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "475",
-    "q": "Today ①just as a college graduate, a ②high-school graduate will find ③his earnings proportionate ④to his abilities.",
+    "q": "Today ①「just as」 a college graduate, a ②「high-school graduate」 will find ③「his」 earnings proportionate ④「to his abilities」.",
     "c": [
       [
         "1",
-        "just as a college graduate, a"
+        "just as"
       ],
       [
         "2",
-        "high-school graduate will find"
+        "high-school graduate"
       ],
       [
         "3",
-        "his earnings proportionate"
+        "his"
       ],
       [
         "4",
-        "to his abilities."
+        "to his abilities"
       ]
     ],
     "a": "1",
