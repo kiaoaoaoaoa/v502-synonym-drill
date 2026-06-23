@@ -201,6 +201,7 @@
           <div class="prompt-row">
             <p class="prompt-kicker">Pick 2 synonyms for:</p>
             <p id="meaningPrompt" class="meaning">abound</p>
+            <button type="button" id="quizNoExplainBtn" class="quiz-noexplain-btn" onclick="toggleNoExplainMode()" title="해설 토글">⚡</button>
             <div class="counter">
               <span id="questionIndex">1</span><small id="questionTotal">/30</small>
             </div>
@@ -251,6 +252,7 @@
           <div class="ranking-header">
             <p class="eyebrow">Word Check</p>
             <h3>단어확인문제</h3>
+            <button type="button" id="wcNoExplainBtn" class="quiz-noexplain-btn" onclick="toggleNoExplainMode()" title="해설 토글" style="margin-top:4px">⚡</button>
             <p id="wordcheckProgress" class="wc-progress"></p>
           </div>
           <div id="wordcheckQuiz">
@@ -303,12 +305,12 @@
         <section id="logicPanel" class="quiz-panel" hidden>
           <div id="logicQuestionArea">
             <p id="logicQuestionText" class="logic-question"></p>
+            <button type="button" id="logicNoExplainBtn" class="quiz-noexplain-btn" onclick="toggleNoExplainMode()" title="해설 토글" style="margin-bottom:12px">⚡</button>
             <div id="logicOptions" class="options" role="list"></div>
             <div id="logicFeedback" class="feedback" hidden></div>
           </div>
           <footer class="actions">
             <span id="logicCounter" class="logic-counter">1/50</span>
-            <span id="logicRate" class="logic-rate"></span>
             <button id="logicSubmitBtn" type="button">Submit</button>
             <button id="logicNextBtn" type="button" aria-disabled="true">Next</button>
           </footer>
