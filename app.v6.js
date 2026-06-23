@@ -410,17 +410,20 @@ function writeIrtAbility(v) {
 }
 
 // Tier thresholds scaled to 0–10000
+function _tierSVG(path, fill) {
+  return `<svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align:middle" aria-hidden="true"><g fill="${fill}">${path}</g></svg>`;
+}
 function getTier(score) {
   const s = Math.max(0, Math.min(10000, score));
-  if (s >= 10000) return { name: '서성한메이저',     icon: '👑' };
-  if (s >= 9000)  return { name: '서성한',           icon: '💠' };
-  if (s >= 8000)  return { name: '서성한하위',       icon: '💎' };
-  if (s >= 6000)  return { name: '중경외시 메이저',  icon: '🥇' };
-  if (s >= 5000)  return { name: '중경외시 하위',    icon: '🥈' };
-  if (s >= 3500)  return { name: '건동홍',           icon: '🥉' };
-  if (s >= 2500)  return { name: '국숭세단',         icon: '📗' };
-  if (s >= 1600)  return { name: '인가경',           icon: '📘' };
-  return { name: '정붕이', icon: '🌱' };
+  if (s >= 10000) return { name: '서성한메이저',     icon: _tierSVG('<polygon points="1,12 1,5 4,7 8,1 12,7 15,5 15,12"/>', '#FFD700') };
+  if (s >= 9000)  return { name: '서성한',           icon: _tierSVG('<polygon points="8,1 15,8 8,15 1,8"/>', '#AF52DE') };
+  if (s >= 8000)  return { name: '서성한하위',       icon: _tierSVG('<polygon points="8,2 14,10 8,14 2,10"/>', '#BF5AF2') };
+  if (s >= 6000)  return { name: '중경외시 메이저',  icon: _tierSVG('<circle cx="8" cy="8" r="7"/>', '#FF9500') };
+  if (s >= 5000)  return { name: '중경외시 하위',    icon: _tierSVG('<circle cx="8" cy="8" r="7"/>', '#8E8E93') };
+  if (s >= 3500)  return { name: '건동홍',           icon: _tierSVG('<circle cx="8" cy="8" r="7"/>', '#CD7F32') };
+  if (s >= 2500)  return { name: '국숭세단',         icon: _tierSVG('<rect x="2" y="2" width="12" height="12" rx="1"/>', '#34C759') };
+  if (s >= 1600)  return { name: '인가경',           icon: _tierSVG('<rect x="2" y="2" width="12" height="12" rx="1"/>', '#007AFF') };
+  return { name: '정붕이', icon: _tierSVG('<circle cx="8" cy="12" r="2"/><path d="M8,11 Q8,2 14,2 Q10,5 8,11"/>', '#30D158') };
 }
 
 // Estimate IRT ability from public stats — accuracy-based, volume-bonus capped at 2000 Qs
@@ -436,7 +439,7 @@ function updateTierDisplay() {
   if (!el) return;
   const ability = readIrtAbility();
   const tier = getTier(ability);
-  el.textContent = `${tier.icon} ${tier.name}`;
+  el.innerHTML = `${tier.icon} ${tier.name}`;
   el.title = `IRT Ability: ${ability.toFixed(1)}`;
 }
 let supabaseClient = null;
@@ -1916,7 +1919,7 @@ async function completeQuiz() {
   els.resultPanel.hidden = false;
   const tier = getTier(readIrtAbility());
   els.resultTitle.textContent = `${displayName}'s Result`;
-  els.resultSummary.textContent = `${entry.correct}/${entry.total} correct — ${accuracy}% accuracy — ${tier.icon} ${tier.name}`;
+  els.resultSummary.innerHTML = `${entry.correct}/${entry.total} correct — ${accuracy}% accuracy — ${tier.icon} ${tier.name}`;
 
   // Show question-by-question review
   let reviewHTML = '<div style="max-height:50vh;overflow-y:auto;margin:16px 0">';
