@@ -2276,6 +2276,162 @@ h2 {
   font-size: 13px;
 }
 
+/* ===== Ranking Design ===== */
+.rank-podium {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.rank-podium-card {
+  border-radius: 12px;
+  padding: 22px 14px 18px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: transform 0.15s ease;
+}
+.rank-podium-card:hover {
+  transform: translateY(-2px);
+}
+.rank-podium-medal {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  font-size: 40px;
+  line-height: 1;
+  opacity: 0.15;
+}
+.rank-podium-rank {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+.rank-podium-name {
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 2px;
+  word-break: break-all;
+  line-height: 1.3;
+}
+.rank-podium-tier {
+  font-size: 11px;
+  opacity: 0.85;
+  margin-bottom: 6px;
+}
+.rank-podium-score {
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1;
+}
+.rank-podium-score small {
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.rank-list {
+  display: grid;
+  gap: 6px;
+}
+.rank-row {
+  display: grid;
+  grid-template-columns: 32px 1fr 56px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--panel);
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  transition: background-color 0.12s, box-shadow 0.12s;
+}
+.rank-row:hover {
+  background: var(--accent-soft);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.rank-row-num {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.rank-row-body {
+  min-width: 0;
+}
+.rank-row-name {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.rank-row-name .rank-row-tier {
+  font-size: 11px;
+  opacity: 0.6;
+  margin-left: 4px;
+}
+.rank-row-bar {
+  height: 4px;
+  border-radius: 2px;
+  background: #f0f0f0;
+  margin-top: 4px;
+  overflow: hidden;
+}
+.rank-row-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+.rank-row-score {
+  font-size: 17px;
+  font-weight: 800;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.rank-row-score small {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.rank-row.highlight {
+  background: linear-gradient(135deg, #fef9e7, #fdebd0);
+  border-color: #f9e79f;
+}
+
+@media (max-width: 480px) {
+  .rank-podium {
+    gap: 6px;
+  }
+  .rank-podium-card {
+    padding: 16px 8px 14px;
+  }
+  .rank-podium-name {
+    font-size: 13px;
+  }
+  .rank-podium-score {
+    font-size: 22px;
+  }
+  .rank-row {
+    grid-template-columns: 26px 1fr 48px;
+    padding: 8px 10px;
+    gap: 8px;
+    border-radius: 8px;
+  }
+  .rank-row-name {
+    font-size: 13px;
+  }
+  .rank-row-score {
+    font-size: 15px;
+  }
+}
+
 /* ===== Minimalist utility classes (extracted from inline styles) ===== */
 
 #mainTitle { cursor: pointer; }

@@ -2057,36 +2057,37 @@ async function showRanking() {
       const rest = cumulative.slice(3, 50);
 
       let html = '';
-      html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:32px">';
+      html += '<div class="rank-podium">';
       top3.forEach((item, idx) => {
         const medals = ['🥇','🥈','🥉'];
         const tier = getTierForRanking(item.correct, item.total);
-        const sizes = ['160%','130%','110%'];
+        const sizes = ['130%','115%','105%'];
         const color = colors[idx];
-        html += `<div style="background:${color};border-radius:2px;padding:20px 14px;text-align:center;color:#fff;position:relative;overflow:hidden">
-          <div style="font-size:${sizes[idx]};font-weight:900;line-height:1;opacity:0.25;position:absolute;top:4px;right:8px">${medals[idx]}</div>
-          <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;opacity:0.7;margin-bottom:4px">#${idx+1}</div>
-          <div style="font-size:16px;font-weight:800;margin-bottom:2px;word-break:break-all">${escapeHtml(item.name)}</div>
-          <div style="font-size:11px;opacity:0.85;margin-bottom:6px">${tier.icon} ${tier.name}</div>
-          <div style="font-size:28px;font-weight:900;line-height:1">${item.correct}<span style="font-size:14px;font-weight:400">점</span></div>
+        html += `<div class="rank-podium-card" style="background:${color}">
+          <div class="rank-podium-medal">${medals[idx]}</div>
+          <div class="rank-podium-rank">#${idx+1}</div>
+          <div class="rank-podium-name">${escapeHtml(item.name)}</div>
+          <div class="rank-podium-tier">${tier.icon} ${tier.name}</div>
+          <div class="rank-podium-score">${item.correct}<small>점</small></div>
         </div>`;
       });
       html += '</div>';
 
       if (rest.length) {
-        html += '<div style="display:grid;gap:6px">';
+        html += '<div class="rank-list">';
         const topScore = rest.length ? Math.max(...rest.map(r => r.correct), 1) : 1;
         rest.forEach((item, idx) => {
           const rank = idx + 4;
           const tier = getTierForRanking(item.correct, item.total);
           const barW = Math.min(100, (item.correct / topScore) * 100);
-          html += `<div style="display:grid;grid-template-columns:28px 1fr 55px;align-items:center;gap:10px;padding:8px 12px;background:#fff;border-radius:10px;border:1px solid #eee">
-            <span style="font-size:12px;font-weight:700;color:var(--muted);text-align:right">${rank}</span>
-            <div style="min-width:0">
-              <div style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${escapeHtml(item.name)} <span style="font-size:11px;opacity:0.6">${tier.icon} ${tier.name}</span></div>
-              <div style="height:4px;border-radius:2px;background:#f0f0f0;margin-top:4px"><div style="height:100%;width:${barW}%;border-radius:2px;background:${colors[rank % colors.length]}"></div></div>
+          const highlight = item.name.toLowerCase() === (state.playerName || '').toLowerCase() ? ' highlight' : '';
+          html += `<div class="rank-row${highlight}">
+            <span class="rank-row-num">${rank}</span>
+            <div class="rank-row-body">
+              <div class="rank-row-name">${escapeHtml(item.name)} <span class="rank-row-tier">${tier.icon} ${tier.name}</span></div>
+              <div class="rank-row-bar"><div class="rank-row-bar-fill" style="width:${barW}%;background:${colors[rank % colors.length]}"></div></div>
             </div>
-            <span style="font-size:18px;font-weight:800;text-align:right">${item.correct}<span style="font-size:10px;font-weight:400;color:var(--muted)">점</span></span>
+            <span class="rank-row-score">${item.correct}<small>점</small></span>
           </div>`;
         });
         html += '</div>';
