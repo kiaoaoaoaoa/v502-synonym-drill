@@ -3482,6 +3482,7 @@ function saveWordcheckResult(qid, correct) {
     (r[k].wrong = r[k].wrong || []).push(qid);
   }
   try { localStorage.setItem(wordcheckResultKey, JSON.stringify(r)); } catch {}
+  scheduleCloudSync();
 }
 
 function persistWordcheckRanking() {
@@ -3700,6 +3701,7 @@ function saveWordcheckProgress() {
     date: new Date().toISOString()
   };
   localStorage.setItem(key, JSON.stringify(store));
+  scheduleCloudSync();
 }
 
 function getWordcheckProgress() {
