@@ -2046,7 +2046,7 @@ function renderPublicResult(displayName, accuracy, correct, total) {
             <li>
               <span>${idx + 1}. ${escapeHtml(item.name)}</span>
               <b>${item.correct}점</b>
-              <small>${item.accuracy}% · ${item.correct}/${item.total}</small>
+              <small>정답률 ${item.accuracy}% · ${item.correct}문제</small>
             </li>
           `).join("")}
         </ol>
@@ -2154,7 +2154,7 @@ function showRanking() {
           <div style="font-size:16px;font-weight:800;margin-bottom:2px;word-break:break-all">${escapeHtml(item.name)}</div>
           <div style="font-size:11px;opacity:0.85;margin-bottom:6px">${tier.icon} ${tier.name}</div>
           <div style="font-size:28px;font-weight:900;line-height:1">${item.correct}<span style="font-size:14px;font-weight:400">점</span></div>
-          <div style="font-size:11px;opacity:0.7">${item.accuracy}% · ${item.correct}/${item.total}</div>
+          <div style="font-size:11px;opacity:0.7">정답률 ${item.accuracy}% · ${item.correct}문제</div>
         </div>`;
       });
       html += '</div>';
