@@ -389,9 +389,9 @@ const wordKnowledgeKey = "v502-synonym-drill-word-knowledge";
 const quizProgressKey = "v502-synonym-drill-quiz-progress";
 const irtAbilityKey = "v502-irt-ability";            // IRT-based cumulative ability score
 
-// IRT 난이도 평가 — 7-factor regression formula
+// IRT 난이도 평가 — 7-factor regression formula (2026-06-23: 수능영어 1등급 baseline)
 function rateQuestion({X1, X2, X3, X4, X5, X6, X7}) {
-  const raw = 118 - 3.0*X1 - 1.5*X2 - 2.5*X3 - 2.5*X4
+  const raw = 138 - 2.5*X1 - 2.0*X2 - 2.5*X3 - 2.5*X4
               - 2.5*(10-X5) - 2.5*X6 - 2.0*X7;
   return Math.max(1, Math.min(99, Math.round(raw)));
 }
@@ -2104,6 +2104,7 @@ function getActiveSetCount() {
 }
 
 let wlHideKnown = false;
+let wlCollapseHigh = true;
 
 function showWordlist() {
   switchMode('wordlist');
@@ -2114,6 +2115,7 @@ function showWordlist() {
       ${state.playerName ? `<button class="wl-jump-btn wl-hideknown-btn${wlHideKnown ? ' wl-hideknown-on' : ''}" type="button" title="아는 단어(✓) 숨기기">${wlHideKnown ? '✓ 아는 단어 숨김' : '아는 단어 안보기'}</button>` : ''}
       <button class="wl-jump-btn" type="button" data-jump-target="200" title="범주 200번으로 이동">범주200</button>
       <button class="wl-jump-btn" type="button" data-jump-target="400" title="범주 400번으로 이동">범주400</button>
+      <button class="wl-jump-btn wl-toggle-high-btn${wlCollapseHigh ? ' wl-toggle-high-on' : ''}" type="button" title="범주400~620 접기/펴기">${wlCollapseHigh ? '범주400~620 펴기' : '범주400~620 접기'}</button>
     </span>
   `;
   els.wordlistTitle.querySelectorAll('.wl-jump-btn[data-jump-target]').forEach((button) => {
@@ -2121,10 +2123,21 @@ function showWordlist() {
   });
   const hideBtn = els.wordlistTitle.querySelector('.wl-hideknown-btn');
   if (hideBtn) hideBtn.addEventListener('click', () => { wlHideKnown = !wlHideKnown; showWordlist(); });
+  const toggleHighBtn = els.wordlistTitle.querySelector('.wl-toggle-high-btn');
+  if (toggleHighBtn) toggleHighBtn.addEventListener('click', () => { wlCollapseHigh = !wlCollapseHigh; showWordlist(); });
 
   const hideKnown = wlHideKnown && state.playerName;
   let html = '<div class="wordlist-scroll">';
-  categories.forEach(cat => {
+  // Split at category 400 for toggle
+  const catsLow = categories.filter(c => parseInt(c.id) < 400);
+  const catsHigh = categories.filter(c => parseInt(c.id) >= 400);
+  [...catsLow, null, ...catsHigh].forEach(cat => {
+    // null sentinel = boundary between low and high ranges
+    if (cat === null) {
+      html += `<div id="wl-high-cats"${wlCollapseHigh ? ' hidden' : ''}>`;
+      html += `<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">범주 400~620 — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 8px" onclick="document.getElementById('wl-high-cats').hidden=true;wlCollapseHigh=true;">접기</button></div>`;
+      return;
+    }
     const summary = categorySummaries[cat.id] || '';
     // When hiding known words, drop checked (✓) words; if the whole category is
     // known, skip it entirely — name included — so only unknown words remain.
@@ -2216,6 +2229,7 @@ function showWordlist() {
     }
     html += `</div>`;
   });
+  html += '</div>'; // close wl-high-cats
   html += '</div>';
   els.wordlistContent.innerHTML = html;
 }
@@ -3346,15 +3360,44 @@ function renderWordcheckQuestion() {
 
   const choicesEl = document.getElementById('wordcheckChoices');
   choicesEl.innerHTML = '';
+  const submitBtn = document.getElementById('wordcheckSubmit');
+  let selectedLetter = null;
+
+  function clearSelection() {
+    selectedLetter = null;
+    choicesEl.querySelectorAll('button').forEach(b => {
+      b.style.background = 'var(--panel)';
+      b.style.borderColor = 'var(--line)';
+    });
+  }
+
   q.c.forEach(([letter, text]) => {
     const btn = document.createElement('button');
     btn.textContent = `(${letter}) ${text}`;
     btn.style.cssText = 'min-height:40px;padding:8px 14px;border:1px solid var(--line);border-radius:2px;background:var(--panel);text-align:left;font:inherit;font-size:14px;cursor:pointer';
-    btn.onclick = () => submitWordcheckAnswer(letter);
+    btn.onclick = () => {
+      if (selectedLetter === letter) {
+        // Deselect on second click
+        clearSelection();
+        submitBtn.style.display = 'none';
+        return;
+      }
+      clearSelection();
+      selectedLetter = letter;
+      btn.style.background = 'var(--accent-light, #e3f2fd)';
+      btn.style.borderColor = 'var(--accent, #1a73e8)';
+      if (noExplainMode) { submitWordcheckAnswer(letter); }
+      else { submitBtn.style.display = 'inline-block'; }
+    };
     choicesEl.appendChild(btn);
   });
 
-  document.getElementById('wordcheckSubmit').style.display = 'none';
+  // 해설ON: wire Submit button to confirm selection (해설OFF auto-submits on click)
+  submitBtn.onclick = () => {
+    if (selectedLetter) submitWordcheckAnswer(selectedLetter);
+  };
+
+  submitBtn.style.display = 'none';
   document.getElementById('wordcheckNext').style.display = 'none';
   document.getElementById('wordcheckFeedback').style.display = 'none';
 }
@@ -3907,6 +3950,7 @@ els.logicNextBtn.addEventListener("click", nextLogicQuestion);
     wrapper.appendChild(toggle);
     wrapper.appendChild(body);
     body.appendChild(catNav);
+    catNav.removeAttribute('hidden'); // was hidden in sidebar, now controlled by .cat-nav-body.open
     toggle.addEventListener('click', function() {
       const open = body.classList.toggle('open');
       toggle.classList.toggle('expanded', open);
