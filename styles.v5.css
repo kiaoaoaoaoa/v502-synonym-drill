@@ -845,6 +845,7 @@ h2 {
   background: var(--accent);
   color: #fff;
 }
+.wl-toggle-mid-btn.wl-toggle-mid-on,
 .wl-toggle-high-btn.wl-toggle-high-on {
   background: #856404;
   color: #fff;
