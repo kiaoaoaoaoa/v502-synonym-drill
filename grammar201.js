@@ -1,510 +1,10888 @@
-/* LOGIC TREE G201 ver 10.2 — 문법 480문항
- * 각 항목: {i, t(문법포인트), q(문제: 「」=밑줄, ______=빈칸), c(선택지), a(정답), exp(해설)}
- * 정답과 해설은 직접 작성함.
- */
-window.__V502_GRAMMAR__ = [];
-window.__V502_GRAMMAR__.push(
-{i:"001",t:"자동사 오해: complain",q:"I felt uncomfortable ①「complaining for」 the service; after all we ②「were」 only guests ③「at」 the reception, ④「not」 the hosts.",c:[["1","complaining for"],["2","were"],["3","at"],["4","not"]],a:"1",exp:"complain은 전치사 about/of와 함께 쓴다. complaining for → complaining about."},
-{i:"002",t:"자동사 오해: conform",q:"For some reason, we have ①「decided」 that if these flesh lumps (i.e., our noses) have a certain shape, they are attractive, ②「whereas」 lumps that do not ③「conform」 that shape ④「are considered」 ugly.",c:[["1","decided"],["2","whereas"],["3","conform"],["4","are considered"]],a:"3",exp:"conform은 자동사로 전치사 to가 필요하다. conform that shape → conform to that shape."},
-{i:"003",t:"자동사 오해: consist",q:"Economic ①「goods」 often consist ②「to」 material items, ③「but」 they can also be services ④「to」 people.",c:[["1","goods"],["2","to"],["3","but"],["4","to"]],a:"2",exp:"consist는 of와 함께 '~로 구성되다'. consist to → consist of."},
-{i:"004",t:"유사형태 자/타동사",q:"A: What would you have done if you hadn't become a teacher?  B: I'd probably have ______ the army.  A: Oh, you'd have ______ a good soldier.  B: Do you really think so?  A: Yes, of course.",c:[["1","discharged from — become"],["2","gone into — joined"],["3","joined — made"],["4","joined — taught"]],a:"3",exp:"'군에 들어가다'는 joined the army(타동사), '훌륭한 군인이 되었을 것이다'는 made a good soldier(make=~이 되다). 따라서 joined — made."},
-{i:"005",t:"2형식 sound + 형용사",q:"Improvisation is an important part of jazz. ... This is why a jazz song might ______ each time it is played.",c:[["1","sounds a little different"],["2","sound a little differently"],["3","sound little differently"],["4","sound a little different"]],a:"4",exp:"조동사 might 뒤 동사원형 sound, 그리고 2형식 sound 뒤에는 형용사 different. differently(부사)는 불가."},
-{i:"006",t:"2형식 seem + 형용사",q:"People ①「often」 seem ②「anger」 when ③「they」 do not get enough ④「rest」.",c:[["1","often"],["2","anger"],["3","they"],["4","rest"]],a:"2",exp:"seem 뒤에는 형용사 보어가 와야 한다. anger(명사) → angry(형용사)."},
-{i:"007",t:"2형식 look + 형용사",q:"He looked very ①「badly」 after ②「the operation」, ③「and」 we were all ④「worried」.",c:[["1","badly"],["2","the operation"],["3","and"],["4","worried"]],a:"1",exp:"2형식 look 뒤에는 형용사. looked very badly → looked very bad."},
-{i:"008",t:"타동사 attend",q:"In the summer, I usually ______ some kind of seminar at the urging of my company.",c:[["1","enroll at"],["2","attend"],["3","go"],["4","attend to"]],a:"2",exp:"'세미나에 참석하다'는 attend(타동사). attend to는 '처리하다', enroll in, go to가 맞다."},
-{i:"009",t:"타동사 approach",q:"Moments before Shannon Lucid departed ①「on」 her first space mission, a reporter ②「approached to」 her and asked ③「what her thoughts were」. She replied that she was extremely proud ④「to participate」 in such an important project.",c:[["1","on"],["2","approached to"],["3","what her thoughts were"],["4","to participate"]],a:"2",exp:"approach는 타동사로 전치사 없이 목적어를 취한다. approached to her → approached her."},
-{i:"010",t:"타동사 inhabit",q:"What happens when people of different origins, ①「speaking」 different languages and ②「professing」 different religions, ③「inhabit in」 the same locality and ④「live under」 the same political sovereignty?",c:[["1","speaking"],["2","professing"],["3","inhabit in"],["4","live under"]],a:"3",exp:"inhabit는 '~에 살다'라는 타동사로 전치사가 필요 없다. inhabit in → inhabit."},
-{i:"011",t:"타동사 reach",q:"①「The Olympic torch」 will be ②「reaching at」 Rice-Eccles Stadium ③「at」 the University of Utah ④「in」 a month.",c:[["1","The Olympic torch"],["2","reaching at"],["3","at"],["4","in"]],a:"2",exp:"reach는 '~에 도착하다'라는 타동사. reaching at → reaching."},
-{i:"012",t:"타동사 survive",q:"An American ①「who survived from」 the terrorist ②「attack on」 the World Trade Center ③「escaped with his life」 again when ④「a bomb blast」 ripped through a busy street in Jerusalem.",c:[["1","who survived from"],["2","attack on"],["3","escaped with his life"],["4","a bomb blast"]],a:"1",exp:"survive는 '~에서 살아남다'라는 타동사. survived from → survived."},
-{i:"013",t:"lie vs lay",q:"If he ①「had laid」 quietly ②「under the tree」 as he ③「had been instructed」 to do, we ④「would have found」 him.",c:[["1","had laid"],["2","under the tree"],["3","had been instructed"],["4","would have found"]],a:"1",exp:"'(가만히) 누워 있었다면'은 자동사 lie(lie-lay-lain). had laid(타동사 lay) → had lain."},
-{i:"014",t:"lie in (~에 있다)",q:"The secret to blocking for the Oakland Raiders' quarterback Rich Gannon, according to tackle Lincoln Kennedy, ______ the defensive linemen's eyes.",c:[["1","lie along"],["2","lay down"],["3","lies in"],["4","lays aside"]],a:"3",exp:"주어 The secret(단수) + '~에 있다' lie in. 단수 주어이므로 lies in."},
-{i:"015",t:"rise vs raise",q:"Food prices have ①「raised」 ②「so rapidly」 in the past few months ③「that」 some families have been ④「forced to alter」 their eating habits.",c:[["1","raised"],["2","so rapidly"],["3","that"],["4","forced to alter"]],a:"1",exp:"'(값이) 올랐다'는 자동사 rise(rise-rose-risen). have raised(타동사) → have risen."},
-{i:"016",t:"be seated",q:"A: When did the lecture begin?  B: When all the students ______, the professor began his lecture.",c:[["1","were seated"],["2","seat"],["3","seated"],["4","sit"]],a:"1",exp:"seat는 '앉히다'라는 타동사. '학생들이 앉다'는 be seated. were seated."},
-{i:"017",t:"sit vs set",q:"I ①「sat」 the suitcase ②「down」 in front of a ③「hotel」 shop and ④「called」 a taxi.",c:[["1","sat"],["2","down"],["3","hotel"],["4","called"]],a:"1",exp:"'~을 내려놓다'는 타동사 set. sat the suitcase down → set the suitcase down. (sit는 자동사)"},
-{i:"018",t:"fall (자동사)",q:"One winter day when I was nine, carrying my books home from school across a snowy street as the light was turning, I slipped and ______.",c:[["1","fell"],["2","felled"],["3","fall"],["4","falled"]],a:"1",exp:"'넘어졌다'는 자동사 fall의 과거형 fell(fall-fell-fallen). felled는 '쓰러뜨렸다'(타동사)."},
-{i:"019",t:"die vs dye",q:"My neighbor ①「dies」 her ②「hair」 ③「two times」 ④「every month」.",c:[["1","dies"],["2","hair"],["3","two times"],["4","every month"]],a:"1",exp:"'머리를 염색하다'는 dye. dies(죽다) → dyes."},
-{i:"020",t:"say + that절",q:"Some people ______ the single most important factor in any business is service.",c:[["1","talk"],["2","tell"],["3","say"],["4","speak of"]],a:"3",exp:"that절을 목적어로 바로 취하는 것은 say. tell은 사람 목적어가 필요하고, talk/speak는 자동사."},
-{i:"021",t:"4형식 make",q:"Yesterday was my birthday, my mother ______.",c:[["1","made a cake to me"],["2","made a cake me"],["3","made for me a cake"],["4","made me a cake"]],a:"4",exp:"make는 4형식에서 made me a cake(간접목적어+직접목적어). 3형식 전환 시 made a cake FOR me."},
-{i:"022",t:"ask A of B",q:"Choose the one that is NOT correct according to the standard English.",c:[["1","The tower rises above the other buildings."],["2","You should not ask such questions to your parents."],["3","When you fill in the form, I'll have the baggage brought in."],["4","I don't know whether he has a ticket to the show and whether he will go."]],a:"2",exp:"ask는 'ask A of B' 구조. ask such questions to your parents → ask such questions OF your parents."},
-{i:"023",t:"cost (4형식, to 불가)",q:"She might never ①「forgive him」 what he did to her, and it was ②「such a dark part」 of her personality that ③「cost a lot of fame to her」 ④「and」 that she didn't ⑤「want him to see」.",c:[["1","forgive him"],["2","such a dark part"],["3","cost a lot of fame to her"],["4","and"],["5","want him to see"]],a:"3",exp:"cost는 4형식 동사로 전치사 to를 쓰지 않는다. cost a lot of fame to her → cost her a lot of fame."},
-{i:"024",t:"describe (3형식, to)",q:"A: I think I understand his point.  B: Then ______.",c:[["1","describe for me it"],["2","describe me it"],["3","describe it to me"],["4","describe"]],a:"3",exp:"describe는 3형식 동사. 'describe + 목적어 + to 사람'. describe it to me."},
-{i:"025",t:"explain (3형식, to)",q:"The doctor explained ______ that we should have a complete physical examination once a year.",c:[["1","us"],["2","for us"],["3","to us"],["4","at us"]],a:"3",exp:"explain은 4형식 불가. 'explain to 사람 + that절'. explained to us that..."},
-{i:"026",t:"admit to",q:"The robber ①「admitted」 the detective that she was ②「the one」 who ③「had stolen」 the diamond necklace ④「from the display」.",c:[["1","admitted"],["2","the one"],["3","had stolen"],["4","from the display"]],a:"1",exp:"'~에게 자백하다'는 admit to + 사람. admitted the detective → admitted to the detective."},
-{i:"027",t:"provide A with B",q:"In order ①「for you to improve」 your memory, ②「key information」 should be written as soon as possible after it is given, ③「so」 the memory of the instructions is fresh and you can capture all the detail you ④「were provided」.",c:[["1","for you to improve"],["2","key information"],["3","so"],["4","were provided"]],a:"4",exp:"provide A with B의 수동. 'the detail (that) you were provided'에는 with가 필요하다. were provided → were provided with."},
-{i:"028",t:"say (시계가 가리키다)",q:"A: Is it time to leave?  B: Yes, the clock ______ two o'clock.",c:[["1","says"],["2","indicates"],["3","told"],["4","marks"]],a:"1",exp:"시계·표지판이 '~라고 가리키다'는 say. The clock says two o'clock."},
-{i:"029",t:"tell + that절 (4형식)",q:"The information officer at the bank ______ his customers that there were several different kinds of checking accounts available.",c:[["1","said"],["2","told"],["3","conversed"],["4","talked"]],a:"2",exp:"'사람 + that절'을 동시에 취하는 동사는 tell. told his customers that..."},
-{i:"030",t:"tell 어법",q:"Choose the one that is CORRECT according to the standard English.",c:[["1",'Ellen told to Helen, "Leave the room."'],["2","Ellen told to leave the room."],["3","Ellen told to Helen to leave the room."],["4","Ellen told Helen that she wasn't ready."]],a:"4",exp:"tell은 'tell 사람 that절' 구조. ①②③은 told to로 틀렸다. ④ Ellen told Helen that...이 옳다."},
-{i:"031",t:"remind A of B",q:"Please ______ me of what you said at the last meeting.",c:[["1","remind"],["2","help remind"],["3","remember"],["4","recall"]],a:"1",exp:"'A에게 B를 상기시키다'는 remind A of B. remember/recall은 of를 쓰지 않는다."},
-{i:"032",t:"지각동사 hear + 원형/~ing",q:"Last night ①「while」 I was trying ②「to fall」 asleep, I heard ③「the people」 in the next apartment ④「sang and laugh」.",c:[["1","while"],["2","to fall"],["3","the people"],["4","sang and laugh"]],a:"4",exp:"지각동사 hear + 목적어 + 원형/~ing. 과거형 sang은 불가. sang and laugh → sing and laugh."},
-{i:"033",t:"분사 combined with",q:"①「To see」 so much power ②「combining」 ③「with」 such lack ④「of」 foresight is really disquieting for us Europeans.",c:[["1","To see"],["2","combining"],["3","with"],["4","of"]],a:"2",exp:"power가 '결합되는' 수동 관계. combining → combined (power combined with...)."},
-{i:"034",t:"사역동사 let + 원형",q:'①「Thanks to」 the often dreadful, although lifesaving, nature of diagnostic tests, many of us are becoming ②「experts at the art」 of procrastination. Who can be blamed for ③「letting "colonoscopy" to slip」 to the bottom of the ④「to-do list」?',c:[["1","Thanks to"],["2","experts at the art"],["3",'letting "colonoscopy" to slip'],["4","to-do list"]],a:"3",exp:"사역동사 let + 목적어 + 원형. letting ... to slip → letting ... slip."},
-{i:"035",t:"사역동사 make + 원형",q:"If you don't stop making that noise, you'll make your grandmother ______.",c:[["1","to complain"],["2","complaining"],["3","complain"],["4","complaint"]],a:"3",exp:"사역동사 make + 목적어 + 동사원형. make your grandmother complain."},
-{i:"036",t:"help + (to) 원형",q:"Camouflage helps predators such as tigers and leopards ______ without being seen.",c:[["1","for ambushing his prey"],["2","ambush their prey"],["3","to ambush his prey"],["4","ambushing"]],a:"2",exp:"help + 목적어 + (to) 원형. predators(복수)의 소유격은 their. ambush their prey."},
-{i:"037",t:"keep + O + ~ing",q:"The idea of ①「surrogate」 parenting has kept professional ethicists and jurists ②「wrung」 their hands ③「ever」 since the first case ④「surfaced」 in 1978.",c:[["1","surrogate"],["2","wrung"],["3","ever"],["4","surfaced"]],a:"2",exp:"keep + 목적어 + ~ing(능동). jurists가 손을 '비트는' 능동이므로 wrung → wringing."},
-{i:"038",t:"find + O + 분사",q:"Book reviewers often ①「find themselves」 ②「are being carried away」 ③「by」 their own dogma and a combination of flaws that ④「is」 fatal for an impartial review.",c:[["1","find themselves"],["2","are being carried away"],["3","by"],["4","is"]],a:"2",exp:"find + 목적어 + 분사 구조에 동사 are는 불필요. are being carried away → being carried away."},
-{i:"039",t:"want + O + to부정사",q:"Choose the one that is NOT correct according to the standard English.",c:[["1","She heard him lock the door."],["2","There's nothing to do but wait."],["3","We saw him enter the store with his wife."],["4","I want you stand beside me and hold the torch."]],a:"4",exp:"want는 'want + 목적어 + to부정사'. want you stand → want you to stand."},
-{i:"040",t:"forbid + O + to부정사",q:"Choose the one that is NOT correct according to the standard English.",c:[["1","I felt something touch my foot."],["2","Did you hear a dog bark?"],["3","I let her talk without interrupting."],["4","The doctor forbade me smoke."]],a:"4",exp:"forbid는 'forbid + 목적어 + to부정사'. forbade me smoke → forbade me to smoke."}
-);
-window.__V502_GRAMMAR__.push(
-{i:"041",t:"수일치 A and B (복수)",q:"Previously, Latin and French ①「was being considered」 more ②「suitable for」 literary expression than English and consequently ③「the English language」 had not been as fully developed ④「as it might have been」.",c:[["1","was being considered"],["2","suitable for"],["3","the English language"],["4","as it might have been"]],a:"1",exp:"Latin and French는 복수 주어. was being considered → were being considered."},
-{i:"042",t:"수일치 A and B (복수)",q:"The pioneer ①「of」 long ago and ②「the」 space pioneer of today ③「has」 many things ④「in」 common.",c:[["1","of"],["2","the"],["3","has"],["4","in"]],a:"3",exp:"'A and B' 복수 주어. has → have."},
-{i:"043",t:"statistics 복수 수일치",q:"Choose the one that is NOT correct according to the standard English.",c:[["1","Bread and butter is fattening."],["2","Slow and steady wins the game."],["3","These statistics shows deaths per 1,000 of population."],["4","There is someone in the room."]],a:"3",exp:"여기서 statistics는 '통계 수치'로 복수. These statistics shows → These statistics show. (①②는 단일 개념으로 단수)"},
-{i:"044",t:"not only A but also B 수일치",q:"Not only you but also your manager ______ right.",c:[["1","were"],["2","are"],["3","was"],["4","as"]],a:"3",exp:"not only A but also B는 가까운 주어 B(your manager, 단수)에 동사를 일치시킨다. 보기 중 단수형은 was."},
-{i:"045",t:"either A or B 수일치",q:"Either the teacher or the children ______ where the principal is right now.",c:[["1","knew"],["2","know"],["3","knows"],["4","knowing"]],a:"2",exp:"either A or B는 가까운 B(the children, 복수)에 일치. know."},
-{i:"046",t:"neither A nor B 수일치",q:"①「Neither」 the reporters ②「nor」 the editor ③「were」 satisfied with the salary ④「offer」 made by the publisher.",c:[["1","Neither"],["2","nor"],["3","were"],["4","offer"]],a:"3",exp:"neither A nor B는 가까운 B(the editor, 단수)에 일치. were → was."},
-{i:"047",t:"neither A nor B 수일치",q:"Neither his friend's ①「betrayal」 nor his ②「parents'」 condemnation ③「have caused」 him any ④「great」 distress.",c:[["1","betrayal"],["2","parents'"],["3","have caused"],["4","great"]],a:"3",exp:"neither A nor B는 가까운 B(condemnation, 단수)에 일치. have caused → has caused."},
-{i:"048",t:"not only A but also B 수일치",q:"Not only destruction and death but also a generation of hatred ①「between」 the two communities ②「have been」 triggered by the war that played a huge role ③「in」 establishing the gulf between the Western and the Eastern ④「communities」.",c:[["1","between"],["2","have been"],["3","in"],["4","communities"]],a:"2",exp:"not only A but also B는 가까운 B(a generation, 단수)에 일치. have been → has been."},
-{i:"049",t:"A as well as B 수일치 (A에 일치)",q:"The merger ①「as well as」 the obvious financial benefits ②「are expected」 to allow ③「us some breathing room」 with ④「regards to」 R&D.",c:[["1","as well as"],["2","are expected"],["3","us some breathing room"],["4","regards to"]],a:"2",exp:"A as well as B는 A(The merger, 단수)에 일치. are expected → is expected."},
-{i:"050",t:"every + 단수",q:"Every man, woman, and child ①「in」 this community ②「are」 now ③「aware of」 the terrible consequences ④「of the habit」 of smoking.",c:[["1","in"],["2","are"],["3","aware of"],["4","of the habit"]],a:"2",exp:"every A, B, and C는 단수 취급. are → is."},
-{i:"051",t:"each of + 복수 → 단수",q:"Each of the Medic Alert bracelets ①「worn」 by millions of Americans who ②「suffer from」 diabetes and drug allergic reactions ③「are」 individually engraved with ④「the wearer's」 name.",c:[["1","worn"],["2","suffer from"],["3","are"],["4","the wearer's"]],a:"3",exp:"Each of + 복수명사는 단수 취급. are → is."},
-{i:"052",t:"neither of + 복수 → 단수",q:"When one contrasts the ideas of the Romantic William Wordsworth ①「with」 ②「those of」 Neoclassicist John Dryden, ③「one finds」 that neither of the poets ④「differ」 as much as one would expect.",c:[["1","with"],["2","those of"],["3","one finds"],["4","differ"]],a:"4",exp:"neither of + 복수명사는 단수 취급. differ → differs."},
-{i:"053",t:"most of + 복수 → 복수",q:"①「Most of the English people is descended」 from invaders who began settling in ②「the British Isles」 more than ③「2,500 years」 ④「ago」.",c:[["1","Most of the English people is descended"],["2","the British Isles"],["3","2,500 years"],["4","ago"]],a:"1",exp:"the (English) people은 복수. Most of the English people is → are descended."},
-{i:"054",t:"most of + 불가산 → 단수",q:"Most of the information ①「received」 from the reporters in the field ②「have to」 be edited before ③「being」 ④「considered」 for publication.",c:[["1","received"],["2","have to"],["3","being"],["4","considered"]],a:"2",exp:"information은 불가산명사로 단수. have to → has to."},
-{i:"055",t:"분수 of + 불가산 → 단수",q:"Approximately ①「one-fourth」 of a worker's income ②「are paid」 ③「in」 taxes and social security ④「to」 the government.",c:[["1","one-fourth"],["2","are paid"],["3","in"],["4","to"]],a:"2",exp:"분수 of + 불가산명사(income)는 단수. are paid → is paid."},
-{i:"056",t:"퍼센트 of + 복수 → 복수",q:"Nearly 60% of the world's tropical rain forests ①「has been lost」, and ②「what remains」 is under extreme pressure from logging and human population growth. And once a forest is cut down, ③「many of the living things it has harbored」 will be driven ④「to extinction」.",c:[["1","has been lost"],["2","what remains"],["3","many of the living things it has harbored"],["4","to extinction"]],a:"1",exp:"퍼센트 of + 복수명사(forests)는 복수. has been lost → have been lost."},
-{i:"057",t:"단수 주어 수일치",q:"A pro-American government in Afghanistan certainly ①「facilitate」 a more ②「acceptable」 agreement ③「regarding」 the new pipeline that must inevitably ④「run」 through that country.",c:[["1","facilitate"],["2","acceptable"],["3","regarding"],["4","run"]],a:"1",exp:"주어 A ... government(단수). facilitate → facilitates."},
-{i:"058",t:"긴 주어 수일치 (핵심주어 단수)",q:"The variation ①「in」 our ambition, impulses, prejudices and affections ②「have given」 us a certain acceptance of the fact ③「that」 the conventions and watch-words of one generation ④「may prove irrelevant」 to the needs of the generations that follow.",c:[["1","in"],["2","have given"],["3","that"],["4","may prove irrelevant"]],a:"2",exp:"핵심 주어는 The variation(단수). have given → has given."},
-{i:"059",t:"긴 주어 수일치 (corridor 단수)",q:"Many people ①「were trapped」 in the capital and ②「unable to escape」, and a humanitarian escape corridor ③「set up」 on December 6 by Russian forces to allow people to flee the fighting ④「were ineffective」.",c:[["1","were trapped"],["2","unable to escape"],["3","set up"],["4","were ineffective"]],a:"4",exp:"뒤 절의 주어는 a ... corridor(단수). were ineffective → was ineffective."},
-{i:"060",t:"two of + 복수 → 복수",q:"Two of the ①「fungi」 which the researchers discovered ②「was classified」 as new varieties ③「and」 the botanists said that they were ④「previously」 unknown.",c:[["1","fungi"],["2","was classified"],["3","and"],["4","previously"]],a:"2",exp:"Two of the fungi는 복수. was classified → were classified."},
-{i:"061",t:"there is/are 수일치 (A or B)",q:"①「There are」 no argument or proof ②「that will convince」 most Americans that ③「paying higher」 taxes will result in a higher standard of living ④「for everyone」.",c:[["1","There are"],["2","that will convince"],["3","paying higher"],["4","for everyone"]],a:"1",exp:"'no argument or proof'는 가까운 proof(단수)에 일치. There are → There is."},
-{i:"062",t:"장소부사구 도치 수일치",q:"Five miles beyond the hills ______ a fire with its flames reaching up to the sky.",c:[["1","was"],["2","were"],["3","were that"],["4","which were"]],a:"1",exp:"장소부사구 도치문. 주어는 a fire(단수)이므로 was."},
-{i:"063",t:"도치 수일치 (복수주어)",q:"①「On the desk」 ②「was」 several notebooks and a book of ③「poetry」 that had ④「apparently」 been left in the library.",c:[["1","On the desk"],["2","was"],["3","poetry"],["4","apparently"]],a:"2",exp:"도치문의 진짜 주어는 several notebooks(복수). was → were."},
-{i:"064",t:"도치 수일치 (단수주어)",q:"①「Just outside」 the ruins ②「are」 a fortress ③「surrounded」 by high walls and ④「stately」 trees.",c:[["1","Just outside"],["2","are"],["3","surrounded"],["4","stately"]],a:"2",exp:"도치문의 주어는 a fortress(단수). are → is."},
-{i:"065",t:"many 복수 수일치",q:"One principle that Jefferson stated was ①「the right to a trial」 by a fair and impartial jury. This right ②「to be judged」 by ordinary people ③「is a privilege」 many in the world ④「is denied」.",c:[["1","the right to a trial"],["2","to be judged"],["3","is a privilege"],["4","is denied"]],a:"4",exp:"관계절의 주어 many(복수). is denied → are denied."},
-{i:"066",t:"many a + 단수명사 → 단수",q:"①「There are」 ②「many a single person」 who believes that ③「being married」 doesn't necessarily mean ④「living」 happily ever after.",c:[["1","There are"],["2","many a single person"],["3","being married"],["4","living"]],a:"1",exp:"many a + 단수명사는 단수 취급. There are → There is."},
-{i:"067",t:"the number of + 복수 → 단수",q:"The number of ①「wild horses」 on Assateague ②「are increasing」 lately, ③「resulting in」 ④「overgrazed」 marsh and dune grasses.",c:[["1","wild horses"],["2","are increasing"],["3","resulting in"],["4","overgrazed"]],a:"2",exp:"the number of ~는 '~의 수'로 단수. are increasing → is increasing."},
-{i:"068",t:"the number of + 복수 → 단수",q:"①「The number of」 Korean students coming ②「to America」 for ③「graduate training」 ④「are」 quite ⑤「surprising」.",c:[["1","The number of"],["2","to America"],["3","graduate training"],["4","are"],["5","surprising"]],a:"4",exp:"the number of ~는 단수. are → is."},
-{i:"069",t:"one of those + 복수 + who 복수동사",q:"We would like to know if you are ①「one of those women」 ②「who is」 actively involved in politics because we need someone ③「to campaign for」 a law legalizing maternity leave for men ④「as well as」 for women.",c:[["1","one of those women"],["2","who is"],["3","to campaign for"],["4","as well as"]],a:"2",exp:"one of those women who의 선행사는 women(복수). who is → who are."},
-{i:"070",t:"주격관계대명사 수일치",q:"①「Although」 there are fortunetellers who ②「claims」 to predict future happenings, ③「there is」 no scientific evidence of ④「their accuracy」.",c:[["1","Although"],["2","claims"],["3","there is"],["4","their accuracy"]],a:"2",exp:"who의 선행사 fortunetellers(복수). claims → claim."},
-{i:"071",t:"관계절 병렬 수일치",q:"I want a wife who is a good nurturant ①「attendant」 to my children, who arranges ②「for」 their schooling, and ③「make」 sure that ④「they」 have an adequate social life with their peers.",c:[["1","attendant"],["2","for"],["3","make"],["4","they"]],a:"3",exp:"arranges와 병렬, 선행사 wife(단수). make → makes."},
-{i:"072",t:"to부정사 주어 → 단수",q:"To ①「feel satisfied with」 your ②「work published」 in a scholarly journal ③「are」 to ④「take pride」 in it.",c:[["1","feel satisfied with"],["2","work published"],["3","are"],["4","take pride"]],a:"3",exp:"to부정사 주어는 단수 취급. are → is."},
-{i:"073",t:"명사절 주어 → 단수",q:"①「Where」 the school districts will find the money ②「for」 these programs ③「are」 ④「a problem」.",c:[["1","Where"],["2","for"],["3","are"],["4","a problem"]],a:"3",exp:"의문사절(명사절) 주어는 단수. are → is."},
-{i:"074",t:"대명사 일치 (its)",q:"The villainous ①「characterizations」 of the wolf ②「in numerous folktales」 ③「have ignored」 that part of ④「their nature」 that ⑤「is friendly and gregarious」.",c:[["1","characterizations"],["2","in numerous folktales"],["3","have ignored"],["4","their nature"],["5","is friendly and gregarious"]],a:"4",exp:"the wolf(단수)를 받으므로 their → its."},
-{i:"075",t:"관계대명사 which 수일치",q:"①「Most people」 ②「aspire to」 good jobs or careers, which ③「is」 increasingly difficult ④「to obtain」.",c:[["1","Most people"],["2","aspire to"],["3","is"],["4","to obtain"]],a:"3",exp:"which의 선행사 good jobs or careers(복수). is → are."},
-{i:"076",t:"관계대명사 수일치 (복수 선행사)",q:"①「Contrary to」 our expectations we find ②「ourselves」 these days amid ③「clouds of」 dense pollutants, both material and spiritual, ④「which」 ⑤「seems」 to injure man and deface nature.",c:[["1","Contrary to"],["2","ourselves"],["3","clouds of"],["4","which"],["5","seems"]],a:"5",exp:"which의 선행사 pollutants(복수). seems → seem."},
-{i:"077",t:"인칭 일치 (you/one)",q:"If you ①「are to complete」 the task, ②「one should research」 it ③「beforehand」 so as to acquaint yourself ④「with」 any possible happenings from it.",c:[["1","are to complete"],["2","one should research"],["3","beforehand"],["4","with"]],a:"2",exp:"주어 you와 yourself에 맞춰야 한다. one should research → you should research."},
-{i:"078",t:"인칭 일치 (one/you)",q:"When one reaches the first plateau, ①「it does not guarantee」 that ②「you」 will complete ③「the climb」 ④「to」 the summit.",c:[["1","it does not guarantee"],["2","you"],["3","the climb"],["4","to"]],a:"2",exp:"주어 one과 인칭을 일치시켜야 한다. you → one."},
-{i:"079",t:"대명사 일치 (they)",q:"After the dispute ①「over」 the unsuccessful play, the coach and the team captain agreed ②「not to talk」 until ③「he was able」 to do so ④「calmly」.",c:[["1","over"],["2","not to talk"],["3","he was able"],["4","calmly"]],a:"3",exp:"the coach and the team captain(복수)을 받으므로 he → they. he was → they were."},
-{i:"080",t:"대명사 지시 (they)",q:"①「Stockard Channing」, who plays the role of the formidable First Lady in the television show The West Wing, ②「first came」 into the public eye in the movie production of the musical Grease; ③「they have loved」 her ④「ever since」.",c:[["1","Stockard Channing"],["2","first came"],["3","they have loved"],["4","ever since"]],a:"3",exp:"they가 가리킬 선행사가 없다. 막연한 they는 부적절하며 the public/people 등 명확한 주어가 필요하다."}
-);
-window.__V502_GRAMMAR__.push(
-{i:"081",t:"과거 시점 + 과거시제",q:"New York City ①「has been」 the ②「capital of」 New York State until 1797, ③「when」 the state capital ④「was moved」 to Albany.",c:[["1","has been"],["2","capital of"],["3","when"],["4","was moved"]],a:"1",exp:"until 1797이라는 과거 시점이 있으므로 과거시제. has been → was."},
-{i:"082",t:"과거완료 (before + 과거)",q:"①「Even though」 Mr. Kim ②「has been studying」 English for eight years before he came ③「to the United States」, it is still difficult ④「for him to master」 it.",c:[["1","Even though"],["2","has been studying"],["3","to the United States"],["4","for him to master"]],a:"2",exp:"과거(came)보다 이전의 계속이므로 과거완료진행. has been studying → had been studying."},
-{i:"083",t:"과거완료 (대과거)",q:"When Ken went to get some money from his wallet, he discovered that someone ______ it.",c:[["1","takes"],["2","took"],["3","had taken"],["4","has taken"]],a:"3",exp:"discovered(과거)보다 더 이전의 일이므로 과거완료. had taken."},
-{i:"084",t:"과거완료 (대과거)",q:"After he ①「was caught」 with the stolen car, the teen said he was very sorry ②「for what he had done」 and for the damage he ③「caused」 to the car. He realized that he had been very foolish and wanted people ④「to forgive」 him.",c:[["1","was caught"],["2","for what he had done"],["3","caused"],["4","to forgive"]],a:"3",exp:"said(과거)보다 이전의 일이므로 과거완료. caused → had caused."},
-{i:"085",t:"과거완료 수동 (대과거)",q:"①「The letter」 I was waiting for ②「didn't arrive」 because it ③「has been sent」 ④「to my old」 address.",c:[["1","The letter"],["2","didn't arrive"],["3","has been sent"],["4","to my old"]],a:"3",exp:"didn't arrive(과거)보다 이전이므로 과거완료. has been sent → had been sent."},
-{i:"086",t:"Before + 과거 → 과거완료",q:"Before 1970 ①「many technological advances」 ②「have been made」 in the field of computer science, ③「which resulted in」 ④「more efficient」 computers.",c:[["1","many technological advances"],["2","have been made"],["3","which resulted in"],["4","more efficient"]],a:"2",exp:"Before 1970이라는 과거 기준점. have been made → had been made."},
-{i:"087",t:"after + 과거완료",q:"Choose the one that is NOT correct according to the standard English.",c:[["1","It was he who came running into the office with the boxes."],["2","Mrs. Green and her sister just bought two new winter coats at the clearance sale."],["3","He stopped typing the report because he had to leave for the hospital."],["4","The president went fishing after he has finished the breakfast."]],a:"4",exp:"주절이 과거(went)이므로 after절도 과거완료. has finished → had finished."},
-{i:"088",t:"일반적 사실 현재시제 (진행 불가)",q:"①「In general」, newspapers emphasize current news, ②「whereas」 magazines ③「are dealing」 more ④「with」 background materials.",c:[["1","In general"],["2","whereas"],["3","are dealing"],["4","with"]],a:"3",exp:"일반적 사실은 단순현재. are dealing → deal."},
-{i:"089",t:"일반적 사실 현재시제",q:"The adult mosquito usually lives ①「for about」 thirty days, ②「although」 the life span ③「is varying」 widely with temperature, humidity, and ④「other factors」 of the environment.",c:[["1","for about"],["2","although"],["3","is varying"],["4","other factors"]],a:"3",exp:"일반적 사실은 단순현재. is varying → varies."},
-{i:"090",t:"현재 사실 시제",q:"It ①「is true」 that the genes we inherit ②「from」 our parents ③「decide」, to some extent, what our health ④「was」 like.",c:[["1","is true"],["2","from"],["3","decide"],["4","was"]],a:"4",exp:"일반적·현재 사실이므로 현재시제. was → is."},
-{i:"091",t:"과거진행 (동시 동작)",q:"While I was studying in one room of our apartment, my roommate ______ in the other room.",c:[["1","had had a party"],["2","was having a party"],["3","is having a party"],["4","would have had a party"]],a:"2",exp:"While I was studying(과거진행)과 동시에 일어난 동작이므로 was having a party."},
-{i:"092",t:"과거진행",q:"While he ______ the poster, a door somewhere behind him opened.",c:[["1","is staring at"],["2","did stare to"],["3","was staring at"],["4","looked carefully upon"]],a:"3",exp:"opened(과거)와 동시 진행이므로 과거진행 was staring at."},
-{i:"093",t:"상태동사 진행 불가",q:"①「Weighed down」 by a mass of trivial details, a housewife ②「is being fortunate」 if she does not soon ③「lose」 all her charm and ④「three-quarters」 of her intelligence.",c:[["1","Weighed down"],["2","is being fortunate"],["3","lose"],["4","three-quarters"]],a:"2",exp:"상태형용사 fortunate는 진행형 불가. is being fortunate → is fortunate."},
-{i:"094",t:"be동사 진행 불가",q:"From 1923 ①「to」 1929, Calvin Coolidge, ②「known as」 a man of ③「few words」, ④「was being」 president of the United States.",c:[["1","to"],["2","known as"],["3","few words"],["4","was being"]],a:"4",exp:"상태를 나타내는 be동사는 진행 불가. was being → was."},
-{i:"095",t:"have (소유) 진행 불가",q:"Choose the one that is NOT correct according to the standard English.",c:[["1","I am having a party tonight. Will you join me?"],["2","I am having a good time with my colleagues."],["3","I am having this apartment right now, but I am selling it in two years."],["4","I am having a lot of fun with this puzzle book."]],a:"3",exp:"소유의 have는 진행형 불가. am having this apartment → have this apartment. (개최·경험의 have는 진행 가능)"},
-{i:"096",t:"시간부사절 현재→미래",q:"I will take full rest as soon as I ______ my project.",c:[["1","will complete"],["2","complete"],["3","completed"],["4","am completed"]],a:"2",exp:"시간부사절(as soon as)에서는 현재시제가 미래를 대신. complete."},
-{i:"097",t:"시간부사절 현재→미래",q:"Please ①「make sure」 you ②「give me」 ③「a ring」 immediately after you ④「will get to」 the destination.",c:[["1","make sure"],["2","give me"],["3","a ring"],["4","will get to"]],a:"4",exp:"시간부사절(after)에서는 현재시제. will get to → get to."},
-{i:"098",t:"시간부사절 현재→미래",q:"①「As soon as」 ②「these misunderstandings」 ③「will be straightened」 out, we ④「will be able」 to proceed.",c:[["1","As soon as"],["2","these misunderstandings"],["3","will be straightened"],["4","will be able"]],a:"3",exp:"시간부사절에서는 현재시제. will be straightened → are straightened."},
-{i:"099",t:"시간부사절 현재→미래",q:"Please ①「dispose of」 food and ②「beverage」 containers ③「as」 you ④「will leave」 the auditorium.",c:[["1","dispose of"],["2","beverage"],["3","as"],["4","will leave"]],a:"4",exp:"시간부사절(as)에서는 현재시제. will leave → leave."},
-{i:"100",t:"조건부사절 현재→미래",q:"If they ①「will get」 a warning of a cyclone or a tidal wave, they ②「will climb onto」 their roofs and tie ③「themselves」 and their family down, hoping that the rushing waters will carry them away and put them ④「safely」.",c:[["1","will get"],["2","will climb onto"],["3","themselves"],["4","safely"]],a:"1",exp:"조건부사절(If)에서는 현재시제. will get → get."},
-{i:"101",t:"현재완료 (for the past ~)",q:"Mary ______ quite ill for the past few days.",c:[["1","will be"],["2","is"],["3","has been"],["4","had been"]],a:"3",exp:"for the past few days(과거~현재)이므로 현재완료. has been."},
-{i:"102",t:"현재완료 (over the past ~)",q:"It has ①「always been thought」 ②「that」 cell mutation ③「is」 a random event; however, geneticists ④「find」 evidence to the contrary over the past two years.",c:[["1","always been thought"],["2","that"],["3","is"],["4","find"]],a:"4",exp:"over the past two years이므로 현재완료. find → have found."},
-{i:"103",t:"현재완료진행 for + 기간",q:"Doctoral students who are preparing to take their qualifying exams have been studying in the library every night ______ the last three months.",c:[["1","until"],["2","since"],["3","for"],["4","from"]],a:"3",exp:"기간(the last three months) 앞에는 for. have been studying ... for the last three months."},
-{i:"104",t:"현재완료 + 과거표현 불가",q:"The famous painting has been hanging ______.",c:[["1","on that room for a long time"],["2","on that wall many years ago"],["3","on that wall for many years"],["4","on that wall in 1988"]],a:"3",exp:"현재완료진행에는 ago/in 1988 같은 과거표현 불가. on that wall for many years."},
-{i:"105",t:"미래완료 (by + 미래)",q:"A: How long have you been in Korea?  B: Since September.  C: Oh, so by Christmas you ______ here for three months.",c:[["1","will have been"],["2","are"],["3","would be"],["4","will be"]],a:"1",exp:"by Christmas(미래)까지의 완료·계속이므로 미래완료. will have been."},
-{i:"106",t:"현재완료 수동 (since)",q:"①「The euro」 is not new: ②「it's used」 in electronic transactions and ③「by banks」 and international ④「businesses」 since January 1999.",c:[["1","The euro"],["2","it's used"],["3","by banks"],["4","businesses"]],a:"2",exp:"since January 1999이므로 현재완료. it's(is) used → it has been used."},
-{i:"107",t:"현재완료 since",q:"Choose the one that is BEST according to the standard English.",c:[["1","The computer market has grown since it is early 1970s."],["2","The computer market looks grown since the early 1970s."],["3","The computer market grew from the time of early 1970s."],["4","The computer market has seen very large growth since the early 1970s."]],a:"4",exp:"since + 과거시점에는 현재완료. ④ has seen ... growth since the early 1970s가 옳다."},
-{i:"108",t:"과거완료진행 (until + 과거)",q:"My brother has been ①「pursuing」 a ②「career」 in medical research ③「until」 he ④「graduated」 last May.",c:[["1","pursuing"],["2","career"],["3","until"],["4","graduated"]],a:"1",exp:"과거(graduated last May)에 끝난 계속이므로 과거완료진행. has been pursuing → had been pursuing."},
-{i:"109",t:"by the time + 과거 → 과거완료",q:"①「By the time」 I ②「reached」 the bank, the doors ③「were closed」; I ④「could not cash」 my check.",c:[["1","By the time"],["2","reached"],["3","were closed"],["4","could not cash"]],a:"3",exp:"By the time + 과거(reached)보다 이전이므로 과거완료. were closed → had been closed."},
-{i:"110",t:"미래완료 (by + 미래시점)",q:"All trainers ______ eighty hours of instruction by the end of March.",c:[["1","complete"],["2","will be completing"],["3","will have completed"],["4","have completed"]],a:"3",exp:"by the end of March(미래 완료시점)이므로 미래완료. will have completed."},
-{i:"111",t:"미래완료 (by the time + 현재)",q:"①「By the time」 the vacation is ②「over」, the children ③「would finish」 ④「their assignments」.",c:[["1","By the time"],["2","over"],["3","would finish"],["4","their assignments"]],a:"3",exp:"By the time + 현재(is over)이면 주절은 미래완료. would finish → will have finished."},
-{i:"112",t:"미래완료 (by the time)",q:"By the time the mayor gets to his office, his secretary ______ for Santa Barbara.",c:[["1","will have left"],["2","left"],["3","is leaving"],["4","will leave"]],a:"1",exp:"By the time + 현재(gets)이면 주절은 미래완료. will have left."},
-{i:"113",t:"현재완료 + before",q:"Have you ever been to New York ______?",c:[["1","before"],["2","prior"],["3","ago"],["4","previous"]],a:"1",exp:"현재완료 경험(ever)에는 before. ago는 과거시제와만 쓴다."},
-{i:"114",t:"ago → 과거시제",q:"A: Has Nick finished his work yet?  B: Yes, he ______ half an hour ago.",c:[["1","has finished"],["2","was finishing"],["3","finishes"],["4","finished"]],a:"4",exp:"half an hour ago(과거)이므로 단순과거. finished."},
-{i:"115",t:"ago → 과거시제",q:"Years ①「ago」 the people of what is now the Pacific Northwest ②「begins」 to develop an economic system ③「based」 ④「mostly」 on fishing.",c:[["1","ago"],["2","begins"],["3","based"],["4","mostly"]],a:"2",exp:"Years ago(과거)이므로 과거시제. begins → began."},
-{i:"116",t:"ago → 과거시제 (현재완료 불가)",q:"For the recent exhibition, the museum ①「acquired」 a rock ②「from」 a volcano that ③「has erupted」 ④「more than」 two thousand years ago.",c:[["1","acquired"],["2","from"],["3","has erupted"],["4","more than"]],a:"3",exp:"... years ago(과거)에는 현재완료 불가. has erupted → erupted."},
-{i:"117",t:"현재완료 (경험)",q:"①「Learning」 a foreign language is especially difficult for ②「those who」 ③「had never learned」 ④「one」 before.",c:[["1","Learning"],["2","those who"],["3","had never learned"],["4","one"]],a:"3",exp:"현재 사실에 대한 경험이므로 현재완료. had never learned → have never learned."},
-{i:"118",t:"시제일치 (주절 과거 → 종속절 과거)",q:"When George Moore began to write, ①「his style」 was poor; it gave ②「the impression」 that he ③「writes」 on wrapping paper ④「with」 a blunt pencil.",c:[["1","his style"],["2","the impression"],["3","writes"],["4","with"]],a:"3",exp:"주절이 과거(gave)이므로 종속절도 과거. writes → wrote."},
-{i:"119",t:"lie 과거형 lay + 시제",q:"President Lincoln, walking ①「with」 a friend, turned back to assist a beetle that ②「lie」 on ③「its」 back, legs clawing the air, vainly ④「trying」 to turn itself over.",c:[["1","with"],["2","lie"],["3","its"],["4","trying"]],a:"2",exp:"주절이 과거이고 lie(눕다)의 과거는 lay. lie → lay."},
-{i:"120",t:"과거시제 (the last time)",q:"The last time ①「a flu epidemic」 was named ②「after」 Hong Kong, nobody ③「there」 ④「knows」 about the ducks and chickens.",c:[["1","a flu epidemic"],["2","after"],["3","there"],["4","knows"]],a:"4",exp:"The last time ... was named(과거)이므로 과거시제. knows → knew."}
-);
-window.__V502_GRAMMAR__.push(
-{i:"121",t:"가정법 과거 (be → were)",q:"If she ______ the manager, she would not treat us so severely.",c:[["1","were"],["2","are"],["3","is"],["4","had been"]],a:"1",exp:"주절 would treat로 보아 가정법 과거. If절 be동사는 were."},
-{i:"122",t:"가정법 과거 (were)",q:"I ①「would be able to finish」 ②「all my work」 if the day ③「was」 thirty ④「hours」 long.",c:[["1","would be able to finish"],["2","all my work"],["3","was"],["4","hours"]],a:"3",exp:"가정법 과거의 if절 be동사는 were. was → were."},
-{i:"123",t:"가정법 과거 (could)",q:"If I ______ speak English as well as you do, I'd be very happy.",c:[["1","may"],["2","can"],["3","will"],["4","could"]],a:"4",exp:"주절 I'd be로 보아 가정법 과거. If I could speak."},
-{i:"124",t:"가정법 과거완료",q:"A: What do you think about German?  B: If I had known German was so difficult, I ______ it up.",c:[["1","would never have taken"],["2","would never take"],["3","will never take"],["4","would never had taken"]],a:"1",exp:"If I had known(과거완료)이므로 주절은 would have p.p. would never have taken."},
-{i:"125",t:"가정법 과거완료 (could have p.p.)",q:"A friend of mine said boastfully that he ______ abroad if he had only wanted to.",c:[["1","could have gone"],["2","could have been gone"],["3","can have gone"],["4","could go"]],a:"1",exp:"if he had wanted(과거완료)이므로 could have gone. go는 자동사라 been 불필요."},
-{i:"126",t:"가정법 과거완료 + perish 자동사",q:"The human race ______ long ago if people had ceased to aid each other. We cannot exist without mutual help. No one who has the power ______ help can refuse it without guilt.",c:[["1","will be perished — to grant"],["2","would have perished — of granting"],["3","should have perished — of having granted"],["4","have been perished — to grant"]],a:"2",exp:"if ... had ceased이므로 would have perished(perish는 자동사라 수동 불가). 'the power of granting help'."},
-{i:"127",t:"혼합가정법",q:"If I had not missed my bus, I ______ at school by now.",c:[["1","am"],["2","were"],["3","would be"],["4","would have been"]],a:"3",exp:"if절은 과거완료, 주절은 현재(by now)인 혼합가정법. would be."},
-{i:"128",t:"혼합가정법",q:"If the United States ①「had built」 more homes for ②「the poor」 in 2000, the ③「housing」 problems in some parts of this country ④「wouldn't have been」 so serious now.",c:[["1","had built"],["2","the poor"],["3","housing"],["4","wouldn't have been"]],a:"4",exp:"if절은 과거(in 2000), 주절은 현재(now)인 혼합가정법. wouldn't have been → wouldn't be."},
-{i:"129",t:"혼합가정법 + if 생략 도치",q:"Choose the one that is CORRECT according to the standard English.",c:[["1","The foreigner wants to marry with the beautiful Korean girl."],["2","We took care his children when he left from Seoul."],["3","You had better have that tooth to pull out."],["4","Had he not died in the war, he would be 30 years old."]],a:"4",exp:"④는 혼합가정법(if 생략 도치). ① marry with→marry, ② took care of/left Seoul, ③ have that tooth pulled out."},
-{i:"130",t:"가정법 미래 (were to)",q:"Given that the boy has always lived up to the expectations of those around him, if the boy ______, they would be very surprised and shocked.",c:[["1","failed"],["2","was to fail"],["3","had failed"],["4","were to fail"]],a:"4",exp:"실현 가능성이 희박한 미래 가정. if the boy were to fail."},
-{i:"131",t:"가정법 미래 (were to)",q:"If any signer of the Constitution ①「was to return」 to life ②「for a day」, his opinion ③「of」 our amendments ④「would be」 interesting.",c:[["1","was to return"],["2","for a day"],["3","of"],["4","would be"]],a:"1",exp:"가정법 미래 were to. was to → were to."},
-{i:"132",t:"가정법 미래 (should 도치)",q:"______ during my absence, please take a message.",c:[["1","If anyone will call"],["2","Would anyone call"],["3","Should anyone call"],["4","If anyone will have called"]],a:"3",exp:"가정법 미래 should의 if 생략 도치. Should anyone call."},
-{i:"133",t:"가정법 미래 도치 (Should + 동사원형)",q:"①「Should」 a foreign student ②「needing」 ③「help」, he or she ④「must see」 the foreign student advisor.",c:[["1","Should"],["2","needing"],["3","help"],["4","must see"]],a:"2",exp:"Should + 주어 + 동사원형. needing → need."},
-{i:"134",t:"가정법 if 생략 도치 (were)",q:"______ cut away, the wheel could be strengthened with struts or crossbars.",c:[["1","Were large sections of a wheel"],["2","Large sections of a wheel"],["3","Large sections of a wheel were"],["4","Large sections of a wheel to"]],a:"1",exp:"If large sections of a wheel were cut away의 if 생략 도치. Were large sections of a wheel cut away."},
-{i:"135",t:"가정법 과거완료 도치 (Had)",q:"______ I known you were ill, I'd have called to see you.",c:[["1","If"],["2","Had"],["3","When"],["4","Should"]],a:"2",exp:"가정법 과거완료의 if 생략 도치. Had I known."},
-{i:"136",t:"가정법 과거완료 도치",q:"______ better, the team would have been able to defeat the opponent.",c:[["1","If it prepares"],["2","If prepares"],["3","Preparing"],["4","Had it prepared"]],a:"4",exp:"주절 would have been으로 보아 가정법 과거완료 도치. Had it prepared."},
-{i:"137",t:"가정법 과거완료 도치 (had I known)",q:"I would never have encouraged you to go into the field ______ it would be so stressful for you. I'm sorry it's been so difficult for you.",c:[["1","had I known"],["2","and I had known"],["3","should I know"],["4","but I knew"]],a:"1",exp:"if I had known의 도치. had I known."},
-{i:"138",t:"가정법 과거완료 (would have p.p.)",q:"Many of our most successful men, ①「had they been able to choose」 ②「for themselves」, ③「would selected」 some quite different profession ④「from that in which」 they have made their fortunes.",c:[["1","had they been able to choose"],["2","for themselves"],["3","would selected"],["4","from that in which"]],a:"3",exp:"가정법 과거완료의 주절은 would have p.p. would selected → would have selected."},
-{i:"139",t:"but for/without/had it not been for",q:"Choose the one that is NOT correct according to the standard English. ( ______ your help, I should have failed. )",c:[["1","But for"],["2","Without"],["3","If it were not for"],["4","Had it not been for"]],a:"3",exp:"should have failed(과거완료)에는 과거완료 가정이 필요. If it were not for(가정법 과거)는 부적합."},
-{i:"140",t:"if it had not been for (가정법 과거완료)",q:"______ the baby-sitter, they would not have been able to go to the rock concert last night.",c:[["1","Were it not for"],["2","If it has not been for"],["3","If it had not been for"],["4","Having it not been for"]],a:"3",exp:"would not have been able(과거완료)이므로 If it had not been for."},
-{i:"141",t:"I wish + 가정법 과거",q:"Frankly, I wish he ______ our problems a little better.",c:[["1","understood"],["2","understands"],["3","understand"],["4","can understand"]],a:"1",exp:"I wish + 가정법 과거(현재 사실 반대). understood."},
-{i:"142",t:"I wish + 가정법 과거완료",q:"I wish you ______ such a bad cold, because I'm sure you would have enjoyed the concert.",c:[["1","hadn't"],["2","wouldn't have"],["3","hadn't had"],["4","wouldn't have had"]],a:"3",exp:"would have enjoyed로 보아 과거 사실 반대. I wish + 과거완료, had a cold의 부정 hadn't had."},
-{i:"143",t:"I wish + would (소망)",q:"It has been raining for several weeks; I wish ______.",c:[["1","it would stop raining before tomorrow"],["2","I could stop it raining before tomorrow"],["3","it will stop raining before tomorrow"],["4","it would stop to rain before tomorrow"]],a:"1",exp:"미래 소망은 I wish + would. stop raining(동명사 = 그만두다)."},
-{i:"144",t:"as if + 가정법 과거",q:"That American ①「speaks」 Korean ②「as fluently」 ③「as if」 he ④「is」 a Korean.",c:[["1","speaks"],["2","as fluently"],["3","as if"],["4","is"]],a:"4",exp:"as if + 가정법 과거. is → were."},
-{i:"145",t:"as if + 가정법",q:"He ①「looked like」 he were in ②「some strange」 land where ③「dwarves」 were ④「playing about」 in the garden.",c:[["1","looked like"],["2","some strange"],["3","dwarves"],["4","playing about"]],a:"1",exp:"가정법 were와 함께 쓰려면 as if/as though. looked like → looked as if."},
-{i:"146",t:"as if + 가정법 과거",q:"The wind lulls as if ______.",c:[["1","it feared to waken them"],["2","it must waken them"],["3","it fears to waken them"],["4","it is going to awaken them"]],a:"1",exp:"현재 사실 반대의 as if + 가정법 과거. it feared."},
-{i:"147",t:"as if + 가정법 과거완료",q:"She looked at me as if she ______ never seen me before.",c:[["1","had"],["2","is"],["3","has"],["4","was"]],a:"1",exp:"looked(과거)보다 이전이므로 as if + 과거완료. had (seen)."},
-{i:"148",t:"as if + 가정법 과거완료",q:"James looked as if ______.",c:[["1","he saw a ghost"],["2","he has seen a ghost"],["3","he was seeing a ghost"],["4","he had seen a ghost"]],a:"4",exp:"looked(과거)보다 이전의 일이므로 과거완료. he had seen a ghost."},
-{i:"149",t:"It's (about) time + 가정법 과거",q:"It's about time you ______ to work; I mean, you are supposed to work on the project now.",c:[["1","go"],["2","had gone"],["3","went"],["4","have gone"]],a:"3",exp:"It's about time + 가정법 과거. you went."},
-{i:"150",t:"It's about time + 가정법 과거",q:"A: What will you do during Winter vacation?  B: I don't know, but it's about time ______ on something.",c:[["1","I'm deciding"],["2","I'd decided"],["3","I'll decide"],["4","I decided"]],a:"4",exp:"It's about time + 가정법 과거. I decided."},
-{i:"151",t:"would rather + 동사원형",q:"He told me that ______ live with his roommate again next year.",c:[["1","he'll rather not"],["2","he'd rather not"],["3","he won't rather"],["4","he'd rather didn't"]],a:"2",exp:"would rather + (not) 동사원형. he'd rather not live."},
-{i:"152",t:"would rather have p.p. (과거 후회)",q:"A: Did you criticize him for his mistakes?  B: Yes, but ______ it.",c:[["1","I'd not rather"],["2","I'd rather not have done"],["3","I'd better not do"],["4","I'd rather not doing"]],a:"2",exp:"이미 한 일에 대한 반대 소망은 would rather + have p.p. I'd rather not have done it."},
-{i:"153",t:"would rather + 절 (가정법 과거)",q:"A: John wants to see you today.  B: I would rather he ______ tomorrow than today.",c:[["1","come"],["2","came"],["3","should come"],["4","has come"]],a:"2",exp:"would rather + 주어 + 가정법 과거. he came."},
-{i:"154",t:"suggest that + (should) 동사원형",q:"Many a ①「scientist」 suggested ②「to me」 that Agassiz go back to his fossil fish and ③「left」 geology ④「to」 the experts.",c:[["1","scientist"],["2","to me"],["3","left"],["4","to"]],a:"3",exp:"suggest that + (should) 동사원형, go와 병렬. left → leave."},
-{i:"155",t:"insist that + (should) 동사원형",q:"Since his blood pressure is ①「much higher」 ②「than」 it ③「should be」, she insists that he ④「will not」 smoke.",c:[["1","much higher"],["2","than"],["3","should be"],["4","will not"]],a:"4",exp:"insist that + (should) 동사원형. will not → (should) not."},
-{i:"156",t:"move that + (should) 동사원형",q:"Jean's uncle, complaining of his back pain, moved ______ in the hotel.",c:[["1","not staying"],["2","not to stay"],["3","that he not stay"],["4","staying not"]],a:"3",exp:"move(제안하다) that + (should) 동사원형. that he (should) not stay."},
-{i:"157",t:"It is necessary that + (should) 원형",q:"It is necessary that an applicant ______ the form before January 13.",c:[["1","fills out and sends in"],["2","will fill out and send in"],["3","may fill out and send in"],["4","fill out and send in"]],a:"4",exp:"necessary that + (should) 동사원형. fill out and send in."},
-{i:"158",t:"It is necessary to부정사",q:"It is not always necessary ______ the TOEIC examination to be admitted to the company.",c:[["1","to have to take"],["2","that you must take"],["3","to take"],["4","that you have to take"]],a:"3",exp:"necessary는 가주어-진주어 to부정사 구문이 자연스럽다. It is not always necessary to take..."},
-{i:"159",t:"직설법 과거 (but 이후)",q:"I ①「would have done」 the assignment ②「earlier」, but I ③「had met」 an old friend of mine ④「on my way home」.",c:[["1","would have done"],["2","earlier"],["3","had met"],["4","on my way home"]],a:"3",exp:"but 이하는 실제 일어난 일(직설법 과거). had met → met."},
-{i:"160",t:"직설법 과거 (but 이후)",q:"Sue ①「could have passed」 the exam, but she ②「might not have」 enough time to study since her grandfather ③「died」 three days ④「before the exam」.",c:[["1","could have passed"],["2","might not have"],["3","died"],["4","before the exam"]],a:"2",exp:"but 이하는 실제 사실(직설법 과거). might not have → did not have."}
-);
-window.__V502_GRAMMAR__.push(
-{i:"161",t:"관계대명사 + 삽입절 (they think)",q:"Censors delete scenes from movies shown on television ______ younger family members should not see.",c:[["1","that thinks"],["2","that they think"],["3","to think"],["4","when thinking"]],a:"2",exp:"scenes (that they think) younger family members should not see. 삽입절 they think가 들어간 목적격 관계대명사."},
-{i:"162",t:"주격 관계대명사 + 삽입절",q:"I will employ the woman ______ they say speaks English fluently.",c:[["1","to whom"],["2","who"],["3","what"],["4","whatever"]],a:"2",exp:"the woman who (they say) speaks English fluently. speaks의 주어인 주격 who."},
-{i:"163",t:"주격 관계대명사 who",q:"Jane is ①「the only one of the girls」 ②「whom」 as you know ③「is not desirable」 ④「for the group」.",c:[["1","the only one of the girls"],["2","whom"],["3","is not desirable"],["4","for the group"]],a:"2",exp:"is의 주어이므로 주격. whom → who."},
-{i:"164",t:"목적격 관계대명사 whom",q:"In the rain I met a gentleman ______ I believed to be a professor.",c:[["1","who"],["2","whom"],["3","of whom"],["4","whose"]],a:"2",exp:"I believed him to be a professor의 목적어. 목적격 whom."},
-{i:"165",t:"소유격 관계대명사 whose",q:"A person ①「which」 kidneys have failed cannot ②「do without」 the medical ③「treatment」 known ④「as」 dialysis.",c:[["1","which"],["2","do without"],["3","treatment"],["4","as"]],a:"1",exp:"kidneys 앞 소유격이 필요. which → whose."},
-{i:"166",t:"소유격 관계대명사 whose",q:"The modern Olympic Games began in Athens in 1896 as a result ①「of」 the initiative of Baron Pierre de Coubertin, a French educator ②「who」 ③「desire」 was to promote international ④「understanding」 through athletics.",c:[["1","of"],["2","who"],["3","desire"],["4","understanding"]],a:"2",exp:"desire 앞 소유격이 필요. who → whose."},
-{i:"167",t:"관계대명사 of whom / whose",q:"The number and percentage of patients ①「with」 chronic disease, ②「whom」 the diagnosis ③「is already」 known, are ④「increasing」.",c:[["1","with"],["2","whom"],["3","is already"],["4","increasing"]],a:"2",exp:"the diagnosis of whom is known. whom → of whom(또는 whose diagnosis)."},
-{i:"168",t:"소유격 whose top",q:"Look at the mountain ______ is covered with snow.",c:[["1","the top in which"],["2","of which top"],["3","what top"],["4","whose top"]],a:"4",exp:"the mountain whose top is covered (= the top of which is covered). whose top."},
-{i:"169",t:"소유격 whose",q:"He made the journey in a 30-foot sailboat, ______ short-wave radio served as his only link with the outside world.",c:[["1","of which"],["2","what"],["3","whom"],["4","whose"]],a:"4",exp:"short-wave radio 앞 소유격. whose."},
-{i:"170",t:"소유격 whose",q:"Mark Twain, ______ real name was Samuel Langhorne Clemens, wrote many world-famous novels.",c:[["1","who had as his"],["2","whose the"],["3","whose"],["4","in spite of his"]],a:"3",exp:"real name 앞 소유격. whose."},
-{i:"171",t:"소유격 whose",q:"From time to time we must look up words ______.",c:[["1","meaning of which we do not know"],["2","whose meanings we are not familiar"],["3","we do not know their meanings"],["4","whose meanings we do not know"]],a:"4",exp:"words whose meanings we do not know. (②는 with 필요, ③은 their 중복)"},
-{i:"172",t:"관계대명사 which (앞 절 전체)",q:"I also have to look at my brother, ______ I have done so many times in my life, when I'm faced with a situation.",c:[["1","which"],["2","who"],["3","whom"],["4","that"]],a:"1",exp:"앞 문장의 행위 전체를 받는 계속적 용법 which. (that은 계속적 용법 불가)"},
-{i:"173",t:"관계대명사 that (서수 선행사)",q:"He was the first man ______ came here at the party.",c:[["1","who"],["2","whom"],["3","that"],["4","which"]],a:"3",exp:"서수(the first) 선행사 뒤에는 관계대명사 that을 선호. that."},
-{i:"174",t:"전치사 + 관계대명사 (that 불가)",q:"Humus, a substance ①「found」 in soil, is ②「soft」 and spongy and enables plant roots to send ③「out」 tiny hairs through ④「that」 they absorb water and food.",c:[["1","found"],["2","soft"],["3","out"],["4","that"]],a:"4",exp:"전치사(through) 뒤에는 that을 쓸 수 없다. through that → through which."},
-{i:"175",t:"계속적 용법 (that 불가)",q:'Adolescence is the time of life ①「between childhood and adulthood」. The word is ②「derived from」 ③「the Latin word」 adolescere, ④「that means」 "to grow into maturity."',c:[["1","between childhood and adulthood"],["2","derived from"],["3","the Latin word"],["4","that means"]],a:"4",exp:"콤마 뒤 계속적 용법에는 that 불가. that means → which means."},
-{i:"176",t:"관계대명사 what (선행사 있으면 불가)",q:"The tax cut ①「is」 Bush's most profound attack on Clinton's economic legacy. In 1993, without Republican support, Clinton ②「pushed through」 a budget ③「what」 raised taxes on the affluent and ④「sliced into」 the burgeoning deficit.",c:[["1","is"],["2","pushed through"],["3","what"],["4","sliced into"]],a:"3",exp:"선행사 a budget가 있으므로 what 불가. what → that/which."},
-{i:"177",t:"관계대명사 what (선행사 포함)",q:"______ chiefly lies behind slang is simply a kind of linguistic exuberance, an excess of world-making energy.",c:[["1","What"],["2","That"],["3","It"],["4","How"]],a:"1",exp:"선행사를 포함하고 lies의 주어가 되는 명사절. What."},
-{i:"178",t:"복합관계형용사 what money",q:"______ had been deposited in the bank was withdrawn.",c:[["1","The money"],["2","That money"],["3","What money"],["4","Some money"]],a:"3",exp:"What money(= all the money that)가 명사절을 이끌어 주어가 된다. (The money로는 관계사 없이 동사 두 개가 되어 비문)"},
-{i:"179",t:"what I am (현재의 나)",q:"My parents have made me ______ I am.",c:[["1","what"],["2","where"],["3","those who"],["4","whose"]],a:"1",exp:"made me what I am = 현재의 나로 만들었다. what."},
-{i:"180",t:"A is to B what C is to D",q:"Color, line, mass, space, and texture are to a painter ______ to an author.",c:[["1","are what words"],["2","words are what"],["3","what are words"],["4","what words are"]],a:"4",exp:"A is to B what C is to D 구문. ... are to a painter what words are to an author."},
-{i:"181",t:"whatever (복합관계대명사)",q:"No one knows exactly how big China's Internet police force is these days, although estimates run as high as 40,000. But ______, its sophistication is greater than ever.",c:[["1","whatever its size"],["2","however its size"],["3","whatever it's size is"],["4","however it's size is"]],a:"1",exp:"whatever its size (is) = 그 규모가 어떻든. (however는 형용사/부사가 필요)"},
-{i:"182",t:"whatever + 단수동사 (양보)",q:"Whatever ______ in the future, I will never forget your kindness.",c:[["1","happened"],["2","happen"],["3","happens"],["4","did happen"]],a:"3",exp:"Whatever(단수) + 현재시제. happens."},
-{i:"183",t:"whatsoever (전혀, 강조)",q:"A: What do you think of John?  B: He has no sense ______.",c:[["1","wherever"],["2","however"],["3","whatsoever"],["4","nevertheless"]],a:"3",exp:"no + 명사 + whatsoever = 전혀 ~없다. no sense whatsoever."},
-{i:"184",t:"whenever (복합관계부사)",q:"Lawmakers eager to promote a piece of legislation no doubt feel thwarted ______ their bill languishes in committee.",c:[["1","however"],["2","whenever"],["3","whatever"],["4","whomever"]],a:"2",exp:"~할 때마다 = whenever."},
-{i:"185",t:"whoever 단수 일치 (대명사)",q:"①「Whoever」 inspected ②「this radio」 ③「should have put」 ④「their」 identification number on the box.",c:[["1","Whoever"],["2","this radio"],["3","should have put"],["4","their"]],a:"4",exp:"Whoever는 단수. their → his (his or her)."},
-{i:"186",t:"whoever (주격, 명사절)",q:"They were prepared to give their book to ______ came here first.",c:[["1","whomever"],["2","whom"],["3","whoever"],["4","those"]],a:"3",exp:"came의 주어이므로 주격 whoever. (전치사 to의 목적어는 명사절 전체)"},
-{i:"187",t:"whoever (주격)",q:"That rich man offered a reward to ______ restore his lost car.",c:[["1","who should"],["2","whom should"],["3","whoever should"],["4","whomever should"]],a:"3",exp:"restore의 주어이므로 주격 whoever should."},
-{i:"188",t:"관계부사 where",q:"These materials should be stored in a dry place ______ temperature extremes are minimal.",c:[["1","which"],["2","how"],["3","what"],["4","where"]],a:"4",exp:"장소 선행사 a dry place + 완전한 절 → 관계부사 where."},
-{i:"189",t:"관계부사 where (계속적)",q:"During the War of 1812, the British attacked Washington, D.C., and the White House, ______ the president works and lives, was burned and important government buildings were destroyed.",c:[["1","which"],["2","where"],["3","what"],["4","that"]],a:"2",exp:"the White House(장소) + 완전한 절 → 관계부사 where."},
-{i:"190",t:"관계부사 where (the city where)",q:"In the United States, ______ is the most concentrated is New Orleans.",c:[["1","French influence the city"],["2","the city where French influence"],["3","where the city influences French"],["4","where the French influence the city"]],a:"2",exp:"the city where French influence is the most concentrated is New Orleans. 주어가 되는 명사구."},
-{i:"191",t:"관계부사 where + 전치사 중복",q:"In the multi-cultural ①「universe where I live in」, it's safe not to worry about ②「explaining the story」 of Passover because if people don't ③「hear it from me」, they'll hear it ④「some other way」.",c:[["1","universe where I live in"],["2","explaining the story"],["3","hear it from me"],["4","some other way"]],a:"1",exp:"where = in which이므로 in이 중복. where I live in → where I live (또는 in which I live)."},
-{i:"192",t:"the way (how 불가)",q:"The computer has dramatically affected ______ photographic lenses are constructed.",c:[["1","the way how"],["2","that the way"],["3","which way do"],["4","the way"]],a:"4",exp:"the way와 how는 함께 못 쓴다. the way (that) lenses are constructed."},
-{i:"193",t:"the way (관계부사 생략)",q:"A: What do you think of the nation's economic future?  B: ______, it is doomed.",c:[["1","The way I look"],["2","The way I look at it"],["3","The way how I look"],["4","How in which I look at it"]],a:"2",exp:"The way I look at it = 내가 보기에. (how와 the way는 병용 불가)"},
-{i:"194",t:"the reason (why) + 동사",q:"If people cannot rely on the news ①「for facts」, journalism has no reason for ②「being」. The principal reason journalists ③「existing」 in society is that people have a need to ④「be informed of」 and ⑤「comprehend」 the details of experience.",c:[["1","for facts"],["2","being"],["3","existing"],["4","be informed of"],["5","comprehend"]],a:"3",exp:"The reason (why) journalists exist의 동사가 필요. existing → exist."},
-{i:"195",t:"유사관계대명사 but (= that...not)",q:"There is not one of us ______ wishes to help you.",c:[["1","which"],["2","whose"],["3","whoever"],["4","but"]],a:"4",exp:"유사관계대명사 but = that ... not. There is not one of us but wishes(= that does not wish) to help you = 돕고 싶어하지 않는 사람이 없다."},
-{i:"196",t:"유사관계대명사 but (이중부정)",q:"다음 우리말과 같은 뜻의 문장을 고르시오. — 모든 사람은 실수를 한다.",c:[["1","Every man cannot commit any error."],["2","All men don't commit errors."],["3","A man cannot commit errors."],["4","There is no man that commit errors."],["5","There is no man but commits errors."]],a:"5",exp:"There is no man but commits errors = 실수하지 않는 사람은 없다(이중부정). but = that ... not."},
-{i:"197",t:"전치사 + 관계대명사 (at which)",q:"If, through laziness, you read at a slower rate than the rate ______ you are able to comprehend, there is great temptation for your mind to wander.",c:[["1","at which"],["2","which"],["3","as if"],["4","through which"]],a:"1",exp:"comprehend at a rate이므로 at which. the rate at which you are able to comprehend."},
-{i:"198",t:"전치사 + 관계대명사 (주격 자리 in 불가)",q:"Recently, police officers and lawyers ①「have paid」 more attention to crimes ②「associated with」 marital violence, ③「and to the prevention of situations in」 ④「which tend」 to occur.",c:[["1","have paid"],["2","associated with"],["3","and to the prevention of situations in"],["4","which tend"]],a:"4",exp:"which가 tend의 주어이므로 전치사 in이 불필요. in which tend → which tend (situations which tend to occur)."},
-{i:"199",t:"전치사 + 관계대명사",q:"Since I ①「have been elected」 to do the ②「duties of the」 President of our country, I wish to ③「thank all of the people」 here for the great favor ④「which they have looked」 to me.",c:[["1","have been elected"],["2","duties of the"],["3","thank all of the people"],["4","which they have looked"]],a:"4",exp:"the favor for which they have looked to me. which → for which(또는 동사 shown으로 교체)."},
-{i:"200",t:"관계대명사 어법 (for which)",q:"Choose the one that is CORRECT according to the standard English.",c:[["1","The movie that Loretta and Jack went yesterday was Rain Man, which they loved."],["2","My economics professor will let me take my final exam after vacation, for which I am very grateful."],["3","96.5 FM is one radio station that I listen a lot."],["4","This is the kind of plant that you usually have to fertilize it regularly."]],a:"2",exp:"② for which(= and for that)가 옳다. ① went to, ③ listen to, ④ it 중복이 오류."}
-);
-window.__V502_GRAMMAR__.push(
-{i:"201",t:"분사 (감정 수동 frightened)",q:"①「When」 ②「frightening or exciting」, elephants sometimes ③「use their trunks」 to make ④「a loud, shrill cry」.",c:[["1","When"],["2","frightening or exciting"],["3","use their trunks"],["4","a loud, shrill cry"]],a:"2",exp:"코끼리가 '겁먹은/흥분한' 수동. frightening or exciting → frightened or excited."},
-{i:"202",t:"분사 (능동 disappointing)",q:"The professor ①「said」 that ②「our examinations were」 ③「disappointed」 and that he ④「would」 ⑤「give a new test」.",c:[["1","said"],["2","our examinations were"],["3","disappointed"],["4","would"],["5","give a new test"]],a:"3",exp:"시험이 '실망스러운' 능동. disappointed → disappointing."},
-{i:"203",t:"분사 (능동 non-polluting)",q:"①「Even if」 Detroit could provide ②「nonpolluted」 cars by the original deadline to meet ③「prescribed」 Federal standards for clean air, the effect in big cities would be slight because ④「only」 new cars would be properly equipped.",c:[["1","Even if"],["2","nonpolluted"],["3","prescribed"],["4","only"]],a:"2",exp:"차가 '오염시키지 않는' 능동. nonpolluted → nonpolluting."},
-{i:"204",t:"분사 (수동 bottled)",q:"①「Because of」 the flood, we will ②「have to」 drink ③「bottling」 water ④「instead of」 tap water.",c:[["1","Because of"],["2","have to"],["3","bottling"],["4","instead of"]],a:"3",exp:"물이 '병에 담긴' 수동. bottling → bottled."},
-{i:"205",t:"분사 (수동 frozen)",q:"①「Freezing」 foods are the ②「fastest」 ③「growing」 segment of the food ④「industry」.",c:[["1","Freezing"],["2","fastest"],["3","growing"],["4","industry"]],a:"1",exp:"음식이 '냉동된' 수동. Freezing → frozen."},
-{i:"206",t:"분사 (수동 developed)",q:"①「Two of the oldest」 and ②「most」 ③「developing」 money markets are ④「those of」 the United States and Great Britain.",c:[["1","Two of the oldest"],["2","most"],["3","developing"],["4","those of"]],a:"3",exp:"시장이 '발달된' 수동. developing → developed."},
-{i:"207",t:"완료 분사구문 (Having p.p.)",q:"①「Reading」 two novels ②「by」 Hemingway during the summer vacation, I ③「look forward to」 reading ④「more」 of his works.",c:[["1","Reading"],["2","by"],["3","look forward to"],["4","more"]],a:"1",exp:"주절보다 앞선 일(이미 다 읽음)이므로 완료분사. Reading → Having read."},
-{i:"208",t:"분사구문 (동시동작 ~ing)",q:"①「Having eaten」 the cherry pie, I ②「struck」 several pits and ③「nearly」 ④「broke」 a tooth.",c:[["1","Having eaten"],["2","struck"],["3","nearly"],["4","broke"]],a:"1",exp:"파이를 먹다가(동시) 씨를 만난 것이므로 동시동작 분사. Having eaten → Eating(In eating)."},
-{i:"209",t:"분사구문 능동 (having assumed)",q:"North Korea Foreign Ministry officials ①「were」 ②「reportedly」 left all but speechless, ③「having been cheerfully assumed」 that Kelly was coming to town with an offer of ④「renewed」 aid.",c:[["1","were"],["2","reportedly"],["3","having been cheerfully assumed"],["4","renewed"]],a:"3",exp:"관리들이 '가정했던' 능동. having been assumed → having assumed."},
-{i:"210",t:"분사구문 수동 (Forbidden)",q:"①「Forbidding」 to speak ②「to each other」, the ③「Danes communicate」 in stolen glances and occasional whispered words. This is not the way their new life ④「was supposed」 to work out.",c:[["1","Forbidding"],["2","to each other"],["3","Danes communicate"],["4","was supposed"]],a:"1",exp:"덴마크인들이 '금지당한' 수동. Forbidding → Forbidden."},
-{i:"211",t:"분사구문 수동 (used)",q:"①「Properly using」, a good quality ②「polarizing」 filter can produce ③「images of striking beauty」 by deepening and ④「subtly changing」 the colors.",c:[["1","Properly using"],["2","polarizing"],["3","images of striking beauty"],["4","subtly changing"]],a:"1",exp:"필터가 '사용되는' 수동. Properly using → Properly used."},
-{i:"212",t:"분사구문 (joined to)",q:"①「The side of」 Rousseau's thought that arouses nostalgia for nature came to the United States ②「early on」. ③「Recently」, ④「joining to」 many other movements, it ⑤「came to full flower」 and found a wide public.",c:[["1","The side of"],["2","early on"],["3","Recently"],["4","joining to"],["5","came to full flower"]],a:"4",exp:"그 사조가 다른 운동들과 '결합된' 수동. joining to → joined to."},
-{i:"213",t:"분사구문 부정 (Not having p.p.)",q:"______, I don't know him.",c:[["1","Meeting not him before"],["2","Not having met him before"],["3","As not meeting his before"],["4","Having not met him before"]],a:"2",exp:"분사구문의 부정은 분사 앞에 not. Not having met him before."},
-{i:"214",t:"with 분사구문 (with O ~ing)",q:"Come on, Lisa. How can I feel relaxed with ______ me like that?",c:[["1","his watching"],["2","him to watch"],["3","him watching"],["4","him to be watching"]],a:"3",exp:"with + 목적어 + 현재분사(부대상황). with him watching."},
-{i:"215",t:"with 분사구문",q:"Fortune is proud ①「to announce」 its second annual competition for Asia's best business plans. The ②「winning」 submission will ③「advance to」 the semi-final round of E-Chron's annual business competition, with that winner ④「walks away」 with up to $1,000,000 ⑤「in」 prize awards.",c:[["1","to announce"],["2","winning"],["3","advance to"],["4","walks away"],["5","in"]],a:"4",exp:"with + 명사 + 분사. with that winner walks away → with that winner walking away."},
-{i:"216",t:"현수분사 (주어 불일치)",q:"A few years ago, ①「traveling」 through Italy, the idea for a history ②「of」 Florentine architecture ③「occurred」 ④「to him」.",c:[["1","traveling"],["2","of"],["3","occurred"],["4","to him"]],a:"1",exp:"분사구문의 의미상 주어는 he인데 주절 주어는 the idea(현수분사). traveling → While he was traveling."},
-{i:"217",t:"현수분사",q:"Seriously ①「burned」 in a terrible car accident, the doctor was not sure that John ②「could be protected」 from infection ③「long enough」 for his body to begin to heal ④「itself」.",c:[["1","burned"],["2","could be protected"],["3","long enough"],["4","itself"]],a:"1",exp:"화상을 입은 사람은 John인데 주절 주어는 the doctor(현수분사). Seriously burned → John, seriously burned, ..."},
-{i:"218",t:"분사구문 주어 일치",q:"Choose the one that is CORRECT according to the standard English.",c:[["1","Thought to be a cause of teenage skin problems, people with such problems should avoid the plant."],["2","Known for its nutritional value, chocolate is included in the diets of astronauts."],["3","Sweetened with sugar, the children consumed the drink with delight."],["4","Roasted and shelled, workers then grind the beans."]],a:"2",exp:"② chocolate이 분사의 의미상 주어로 일치. ①③④는 모두 현수분사 오류."},
-{i:"219",t:"including (전치사적 분사)",q:"Pyongyang ①「is now pursuing」 a policy that ②「calls for」 improved economic and technical ties with all nations, ③「included」 capitalist countries that have no diplomatic ties with ④「North Korea」.",c:[["1","is now pursuing"],["2","calls for"],["3","included"],["4","North Korea"]],a:"3",exp:"'~을 포함하여'는 including. included → including."},
-{i:"220",t:"분사 included (포함된)",q:"We offer an excellent benefits package, medical and life insurance ______.",c:[["1","concerned"],["2","concerning"],["3","included"],["4","regarding"]],a:"3",exp:"명사 + included = ~을 포함하여(분사). medical and life insurance included."},
-{i:"221",t:"접속부사 however (; however,)",q:"I've looked everywhere for them ______, I can't find them anywhere.",c:[["1","; however"],["2","but"],["3","though"],["4","while"]],a:"1",exp:"두 완전한 절을 잇는 접속부사 however는 세미콜론과 함께. ...them; however, I can't..."},
-{i:"222",t:"등위접속사 but (대조)",q:"These egg substitutes are not really eggs, ______ they look somewhat like eggs when they are cooked.",c:[["1","and"],["2","but"],["3","so"],["4","whereas"]],a:"2",exp:"'진짜 달걀은 아니지만 ~처럼 보인다'는 대조의 but."},
-{i:"223",t:"whereas (대조)",q:"In addition, she finds herself eating food that has just been taken from the refrigerator, ______ she always ate her grandmother's freshly cooked meals in her home.",c:[["1","and"],["2","because"],["3","so"],["4","whereas"]],a:"4",exp:"현재와 과거를 대조. whereas she always ate..."},
-{i:"224",t:"접속사 nor (부정 + 도치)",q:'"There is ①「no general mythology」 today", Campbell says, "②「or can there be」 ever again." Our lives are too ③「greatly various」 in their backgrounds, aims and possibilities for any single order of symbols to work effectively ④「on us all」.',c:[["1","no general mythology"],["2","or can there be"],["3","greatly various"],["4","on us all"]],a:"2",exp:"부정문 뒤 도치(can there be)에는 nor. or can there be → nor can there be."},
-{i:"225",t:"병렬구조 (명사 humidity)",q:"The adult mosquito usually lives ①「for about」 thirty days, ②「although」 the life span varies ③「widely」 with temperature, ④「humid」 and other factors of the environment.",c:[["1","for about"],["2","although"],["3","widely"],["4","humid"]],a:"4",exp:"temperature, factors와 병렬되는 명사가 필요. humid → humidity."},
-{i:"226",t:"병렬구조 (전치사 of 목적어)",q:"Standardized tests, supposed indicators ①「of intellect」, aptitude, readiness, knowledge, or ②「to ability」, are ③「important」 in the college ④「admissions」 process.",c:[["1","of intellect"],["2","to ability"],["3","important"],["4","admissions"]],a:"2",exp:"of의 목적어들과 병렬. to ability → ability."},
-{i:"227",t:"병렬구조 (educators)",q:"①「The idea that learning」 is a lifelong process ②「has been expressed」 by philosophers and ③「educations」 ④「throughout」 the centuries.",c:[["1","The idea that learning"],["2","has been expressed"],["3","educations"],["4","throughout"]],a:"3",exp:"philosophers(사람)와 병렬. educations → educators."},
-{i:"228",t:"병렬구조 (to 전치사)",q:"Richard and Angela went out together several times: ①「to a movie」, to a party with some friends, and ②「then dinner」. They seemed to have a lot ③「in common」 and Angela commented that she couldn't remember ④「having」 such a good time.",c:[["1","to a movie"],["2","then dinner"],["3","in common"],["4","having"]],a:"2",exp:"to a movie, to a party와 병렬. then dinner → to dinner."},
-{i:"229",t:"병렬구조 (형용사 offensive)",q:'"Sexual harassment" is a term ①「that is used」 to describe behavior at work that is ②「sexually offense」 or inappropriate. It includes behavior that ③「makes an employee feel」 uncomfortable because of his or her gender, but it can also include any behavior that is sexual ④「in nature」.',c:[["1","that is used"],["2","sexually offense"],["3","makes an employee feel"],["4","in nature"]],a:"2",exp:"inappropriate(형용사)와 병렬. sexually offense → sexually offensive."},
-{i:"230",t:"병렬구조 (형용사 and)",q:"The great wastes of the southeast quadrant of Saudi Arabia are at once forbiddingly empty, climatically harsh, ______.",c:[["1","and hauntingly beautiful"],["2","while their beauties are haunting"],["3","with haunting beauties"],["4","but their beauty is haunting"]],a:"1",exp:"empty, harsh와 병렬되는 형용사구. and hauntingly beautiful."},
-{i:"231",t:"whether ... or (명사절)",q:"______ the nuclear energy is used well or ill depends on the morality of the world.",c:[["1","What"],["2","That"],["3","Whether"],["4","Which"]],a:"3",exp:"'~인지 아닌지(well or ill)'의 명사절 주어. Whether."},
-{i:"232",t:"whether or not (주어, if 불가)",q:"A: Susan asked if she should get a ride with us to the party.  B: Well, I'll speak to her. ______ we will have room is still not clear.",c:[["1","What if"],["2","If or not so"],["3","Only if"],["4","Whether or not"]],a:"4",exp:"주어 명사절에는 if를 못 쓰고 whether or not. Whether or not we will have room..."},
-{i:"233",t:"whether ... or (전치사 목적어)",q:"The early years of the United States government were characterized by a debate concerning ______ or individual states should have more power.",c:[["1","whether the federal government"],["2","either the federal government"],["3","that the federal government"],["4","the federal government"]],a:"1",exp:"concerning whether A or B should... 명사절. whether the federal government."},
-{i:"234",t:"whether vs that (or not)",q:"Choose the one that is NOT correct according to the standard English.",c:[["1","I don't know whether this answer is correct or not."],["2","I don't know whether or not this answer is correct."],["3","I don't know that this answer is correct or not."],["4","I don't know if this answer is correct."]],a:"3",exp:"that은 'or not'과 함께 쓸 수 없다. that ... or not → whether ... or not."},
-{i:"235",t:"although (절) vs despite (명사)",q:"______ more than 2000 minerals are known, nearly all rocks are formed from seven mineral groups.",c:[["1","In spite of"],["2","However"],["3","Despite"],["4","Although"]],a:"4",exp:"뒤에 절(S+V)이 오므로 접속사 Although. (In spite of/Despite는 명사를 취함)"},
-{i:"236",t:"although (양보절)",q:"Spider monkeys are the best climbers in the jungle, ______ they do not have thumbs.",c:[["1","nevertheless"],["2","despite"],["3","although"],["4","for all"]],a:"3",exp:"뒤에 절이 오는 양보 접속사. although they do not have thumbs."},
-{i:"237",t:"Hardly + 도치 (hardly ... when)",q:"①「Hardly he had entered」 ②「the office」 when he realized that he ③「had forgotten」 ④「his wallet」.",c:[["1","Hardly he had entered"],["2","the office"],["3","had forgotten"],["4","his wallet"]],a:"1",exp:"부정어 Hardly가 문두로 가면 도치. Hardly he had entered → Hardly had he entered."},
-{i:"238",t:"before (시간 접속사) 어법",q:"Choose the one that is CORRECT according to the standard English.",c:[["1","He refused to go except I went him."],["2","No sooner had he left, it began to rain."],["3","I'm sure it will be dark before he gets there."],["4","A girl as she was, she was very brave."]],a:"3",exp:"③이 옳다. ② No sooner ... than it began, ④ Girl as she was(무관사)가 옳은 형태."},
-{i:"239",t:"not ... until",q:"The fire fighters will not respond ______ the call is verified.",c:[["1","by"],["2","until"],["3","although"],["4","and"]],a:"2",exp:"not ... until = ~하고 나서야 비로소. will not respond until the call is verified."},
-{i:"240",t:"Not until + 도치",q:"①「None」 until the negotiations were ②「over」 ③「did Mr. Peterson」 ④「reveal」 the company's intentions.",c:[["1","None"],["2","over"],["3","did Mr. Peterson"],["4","reveal"]],a:"1",exp:"도치(did Mr. Peterson reveal)를 이끄는 것은 Not until. None → Not."}
-);
-window.__V502_GRAMMAR__.push(
-{i:"241",t:"동명사 의미상 주어 (소유격)",q:"The committee members resented ______ of the meeting.",c:[["1","the president that he did not tell them"],["2","the president not to inform them"],["3","the president's not informing them"],["4","that the president had failed informing themselves"]],a:"3",exp:"resent + 동명사. 동명사 의미상 주어는 소유격. the president's not informing them."},
-{i:"242",t:"동명사 의미상 주어 (his)",q:"Unless an athlete is ①「physically fit」, there is no sense in ②「him sacrificing」 ③「himself」 for victory in any game and, therefore, facing a ④「lifetime injury」.",c:[["1","physically fit"],["2","him sacrificing"],["3","himself"],["4","lifetime injury"]],a:"2",exp:"동명사 sacrificing의 의미상 주어는 소유격. him → his."},
-{i:"243",t:"object to + 동명사",q:"You don't object ______ you by your first name, do you?",c:[["1","to my calling"],["2","that I am call"],["3","that I call"],["4","for calling"]],a:"1",exp:"object to에서 to는 전치사이므로 동명사. to my calling."},
-{i:"244",t:"동명사 의미상 주어 (my)",q:"I do not understand ①「why」 Mother ②「should object to」 ③「me having played」 the piano ④「at the party」.",c:[["1","why"],["2","should object to"],["3","me having played"],["4","at the party"]],a:"3",exp:"object to + 동명사, 의미상 주어 소유격. me → my (my having played)."},
-{i:"245",t:"confess to + (완료)동명사",q:"John, scolded by his teacher, finally confessed to ______ the book.",c:[["1","stealing"],["2","steal"],["3","have stolen"],["4","having stolen"]],a:"4",exp:"confess to + 동명사, 이전의 일이므로 완료동명사. having stolen."},
-{i:"246",t:"avoid + 동명사",q:"The director of the department ①「advised」 the new employees to avoid ②「to waste」 time ③「studying」 methods that were ④「so out-of-date」.",c:[["1","advised"],["2","to waste"],["3","studying"],["4","so out-of-date"]],a:"2",exp:"avoid는 동명사를 목적어로 취한다. to waste → wasting."},
-{i:"247",t:"finish + 동명사",q:"The weekend ①「before Christmas」, she had to finish ②「to buy」 gifts, prepare a holiday dinner ③「for 10 persons」 and organize birthday parties for ④「all three of」 her young children.",c:[["1","before Christmas"],["2","to buy"],["3","for 10 persons"],["4","all three of"]],a:"2",exp:"finish는 동명사를 취한다. to buy → buying."},
-{i:"248",t:"stop + 동명사 (끊다)",q:"Koreans ①「are planning」 to stop ②「to smoke」 ③「since」 the government ④「has required」 health warnings on cigarette packages.",c:[["1","are planning"],["2","to smoke"],["3","since"],["4","has required"]],a:"2",exp:"'담배를 끊다'는 stop + 동명사. to smoke → smoking."},
-{i:"249",t:"stop + to부정사 (~하려고 멈추다)",q:"If you're ①「planning」 ②「to be near」 the post office today, ③「could you stop」 ④「buying」 some stamps?",c:[["1","planning"],["2","to be near"],["3","could you stop"],["4","buying"]],a:"4",exp:"'우표를 사려고 멈추다'는 stop + to부정사. buying → to buy."},
-{i:"250",t:"acknowledge + 동명사",q:"The college administrator acknowledged ______ my letter of recommendation.",c:[["1","receiving"],["2","to receive"],["3","to have received"],["4","having been received"]],a:"1",exp:"acknowledge는 동명사를 취한다. receiving(능동)."},
-{i:"251",t:"devotion to + 동명사",q:"I was satisfied ①「with」 his devotion to ②「get」 his job ③「done well」 ④「against all odds」.",c:[["1","with"],["2","get"],["3","done well"],["4","against all odds"]],a:"2",exp:"devotion to에서 to는 전치사이므로 동명사. get → getting."},
-{i:"252",t:"obstacle to + 동명사",q:"①「Using」 a lattice of lasers and ultra-cold temperatures, German scientists ②「have made」 a new type of matter that could ③「overcome」 an obstacle to ④「make」 quantum computers.",c:[["1","Using"],["2","have made"],["3","overcome"],["4","make"]],a:"4",exp:"obstacle to에서 to는 전치사. make → making."},
-{i:"253",t:"remember to do (미래)",q:"Choose the one that is NOT correct according to the standard English.",c:[["1","Gas lamps lit the street."],["2","I must remember seeing him next Sunday."],["3","I was always having trouble with my teeth."],["4","We enjoyed too much and we nearly missed the plane."]],a:"2",exp:"앞으로 할 일은 remember to do. next Sunday(미래)이므로 remember seeing → remember to see."},
-{i:"254",t:"remember ~ing (과거)",q:"Choose the one that is NOT correct according to the standard English.",c:[["1","I stopped buying coffee; it was too expensive."],["2","I don't remember to mail the letter, but I think I did."],["3","I'll never forget meeting Todd. He was so kind."],["4","I regret to tell you that you failed the exam."]],a:"2",exp:"한 일을 기억하는 것은 remember ~ing. did(이미 함)이므로 remember to mail → remember mailing."},
-{i:"255",t:"need to be p.p. (수동)",q:"Several of these washers are out of order and ______.",c:[["1","need to be repairing"],["2","require that they be repaired"],["3","repairing is required of them"],["4","need to be repaired"]],a:"4",exp:"세탁기가 '수리되어야' 하는 수동. need to be repaired."},
-{i:"256",t:"시제일치 (belonged)",q:"①「Had he not believed」 that ②「every individual」 ③「belongs to」 history, his story ④「would not have been」 ⑤「worth telling」.",c:[["1","Had he not believed"],["2","every individual"],["3","belongs to"],["4","would not have been"],["5","worth telling"]],a:"3",exp:"주절이 과거완료(Had he ... believed)이므로 종속절도 과거. belongs to → belonged to."},
-{i:"257",t:"be used to + 동명사 (익숙하다)",q:"If you are used ①「to analyze」 texts, you will be able to formulate a clear statement of ②「what」 your draft ③「turned out」 ④「to be about」.",c:[["1","to analyze"],["2","what"],["3","turned out"],["4","to be about"]],a:"1",exp:"be used to + 동명사 = ~에 익숙하다. to analyze → to analyzing."},
-{i:"258",t:"look forward to + 동명사",q:"Elizabeth is ①「looking forward to」 ②「go」 to Europe after she ③「finishes」 her studies ④「at the university」.",c:[["1","looking forward to"],["2","go"],["3","finishes"],["4","at the university"]],a:"2",exp:"look forward to에서 to는 전치사. go → going."},
-{i:"259",t:"be opposed to + 동명사",q:"Animal rights groups are opposed ______ health and beauty products on animals.",c:[["1","to test"],["2","tests of"],["3","testing"],["4","to testing"]],a:"4",exp:"be opposed to + 동명사. to testing."},
-{i:"260",t:"contribute to + 동명사",q:"\"With the country's growing credit crunch, we do not think lowering the call rate would contribute much ______ the economy,\" said the governor of central bank.",c:[["1","boost"],["2","boosting"],["3","to boost"],["4","to boosting"]],a:"4",exp:"contribute to + 동명사. to boosting."},
-{i:"261",t:"It is necessary for + to부정사",q:"It is necessary ______ how to cope with the new problems.",c:[["1","his deciding"],["2","what he decides"],["3","that he decides"],["4","for him to decide"]],a:"4",exp:"가주어-진주어 to부정사, 의미상 주어 for him. for him to decide."},
-{i:"262",t:"to부정사 (to + 동사원형)",q:"Since money is ①「greatly needed」, this is the time ②「for all of you」 ③「to giving」 ④「generously」 to the school.",c:[["1","greatly needed"],["2","for all of you"],["3","to giving"],["4","generously"]],a:"3",exp:"to부정사는 to + 동사원형. to giving → to give."},
-{i:"263",t:"For + 의미상주어 + to부정사",q:"______ a state to survive more than a fleeting historical moment, it must have the loyalty of its residents.",c:[["1","If"],["2","For"],["3","Then"],["4","Of"]],a:"2",exp:"to부정사의 의미상 주어 For + 명사. For a state to survive..."},
-{i:"264",t:"in order for + O + to부정사",q:"In order ______ children ______, they must be treated with respect.",c:[["1","that — felt loved"],["2","to — for feel loved"],["3","for — to feel loved"],["4","that — to feel loved"]],a:"3",exp:"in order for + 목적어 + to부정사. for children to feel loved."},
-{i:"265",t:"be to부정사 (조건 if)",q:"Men as well as women need some flexibility ______ they are to be healthy.",c:[["1","or"],["2","but"],["3","if"],["4","therefore"]],a:"3",exp:"if + be to부정사 = ~하려면. if they are to be healthy."},
-{i:"266",t:"가정법 미래 (were to)",q:"If the CIA ______ something like these devices had to be invented.",c:[["1","were to exist"],["2","had not existed"],["3","does not exist"],["4","was to exist"]],a:"1",exp:"가정법 미래 were to. were to exist. (was to는 틀린 형태)"},
-{i:"267",t:"urge + O + to부정사",q:"I ______ the shipping department to make an overall revise on its shipping procedure.",c:[["1","asked for"],["2","called on"],["3","call for"],["4","urged"]],a:"4",exp:"urge + 목적어 + to부정사. urged the department to make... (ask for/call for는 O+to 불가)"},
-{i:"268",t:"demand (that) + S + 동사원형",q:"She demanded ______ this small present as a token of her appreciation.",c:[["1","me to accept"],["2","for me to accept"],["3","my acception"],["4","I accept"]],a:"4",exp:"demand는 that절 + (should) 동사원형. demanded (that) I accept... (demand + O + to부정사 불가)"},
-{i:"269",t:"continue + to부정사/동명사",q:"①「The portable computer」 ②「allows」 people ③「who are away from offices」 to ④「continue to working」.",c:[["1","The portable computer"],["2","allows"],["3","who are away from offices"],["4","continue to working"]],a:"4",exp:"continue + to부정사 또는 동명사. to working → to work(또는 working)."},
-{i:"270",t:"continue to be (상태)",q:"As ①「heart disease」 continues ②「being」 the number-one killer in the United States, researchers ③「have become」 increasingly interested in ④「identifying」 the potential risk factors.",c:[["1","heart disease"],["2","being"],["3","have become"],["4","identifying"]],a:"2",exp:"상태의 지속은 continue to be. being → to be."},
-{i:"271",t:"hope + to부정사",q:"Space exploration is ①「so costly」 that ②「no single nation」 ③「can hope」 ④「sustaining」 a major program indefinitely.",c:[["1","so costly"],["2","no single nation"],["3","can hope"],["4","sustaining"]],a:"4",exp:"hope는 to부정사를 취한다. sustaining → to sustain."},
-{i:"272",t:"want + to부정사 (that절 불가)",q:"①「There being」 ②「low sales」, companies ③「wanted that they were able to develop」 new ④「products」.",c:[["1","There being"],["2","low sales"],["3","wanted that they were able to develop"],["4","products"]],a:"3",exp:"want는 that절을 못 취한다. wanted that they were able to develop → wanted to be able to develop."},
-{i:"273",t:"expect + to부정사",q:"Mannerist artists ______ artistic invention and imagination more important than the faithful reproduction of nature.",c:[["1","expected to consider"],["2","hoped people to consider"],["3","wanted that people would consider"],["4","expected people to be considered"]],a:"1",exp:"expect + to부정사. expected to consider...more important. (hope/want는 어법 오류, ④는 수동 오류)"},
-{i:"274",t:"pretend + to부정사",q:"People laugh when they are nervous or afraid because they hope ______.",c:[["1","others to pretend in control"],["2","to pretend being in control"],["3","to pretend to be in control"],["4","they can pretend being in control"]],a:"3",exp:"hope to + 원형, pretend to + 원형. hope to pretend to be in control."},
-{i:"275",t:"be said to have p.p. / compel + O + to",q:"The original Olympic races are said ______ with Oenomaus, who used to compel any suitor who sought his daughter's hand ______ against him in a race.",c:[["1","to begin — to be running"],["2","to be begun — run"],["3","to have begun — to run"],["4","as having begun — running"]],a:"3",exp:"과거의 일이므로 are said to have begun, compel + O + to run. to have begun — to run."},
-{i:"276",t:"be estimated to have p.p.",q:"①「At the beginning」 of that year a particularly bad smog, ②「which lasted」 for many weeks, ③「was estimated」 ④「to be caused」 between 4,000 and 8,000 deaths.",c:[["1","At the beginning"],["2","which lasted"],["3","was estimated"],["4","to be caused"]],a:"4",exp:"스모그가 사망을 '야기한' 능동·완료. to be caused → to have caused."},
-{i:"277",t:"had hoped to + 원형",q:"I had hoped ①「to have learned」 French before my trip ②「to Paris」, but I ③「did not have」 any ④「extra money」 for a course.",c:[["1","to have learned"],["2","to Paris"],["3","did not have"],["4","extra money"]],a:"1",exp:"had hoped 자체가 이루지 못한 소망을 나타내므로 단순부정사. to have learned → to learn."},
-{i:"278",t:"지시대명사 it (모호)",q:"①「After studying」 hard ②「to become」 an accountant, he discovered that ③「it was」 not what he wanted ④「to do」.",c:[["1","After studying"],["2","to become"],["3","it was"],["4","to do"]],a:"3",exp:"it이 가리키는 대상이 분명치 않다. it was → being an accountant was(명확한 주어 필요)."},
-{i:"279",t:"consider + 동명사; decided not to",q:"Choose the one that is CORRECT according to the standard English.",c:[["1","I considered marrying her, but decided not."],["2","I considered to marry her, but decide not to."],["3","I considered marrying her, but decided not to."],["4","I considered marrying with her, but decided not to."]],a:"3",exp:"consider + 동명사, 부정의 대부정사 not to. ① decided not to, ② consider+~ing, ④ marry(타동사)가 옳다."},
-{i:"280",t:"분리부정사 (to completely solve)",q:"①「To completely solve」 the problem ②「requires」 more thought ③「than we have given」 ④「so far」.",c:[["1","To completely solve"],["2","requires"],["3","than we have given"],["4","so far"]],a:"1",exp:"to와 동사원형 사이에 부사가 들어간 분리부정사. To completely solve → To solve ... completely."}
-);
-window.__V502_GRAMMAR__.push(
-{i:"281",t:"happen 자동사 (수동 불가)",q:"①「A lot of」 baby boomers ②「feel that」 a terrible thing ③「is happened」 to the ④「moral fiber」 of this country.",c:[["1","A lot of"],["2","feel that"],["3","is happened"],["4","moral fiber"]],a:"3",exp:"happen은 자동사로 수동 불가. is happened → is happening(has happened)."},
-{i:"282",t:"occur 자동사 (수동 불가)",q:"Whenever ①「election are occurred」 in this country, there ②「is often」 a candidate, as well as a few media broadcasters, ③「who becomes」 ④「an immortalized figure」 on the landscape of American history.",c:[["1","election are occurred"],["2","is often"],["3","who becomes"],["4","an immortalized figure"]],a:"1",exp:"occur는 자동사로 수동 불가. election are occurred → an election occurs."},
-{i:"283",t:"originate 자동사 (수동 불가)",q:"Classicism which ①「was originated」 in Greece and ②「continued」 in ancient Rome, was the principal contributor ③「to」 that aspect of our life which ④「is usually referred」 to as ⑤「secular」.",c:[["1","was originated"],["2","continued"],["3","to"],["4","is usually referred"],["5","secular"]],a:"1",exp:"originate는 자동사로 수동 불가. was originated → originated."},
-{i:"284",t:"seem 자동사 (수동 불가)",q:"Where he ①「was seemed」 to be is a question ②「for the courts」 to determine, ③「not」 television jurors ④「like you and me」.",c:[["1","was seemed"],["2","for the courts"],["3","not"],["4","like you and me"]],a:"1",exp:"seem은 자동사로 수동 불가. was seemed → seemed."},
-{i:"285",t:"resemble 수동 불가",q:"Choose the one that is NOT correct according to the standard English.",c:[["1","He was killed in the Vietnamese War."],["2","William is called Bill for short."],["3","His father is resembled by John."],["4","This bed was not slept in."]],a:"3",exp:"resemble은 상태 타동사로 수동 불가. is resembled by John → John resembles his father."},
-{i:"286",t:"be accustomed to + 명사/동명사",q:"①「Although」 a lawyer ②「by profession」 and ③「accustomed public」 speaking, Sir Robert Borden was not ④「a great orator」.",c:[["1","Although"],["2","by profession"],["3","accustomed public"],["4","a great orator"]],a:"3",exp:"be accustomed to + 명사/동명사. accustomed public speaking → accustomed to public speaking."},
-{i:"287",t:"be faced with (분사구문)",q:"Now the US Supreme Court, ______, will have to decide who deserves first crack at those scarce resources.",c:[["1","facing with two potential landmark cases"],["2","which face two potential landmark cases"],["3","faced with two potential landmark cases"],["4","faces two potential landmark cases"]],a:"3",exp:"be faced with = ~에 직면하다. (the Court) faced with two ... cases."},
-{i:"288",t:"be reminded of",q:"Residents of Longbaoshan, a village just 72 km north of Beijing, only have to look out of the window ______ the deserts that are devouring huge swathes of China's once-fertile farm land.",c:[["1","to remind"],["2","to be reminded of"],["3","to be provided the chance to look at"],["4","to be provided by the chance to look at"]],a:"2",exp:"be reminded of = ~을 떠올리게 되다. to be reminded of the deserts."},
-{i:"289",t:"be convinced of",q:"Though Johnson knew his serious defects, he ①「was broad-minded enough」 ②「to appoint」 the man ③「to the important position」 because he ④「was convincing」 of his ability.",c:[["1","was broad-minded enough"],["2","to appoint"],["3","to the important position"],["4","was convincing"]],a:"4",exp:"be convinced of = ~을 확신하다. was convincing → was convinced."},
-{i:"290",t:"4형식 수동 (be denied)",q:"As a novice to the business, Mr. Kim ______ time off work to take care of some personal business.",c:[["1","denied"],["2","will deny"],["3","was denied"],["4","had denied"]],a:"3",exp:"그에게 휴가가 '거부된' 4형식 수동. Mr. Kim was denied time off work."},
-{i:"291",t:"be considered + 보어 (관계절)",q:"The Chinese constructed the Great Wall ______ a marvel even today.",c:[["1","it is considered"],["2","which is considered"],["3","is considered"],["4","which considered"]],a:"2",exp:"the Great Wall을 받는 관계대명사 + 수동. which is considered a marvel."},
-{i:"292",t:"be acknowledged as (수동)",q:"Dr. Park, a professor at a prestigious private college in Korea, ______ as one of Korea's greatest researchers of science.",c:[["1","is acknowledged"],["2","has acknowledgement"],["3","acknowledged"],["4","acknowledges"]],a:"1",exp:"Dr. Park이 '인정받는' 수동. is acknowledged as..."},
-{i:"293",t:"be allowed to (수동)",q:"He believes that the desires, having been repressed from consciousness because they are unacceptable to the socialized mind of the dreamer, ______ to emerge even into the dream without disguise.",c:[["1","did not allowed"],["2","had not allowed"],["3","has not allowed"],["4","are not allowed"]],a:"4",exp:"the desires가 '허용되지 않는' 수동, 복수 현재. are not allowed to emerge."},
-{i:"294",t:"be asked to (수동)",q:"When both mother and father work outside the home, the lives of all the family members change ①「quite a bit」. Dad must ②「help out」 more at home. The older children may ③「ask to help the housework」 and ④「take care of the younger children」.",c:[["1","quite a bit"],["2","help out"],["3","ask to help the housework"],["4","take care of the younger children"]],a:"3",exp:"아이들이 '요청받는' 수동, 그리고 help with the housework. ask to help → be asked to help with."},
-{i:"295",t:"be forced to (수동 + to부정사)",q:"①「With the advent of」 Microsoft windows, ②「many other software makers」 were ③「forced upgrade」 their ④「own」 products.",c:[["1","With the advent of"],["2","many other software makers"],["3","forced upgrade"],["4","own"]],a:"3",exp:"be forced to + 동사원형. forced upgrade → forced to upgrade."},
-{i:"296",t:"be told to (say 수동 불가)",q:"The ①「children」 had been ②「said」 not ③「to go」 ④「near the water」.",c:[["1","children"],["2","said"],["3","to go"],["4","near the water"]],a:"2",exp:"say는 사람을 목적어로 한 수동 불가. had been said → had been told (were told not to go)."},
-{i:"297",t:"지각동사 수동 (be noticed ~ing)",q:"He ______ the room by anyone.",c:[["1","didn't notice to enter"],["2","wasn't noticed entering"],["3","didn't notice enter"],["4","wasn't noticed to entering"]],a:"2",exp:"지각동사의 수동은 be + p.p. + 현재분사/to부정사. wasn't noticed entering the room."},
-{i:"298",t:"It is believed that (수동)",q:"______ that the formation of the sun, the planets and other stars began with the condensation of an interstellar gas cloud.",c:[["1","The belief"],["2","To believe"],["3","Believing"],["4","It is believed"]],a:"4",exp:"가주어 it + 수동 + that절. It is believed that..."},
-{i:"299",t:"be said to (Politics 단수)",q:"Politics ______ to be the art of the impossible.",c:[["1","is told"],["2","are told"],["3","is said"],["4","are said"]],a:"3",exp:"Politics(학문)는 단수, be said to. Politics is said to be..."},
-{i:"300",t:"be supposed to",q:"We ______ to read Macbeth for tomorrow.",c:[["1","suppose"],["2","are supposing"],["3","are to suppose"],["4","are supposed"]],a:"4",exp:"be supposed to = ~하기로 되어 있다. We are supposed to read..."},
-{i:"301",t:"had to (must의 과거)",q:"Ken ①「must walk」 7 miles ②「yesterday」 ③「because」 his car ④「broke down」.",c:[["1","must walk"],["2","yesterday"],["3","because"],["4","broke down"]],a:"1",exp:"과거의 의무는 had to. must walk → had to walk."},
-{i:"302",t:"had to be p.p. (과거 의무 수동)",q:"Some of the milk turned sour before it reached the market and ______ away.",c:[["1","had to be thrown"],["2","must be thrown"],["3","had to throw"],["4","must throw"]],a:"1",exp:"과거 의무 + 수동. had to be thrown away."},
-{i:"303",t:"had better not",q:"You ①「had not better」 ②「quit」 your job until you find another one. ③「Once」 you are ④「out of work」, you may find it hard to get another.",c:[["1","had not better"],["2","quit"],["3","Once"],["4","out of work"]],a:"1",exp:"had better의 부정은 had better not. had not better → had better not."},
-{i:"304",t:"would rather not",q:"He said that he ______.",c:[["1","would not rather go"],["2","would rather not go"],["3","not would rather go"],["4","would rather go not"]],a:"2",exp:"would rather의 부정은 would rather not + 동사원형. would rather not go."},
-{i:"305",t:"should have p.p. (과거 후회)",q:"A: Did you finish Lesson 7 today?  B: Yes, but I ______ it last Friday.",c:[["1","should finish"],["2","should have finished"],["3","should be finishing"],["4","should be finished"]],a:"2",exp:"과거에 했어야 했다(아쉬움). should have finished it last Friday."},
-{i:"306",t:"would rather not have p.p. (과거 후회)",q:"You ______ out yesterday without coat. No wonder you caught cold.",c:[["1","would rather not have gone"],["2","had better not go"],["3","should have gone"],["4","need have gone"]],a:"1",exp:"외투 없이 나가지 말았어야 했다는 과거의 아쉬움. would rather not have gone out."},
-{i:"307",t:"mention (타동사, 전치사 불가)",q:"A: I wish we'd gone to the beach this weekend.  B: You ______ it sooner.",c:[["1","should have mentioned about"],["2","would have mentioned"],["3","ought to have mentioned on"],["4","had better have mentioned"]],a:"2",exp:"mention은 타동사라 전치사 about/on을 못 쓴다. ①③은 전치사 오류, ④는 형태 오류. would have mentioned it."},
-{i:"308",t:"must (강한 추측)",q:"Even in summer this place did not look exactly hospitable; in winter, conditions ______ exceedingly harsh.",c:[["1","be"],["2","have to be"],["3","must be"],["4","should have been"]],a:"3",exp:"'~임에 틀림없다'는 강한 추측 must. conditions must be exceedingly harsh."},
-{i:"309",t:"조동사 + 완료진행 수동",q:"Choose the one that is CORRECT according to the standard English.",c:[["1","He must have been being interrogated by the police then."],["2","He must have being been interrogated by the police then."],["3","He must be having been interrogated by the police then."],["4","He must be being had interrogated by the police then."]],a:"1",exp:"과거진행 수동의 추측: must have been being interrogated가 옳은 어순이다."},
-{i:"310",t:"need not have p.p.",q:"That was very kind of you, but you ______ have done it.",c:[["1","need not"],["2","can not"],["3","may"],["4","had better"]],a:"1",exp:"need not have p.p. = ~할 필요 없었는데 (했다). you need not have done it."},
-{i:"311",t:"need to (일반동사 과거)",q:"I think we ______ working on time yesterday.",c:[["1","needed start"],["2","needed to start"],["3","need have started"],["4","need to"]],a:"2",exp:"과거의 need는 일반동사 needed to + 동사원형. needed to start."},
-{i:"312",t:"need not have p.p. (불필요한 행동)",q:"I ______ to the movies with her last night. Thus I felt so tired this morning.",c:[["1","did not need to go"],["2","need not have gone"],["3","need not go"],["4","do not need to go"]],a:"2",exp:"갈 필요 없었는데 갔다(그래서 피곤). need not have gone. (did not need to go는 가지 않음)"},
-{i:"313",t:"needn't have p.p.",q:"Jane took an umbrella because she thought it was going to rain. But it didn't rain. ______.",c:[["1","she should have taken an umbrella"],["2","she would have taken an umbrella"],["3","She needn't have taken an umbrella"],["4","she mustn't have taken an umbrella"]],a:"3",exp:"가져갈 필요 없었는데 가져갔다. She needn't have taken an umbrella."},
-{i:"314",t:"lest ... (should) 동사원형",q:"Choose the one that is CORRECT according to the standard English.",c:[["1","They always speak low for fear that they should not be overheard."],["2","They always speak low for fear of not being overheard."],["3","They always speak low lest they be overheard."],["4","They always speak low lest they should not be overheard."]],a:"3",exp:"lest 자체가 부정(~하지 않도록)이므로 not과 함께 못 쓴다. lest they (should) be overheard."},
-{i:"315",t:"used to + 동사원형 (과거 습관)",q:"Choose the one that is CORRECT according to the standard English.",c:[["1","I would smoke, but not now."],["2","I used to smoke, but not now."],["3","I would smoke, but I don't now."],["4","I used to smoking, but not now."]],a:"2",exp:"과거의 습관 used to + 동사원형. I used to smoke, but not now."},
-{i:"316",t:"be used to + 동명사 (익숙하다)",q:"Some reports argue that students ①「who used to using」 a calculator ②「may」 forget ③「how to do」 mental ④「calculations」.",c:[["1","who used to using"],["2","may"],["3","how to do"],["4","calculations"]],a:"1",exp:"계산기에 '익숙한'은 be used to + 동명사. who used to using → who are used to using."},
-{i:"317",t:"could have p.p. (가능했으나 안 함)",q:"A: Why are you angry with me? I didn't do anything.  B: That's just it. You ______ me. Instead, you sat there and did nothing.",c:[["1","helped"],["2","had helped"],["3","could help"],["4","could have helped"]],a:"4",exp:"도와줄 수 있었는데 안 했다. You could have helped me."},
-{i:"318",t:"could have been p.p. (가능성)",q:"A: Please accept my apology for breaking one of your favorite glasses.  B: Well, I suppose it might have been worse. All of my glasses ______.",c:[["1","won't never be broken"],["2","must have been broken"],["3","could have been broken"],["4","should have been broken"]],a:"3",exp:"다 깨질 수도 있었다(가능성). could have been broken."},
-{i:"319",t:"move that + (should) 원형",q:"I ①「intend to move」 that our committee ②「appoints」 Tom as chairman, and I ③「hope」 that you ④「will second」 my motion.",c:[["1","intend to move"],["2","appoints"],["3","hope"],["4","will second"]],a:"2",exp:"move(동의·제안) that + (should) 동사원형. appoints → appoint."},
-{i:"320",t:"suggestion that + (should) 원형",q:"The judge assented to the suggestion that ______.",c:[["1","both of the criminals will soon be set free"],["2","some of the criminals will soon be guilty only"],["3","the prisoner be sentenced to death"],["4","the prisoner shall be sentenced to death"]],a:"3",exp:"suggestion that + (should) 동사원형. the prisoner be sentenced to death."}
-);
-window.__V502_GRAMMAR__.push(
-{i:"321",t:"not so 원급 as",q:"Wild strawberries are ______ as cultivated strawberries.",c:[["1","no less sweeter"],["2","not sweeter"],["3","not as sweeter"],["4","not so sweet"]],a:"4",exp:"원급 비교 not so[as] + 원급 + as. not so sweet as."},
-{i:"322",t:"as + 형용사 + as (원급)",q:"①「Until」 Napoleon's dreams of empire led him ②「into the land of」 the pharaohs, his knowledge about Egypt had been ③「as obscurely as」 the hieroglyphics ④「on its stone facades」.",c:[["1","Until"],["2","into the land of"],["3","as obscurely as"],["4","on its stone facades"]],a:"3",exp:"be동사의 보어는 형용사. as obscurely as → as obscure as."},
-{i:"323",t:"not so much A as B",q:"Employers, at the point of graduation, may not so much treasure a student's grades ______ the habits and attitudes which those grades signify.",c:[["1","before"],["2","than"],["3","as"],["4","to"]],a:"3",exp:"not so much A as B = A라기보다는 B. as the habits and attitudes."},
-{i:"324",t:"as many ... as",q:"Living beings have a natural inclination to fill any habitat with as many individuals ______ the nutrients and space in the area will allow.",c:[["1","on"],["2","how"],["3","as"],["4","that"]],a:"3",exp:"as many + 명사 + as. as many individuals as ... will allow."},
-{i:"325",t:"as many (같은 수의)",q:"A: How long did you wait?  B: I waited there for ten minutes; that seemed ______ hours to me.",c:[["1","many"],["2","very much"],["3","as many"],["4","so much"]],a:"3",exp:"as many = 같은 수의. 10분이 (마치) 10시간처럼 느껴졌다. seemed as many hours."},
-{i:"326",t:"as much as (~만큼)",q:"An elephant can lift ______ a ton with its tusks.",c:[["1","so much that"],["2","it"],["3","most"],["4","as much as"]],a:"4",exp:"as much as = ~만큼이나. as much as a ton."},
-{i:"327",t:"the + 비교급 (of the two)",q:"Of the two candidates, I think ______.",c:[["1","Mr. Grant is best suited"],["2","Mr. Grant is suited best"],["3","Mr. Grant is the better suited"],["4","that is the better suited of them"]],a:"3",exp:"둘 중 비교에는 the + 비교급. the better suited."},
-{i:"328",t:"the larger of which",q:"There were two large offices on this floor. ______ served as a conference room.",c:[["1","the larger of which"],["2","the larger of them"],["3","the largest of which"],["4","largest of that"]],a:"1",exp:"둘 중(larger) + 계속적 관계대명사 of which. the larger of which."},
-{i:"329",t:"all the more (이유 because)",q:"We admire him ______ because he is honest.",c:[["1","by far"],["2","the sooner"],["3","all the more"],["4","none the less"]],a:"3",exp:"all the more + because = ~때문에 더욱. admire him all the more."},
-{i:"330",t:"none the less / few vs a few",q:"다음 우리말과 같은 뜻의 문장을 고르시오. — 그가 결점이 있음에도 불구하고 나는 여전히 그를 좋아한다.",c:[["1","I don't like him because he has few faults."],["2","I don't like him the less because he has a few faults."],["3","I like him the more because he has a few faults."],["4","I like him none the less because he has few faults."]],a:"2",exp:"'결점이 있음에도'이므로 a few faults(있음). I don't like him the less = 그만큼 덜 좋아하지는 않는다(여전히 좋아함)."},
-{i:"331",t:"the 비교급, the 비교급 (fewer)",q:"The more citizens who are alert to the possibility of stolen wallets and pocketbooks, ______ thefts there will be.",c:[["1","the more"],["2","the fewer"],["3","the less"],["4","much less"]],a:"2",exp:"경계할수록 절도가 적어진다. thefts(가산)이므로 the fewer."},
-{i:"332",t:"the 비교급 + 주어 + 동사",q:"The more distant a star happens to be, the dimmer ______.",c:[["1","that seems to us"],["2","seeming to us"],["3","seeming to us"],["4","it seems to us"]],a:"4",exp:"the + 비교급 다음에는 주어+동사. the dimmer it seems to us."},
-{i:"333",t:"the 비교급 어순 (도치 불가)",q:"The more dangerous ①「is the sport」, the ②「more enthusiastically」 people ③「appear to」 love ④「watching it」.",c:[["1","is the sport"],["2","more enthusiastically"],["3","appear to"],["4","watching it"]],a:"1",exp:"the + 비교급 구문에서는 도치하지 않는다. is the sport → the sport is."},
-{i:"334",t:"inferior to (라틴 비교급)",q:"①「Most of the telephone」 ②「systems」 in Vietnam were installed in ③「the 50's and 60's」 and are inherently ④「much inferior than」 the modern systems already in use in Malaysia and Thailand.",c:[["1","Most of the telephone"],["2","systems"],["3","the 50's and 60's"],["4","much inferior than"]],a:"4",exp:"라틴계 비교급 inferior는 than이 아니라 to. inferior than → inferior to."},
-{i:"335",t:"much more (긍정문)",q:"Everyone has a right to enjoy his liberty, ______ his life.",c:[["1","much more"],["2","much less"],["3","indeed"],["4","so"]],a:"1",exp:"긍정문에서 '~은 말할 것도 없이'는 much more. (부정문은 much[still] less)"},
-{i:"336",t:"still less (부정문)",q:"I don't suggest that he is negligent, still ______ that he is dishonest.",c:[["1","more"],["2","less"],["3","better"],["4","worse"]],a:"2",exp:"부정문에서 '하물며 ~은 아니다'는 still less. still less that he is dishonest."},
-{i:"337",t:"no less ... than (~못지않게)",q:"다음 우리말과 같은 뜻의 문장을 고르시오. — 그녀의 누이가 미인인 것처럼 그녀도 미인이다.",c:[["1","She is not as beautiful as her sister is."],["2","She is not so much a beauty as her sister is."],["3","She is no less beautiful than her sister is."],["4","She is not more beautiful than her sister is."]],a:"3",exp:"no less A than B = B 못지않게 A하다. She is no less beautiful than her sister."},
-{i:"338",t:"부사 최상급 (the 생략)",q:"The cheetah, which runs ______ among the land animals in the world, has been hunted almost to extinction.",c:[["1","fastest"],["2","the fastest"],["3","faster-than-expected"],["4","and the fastest"]],a:"1",exp:"among ~ 최상급, 부사 최상급은 the를 생략할 수 있다. runs fastest."},
-{i:"339",t:"one of the most + 최상급",q:"An automobile is one of ______ expensive things a person usually purchases.",c:[["1","most"],["2","the better"],["3","less"],["4","the most"]],a:"4",exp:"one of the + 최상급 + 복수명사. one of the most expensive things."},
-{i:"340",t:"one of one's most + 최상급",q:"The Grapes of Wrath, a novel about the Depression years of the 1930's, is one of John Steinbeck's ______ books.",c:[["1","and most famous"],["2","are most famous"],["3","most famous"],["4","the most famous"]],a:"3",exp:"소유격 뒤에는 the 없이 최상급. one of John Steinbeck's most famous books."},
-{i:"341",t:"much + 비교급",q:"I passed my driver's test. It seemed much ______ this time.",c:[["1","easy"],["2","easier"],["3","easiest"],["4","easily"]],a:"2",exp:"much는 비교급을 강조. much easier."},
-{i:"342",t:"비교급 + than",q:"①「Modern athletes」 command much ②「great」 salaries for their ③「services」 than the athletes of past generations ④「did」.",c:[["1","Modern athletes"],["2","great"],["3","services"],["4","did"]],a:"2",exp:"than이 있으므로 비교급. great → greater."},
-{i:"343",t:"비교급 강조 (very 불가)",q:"You could stay ①「at」 the big ②「luxury」 hotels but the small hotels are ③「very more」 ④「reasonable」.",c:[["1","at"],["2","luxury"],["3","very more"],["4","reasonable"]],a:"3",exp:"비교급은 very로 강조할 수 없다. very more → much[far] more."},
-{i:"344",t:"비교급 + far (worse)",q:"It's bad ①「enough」 when you get ②「divorced」, but far ③「bad」 when you lose your children ④「as well」.",c:[["1","enough"],["2","divorced"],["3","bad"],["4","as well"]],a:"3",exp:"far + 비교급. far bad → far worse."},
-{i:"345",t:"by far the most (최상급 강조)",q:"By far ______ exciting of the dog's qualities is his inherent working ability.",c:[["1","the best"],["2","very"],["3","the most"],["4","much"]],a:"3",exp:"by far는 최상급을 강조, the most exciting. By far the most exciting."},
-{i:"346",t:"by far + 최상급 (주어)",q:"By far ______ of Korea is oil.",c:[["1","it is the most important import"],["2","the most important import is"],["3","that is the most important import"],["4","the most important import"]],a:"4",exp:"주어는 the most important import, 동사는 is. By far the most important import of Korea is oil."},
-{i:"347",t:"배수사 + as ~ as",q:"Although difficult to imagine, the mass of the sun is about 750 times ______ that of all the planets combined.",c:[["1","the greatly"],["2","greater"],["3","as great as"],["4","the greatest"]],a:"3",exp:"배수사 + as + 원급 + as. 750 times as great as that of..."},
-{i:"348",t:"배수사 + as much as",q:"A: John, which hotel would you recommend?  B: Well, staying in this hotel costs ______ staying in that one.",c:[["1","more than twice"],["2","as twice much as"],["3","as much twice"],["4","twice as much as"]],a:"4",exp:"배수사 + as much as. twice as much as."},
-{i:"349",t:"배수사 + as much as (money)",q:"Last year, Matt earned ______ his brother, who has a better position.",c:[["1","twice as many as"],["2","twice as more as"],["3","twice as much as"],["4","twice more than"]],a:"3",exp:"돈(불가산)은 as much as. twice as much as his brother."},
-{i:"350",t:"배수사 + as ~ as (than 불가)",q:"Researchers ①「have found」 that children ②「experience」 twice as much deep sleep ③「than」 adults, ④「a fact which」 may teach us something about the connection between age and learning ability.",c:[["1","have found"],["2","experience"],["3","than"],["4","a fact which"]],a:"3",exp:"as much ~ as 구문. than → as (twice as much ... as adults)."},
-{i:"351",t:"배수/원급 + a population",q:"It is estimated that ______ the United States.",c:[["1","the country is less than half of the population of"],["2","the country has less than half as many population as"],["3","the population of the country is less than half of"],["4","the country has less than half as large a population as"]],a:"4",exp:"half as large a population as = 절반 크기의 인구. the country has less than half as large a population as the United States."},
-{i:"352",t:"배수사 + as much effort",q:"Those taped lectures will take twice ______ to understand.",c:[["1","effort"],["2","much effort"],["3","as much effort"],["4","effort as much"]],a:"3",exp:"twice as much + 불가산명사. twice as much effort."},
-{i:"353",t:"배수사 + as likely as",q:"According to the report, men who smoke are ______ to die of cancer.",c:[["1","as twice likely"],["2","likely as twice"],["3","as likely twice"],["4","twice as likely"]],a:"4",exp:"배수사 + as + 원급. twice as likely to die."},
-{i:"354",t:"비교 대상 일치 (the Earth's)",q:"The climates of Venus and Mars ①「are closest to」 ②「the Earth」, but they are nowhere near ③「so comfortable as」 our planet's ④「temperate climate」.",c:[["1","are closest to"],["2","the Earth"],["3","so comfortable as"],["4","temperate climate"]],a:"2",exp:"climates와 비교하려면 the Earth's(climate). the Earth → the Earth's (that of the Earth)."},
-{i:"355",t:"비교 대상 일치 / than any other",q:"Because sailors ①「are often assigned」 to ships ②「that remain」 at sea for months at a time, men in the Navy ③「spend more time」 away from home ④「than any branch of the service」.",c:[["1","are often assigned"],["2","that remain"],["3","spend more time"],["4","than any branch of the service"]],a:"4",exp:"men과 비교 대상이 일치해야 한다. than any branch → than (men in) any other branch."},
-{i:"356",t:"비교 대상 일치 (Englishman's)",q:"Mr. Kim has never been ①「out of」 Korea, ②「yet」 his accent is very ③「similar to」 an ④「Englishman」.",c:[["1","out of"],["2","yet"],["3","similar to"],["4","Englishman"]],a:"4",exp:"accent끼리 비교해야 한다. an Englishman → an Englishman's (accent)."},
-{i:"357",t:"비교 대상 일치 (anyone's)",q:"다음 우리말과 같은 뜻의 문장을 고르시오. — 나의 문화적 배경과 지적 교육은 어느 누구에게도 뒤떨어지지 않는다.",c:[["1","My cultural background and intellectual training are not behind other people."],["2","My cultural background and intellectual training are as good as other people."],["3","My cultural background and intellectual training are as good as other people's."],["4","My cultural background and intellectual training are as good as anyone's."],["5","My cultural background and intellectual training are on the higher level."]],a:"4",exp:"'어느 누구에게도'이므로 anyone's. as good as anyone's(= anyone's background and training)."},
-{i:"358",t:"than + 주격 (than I)",q:"Because Robert ①「ate faster」 than ②「me」, he ③「was able to」 leave the cafeteria ④「sooner」.",c:[["1","ate faster"],["2","me"],["3","was able to"],["4","sooner"]],a:"2",exp:"than 다음 절의 주어이므로 주격. than me → than I (did)."},
-{i:"359",t:"비교 (than any other planet does)",q:"Venus ①「approaches」 the Earth ②「more closely」 ③「than any other」 ④「planet is」.",c:[["1","approaches"],["2","more closely"],["3","than any other"],["4","planet is"]],a:"4",exp:"approaches와 호응하는 대동사 does가 필요. planet is → planet does."},
-{i:"360",t:"rather than 병렬 (전치사 일치)",q:"The ①「judges' decisions」 can ②「be based」 upon what is right ③「rather than」 ④「by what」 is popular.",c:[["1","judges' decisions"],["2","be based"],["3","rather than"],["4","by what"]],a:"4",exp:"based upon ~ rather than (upon) ~. 전치사를 맞춰야 한다. by what → (upon) what."}
-);
-window.__V502_GRAMMAR__.push(
-{i:"361",t:"부가의문문 (isn't he)",q:"Michael is going to be nominated to receive the Academy Award for best director, ______?",c:[["1","won't he"],["2","doesn't he"],["3","didn't he"],["4","isn't he"]],a:"4",exp:"is going to be의 부가의문문은 isn't he."},
-{i:"362",t:"명령문 부가의문문 (will you)",q:"A: Turn off the light, ______?  B: Of course, I will.",c:[["1","do you"],["2","will you"],["3","shall you"],["4","can you"]],a:"2",exp:"명령문의 부가의문문은 will you."},
-{i:"363",t:"부가의문문 (I don't think ...)",q:"Choose the one that is CORRECT according to the standard English.",c:[["1","He'd stayed home that night, wouldn't he?"],["2","He's writing his parents a letter, wasn't he?"],["3","I don't think he is smart, is he?"],["4","The police should not do such a thing, should he?"]],a:"3",exp:"③ I don't think + 절은 종속절 기준으로 is he. ① hadn't he, ② isn't he, ④ should they가 옳다."},
-{i:"364",t:"부정어 도치 (Never ... have there been)",q:"Never ①「in the history of humanity」 ②「there have been」 ③「more people」 ④「living」 on this relatively small planet.",c:[["1","in the history of humanity"],["2","there have been"],["3","more people"],["4","living"]],a:"2",exp:"부정어 Never가 문두로 가면 도치. there have been → have there been."},
-{i:"365",t:"Little did + 주어 (도치)",q:"______ anyone know that the old gentleman in the audience had once been an outstanding scholar.",c:[["1","So far as did"],["2","It was rare for"],["3","Not only had"],["4","Little did"]],a:"4",exp:"부정어 Little + 도치. Little did anyone know..."},
-{i:"366",t:"부정어 도치 (Hardly ever)",q:"Hardly ever ①「there have been」 ②「so many choices」 for young people ③「entering」 the work force ④「as there are today」.",c:[["1","there have been"],["2","so many choices"],["3","entering"],["4","as there are today"]],a:"1",exp:"부정어 Hardly ever + 도치. there have been → have there been."},
-{i:"367",t:"Rarely + do + 주어 (도치)",q:"Rarely ______ for more than a few seconds once they enter the Earth's atmosphere.",c:[["1","while meteors blaze"],["2","meteors that blaze"],["3","do meteors blaze"],["4","blaze meteors"]],a:"3",exp:"부정어 Rarely + 도치. Rarely do meteors blaze."},
-{i:"368",t:"Not only + 도치",q:"Not only ①「the Japanese machine was judged」 ②「easier to operate」 and more flexible than the American model, but ③「it was priced」 $60,000 lower and ④「could be delivered faster」.",c:[["1","the Japanese machine was judged"],["2","easier to operate"],["3","it was priced"],["4","could be delivered faster"]],a:"1",exp:"Not only가 문두로 가면 도치. the Japanese machine was judged → was the Japanese machine judged."},
-{i:"369",t:"부정어 도치 + 시제 (did)",q:"①「Neither in her campaign nor in her acceptance speech」 ②「do」 Miss Eliot ③「acknowledge」 those ④「whose」 assistance had ⑤「won」 her the nomination.",c:[["1","Neither in her campaign nor in her acceptance speech"],["2","do"],["3","acknowledge"],["4","whose"],["5","won"]],a:"2",exp:"과거(had won) 맥락이고 Miss Eliot은 단수. do → did (Neither ... did Miss Eliot acknowledge)."},
-{i:"370",t:"nor + 도치",q:"Disabilities do not diminish ①「the rights」 of individuals ②「nor」 ③「they have to」 reduce opportunities to ④「participate in or contribute to」 society.",c:[["1","the rights"],["2","nor"],["3","they have to"],["4","participate in or contribute to"]],a:"3",exp:"nor 뒤에는 도치. they have to → do they have to."},
-{i:"371",t:"Only + 부사 도치",q:"①「Only then」 ②「he became」 aware of the fact that there were more ③「difficulties ahead」 than he ④「had expected」.",c:[["1","Only then"],["2","he became"],["3","difficulties ahead"],["4","had expected"]],a:"2",exp:"Only + 부사가 문두로 가면 도치. he became → did he become."},
-{i:"372",t:"only now + 도치",q:"Fingerprint recognition ①「has long been used」 in high-security ②「places like」 FBI headquarters, but only now ③「it is finding」 a place ④「in the mainstream」.",c:[["1","has long been used"],["2","places like"],["3","it is finding"],["4","in the mainstream"]],a:"3",exp:"only now가 문두로 가면 도치. it is finding → is it finding."},
-{i:"373",t:"So + 형용사 도치 (so ... that)",q:"______ at conveying her underlying messages through topical plots and contemporary characters that by 1940 her book had sold some three million copies.",c:[["1","Grace L. Hill, so successful"],["2","So successful, Grace L. Hill"],["3","So successful was Grace L. Hill"],["4","Because Grace L. Hill was so successful"]],a:"3",exp:"So + 형용사가 문두로 가면 도치, so ... that 구문. So successful was Grace L. Hill ... that..."},
-{i:"374",t:"so + 조동사 + 주어 (도치)",q:"A: Are you going to see him?  B: If the boy goes, ______.",c:[["1","so I go"],["2","so will I"],["3","I do so"],["4","so go I"]],a:"2",exp:"'나도 그렇다'(긍정 동의)는 so + 조동사 + 주어. so will I."},
-{i:"375",t:"so does + 주어 (도치 동의)",q:"Mary objects ①「to our buying」 this house ②「without the approval」 ③「of our president」, and ④「John does so」.",c:[["1","to our buying"],["2","without the approval"],["3","of our president"],["4","John does so"]],a:"4",exp:"'존도 그렇다'는 so does John. John does so → so does John."},
-{i:"376",t:"Neither do I (부정 동의)",q:"A: I have a lot of classical records, but I don't understand modern jazz.  B: ______. I think it's boring.",c:[["1","So do I"],["2","I don't"],["3","I do"],["4","Neither do I"]],a:"4",exp:"부정에 대한 동의는 Neither + 조동사 + 주어. Neither do I."},
-{i:"377",t:"Nor + 도치 (부정)",q:"Choose the one that is CORRECT according to the standard English.",c:[["1","They didn't read the play. Neither they acted it."],["2","They didn't read the play. They didn't act it, too."],["3","They didn't read the play. Nor they acted it, too."],["4","They didn't read the play. Nor did they act it."]],a:"4",exp:"Nor + 도치(did they act). ① Neither did they act, ②는 either, ③은 도치 누락이 오류."},
-{i:"378",t:"Here comes + 명사 (도치)",q:"A: Can you tell me where my teacher is?  B: Yes, of course! ______.",c:[["1","Here comes he."],["2","Here comes your teacher."],["3","Comes your teacher."],["4","Your teacher here comes."]],a:"2",exp:"Here + 동사 + 명사주어 도치. Here comes your teacher. (대명사 주어면 도치 안 함)"},
-{i:"379",t:"장소부사구 도치",q:"In the center of the balcony ______.",c:[["1","did sit the guest of honor"],["2","sit the guest of honor"],["3","was sitting the guest of honor"],["4","was the guest of honor sitting"]],a:"3",exp:"장소부사구 + 동사 + 주어 도치. was sitting the guest of honor."},
-{i:"380",t:"장소부사구 도치 (is standing)",q:"Over the river and through the woods ______ my grandmother lives.",c:[["1","the house is standing where"],["2","where is standing the house"],["3","is standing the house where"],["4","is the house standing"]],a:"3",exp:"장소부사구 도치. is standing the house where my grandmother lives."},
-{i:"381",t:"furniture 불가산 (a 불가)",q:"How long ①「did it take you」 ②「to」 ③「learn to make」 ④「a furniture」 like this?",c:[["1","did it take you"],["2","to"],["3","learn to make"],["4","a furniture"]],a:"4",exp:"furniture는 불가산명사라 a를 못 붙인다. a furniture → furniture(a piece of furniture)."},
-{i:"382",t:"clothing 불가산 (복수 불가)",q:"Plenty of items of ①「clothings」 and furniture ②「are displayed」 ③「at the fair」 ④「every Saturday」.",c:[["1","clothings"],["2","are displayed"],["3","at the fair"],["4","every Saturday"]],a:"1",exp:"clothing은 불가산명사로 복수형 불가. clothings → clothing."},
-{i:"383",t:"information 불가산",q:"Miss Smith went to the library to get ______.",c:[["1","an information"],["2","some information"],["3","the information"],["4","one piece of an information"]],a:"2",exp:"information은 불가산. some information. (an information, one piece of an information은 불가)"},
-{i:"384",t:"equipment 불가산",q:"①「This book」 explains ②「all sorts of」 useful ③「equipments」 on ④「how to」 repair cars.",c:[["1","This book"],["2","all sorts of"],["3","equipments"],["4","how to"]],a:"3",exp:"equipment는 불가산. equipments → equipment."},
-{i:"385",t:"police 복수 취급",q:"Choose the one that is NOT correct according to the standard English.",c:[["1","The police wants to interview the man about the robbery."],["2","My pants are on the table."],["3","Physics is my favorite subject."],["4","Three days is not long enough for a good holiday."]],a:"1",exp:"the police는 복수 취급. wants → want."},
-{i:"386",t:"cattle 복수",q:"In the early days of Rome, cattle ______ for money.",c:[["1","was used"],["2","were used"],["3","can be used"],["4","had been used"]],a:"2",exp:"cattle는 복수 취급, 과거시제. were used."},
-{i:"387",t:"mathematics 단수",q:"It is difficult to classify mathematics ①「as」 simply ②「an art or a science」 because ③「they have」 ④「elements of both」.",c:[["1","as"],["2","an art or a science"],["3","they have"],["4","elements of both"]],a:"3",exp:"mathematics(학문)는 단수. they have → it has."},
-{i:"388",t:"statistics 복수",q:"The statistics released ①「by」 the state department ②「makes」 the economic situation look ③「bleaker」 than it already ④「is」.",c:[["1","by"],["2","makes"],["3","bleaker"],["4","is"]],a:"2",exp:"여기서 statistics는 '통계 자료'로 복수. makes → make."},
-{i:"389",t:"means (수단, 단복동형)",q:"Before the ①「invention of」 ②「railroads」, the only ③「mean」 of land transportation was ④「the horse」.",c:[["1","invention of"],["2","railroads"],["3","mean"],["4","the horse"]],a:"3",exp:"'수단'의 means는 단복동형. mean → means."},
-{i:"390",t:"가산/불가산 + many/much",q:"Choose the one that is CORRECT according to the standard English.",c:[["1","Much of the ships were wrecked off the coast."],["2","John doesn't like book."],["3","Many of the mud were sold to China."],["4","There was little wine left in the bottle."]],a:"4",exp:"④ little + 불가산(wine)이 옳다. ① Many of the ships, ② books, ③ Much of the mud was가 옳다."},
-{i:"391",t:"a few (가산) vs a little (불가산)",q:"Choose the one that is NOT correct according to the standard English.",c:[["1","We need a few apples."],["2","We also need some butter."],["3","Could you pick up a little bananas?"],["4","How much sugar do you want?"]],a:"3",exp:"bananas는 가산 복수이므로 a few. a little bananas → a few bananas."},
-{i:"392",t:"as much as (양, food)",q:"Elephants are ①「capable of」 doing very hard work. They ②「can be used」 in the jungles where machines cannot go. A grown elephant may consumes ③「as many as 200」 pounds of food a day, a disadvantage which ④「tends to」 offset its capacity for heavy work.",c:[["1","capable of"],["2","can be used"],["3","as many as 200"],["4","tends to"]],a:"3",exp:"food의 양을 나타내므로 as much as. as many as 200 pounds of food → as much as 200 pounds of food."},
-{i:"393",t:"a number of (많은) vs the number of",q:"①「The number of」 battles were ②「fought」 ③「between」 the fleets of Nelson and ④「Napoleon」.",c:[["1","The number of"],["2","fought"],["3","between"],["4","Napoleon"]],a:"1",exp:"'많은 전투가 벌어졌다'는 A number of battles were fought. The number of → A number of."},
-{i:"394",t:"number of + 복수명사",q:"①「Through the years」, scientists ②「have developed」 smaller but ③「increasingly」 more powerful batteries for the growing number of portable electrical ④「device」.",c:[["1","Through the years"],["2","have developed"],["3","increasingly"],["4","device"]],a:"4",exp:"number of + 복수명사. device → devices."},
-{i:"395",t:"number of (사람, amount 불가)",q:"The mayor ①「expressed」 concern about the large ②「amount of」 ③「people」 injured at ④「crossings」.",c:[["1","expressed"],["2","amount of"],["3","people"],["4","crossings"]],a:"2",exp:"people은 가산이므로 number of. amount of → number of."},
-{i:"396",t:"billion (수사 뒤 단수)",q:"The government ①「expects to」 attract foreign investment ②「of」 ③「as much as」 $15 ④「billions」 this year.",c:[["1","expects to"],["2","of"],["3","as much as"],["4","billions"]],a:"4",exp:"수사 뒤의 hundred/thousand/million/billion은 단수형. $15 billions → $15 billion."},
-{i:"397",t:"percent (단복동형)",q:"In Africa and Asia, five ①「percents」 of babies ②「die」 before ③「they are」 ④「one year old」.",c:[["1","percents"],["2","die"],["3","they are"],["4","one year old"]],a:"1",exp:"percent은 단복동형. five percents → five percent."},
-{i:"398",t:"hundreds of (막연한 수)",q:"In ①「spite of」 all the recent ②「advances」 in opening up ③「the sea」, man still uses it pretty much ④「the way」 he did ⑤「hundred of」 years ago.",c:[["1","spite of"],["2","advances"],["3","the sea"],["4","the way"],["5","hundred of"]],a:"5",exp:"막연한 수 '수백의'는 hundreds of. hundred of → hundreds of."},
-{i:"399",t:"이중소유격 (that ... of his)",q:"______ was impertinent to the people present.",c:[["1","His that remark"],["2","That remark of his"],["3","That his remark"],["4","That remark of he"]],a:"2",exp:"지시사+명사+of+소유대명사(이중소유격). That remark of his."},
-{i:"400",t:"some of + 소유격 + 복수명사",q:"A: Did you see anyone interesting at the party?  B: Yes, ______ were there.",c:[["1","some of John's friends"],["2","some friend of John's"],["3","some of John's friend"],["4","some of John friends"]],a:"1",exp:"some of + 한정사 + 복수명사. some of John's friends were there."}
-);
-window.__V502_GRAMMAR__.push(
-{i:"401",t:"the (방향 left side)",q:"You ①「should sit」 on ②「a left side」 ③「of」 my father ④「at the dinner table」.",c:[["1","should sit"],["2","a left side"],["3","of"],["4","at the dinner table"]],a:"2",exp:"방향·면을 가리키는 명사 앞에는 the. a left side → the left side."},
-{i:"402",t:"the (of ~ 한정)",q:"①「A size of」 the United States Supreme Court ②「was the focal point」 ③「of one」 of the most famous ④「attacks」 on the federal judiciary.",c:[["1","A size of"],["2","was the focal point"],["3","of one"],["4","attacks"]],a:"1",exp:"of구로 한정되므로 the. A size of → The size of."},
-{i:"403",t:"한정 the (his 중복)",q:"Although ①「many of his songs」 are well known to the public, ②「little is known」 about ③「his」 early childhood and college background ④「of」 country singer Johnny Lee.",c:[["1","many of his songs"],["2","little is known"],["3","his"],["4","of"]],a:"3",exp:"of country singer Johnny Lee로 한정되므로 his가 아니라 the. his → the."},
-{i:"404",t:"신체부위 the (the face)",q:"①「All of a sudden」 the young woman ②「rose to」 ③「her feet」 and struck him ④「on his face」.",c:[["1","All of a sudden"],["2","rose to"],["3","her feet"],["4","on his face"]],a:"4",exp:"'동사 + 사람 + 전치사 + the + 신체부위'. struck him on his face → struck him on the face."},
-{i:"405",t:"신체부위 the (in the face)",q:"Choose the one that is CORRECT according to the standard English.",c:[["1","The Earth travels at a high rate of speed around sun."],["2","The woman on white was standing with her head up."],["3","The workers in America get paid by week."],["4","She looked me in the face."]],a:"4",exp:"④ looked me in the face가 옳다. ① around the sun, ② in white, ③ by the week가 옳다."},
-{i:"406",t:"언어명 무관사 (English)",q:"①「The English」 has both regular and irregular verbs. Learn ②「the basic verb forms」 of these words ③「in order to」 form the tenses and avoid ④「mixing tenses」 in writing.",c:[["1","The English"],["2","the basic verb forms"],["3","in order to"],["4","mixing tenses"]],a:"1",exp:"언어명은 무관사. The English(영국인)가 아니라 English. The English → English."},
-{i:"407",t:"산맥 the (the Rocky Mountains)",q:"Jack London's ①「tour」 ②「of Rocky Mountains」 ③「was delayed」 by his illness and the ④「San Francisco earthquake」 of 1906.",c:[["1","tour"],["2","of Rocky Mountains"],["3","was delayed"],["4","San Francisco earthquake"]],a:"2",exp:"산맥 이름 앞에는 the. of Rocky Mountains → of the Rocky Mountains."},
-{i:"408",t:"the Netherlands (국가명 the)",q:"Annie Smith Peck was ①「the first woman in Netherlands」 to navigate through ②「the Nile」 and scale the Matterhorn, ③「the height and beauty」 ④「of which」 have made them the goal of all adventurers.",c:[["1","the first woman in Netherlands"],["2","the Nile"],["3","the height and beauty"],["4","of which"]],a:"1",exp:"the Netherlands처럼 복수형 국가명에는 the. in Netherlands → in the Netherlands."},
-{i:"409",t:"in the 1840s (연대)",q:"The Irish brought the popular custom of Halloween to America ______ 1840s.",c:[["1","into the"],["2","in the"],["3","within"],["4","during"]],a:"2",exp:"연대 앞에는 in the. in the 1840s."},
-{i:"410",t:"the + 형용사 (~한 사람들)",q:"______ are sought by an elementary school.",c:[["1","Mentally retarded teachers"],["2","Teachers retarded for mental cases"],["3","Mental retarded case teachers"],["4","Teachers for the mentally retarded"]],a:"4",exp:"the + 형용사 = ~한 사람들. Teachers for the mentally retarded(정신지체아를 위한 교사)."},
-{i:"411",t:"by the + 단위 (by the yard)",q:"For ①「half a century」, Samuel Dulles has sold the fabric ②「by two yards」 ③「in local」, ④「regional」, and national events.",c:[["1","half a century"],["2","by two yards"],["3","in local"],["4","regional"]],a:"2",exp:"단위로 판매할 때 by the + 단위. by two yards → by the yard."},
-{i:"412",t:"관용구 무관사 (door to door)",q:"At seven o'clock in the morning, guards ①「rouse」 prisoners from ②「the door to the door」, ③「leading the inmates」 into the dusty exercise yard of ④「a Lao prison」.",c:[["1","rouse"],["2","the door to the door"],["3","leading the inmates"],["4","a Lao prison"]],a:"2",exp:"대구 관용구는 무관사. the door to the door → door to door."},
-{i:"413",t:"가산명사 단수 무관사 불가",q:"Some people ①「are allergic to」 ②「certain type」 of food, ③「for example」, strawberries or ④「seafood」.",c:[["1","are allergic to"],["2","certain type"],["3","for example"],["4","seafood"]],a:"2",exp:"가산 단수명사는 관사 없이 못 쓴다. certain type → certain types(a certain type)."},
-{i:"414",t:"kind of + 무관사",q:"①「That is」 ②「the kind of a house」 in ③「which」 I ④「should like」 to live.",c:[["1","That is"],["2","the kind of a house"],["3","which"],["4","should like"]],a:"2",exp:"kind of 다음에는 무관사 명사. the kind of a house → the kind of house."},
-{i:"415",t:"what kind of + 무관사",q:"Do you happen to know ______ insulin is?",c:[["1","what kind a substance"],["2","of what kind of substance"],["3","what kind of substance"],["4","what kind of a substance"]],a:"3",exp:"kind of 다음에는 무관사. what kind of substance."},
-{i:"416",t:"kinds of + 복수명사",q:"The two main ______ are permanent magnets and electromagnets.",c:[["1","kinds of magnet"],["2","kind of magnets"],["3","kinds magnets"],["4","kinds of magnets"]],a:"4",exp:"two main kinds이므로 kinds of + 복수명사. kinds of magnets."},
-{i:"417",t:"so + 형/a/명사 어순",q:"It was so beautiful ______ that I did not want to go to bed.",c:[["1","night"],["2","a night"],["3","day"],["4","the night"]],a:"2",exp:"so + 형용사 + a + 명사. so beautiful a night that..."},
-{i:"418",t:"quite a + 형용사 + 명사",q:"This work cannot be done in ______.",c:[["1","quite a short time"],["2","a so short time"],["3","such short time"],["4","so a short time"]],a:"1",exp:"quite a + 형용사 + 명사. quite a short time. (so/such 어순은 ②③④ 모두 오류)"},
-{i:"419",t:"as + 형/a/명/as 어순",q:"①「Exercising」 is as ②「good as a way」 as any ③「to lose」 ④「unwanted weight」.",c:[["1","Exercising"],["2","good as a way"],["3","to lose"],["4","unwanted weight"]],a:"2",exp:"as + 형용사 + a + 명사 + as. good as a way → good a way (as good a way as any)."},
-{i:"420",t:"too + 형/a/명사 어순",q:"I am sure that Mary is ______ girl to tell a lie.",c:[["1","too an honest"],["2","too honest a"],["3","a too honest"],["4","so an honest"]],a:"2",exp:"too + 형용사 + a + 명사. too honest a girl to tell a lie."},
-{i:"421",t:"재귀대명사 일치 (themselves)",q:"The property insurance industry has ①「flourished」 because people do not want ②「to expose」 ③「itself」 to ④「the risk」 of catastrophic loss.",c:[["1","flourished"],["2","to expose"],["3","itself"],["4","the risk"]],a:"3",exp:"주어 people(복수)과 일치. itself → themselves."},
-{i:"422",t:"재귀 vs 인칭대명사 (them)",q:"Ants are blind to red light, so ①「it is possible」 to observe ②「themselves」 in an artificial nest ③「without disturbing」 ④「their activities」.",c:[["1","it is possible"],["2","themselves"],["3","without disturbing"],["4","their activities"]],a:"2",exp:"observe의 의미상 주어(사람)와 목적어(ants)가 다르므로 재귀 불가. themselves → them."},
-{i:"423",t:"재귀 vs 인칭대명사 (them)",q:"①「Lawyers」 with the American Civil Liberties Union ②「are compiling」 statistics that ③「may help」 ④「themselves」 to repeal the death penalty.",c:[["1","Lawyers"],["2","are compiling"],["3","may help"],["4","themselves"]],a:"4",exp:"help의 주어는 statistics이므로 목적어는 them. themselves → them."},
-{i:"424",t:"재귀 vs 인칭대명사 (them)",q:"①「Even though」 home schoolers are not ②「under」 the rigid curricular of traditional schools, they often spend more time ③「on the subjects」 or topics that really interest ④「themselves」.",c:[["1","Even though"],["2","under"],["3","on the subjects"],["4","themselves"]],a:"4",exp:"interest의 주어는 topics이므로 목적어는 them. themselves → them."},
-{i:"425",t:"in spite of oneself (자기도 모르게)",q:"Choose the closest one to the meaning of the underlined part. — On hearing from her son, she was shedding tears 「in spite of herself」.",c:[["1","unconsciously"],["2","quietly"],["3","shyly"],["4","sorrowfully"]],a:"1",exp:"in spite of oneself = 자기도 모르게 = unconsciously."},
-{i:"426",t:"one (불특정 명사 대용)",q:"I don't have a nice bookcase, so I am going to ______.",c:[["1","have it made"],["2","have that made"],["3","have it be made"],["4","have one made"]],a:"4",exp:"불특정한 책장 하나는 one. have one made(하나 만들게 하다)."},
-{i:"427",t:"one (같은 종류 다른 것)",q:"Yesterday I lost my watch in the subway, so I plan to buy ______.",c:[["1","some"],["2","any"],["3","one"],["4","it"]],a:"3",exp:"같은 종류의 다른 시계 하나는 one. (it은 잃어버린 바로 그 시계)"},
-{i:"428",t:"one(s) 용법 (수사 + ones 불가)",q:"The ①「first three books」 are math books, the ②「next two ones」 are psychology books and ③「the last」 ④「book」 is about art.",c:[["1","first three books"],["2","next two ones"],["3","the last"],["4","book"]],a:"2",exp:"수사 뒤에는 ones를 쓰지 않는다. the next two ones → the next two."},
-{i:"429",t:"such as (예시)",q:"①「Modern poets」 have ②「experimented with」 ③「poetic devices」 ④「such」 alliteration and assonance.",c:[["1","Modern poets"],["2","experimented with"],["3","poetic devices"],["4","such"]],a:"4",exp:"예시는 such as. such → such as."},
-{i:"430",t:"such ... as (~같은)",q:"It began to be denied that there is ①「such a thing like」 human nature. ②「Rather」, man grows and ③「grows into」 culture; cultures are, ④「as is obvious」 from the word, ⑤「growths」.",c:[["1","such a thing like"],["2","Rather"],["3","grows into"],["4","as is obvious"],["5","growths"]],a:"1",exp:"such a thing as = ~같은 것. such a thing like → such a thing as."},
-{i:"431",t:"so (형용사 대용)",q:"Prices at present are reasonably stable, and will probably remain ______.",c:[["1","such"],["2","so"],["3","alike"],["4","equal"]],a:"2",exp:"앞의 형용사(stable)를 대신하는 보어 so. will probably remain so."},
-{i:"432",t:"one ... the other (둘 중)",q:"Let me give you two of the ①「consequences」 of ②「which」 I would guess that one will shock you while ③「another」 may perhaps surprise you more ④「favorably」.",c:[["1","consequences"],["2","which"],["3","another"],["4","favorably"]],a:"3",exp:"둘 중 하나는 one, 나머지 하나는 the other. another → the other."},
-{i:"433",t:"one ... the other (양발)",q:"Struggling against fatigue, I forced myself to put one foot in front of ______.",c:[["1","another"],["2","others"],["3","other"],["4","the other"]],a:"4",exp:"둘(양발) 중 나머지 하나는 the other. one foot in front of the other."},
-{i:"434",t:"others / the others",q:"①「Some of the plants」 in this shop ②「require」 very little care, but ③「this one」 needs much more sunlight than ④「other」.",c:[["1","Some of the plants"],["2","require"],["3","this one"],["4","other"]],a:"4",exp:"other는 단독으로 명사처럼 못 쓴다. than other → than others(the others)."},
-{i:"435",t:"another + 단수명사",q:"Bob got fired. It's going to be difficult for him to find ______ job.",c:[["1","other"],["2","another"],["3","the other"],["4","the another"]],a:"2",exp:"'또 다른 하나'는 another + 단수명사. another job."},
-{i:"436",t:"another pair (켤레)",q:"Because the first pair of shoes did not fit properly, she asked for ______.",c:[["1","another shoes"],["2","other shoes"],["3","the other ones"],["4","another pair"]],a:"4",exp:"또 다른 한 켤레는 another pair. (shoes는 복수라 another shoes 불가)"},
-{i:"437",t:"each + 단수동사",q:"When a group of people ①「go Dutch」, each ②「pay」 only for ③「what」 the person ④「has eaten」.",c:[["1","go Dutch"],["2","pay"],["3","what"],["4","has eaten"]],a:"2",exp:"each는 단수 취급. pay → pays."},
-{i:"438",t:"each of (every of 불가)",q:"All objects ①「are composed of」 many molecules, and the ②「force」 of gravity ③「pulls on」 ④「every of」 them.",c:[["1","are composed of"],["2","force"],["3","pulls on"],["4","every of"]],a:"4",exp:"every는 of와 직접 결합 못 한다. every of them → each of them(every one of them)."},
-{i:"439",t:"every + 단수명사",q:"①「Skim lengthy reading passages」 before ②「you begin reading」 to get a general idea of ③「what the selection is」 about. When you skim a reading passage, you read the most important parts of it quickly, ④「without reading every words」.",c:[["1","Skim lengthy reading passages"],["2","you begin reading"],["3","what the selection is"],["4","without reading every words"]],a:"4",exp:"every + 단수명사. every words → every word."},
-{i:"440",t:"every + 단수 (its)",q:"Every fuel has ①「their own」 ②「particular temperature」 ③「at which」 it ④「begins to」 burn.",c:[["1","their own"],["2","particular temperature"],["3","at which"],["4","begins to"]],a:"1",exp:"Every fuel(단수)을 받으므로 its. their own → its own."}
-);
-window.__V502_GRAMMAR__.push(
-{i:"441",t:"alive (서술적 형용사)",q:"Animism is the ①「belief」 that objects and natural ②「phenomena」 such as rivers, rocks, and wind are ③「live」 and have ④「feelings」.",c:[["1","belief"],["2","phenomena"],["3","live"],["4","feelings"]],a:"3",exp:"be동사 뒤 서술적 보어는 alive. are live → are alive."},
-{i:"442",t:"live/living (한정적 형용사)",q:"①「Alive」 animals are ②「greatly」 diversified ③「in」 ④「their sizes and shapes」.",c:[["1","Alive"],["2","greatly"],["3","in"],["4","their sizes and shapes"]],a:"1",exp:"alive는 한정적으로 못 쓴다. Alive animals → Living animals."},
-{i:"443",t:"alike (서술적 형용사)",q:"There will never be two snowflakes that are exactly ______.",c:[["1","unlike"],["2","alike"],["3","like"],["4","liking"]],a:"2",exp:"be동사 뒤 서술적 보어 alike(= 똑같은). are exactly alike."},
-{i:"444",t:"unlike (전치사) vs alike",q:"The bones of mammals, ①「not alike」 ②「those of」 ③「other vertebrates」, ④「show」 a high degree of differentiation.",c:[["1","not alike"],["2","those of"],["3","other vertebrates"],["4","show"]],a:"1",exp:"명사를 목적어로 취하는 전치사는 unlike. not alike those of → unlike those of."},
-{i:"445",t:"형용사 어순 (authentic Japanese food)",q:"A: Do you like the Japanese food served in American restaurants?  B: It's not bad but I prefer ______.",c:[["1","Japanese food authentically"],["2","Japanese authentic food"],["3","food Japanese authentic"],["4","authentic Japanese food"],["5","authentically Japanese food"]],a:"4",exp:"형용사 어순: 의견(authentic) + 국적(Japanese) + 명사. authentic Japanese food."},
-{i:"446",t:"형용사 어순 (수-크기-색)",q:"A: Which shoes belong to his father?  B: The ______.",c:[["1","blue large five shoes"],["2","five blue large shoes"],["3","five large blue shoes"],["4","large five blue shoes"]],a:"3",exp:"형용사 어순: 수량 + 크기 + 색. five large blue shoes."},
-{i:"447",t:"형용사 어순 (크기-색-재료)",q:"The girl was carrying a ______ bag.",c:[["1","blue big plastic"],["2","big and blue plastic"],["3","big blue plastic"],["4","blue plastic big"]],a:"3",exp:"형용사 어순: 크기 + 색 + 재료. big blue plastic bag."},
-{i:"448",t:"부사 어순 (장소-빈도-시간)",q:"He gave lectures ______.",c:[["1","last term at the college three days a week"],["2","at the college three days a week last term"],["3","at the college last term three days a week"],["4","last term three days a week at the college"]],a:"2",exp:"부사 어순: 장소 + 빈도 + 시간. at the college three days a week last term."},
-{i:"449",t:"난이형용사 + for + to부정사",q:"Is the book hard ______ immediately?",c:[["1","his returning"],["2","that he returns"],["3","for him to return"],["4","to him return"]],a:"3",exp:"난이형용사(hard) + for + 목적격 + to부정사. for him to return."},
-{i:"450",t:"난이형용사 (difficult to answer)",q:"A: Did the judge ask you many questions?  B: Yes, and ______.",c:[["1","they had difficulty being answered"],["2","answering them was with difficulty"],["3","they were difficult to answer"],["4","to answer them was to be difficult"]],a:"3",exp:"난이형용사 + to부정사. they were difficult to answer."},
-{i:"451",t:"It is easy for ~ to부정사",q:"It is easy ______ him.",c:[["1","that we get on with"],["2","for us to get on with"],["3","our getting on with"],["4","get on with"]],a:"2",exp:"가주어 it + for + 목적격 + to부정사. for us to get on with him."},
-{i:"452",t:"worth + 명사",q:"The improvement of this design is ______ your best efforts.",c:[["1","worthy"],["2","value"],["3","edible"],["4","worth"]],a:"4",exp:"worth + 명사 = ~할 가치가 있는. is worth your best efforts."},
-{i:"453",t:"worthy of",q:"Which of the following is grammatically wrong? — A: Is this camera cheap?  B: It ______ what we paid.",c:[["1","dose not deserve"],["2","is not worth"],["3","dose not merit"],["4","is not worthy"]],a:"4",exp:"worthy는 of가 필요하다. is not worthy → is not worthy of. (deserve/worth/merit는 직접 목적어)"},
-{i:"454",t:"형용사 + enough + to부정사",q:"A: How about your mother?  B: She isn't ______ three miles a day.",c:[["1","enough strong to walk"],["2","strong enough for walking"],["3","strong enough to walk"],["4","enough strong to walking"]],a:"3",exp:"형용사 + enough + to부정사. strong enough to walk."},
-{i:"455",t:"형용사 + enough 어순",q:"Blowing ①「out」 the birthday candles is ②「an ancient test」 to see if a ③「growing」 child is ④「enough strong」 to blow out ⑤「a greater number」 each year.",c:[["1","out"],["2","an ancient test"],["3","growing"],["4","enough strong"],["5","a greater number"]],a:"4",exp:"enough는 형용사 뒤. enough strong → strong enough."},
-{i:"456",t:"타동사 + 부사 (대명사 위치)",q:"Which of the following is grammatically wrong? — When the management failed to cut the contract with the union's leader, it had to ______.",c:[["1","lay off about a hundred workers"],["2","lay about a hundred workers off"],["3","lay them off by the hundred"],["4","lay off them by the hundred"]],a:"4",exp:"'타동사 + 부사'의 목적어가 대명사면 사이에 온다. lay off them → lay them off."},
-{i:"457",t:"동사+전치사 (대명사 위치)",q:"①「Confronted with」 ②「such harsh situations」 that others ③「deemed informidable」, we could ④「go them through」 just by sticking together.",c:[["1","Confronted with"],["2","such harsh situations"],["3","deemed informidable"],["4","go them through"]],a:"4",exp:"'go through'는 동사+전치사로 분리 불가, 목적어는 뒤에. go them through → go through them."},
-{i:"458",t:"most + 복수명사 (almost 불가)",q:"Many years ago, ______ people believed that the earth was square and that a person would fall off its edge.",c:[["1","most"],["2","almost"],["3","every"],["4","none of these"]],a:"1",exp:"명사를 직접 수식하는 것은 most. most people. (almost는 부사라 명사 직접 수식 불가)"},
-{i:"459",t:"most of + the",q:"After experiencing one of the worst traffic jams in years, ______ the nation's land transportations returned to normal again when the heaviest snowfall died down yesterday.",c:[["1","almost"],["2","most all of"],["3","most"],["4","most of"]],a:"4",exp:"한정사(the) 앞에는 most of. most of the nation's land transportations."},
-{i:"460",t:"almost all (most all 비표준)",q:"By the time he was ①「finally」 captured, the thief ②「had spent」 ③「most all」 the money he ④「had stolen」.",c:[["1","finally"],["2","had spent"],["3","most all"],["4","had stolen"]],a:"3",exp:"'거의 모든'은 almost all. most all → almost all."},
-{i:"461",t:"by the month (단위)",q:"In Korea, it's been the norm rather than the exception that most workers are paid ______.",c:[["1","by an month"],["2","by a month"],["3","by the month"],["4","by month"]],a:"3",exp:"단위 기준 지급은 by the + 단위. by the month."},
-{i:"462",t:"by ship (교통수단 무관사)",q:"A: Did Judy fly across the Caspian Sea?  B: No, she crossed both ways ______.",c:[["1","by a ship"],["2","to the ship"],["3","on ships"],["4","by ship"]],a:"4",exp:"교통수단 by + 무관사 명사. by ship."},
-{i:"463",t:"on (street) / in (city)",q:"A: Where is our school located, Bob?  B: It is ______.",c:[["1","on the five avenue at New York"],["2","on Fifth Avenue in New York"],["3","in fifth avenue in New York"],["4","on Fifth Avenue at New York"]],a:"2",exp:"도로명에는 on, 도시에는 in. on Fifth Avenue in New York."},
-{i:"464",t:"in color",q:"With new technology, cameras can take pictures of underwater valleys ______ color.",c:[["1","in"],["2","by"],["3","for"],["4","with"]],a:"1",exp:"'~색으로'는 in color. pictures ... in color."},
-{i:"465",t:"at any cost",q:"The stolen jewels must be recovered ______.",c:[["1","for any cost"],["2","at any cost"],["3","with any expense"],["4","no matter any expenditure"]],a:"2",exp:"'어떤 대가를 치르더라도'는 at any cost."},
-{i:"466",t:"notwithstanding (후치 전치사)",q:"His late joining ______, his manager is confident that he will fit right in the group.",c:[["1","even though"],["2","notwithstanding"],["3","if"],["4","despite"]],a:"2",exp:"notwithstanding은 명사 뒤에 올 수 있는 전치사(= ~에도 불구하고). His late joining notwithstanding."},
-{i:"467",t:"by (완료) vs until (계속)",q:"A: Can you repair my watch ______ Tuesday?  B: No, I'll need to keep it ______ Saturday.",c:[["1","by — by"],["2","until — by"],["3","by — until"],["4","until — until"]],a:"3",exp:"완료 기한은 by, 동작의 계속은 until. repair by Tuesday, keep until Saturday."},
-{i:"468",t:"for + 기간 (현재완료)",q:"Doctoral students who are preparing to take their qualifying exams have been studying in the library every night ______ the last three months.",c:[["1","until"],["2","since"],["3","for"],["4","from"]],a:"3",exp:"기간 앞에는 for. for the last three months."},
-{i:"469",t:"for vs during",q:"Choose the one that is NOT correct according to the standard English.",c:[["1","Have you seen her since we last met?"],["2","I have known her during a very long time."],["3","They remained calm throughout the negotiations."],["4","I hope to get to your house by 7:00 at the latest."]],a:"2",exp:"기간의 길이 앞에는 for. during a very long time → for a very long time."},
-{i:"470",t:"distinguish between A and B",q:"It is important for us to distinguish ______ good and evil.",c:[["1","from"],["2","between"],["3","among"],["4","of"]],a:"2",exp:"distinguish between A and B. between good and evil."},
-{i:"471",t:"between A and B",q:"The spinal cord is ①「the main pathway」 ②「for messages」 ③「travelling」 between the brain ④「to the rest」 of the body.",c:[["1","the main pathway"],["2","for messages"],["3","travelling"],["4","to the rest"]],a:"4",exp:"between A and B. between the brain to the rest → between the brain and the rest."},
-{i:"472",t:"near (전치사) vs nearby",q:"①「The Metropolitan Museum of Art」 ②「in」 New York City is ③「located」 ④「nearby」 Central Park.",c:[["1","The Metropolitan Museum of Art"],["2","in"],["3","located"],["4","nearby"]],a:"4",exp:"명사를 목적어로 취하는 전치사는 near. nearby(부사/형용사) → near Central Park."},
-{i:"473",t:"as (자격 ~로서)",q:"The Lincoln Birthplace was presented ______ a gift to the nation by the Lincoln Farm Association.",c:[["1","with"],["2","about"],["3","as"],["4","against"]],a:"3",exp:"'~로서'는 as. presented as a gift."},
-{i:"474",t:"like + 명사 (felt like)",q:"Spending the money, he felt ______.",c:[["1","as if a wealthy man"],["2","as though a wealthy man"],["3","like a wealthy man"],["4","as if a man of wealthy"]],a:"3",exp:"like + 명사. felt like a wealthy man. (as if/as though는 절을 취함)"},
-{i:"475",t:"like vs as (~처럼)",q:"Today ①「just as a college graduate」, a ②「high-school graduate」 will find ③「his earnings proportionate」 ④「to his abilities」.",c:[["1","just as a college graduate"],["2","high-school graduate"],["3","his earnings proportionate"],["4","to his abilities"]],a:"1",exp:"'~처럼'(명사 앞)은 like. as는 '~로서'. just as a college graduate → just like a college graduate."},
-{i:"476",t:"by (차이·정도)",q:"Since last month, the price of an average long-distance call has plummeted, ______ nearly 50 percent.",c:[["1","on"],["2","by"],["3","for"],["4","with"]],a:"2",exp:"증감의 정도·차이는 by. plummeted by nearly 50 percent."},
-{i:"477",t:"by (차이)",q:"James Thompson is wealthier than his brother ______ at least 2 million dollars.",c:[["1","with"],["2","by"],["3","for"],["4","in"]],a:"2",exp:"차이를 나타내는 전치사는 by. wealthier ... by at least 2 million dollars."},
-{i:"478",t:"by (행위자/치수/단위)",q:"Used frequently ______ Japanese liquor and cosmetics companies, Mobotron is a giant VCR with a screen measuring 10 ______ 13 feet. It is rented ______ the day and can go anywhere.",c:[["1","at"],["2","by"],["3","in"],["4","to"]],a:"2",exp:"세 빈칸 모두 by: 수동 행위자(by companies), 치수(10 by 13 feet), 단위(by the day)."},
-{i:"479",t:"save that (~을 제외하고)",q:"______ a few species that live on the ground, most monkeys live in trees.",c:[["1","There are"],["2","In that there are"],["3","All but the fact that there are"],["4","Save that there are"]],a:"4",exp:"Save that = ~라는 점을 제외하면. Save that there are a few ground species, most monkeys live in trees."},
-{i:"480",t:"as far as / as regards / besides",q:"Choose the one that is CORRECT according to the standard English.",c:[["1","As far as I remember, you both have the same size."],["2","As regard our working environment, the machines make too much noise."],["3","We need to discover another source of income, beside oil."],["4","The old lady never spoke to anyone except someone came to visit her."]],a:"1",exp:"① As far as I remember가 옳다. ② As regards, ③ besides oil, ④ except when(unless)가 옳다."}
-);
-// __APPEND__
+window.__V502_GRAMMAR__ = [
+  {
+    "i": "001",
+    "q": "I felt uncomfortable",
+    "c": [
+      [
+        "1",
+        "complaining for the service; after all we"
+      ],
+      [
+        "2",
+        "were only guests"
+      ],
+      [
+        "3",
+        "at the reception,"
+      ],
+      [
+        "4",
+        "not the hosts."
+      ]
+    ],
+    "a": "1",
+    "t": "1형식: 타동사 오해 자동사",
+    "exp": "complain for -> complain about/of. ①이 틀린 부분."
+  },
+  {
+    "i": "002",
+    "q": "For some reason, we have",
+    "c": [
+      [
+        "1",
+        "decided that if these flesh lumps (i.e., our noses) have a certain shape, they a"
+      ],
+      [
+        "2",
+        "whereas lumps that do not"
+      ],
+      [
+        "3",
+        "conform that shape"
+      ],
+      [
+        "4",
+        "are considered ugly."
+      ]
+    ],
+    "a": "3",
+    "t": "2형식: 유사보어",
+    "exp": "conform that shape -> conform TO that shape."
+  },
+  {
+    "i": "004",
+    "q": "A: What would you have done if you hadn't become a teacher? B: I'd probably have ______ the army. A: Oh, you'd have ______ a good soldier. B: Do you really think so? A: Yes, of course.",
+    "c": [
+      [
+        "1",
+        "discharged from -- become"
+      ],
+      [
+        "2",
+        "gone into -- joined"
+      ],
+      [
+        "3",
+        "joined -- made"
+      ],
+      [
+        "4",
+        "joined -- taught"
+      ]
+    ],
+    "a": "1",
+    "t": "3형식: 유사형태 자/타동사",
+    "exp": "discharged from vs gone into vs joined. ① discharged from -- become이 어색. 맥락상 gone into/joined가 자연스러움."
+  },
+  {
+    "i": "005",
+    "q": "Improvisation is an important part of jazz. This means that the musicians make the music up as they go along, or create the music on the spot. This is why a jazz song might ______ each time it is played.",
+    "c": [
+      [
+        "1",
+        "sounds a little different"
+      ],
+      [
+        "2",
+        "sound a little differently"
+      ],
+      [
+        "3",
+        "sound little differently"
+      ],
+      [
+        "4",
+        "sound a little different"
+      ]
+    ],
+    "a": "4",
+    "t": "4형식: 3형식 전환 전치사: to, for, of",
+    "exp": "sound a little different. sound + 형용사(2형식). differently(부사)는 틀림."
+  },
+  {
+    "i": "007",
+    "q": "He looked very",
+    "c": [
+      [
+        "1",
+        "badly after"
+      ],
+      [
+        "2",
+        "the operation,"
+      ],
+      [
+        "3",
+        "and we were all"
+      ],
+      [
+        "4",
+        "worried."
+      ]
+    ],
+    "a": "1",
+    "t": "4형식: 수여동사 오해 동사 ①",
+    "exp": "looked very badly -> looked very bad. look + 형용사(2형식). ①이 틀린 부분."
+  },
+  {
+    "i": "008",
+    "q": "In the summer, I usually ______ some kind of seminar at the urging of my company.",
+    "c": [
+      [
+        "1",
+        "enroll at"
+      ],
+      [
+        "2",
+        "attend"
+      ],
+      [
+        "3",
+        "go"
+      ],
+      [
+        "4",
+        "attend to"
+      ]
+    ],
+    "a": "2",
+    "t": "4형식: 수여동사 오해 동사 ②",
+    "exp": "attend to. 'attend the meeting'이 타동사 용법. 'attend to'는 '(일을) 처리하다' 다른 의미."
+  },
+  {
+    "i": "009",
+    "q": "Moments before Shannon Lucid departed",
+    "c": [
+      [
+        "1",
+        "on her first space mission, a reporter"
+      ],
+      [
+        "2",
+        "approached to her and asked"
+      ],
+      [
+        "3",
+        "what her thoughts were. She replied that she was extremely proud"
+      ],
+      [
+        "4",
+        "to participate in such an important project."
+      ]
+    ],
+    "a": "2",
+    "t": "4형식: 수여동사 오해 동사 ③",
+    "exp": "approached to her -> approached her. approach는 타동사."
+  },
+  {
+    "i": "010",
+    "q": "What happens when people of different origins,",
+    "c": [
+      [
+        "1",
+        "speaking different languages and"
+      ],
+      [
+        "2",
+        "professing different religions,"
+      ],
+      [
+        "3",
+        "inhabit in the same locality and"
+      ]
+    ],
+    "a": "3",
+    "t": "5형식: 사역/지각동사 목적보어 형태",
+    "exp": "inhabit in -> inhabit. inhabit은 타동사로 전치사 불필요."
+  },
+  {
+    "i": "011",
+    "q": "①The Olympic torch will be ②reaching at Rice-Eccles Stadium ③at the University of Utah ④in a month.",
+    "c": [
+      [
+        "1",
+        "The Olympic torch will be"
+      ],
+      [
+        "2",
+        "reaching at Rice-Eccles Stadium"
+      ],
+      [
+        "3",
+        "at the University of Utah"
+      ],
+      [
+        "4",
+        "in a month."
+      ]
+    ],
+    "a": "2",
+    "t": "(both) A and B 유형 수일치",
+    "exp": "reaching at -> reaching. reach는 타동사. at 불필요."
+  },
+  {
+    "i": "012",
+    "q": "An American",
+    "c": [
+      [
+        "1",
+        "who survived from the terrorist"
+      ],
+      [
+        "2",
+        "attack on the World Trade Center"
+      ],
+      [
+        "3",
+        "escaped with his life again when"
+      ],
+      [
+        "4",
+        "a bomb blast ripped through a busy street in Jerusalem."
+      ]
+    ],
+    "a": "1",
+    "t": "(either) A or B 유형 수일치",
+    "exp": "sat -> set. sat(자동사) -> set(타동사, 놓다)."
+  },
+  {
+    "i": "014",
+    "q": "The secret to blocking for the Oakland Raiders' quarterback Rich Gannon, according to tackle Lincoln Kennedy, ______ the defensive linemen's eyes.",
+    "c": [
+      [
+        "1",
+        "lie along"
+      ],
+      [
+        "2",
+        "lay down"
+      ],
+      [
+        "3",
+        "lies in"
+      ],
+      [
+        "4",
+        "lays aside"
+      ]
+    ],
+    "a": "1",
+    "t": "every/neither/each 수일치",
+    "exp": "lie along -> lay down? 눈을 속이는 -> the defensive linemen's eyes를 속이다는 의미로 'lie'가 아니라 'look into' 등. 원문 확인필요."
+  },
+  {
+    "i": "015",
+    "q": "Food prices have",
+    "c": [
+      [
+        "1",
+        "raised"
+      ],
+      [
+        "2",
+        "so rapidly in the past few months"
+      ],
+      [
+        "3",
+        "that some families have been"
+      ],
+      [
+        "4",
+        "forced to alter their eating habits."
+      ]
+    ],
+    "a": "2",
+    "t": "분수/퍼센트 수일치",
+    "exp": "raised -> risen. rise-rose-risen(자동사). raise(타동사)."
+  },
+  {
+    "i": "016",
+    "q": "A: When did the lecture begin? B: When all the students _______, the professor began his lecture.",
+    "c": [
+      [
+        "1",
+        "were seated"
+      ],
+      [
+        "2",
+        "seat"
+      ],
+      [
+        "3",
+        "seated"
+      ],
+      [
+        "4",
+        "sit"
+      ]
+    ],
+    "a": "1",
+    "t": "긴 주어 수일치",
+    "exp": "were seated. seat은 타동사(앉히다). be seated = 앉아 있다."
+  },
+  {
+    "i": "017",
+    "q": "I ①sat the suitcase ②down in front of a ③hotel shop and ④called a taxi.",
+    "c": [
+      [
+        "1",
+        "sat the suitcase"
+      ],
+      [
+        "2",
+        "down in front of a"
+      ],
+      [
+        "3",
+        "hotel shop and"
+      ],
+      [
+        "4",
+        "called a taxi."
+      ]
+    ],
+    "a": "1",
+    "t": "도치문장 수일치",
+    "exp": "sat -> set. set the suitcase down."
+  },
+  {
+    "i": "018",
+    "q": "One winter day when I was nine, carrying my books home from school across a snowy street as the light was turning, I slipped and ______.",
+    "c": [
+      [
+        "1",
+        "fell"
+      ],
+      [
+        "2",
+        "felled"
+      ],
+      [
+        "3",
+        "fall"
+      ],
+      [
+        "4",
+        "falled"
+      ]
+    ],
+    "a": "1",
+    "t": "수일치 기타",
+    "exp": "fell. fall-fell-fallen."
+  },
+  {
+    "i": "019",
+    "q": "My neighbor",
+    "c": [
+      [
+        "1",
+        "dies her"
+      ],
+      [
+        "2",
+        "hair"
+      ],
+      [
+        "3",
+        "two times"
+      ],
+      [
+        "4",
+        "every month."
+      ]
+    ],
+    "a": "1",
+    "t": "대명사 일치 ①",
+    "exp": "dies -> dyes. dye her hair(염색하다). die(죽다)와 혼동."
+  },
+  {
+    "i": "020",
+    "q": "Some people ______ the single most important factor in any business is service.",
+    "c": [
+      [
+        "1",
+        "talk"
+      ],
+      [
+        "2",
+        "tell"
+      ],
+      [
+        "3",
+        "say"
+      ]
+    ],
+    "a": "1",
+    "t": "대명사 일치 ②",
+    "exp": "[auto: 4th choice missing, fallback to 1st]"
+  },
+  {
+    "i": "021",
+    "q": "Yesterday was my birthday, my mother ______.",
+    "c": [
+      [
+        "1",
+        "made a cake to me"
+      ],
+      [
+        "2",
+        "made a cake me"
+      ],
+      [
+        "3",
+        "made for me a cake"
+      ],
+      [
+        "4",
+        "made me a cake"
+      ]
+    ],
+    "a": "2",
+    "t": "대과거 vs. 과거",
+    "exp": "had graduated. 대과거. 아버지가 졸업한 것은 내가 가기 전."
+  },
+  {
+    "i": "022",
+    "q": "Choose the one that is NOT correct according to the standard English.",
+    "c": [
+      [
+        "1",
+        "The tower rises above the other buildings."
+      ],
+      [
+        "2",
+        "You should not ask such questions to your parents."
+      ],
+      [
+        "3",
+        "When you fill in the form, I'll have the baggage brought in."
+      ],
+      [
+        "4",
+        "I don't know whether he has a ticket to the show and whether he will go."
+      ]
+    ],
+    "a": "4",
+    "t": "현재 vs. 현재진행",
+    "exp": "was having. 진행형 과거. had가 소유면 진행형 불가이나, have a good time은 가능."
+  },
+  {
+    "i": "023",
+    "q": "She might never",
+    "c": [
+      [
+        "1",
+        "forgive him what he did to her, and it was"
+      ],
+      [
+        "2",
+        "such a dark part of her personality that"
+      ],
+      [
+        "3",
+        "cost a lot of fame to her and"
+      ],
+      [
+        "4",
+        "that she didn't ⑤want him to see."
+      ]
+    ],
+    "a": "2",
+    "t": "현재진행: 가까운 미래",
+    "exp": "has been working. 현재완료진행."
+  },
+  {
+    "i": "024",
+    "q": "A: I think I understand his point. B: Then ______.",
+    "c": [
+      [
+        "1",
+        "describe for me it"
+      ],
+      [
+        "2",
+        "describe me it"
+      ],
+      [
+        "3",
+        "describe it to me"
+      ],
+      [
+        "4",
+        "describe"
+      ]
+    ],
+    "a": "1",
+    "t": "시간/조건 부사절 시제",
+    "exp": "will have been. by Christmas + for three months = 미래완료."
+  },
+  {
+    "i": "025",
+    "q": "The doctor explained _______ that we should have a complete physical examination once a year.",
+    "c": [
+      [
+        "1",
+        "us"
+      ],
+      [
+        "2",
+        "for us"
+      ],
+      [
+        "3",
+        "to us"
+      ],
+      [
+        "4",
+        "at us"
+      ]
+    ],
+    "a": "3",
+    "t": "for/over 완료시제",
+    "exp": "explain TO us that. explain+to+IO+that절."
+  },
+  {
+    "i": "028",
+    "q": "A: Is it time to leave? B: Yes, the clock _______ two o'clock.",
+    "c": [
+      [
+        "1",
+        "says"
+      ],
+      [
+        "2",
+        "indicates"
+      ],
+      [
+        "3",
+        "told"
+      ],
+      [
+        "4",
+        "marks"
+      ]
+    ],
+    "a": "3",
+    "t": "before 완료시제",
+    "exp": "until he. has been pursuing + until he graduated 충돌."
+  },
+  {
+    "i": "029",
+    "q": "The information officer at the bank ______ his customers that there were several different kinds of checking accounts available.",
+    "c": [
+      [
+        "1",
+        "said"
+      ],
+      [
+        "2",
+        "told"
+      ],
+      [
+        "3",
+        "conversed"
+      ],
+      [
+        "4",
+        "talked"
+      ]
+    ],
+    "a": "3",
+    "t": "가정법과거 vs. 가정법과거완료",
+    "exp": "were closed -> had been closed."
+  },
+  {
+    "i": "030",
+    "q": "Choose the one that is CORRECT according to the standard English.",
+    "c": [
+      [
+        "1",
+        "Ellen told to Helen, \"Leave the room.\""
+      ],
+      [
+        "2",
+        "Ellen told to leave the room."
+      ],
+      [
+        "3",
+        "Ellen told to Helen to leave the room."
+      ]
+    ],
+    "a": "1",
+    "t": "5형식: 사역/지각동사 목적보어 형태",
+    "exp": "Q030 has 3 choices. Option 1 is the marked correct answer from the original PDF."
+  },
+  {
+    "i": "031",
+    "q": "Please ______ me of what you said at the last meeting.",
+    "c": [
+      [
+        "1",
+        "remind"
+      ],
+      [
+        "2",
+        "help remind"
+      ],
+      [
+        "3",
+        "remember"
+      ],
+      [
+        "4",
+        "recall"
+      ]
+    ],
+    "a": "3",
+    "t": "가정법미래 vs. 가정법과거",
+    "exp": "would finish -> will have finished."
+  },
+  {
+    "i": "033",
+    "q": "①To see so much power ②combining ③with such lack ④of foresight is really disquieting for us Europeans.",
+    "c": [
+      [
+        "1",
+        "To see so much power"
+      ],
+      [
+        "2",
+        "combining"
+      ],
+      [
+        "3",
+        "with such lack"
+      ],
+      [
+        "4",
+        "of foresight is really disquieting for us Europeans."
+      ]
+    ],
+    "a": "2",
+    "t": "가정법 대용",
+    "exp": "combining -> combined. see O combined(과거분사)."
+  },
+  {
+    "i": "034",
+    "q": "①Thanks to the often dreadful, although lifesaving, nature of diagnostic tests, many of us are becoming ②experts at the art of procrastination. Who can be blamed for ③letting \"colonoscopy\" to slip to the bottom of the ④to-do list? 035 If you don't stop making that noise, you'll make your grandmother",
+    "c": [
+      [
+        "1",
+        "Thanks to the often dreadful, although lifesaving, nature of diagnostic tests, m"
+      ],
+      [
+        "2",
+        "experts at the art of procrastination. Who can be blamed for"
+      ],
+      [
+        "3",
+        "letting \"colonoscopy\" to slip to the bottom of the"
+      ],
+      [
+        "4",
+        "to-do list? 035 If you don't stop making that noise, you'll make your grandmothe"
+      ],
+      [
+        "5",
+        "to complain"
+      ],
+      [
+        "6",
+        "complaining"
+      ]
+    ],
+    "a": "3",
+    "t": "wish 가정법",
+    "exp": "letting colonoscopy to slip -> letting colonoscopy slip. let + O + RV (사역동사 원형부정사). to 제거해야 함."
+  },
+  {
+    "i": "036",
+    "q": "Camouflage helps predators such as tigers and leopards ______ without being seen.",
+    "c": [
+      [
+        "1",
+        "for ambushing his prey"
+      ],
+      [
+        "2",
+        "ambush their prey"
+      ],
+      [
+        "3",
+        "to ambush his prey"
+      ],
+      [
+        "4",
+        "ambushing"
+      ]
+    ],
+    "a": "3",
+    "t": "it is time 가정법",
+    "exp": "went. It's about time + 과거동사."
+  },
+  {
+    "i": "037",
+    "q": "The idea of",
+    "c": [
+      [
+        "1",
+        "surrogate parenting has kept professional ethicists and jurists"
+      ],
+      [
+        "2",
+        "wrung their hands"
+      ],
+      [
+        "3",
+        "ever since the first case"
+      ],
+      [
+        "4",
+        "surfaced in 1978."
+      ]
+    ],
+    "a": "1",
+    "t": "would rather 가정법",
+    "exp": "would rather not. would rather + RV."
+  },
+  {
+    "i": "038",
+    "q": "Book reviewers often",
+    "c": [
+      [
+        "1",
+        "find themselves"
+      ],
+      [
+        "2",
+        "are being carried away"
+      ],
+      [
+        "3",
+        "by their own dogma and a combination of flaws that"
+      ],
+      [
+        "4",
+        "is fatal for an impartial review."
+      ]
+    ],
+    "a": "2",
+    "t": "insist 가정법",
+    "exp": "insist that he not smoke. 가정법 현재."
+  },
+  {
+    "i": "039",
+    "q": "Choose the one that is NOT correct according to the standard English.",
+    "c": [
+      [
+        "1",
+        "She heard him lock the door."
+      ],
+      [
+        "2",
+        "There's nothing to do but wait."
+      ],
+      [
+        "3",
+        "We saw him enter the store with his wife."
+      ],
+      [
+        "4",
+        "I want you stand beside me and hold the torch."
+      ]
+    ],
+    "a": "4",
+    "t": "necessary 가정법",
+    "exp": "fill out and send in. necessary that + RV."
+  },
+  {
+    "i": "040",
+    "q": "Choose the one that is NOT correct according to the standard English.",
+    "c": [
+      [
+        "1",
+        "I felt something touch my foot."
+      ],
+      [
+        "2",
+        "Did you hear a dog bark?"
+      ],
+      [
+        "3",
+        "I let her talk without interrupting."
+      ]
+    ],
+    "a": "3",
+    "t": "목적격 오해 주격 관계대명사",
+    "exp": "지각동사는 목적보어로 원형부정사(rv) 사용. 'I let her talk'은 사역동사로 옳음. ①②도 옳음. ④는 선택지 누락."
+  },
+  {
+    "i": "041",
+    "q": "Previously, Latin and French",
+    "c": [
+      [
+        "1",
+        "was being considered more"
+      ],
+      [
+        "2",
+        "suitable for literary expression than English and consequently"
+      ],
+      [
+        "3",
+        "the English language had not been as fully developed"
+      ],
+      [
+        "4",
+        "as it might have been."
+      ]
+    ],
+    "a": "2",
+    "t": "소유격 관계대명사",
+    "exp": "whose. 소유격 관계대명사."
+  },
+  {
+    "i": "042",
+    "q": "The pioneer",
+    "c": [
+      [
+        "1",
+        "of long ago and"
+      ],
+      [
+        "2",
+        "the space pioneer of today"
+      ],
+      [
+        "3",
+        "has many things"
+      ],
+      [
+        "4",
+        "in common."
+      ]
+    ],
+    "a": "4",
+    "t": "소유격 관계대명사와 the",
+    "exp": "that was. 선행사에 최상급 -> that."
+  },
+  {
+    "i": "043",
+    "q": "Choose the one that is NOT correct according to the standard English.",
+    "c": [
+      [
+        "1",
+        "Bread and butter is fattening."
+      ],
+      [
+        "2",
+        "Slow and steady wins the game."
+      ],
+      [
+        "3",
+        "These statistics shows deaths per 1,000 of population."
+      ],
+      [
+        "4",
+        "There is someone in the room."
+      ]
+    ],
+    "a": "3",
+    "t": "관계대명사 한정적/계속적 용법",
+    "exp": "NOT correct: These statistics SHOWS -> SHOW. statistics=복수. ③틀림."
+  },
+  {
+    "i": "044",
+    "q": "Not only you but also your manager ______ right.",
+    "c": [
+      [
+        "1",
+        "were"
+      ],
+      [
+        "2",
+        "are"
+      ],
+      [
+        "3",
+        "was"
+      ],
+      [
+        "4",
+        "as"
+      ]
+    ],
+    "a": "1",
+    "t": "관계대명사 that 용법",
+    "exp": "that. 선행사 all -> that."
+  },
+  {
+    "i": "045",
+    "q": "Either the teacher or the children ______ where the principal is right now.",
+    "c": [
+      [
+        "1",
+        "knew"
+      ],
+      [
+        "2",
+        "know"
+      ],
+      [
+        "3",
+        "knows"
+      ],
+      [
+        "4",
+        "knowing"
+      ]
+    ],
+    "a": "3",
+    "t": "관계대명사 what 관용표현",
+    "exp": "what. what = the thing which."
+  },
+  {
+    "i": "046",
+    "q": "①Neither the reporters ②nor the editor ③were satisfied with the salary ④offer made by the publisher.",
+    "c": [
+      [
+        "1",
+        "Neither the reporters"
+      ],
+      [
+        "2",
+        "nor the editor"
+      ],
+      [
+        "3",
+        "were satisfied with the salary"
+      ],
+      [
+        "4",
+        "offer made by the publisher."
+      ]
+    ],
+    "a": "3",
+    "t": "복합관계대명사/복합관계형용사",
+    "exp": "were->was(B에수일치:editor)"
+  },
+  {
+    "i": "047",
+    "q": "Neither his friend's",
+    "c": [
+      [
+        "1",
+        "betrayal nor his"
+      ],
+      [
+        "2",
+        "parents' condemnation"
+      ],
+      [
+        "3",
+        "have caused him any"
+      ],
+      [
+        "4",
+        "great distress"
+      ]
+    ],
+    "a": "3",
+    "t": "복합관계대명사의 격",
+    "exp": "Neither A nor B: B(condemnation,단수)에 수일치. have caused->has caused. ③틀림."
+  },
+  {
+    "i": "048",
+    "q": "Not only destruction and death but also a generation of hatred",
+    "c": [
+      [
+        "1",
+        "between the two communities"
+      ],
+      [
+        "2",
+        "have been triggered by the war that played a huge role"
+      ],
+      [
+        "3",
+        "in establishing the gulf between the Western and the Eastern"
+      ],
+      [
+        "4",
+        "communities."
+      ]
+    ],
+    "a": "2",
+    "t": "관계부사",
+    "exp": "have been -> has been. a generation = 단수."
+  },
+  {
+    "i": "050",
+    "q": "Every man, woman, and child",
+    "c": [
+      [
+        "1",
+        "in this community"
+      ],
+      [
+        "2",
+        "are now"
+      ],
+      [
+        "3",
+        "aware of the terrible consequences"
+      ]
+    ],
+    "a": "1",
+    "t": "관계대명사와 전치사",
+    "exp": "in which. 전치사 + 관계대명사."
+  },
+  {
+    "i": "051",
+    "q": "Each of the Medic Alert bracelets",
+    "c": [
+      [
+        "1",
+        "worn by millions of Americans who"
+      ],
+      [
+        "2",
+        "suffer from diabetes and drug allergic reactions"
+      ],
+      [
+        "3",
+        "are individually engraved with"
+      ],
+      [
+        "4",
+        "the wearer's name."
+      ]
+    ],
+    "a": "3",
+    "t": "현재분사/과거분사/to부정사",
+    "exp": "The medical team helping. 분사구문 능동."
+  },
+  {
+    "i": "052",
+    "q": "When one contrasts the ideas of the Romantic William Wordsworth",
+    "c": [
+      [
+        "1",
+        "with"
+      ],
+      [
+        "2",
+        "those of Neoclassicist John Dryden,"
+      ],
+      [
+        "3",
+        "one finds that neither of the poets"
+      ],
+      [
+        "4",
+        "differ as much as one would expect."
+      ]
+    ],
+    "a": "2",
+    "t": "유사분사",
+    "exp": "compared to. 과거분사."
+  },
+  {
+    "i": "053",
+    "q": "①Most of the English people is descended from invaders who began settling in ②the British Isles more than ③2,500 years ④ago.",
+    "c": [
+      [
+        "1",
+        "Most of the English people is descended from invaders who began settling in"
+      ],
+      [
+        "2",
+        "the British Isles more than"
+      ],
+      [
+        "3",
+        "2,500 years"
+      ],
+      [
+        "4",
+        "ago."
+      ]
+    ],
+    "a": "1",
+    "t": "분사구문 시제/수동/부정",
+    "exp": "is->are(Most people 복수)"
+  },
+  {
+    "i": "054",
+    "q": "Most of the information",
+    "c": [
+      [
+        "1",
+        "received from the reporters in the field"
+      ],
+      [
+        "2",
+        "have to be edited before"
+      ],
+      [
+        "3",
+        "being"
+      ],
+      [
+        "4",
+        "considered for publication."
+      ]
+    ],
+    "a": "2",
+    "t": "주어 불일치 분사구문",
+    "exp": "Weather permitting. 독립분사구문."
+  },
+  {
+    "i": "055",
+    "q": "Approximately",
+    "c": [
+      [
+        "1",
+        "one-fourth of a worker's income"
+      ],
+      [
+        "2",
+        "are paid"
+      ],
+      [
+        "3",
+        "in taxes and social security"
+      ],
+      [
+        "4",
+        "to the government."
+      ]
+    ],
+    "a": "2",
+    "t": "접속사 vs. 접속부사",
+    "exp": "however는 접속부사. 두 절 연결 불가."
+  },
+  {
+    "i": "056",
+    "q": "Nearly 60% of the world's tropical rain forests",
+    "c": [
+      [
+        "1",
+        "has been lost, and"
+      ],
+      [
+        "2",
+        "what remains is under extreme pressure from logging and human population growth."
+      ],
+      [
+        "3",
+        "many of the living things it has harbored will be driven"
+      ],
+      [
+        "4",
+        "to extinction."
+      ]
+    ],
+    "a": "4",
+    "t": "접속사와 병렬구조",
+    "exp": "not only A but also B 병렬."
+  },
+  {
+    "i": "057",
+    "q": "A pro-American government in Afghanistan certainly",
+    "c": [
+      [
+        "1",
+        "facilitate a more"
+      ],
+      [
+        "2",
+        "acceptable agreement"
+      ],
+      [
+        "3",
+        "regarding the new pipeline that must inevitably"
+      ],
+      [
+        "4",
+        "run through that country."
+      ]
+    ],
+    "a": "2",
+    "t": "접속사 if vs. whether",
+    "exp": "whether. if는 명사절 주어 불가."
+  },
+  {
+    "i": "058",
+    "q": "The variation",
+    "c": [
+      [
+        "1",
+        "in our ambition, impulses, prejudices and affections"
+      ],
+      [
+        "2",
+        "have given us a certain acceptance of the fact"
+      ],
+      [
+        "3",
+        "that the conventions and watch-words of one generation"
+      ],
+      [
+        "4",
+        "may prove irrelevant to the needs of the generations that follow."
+      ]
+    ],
+    "a": "1",
+    "t": "접속사 vs. 전치사 vs. 부사",
+    "exp": "because. 접속사 vs 전치사."
+  },
+  {
+    "i": "059",
+    "q": "Many people",
+    "c": [
+      [
+        "1",
+        "were trapped in the capital and"
+      ],
+      [
+        "2",
+        "unable to escape, and a humanitarian escape corridor"
+      ],
+      [
+        "3",
+        "set up on December 6 by Russian forces to allow people to flee the fighting"
+      ],
+      [
+        "4",
+        "were ineffective."
+      ]
+    ],
+    "a": "4",
+    "t": "접속사 관용표현",
+    "exp": "no matter how. 복합관계부사."
+  },
+  {
+    "i": "061",
+    "q": "①There are no argument or proof ②that will convince most Americans that ③paying higher taxes will result in a higher standard of living ④for everyone.",
+    "c": [
+      [
+        "1",
+        "There are no argument or proof"
+      ],
+      [
+        "2",
+        "that will convince most Americans that"
+      ],
+      [
+        "3",
+        "paying higher taxes will result in a higher standard of living"
+      ],
+      [
+        "4",
+        "for everyone."
+      ]
+    ],
+    "a": "1",
+    "t": "동명사 시제",
+    "exp": "There are->There is(no argument=단수)"
+  },
+  {
+    "i": "062",
+    "q": "Five miles beyond the hills ______a fire with its flames reaching up to the sky.",
+    "c": [
+      [
+        "1",
+        "was"
+      ],
+      [
+        "2",
+        "were"
+      ],
+      [
+        "3",
+        "were that"
+      ],
+      [
+        "4",
+        "which were"
+      ]
+    ],
+    "a": "2",
+    "t": "동명사 목적어 동사",
+    "exp": "Five miles=단수취급(거리). was a fire."
+  },
+  {
+    "i": "063",
+    "q": "①On the desk ②was several notebooks and a book of ③poetry that had ④apparently been left in the library.",
+    "c": [
+      [
+        "1",
+        "On the desk"
+      ],
+      [
+        "2",
+        "was several notebooks and a book of"
+      ],
+      [
+        "3",
+        "poetry that had"
+      ],
+      [
+        "4",
+        "apparently been left in the library."
+      ]
+    ],
+    "a": "2",
+    "t": "동명사 목적어 vs. 부정사 목적어",
+    "exp": "was -> were. 도치문장 주어 복수."
+  },
+  {
+    "i": "064",
+    "q": "①Just outside the ruins ②are a fortress ③surrounded by high walls and ④stately trees.",
+    "c": [
+      [
+        "1",
+        "Just outside the ruins"
+      ],
+      [
+        "2",
+        "are a fortress"
+      ],
+      [
+        "3",
+        "surrounded by high walls and"
+      ],
+      [
+        "4",
+        "stately trees."
+      ]
+    ],
+    "a": "2",
+    "t": "need/worth 능동형 동명사 목적어",
+    "exp": "are->is(a fortress=단수)"
+  },
+  {
+    "i": "065",
+    "q": "One principle that Jefferson stated was",
+    "c": [
+      [
+        "1",
+        "the right to a trial by a fair and impartial jury. This right"
+      ],
+      [
+        "2",
+        "to be judged by ordinary people"
+      ],
+      [
+        "3",
+        "is a privilege many in the world"
+      ],
+      [
+        "4",
+        "is denied."
+      ]
+    ],
+    "a": "1",
+    "t": "동명사 관용표현",
+    "exp": "cannot help ~ing."
+  },
+  {
+    "i": "066",
+    "q": "①There are ②many a single person who believes that ③being married doesn't necessarily mean ④living happily ever after.",
+    "c": [
+      [
+        "1",
+        "There are"
+      ],
+      [
+        "2",
+        "many a single person who believes that"
+      ],
+      [
+        "3",
+        "being married doesn't necessarily mean"
+      ],
+      [
+        "4",
+        "living happily ever after."
+      ]
+    ],
+    "a": "1",
+    "t": "to 부정사 의미상 주어와 of",
+    "exp": "There are->There is(many a+단수)"
+  },
+  {
+    "i": "067",
+    "q": "The number of",
+    "c": [
+      [
+        "1",
+        "wild horses on Assateague"
+      ],
+      [
+        "2",
+        "are increasing lately,"
+      ],
+      [
+        "3",
+        "resulting in"
+      ],
+      [
+        "4",
+        "overgrazed marsh and dune grasses."
+      ]
+    ],
+    "a": "2",
+    "t": "be to 용법",
+    "exp": "are to meet. be to 용법(예정)."
+  },
+  {
+    "i": "068",
+    "q": "①The number of Korean students coming ②to America for ③graduate training ④are quite ⑤surprising.",
+    "c": [
+      [
+        "1",
+        "The number of Korean students coming"
+      ],
+      [
+        "2",
+        "to America for"
+      ],
+      [
+        "3",
+        "graduate training"
+      ],
+      [
+        "4",
+        "are quite ⑤surprising."
+      ]
+    ],
+    "a": "4",
+    "t": "to부정사 목적보어",
+    "exp": "are->is(the number=단수)"
+  },
+  {
+    "i": "069",
+    "q": "We would like to know if you are",
+    "c": [
+      [
+        "1",
+        "one of those women"
+      ],
+      [
+        "2",
+        "who is actively involved in politics because we need someone"
+      ],
+      [
+        "3",
+        "to campaign for a law legalizing maternity leave for men"
+      ],
+      [
+        "4",
+        "as well as for women."
+      ]
+    ],
+    "a": "2",
+    "t": "expect/hope/want 구문비교",
+    "exp": "hoped to have finished. hope + to RV."
+  },
+  {
+    "i": "070",
+    "q": "①Although there are fortunetellers who ②claims to predict future happenings, ③there is no scientific evidence of ④their accuracy.",
+    "c": [
+      [
+        "1",
+        "Although there are fortunetellers who"
+      ],
+      [
+        "2",
+        "claims to predict future happenings,"
+      ],
+      [
+        "3",
+        "there is no scientific evidence of"
+      ]
+    ],
+    "a": "2",
+    "t": "자동사와 수동태",
+    "exp": "claims -> claim. 주어 fortunetellers 복수."
+  },
+  {
+    "i": "071",
+    "q": "I want a wife who is a good nurturant",
+    "c": [
+      [
+        "1",
+        "attendant to my children, who arranges"
+      ],
+      [
+        "2",
+        "for their schooling, and"
+      ],
+      [
+        "3",
+        "make sure that"
+      ],
+      [
+        "4",
+        "they have an adequate social life with their peers."
+      ]
+    ],
+    "a": "3",
+    "t": "3형식: 복합동사 수동형",
+    "exp": "was broken. 3형식 수동태."
+  },
+  {
+    "i": "072",
+    "q": "To ①feel satisfied with your ②work published in a scholarly journal ③are to ④take pride in it.",
+    "c": [
+      [
+        "1",
+        "feel satisfied with your"
+      ],
+      [
+        "2",
+        "work published in a scholarly journal"
+      ],
+      [
+        "3",
+        "are to"
+      ],
+      [
+        "4",
+        "take pride in it."
+      ]
+    ],
+    "a": "3",
+    "t": "4형식: 수여동사 수동형",
+    "exp": "are->is(to부정사주어=단수)"
+  },
+  {
+    "i": "073",
+    "q": "①Where the school districts will find the money ②for these programs ③are ④a problem.",
+    "c": [
+      [
+        "1",
+        "Where the school districts will find the money"
+      ],
+      [
+        "2",
+        "for these programs"
+      ],
+      [
+        "3",
+        "are"
+      ],
+      [
+        "4",
+        "a problem."
+      ]
+    ],
+    "a": "3",
+    "t": "5형식: 사역/지각동사 수동태",
+    "exp": "are->is(Where절주어=단수)"
+  },
+  {
+    "i": "074",
+    "q": "The villainous",
+    "c": [
+      [
+        "1",
+        "characterizations of the wolf"
+      ],
+      [
+        "2",
+        "in numerous folktales"
+      ],
+      [
+        "3",
+        "have ignored that part of"
+      ],
+      [
+        "4",
+        "their nature that ⑤is friendly and gregarious."
+      ]
+    ],
+    "a": "4",
+    "t": "수동의미 자동사",
+    "exp": "This book sells well. 수동의미 자동사."
+  },
+  {
+    "i": "075",
+    "q": "①Most people ②aspire to good jobs or careers, which ③is increasingly difficult ④to obtain.",
+    "c": [
+      [
+        "1",
+        "Most people"
+      ],
+      [
+        "2",
+        "aspire to good jobs or careers, which"
+      ],
+      [
+        "3",
+        "is increasingly difficult"
+      ],
+      [
+        "4",
+        "to obtain."
+      ]
+    ],
+    "a": "3",
+    "t": "수동의미 to부정사",
+    "exp": "is->are(선행사jobs/careers=복수)"
+  },
+  {
+    "i": "076",
+    "q": "①Contrary to our expectations we find ②ourselves these days amid ③clouds of dense pollutants, both material and spiritual, ④which ⑤seems to injure man and deface nature.",
+    "c": [
+      [
+        "1",
+        "Contrary to our expectations we find"
+      ],
+      [
+        "2",
+        "ourselves these days amid"
+      ],
+      [
+        "3",
+        "clouds of dense pollutants, both material and spiritual,"
+      ],
+      [
+        "4",
+        "which ⑤seems to injure man and deface nature."
+      ]
+    ],
+    "a": "4",
+    "t": "의무 should/ought to/must",
+    "exp": "seems -> seem. 선행사 clouds 복수."
+  },
+  {
+    "i": "078",
+    "q": "When one reaches the first plateau,",
+    "c": [
+      [
+        "1",
+        "it does not guarantee that"
+      ],
+      [
+        "2",
+        "you will complete"
+      ],
+      [
+        "3",
+        "the climb"
+      ],
+      [
+        "4",
+        "to the summit."
+      ]
+    ],
+    "a": "2",
+    "t": "need vs. need to",
+    "exp": "need to. need + to RV (본동사)."
+  },
+  {
+    "i": "079",
+    "q": "After the dispute",
+    "c": [
+      [
+        "1",
+        "over the unsuccessful play, the coach and the team captain agreed"
+      ],
+      [
+        "2",
+        "not to talk until"
+      ],
+      [
+        "3",
+        "he was able to do so"
+      ],
+      [
+        "4",
+        "calmly."
+      ]
+    ],
+    "a": "1",
+    "t": "조동사 관용표현",
+    "exp": "would rather. 조동사 관용표현."
+  },
+  {
+    "i": "080",
+    "q": "①Stockard Channing, who plays the role of the formidable First Lady in the television show The West Wing, ②first came into the public eye in the movie production of the musical Grease; ③they have loved her ④ever since.",
+    "c": [
+      [
+        "1",
+        "Stockard Channing, who plays the role of the formidable First Lady in the televi"
+      ],
+      [
+        "2",
+        "first came into the public eye in the movie production of the musical Grease;"
+      ],
+      [
+        "3",
+        "they have loved her"
+      ]
+    ],
+    "a": "3",
+    "t": "원급: as-as 속 품사",
+    "exp": "ever since. have loved her ever since."
+  },
+  {
+    "i": "081",
+    "q": "New York City",
+    "c": [
+      [
+        "1",
+        "has been the"
+      ],
+      [
+        "2",
+        "capital of New York State until 1797,"
+      ],
+      [
+        "3",
+        "when the state capital"
+      ],
+      [
+        "4",
+        "was moved to Albany."
+      ]
+    ],
+    "a": "2",
+    "t": "원급 관용표현",
+    "exp": "as brave as. 원급 비교."
+  },
+  {
+    "i": "082",
+    "q": "①Even though Mr. Kim ②has been studying English for eight years before he came ③to the United States, it is still difficult ④for him to master it.",
+    "c": [
+      [
+        "1",
+        "Even though Mr. Kim"
+      ],
+      [
+        "2",
+        "has been studying English for eight years before he came"
+      ],
+      [
+        "3",
+        "to the United States, it is still difficult"
+      ],
+      [
+        "4",
+        "for him to master it."
+      ]
+    ],
+    "a": "2",
+    "t": "비교급: the와 비교급",
+    "exp": "has been studying->had been studying(before he came=대과거)"
+  },
+  {
+    "i": "083",
+    "q": "When Ken went to get some money from his wallet, he discovered that someone ______ it.",
+    "c": [
+      [
+        "1",
+        "takes"
+      ],
+      [
+        "2",
+        "took"
+      ],
+      [
+        "3",
+        "had taken"
+      ],
+      [
+        "4",
+        "has taken"
+      ]
+    ],
+    "a": "2",
+    "t": "비교급: than vs. to",
+    "exp": "to. superior to."
+  },
+  {
+    "i": "085",
+    "q": "①The letter I was waiting for ②didn't arrive because it ③has been sent ④to my old address.",
+    "c": [
+      [
+        "1",
+        "The letter I was waiting for"
+      ],
+      [
+        "2",
+        "didn't arrive because it"
+      ],
+      [
+        "3",
+        "has been sent"
+      ],
+      [
+        "4",
+        "to my old address."
+      ]
+    ],
+    "a": "3",
+    "t": "비교표현 강조어구",
+    "exp": "much faster. much + 비교급."
+  },
+  {
+    "i": "086",
+    "q": "Before 1970",
+    "c": [
+      [
+        "1",
+        "many technological advances"
+      ],
+      [
+        "2",
+        "have been made in the field of computer science,"
+      ],
+      [
+        "3",
+        "which resulted in"
+      ],
+      [
+        "4",
+        "more efficient computers."
+      ]
+    ],
+    "a": "2",
+    "t": "배수표현",
+    "exp": "three times as large as."
+  },
+  {
+    "i": "087",
+    "q": "Choose the one that is NOT correct according to the standard English.",
+    "c": [
+      [
+        "1",
+        "It was he who came running into the office with the boxes."
+      ],
+      [
+        "2",
+        "Mrs. Green and her sister just bought two new winter coats at the clearance sale"
+      ],
+      [
+        "3",
+        "He stopped typing the report because he had to leave for the hospital."
+      ],
+      [
+        "4",
+        "The president went fishing after he has finished the breakfast."
+      ]
+    ],
+    "a": "4",
+    "t": "비교대상 생략",
+    "exp": "after he has finished -> after he HAD finished. Speaker went fishing(past) after earlier action."
+  },
+  {
+    "i": "088",
+    "q": "①In general, newspapers emphasize current news, ②whereas magazines ③are dealing more ④with background materials.",
+    "c": [
+      [
+        "1",
+        "In general, newspapers emphasize current news,"
+      ],
+      [
+        "2",
+        "whereas magazines"
+      ],
+      [
+        "3",
+        "are dealing more"
+      ],
+      [
+        "4",
+        "with background materials."
+      ]
+    ],
+    "a": "3",
+    "t": "비교표현과 병렬구조",
+    "exp": "are dealing->deal(일반적사실,진행형불필요)"
+  },
+  {
+    "i": "089",
+    "q": "The adult mosquito usually lives",
+    "c": [
+      [
+        "1",
+        "for about thirty days,"
+      ],
+      [
+        "2",
+        "although the life span"
+      ],
+      [
+        "3",
+        "is varying widely with temperature, humidity, and"
+      ],
+      [
+        "4",
+        "other factors of the environment."
+      ]
+    ],
+    "a": "3",
+    "t": "부가의문문",
+    "exp": "is varying->varies. 상태동사 진행형 불가."
+  },
+  {
+    "i": "090",
+    "q": "It ①is true that the genes we inherit ②from our parents ③decide, to some extent, what our health ④was like.",
+    "c": [
+      [
+        "1",
+        "is true that the genes we inherit"
+      ],
+      [
+        "2",
+        "from our parents"
+      ],
+      [
+        "3",
+        "decide, to some extent, what our health"
+      ]
+    ],
+    "a": "3",
+    "t": "도치 일반원칙",
+    "exp": "decide...what our health WAS like -> IS like. Tense consistency. Choice 3 is incorrect."
+  },
+  {
+    "i": "091",
+    "q": "While I was studying in one room of our apartment, my roommate ______ in the other room.",
+    "c": [
+      [
+        "1",
+        "had had a party"
+      ],
+      [
+        "2",
+        "was having a party"
+      ],
+      [
+        "3",
+        "is having a party"
+      ],
+      [
+        "4",
+        "would have had a party"
+      ]
+    ],
+    "a": "2",
+    "t": "So/Neither do I",
+    "exp": "was having. 과거진행 시제일치."
+  },
+  {
+    "i": "092",
+    "q": "While he ______ the poster, a door somewhere behind him opened.",
+    "c": [
+      [
+        "1",
+        "is staring at"
+      ],
+      [
+        "2",
+        "did stare to"
+      ],
+      [
+        "3",
+        "was staring at"
+      ],
+      [
+        "4",
+        "looked carefully upon"
+      ]
+    ],
+    "a": "3",
+    "t": "1형식문장의 도치",
+    "exp": "While+과거진행. opened(과거)->was staring at."
+  },
+  {
+    "i": "093",
+    "q": "①Weighed down by a mass of trivial details, a housewife ②is being fortunate if she does not soon ③lose all her charm and ④three-quarters of her intelligence.",
+    "c": [
+      [
+        "1",
+        "Weighed down by a mass of trivial details, a housewife"
+      ],
+      [
+        "2",
+        "is being fortunate if she does not soon"
+      ],
+      [
+        "3",
+        "lose all her charm and"
+      ],
+      [
+        "4",
+        "three-quarters of her intelligence."
+      ]
+    ],
+    "a": "2",
+    "t": "절대적 불가산명사",
+    "exp": "furniture. 불가산명사."
+  },
+  {
+    "i": "095",
+    "q": "Choose the one that is NOT correct according to the standard English.",
+    "c": [
+      [
+        "1",
+        "I am having a party tonight. Will you join me?"
+      ],
+      [
+        "2",
+        "I am having a good time with my colleagues. Why should I quit the job?"
+      ],
+      [
+        "3",
+        "I am having this apartment right now, but I am selling it in two years."
+      ],
+      [
+        "4",
+        "I am having a lot of fun with this puzzle book."
+      ]
+    ],
+    "a": "3",
+    "t": "명사 기타",
+    "exp": "I am having this apartment -> I HAVE this apartment. have=possession cannot be progressive."
+  },
+  {
+    "i": "096",
+    "q": "I will take full rest as soon as I ______ my project.",
+    "c": [
+      [
+        "1",
+        "will complete"
+      ],
+      [
+        "2",
+        "complete"
+      ],
+      [
+        "3",
+        "completed"
+      ],
+      [
+        "4",
+        "am completed"
+      ]
+    ],
+    "a": "3",
+    "t": "many vs. much",
+    "exp": "much money. money = 불가산."
+  },
+  {
+    "i": "098",
+    "q": "①As soon as ②these misunderstandings ③will be straightened out, we ④will be able to proceed.",
+    "c": [
+      [
+        "1",
+        "As soon as"
+      ],
+      [
+        "2",
+        "these misunderstandings"
+      ],
+      [
+        "3",
+        "will be straightened out, we"
+      ],
+      [
+        "4",
+        "will be able to proceed."
+      ]
+    ],
+    "a": "3",
+    "t": "이중소유격",
+    "exp": "a friend of my father's. 이중소유격."
+  },
+  {
+    "i": "101",
+    "q": "Mary ______ quite ill for the past few days.",
+    "c": [
+      [
+        "1",
+        "will be"
+      ],
+      [
+        "2",
+        "is"
+      ],
+      [
+        "3",
+        "has been"
+      ],
+      [
+        "4",
+        "had been"
+      ]
+    ],
+    "a": "3",
+    "t": "현재완료 vs. 과거",
+    "exp": "for the past/last + 기간 = 현재완료(have/has + p.p.)"
+  },
+  {
+    "i": "103",
+    "q": "Doctoral students who are preparing to take their qualifying exams have been studying in the library every night ______ the last three months.",
+    "c": [
+      [
+        "1",
+        "until"
+      ],
+      [
+        "2",
+        "since"
+      ],
+      [
+        "3",
+        "for"
+      ],
+      [
+        "4",
+        "from"
+      ]
+    ],
+    "a": "3",
+    "t": "for/over 완료시제",
+    "exp": "'the last three months'는 기간을 나타내므로 'for'. 'since'는 특정 시점."
+  },
+  {
+    "i": "104",
+    "q": "The famous painting has been hanging ______.",
+    "c": [
+      [
+        "1",
+        "on that room for a long time"
+      ],
+      [
+        "2",
+        "on that wall many years ago"
+      ],
+      [
+        "3",
+        "on that wall for many years"
+      ],
+      [
+        "4",
+        "on that wall in 1988"
+      ]
+    ],
+    "a": "3",
+    "t": "현재완료 vs. 과거",
+    "exp": "'has been hanging'은 현재완료진행. 'for many years'만 현재완료와 호환. ① 'on that room' 전치사 오류, ②④ 과거시점이라 불가."
+  },
+  {
+    "i": "105",
+    "q": "A: How long have you been in Korea? B: Since September. C: Oh, so by Christmas you ______ here for three months.",
+    "c": [
+      [
+        "1",
+        "will have been"
+      ],
+      [
+        "2",
+        "are"
+      ],
+      [
+        "3",
+        "would be"
+      ],
+      [
+        "4",
+        "will be"
+      ]
+    ],
+    "a": "1",
+    "t": "미래완료",
+    "exp": "'by Christmas'(미래시점) + 'for three months'(기간) → 미래완료 'will have been'."
+  },
+  {
+    "i": "106",
+    "q": "①The euro is not new: ②it's used in electronic transactions and ③by banks and international ④businesses since January 1999.",
+    "c": [
+      [
+        "1",
+        "The euro is not new:"
+      ],
+      [
+        "2",
+        "it's used in electronic transactions and"
+      ],
+      [
+        "3",
+        "by banks and international"
+      ],
+      [
+        "4",
+        "businesses since January 1999."
+      ]
+    ],
+    "a": "2",
+    "t": "since 완료시제",
+    "exp": "since + 과거시점 -> 현재완료. it's used(현재) -> it has been used(현재완료)."
+  },
+  {
+    "i": "107",
+    "q": "Choose the one that is BEST according to the standard English.",
+    "c": [
+      [
+        "1",
+        "The computer market has grown since it is early 1970s."
+      ],
+      [
+        "2",
+        "The computer market looks grown since the early 1970s."
+      ],
+      [
+        "3",
+        "The computer market grew from the time of early 1970s."
+      ],
+      [
+        "4",
+        "The computer market has seen very large growth since the early 1970s."
+      ]
+    ],
+    "a": "4",
+    "t": "현재완료 vs. 과거",
+    "exp": "④만 현재완료(have/has + pp)와 since 호환. ① 'since it is' 오류, ② 'looks grown' 부자연, ③ 단순과거+since 부적절."
+  },
+  {
+    "i": "108",
+    "q": "My brother has been",
+    "c": [
+      [
+        "1",
+        "pursuing a"
+      ],
+      [
+        "2",
+        "career in medical research"
+      ],
+      [
+        "3",
+        "until he"
+      ],
+      [
+        "4",
+        "graduated last May."
+      ]
+    ],
+    "a": "3",
+    "t": "시제 일치",
+    "exp": "'has been pursuing'은 현재완료진행. 'until he graduated'(과거)와 시제 충돌. ③이 틀림."
+  },
+  {
+    "i": "109",
+    "q": "①By the time I ②reached the bank, the doors ③were closed; I ④could not cash my check.",
+    "c": [
+      [
+        "1",
+        "By the time I"
+      ],
+      [
+        "2",
+        "reached the bank, the doors"
+      ],
+      [
+        "3",
+        "were closed; I"
+      ],
+      [
+        "4",
+        "could not cash my check."
+      ]
+    ],
+    "a": "3",
+    "t": "대과거 vs. 과거",
+    "exp": "By the time + 과거(reached) -> 대과거(had p.p.). were closed -> had been closed."
+  },
+  {
+    "i": "110",
+    "q": "All trainers ______ eighty hours of instruction by the end of March.",
+    "c": [
+      [
+        "1",
+        "complete"
+      ],
+      [
+        "2",
+        "will be completing"
+      ],
+      [
+        "3",
+        "will have completed"
+      ]
+    ],
+    "a": "3",
+    "t": "미래완료",
+    "exp": "'by the end of March'(미래시점) → 미래완료 'will have completed'."
+  },
+  {
+    "i": "111",
+    "q": "①By the time the vacation is ②over, the children ③would finish ④their assignments.",
+    "c": [
+      [
+        "1",
+        "By the time the vacation is"
+      ],
+      [
+        "2",
+        "over, the children"
+      ],
+      [
+        "3",
+        "would finish"
+      ],
+      [
+        "4",
+        "their assignments."
+      ]
+    ],
+    "a": "3",
+    "t": "시간/조건 부사절 시제",
+    "exp": "By the time + 현재(is) → 주절은 미래/미래완료. would finish(가정법)는 틀림. will have finished가 맞음."
+  },
+  {
+    "i": "112",
+    "q": "By the time the mayor gets to his office, his secretary ______ for Santa Barbara.",
+    "c": [
+      [
+        "1",
+        "will have left"
+      ],
+      [
+        "2",
+        "left"
+      ],
+      [
+        "3",
+        "is leaving"
+      ],
+      [
+        "4",
+        "will leave"
+      ]
+    ],
+    "a": "1",
+    "t": "미래완료",
+    "exp": "By the time + 현재(gets) → 미래완료. will have left만이 유일한 미래완료 형태."
+  },
+  {
+    "i": "113",
+    "q": "Have you ever been to New York ______?",
+    "c": [
+      [
+        "1",
+        "before"
+      ],
+      [
+        "2",
+        "prior"
+      ],
+      [
+        "3",
+        "ago"
+      ],
+      [
+        "4",
+        "previous"
+      ]
+    ],
+    "a": "1",
+    "t": "현재완료 부사",
+    "exp": "현재완료 의문문 + before. ago는 과거시제 전용. prior는 단독 부사 불가. previous는 형용사."
+  },
+  {
+    "i": "114",
+    "q": "A: Has Nick finished his work yet? B: Yes, he ______ half an hour ago.",
+    "c": [
+      [
+        "1",
+        "has finished"
+      ],
+      [
+        "2",
+        "was finishing"
+      ],
+      [
+        "3",
+        "finishes"
+      ],
+      [
+        "4",
+        "finished"
+      ]
+    ],
+    "a": "4",
+    "t": "현재완료 vs. 과거",
+    "exp": "ago/yesterday/last night = 명백한 과거시점 -> 단순과거."
+  },
+  {
+    "i": "116",
+    "q": "For the recent exhibition, the museum",
+    "c": [
+      [
+        "1",
+        "acquired a rock"
+      ],
+      [
+        "2",
+        "from a volcano that"
+      ],
+      [
+        "3",
+        "has erupted"
+      ],
+      [
+        "4",
+        "more than two thousand years ago."
+      ]
+    ],
+    "a": "3",
+    "t": "현재완료 vs. 과거",
+    "exp": "more than two thousand years ago(과거시점) + has erupted(현재완료) 충돌 → erupted(과거)."
+  },
+  {
+    "i": "117",
+    "q": "①Learning a foreign language is especially difficult for ②those who ③had never learned ④one before.",
+    "c": [
+      [
+        "1",
+        "Learning a foreign language is especially difficult for"
+      ],
+      [
+        "2",
+        "those who"
+      ],
+      [
+        "3",
+        "had never learned"
+      ],
+      [
+        "4",
+        "one before."
+      ]
+    ],
+    "a": "3",
+    "t": "시제 일치",
+    "exp": "Learning...is(현재) ↔ had never learned(과거완료) 시제 불일치 → have never learned."
+  },
+  {
+    "i": "118",
+    "q": "When George Moore began to write,",
+    "c": [
+      [
+        "1",
+        "his style was poor; it gave"
+      ],
+      [
+        "2",
+        "the impression that he"
+      ],
+      [
+        "3",
+        "writes on wrapping paper"
+      ],
+      [
+        "4",
+        "with a blunt pencil."
+      ]
+    ],
+    "a": "3",
+    "t": "시제 일치",
+    "exp": "began(과거) → 전체 과거시제. writes(현재) → wrote(과거)로 시제 일치."
+  },
+  {
+    "i": "119",
+    "q": "President Lincoln, walking",
+    "c": [
+      [
+        "1",
+        "with a friend, turned back to assist a beetle that"
+      ],
+      [
+        "2",
+        "lie on"
+      ],
+      [
+        "3",
+        "its back, legs clawing the air, vainly"
+      ],
+      [
+        "4",
+        "trying to turn itself over."
+      ]
+    ],
+    "a": "2",
+    "t": "자동사 vs. 타동사",
+    "exp": "turned(과거) ↔ lie(현재). lie-lay-lain 과거는 lay. lay on이 맞음."
+  },
+  {
+    "i": "120",
+    "q": "The last time",
+    "c": [
+      [
+        "1",
+        "a flu epidemic was named"
+      ],
+      [
+        "2",
+        "after Hong Kong, nobody"
+      ],
+      [
+        "3",
+        "there"
+      ]
+    ],
+    "a": "3",
+    "t": "that절 목적어 전치사",
+    "exp": "문장 말단 절단. there가 문법적 오류이거나 불완전 종결. 4번째 선택지 유실."
+  },
+  {
+    "i": "121",
+    "q": "If she ______ the manager, she would not treat us so severely.",
+    "c": [
+      [
+        "1",
+        "were"
+      ],
+      [
+        "2",
+        "are"
+      ],
+      [
+        "3",
+        "is"
+      ],
+      [
+        "4",
+        "had been"
+      ]
+    ],
+    "a": "1",
+    "exp": "If S + were (가정법 과거). were for all persons.",
+    "t": "가정법과거"
+  },
+  {
+    "i": "122",
+    "q": "I ①would be able to finish ②all my work if the day ③was thirty ④hours long.",
+    "c": [
+      [
+        "1",
+        "would be able to finish"
+      ],
+      [
+        "2",
+        "all my work if the day"
+      ],
+      [
+        "3",
+        "was thirty"
+      ],
+      [
+        "4",
+        "hours long."
+      ]
+    ],
+    "a": "3",
+    "exp": "was -> were. be in subjunctive if-clause",
+    "t": "가정법과거"
+  },
+  {
+    "i": "123",
+    "q": "If I ______ speak English as well as you do, I'd be very happy.",
+    "c": [
+      [
+        "1",
+        "may"
+      ],
+      [
+        "2",
+        "can"
+      ],
+      [
+        "3",
+        "will"
+      ],
+      [
+        "4",
+        "could"
+      ]
+    ],
+    "a": "4",
+    "exp": "I would(I'd) -> 가정법 과거. 능력은 could. may/can/will은 가정법 if절 불가.",
+    "t": "가정법과거"
+  },
+  {
+    "i": "124",
+    "q": "A: What do you think about German? B: If I had known German was so difficult, I ______ it up.",
+    "c": [
+      [
+        "1",
+        "would never have taken"
+      ],
+      [
+        "2",
+        "would never take"
+      ],
+      [
+        "3",
+        "will never take"
+      ],
+      [
+        "4",
+        "would never had taken"
+      ]
+    ],
+    "a": "1",
+    "exp": "had known -> would have p.p. would never have taken",
+    "t": "가정법과거완료"
+  },
+  {
+    "i": "125",
+    "q": "A friend of mine said boastfully that he ______ abroad if he had only wanted to.",
+    "c": [
+      [
+        "1",
+        "could have gone"
+      ],
+      [
+        "2",
+        "could have been gone"
+      ],
+      [
+        "3",
+        "can have gone"
+      ],
+      [
+        "4",
+        "could go"
+      ]
+    ],
+    "a": "1",
+    "exp": "had wanted -> could have gone. can have gone is ungrammatical",
+    "t": "혼합가정법"
+  },
+  {
+    "i": "126",
+    "q": "The human race ______ long ago if people had ceased to aid each other. We cannot exist without mutual help. No one who has the power ______ help can refuse it without guilt.",
+    "c": [
+      [
+        "1",
+        "will be perished -- to grant"
+      ],
+      [
+        "2",
+        "would have perished -- of granting"
+      ],
+      [
+        "3",
+        "should have perished -- of having granted"
+      ],
+      [
+        "4",
+        "have been perished -- to have granted"
+      ]
+    ],
+    "a": "2",
+    "exp": "had ceased -> would have perished. of granting correct",
+    "t": "가정법과거완료"
+  },
+  {
+    "i": "127",
+    "q": "If I had not missed my bus, I ______ at school by now.",
+    "c": [
+      [
+        "1",
+        "am"
+      ],
+      [
+        "2",
+        "were"
+      ],
+      [
+        "3",
+        "would be"
+      ],
+      [
+        "4",
+        "would have been"
+      ]
+    ],
+    "a": "3",
+    "exp": "had not missed + by now = mixed subjunctive. would be",
+    "t": "혼합가정법"
+  },
+  {
+    "i": "128",
+    "q": "If the United States",
+    "c": [
+      [
+        "1",
+        "had built more homes for"
+      ],
+      [
+        "2",
+        "the poor in 2000, the"
+      ],
+      [
+        "3",
+        "housing problems in some parts of this country"
+      ],
+      [
+        "4",
+        "wouldn't have been so serious now."
+      ]
+    ],
+    "a": "4",
+    "exp": "now + wouldn't have been -> wouldn't be. mixed subjunctive",
+    "t": "가정법과거완료"
+  },
+  {
+    "i": "129",
+    "q": "Choose the one that is CORRECT according to the standard English.",
+    "c": [
+      [
+        "1",
+        "The foreigner wants to marry with the beautiful Korean girl."
+      ],
+      [
+        "2",
+        "We took care his children when he left from Seoul."
+      ],
+      [
+        "3",
+        "You had better have that tooth to pull out."
+      ],
+      [
+        "4",
+        "Had he not died in the war, he would be 30 years old."
+      ]
+    ],
+    "a": "4",
+    "exp": "1 marry with(X) 2 took care his children/left from(X) 3 have that tooth to pull(X) 4 Had he not died...would be correct",
+    "t": "가정법"
+  },
+  {
+    "i": "130",
+    "q": "Given that the boy has always lived up to the expectations of those around him, if the boy ______, they would be very surprised and shocked.",
+    "c": [
+      [
+        "1",
+        "failed"
+      ],
+      [
+        "2",
+        "was to fail"
+      ],
+      [
+        "3",
+        "had failed"
+      ]
+    ],
+    "a": "3",
+    "exp": "Given that has lived -> if had failed best fit",
+    "t": "분사구문"
+  },
+  {
+    "i": "131",
+    "q": "If any signer of the Constitution",
+    "c": [
+      [
+        "1",
+        "was to return to life"
+      ],
+      [
+        "2",
+        "for a day, his opinion"
+      ],
+      [
+        "3",
+        "of our amendments"
+      ],
+      [
+        "4",
+        "would be interesting."
+      ]
+    ],
+    "a": "1",
+    "exp": "If S were to RV = subjunctive future. 'was to return' is marked incorrect part - should be 'were to return' (가정법 미래는 were to).",
+    "t": "가정법미래"
+  },
+  {
+    "i": "132",
+    "q": "______ during my absence, please take a message.",
+    "c": [
+      [
+        "1",
+        "If anyone will call"
+      ],
+      [
+        "2",
+        "Would anyone call"
+      ],
+      [
+        "3",
+        "Should anyone call"
+      ],
+      [
+        "4",
+        "If anyone will have called"
+      ]
+    ],
+    "a": "3",
+    "exp": "Should S RV = subjunctive future inversion. 'Should anyone call' = If anyone should call.",
+    "t": "가정법 도치"
+  },
+  {
+    "i": "133",
+    "q": "①Should a foreign student ②needing ③help, he or she ④must see the foreign student advisor.",
+    "c": [
+      [
+        "1",
+        "Should a foreign student"
+      ],
+      [
+        "2",
+        "needing"
+      ],
+      [
+        "3",
+        "help, he or she"
+      ],
+      [
+        "4",
+        "must see the foreign student advisor."
+      ]
+    ],
+    "a": "2",
+    "exp": "Should S RV (원형). 'needing' -> 'need'. Subjunctive inversion requires base verb.",
+    "t": "가정법 도치"
+  },
+  {
+    "i": "134",
+    "q": "______ cut away, the wheel could be strengthened with struts or crossbars.",
+    "c": [
+      [
+        "1",
+        "Were large sections of a wheel"
+      ],
+      [
+        "2",
+        "Large sections of a wheel"
+      ],
+      [
+        "3",
+        "Large sections of a wheel were"
+      ],
+      [
+        "4",
+        "Large sections of a wheel to"
+      ]
+    ],
+    "a": "1",
+    "exp": "Were S p.p. = subjunctive past passive inversion. 'Were large sections cut away' = If large sections were cut away.",
+    "t": "분사구문"
+  },
+  {
+    "i": "135",
+    "q": "______ I known you were ill, I'd have called to see you.",
+    "c": [
+      [
+        "1",
+        "If"
+      ],
+      [
+        "2",
+        "Had"
+      ],
+      [
+        "3",
+        "When"
+      ],
+      [
+        "4",
+        "Should"
+      ]
+    ],
+    "a": "2",
+    "exp": "Had S p.p. = subjunctive past perfect inversion. 'Had I known' = If I had known.",
+    "t": "가정법 도치"
+  },
+  {
+    "i": "136",
+    "q": "______ better, the team would have been able to defeat the opponent.",
+    "c": [
+      [
+        "1",
+        "If it prepares"
+      ],
+      [
+        "2",
+        "If prepares"
+      ],
+      [
+        "3",
+        "Preparing"
+      ],
+      [
+        "4",
+        "Had it prepared"
+      ]
+    ],
+    "a": "4",
+    "exp": "Had S p.p. inversion. 'Had it prepared better' = If it had prepared better.",
+    "t": "가정법 도치"
+  },
+  {
+    "i": "137",
+    "q": "I would never have encouraged you to go into the field ______ it would be so stressful for you. I'm sorry it's been so difficult for you.",
+    "c": [
+      [
+        "1",
+        "had I known"
+      ],
+      [
+        "2",
+        "and I had known"
+      ],
+      [
+        "3",
+        "should I know"
+      ],
+      [
+        "4",
+        "but I knew"
+      ]
+    ],
+    "a": "1",
+    "exp": "had I known = If I had known. Inversion after main clause for emphasis.",
+    "t": "가정법 과거완료"
+  },
+  {
+    "i": "138",
+    "q": "Many of our most successful men,",
+    "c": [
+      [
+        "1",
+        "had they been able to choose"
+      ],
+      [
+        "2",
+        "for themselves,"
+      ],
+      [
+        "3",
+        "would selected some quite different profession"
+      ],
+      [
+        "4",
+        "from that in which they have made their fortunes."
+      ]
+    ],
+    "a": "3",
+    "exp": "would selected -> would have selected. Missing 'have' in past perfect subjunctive main clause.",
+    "t": "가정법"
+  },
+  {
+    "i": "139",
+    "q": "Choose the one that is NOT correct according to the standard English. ______ your help, I should have failed.",
+    "c": [
+      [
+        "1",
+        "But for"
+      ],
+      [
+        "2",
+        "Without"
+      ],
+      [
+        "3",
+        "If it were not for"
+      ],
+      [
+        "4",
+        "Had it not been for"
+      ]
+    ],
+    "a": "3",
+    "exp": "If it WERE not for(now) + should have failed(past)=tense mismatch. Should be If it HAD not been for.",
+    "t": "가정법과거완료"
+  },
+  {
+    "i": "140",
+    "q": "______ the baby-sitter, they would not have been able to go to the rock concert last night.",
+    "c": [
+      [
+        "1",
+        "Were it not for"
+      ],
+      [
+        "2",
+        "If it has not been for"
+      ],
+      [
+        "3",
+        "If it had not been for"
+      ]
+    ],
+    "a": "3",
+    "exp": "Had it not been for the baby-sitter, they would not have been able. 'If it had not been for' is also correct but wordier. 'last night' requires past form.",
+    "t": "가정법 과거완료 대용"
+  },
+  {
+    "i": "141",
+    "q": "Frankly, I wish he ______ our problems a little better.",
+    "c": [
+      [
+        "1",
+        "understood"
+      ],
+      [
+        "2",
+        "understands"
+      ],
+      [
+        "3",
+        "understand"
+      ],
+      [
+        "4",
+        "can understand"
+      ]
+    ],
+    "a": "1",
+    "exp": "wish + past tense (현재 반대 소망). 'I wish he understood'.",
+    "t": "관계대명사"
+  },
+  {
+    "i": "142",
+    "q": "I wish you ______ such a bad cold, because I'm sure you would have enjoyed the concert.",
+    "c": [
+      [
+        "1",
+        "hadn't"
+      ],
+      [
+        "2",
+        "wouldn't have"
+      ],
+      [
+        "3",
+        "hadn't had"
+      ],
+      [
+        "4",
+        "wouldn't have had"
+      ]
+    ],
+    "a": "3",
+    "exp": "wish + had p.p. (과거 반대 소망). 'I wish you hadn't had such a bad cold'.",
+    "t": "관계대명사"
+  },
+  {
+    "i": "143",
+    "q": "It has been raining for several weeks; I wish ______.",
+    "c": [
+      [
+        "1",
+        "it would stop raining before tomorrow"
+      ],
+      [
+        "2",
+        "I could stop it raining before tomorrow"
+      ],
+      [
+        "3",
+        "it will stop raining before tomorrow"
+      ],
+      [
+        "4",
+        "it would stop to rain before tomorrow"
+      ]
+    ],
+    "a": "1",
+    "exp": "wish + would (불만/희망). 'I wish it would stop raining'.",
+    "t": "관계대명사"
+  },
+  {
+    "i": "144",
+    "q": "That American",
+    "c": [
+      [
+        "1",
+        "speaks Korean"
+      ],
+      [
+        "2",
+        "as fluently"
+      ],
+      [
+        "3",
+        "as if he"
+      ],
+      [
+        "4",
+        "is a Korean."
+      ]
+    ],
+    "a": "4",
+    "exp": "as if + subjunctive. 'as if he were a Korean'. 'is' -> 'were'.",
+    "t": "관계부사"
+  },
+  {
+    "i": "145",
+    "q": "He ①looked like he were in ②some strange land where ③dwarves were ④playing about in the garden.",
+    "c": [
+      [
+        "1",
+        "looked like he were in"
+      ],
+      [
+        "2",
+        "some strange land where"
+      ],
+      [
+        "3",
+        "dwarves were"
+      ],
+      [
+        "4",
+        "playing about in the garden."
+      ]
+    ],
+    "a": "1",
+    "exp": "looked like he were -> looked as if he were. 'like' cannot introduce a clause in formal English.",
+    "t": "관계부사"
+  },
+  {
+    "i": "146",
+    "q": "The wind lulls as if ______.",
+    "c": [
+      [
+        "1",
+        "it feared to waken them"
+      ],
+      [
+        "2",
+        "it must waken them"
+      ],
+      [
+        "3",
+        "it fears to waken them"
+      ],
+      [
+        "4",
+        "it is going to awaken them"
+      ]
+    ],
+    "a": "1",
+    "exp": "as if it feared. Present subjunctive after 'as if' matching 'lulls'(present).",
+    "t": "관계대명사 what"
+  },
+  {
+    "i": "147",
+    "q": "She looked at me as if she ______ never seen me before.",
+    "c": [
+      [
+        "1",
+        "had"
+      ],
+      [
+        "2",
+        "is"
+      ],
+      [
+        "3",
+        "has"
+      ],
+      [
+        "4",
+        "was"
+      ]
+    ],
+    "a": "1",
+    "exp": "as if + had p.p. (과거 반대). had never seen.",
+    "t": "관계대명사"
+  },
+  {
+    "i": "148",
+    "q": "James looked as if ______.",
+    "c": [
+      [
+        "1",
+        "he saw a ghost"
+      ],
+      [
+        "2",
+        "he has seen a ghost"
+      ],
+      [
+        "3",
+        "he was seeing a ghost"
+      ],
+      [
+        "4",
+        "he had seen a ghost"
+      ]
+    ],
+    "a": "4",
+    "exp": "looked as if he had seen. Past perfect after past 'looked' for earlier event.",
+    "t": "복합관계대명사"
+  },
+  {
+    "i": "149",
+    "q": "It's about time you ______ to work; I mean, you are supposed to work on the project now.",
+    "c": [
+      [
+        "1",
+        "go"
+      ],
+      [
+        "2",
+        "had gone"
+      ],
+      [
+        "3",
+        "went"
+      ],
+      [
+        "4",
+        "have gone"
+      ]
+    ],
+    "a": "3",
+    "exp": "It is about time + S + 과거동사. went.",
+    "t": "관계대명사 계속적 용법"
+  },
+  {
+    "i": "150",
+    "q": "A: What will you do during Winter vacation? B: I don't know, but it's about time ______ on something.",
+    "c": [
+      [
+        "1",
+        "I'm deciding"
+      ],
+      [
+        "2",
+        "I'd decided"
+      ],
+      [
+        "3",
+        "I'll decide"
+      ]
+    ],
+    "a": "2",
+    "exp": "it's about time + past. 'I'd decided' = I had decided (past form).",
+    "t": "관계대명사 that"
+  },
+  {
+    "i": "151",
+    "q": "He told me that ______ live with his roommate again next year.",
+    "c": [
+      [
+        "1",
+        "he'll rather not"
+      ],
+      [
+        "2",
+        "he'd rather not"
+      ],
+      [
+        "3",
+        "he won't rather"
+      ],
+      [
+        "4",
+        "he'd rather didn't"
+      ]
+    ],
+    "a": "2",
+    "exp": "he'd rather not live. would rather + RV (bare infinitive).",
+    "t": "현재분사/과거분사"
+  },
+  {
+    "i": "152",
+    "q": "A: Did you criticize him for his mistakes? B: Yes, but ______ it.",
+    "c": [
+      [
+        "1",
+        "I'd not rather"
+      ],
+      [
+        "2",
+        "I'd rather not have done"
+      ],
+      [
+        "3",
+        "I'd better not do"
+      ],
+      [
+        "4",
+        "I'd rather not doing"
+      ]
+    ],
+    "a": "2",
+    "exp": "I'd rather not have done it. would rather + have p.p. for past regret.",
+    "t": "분사구문"
+  },
+  {
+    "i": "153",
+    "q": "A: John wants to see you today. B: I would rather he ______ tomorrow than today.",
+    "c": [
+      [
+        "1",
+        "come"
+      ],
+      [
+        "2",
+        "came"
+      ],
+      [
+        "3",
+        "should come"
+      ],
+      [
+        "4",
+        "has come"
+      ]
+    ],
+    "a": "2",
+    "exp": "I would rather he came. would rather + S + past (다른 주어일 때 과거).",
+    "t": "분사구문 시제"
+  },
+  {
+    "i": "155",
+    "q": "Since his blood pressure is",
+    "c": [
+      [
+        "1",
+        "much higher"
+      ],
+      [
+        "2",
+        "than it"
+      ],
+      [
+        "3",
+        "should be, she insists that he"
+      ],
+      [
+        "4",
+        "will not smoke."
+      ]
+    ],
+    "a": "4",
+    "exp": "insists that he not smoke (subjunctive, bare verb). 'will not smoke' is wrong.",
+    "t": "주어 불일치 분사구문"
+  },
+  {
+    "i": "156",
+    "q": "Jean's uncle, complaining of his back pain, moved ______ in the hotel.",
+    "c": [
+      [
+        "1",
+        "not staying"
+      ],
+      [
+        "2",
+        "not to stay"
+      ],
+      [
+        "3",
+        "that he not stay"
+      ],
+      [
+        "4",
+        "staying not"
+      ]
+    ],
+    "a": "3",
+    "exp": "moved that he not stay. move = suggest, requires subjunctive.",
+    "t": "분사"
+  },
+  {
+    "i": "157",
+    "q": "It is necessary that an applicant ______ the form before January 13.",
+    "c": [
+      [
+        "1",
+        "fills out and sends in"
+      ],
+      [
+        "2",
+        "will fill out and send in"
+      ],
+      [
+        "3",
+        "may fill out and send in"
+      ],
+      [
+        "4",
+        "fill out and send in"
+      ]
+    ],
+    "a": "4",
+    "exp": "It is necessary that S + RV (원형). 가정법 현재.",
+    "t": "분사"
+  },
+  {
+    "i": "158",
+    "q": "It is not always necessary ______ the TOEIC examination to be admitted to the company.",
+    "c": [
+      [
+        "1",
+        "to have to take"
+      ],
+      [
+        "2",
+        "that you must take"
+      ],
+      [
+        "3",
+        "to take"
+      ],
+      [
+        "4",
+        "that you have to take"
+      ]
+    ],
+    "a": "3",
+    "exp": "It is not always necessary to take. 'to take' is the natural infinitive. that-clause + must is redundant.",
+    "t": "with+목적어+분사"
+  },
+  {
+    "i": "159",
+    "q": "I ①would have done the assignment ②earlier, but I ③had met an old friend of mine ④on my way home.",
+    "c": [
+      [
+        "1",
+        "would have done the assignment"
+      ],
+      [
+        "2",
+        "earlier, but I"
+      ],
+      [
+        "3",
+        "had met an old friend of mine"
+      ],
+      [
+        "4",
+        "on my way home."
+      ]
+    ],
+    "a": "3",
+    "exp": "had met -> met. 'but' connects to real past, not subjunctive. Simple past needed.",
+    "t": "분사 관용표현"
+  },
+  {
+    "i": "160",
+    "q": "Sue ①could have passed the exam, but she ②might not have enough time to study since her grandfather ③died three days ④before the exam.",
+    "c": [
+      [
+        "1",
+        "could have passed the exam, but she"
+      ],
+      [
+        "2",
+        "might not have enough time to study since her grandfather"
+      ],
+      [
+        "3",
+        "died three days"
+      ]
+    ],
+    "a": "2",
+    "exp": "might not have enough -> might not have had enough. Past context requires past perfect for the missed opportunity.",
+    "t": "접속사+분사"
+  },
+  {
+    "i": "161",
+    "q": "Censors delete scenes from movies shown on television ______ younger family members should not see.",
+    "c": [
+      [
+        "1",
+        "that thinks"
+      ],
+      [
+        "2",
+        "that they think"
+      ],
+      [
+        "3",
+        "to think"
+      ],
+      [
+        "4",
+        "when thinking"
+      ]
+    ],
+    "a": "1",
+    "exp": "however(접속부사) cannot connect two independent clauses without semicolon. Use 'but'.",
+    "t": "접속사 vs. 접속부사"
+  },
+  {
+    "i": "162",
+    "q": "I will employ the woman ______ they say speaks English fluently.",
+    "c": [
+      [
+        "1",
+        "to whom"
+      ],
+      [
+        "2",
+        "who"
+      ],
+      [
+        "3",
+        "what"
+      ],
+      [
+        "4",
+        "whatever"
+      ]
+    ],
+    "a": "4",
+    "exp": "not only A but also B structure. A and B must be parallel.",
+    "t": "접속사와 병렬구조"
+  },
+  {
+    "i": "164",
+    "q": "In the rain I met a gentleman ______ I believed to be a professor.",
+    "c": [
+      [
+        "1",
+        "who"
+      ],
+      [
+        "2",
+        "whom"
+      ],
+      [
+        "3",
+        "of whom"
+      ],
+      [
+        "4",
+        "whose"
+      ]
+    ],
+    "a": "2",
+    "exp": "동명사 의미상 주어: 소유격. 'his being late'.",
+    "t": "동명사 의미상 주어"
+  },
+  {
+    "i": "166",
+    "q": "The modern Olympic Games began in Athens in 1896 as a result",
+    "c": [
+      [
+        "1",
+        "of the initiative of Baron Pierre de Coubertin, a French educator"
+      ],
+      [
+        "2",
+        "who"
+      ],
+      [
+        "3",
+        "desire was to promote international"
+      ],
+      [
+        "4",
+        "understanding through athletics."
+      ]
+    ],
+    "a": "3",
+    "exp": "enjoy/finish/avoid + ~ing. 동명사 목적어 동사.",
+    "t": "동명사 목적어 동사"
+  },
+  {
+    "i": "167",
+    "q": "The number and percentage of patients",
+    "c": [
+      [
+        "1",
+        "with chronic disease,"
+      ],
+      [
+        "2",
+        "whom the diagnosis"
+      ],
+      [
+        "3",
+        "is already known, are"
+      ],
+      [
+        "4",
+        "increasing."
+      ]
+    ],
+    "a": "1",
+    "exp": "remember ~ing (과거 일 기억) vs. remember to RV (미래 할 일).",
+    "t": "동명사 vs. 부정사"
+  },
+  {
+    "i": "168",
+    "q": "Look at the mountain ______ is covered with snow.",
+    "c": [
+      [
+        "1",
+        "the top in which"
+      ],
+      [
+        "2",
+        "of which top"
+      ],
+      [
+        "3",
+        "what top"
+      ],
+      [
+        "4",
+        "whose top"
+      ]
+    ],
+    "a": "4",
+    "exp": "need ~ing = need to be p.p. 'The car needs washing' = 'The car needs to be washed'.",
+    "t": "need/worth 능동형 동명사"
+  },
+  {
+    "i": "169",
+    "q": "He made the journey in a 30-foot sailboat, ______ short-wave radio served as his only link with the outside world.",
+    "c": [
+      [
+        "1",
+        "of which"
+      ],
+      [
+        "2",
+        "what"
+      ],
+      [
+        "3",
+        "whom"
+      ],
+      [
+        "4",
+        "whose"
+      ]
+    ],
+    "a": "2",
+    "exp": "cannot help ~ing. 동명사 관용표현.",
+    "t": "동명사 관용표현"
+  },
+  {
+    "i": "170",
+    "q": "Mark Twain, ______ real name was Samuel Langhorne clemens, wrote many world-famous novels.",
+    "c": [
+      [
+        "1",
+        "who had as his"
+      ],
+      [
+        "2",
+        "whose the"
+      ],
+      [
+        "3",
+        "whose"
+      ]
+    ],
+    "a": "3",
+    "exp": "to부정사 의미상 주어: for + 목적격. 'for him to understand'.",
+    "t": "to부정사 의미상 주어"
+  },
+  {
+    "i": "171",
+    "q": "From time to time we must look up words ______.",
+    "c": [
+      [
+        "1",
+        "meaning of which we do not know"
+      ],
+      [
+        "2",
+        "whose meanings we are not familiar"
+      ],
+      [
+        "3",
+        "we do not know their meanings"
+      ],
+      [
+        "4",
+        "whose meanings we do not know"
+      ]
+    ],
+    "a": "4",
+    "exp": "whose meanings we do not know. 소유격 관계대명사.",
+    "t": "관계대명사"
+  },
+  {
+    "i": "172",
+    "q": "I also have to look at my brother, ______ I have done so many times in my life, when I'm faced with a situation.",
+    "c": [
+      [
+        "1",
+        "which"
+      ],
+      [
+        "2",
+        "who"
+      ],
+      [
+        "3",
+        "whom"
+      ],
+      [
+        "4",
+        "that"
+      ]
+    ],
+    "a": "1",
+    "exp": "be to 용법: 예정/의무/가능. 'are to meet' = 예정.",
+    "t": "be to 용법"
+  },
+  {
+    "i": "173",
+    "q": "He was the first man ______ came here at the party.",
+    "c": [
+      [
+        "1",
+        "who"
+      ],
+      [
+        "2",
+        "whom"
+      ],
+      [
+        "3",
+        "that"
+      ],
+      [
+        "4",
+        "which"
+      ]
+    ],
+    "a": "2",
+    "exp": "want/ask/tell + O + to RV. to부정사 목적보어.",
+    "t": "to부정사 목적보어"
+  },
+  {
+    "i": "174",
+    "q": "Humus, a substance",
+    "c": [
+      [
+        "1",
+        "found in soil, is"
+      ],
+      [
+        "2",
+        "soft and spongy and enables plant roots to send"
+      ],
+      [
+        "3",
+        "out tiny hairs through"
+      ],
+      [
+        "4",
+        "that they absorb water and food."
+      ]
+    ],
+    "a": "3",
+    "exp": "expect + O + to RV (O가 to RV하기를 기대). hope + that절.",
+    "t": "expect/hope/want"
+  },
+  {
+    "i": "175",
+    "q": "Adolescence is the time of life",
+    "c": [
+      [
+        "1",
+        "between childhood and adulthood. The word is"
+      ],
+      [
+        "2",
+        "derived from"
+      ],
+      [
+        "3",
+        "the Latin word adolescere,"
+      ],
+      [
+        "4",
+        "that means \"to grow into maturity.\""
+      ]
+    ],
+    "a": "1",
+    "exp": "자동사는 수동태 불가. 'was happened' (X) -> 'happened' (O).",
+    "t": "자동사와 수동태"
+  },
+  {
+    "i": "176",
+    "q": "The tax cut",
+    "c": [
+      [
+        "1",
+        "is Bush's most profound attack on Clinton's economic legacy. In 1993, without Re"
+      ],
+      [
+        "2",
+        "pushed through a budget"
+      ],
+      [
+        "3",
+        "what raised taxes on the affluent and"
+      ],
+      [
+        "4",
+        "sliced into the burgeoning deficit."
+      ]
+    ],
+    "a": "4",
+    "exp": "4형식 수여동사 수동태: be p.p. + to/for + IO.",
+    "t": "수여동사 수동형"
+  },
+  {
+    "i": "177",
+    "q": "______ chiefly lies behind slang is simply a kind of linguistic exuberance, an excess of world-making energy.",
+    "c": [
+      [
+        "1",
+        "What"
+      ],
+      [
+        "2",
+        "That"
+      ],
+      [
+        "3",
+        "It"
+      ],
+      [
+        "4",
+        "How"
+      ]
+    ],
+    "a": "2",
+    "exp": "5형식 사역동사 수동태: 목적보어에 to부정사. 'was made to clean'.",
+    "t": "사역/지각동사 수동태"
+  },
+  {
+    "i": "178",
+    "q": "______ had been deposited in the bank was withdrawn.",
+    "c": [
+      [
+        "1",
+        "The money"
+      ],
+      [
+        "2",
+        "That money"
+      ],
+      [
+        "3",
+        "What money"
+      ],
+      [
+        "4",
+        "Some money"
+      ]
+    ],
+    "a": "3",
+    "exp": "수동의미 자동사: sell, read, wash. 'This book sells well'.",
+    "t": "수동의미 자동사"
+  },
+  {
+    "i": "179",
+    "q": "My parents have made me ______ I am.",
+    "c": [
+      [
+        "1",
+        "what"
+      ],
+      [
+        "2",
+        "where"
+      ],
+      [
+        "3",
+        "those who"
+      ],
+      [
+        "4",
+        "whose"
+      ]
+    ],
+    "a": "4",
+    "exp": "make + O + OC. 'have made me what I am'. 명사절 보어.",
+    "t": "5형식"
+  },
+  {
+    "i": "180",
+    "q": "Color, line, mass, space, and texture are to a painter ______ to an author.",
+    "c": [
+      [
+        "1",
+        "are what words"
+      ],
+      [
+        "2",
+        "words are what"
+      ],
+      [
+        "3",
+        "what are words"
+      ]
+    ],
+    "a": "1",
+    "exp": "조동사 + have p.p. 'must have been' 과거 강한 추측.",
+    "t": "조동사+have+pp"
+  },
+  {
+    "i": "181",
+    "q": "No one knows exactly how big China's Internet police force is these days, although estimates run as high as 40,000. But ______, its sophistication is greater than ever.",
+    "c": [
+      [
+        "1",
+        "whatever its size"
+      ],
+      [
+        "2",
+        "however its size"
+      ],
+      [
+        "3",
+        "whatever it's size is"
+      ],
+      [
+        "4",
+        "however it's size is"
+      ]
+    ],
+    "a": "4",
+    "exp": "should have p.p. 과거 유감. 'should have told me'.",
+    "t": "should have pp"
+  },
+  {
+    "i": "182",
+    "q": "Whatever ______ in the future, I will never forget your kindness.",
+    "c": [
+      [
+        "1",
+        "happened"
+      ],
+      [
+        "2",
+        "happen"
+      ],
+      [
+        "3",
+        "happens"
+      ],
+      [
+        "4",
+        "did happen"
+      ]
+    ],
+    "a": "2",
+    "exp": "must have p.p. 'He must have been tired'.",
+    "t": "must have pp"
+  },
+  {
+    "i": "183",
+    "q": "A: What do you think of John? B: He has no sense ______.",
+    "c": [
+      [
+        "1",
+        "wherever"
+      ],
+      [
+        "2",
+        "however"
+      ],
+      [
+        "3",
+        "whatsoever"
+      ],
+      [
+        "4",
+        "nevertheless"
+      ]
+    ],
+    "a": "3",
+    "exp": "need not have p.p. 과거 불필요했던 일. 'need not have worried'.",
+    "t": "need not have pp"
+  },
+  {
+    "i": "184",
+    "q": "Lawmakers eager to promote a piece of legislation no doubt feel thwarted ______ their bill languishes in committee.",
+    "c": [
+      [
+        "1",
+        "however"
+      ],
+      [
+        "2",
+        "whenever"
+      ],
+      [
+        "3",
+        "whatever"
+      ],
+      [
+        "4",
+        "whomever"
+      ]
+    ],
+    "a": "1",
+    "exp": "cannot have p.p. 과거 불가능. 'cannot have seen me'.",
+    "t": "cannot have pp"
+  },
+  {
+    "i": "185",
+    "q": "①Whoever inspected ②this radio ③should have put ④their identification number on the box.",
+    "c": [
+      [
+        "1",
+        "Whoever inspected"
+      ],
+      [
+        "2",
+        "this radio"
+      ],
+      [
+        "3",
+        "should have put"
+      ],
+      [
+        "4",
+        "their identification number on the box."
+      ]
+    ],
+    "a": "4",
+    "exp": "as + 형용사 + as. 원급비교.",
+    "t": "원급: as-as"
+  },
+  {
+    "i": "186",
+    "q": "They were prepared to give their book to ________ came here first.",
+    "c": [
+      [
+        "1",
+        "whomever"
+      ],
+      [
+        "2",
+        "whom"
+      ],
+      [
+        "3",
+        "whoever"
+      ],
+      [
+        "4",
+        "those"
+      ]
+    ],
+    "a": "2",
+    "exp": "비교급 + than. 'better than'.",
+    "t": "비교급"
+  },
+  {
+    "i": "187",
+    "q": "That rich man offered a reward to ______ restore his lost car.",
+    "c": [
+      [
+        "1",
+        "who should"
+      ],
+      [
+        "2",
+        "whom should"
+      ],
+      [
+        "3",
+        "whoever should"
+      ],
+      [
+        "4",
+        "whomever should"
+      ]
+    ],
+    "a": "3",
+    "exp": "much/still/even + 비교급 강조.",
+    "t": "비교급 강조"
+  },
+  {
+    "i": "188",
+    "q": "These materials should be stored in a dry place ______ temperature extremes are minimal.",
+    "c": [
+      [
+        "1",
+        "which"
+      ],
+      [
+        "2",
+        "how"
+      ],
+      [
+        "3",
+        "what"
+      ],
+      [
+        "4",
+        "where"
+      ]
+    ],
+    "a": "1",
+    "exp": "the + 최상급 + of/in. 'the best of all'.",
+    "t": "최상급"
+  },
+  {
+    "i": "189",
+    "q": "During the War of 1812, the British attacked Washington, D.C., and the White House, ______ the president works and lives, was burned and important government buildings were destroyed.",
+    "c": [
+      [
+        "1",
+        "which"
+      ],
+      [
+        "2",
+        "where"
+      ],
+      [
+        "3",
+        "what"
+      ],
+      [
+        "4",
+        "that"
+      ]
+    ],
+    "a": "4",
+    "exp": "as many/much as. 원급 관용표현.",
+    "t": "원급 관용표현"
+  },
+  {
+    "i": "190",
+    "q": "In the United States, ______ is the most concentrated is New Orleans.",
+    "c": [
+      [
+        "1",
+        "French influence the city"
+      ],
+      [
+        "2",
+        "the city where French influence"
+      ],
+      [
+        "3",
+        "where the city influences French"
+      ]
+    ],
+    "a": "2",
+    "exp": "the + 비교급, the + 비교급. 'The more, the better'.",
+    "t": "the 비교급"
+  },
+  {
+    "i": "191",
+    "q": "In the multi-cultural",
+    "c": [
+      [
+        "1",
+        "universe where I live in, it's safe not to worry about"
+      ],
+      [
+        "2",
+        "explaining the story of Passover because if people don't"
+      ],
+      [
+        "3",
+        "hear it from me, they'll hear it"
+      ],
+      [
+        "4",
+        "some other way."
+      ]
+    ],
+    "a": "3",
+    "exp": "superior/inferior + to (not than).",
+    "t": "than vs. to"
+  },
+  {
+    "i": "192",
+    "q": "The computer has dramatically affected ______ photographic lenses are constructed.",
+    "c": [
+      [
+        "1",
+        "the way how"
+      ],
+      [
+        "2",
+        "that the way"
+      ],
+      [
+        "3",
+        "which way do"
+      ],
+      [
+        "4",
+        "the way"
+      ]
+    ],
+    "a": "1",
+    "exp": "twice as ~ as. 배수표현.",
+    "t": "배수표현"
+  },
+  {
+    "i": "193",
+    "q": "A: What do you think of the nation's economic future? B: ______, it is doomed.",
+    "c": [
+      [
+        "1",
+        "The way I look"
+      ],
+      [
+        "2",
+        "The way I look at it"
+      ],
+      [
+        "3",
+        "The way how I look"
+      ],
+      [
+        "4",
+        "How in which I look at it"
+      ]
+    ],
+    "a": "4",
+    "exp": "비교대상 생략. 문맥상 명확할 때 가능.",
+    "t": "비교대상 생략"
+  },
+  {
+    "i": "194",
+    "q": "If people cannot rely on the news",
+    "c": [
+      [
+        "1",
+        "for facts, journalism has no reason for"
+      ],
+      [
+        "2",
+        "being. The principal reason journalists"
+      ],
+      [
+        "3",
+        "existing in society is that people have a need to"
+      ],
+      [
+        "4",
+        "be informed of and ⑤comprehend the details of experience."
+      ]
+    ],
+    "a": "2",
+    "exp": "부가의문문: 긍정문 -> 부정, 부정문 -> 긍정.",
+    "t": "부가의문문"
+  },
+  {
+    "i": "195",
+    "q": "There is not one of us ______ wishes to help you.",
+    "c": [
+      [
+        "1",
+        "which"
+      ],
+      [
+        "2",
+        "whose"
+      ],
+      [
+        "3",
+        "whoever"
+      ],
+      [
+        "4",
+        "but"
+      ]
+    ],
+    "a": "3",
+    "exp": "부정어 도치. Never have I seen...",
+    "t": "도치 일반"
+  },
+  {
+    "i": "196",
+    "q": "모든 사람은 실수를 한다.",
+    "c": [
+      [
+        "1",
+        "Every man cannot commit any error."
+      ],
+      [
+        "2",
+        "All men don't commit errors."
+      ],
+      [
+        "3",
+        "A man cannot commit errors."
+      ],
+      [
+        "4",
+        "There is no man that commit errors. ⑤ There is no man but commits errors."
+      ]
+    ],
+    "a": "1",
+    "exp": "So do I / Neither do I.",
+    "t": "So/Neither do I"
+  },
+  {
+    "i": "197",
+    "q": "If, through laziness, you read at a slower rate than the rate ______ you are able to comprehend, there is great temptation for your mind to wander.",
+    "c": [
+      [
+        "1",
+        "at which"
+      ],
+      [
+        "2",
+        "which"
+      ],
+      [
+        "3",
+        "as if"
+      ],
+      [
+        "4",
+        "through which"
+      ]
+    ],
+    "a": "4",
+    "exp": "Here/There + V + S 도치.",
+    "t": "1형식문장 도치"
+  },
+  {
+    "i": "198",
+    "q": "Recently, police officers and lawyers",
+    "c": [
+      [
+        "1",
+        "have paid more attention to crimes"
+      ],
+      [
+        "2",
+        "associated with marital violence,"
+      ],
+      [
+        "3",
+        "and to the prevention of situations in"
+      ],
+      [
+        "4",
+        "which tend to occur."
+      ]
+    ],
+    "a": "2",
+    "exp": "불가산명사: information, advice, furniture.",
+    "t": "불가산명사"
+  },
+  {
+    "i": "200",
+    "q": "Choose the one that is CORRECT according to the standard English.",
+    "c": [
+      [
+        "1",
+        "The movie that Loretta and Jack went yesterday was Rain Man, which they loved."
+      ],
+      [
+        "2",
+        "My economics professor will let me take my final exam after vacation, for which "
+      ],
+      [
+        "3",
+        "96.5 FM is one radio station that I listen a lot."
+      ],
+      [
+        "4",
+        "This is the kind of plant that you usually have to fertilize it regularly. LOGIC"
+      ]
+    ],
+    "a": "3",
+    "exp": "Actually review: 96.5 FM is one radio station that I listen a lot. Needs TO: listen TO. But Q may be corrupted. Leaving a=3.",
+    "t": "many vs. much"
+  },
+  {
+    "i": "201",
+    "q": "①When ②frightening or exciting, elephants sometimes ③use their trunks to make ④a loud, shrill cry.",
+    "c": [
+      [
+        "1",
+        "When"
+      ],
+      [
+        "2",
+        "frightening or exciting, elephants sometimes"
+      ],
+      [
+        "3",
+        "use their trunks to make"
+      ],
+      [
+        "4",
+        "a loud, shrill cry."
+      ]
+    ],
+    "a": "2",
+    "exp": "frightening->frightened(과거분사:겁먹은)",
+    "t": "이중소유격"
+  },
+  {
+    "i": "202",
+    "q": "The professor",
+    "c": [
+      [
+        "1",
+        "said that"
+      ],
+      [
+        "2",
+        "our examinations were"
+      ],
+      [
+        "3",
+        "disappointed and that he"
+      ],
+      [
+        "4",
+        "would ⑤give a new test."
+      ]
+    ],
+    "a": "4",
+    "exp": "정관사 the: 유일물, 앞에 언급.",
+    "t": "정관사 the"
+  },
+  {
+    "i": "203",
+    "q": "①Even if Detroit could provide ②nonpolluted cars by the original deadline to meet ③prescribed Federal standards for clean air, the effect in big cities would be slight because ④only new cars would be properly equipped.",
+    "c": [
+      [
+        "1",
+        "Even if Detroit could provide"
+      ],
+      [
+        "2",
+        "nonpolluted cars by the original deadline to meet"
+      ],
+      [
+        "3",
+        "prescribed Federal standards for clean air, the effect in big cities would be sl"
+      ],
+      [
+        "4",
+        "only new cars would be properly equipped."
+      ]
+    ],
+    "a": "3",
+    "exp": "Even if + 가정법. would be + only new cars would be.",
+    "t": "가정법"
+  },
+  {
+    "i": "204",
+    "q": "①Because of the flood, we will ②have to drink ③bottling water ④instead of tap water.",
+    "c": [
+      [
+        "1",
+        "Because of the flood, we will"
+      ],
+      [
+        "2",
+        "have to drink"
+      ],
+      [
+        "3",
+        "bottling water"
+      ],
+      [
+        "4",
+        "instead of tap water."
+      ]
+    ],
+    "a": "3",
+    "exp": "bottling->bottled(과거분사:병에담긴)",
+    "t": "무관사"
+  },
+  {
+    "i": "205",
+    "q": "①Freezing foods are the ②fastest ③growing segment of the food ④industry.",
+    "c": [
+      [
+        "1",
+        "Freezing foods are the"
+      ],
+      [
+        "2",
+        "fastest"
+      ],
+      [
+        "3",
+        "growing segment of the food"
+      ],
+      [
+        "4",
+        "industry."
+      ]
+    ],
+    "a": "1",
+    "exp": "재귀대명사: S=O 일 때. He hurt himself.",
+    "t": "재귀대명사"
+  },
+  {
+    "i": "206",
+    "q": "①Two of the oldest and ②most ③developing money markets are ④those of the United States and Great britain.",
+    "c": [
+      [
+        "1",
+        "Two of the oldest and"
+      ],
+      [
+        "2",
+        "most"
+      ],
+      [
+        "3",
+        "developing money markets are"
+      ],
+      [
+        "4",
+        "those of the United States and Great britain."
+      ]
+    ],
+    "a": "3",
+    "exp": "developing->developed(과거분사:발달된)",
+    "t": "one vs. it"
+  },
+  {
+    "i": "207",
+    "q": "①Reading two novels ②by Hemingway during the summer vacation, I ③look forward to reading ④more of his works.",
+    "c": [
+      [
+        "1",
+        "Reading two novels"
+      ],
+      [
+        "2",
+        "by Hemingway during the summer vacation, I"
+      ],
+      [
+        "3",
+        "look forward to reading"
+      ],
+      [
+        "4",
+        "more of his works."
+      ]
+    ],
+    "a": "3",
+    "exp": "look forward to reading -> look forward to read? NO. look forward to+~ing. ③이 틀린게 아니라... 문장 전체 맥락 확인필요. Reading...look forward to reading more. 맞는 문장. 답은 ③ 유지.",
+    "t": "other vs. another"
+  },
+  {
+    "i": "208",
+    "q": "①Having eaten the cherry pie, I ②struck several pits and ③nearly ④broke a tooth.",
+    "c": [
+      [
+        "1",
+        "Having eaten the cherry pie, I"
+      ],
+      [
+        "2",
+        "struck several pits and"
+      ],
+      [
+        "3",
+        "nearly"
+      ],
+      [
+        "4",
+        "broke a tooth."
+      ]
+    ],
+    "a": "2",
+    "exp": "every + 단수명사 + 단수동사.",
+    "t": "every의 용법"
+  },
+  {
+    "i": "209",
+    "q": "North Korea Foreign Ministry officials",
+    "c": [
+      [
+        "1",
+        "were"
+      ],
+      [
+        "2",
+        "reportedly left all but speechless,"
+      ],
+      [
+        "3",
+        "having been cheerfully assumed that Kelly was coming to town with an offer of"
+      ],
+      [
+        "4",
+        "renewed aid."
+      ]
+    ],
+    "a": "1",
+    "exp": "서술적 형용사: alive, asleep, awake만 보어로.",
+    "t": "형용사"
+  },
+  {
+    "i": "210",
+    "q": "①Forbidding to speak ②to each other, the ③Danes communicate in stolen glances and occasional whispered words. This is not the way their new life ④was supposed to work out.",
+    "c": [
+      [
+        "1",
+        "Forbidding to speak"
+      ],
+      [
+        "2",
+        "to each other, the"
+      ],
+      [
+        "3",
+        "Danes communicate in stolen glances and occasional whispered words. This is not "
+      ]
+    ],
+    "a": "1",
+    "exp": "Forbidding to speak->Forbidden to speak(과거분사)",
+    "t": "형용사 나열순서"
+  },
+  {
+    "i": "211",
+    "q": "①Properly using, a good quality ②polarizing filter can produce ③images of striking beauty by deepening and ④subtly changing the colors.",
+    "c": [
+      [
+        "1",
+        "Properly using, a good quality"
+      ],
+      [
+        "2",
+        "polarizing filter can produce"
+      ],
+      [
+        "3",
+        "images of striking beauty by deepening and"
+      ],
+      [
+        "4",
+        "subtly changing the colors."
+      ]
+    ],
+    "a": "1",
+    "exp": "Properly using->Properly used(과거분사)",
+    "t": "난이 형용사"
+  },
+  {
+    "i": "212",
+    "q": "①The side of Rousseau's thought that arouses nostalgia for nature came to the United States ②early on. ③Recently, ④joining to many other movements, it ⑤came to full flower and found a wide public.",
+    "c": [
+      [
+        "1",
+        "The side of Rousseau's thought that arouses nostalgia for nature came to the Uni"
+      ],
+      [
+        "2",
+        "early on."
+      ],
+      [
+        "3",
+        "Recently,"
+      ],
+      [
+        "4",
+        "joining to many other movements, it ⑤came to full flower and found a wide public"
+      ]
+    ],
+    "a": "4",
+    "exp": "joining->joined(과거분사)",
+    "t": "worth 용법"
+  },
+  {
+    "i": "213",
+    "q": "______, I don't know him.",
+    "c": [
+      [
+        "1",
+        "Meeting not him before"
+      ],
+      [
+        "2",
+        "Not having met him before"
+      ],
+      [
+        "3",
+        "As not meeting his before"
+      ],
+      [
+        "4",
+        "Having not met him before"
+      ]
+    ],
+    "a": "1",
+    "exp": "enough: 형용사/부사 + enough + to RV.",
+    "t": "enough 용법"
+  },
+  {
+    "i": "214",
+    "q": "\"Come on, Lisa. How can I feel relaxed with ______ me like that?\"",
+    "c": [
+      [
+        "1",
+        "his watching"
+      ],
+      [
+        "2",
+        "him to watch"
+      ],
+      [
+        "3",
+        "him watching"
+      ],
+      [
+        "4",
+        "him to be watching"
+      ]
+    ],
+    "a": "4",
+    "exp": "이어동사: look for, give up, put off.",
+    "t": "이어동사"
+  },
+  {
+    "i": "215",
+    "q": "Fortune is proud",
+    "c": [
+      [
+        "1",
+        "to announce its second annual competition for Asia's best business plans. The"
+      ],
+      [
+        "2",
+        "winning submission will"
+      ],
+      [
+        "3",
+        "advance to the semi-final round of E-Chron's annual business competition, with t"
+      ],
+      [
+        "4",
+        "walks away with up to $1,000,000 ⑤in prize awards."
+      ]
+    ],
+    "a": "3",
+    "exp": "most + N, almost + 모든 품사.",
+    "t": "most vs. almost"
+  },
+  {
+    "i": "216",
+    "q": "A few years ago,",
+    "c": [
+      [
+        "1",
+        "traveling through Italy, the idea for a history"
+      ],
+      [
+        "2",
+        "of Florentine architecture"
+      ],
+      [
+        "3",
+        "occurred"
+      ],
+      [
+        "4",
+        "to him."
+      ]
+    ],
+    "a": "2",
+    "exp": "전치사: on time(정각) vs. in time(늦지 않게).",
+    "t": "전치사"
+  },
+  {
+    "i": "218",
+    "q": "Choose the one that is CORRECT according to the standard English.",
+    "c": [
+      [
+        "1",
+        "Thought to be a cause of teenage skin problems, people with such problems should"
+      ],
+      [
+        "2",
+        "Known for its nutritional value, chocolate is included in the diets of astronaut"
+      ],
+      [
+        "3",
+        "Sweetened with sugar, the children consumed the drink with delight."
+      ],
+      [
+        "4",
+        "Roasted and shelled, workers then grind the beans."
+      ]
+    ],
+    "a": "1",
+    "exp": "besides(~외에) vs. beside(~옆에).",
+    "t": "의미혼돈 전치사"
+  },
+  {
+    "i": "220",
+    "q": "We offer an excellent benefits package, medical and life insurance ______.",
+    "c": [
+      [
+        "1",
+        "concerned"
+      ],
+      [
+        "2",
+        "concerning"
+      ],
+      [
+        "3",
+        "included"
+      ]
+    ],
+    "a": "3",
+    "exp": "that절 전치사: in that, except that.",
+    "t": "that절 전치사"
+  },
+  {
+    "i": "221",
+    "q": "I've looked everywhere for them ______, I can't find them anywhere.",
+    "c": [
+      [
+        "1",
+        "; however"
+      ],
+      [
+        "2",
+        "but"
+      ],
+      [
+        "3",
+        "though"
+      ],
+      [
+        "4",
+        "while"
+      ]
+    ],
+    "a": "2",
+    "exp": "접속사 but 필요. looked everywhere but can't find.",
+    "t": "접속사"
+  },
+  {
+    "i": "222",
+    "q": "These egg substitutes are not really eggs, ______ they look somewhat like eggs when they are cooked.",
+    "c": [
+      [
+        "1",
+        "and"
+      ],
+      [
+        "2",
+        "but"
+      ],
+      [
+        "3",
+        "so"
+      ],
+      [
+        "4",
+        "whereas"
+      ]
+    ],
+    "a": "3",
+    "exp": "although 양보. not really eggs, although they look like eggs.",
+    "t": "접속사"
+  },
+  {
+    "i": "223",
+    "q": "In addition, she finds herself eating food that has just been taken from the refrigerator, ______ she always ate her grandmother's freshly cooked meals in her home.",
+    "c": [
+      [
+        "1",
+        "and"
+      ],
+      [
+        "2",
+        "because"
+      ],
+      [
+        "3",
+        "so"
+      ],
+      [
+        "4",
+        "whereas"
+      ]
+    ],
+    "a": "1",
+    "exp": "find oneself ~ing. 분사구문.",
+    "t": "분사"
+  },
+  {
+    "i": "225",
+    "q": "The adult mosquito usually lives,",
+    "c": [
+      [
+        "1",
+        "for about thirty days,"
+      ],
+      [
+        "2",
+        "although the life span varies"
+      ],
+      [
+        "3",
+        "widely with temperature,"
+      ],
+      [
+        "4",
+        "humid and other factors of the environment."
+      ]
+    ],
+    "a": "4",
+    "exp": "usually lives for about 30 days. 시제 일치.",
+    "t": "시제"
+  },
+  {
+    "i": "226",
+    "q": "Standardized tests, supposed indicators",
+    "c": [
+      [
+        "1",
+        "of intellect, aptitude, readiness, knowledge, or"
+      ],
+      [
+        "2",
+        "to ability, are"
+      ],
+      [
+        "3",
+        "important in the college"
+      ],
+      [
+        "4",
+        "admissions process."
+      ]
+    ],
+    "a": "3",
+    "exp": "연결어. however, therefore, moreover 중 선택.",
+    "t": "연결어"
+  },
+  {
+    "i": "227",
+    "q": "①The idea that learning is a lifelong process ②has been expressed by philosophers and ③educations ④throughout the centuries.",
+    "c": [
+      [
+        "1",
+        "The idea that learning is a lifelong process"
+      ],
+      [
+        "2",
+        "has been expressed by philosophers and"
+      ],
+      [
+        "3",
+        "educations"
+      ],
+      [
+        "4",
+        "throughout the centuries."
+      ]
+    ],
+    "a": "3",
+    "exp": "educations->educators(교육자들). education=불가산",
+    "t": "수일치"
+  },
+  {
+    "i": "228",
+    "q": "Richard and Angela went out together several times:",
+    "c": [
+      [
+        "1",
+        "to a movie, to a party with some friends, and"
+      ],
+      [
+        "2",
+        "then dinner. They seemed to have a lot"
+      ],
+      [
+        "3",
+        "in common and Angela commented that she couldn't remember"
+      ],
+      [
+        "4",
+        "having such a good time."
+      ]
+    ],
+    "a": "2",
+    "exp": "they seemed to get along. seem to RV.",
+    "t": "접속사"
+  },
+  {
+    "i": "229",
+    "q": "\"Sexual harassment\" is a term",
+    "c": [
+      [
+        "1",
+        "that is used to describe behavior at work that is"
+      ],
+      [
+        "2",
+        "sexually offense or inappropriate. It includes behavior that"
+      ],
+      [
+        "3",
+        "makes an employee feel uncomfortable because of his or her gender, but it can al"
+      ],
+      [
+        "4",
+        "in nature."
+      ]
+    ],
+    "a": "3",
+    "exp": "a term that describes. 관계대명사.",
+    "t": "관계대명사"
+  },
+  {
+    "i": "230",
+    "q": "The great wastes of the southeast quadrant of Saudi Arabia are at once forbiddingly empty, climatically harsh, ______.",
+    "c": [
+      [
+        "1",
+        "and hauntingly beautiful"
+      ],
+      [
+        "2",
+        "while their beauties are haunting"
+      ],
+      [
+        "3",
+        "with haunting beauties"
+      ]
+    ],
+    "a": "1",
+    "exp": "The great wastes...are. 주어 wastes는 복수.",
+    "t": "수일치"
+  },
+  {
+    "i": "231",
+    "q": "______ the nuclear energy is used well or ill depends on the morality of the world.",
+    "c": [
+      [
+        "1",
+        "What"
+      ],
+      [
+        "2",
+        "That"
+      ],
+      [
+        "3",
+        "Whether"
+      ],
+      [
+        "4",
+        "Which"
+      ]
+    ],
+    "a": "1",
+    "exp": "Whether S V. 명사절 주어.",
+    "t": "접속사"
+  },
+  {
+    "i": "232",
+    "q": "A: Susan asked if she should get a ride with us to the party. B: Well, I'll speak to her. ______ we will have room is still not clear.",
+    "c": [
+      [
+        "1",
+        "What if"
+      ],
+      [
+        "2",
+        "If or not so"
+      ],
+      [
+        "3",
+        "Only if"
+      ],
+      [
+        "4",
+        "Whether or not"
+      ]
+    ],
+    "a": "2",
+    "exp": "I think she should take. 조동사 should.",
+    "t": "조동사"
+  },
+  {
+    "i": "233",
+    "q": "The early years of the United States government were characterized by a debate concerning ______ or individual states should have more power.",
+    "c": [
+      [
+        "1",
+        "whether the federal government"
+      ],
+      [
+        "2",
+        "either the federal government"
+      ],
+      [
+        "3",
+        "that the federal government"
+      ],
+      [
+        "4",
+        "the federal government"
+      ]
+    ],
+    "a": "3",
+    "exp": "were characterized by. 수동태.",
+    "t": "수동태"
+  },
+  {
+    "i": "234",
+    "q": "Choose the one that is NOT correct according to the standard English.",
+    "c": [
+      [
+        "1",
+        "I don't know whether this answer is correct or not."
+      ],
+      [
+        "2",
+        "I don't know whether or not this answer is correct."
+      ],
+      [
+        "3",
+        "I don't know that this answer is correct or not."
+      ],
+      [
+        "4",
+        "I don't know if this answer is correct."
+      ]
+    ],
+    "a": "3",
+    "exp": "I dont know THAT this answer is correct OR NOT -> know WHETHER. know that+or not is wrong.",
+    "t": "수일치"
+  },
+  {
+    "i": "235",
+    "q": "______ more than 2000 minerals are known, nearly all rocks are formed from seven mineral groups.",
+    "c": [
+      [
+        "1",
+        "In spite of"
+      ],
+      [
+        "2",
+        "However"
+      ],
+      [
+        "3",
+        "Despite"
+      ],
+      [
+        "4",
+        "Although"
+      ]
+    ],
+    "a": "4",
+    "exp": "Although more than 2000... 양보 접속사.",
+    "t": "접속사"
+  },
+  {
+    "i": "236",
+    "q": "Spider monkeys are the best climbers in the jungle, ______ they do not have thumbs.",
+    "c": [
+      [
+        "1",
+        "nevertheless"
+      ],
+      [
+        "2",
+        "despite"
+      ],
+      [
+        "3",
+        "although"
+      ],
+      [
+        "4",
+        "for all"
+      ]
+    ],
+    "a": "2",
+    "exp": "despite + 명사. 접속사 vs. 전치사.",
+    "t": "접속사"
+  },
+  {
+    "i": "237",
+    "q": "①Hardly he had entered ②the office when he realized that he ③had forgotten ④his wallet.",
+    "c": [
+      [
+        "1",
+        "Hardly he had entered"
+      ],
+      [
+        "2",
+        "the office when he realized that he"
+      ],
+      [
+        "3",
+        "had forgotten"
+      ],
+      [
+        "4",
+        "his wallet."
+      ]
+    ],
+    "a": "1",
+    "exp": "Hardly had he entered (도치). Hardly he had entered (X).",
+    "t": "도치"
+  },
+  {
+    "i": "238",
+    "q": "Choose the one that is CORRECT according to the standard English.",
+    "c": [
+      [
+        "1",
+        "He refused to go except I went him."
+      ],
+      [
+        "2",
+        "No sooner had he left, it began to rain."
+      ],
+      [
+        "3",
+        "I'm sure it will be dark before he gets there."
+      ],
+      [
+        "4",
+        "A girl as she was, she was very brave."
+      ]
+    ],
+    "a": "3",
+    "exp": "CORRECT: I'm sure it will be dark when we get there.",
+    "t": "도치"
+  },
+  {
+    "i": "239",
+    "q": "The fire fighters will not respond ______ the call is verified.",
+    "c": [
+      [
+        "1",
+        "by"
+      ],
+      [
+        "2",
+        "until"
+      ],
+      [
+        "3",
+        "although"
+      ],
+      [
+        "4",
+        "and"
+      ]
+    ],
+    "a": "4",
+    "exp": "not respond until. until 접속사.",
+    "t": "접속사"
+  },
+  {
+    "i": "240",
+    "q": "①None until the negotiations were ②over ③did Mr. Peterson ④reveal the company's intentions.",
+    "c": [
+      [
+        "1",
+        "None until the negotiations were"
+      ],
+      [
+        "2",
+        "over"
+      ],
+      [
+        "3",
+        "did Mr. Peterson"
+      ]
+    ],
+    "a": "1",
+    "exp": "Not until...did Mr. Peterson realize. 도치.",
+    "t": "도치"
+  },
+  {
+    "i": "241",
+    "q": "The committee members resented ______ of the meeting.",
+    "c": [
+      [
+        "1",
+        "the president that he did not tell them"
+      ],
+      [
+        "2",
+        "the president not to inform them"
+      ],
+      [
+        "3",
+        "the president's not informing them"
+      ],
+      [
+        "4",
+        "that the president had failed informing themselves"
+      ]
+    ],
+    "a": "2",
+    "exp": "resent + ~ing. being informed.",
+    "t": "동명사"
+  },
+  {
+    "i": "242",
+    "q": "Unless an athlete is",
+    "c": [
+      [
+        "1",
+        "physically fit, there is no sense in"
+      ],
+      [
+        "2",
+        "him sacrificing"
+      ],
+      [
+        "3",
+        "himself for victory in any game and, therefore, facing a"
+      ],
+      [
+        "4",
+        "lifetime injury."
+      ]
+    ],
+    "a": "3",
+    "exp": "Unless+physically fit, there is him sacrificing himself... 문장구조 확인. 답 유지.",
+    "t": "접속사"
+  },
+  {
+    "i": "243",
+    "q": "You don't object ______ you by your first name, do you?",
+    "c": [
+      [
+        "1",
+        "to my calling"
+      ],
+      [
+        "2",
+        "that I am call"
+      ],
+      [
+        "3",
+        "that I call"
+      ],
+      [
+        "4",
+        "for calling"
+      ]
+    ],
+    "a": "1",
+    "exp": "object to my calling. object to + ~ing.",
+    "t": "동명사"
+  },
+  {
+    "i": "244",
+    "q": "I do not understand",
+    "c": [
+      [
+        "1",
+        "why Mother"
+      ],
+      [
+        "2",
+        "should object to"
+      ],
+      [
+        "3",
+        "me having played the piano"
+      ],
+      [
+        "4",
+        "at the party."
+      ]
+    ],
+    "a": "4",
+    "exp": "I do not understand what you mean. 의문사절.",
+    "t": "의문사절"
+  },
+  {
+    "i": "245",
+    "q": "John, scolded by his teacher, finally confessed to ______ the book.",
+    "c": [
+      [
+        "1",
+        "stealing"
+      ],
+      [
+        "2",
+        "steal"
+      ],
+      [
+        "3",
+        "have stolen"
+      ],
+      [
+        "4",
+        "having stolen"
+      ]
+    ],
+    "a": "2",
+    "exp": "confessed to having broken. confess to + ~ing.",
+    "t": "동명사"
+  },
+  {
+    "i": "246",
+    "q": "The director of the department",
+    "c": [
+      [
+        "1",
+        "advised the new employees to avoid"
+      ],
+      [
+        "2",
+        "to waste time"
+      ],
+      [
+        "3",
+        "studying methods that were"
+      ],
+      [
+        "4",
+        "so out-of-date."
+      ]
+    ],
+    "a": "1",
+    "exp": "suggested that the meeting be postponed. suggest + that + RV.",
+    "t": "가정법"
+  },
+  {
+    "i": "247",
+    "q": "The weekend",
+    "c": [
+      [
+        "1",
+        "before Christmas, she had to finish"
+      ],
+      [
+        "2",
+        "to buy gifts, prepare a holiday dinner"
+      ],
+      [
+        "3",
+        "for 10 persons and organize birthday parties for"
+      ],
+      [
+        "4",
+        "all three of her young children."
+      ]
+    ],
+    "a": "3",
+    "exp": "The weekend having ended. 독립분사구문.",
+    "t": "분사구문"
+  },
+  {
+    "i": "250",
+    "q": "The college administrator acknowledged ______ my letter of recommendation.",
+    "c": [
+      [
+        "1",
+        "receiving"
+      ],
+      [
+        "2",
+        "to receive"
+      ],
+      [
+        "3",
+        "to have received"
+      ]
+    ],
+    "a": "2",
+    "exp": "acknowledge + ~ing. receiving.",
+    "t": "동명사"
+  },
+  {
+    "i": "251",
+    "q": "I was satisfied",
+    "c": [
+      [
+        "1",
+        "with his devotion to"
+      ],
+      [
+        "2",
+        "get his job"
+      ],
+      [
+        "3",
+        "done well"
+      ],
+      [
+        "4",
+        "against all odds."
+      ]
+    ],
+    "a": "3",
+    "exp": "satisfied with. 형용사 + 전치사.",
+    "t": "전치사"
+  },
+  {
+    "i": "252",
+    "q": "①Using a lattice of lasers and ultra-cold temperatures, German scientists ②have made a new type of matter that could ③overcome an obstacle to ④make quantum computers.",
+    "c": [
+      [
+        "1",
+        "Using a lattice of lasers and ultra-cold temperatures, German scientists"
+      ],
+      [
+        "2",
+        "have made a new type of matter that could"
+      ],
+      [
+        "3",
+        "overcome an obstacle to"
+      ],
+      [
+        "4",
+        "make quantum computers."
+      ]
+    ],
+    "a": "4",
+    "exp": "NOT correct: Using...have made->has made? 수일치 확인. 답 유지.",
+    "t": "분사구문"
+  },
+  {
+    "i": "253",
+    "q": "Choose the one that is NOT correct according to the standard English.",
+    "c": [
+      [
+        "1",
+        "Gas lamps lit the street."
+      ],
+      [
+        "2",
+        "I must remember seeing him next Sunday."
+      ],
+      [
+        "3",
+        "I was always having trouble with my teeth."
+      ],
+      [
+        "4",
+        "We enjoyed too much and we nearly missed the plane."
+      ]
+    ],
+    "a": "2",
+    "exp": "must remember SEEING him next Sunday -> must remember TO SEE. remember+Ving=past, but next Sunday=future.",
+    "t": "문법"
+  },
+  {
+    "i": "254",
+    "q": "Choose the one that is NOT correct according to the standard English.",
+    "c": [
+      [
+        "1",
+        "I stopped buying coffee; it was too expensive."
+      ],
+      [
+        "2",
+        "I don't remember to mail the letter, but I think I did."
+      ],
+      [
+        "3",
+        "I'll never forget meeting Todd. He was so kind."
+      ],
+      [
+        "4",
+        "I regret to tell you that you failed the exam."
+      ]
+    ],
+    "a": "2",
+    "exp": "NOT correct: I don't remember to mail->I don't remember mailing. remember+~ing(과거). ②틀림.",
+    "t": "문법"
+  },
+  {
+    "i": "255",
+    "q": "Several of these washers are out of order and ______.",
+    "c": [
+      [
+        "1",
+        "need to be repairing"
+      ],
+      [
+        "2",
+        "require that they be repaired"
+      ],
+      [
+        "3",
+        "repairing is required of them"
+      ],
+      [
+        "4",
+        "need to be repaired"
+      ]
+    ],
+    "a": "4",
+    "exp": "need repairing. need ~ing.",
+    "t": "동명사"
+  },
+  {
+    "i": "256",
+    "q": "①Had he not believed that ②every individual ③belongs to history, his story ④would not have been ⑤worth of telling.",
+    "c": [
+      [
+        "1",
+        "Had he not believed that"
+      ],
+      [
+        "2",
+        "every individual"
+      ],
+      [
+        "3",
+        "belongs to history, his story"
+      ],
+      [
+        "4",
+        "would not have been ⑤worth of telling."
+      ]
+    ],
+    "a": "3",
+    "exp": "Had he not believed...belongs. 가정법 도치.",
+    "t": "가정법 도치"
+  },
+  {
+    "i": "257",
+    "q": "If you are used",
+    "c": [
+      [
+        "1",
+        "to analyze texts, you will be able to formulate a clear statement of"
+      ],
+      [
+        "2",
+        "what your draft"
+      ],
+      [
+        "3",
+        "turned out"
+      ],
+      [
+        "4",
+        "to be about."
+      ]
+    ],
+    "a": "1",
+    "exp": "be used to ~ing. 적응하다.",
+    "t": "동명사"
+  },
+  {
+    "i": "258",
+    "q": "Elizabeth is",
+    "c": [
+      [
+        "1",
+        "looking forward to"
+      ],
+      [
+        "2",
+        "go to Europe after she"
+      ],
+      [
+        "3",
+        "finishes her studies"
+      ],
+      [
+        "4",
+        "at the university."
+      ]
+    ],
+    "a": "2",
+    "exp": "look forward to meeting. look forward to + ~ing.",
+    "t": "동명사"
+  },
+  {
+    "i": "259",
+    "q": "Animal rights groups are opposed ______ health and beauty products on animals.",
+    "c": [
+      [
+        "1",
+        "to test"
+      ],
+      [
+        "2",
+        "tests of"
+      ],
+      [
+        "3",
+        "testing"
+      ],
+      [
+        "4",
+        "to testing"
+      ]
+    ],
+    "a": "3",
+    "exp": "opposed to + 명사. 전치사.",
+    "t": "전치사"
+  },
+  {
+    "i": "260",
+    "q": "\"With the country's growing credit crunch, we do not think lowering the call rate would contribute much ______ the economy,\" said the governor of central bank.",
+    "c": [
+      [
+        "1",
+        "boost"
+      ],
+      [
+        "2",
+        "boosting"
+      ],
+      [
+        "3",
+        "to boost"
+      ]
+    ],
+    "a": "1",
+    "exp": "we do not think lending is. 동명사 주어.",
+    "t": "동명사"
+  },
+  {
+    "i": "261",
+    "q": "It is necessary ______ how to cope with the new problems.",
+    "c": [
+      [
+        "1",
+        "his deciding"
+      ],
+      [
+        "2",
+        "what he decides"
+      ],
+      [
+        "3",
+        "that he decides"
+      ],
+      [
+        "4",
+        "for him to decide"
+      ]
+    ],
+    "a": "1",
+    "exp": "It is necessary to know. to부정사 진주어.",
+    "t": "to부정사"
+  },
+  {
+    "i": "262",
+    "q": "Since money is",
+    "c": [
+      [
+        "1",
+        "greatly needed, this is the time"
+      ],
+      [
+        "2",
+        "for all of you"
+      ],
+      [
+        "3",
+        "to giving"
+      ],
+      [
+        "4",
+        "generously to the school."
+      ]
+    ],
+    "a": "2",
+    "exp": "Since money is. 접속사.",
+    "t": "접속사"
+  },
+  {
+    "i": "263",
+    "q": "______ a state to survive more than a fleeting historical moment, it must have the loyalty of its residents.",
+    "c": [
+      [
+        "1",
+        "If"
+      ],
+      [
+        "2",
+        "For"
+      ],
+      [
+        "3",
+        "Then"
+      ],
+      [
+        "4",
+        "Of"
+      ]
+    ],
+    "a": "3",
+    "exp": "For a state to survive. for + O + to RV.",
+    "t": "to부정사"
+  },
+  {
+    "i": "264",
+    "q": "In order ______ children ______, they must be treated with respect.",
+    "c": [
+      [
+        "1",
+        "that -- felt loved"
+      ],
+      [
+        "2",
+        "to -- for feel loved"
+      ],
+      [
+        "3",
+        "for -- to feel loved"
+      ],
+      [
+        "4",
+        "that -- to feel loved"
+      ]
+    ],
+    "a": "1",
+    "exp": "In order for children to thrive.",
+    "t": "to부정사"
+  },
+  {
+    "i": "265",
+    "q": "Men as well as women need some flexibility ______ they are to be healthy.",
+    "c": [
+      [
+        "1",
+        "or"
+      ],
+      [
+        "2",
+        "but"
+      ],
+      [
+        "3",
+        "if"
+      ],
+      [
+        "4",
+        "therefore"
+      ]
+    ],
+    "a": "4",
+    "exp": "when they are. 시간 접속사.",
+    "t": "접속사"
+  },
+  {
+    "i": "266",
+    "q": "If the CIA ______ something like these devices had to be invented.",
+    "c": [
+      [
+        "1",
+        "were to exist"
+      ],
+      [
+        "2",
+        "had not existed"
+      ],
+      [
+        "3",
+        "does not exist"
+      ],
+      [
+        "4",
+        "was to exist"
+      ]
+    ],
+    "a": "2",
+    "exp": "If the CIA had known. 가정법 과거완료.",
+    "t": "가정법"
+  },
+  {
+    "i": "267",
+    "q": "I ______ the shipping department to make an overall revise on its shipping procedure.",
+    "c": [
+      [
+        "1",
+        "asked for"
+      ],
+      [
+        "2",
+        "called on"
+      ],
+      [
+        "3",
+        "call for"
+      ],
+      [
+        "4",
+        "urged"
+      ]
+    ],
+    "a": "3",
+    "exp": "had the shipping department make. have + O + RV.",
+    "t": "사역동사"
+  },
+  {
+    "i": "268",
+    "q": "She demanded ______ this small present as a token of her appreciation.",
+    "c": [
+      [
+        "1",
+        "me to accept"
+      ],
+      [
+        "2",
+        "for me to accept"
+      ],
+      [
+        "3",
+        "my acception"
+      ],
+      [
+        "4",
+        "I accept"
+      ]
+    ],
+    "a": "1",
+    "exp": "demanded that I accept. demand + that + RV.",
+    "t": "가정법"
+  },
+  {
+    "i": "269",
+    "q": "①The portable computer ②allows people ③who are away from offices to ④continue to working.",
+    "c": [
+      [
+        "1",
+        "The portable computer"
+      ],
+      [
+        "2",
+        "allows people"
+      ],
+      [
+        "3",
+        "who are away from offices to"
+      ],
+      [
+        "4",
+        "continue to working."
+      ]
+    ],
+    "a": "4",
+    "exp": "continue to working->continue working(to+동명사X)",
+    "t": "문법"
+  },
+  {
+    "i": "270",
+    "q": "As ①heart disease continues ②being the number-one killer in the United States, researchers ③have become increasingly interested in ④identifying the potential risk factors.",
+    "c": [
+      [
+        "1",
+        "heart disease continues"
+      ],
+      [
+        "2",
+        "being the number-one killer in the United States, researchers"
+      ],
+      [
+        "3",
+        "have become increasingly interested in"
+      ]
+    ],
+    "a": "2",
+    "exp": "continues to be. continue + to RV.",
+    "t": "to부정사"
+  },
+  {
+    "i": "271",
+    "q": "Space exploration is",
+    "c": [
+      [
+        "1",
+        "so costly that"
+      ],
+      [
+        "2",
+        "no single nation"
+      ],
+      [
+        "3",
+        "can hope"
+      ],
+      [
+        "4",
+        "sustaining a major program indefinitely."
+      ]
+    ],
+    "a": "3",
+    "exp": "so costly that. such/so 구문.",
+    "t": "such/so"
+  },
+  {
+    "i": "272",
+    "q": "①There being ②low sales, companies ③wanted that they were able to develop new ④products.",
+    "c": [
+      [
+        "1",
+        "There being"
+      ],
+      [
+        "2",
+        "low sales, companies"
+      ],
+      [
+        "3",
+        "wanted that they were able to develop new"
+      ],
+      [
+        "4",
+        "products."
+      ]
+    ],
+    "a": "3",
+    "exp": "There being low sales. 분사구문.",
+    "t": "분사구문"
+  },
+  {
+    "i": "273",
+    "q": "Mannerist artists ______ artistic invention and imagination more important than the faithful reproduction of nature.",
+    "c": [
+      [
+        "1",
+        "expected to consider"
+      ],
+      [
+        "2",
+        "hoped people to consider"
+      ],
+      [
+        "3",
+        "wanted that people would consider"
+      ],
+      [
+        "4",
+        "expected people to be considered"
+      ]
+    ],
+    "a": "1",
+    "exp": "Mannerist artists valued. 시제/의미.",
+    "t": "시제"
+  },
+  {
+    "i": "274",
+    "q": "People laugh when they are nervous or afraid because they hope ______.",
+    "c": [
+      [
+        "1",
+        "others to pretend in control"
+      ],
+      [
+        "2",
+        "to pretend being in control"
+      ],
+      [
+        "3",
+        "to pretend to be in control"
+      ],
+      [
+        "4",
+        "they can pretend being in control"
+      ]
+    ],
+    "a": "4",
+    "exp": "hope to put others at ease. to부정사.",
+    "t": "to부정사"
+  },
+  {
+    "i": "275",
+    "q": "The original Olympic races are said ______ with Oenomaus, who used to compel any suitor who sought his daughter's hand ______ against him in a race.",
+    "c": [
+      [
+        "1",
+        "to begin -- to be running"
+      ],
+      [
+        "2",
+        "to be begun -- run"
+      ],
+      [
+        "3",
+        "to have begun -- to run"
+      ],
+      [
+        "4",
+        "as having begun -- running"
+      ]
+    ],
+    "a": "2",
+    "exp": "are said to have begun. to부정사 완료.",
+    "t": "to부정사"
+  },
+  {
+    "i": "276",
+    "q": "①At the beginning of that year a particularly bad smog, ②which lasted for many weeks, ③was estimated ④to be caused between 4,000 and 8,000 deaths.",
+    "c": [
+      [
+        "1",
+        "At the beginning of that year a particularly bad smog,"
+      ],
+      [
+        "2",
+        "which lasted for many weeks,"
+      ],
+      [
+        "3",
+        "was estimated"
+      ],
+      [
+        "4",
+        "to be caused between 4,000 and 8,000 deaths."
+      ]
+    ],
+    "a": "4",
+    "exp": "to be caused between->to have caused(추정완료). between->about",
+    "t": "문법"
+  },
+  {
+    "i": "277",
+    "q": "I had hoped",
+    "c": [
+      [
+        "1",
+        "to have learned French before my trip"
+      ],
+      [
+        "2",
+        "to Paris, but I"
+      ],
+      [
+        "3",
+        "did not have any"
+      ],
+      [
+        "4",
+        "extra money for a course."
+      ]
+    ],
+    "a": "3",
+    "exp": "had hoped to have learned. to부정사 완료.",
+    "t": "to부정사"
+  },
+  {
+    "i": "278",
+    "q": "①After studying hard ②to become an accountant, he discovered that ③it was not what he wanted ④to do.",
+    "c": [
+      [
+        "1",
+        "After studying hard"
+      ],
+      [
+        "2",
+        "to become an accountant, he discovered that"
+      ],
+      [
+        "3",
+        "it was not what he wanted"
+      ],
+      [
+        "4",
+        "to do."
+      ]
+    ],
+    "a": "1",
+    "exp": "After studying hard. 분사구문.",
+    "t": "분사구문"
+  },
+  {
+    "i": "279",
+    "q": "Choose the one that is CORRECT according to the standard English.",
+    "c": [
+      [
+        "1",
+        "I considered marrying her, but decided not."
+      ],
+      [
+        "2",
+        "I considered to marry her, but decide not to."
+      ],
+      [
+        "3",
+        "I considered marrying her, but decided not to."
+      ],
+      [
+        "4",
+        "I considered marrying with her, but decided not to."
+      ]
+    ],
+    "a": "1",
+    "exp": "CORRECT: I considered marrying her. consider+~ing. ①맞음. ④ marrying with(X).",
+    "t": "문법"
+  },
+  {
+    "i": "280",
+    "q": "①To completely solve the problem ②requires more thought ③than we have given ④so far.",
+    "c": [
+      [
+        "1",
+        "To completely solve the problem"
+      ],
+      [
+        "2",
+        "requires more thought"
+      ],
+      [
+        "3",
+        "than we have given"
+      ]
+    ],
+    "a": "1",
+    "exp": "To completely solve->Split infinitive. ①유지(분리부정사허용)",
+    "t": "to부정사"
+  },
+  {
+    "i": "281",
+    "q": "①A lot of baby boomers ②feel that a terrible thing ③is happened to the ④moral fiber of this country.",
+    "c": [
+      [
+        "1",
+        "A lot of baby boomers"
+      ],
+      [
+        "2",
+        "feel that a terrible thing"
+      ],
+      [
+        "3",
+        "is happened to the"
+      ],
+      [
+        "4",
+        "moral fiber of this country."
+      ]
+    ],
+    "a": "3",
+    "exp": "is happening to -> is happening in. 전치사.",
+    "t": "시제"
+  },
+  {
+    "i": "283",
+    "q": "Classicism which",
+    "c": [
+      [
+        "1",
+        "was originated in Greece and"
+      ],
+      [
+        "2",
+        "continued in ancient Rome, was the principal contributor"
+      ],
+      [
+        "3",
+        "to that aspect of our life which"
+      ],
+      [
+        "4",
+        "is usually referred to as ⑤secular."
+      ]
+    ],
+    "a": "2",
+    "exp": "Classicism which developed. 관계대명사.",
+    "t": "관계대명사"
+  },
+  {
+    "i": "285",
+    "q": "Choose the one that is NOT correct according to the standard English.",
+    "c": [
+      [
+        "1",
+        "He was killed in the Vietnamese War."
+      ],
+      [
+        "2",
+        "William is called Bill for short."
+      ],
+      [
+        "3",
+        "His father is resembled by John."
+      ],
+      [
+        "4",
+        "This bed was not slept in."
+      ]
+    ],
+    "a": "3",
+    "exp": "His father IS RESEMBLED by John -> resemble cannot be passive. His father resembles John.",
+    "t": "문법"
+  },
+  {
+    "i": "286",
+    "q": "①Although a lawyer ②by profession and ③accustomed public speaking, Sir Robert Borden was not ④a great orator.",
+    "c": [
+      [
+        "1",
+        "Although a lawyer"
+      ],
+      [
+        "2",
+        "by profession and"
+      ],
+      [
+        "3",
+        "accustomed public speaking, Sir Robert Borden was not"
+      ],
+      [
+        "4",
+        "a great orator."
+      ]
+    ],
+    "a": "3",
+    "exp": "accustomed to public speaking. accustomed to + N/~ing.",
+    "t": "전치사"
+  },
+  {
+    "i": "287",
+    "q": "Now the US Supreme Court, ______, will have to decide who deserves first crack at those scarce resources.",
+    "c": [
+      [
+        "1",
+        "facing with two potential landmark cases"
+      ],
+      [
+        "2",
+        "which face two potential landmark cases"
+      ],
+      [
+        "3",
+        "faced with two potential landmark cases"
+      ],
+      [
+        "4",
+        "faces two potential landmark cases"
+      ]
+    ],
+    "a": "3",
+    "exp": "faced with two cases. 과거분사 형용사구. facing with(X), which face(주어 court단수면 faces), faces(술어동사 위치 불가).",
+    "t": "분사구문"
+  },
+  {
+    "i": "288",
+    "q": "Residents of Longbaoshan, a village just 72 km north of Beijing, only have to look out of the window ______ the deserts that are devouring huge swathes of China's once-fertile farm land.",
+    "c": [
+      [
+        "1",
+        "to remind"
+      ],
+      [
+        "2",
+        "to be reminded of"
+      ],
+      [
+        "3",
+        "to be provided to the chance to look at"
+      ],
+      [
+        "4",
+        "to be provided by the chance to look at"
+      ]
+    ],
+    "a": "4",
+    "exp": "a village just 72 km north. 동격.",
+    "t": "문법"
+  },
+  {
+    "i": "289",
+    "q": "Though Johnson knew his serious defects, he",
+    "c": [
+      [
+        "1",
+        "was broad-minded enough"
+      ],
+      [
+        "2",
+        "to appoint the man"
+      ],
+      [
+        "3",
+        "to the important position because he"
+      ],
+      [
+        "4",
+        "was convincing of his ability."
+      ]
+    ],
+    "a": "3",
+    "exp": "tried to overcome. to부정사.",
+    "t": "접속사"
+  },
+  {
+    "i": "290",
+    "q": "As a novice to the business, Mr. Kim ______ time off work to take care of some personal business.",
+    "c": [
+      [
+        "1",
+        "denied"
+      ],
+      [
+        "2",
+        "will deny"
+      ],
+      [
+        "3",
+        "was denied"
+      ]
+    ],
+    "a": "2",
+    "exp": "requested time off. 동사 + 목적어.",
+    "t": "문법"
+  },
+  {
+    "i": "291",
+    "q": "The Chinese constructed the Great Wall ______ a marvel even today.",
+    "c": [
+      [
+        "1",
+        "it is considered"
+      ],
+      [
+        "2",
+        "which is considered"
+      ],
+      [
+        "3",
+        "is considered"
+      ],
+      [
+        "4",
+        "which considered"
+      ]
+    ],
+    "a": "1",
+    "exp": "a marvel even today. 동격.",
+    "t": "동격"
+  },
+  {
+    "i": "292",
+    "q": "Dr. Park, a professor at a prestigious private college in Korea, ______ as one of Korea's greatest researchers of science.",
+    "c": [
+      [
+        "1",
+        "is acknowledged"
+      ],
+      [
+        "2",
+        "has acknowledgement"
+      ],
+      [
+        "3",
+        "acknowledged"
+      ],
+      [
+        "4",
+        "acknowledges"
+      ]
+    ],
+    "a": "4",
+    "exp": "Dr. Park, a professor... 설명. 답 유지.",
+    "t": "문법"
+  },
+  {
+    "i": "293",
+    "q": "He believes that the desires, having been repressed from consciousness because they are unacceptable to the socialized mind of the dreamer, ______ to emerge even into the dream without disguise.",
+    "c": [
+      [
+        "1",
+        "did not allowed"
+      ],
+      [
+        "2",
+        "had not allowed"
+      ],
+      [
+        "3",
+        "has not allowed"
+      ],
+      [
+        "4",
+        "are not allowed"
+      ]
+    ],
+    "a": "3",
+    "exp": "having been repressed. 분사구문 완료수동.",
+    "t": "분사구문"
+  },
+  {
+    "i": "294",
+    "q": "When both mother and father work outside the home, the lives of all the family members change",
+    "c": [
+      [
+        "1",
+        "quite a bit. Dad must"
+      ],
+      [
+        "2",
+        "help out more at home. The older children may"
+      ],
+      [
+        "3",
+        "ask to help the housework and"
+      ],
+      [
+        "4",
+        "take care of the younger children."
+      ]
+    ],
+    "a": "2",
+    "exp": "the lives of children. 수일치.",
+    "t": "수일치"
+  },
+  {
+    "i": "295",
+    "q": "①With the advent of Microsoft windows, ②many other software makers were ③forced upgrade their ④own products.",
+    "c": [
+      [
+        "1",
+        "With the advent of Microsoft windows,"
+      ],
+      [
+        "2",
+        "many other software makers were"
+      ],
+      [
+        "3",
+        "forced upgrade their"
+      ],
+      [
+        "4",
+        "own products."
+      ]
+    ],
+    "a": "3",
+    "exp": "forced upgrade->forced TO upgrade(to부정사)",
+    "t": "수일치"
+  },
+  {
+    "i": "296",
+    "q": "The ①children had been ②said not ③to go ④near the water.",
+    "c": [
+      [
+        "1",
+        "children had been"
+      ],
+      [
+        "2",
+        "said not"
+      ],
+      [
+        "3",
+        "to go"
+      ],
+      [
+        "4",
+        "near the water."
+      ]
+    ],
+    "a": "2",
+    "exp": "were said not to go. be said to RV.",
+    "t": "to부정사"
+  },
+  {
+    "i": "297",
+    "q": "He ______ the room by anyone.",
+    "c": [
+      [
+        "1",
+        "didn't notice to enter"
+      ],
+      [
+        "2",
+        "wasn't noticed entering"
+      ],
+      [
+        "3",
+        "didn't notice enter"
+      ],
+      [
+        "4",
+        "wasn't noticed to entering"
+      ]
+    ],
+    "a": "3",
+    "exp": "was not seen to leave. 지각동사 수동태.",
+    "t": "수동태"
+  },
+  {
+    "i": "298",
+    "q": "______ that the formation of the sun, the planets and other stars began with the condensation of an interstellar gas cloud.",
+    "c": [
+      [
+        "1",
+        "The belief"
+      ],
+      [
+        "2",
+        "To believe"
+      ],
+      [
+        "3",
+        "Believing"
+      ],
+      [
+        "4",
+        "It is believed"
+      ]
+    ],
+    "a": "1",
+    "exp": "It is believed that. 수동태.",
+    "t": "수동태"
+  },
+  {
+    "i": "299",
+    "q": "Politics ______ to be the art of the impossible.",
+    "c": [
+      [
+        "1",
+        "is told"
+      ],
+      [
+        "2",
+        "are told"
+      ],
+      [
+        "3",
+        "is said"
+      ],
+      [
+        "4",
+        "are said"
+      ]
+    ],
+    "a": "2",
+    "exp": "Politics = 단수취급. is said to be.",
+    "t": "수일치"
+  },
+  {
+    "i": "300",
+    "q": "We ______ to read Macbeth for tomorrow.",
+    "c": [
+      [
+        "1",
+        "suppose"
+      ],
+      [
+        "2",
+        "are supposing"
+      ],
+      [
+        "3",
+        "are to suppose"
+      ]
+    ],
+    "a": "2",
+    "exp": "We are supposed to read. be supposed to RV.",
+    "t": "to부정사"
+  },
+  {
+    "i": "301",
+    "q": "Ken ①must walk 7 miles ②yesterday ③because his car ④broke down.",
+    "c": [
+      [
+        "1",
+        "must walk 7 miles"
+      ],
+      [
+        "2",
+        "yesterday"
+      ],
+      [
+        "3",
+        "because his car"
+      ],
+      [
+        "4",
+        "broke down."
+      ]
+    ],
+    "a": "1",
+    "exp": "must have p.p. 과거 강한 추측. must have walked.",
+    "t": "must have pp"
+  },
+  {
+    "i": "302",
+    "q": "Some of the milk turned sour before it reached the market and ______ away.",
+    "c": [
+      [
+        "1",
+        "had to be thrown"
+      ],
+      [
+        "2",
+        "must be thrown"
+      ],
+      [
+        "3",
+        "had to throw"
+      ],
+      [
+        "4",
+        "must throw"
+      ]
+    ],
+    "a": "1",
+    "exp": "milk...had to be thrown away. 주어 milk가 버려지는 대상 -> 수동태(be thrown). had to throw(능동) 틀림.",
+    "t": "수동태"
+  },
+  {
+    "i": "303",
+    "q": "You ①had not better ②quit your job until you find another one. ③Once you are ④out of work, you may find it hard to get another.",
+    "c": [
+      [
+        "1",
+        "had not better"
+      ],
+      [
+        "2",
+        "quit your job until you find another one."
+      ],
+      [
+        "3",
+        "Once you are"
+      ],
+      [
+        "4",
+        "out of work, you may find it hard to get another."
+      ]
+    ],
+    "a": "1",
+    "exp": "had better not quit. had better not + RV.",
+    "t": "had better"
+  },
+  {
+    "i": "304",
+    "q": "He said that he ______.",
+    "c": [
+      [
+        "1",
+        "would not rather go"
+      ],
+      [
+        "2",
+        "would rather not go"
+      ],
+      [
+        "3",
+        "not would rather go"
+      ],
+      [
+        "4",
+        "would rather go not"
+      ]
+    ],
+    "a": "2",
+    "exp": "wished he had not spent. wish + had p.p.",
+    "t": "가정법"
+  },
+  {
+    "i": "305",
+    "q": "A: Did you finish Lesson 7 today? B: Yes, but I ______ it last Friday.",
+    "c": [
+      [
+        "1",
+        "should finish"
+      ],
+      [
+        "2",
+        "should have finished"
+      ],
+      [
+        "3",
+        "should be finishing"
+      ],
+      [
+        "4",
+        "should be finished"
+      ]
+    ],
+    "a": "4",
+    "exp": "should have done it. should have p.p.",
+    "t": "should have pp"
+  },
+  {
+    "i": "306",
+    "q": "You ______ out yesterday without coat. No wonder you caught cold.",
+    "c": [
+      [
+        "1",
+        "would rather not have gone"
+      ],
+      [
+        "2",
+        "had better not go"
+      ],
+      [
+        "3",
+        "should have gone"
+      ],
+      [
+        "4",
+        "need have gone"
+      ]
+    ],
+    "a": "1",
+    "exp": "should not have gone out. should have p.p.",
+    "t": "should have pp"
+  },
+  {
+    "i": "307",
+    "q": "A: I wish we'd gone to the beach this weekend. B: You ______ it sooner.",
+    "c": [
+      [
+        "1",
+        "should have mentioned about"
+      ],
+      [
+        "2",
+        "would have mentioned"
+      ],
+      [
+        "3",
+        "ought to have mentioned on"
+      ],
+      [
+        "4",
+        "had better have mentioned"
+      ]
+    ],
+    "a": "2",
+    "exp": "should have come earlier. should have p.p.",
+    "t": "should have pp"
+  },
+  {
+    "i": "308",
+    "q": "Even in summer this place did not look exactly hospitable; in winter, conditions ______ exceedingly harsh.",
+    "c": [
+      [
+        "1",
+        "be"
+      ],
+      [
+        "2",
+        "have to be"
+      ],
+      [
+        "3",
+        "must have been"
+      ],
+      [
+        "4",
+        "should have been"
+      ]
+    ],
+    "a": "4",
+    "exp": "it looked barren. 형용사 보어.",
+    "t": "문법"
+  },
+  {
+    "i": "309",
+    "q": "Choose the one that is CORRECT according to the standard English.",
+    "c": [
+      [
+        "1",
+        "He must have been being interrogated by the police then."
+      ],
+      [
+        "2",
+        "He must have being been interrogated by the police then."
+      ],
+      [
+        "3",
+        "He must be having been interrogated by the police then."
+      ],
+      [
+        "4",
+        "He must be being had interrogated by the police then."
+      ]
+    ],
+    "a": "3",
+    "exp": "All 4 options are unnatural. must+be+having+been+interrogated is least ungrammatical. Q possibly corrupted.",
+    "t": "문법"
+  },
+  {
+    "i": "310",
+    "q": "That was very kind of you, but you ______ have done it.",
+    "c": [
+      [
+        "1",
+        "need not"
+      ],
+      [
+        "2",
+        "can not"
+      ],
+      [
+        "3",
+        "may"
+      ]
+    ],
+    "a": "1",
+    "exp": "need not have done. need not have p.p.",
+    "t": "need have pp"
+  },
+  {
+    "i": "311",
+    "q": "I think we ______ working on time yesterday.",
+    "c": [
+      [
+        "1",
+        "needed start"
+      ],
+      [
+        "2",
+        "needed to start"
+      ],
+      [
+        "3",
+        "need have started"
+      ],
+      [
+        "4",
+        "need to"
+      ]
+    ],
+    "a": "2",
+    "exp": "should have started. should have p.p.",
+    "t": "should have pp"
+  },
+  {
+    "i": "312",
+    "q": "I ______ to the movies with her last night. Thus I felt so tired this morning.",
+    "c": [
+      [
+        "1",
+        "did not need to go"
+      ],
+      [
+        "2",
+        "need not have gone"
+      ],
+      [
+        "3",
+        "need not go"
+      ],
+      [
+        "4",
+        "do not need to go"
+      ]
+    ],
+    "a": "4",
+    "exp": "should not have gone. should have p.p.",
+    "t": "should have pp"
+  },
+  {
+    "i": "313",
+    "q": "Jane took an umbrella because she thought it was going to rain. But it didn't rain. ______.",
+    "c": [
+      [
+        "1",
+        "she should have taken an umbrella"
+      ],
+      [
+        "2",
+        "she would have taken an umbrella"
+      ],
+      [
+        "3",
+        "She needn't have taken an umbrella"
+      ],
+      [
+        "4",
+        "she mustn't have taken an umbrella"
+      ]
+    ],
+    "a": "3",
+    "exp": "need not have taken. need not have p.p.",
+    "t": "need have pp"
+  },
+  {
+    "i": "314",
+    "q": "Choose the one that is CORRECT according to the standard English.",
+    "c": [
+      [
+        "1",
+        "They always speak low for fear that they should not be overheard."
+      ],
+      [
+        "2",
+        "They always speak low for fear of not being overheard."
+      ],
+      [
+        "3",
+        "They always speak low lest they be overheard."
+      ],
+      [
+        "4",
+        "They always speak low lest they should not be overheard."
+      ]
+    ],
+    "a": "3",
+    "exp": "lest they be overheard. lest+S+RV = so that S not RV. speak low lest they be overheard = correct.",
+    "t": "조동사"
+  },
+  {
+    "i": "315",
+    "q": "Choose the one that is CORRECT according to the standard English.",
+    "c": [
+      [
+        "1",
+        "I would smoke, but not now."
+      ],
+      [
+        "2",
+        "I used to smoke, but not now."
+      ],
+      [
+        "3",
+        "I would smoke, but I don't now."
+      ],
+      [
+        "4",
+        "I used to smoking, but not now."
+      ]
+    ],
+    "a": "2",
+    "exp": "CORRECT 문장 선택. 답 유지.",
+    "t": "조동사"
+  },
+  {
+    "i": "316",
+    "q": "Some reports argue that students",
+    "c": [
+      [
+        "1",
+        "who used to using a calculator"
+      ],
+      [
+        "2",
+        "may forget"
+      ],
+      [
+        "3",
+        "how to do mental"
+      ],
+      [
+        "4",
+        "calculations."
+      ]
+    ],
+    "a": "4",
+    "exp": "students should be allowed. 조동사 수동.",
+    "t": "조동사"
+  },
+  {
+    "i": "317",
+    "q": "A: Why are you angry with me? I didn't do anything. B: That's just it. You _______ me. Instead, you sat there and did nothing.",
+    "c": [
+      [
+        "1",
+        "helped"
+      ],
+      [
+        "2",
+        "had helped"
+      ],
+      [
+        "3",
+        "could help"
+      ],
+      [
+        "4",
+        "could have helped"
+      ]
+    ],
+    "a": "4",
+    "exp": "could have helped. 과거에 할 수 있었는데 안 함. could help는 현재/일반적 가능성.",
+    "t": "관계대명사"
+  },
+  {
+    "i": "318",
+    "q": "A: Please accept my apology for breaking one of your favorite glasses. B: Well, I suppose it might have been worse. All of my glasses ______.",
+    "c": [
+      [
+        "1",
+        "won't never be broken"
+      ],
+      [
+        "2",
+        "must have been broken"
+      ],
+      [
+        "3",
+        "could have been broken"
+      ],
+      [
+        "4",
+        "should have been broken"
+      ]
+    ],
+    "a": "2",
+    "exp": "apology for breaking. 전치사 + ~ing.",
+    "t": "전치사"
+  },
+  {
+    "i": "319",
+    "q": "I ①intend to move that our committee ②appoints Tom as chairman, and I ③hope that you ④will second my motion.",
+    "c": [
+      [
+        "1",
+        "intend to move that our committee"
+      ],
+      [
+        "2",
+        "appoints Tom as chairman, and I"
+      ],
+      [
+        "3",
+        "hope that you"
+      ],
+      [
+        "4",
+        "will second my motion."
+      ]
+    ],
+    "a": "2",
+    "exp": "move that S RV. 가정법. appoints -> appoint.",
+    "t": "가정법"
+  },
+  {
+    "i": "320",
+    "q": "The judge assented to the suggestion that ______.",
+    "c": [
+      [
+        "1",
+        "both of the criminals will soon be set free"
+      ],
+      [
+        "2",
+        "some of the criminals will soon be guilty only"
+      ],
+      [
+        "3",
+        "the prisoner be sentenced to death"
+      ]
+    ],
+    "a": "1",
+    "exp": "that the defendant be released. 가정법.",
+    "t": "가정법"
+  },
+  {
+    "i": "321",
+    "q": "Wild strawberries are ______ as cultivated strawberries.",
+    "c": [
+      [
+        "1",
+        "no less sweeter"
+      ],
+      [
+        "2",
+        "not sweeter"
+      ],
+      [
+        "3",
+        "not as sweeter"
+      ],
+      [
+        "4",
+        "not so sweet"
+      ]
+    ],
+    "a": "3",
+    "exp": "as + 형용사 + as 원급비교. as sweet as.",
+    "t": "원급"
+  },
+  {
+    "i": "322",
+    "q": "①Until Napoleon's dreams of empire led him ②into the land of the pharaohs, his knowledge about Egypt had been ③as obscurely as the hieroglyphics ④on its stone facades.",
+    "c": [
+      [
+        "1",
+        "Until Napoleon's dreams of empire led him"
+      ],
+      [
+        "2",
+        "into the land of the pharaohs, his knowledge about Egypt had been"
+      ],
+      [
+        "3",
+        "as obscurely as the hieroglyphics"
+      ],
+      [
+        "4",
+        "on its stone facades."
+      ]
+    ],
+    "a": "3",
+    "exp": "as obscurely as->as obscure as(형용사). obscurely(부사)X",
+    "t": "문법"
+  },
+  {
+    "i": "323",
+    "q": "Employers, at the point of graduation, may not so much treasure a student's grades ______ the habits and attitudes which those grades signify.",
+    "c": [
+      [
+        "1",
+        "before"
+      ],
+      [
+        "2",
+        "than"
+      ],
+      [
+        "3",
+        "as"
+      ],
+      [
+        "4",
+        "to"
+      ]
+    ],
+    "a": "4",
+    "exp": "not so much A as B. 비교 구문.",
+    "t": "비교"
+  },
+  {
+    "i": "324",
+    "q": "Living beings have a natural inclination to fill any habitat with as many individuals ______ the nutrients and space in the area will allow.",
+    "c": [
+      [
+        "1",
+        "on"
+      ],
+      [
+        "2",
+        "how"
+      ],
+      [
+        "3",
+        "as"
+      ],
+      [
+        "4",
+        "that"
+      ]
+    ],
+    "a": "2",
+    "exp": "inclination to fill. to부정사.",
+    "t": "to부정사"
+  },
+  {
+    "i": "325",
+    "q": "A: How long did you wait? B: I waited there for ten minutes; that seemed ______ hours to me.",
+    "c": [
+      [
+        "1",
+        "many"
+      ],
+      [
+        "2",
+        "very much"
+      ],
+      [
+        "3",
+        "as many"
+      ],
+      [
+        "4",
+        "so much"
+      ]
+    ],
+    "a": "1",
+    "exp": "then I went home. 접속부사.",
+    "t": "접속부사"
+  },
+  {
+    "i": "326",
+    "q": "An elephant can lift ______ a ton with its tusks.",
+    "c": [
+      [
+        "1",
+        "so much that"
+      ],
+      [
+        "2",
+        "it"
+      ],
+      [
+        "3",
+        "most"
+      ],
+      [
+        "4",
+        "as much as"
+      ]
+    ],
+    "a": "4",
+    "exp": "as much as a ton. 원급.",
+    "t": "원급"
+  },
+  {
+    "i": "327",
+    "q": "Of the two candidates, I think ______.",
+    "c": [
+      [
+        "1",
+        "Mr. Grant is best suited"
+      ],
+      [
+        "2",
+        "Mr. Grant is suited best"
+      ],
+      [
+        "3",
+        "Mr. Grant is the better suited"
+      ],
+      [
+        "4",
+        "that is the better suited of them"
+      ]
+    ],
+    "a": "2",
+    "exp": "the former is better. 비교.",
+    "t": "비교"
+  },
+  {
+    "i": "328",
+    "q": "There were two large offices on this floor, ______ served as a conference room.",
+    "c": [
+      [
+        "1",
+        "the larger of which"
+      ],
+      [
+        "2",
+        "the larger of them"
+      ],
+      [
+        "3",
+        "the largest of which"
+      ],
+      [
+        "4",
+        "largest of that"
+      ]
+    ],
+    "a": "3",
+    "exp": "the larger of which. 전치사 + 관계대명사.",
+    "t": "관계대명사"
+  },
+  {
+    "i": "329",
+    "q": "We admire him ______ because he is honest.",
+    "c": [
+      [
+        "1",
+        "by far"
+      ],
+      [
+        "2",
+        "the sooner"
+      ],
+      [
+        "3",
+        "all the more"
+      ],
+      [
+        "4",
+        "none the less"
+      ]
+    ],
+    "a": "3",
+    "exp": "all the more because. 비교 강조.",
+    "t": "비교"
+  },
+  {
+    "i": "330",
+    "q": "그가 결점이 있음에도 불구하고 나는 여전히 그를 좋아한다.",
+    "c": [
+      [
+        "1",
+        "I don't like him because he has few faults."
+      ],
+      [
+        "2",
+        "I don't like him the less because he has a few faults."
+      ],
+      [
+        "3",
+        "I like him the more because he has a few faults."
+      ]
+    ],
+    "a": "1",
+    "exp": "Despite his faults. 전치사.",
+    "t": "전치사"
+  },
+  {
+    "i": "331",
+    "q": "The more citizens who are alert to the possibility of stolen wallets and pocketbooks, ______ thefts there will be.",
+    "c": [
+      [
+        "1",
+        "the more"
+      ],
+      [
+        "2",
+        "the fewer"
+      ],
+      [
+        "3",
+        "the less"
+      ],
+      [
+        "4",
+        "much less"
+      ]
+    ],
+    "a": "2",
+    "exp": "the more...the less likely. the 비교급 구문.",
+    "t": "the 비교급"
+  },
+  {
+    "i": "332",
+    "q": "The more distant a star happens to be, the dimmer ______.",
+    "c": [
+      [
+        "1",
+        "that seems to us"
+      ],
+      [
+        "2",
+        "seeming to us"
+      ],
+      [
+        "3",
+        "seeming to us"
+      ],
+      [
+        "4",
+        "it seems to us"
+      ]
+    ],
+    "a": "4",
+    "exp": "the dimmer it appears. the 비교급.",
+    "t": "the 비교급"
+  },
+  {
+    "i": "333",
+    "q": "The more dangerous",
+    "c": [
+      [
+        "1",
+        "is the sport, the"
+      ],
+      [
+        "2",
+        "more enthusiastically people"
+      ],
+      [
+        "3",
+        "appear to love"
+      ],
+      [
+        "4",
+        "watching it."
+      ]
+    ],
+    "a": "3",
+    "exp": "the more dangerous...the more I like.",
+    "t": "the 비교급"
+  },
+  {
+    "i": "334",
+    "q": "①Most of the telephone ②systems in Vietnam were installed in ③the 50's and 60's and are inherently ④much inferior than the modern systems already in use in Malaysia and Thailand.",
+    "c": [
+      [
+        "1",
+        "Most of the telephone"
+      ],
+      [
+        "2",
+        "systems in Vietnam were installed in"
+      ],
+      [
+        "3",
+        "the 50's and 60's and are inherently"
+      ],
+      [
+        "4",
+        "much inferior than the modern systems already in use in Malaysia and Thailand."
+      ]
+    ],
+    "a": "4",
+    "exp": "much inferior than->much inferior TO",
+    "t": "수일치"
+  },
+  {
+    "i": "335",
+    "q": "Everyone has a right to enjoy his liberty, ______ his life.",
+    "c": [
+      [
+        "1",
+        "much more"
+      ],
+      [
+        "2",
+        "much less"
+      ],
+      [
+        "3",
+        "indeed"
+      ],
+      [
+        "4",
+        "so"
+      ]
+    ],
+    "a": "2",
+    "exp": "much less his life. 비교 표현.",
+    "t": "비교"
+  },
+  {
+    "i": "336",
+    "q": "I don't suggest that he is negligent, still ______ that he is dishonest.",
+    "c": [
+      [
+        "1",
+        "more"
+      ],
+      [
+        "2",
+        "less"
+      ],
+      [
+        "3",
+        "better"
+      ],
+      [
+        "4",
+        "worse"
+      ]
+    ],
+    "a": "4",
+    "exp": "still less that he is dishonest.",
+    "t": "비교"
+  },
+  {
+    "i": "337",
+    "q": "그녀의 누이가 미인인 것처럼 그녀도 미인이다.",
+    "c": [
+      [
+        "1",
+        "She is not as beautiful as her sister is."
+      ],
+      [
+        "2",
+        "She is not so much a beauty as her sister is."
+      ],
+      [
+        "3",
+        "She is no less beautiful than her sister is beautiful."
+      ],
+      [
+        "4",
+        "She is not more beautiful than her sister is beautiful."
+      ]
+    ],
+    "a": "1",
+    "exp": "no less beautiful than. 동등비교.",
+    "t": "비교"
+  },
+  {
+    "i": "338",
+    "q": "The cheetah, which runs ______ among the land animals in the world, has been hunted almost to extinction.",
+    "c": [
+      [
+        "1",
+        "fastest"
+      ],
+      [
+        "2",
+        "the fastest"
+      ],
+      [
+        "3",
+        "faster-than-expected"
+      ],
+      [
+        "4",
+        "and the fastest"
+      ]
+    ],
+    "a": "3",
+    "exp": "runs the fastest. 최상급.",
+    "t": "최상급"
+  },
+  {
+    "i": "339",
+    "q": "An automobile is one of ______ expensive things a person usually purchases.",
+    "c": [
+      [
+        "1",
+        "most"
+      ],
+      [
+        "2",
+        "the better"
+      ],
+      [
+        "3",
+        "less"
+      ],
+      [
+        "4",
+        "the most"
+      ]
+    ],
+    "a": "4",
+    "exp": "one of the most expensive. 최상급.",
+    "t": "최상급"
+  },
+  {
+    "i": "340",
+    "q": "The Grapes of Wrath, a novel about the Depression years of the 1930's, is one of John Steinbeck's ______ books.",
+    "c": [
+      [
+        "1",
+        "and most famous"
+      ],
+      [
+        "2",
+        "are most famous"
+      ],
+      [
+        "3",
+        "most famous"
+      ]
+    ],
+    "a": "2",
+    "exp": "The Grapes of Wrath 설명. 답 유지.",
+    "t": "문법"
+  },
+  {
+    "i": "341",
+    "q": "I passed my driver's test. It seemed much ______ this time.",
+    "c": [
+      [
+        "1",
+        "easy"
+      ],
+      [
+        "2",
+        "easier"
+      ],
+      [
+        "3",
+        "easiest"
+      ],
+      [
+        "4",
+        "easily"
+      ]
+    ],
+    "a": "1",
+    "exp": "much easier. much + 비교급.",
+    "t": "비교급"
+  },
+  {
+    "i": "342",
+    "q": "①Modern athletes command much ②great salaries for their ③services than the athletes of past generations ④did.",
+    "c": [
+      [
+        "1",
+        "Modern athletes command much"
+      ],
+      [
+        "2",
+        "great salaries for their"
+      ],
+      [
+        "3",
+        "services than the athletes of past generations"
+      ],
+      [
+        "4",
+        "did."
+      ]
+    ],
+    "a": "2",
+    "exp": "great->greater(비교급). much greater salaries than",
+    "t": "비교급"
+  },
+  {
+    "i": "343",
+    "q": "You could stay",
+    "c": [
+      [
+        "1",
+        "at the big"
+      ],
+      [
+        "2",
+        "luxury hotels but the small hotels are"
+      ],
+      [
+        "3",
+        "very more"
+      ],
+      [
+        "4",
+        "reasonable."
+      ]
+    ],
+    "a": "3",
+    "exp": "could stay longer. 비교급.",
+    "t": "비교급"
+  },
+  {
+    "i": "345",
+    "q": "By far ______ exciting of the dog's qualities is his inherent working ability.",
+    "c": [
+      [
+        "1",
+        "the best"
+      ],
+      [
+        "2",
+        "very"
+      ],
+      [
+        "3",
+        "the most"
+      ],
+      [
+        "4",
+        "much"
+      ]
+    ],
+    "a": "2",
+    "exp": "the most exciting. 최상급.",
+    "t": "최상급"
+  },
+  {
+    "i": "346",
+    "q": "By far ______ of Korea is oil.",
+    "c": [
+      [
+        "1",
+        "it is the most important import"
+      ],
+      [
+        "2",
+        "the most important import is"
+      ],
+      [
+        "3",
+        "that is the most important import"
+      ],
+      [
+        "4",
+        "the most important import"
+      ]
+    ],
+    "a": "1",
+    "exp": "the largest import. 최상급.",
+    "t": "최상급"
+  },
+  {
+    "i": "347",
+    "q": "Although difficult to imagine, the mass of the sun is about 750 times ______ that of all the planets combined.",
+    "c": [
+      [
+        "1",
+        "the greatly"
+      ],
+      [
+        "2",
+        "greater"
+      ],
+      [
+        "3",
+        "as great as"
+      ],
+      [
+        "4",
+        "the greatest"
+      ]
+    ],
+    "a": "4",
+    "exp": "330,000 times as great as. 배수.",
+    "t": "배수표현"
+  },
+  {
+    "i": "348",
+    "q": "A: John, which hotel would you recommend? B: Well, staying in this hotel costs ______ staying in that one.",
+    "c": [
+      [
+        "1",
+        "more than twice"
+      ],
+      [
+        "2",
+        "as twice much as"
+      ],
+      [
+        "3",
+        "as much as twice"
+      ],
+      [
+        "4",
+        "twice as much as"
+      ]
+    ],
+    "a": "4",
+    "exp": "twice as much as. 배수표현 올바른 어순.",
+    "t": "배수표현"
+  },
+  {
+    "i": "349",
+    "q": "Last year, Matt earned ______ his brother, who has a better position.",
+    "c": [
+      [
+        "1",
+        "twice as many as"
+      ],
+      [
+        "2",
+        "twice as more as"
+      ],
+      [
+        "3",
+        "twice as much as"
+      ],
+      [
+        "4",
+        "twice more than"
+      ]
+    ],
+    "a": "2",
+    "exp": "twice as much as. 배수.",
+    "t": "배수표현"
+  },
+  {
+    "i": "350",
+    "q": "Researchers",
+    "c": [
+      [
+        "1",
+        "have found that children"
+      ],
+      [
+        "2",
+        "experience twice as much deep sleep"
+      ],
+      [
+        "3",
+        "than adults,"
+      ],
+      [
+        "4",
+        "a fact which may teach us something about the connection between age and learnin"
+      ]
+    ],
+    "a": "1",
+    "exp": "Researchers have found. 현재완료.",
+    "t": "문법"
+  },
+  {
+    "i": "351",
+    "q": "It is estimated that ______ the United States.",
+    "c": [
+      [
+        "1",
+        "the country is less than half of the population of"
+      ],
+      [
+        "2",
+        "the country has less than half as many population as"
+      ],
+      [
+        "3",
+        "the population of the country is less than half of"
+      ],
+      [
+        "4",
+        "the country has less than half as large a population as"
+      ]
+    ],
+    "a": "4",
+    "exp": "less than half as large a population as. 올바른 비교 구문.",
+    "t": "분수"
+  },
+  {
+    "i": "352",
+    "q": "Those taped lectures will take twice ______ to understand.",
+    "c": [
+      [
+        "1",
+        "effort"
+      ],
+      [
+        "2",
+        "much effort"
+      ],
+      [
+        "3",
+        "as much effort"
+      ],
+      [
+        "4",
+        "effort as much"
+      ]
+    ],
+    "a": "4",
+    "exp": "twice as long to understand. 답 유지.",
+    "t": "배수표현"
+  },
+  {
+    "i": "353",
+    "q": "According to the report, men who smoke are ______ to die of cancer.",
+    "c": [
+      [
+        "1",
+        "as twice likely"
+      ],
+      [
+        "2",
+        "likely as twice"
+      ],
+      [
+        "3",
+        "as likely twice"
+      ],
+      [
+        "4",
+        "twice as likely"
+      ]
+    ],
+    "a": "2",
+    "exp": "twice as likely. 배수.",
+    "t": "배수표현"
+  },
+  {
+    "i": "354",
+    "q": "The climates of Venus and Mars",
+    "c": [
+      [
+        "1",
+        "are closest to"
+      ],
+      [
+        "2",
+        "the Earth, but they are nowhere near"
+      ],
+      [
+        "3",
+        "so comfortable as our planet's"
+      ],
+      [
+        "4",
+        "temperate climate."
+      ]
+    ],
+    "a": "1",
+    "exp": "more similar to. 비교.",
+    "t": "비교"
+  },
+  {
+    "i": "355",
+    "q": "Because sailors",
+    "c": [
+      [
+        "1",
+        "are often assigned to ships"
+      ],
+      [
+        "2",
+        "that remain at sea for months at a time, men in the Navy"
+      ],
+      [
+        "3",
+        "spend more time away from home"
+      ],
+      [
+        "4",
+        "than any branch of the service."
+      ]
+    ],
+    "a": "4",
+    "exp": "선원 전통 설명. 답 유지.",
+    "t": "문법"
+  },
+  {
+    "i": "356",
+    "q": "Mr. Kim has never been",
+    "c": [
+      [
+        "1",
+        "out of Korea,"
+      ],
+      [
+        "2",
+        "yet his accent is very"
+      ],
+      [
+        "3",
+        "similar to an"
+      ],
+      [
+        "4",
+        "Englishman."
+      ]
+    ],
+    "a": "3",
+    "exp": "much less to Europe. 비교.",
+    "t": "비교"
+  },
+  {
+    "i": "357",
+    "q": "나의 문화적 배경과 지적 교육은 어느 누구에게도 뒤떨어지지 않는다.",
+    "c": [
+      [
+        "1",
+        "My cultural background and intellectual training are not behind other people."
+      ],
+      [
+        "2",
+        "My cultural background and intellectual training are as good as other people."
+      ],
+      [
+        "3",
+        "My cultural background and intellectual training are as good as other people's."
+      ],
+      [
+        "4",
+        "My cultural background and intellectual training are as good as anyone's. ⑤ My c"
+      ]
+    ],
+    "a": "2",
+    "exp": "second to none. 최상급 의미 관용표현.",
+    "t": "비교"
+  },
+  {
+    "i": "358",
+    "q": "Because Robert",
+    "c": [
+      [
+        "1",
+        "ate faster than"
+      ],
+      [
+        "2",
+        "me, he"
+      ],
+      [
+        "3",
+        "was able to leave the cafeteria"
+      ],
+      [
+        "4",
+        "sooner."
+      ]
+    ],
+    "a": "1",
+    "exp": "unusually tall. 부사 + 형용사.",
+    "t": "문법"
+  },
+  {
+    "i": "360",
+    "q": "The ①judges' decisions can ②be based upon what is right ③rather than ④by what is popular.",
+    "c": [
+      [
+        "1",
+        "judges' decisions can"
+      ],
+      [
+        "2",
+        "be based upon what is right"
+      ],
+      [
+        "3",
+        "rather than"
+      ]
+    ],
+    "a": "1",
+    "exp": "[auto-fallback: 4th choice missing]",
+    "t": "병렬구조"
+  },
+  {
+    "i": "361",
+    "q": "Michael is going to be nominated to receive the Academy Award for best director, ______?",
+    "c": [
+      [
+        "1",
+        "won't he"
+      ],
+      [
+        "2",
+        "doesn't he"
+      ],
+      [
+        "3",
+        "didn't he"
+      ],
+      [
+        "4",
+        "isn't he"
+      ]
+    ],
+    "a": "2",
+    "exp": "nominated to receive. to부정사.",
+    "t": "to부정사"
+  },
+  {
+    "i": "362",
+    "q": "A: Turn off the light, ______? B: Of course, I will.",
+    "c": [
+      [
+        "1",
+        "do you"
+      ],
+      [
+        "2",
+        "will you"
+      ],
+      [
+        "3",
+        "shall you"
+      ],
+      [
+        "4",
+        "can you"
+      ]
+    ],
+    "a": "4",
+    "exp": "Turn off the light, will you? 부가의문문.",
+    "t": "부가의문문"
+  },
+  {
+    "i": "363",
+    "q": "Choose the one that is CORRECT according to the standard English.",
+    "c": [
+      [
+        "1",
+        "He'd stayed home that night, wouldn't he?"
+      ],
+      [
+        "2",
+        "He's writing his parents a letter, wasn't he?"
+      ],
+      [
+        "3",
+        "I don't think he is smart, is he?"
+      ],
+      [
+        "4",
+        "The police should not do such a thing, should he?"
+      ]
+    ],
+    "a": "1",
+    "exp": "부가의문문 CORRECT. 답 유지.",
+    "t": "부가의문문"
+  },
+  {
+    "i": "365",
+    "q": "______ anyone know that the old gentleman in the audience had once been an outstanding scholar.",
+    "c": [
+      [
+        "1",
+        "So far as did"
+      ],
+      [
+        "2",
+        "It was rare for"
+      ],
+      [
+        "3",
+        "Not only had"
+      ],
+      [
+        "4",
+        "Little did"
+      ]
+    ],
+    "a": "4",
+    "exp": "Little did anyone know. 부정어(little) 도치 구문.",
+    "t": "도치"
+  },
+  {
+    "i": "366",
+    "q": "Hardly ever",
+    "c": [
+      [
+        "1",
+        "there have been"
+      ],
+      [
+        "2",
+        "so many choices for young people"
+      ],
+      [
+        "3",
+        "entering the work force"
+      ],
+      [
+        "4",
+        "as there are today."
+      ]
+    ],
+    "a": "3",
+    "exp": "Hardly ever does one see. 도치.",
+    "t": "도치"
+  },
+  {
+    "i": "367",
+    "q": "Rarely ______ for more than a few seconds once they enter the Earth's atmosphere.",
+    "c": [
+      [
+        "1",
+        "while meteors blaze"
+      ],
+      [
+        "2",
+        "meteors that blaze"
+      ],
+      [
+        "3",
+        "do meteors blaze"
+      ],
+      [
+        "4",
+        "blaze meteors"
+      ]
+    ],
+    "a": "1",
+    "exp": "Rarely do they remain. 도치.",
+    "t": "도치"
+  },
+  {
+    "i": "369",
+    "q": "①Neither in her campaign nor in her acceptance speech ②do Miss Eliot ③acknowledge those ④whose assistance had ⑤won her the nomination.",
+    "c": [
+      [
+        "1",
+        "Neither in her campaign nor in her acceptance speech"
+      ],
+      [
+        "2",
+        "do Miss Eliot"
+      ],
+      [
+        "3",
+        "acknowledge those"
+      ],
+      [
+        "4",
+        "whose assistance had ⑤won her the nomination."
+      ]
+    ],
+    "a": "2",
+    "exp": "did Michelle... Neither 도치.",
+    "t": "도치"
+  },
+  {
+    "i": "370",
+    "q": "Disabilities do not diminish",
+    "c": [
+      [
+        "1",
+        "the rights of individuals"
+      ],
+      [
+        "2",
+        "nor"
+      ],
+      [
+        "3",
+        "they have to reduce opportunities to"
+      ]
+    ],
+    "a": "3",
+    "exp": "Disabilities do not diminish a person's right. 아포스트로피.",
+    "t": "문법"
+  },
+  {
+    "i": "371",
+    "q": "①Only then ②he became aware of the fact that there were more ③difficulties ahead than he ④had expected.",
+    "c": [
+      [
+        "1",
+        "Only then"
+      ],
+      [
+        "2",
+        "he became aware of the fact that there were more"
+      ],
+      [
+        "3",
+        "difficulties ahead than he"
+      ],
+      [
+        "4",
+        "had expected."
+      ]
+    ],
+    "a": "2",
+    "exp": "Only then did he become. Only 도치.",
+    "t": "도치"
+  },
+  {
+    "i": "372",
+    "q": "Fingerprint recognition",
+    "c": [
+      [
+        "1",
+        "has long been used in high-security"
+      ],
+      [
+        "2",
+        "places like FBI headquarters, but only now"
+      ],
+      [
+        "3",
+        "it is finding a place"
+      ],
+      [
+        "4",
+        "in the mainstream."
+      ]
+    ],
+    "a": "1",
+    "exp": "Fingerprint recognition is used. 수동태.",
+    "t": "문법"
+  },
+  {
+    "i": "373",
+    "q": "______ at conveying her underlying messages through topical plots and contemporary characters that by 1940 her book had sold some three million copies.",
+    "c": [
+      [
+        "1",
+        "Grace L. Hill, so successful"
+      ],
+      [
+        "2",
+        "So successful, Grace L. Hill"
+      ],
+      [
+        "3",
+        "So successful was Grace L. Hill"
+      ],
+      [
+        "4",
+        "Because Grace L. Hill was so successful"
+      ]
+    ],
+    "a": "3",
+    "exp": "adept at conveying. 형용사 + 전치사.",
+    "t": "전치사"
+  },
+  {
+    "i": "374",
+    "q": "A: Are you going to see him? B: If the boy goes, ______.",
+    "c": [
+      [
+        "1",
+        "so I go"
+      ],
+      [
+        "2",
+        "so will I"
+      ],
+      [
+        "3",
+        "I do so"
+      ],
+      [
+        "4",
+        "so go I"
+      ]
+    ],
+    "a": "4",
+    "exp": "so will I. 답 유지.",
+    "t": "도치"
+  },
+  {
+    "i": "375",
+    "q": "Mary objects",
+    "c": [
+      [
+        "1",
+        "to our buying this house"
+      ],
+      [
+        "2",
+        "without the approval"
+      ],
+      [
+        "3",
+        "of our president, and"
+      ],
+      [
+        "4",
+        "John does so."
+      ]
+    ],
+    "a": "1",
+    "exp": "objects to being treated. object to + ~ing.",
+    "t": "동명사"
+  },
+  {
+    "i": "376",
+    "q": "A: I have a lot of classical records, but I don't understand modern jazz. B: ______. I think it's boring.",
+    "c": [
+      [
+        "1",
+        "So do I"
+      ],
+      [
+        "2",
+        "I don't"
+      ],
+      [
+        "3",
+        "I do"
+      ],
+      [
+        "4",
+        "Neither do I"
+      ]
+    ],
+    "a": "2",
+    "exp": "Neither do I. 부정 동의.",
+    "t": "도치"
+  },
+  {
+    "i": "377",
+    "q": "Choose the one that is CORRECT according to the standard English.",
+    "c": [
+      [
+        "1",
+        "They didn't read the play. Neither they acted it."
+      ],
+      [
+        "2",
+        "They didn't read the play. They didn't acted it, either."
+      ],
+      [
+        "3",
+        "They didn't read the play. Nor they acted it, too."
+      ],
+      [
+        "4",
+        "They didn't read the play. Nor did they act it."
+      ]
+    ],
+    "a": "4",
+    "exp": "Nor did they act it. After negative, inversion required. Neither/Nor + auxiliary + subject.",
+    "t": "문법"
+  },
+  {
+    "i": "378",
+    "q": "A: Can you tell me where my teacher is? B: Yes, of course! ______.",
+    "c": [
+      [
+        "1",
+        "Here comes he."
+      ],
+      [
+        "2",
+        "Here comes your teacher."
+      ],
+      [
+        "3",
+        "Comes your teacher."
+      ],
+      [
+        "4",
+        "Your teacher here comes."
+      ]
+    ],
+    "a": "1",
+    "exp": "There he goes. (대명사 주어 도치 불가).",
+    "t": "도치"
+  },
+  {
+    "i": "379",
+    "q": "In the center of the balcony ______.",
+    "c": [
+      [
+        "1",
+        "did sit the guest of honor"
+      ],
+      [
+        "2",
+        "sit the guest of honor"
+      ],
+      [
+        "3",
+        "was sitting the guest of honor"
+      ],
+      [
+        "4",
+        "was the guest of honor sitting"
+      ]
+    ],
+    "a": "4",
+    "exp": "stands a statue. 장소부사 도치.",
+    "t": "도치"
+  },
+  {
+    "i": "380",
+    "q": "Over the river and through the woods ______ my grandmother lives.",
+    "c": [
+      [
+        "1",
+        "the house is standing where"
+      ],
+      [
+        "2",
+        "where is standing the house"
+      ],
+      [
+        "3",
+        "is standing the house where"
+      ]
+    ],
+    "a": "3",
+    "exp": "to grandmother's house we go. 도치.",
+    "t": "도치"
+  },
+  {
+    "i": "382",
+    "q": "Plenty of items of",
+    "c": [
+      [
+        "1",
+        "clothings and furniture"
+      ],
+      [
+        "2",
+        "are displayed"
+      ],
+      [
+        "3",
+        "at the fair"
+      ],
+      [
+        "4",
+        "every Saturday."
+      ]
+    ],
+    "a": "2",
+    "exp": "Plenty of items are. 수일치.",
+    "t": "수일치"
+  },
+  {
+    "i": "383",
+    "q": "Miss Smith went to the library to get ______.",
+    "c": [
+      [
+        "1",
+        "an information"
+      ],
+      [
+        "2",
+        "some information"
+      ],
+      [
+        "3",
+        "the information"
+      ],
+      [
+        "4",
+        "one piece of an information"
+      ]
+    ],
+    "a": "1",
+    "exp": "to get more information. to부정사 목적.",
+    "t": "to부정사"
+  },
+  {
+    "i": "384",
+    "q": "①This book explains ②all sorts of useful ③equipments on ④how to repair cars.",
+    "c": [
+      [
+        "1",
+        "This book explains"
+      ],
+      [
+        "2",
+        "all sorts of useful"
+      ],
+      [
+        "3",
+        "equipments on"
+      ],
+      [
+        "4",
+        "how to repair cars."
+      ]
+    ],
+    "a": "3",
+    "exp": "equipments -> equipment(불가산).",
+    "t": "불가산명사"
+  },
+  {
+    "i": "385",
+    "q": "Choose the one that is NOT correct according to the standard English.",
+    "c": [
+      [
+        "1",
+        "The police wants to interview the man about the robbery."
+      ],
+      [
+        "2",
+        "My pants are on the table."
+      ],
+      [
+        "3",
+        "Physics is my favorite subject."
+      ],
+      [
+        "4",
+        "Three days is not long enough for a good holiday."
+      ]
+    ],
+    "a": "1",
+    "exp": "The police WANTS -> The police WANT. police=plural.",
+    "t": "문법"
+  },
+  {
+    "i": "386",
+    "q": "In the early days of Rome, cattle ______ for money.",
+    "c": [
+      [
+        "1",
+        "was used"
+      ],
+      [
+        "2",
+        "were used"
+      ],
+      [
+        "3",
+        "can be used"
+      ],
+      [
+        "4",
+        "had been used"
+      ]
+    ],
+    "a": "2",
+    "exp": "cattle were used. cattle = 복수.",
+    "t": "수일치"
+  },
+  {
+    "i": "387",
+    "q": "It is difficult to classify mathematics",
+    "c": [
+      [
+        "1",
+        "as simply"
+      ],
+      [
+        "2",
+        "an art or a science because"
+      ],
+      [
+        "3",
+        "they have"
+      ],
+      [
+        "4",
+        "elements of both."
+      ]
+    ],
+    "a": "3",
+    "exp": "mathematics is.",
+    "t": "수일치"
+  },
+  {
+    "i": "388",
+    "q": "The statistics released",
+    "c": [
+      [
+        "1",
+        "by the state department"
+      ],
+      [
+        "2",
+        "makes the economic situation look"
+      ],
+      [
+        "3",
+        "bleaker than it already"
+      ],
+      [
+        "4",
+        "is."
+      ]
+    ],
+    "a": "1",
+    "exp": "statistics show. 통계수치 = 복수.",
+    "t": "수일치"
+  },
+  {
+    "i": "390",
+    "q": "Choose the one that is CORRECT according to the standard English.",
+    "c": [
+      [
+        "1",
+        "Much of the ships were wrecked off the coast."
+      ],
+      [
+        "2",
+        "John doesn't like book."
+      ],
+      [
+        "3",
+        "Many of the mud were sold to China."
+      ]
+    ],
+    "a": "2",
+    "exp": "CORRECT 수일치. 답 유지.",
+    "t": "수일치"
+  },
+  {
+    "i": "391",
+    "q": "Choose the one that is NOT correct according to the standard English.",
+    "c": [
+      [
+        "1",
+        "We need a few apples."
+      ],
+      [
+        "2",
+        "We also need some butter."
+      ],
+      [
+        "3",
+        "Could you pick up a little bananas?"
+      ],
+      [
+        "4",
+        "How much sugar do you want?"
+      ]
+    ],
+    "a": "3",
+    "exp": "a LITTLE bananas -> a FEW bananas. little+uncountable, bananas=countable.",
+    "t": "수일치"
+  },
+  {
+    "i": "392",
+    "q": "Elephants are",
+    "c": [
+      [
+        "1",
+        "capable of doing very hard work. They"
+      ],
+      [
+        "2",
+        "can be used in the jungles where machines cannot go. A grown elephant may consum"
+      ],
+      [
+        "3",
+        "as many as 200 pounds of food a day, a disadvantage which"
+      ],
+      [
+        "4",
+        "tends to offset its capacity for heavy work."
+      ]
+    ],
+    "a": "3",
+    "exp": "among the most intelligent. 최상급.",
+    "t": "최상급"
+  },
+  {
+    "i": "393",
+    "q": "①The number of battles were ②fought ③between the ④fleets of Nelson and Napoleon.",
+    "c": [
+      [
+        "1",
+        "The number of battles were"
+      ],
+      [
+        "2",
+        "fought"
+      ],
+      [
+        "3",
+        "between the"
+      ],
+      [
+        "4",
+        "fleets of Nelson and Napoleon."
+      ]
+    ],
+    "a": "1",
+    "exp": "The number of = 단수동사. were -> was.",
+    "t": "수일치"
+  },
+  {
+    "i": "394",
+    "q": "①Through the years, scientists ②have developed smaller but ③increasingly more powerful batteries for the growing number of portable electrical ④device.",
+    "c": [
+      [
+        "1",
+        "Through the years, scientists"
+      ],
+      [
+        "2",
+        "have developed smaller but"
+      ],
+      [
+        "3",
+        "increasingly more powerful batteries for the growing number of portable electric"
+      ],
+      [
+        "4",
+        "device."
+      ]
+    ],
+    "a": "4",
+    "exp": "more powerful as well -> more powerful too.",
+    "t": "as well"
+  },
+  {
+    "i": "396",
+    "q": "The government",
+    "c": [
+      [
+        "1",
+        "expects to attract foreign investment"
+      ],
+      [
+        "2",
+        "of"
+      ],
+      [
+        "3",
+        "as much as $15"
+      ],
+      [
+        "4",
+        "billions this year."
+      ]
+    ],
+    "a": "2",
+    "exp": "The government has decided. 단수.",
+    "t": "문법"
+  },
+  {
+    "i": "397",
+    "q": "In Africa and Asia, five",
+    "c": [
+      [
+        "1",
+        "percents of babies"
+      ],
+      [
+        "2",
+        "die before"
+      ],
+      [
+        "3",
+        "they are"
+      ],
+      [
+        "4",
+        "one year old."
+      ]
+    ],
+    "a": "1",
+    "exp": "five out of ten children die. 분수.",
+    "t": "분수"
+  },
+  {
+    "i": "398",
+    "q": "In ①spite of all the recent ②advances in opening up ③the sea, man still uses it pretty much ④the way he did ⑤hundred of years ago.",
+    "c": [
+      [
+        "1",
+        "spite of all the recent"
+      ],
+      [
+        "2",
+        "advances in opening up"
+      ],
+      [
+        "3",
+        "the sea, man still uses it pretty much"
+      ],
+      [
+        "4",
+        "the way he did ⑤hundred of years ago."
+      ]
+    ],
+    "a": "4",
+    "exp": "hundred->hundreds(hundreds of)",
+    "t": "문법"
+  },
+  {
+    "i": "399",
+    "q": "______ was impertinent to the people present.",
+    "c": [
+      [
+        "1",
+        "His that remark"
+      ],
+      [
+        "2",
+        "That remark of his"
+      ],
+      [
+        "3",
+        "That his remark"
+      ],
+      [
+        "4",
+        "That remark of he"
+      ]
+    ],
+    "a": "2",
+    "exp": "That remark of his. 이중소유격 올바른 형태. That his remark(X). That remark of he(X).",
+    "t": "관계대명사"
+  },
+  {
+    "i": "400",
+    "q": "A: Did you see anyone interesting at the party? B: Yes, ______ were there.",
+    "c": [
+      [
+        "1",
+        "some of John's friends"
+      ],
+      [
+        "2",
+        "some friend of John's"
+      ],
+      [
+        "3",
+        "some of John's friend"
+      ]
+    ],
+    "a": "2",
+    "exp": "someone who knows you. 관계대명사.",
+    "t": "관계대명사"
+  },
+  {
+    "i": "401",
+    "q": "You ①should sit on ②a left side ③of my father ④at the dinner table.",
+    "c": [
+      [
+        "1",
+        "should sit on"
+      ],
+      [
+        "2",
+        "a left side"
+      ],
+      [
+        "3",
+        "of my father"
+      ],
+      [
+        "4",
+        "at the dinner table."
+      ]
+    ],
+    "a": "2",
+    "exp": "'You should sit on the left side of my father...' 정관사 the.",
+    "t": "관사"
+  },
+  {
+    "i": "402",
+    "q": "①A size of the United States Supreme Court ②was the focal point ③of one of the most famous ④attacks on the federal judiciary.",
+    "c": [
+      [
+        "1",
+        "A size of the United States Supreme Court"
+      ],
+      [
+        "2",
+        "was the focal point"
+      ],
+      [
+        "3",
+        "of one of the most famous"
+      ],
+      [
+        "4",
+        "attacks on the federal judiciary."
+      ]
+    ],
+    "a": "1",
+    "exp": "'The size of the United States Supreme Court...' A → The.",
+    "t": "관사"
+  },
+  {
+    "i": "404",
+    "q": "①All of a sudden the young woman ②rose to ③her feet and struck him ④on his face.",
+    "c": [
+      [
+        "1",
+        "All of a sudden the young woman"
+      ],
+      [
+        "2",
+        "rose to"
+      ],
+      [
+        "3",
+        "her feet and struck him"
+      ],
+      [
+        "4",
+        "on his face."
+      ]
+    ],
+    "a": "4",
+    "exp": "on his face->in the face(관용구)",
+    "t": "관사"
+  },
+  {
+    "i": "405",
+    "q": "Choose the one that is CORRECT according to the standard English.",
+    "c": [
+      [
+        "1",
+        "The Earth travels at a high rate of speed around sun."
+      ],
+      [
+        "2",
+        "The woman on white was standing with her head up."
+      ],
+      [
+        "3",
+        "The workers in America get paid by week."
+      ],
+      [
+        "4",
+        "She looked me in the face."
+      ]
+    ],
+    "a": "3",
+    "exp": "CORRECT. 답 유지.",
+    "t": "관사"
+  },
+  {
+    "i": "406",
+    "q": "①The English has both regular and irregular verbs. Learn ②the basic verb forms of these words ③in order to form the tenses and avoid ④mixing tenses in writing.",
+    "c": [
+      [
+        "1",
+        "The English has both regular and irregular verbs. Learn"
+      ],
+      [
+        "2",
+        "the basic verb forms of these words"
+      ],
+      [
+        "3",
+        "in order to form the tenses and avoid"
+      ],
+      [
+        "4",
+        "mixing tenses in writing."
+      ]
+    ],
+    "a": "1",
+    "exp": "'The English language has both...' The English → The English language.",
+    "t": "관사"
+  },
+  {
+    "i": "407",
+    "q": "Jack London's",
+    "c": [
+      [
+        "1",
+        "tour"
+      ],
+      [
+        "2",
+        "of Rocky Mountains"
+      ],
+      [
+        "3",
+        "was delayed by his illness and the"
+      ],
+      [
+        "4",
+        "San Francisco earthquake of 1906."
+      ]
+    ],
+    "a": "4",
+    "exp": "'Jack London's life was as adventurous as his stories.'",
+    "t": "비교"
+  },
+  {
+    "i": "408",
+    "q": "Annie Smith Peck was",
+    "c": [
+      [
+        "1",
+        "the first woman in Netherlands to navigate through"
+      ],
+      [
+        "2",
+        "the Nile and scale the Matterhorn,"
+      ],
+      [
+        "3",
+        "the height and beauty"
+      ],
+      [
+        "4",
+        "of which have made them the goal of all adventurers."
+      ]
+    ],
+    "a": "2",
+    "exp": "'Annie Smith Peck was a pioneering mountain climber.'",
+    "t": "관사"
+  },
+  {
+    "i": "409",
+    "q": "The Irish brought the popular custom of Halloween to America ______ 1840s.",
+    "c": [
+      [
+        "1",
+        "into the"
+      ],
+      [
+        "2",
+        "in the"
+      ],
+      [
+        "3",
+        "within"
+      ],
+      [
+        "4",
+        "during"
+      ]
+    ],
+    "a": "3",
+    "exp": "'The Irish brought Halloween to America in the 1840s.'",
+    "t": "관사"
+  },
+  {
+    "i": "410",
+    "q": "______ are sought by an elementary school.",
+    "c": [
+      [
+        "1",
+        "Mentally retarded teachers"
+      ],
+      [
+        "2",
+        "Teachers retarded for mental cases"
+      ],
+      [
+        "3",
+        "Mental retarded case teachers"
+      ]
+    ],
+    "a": "1",
+    "exp": "'Elementary school teachers are sought by...'",
+    "t": "관사"
+  },
+  {
+    "i": "411",
+    "q": "For ①half a century, Samuel Dulles has sold the fabric ②by two yards ③in local, ④regional, and national events.",
+    "c": [
+      [
+        "1",
+        "half a century, Samuel Dulles has sold the fabric"
+      ],
+      [
+        "2",
+        "by two yards"
+      ],
+      [
+        "3",
+        "in local,"
+      ],
+      [
+        "4",
+        "regional, and national events."
+      ]
+    ],
+    "a": "2",
+    "exp": "by two yards->by the yard(단위당 정관사)",
+    "t": "관사"
+  },
+  {
+    "i": "412",
+    "q": "At seven o'clock in the morning, guards",
+    "c": [
+      [
+        "1",
+        "rouse prisoners from"
+      ],
+      [
+        "2",
+        "the door to the door,"
+      ],
+      [
+        "3",
+        "leading the inmates into the dusty exercise yard of"
+      ],
+      [
+        "4",
+        "a Lao prison."
+      ]
+    ],
+    "a": "3",
+    "exp": "'At seven o'clock...guards opened the gates.'",
+    "t": "관사"
+  },
+  {
+    "i": "413",
+    "q": "Some people",
+    "c": [
+      [
+        "1",
+        "are allergic to"
+      ],
+      [
+        "2",
+        "certain type of food,"
+      ],
+      [
+        "3",
+        "for example, strawberries or"
+      ],
+      [
+        "4",
+        "seafood."
+      ]
+    ],
+    "a": "2",
+    "exp": "'Some people are opposed to the idea of...'",
+    "t": "관사"
+  },
+  {
+    "i": "414",
+    "q": "①That is ②the kind of a house in ③which I ④should like to live.",
+    "c": [
+      [
+        "1",
+        "That is"
+      ],
+      [
+        "2",
+        "the kind of a house in"
+      ],
+      [
+        "3",
+        "which I"
+      ],
+      [
+        "4",
+        "should like to live."
+      ]
+    ],
+    "a": "2",
+    "exp": "'the kind of house' → 'the kind of a house' (a 불필요). ② 틀림.",
+    "t": "관사"
+  },
+  {
+    "i": "415",
+    "q": "Do you happen to know ______ insulin is?",
+    "c": [
+      [
+        "1",
+        "what kind a substance"
+      ],
+      [
+        "2",
+        "of what kind of substance"
+      ],
+      [
+        "3",
+        "what kind of substance"
+      ],
+      [
+        "4",
+        "what kind of a substance"
+      ]
+    ],
+    "a": "4",
+    "exp": "'Do you happen to know what insulin is?'",
+    "t": "의문사"
+  },
+  {
+    "i": "416",
+    "q": "The two main ______ are permanent magnets and electromagnets.",
+    "c": [
+      [
+        "1",
+        "kinds of magnet"
+      ],
+      [
+        "2",
+        "kind of magnets"
+      ],
+      [
+        "3",
+        "kinds magnets"
+      ],
+      [
+        "4",
+        "kinds of magnets"
+      ]
+    ],
+    "a": "4",
+    "exp": "kinds of magnets.",
+    "t": "명사"
+  },
+  {
+    "i": "417",
+    "q": "It was so beautiful ______ that I did not want to go to bed.",
+    "c": [
+      [
+        "1",
+        "night"
+      ],
+      [
+        "2",
+        "a night"
+      ],
+      [
+        "3",
+        "day"
+      ],
+      [
+        "4",
+        "the night"
+      ]
+    ],
+    "a": "3",
+    "exp": "'It was so beautiful a day that I did not want to go to bed.'",
+    "t": "such/so"
+  },
+  {
+    "i": "418",
+    "q": "This work cannot be done in ______.",
+    "c": [
+      [
+        "1",
+        "quite a short time"
+      ],
+      [
+        "2",
+        "a so short time"
+      ],
+      [
+        "3",
+        "such short time"
+      ],
+      [
+        "4",
+        "so a short time"
+      ]
+    ],
+    "a": "2",
+    "exp": "'This work cannot be done in a day.'",
+    "t": "관사"
+  },
+  {
+    "i": "419",
+    "q": "①Exercising is as ②good as a way as any ③to lose ④unwanted weight.",
+    "c": [
+      [
+        "1",
+        "Exercising is as"
+      ],
+      [
+        "2",
+        "good as a way as any"
+      ],
+      [
+        "3",
+        "to lose"
+      ],
+      [
+        "4",
+        "unwanted weight."
+      ]
+    ],
+    "a": "2",
+    "exp": "Choose NOT correct. 'Exercising is as good a way as any...'",
+    "t": "원급"
+  },
+  {
+    "i": "420",
+    "q": "I am sure that Mary is ______ girl to tell a lie.",
+    "c": [
+      [
+        "1",
+        "too an honest"
+      ],
+      [
+        "2",
+        "too honest a"
+      ],
+      [
+        "3",
+        "a too honest"
+      ]
+    ],
+    "a": "1",
+    "exp": "too honest a girl to tell a lie. too + adj + a + noun. so/such need different article positions.",
+    "t": "to부정사"
+  },
+  {
+    "i": "421",
+    "q": "The property insurance industry has",
+    "c": [
+      [
+        "1",
+        "flourished because people do not want"
+      ],
+      [
+        "2",
+        "to expose"
+      ],
+      [
+        "3",
+        "itself to"
+      ],
+      [
+        "4",
+        "the risk of catastrophic loss."
+      ]
+    ],
+    "a": "1",
+    "exp": "'The property insurance industry has grown rapidly.'",
+    "t": "문법"
+  },
+  {
+    "i": "422",
+    "q": "Ants are blind to red light, so",
+    "c": [
+      [
+        "1",
+        "it is possible to observe"
+      ],
+      [
+        "2",
+        "themselves in an artificial nest"
+      ],
+      [
+        "3",
+        "without disturbing"
+      ],
+      [
+        "4",
+        "their activities."
+      ]
+    ],
+    "a": "3",
+    "exp": "'Ants are blind to red light, so they can be studied in red light.'",
+    "t": "접속사"
+  },
+  {
+    "i": "423",
+    "q": "①Lawyers with the American Civil Liberties Union ②are compiling statistics that ③may help ④themselves to repeal the death penalty.",
+    "c": [
+      [
+        "1",
+        "Lawyers with the American Civil Liberties Union"
+      ],
+      [
+        "2",
+        "are compiling statistics that"
+      ],
+      [
+        "3",
+        "may help"
+      ],
+      [
+        "4",
+        "themselves to repeal the death penalty."
+      ]
+    ],
+    "a": "4",
+    "exp": "themselves->them. 재귀대명사 오류. 답 유지.",
+    "t": "문법"
+  },
+  {
+    "i": "424",
+    "q": "①Even though home schoolers are not ②under the rigid curricular of traditional schools, they often spend more time ③on the subjects or topics that really interest ④themselves.",
+    "c": [
+      [
+        "1",
+        "Even though home schoolers are not"
+      ],
+      [
+        "2",
+        "under the rigid curricular of traditional schools, they often spend more time"
+      ],
+      [
+        "3",
+        "on the subjects or topics that really interest"
+      ],
+      [
+        "4",
+        "themselves."
+      ]
+    ],
+    "a": "1",
+    "exp": "NOT correct. 답 유지.",
+    "t": "문법"
+  },
+  {
+    "i": "425",
+    "q": "Choose the closest one to the meaning of the underlined part. On hearing from her son, she was shedding tears 「in spite of herself」.",
+    "c": [
+      [
+        "1",
+        "unconsciously"
+      ],
+      [
+        "2",
+        "quietly"
+      ],
+      [
+        "3",
+        "shyly"
+      ],
+      [
+        "4",
+        "sorrowfully"
+      ]
+    ],
+    "a": "3",
+    "exp": "'closest meaning' 동의어 선택.",
+    "t": "어휘"
+  },
+  {
+    "i": "426",
+    "q": "I don't have a nice bookcase, so I am going to ______.",
+    "c": [
+      [
+        "1",
+        "have it made"
+      ],
+      [
+        "2",
+        "have that made"
+      ],
+      [
+        "3",
+        "have it be made"
+      ],
+      [
+        "4",
+        "have one made"
+      ]
+    ],
+    "a": "4",
+    "exp": "have one made. 사역. 답 유지.",
+    "t": "사역동사"
+  },
+  {
+    "i": "427",
+    "q": "Yesterday I lost my watch in the subway, so I plan to buy ______.",
+    "c": [
+      [
+        "1",
+        "some"
+      ],
+      [
+        "2",
+        "any"
+      ],
+      [
+        "3",
+        "one"
+      ],
+      [
+        "4",
+        "it"
+      ]
+    ],
+    "a": "1",
+    "exp": "'I plan to buy another one.' one vs. another.",
+    "t": "대명사"
+  },
+  {
+    "i": "428",
+    "q": "The ①first three books are math books, the ②next two ones are psychology books and ③the last ④book is about art.",
+    "c": [
+      [
+        "1",
+        "first three books are math books, the"
+      ],
+      [
+        "2",
+        "next two ones are psychology books and"
+      ],
+      [
+        "3",
+        "the last"
+      ],
+      [
+        "4",
+        "book is about art."
+      ]
+    ],
+    "a": "2",
+    "exp": "'the next two are...' ones → 생략 (수사 뒤).",
+    "t": "대명사"
+  },
+  {
+    "i": "429",
+    "q": "①Modern poets have ②experimented with ③poetic devices ④such alliteration and assonance.",
+    "c": [
+      [
+        "1",
+        "Modern poets have"
+      ],
+      [
+        "2",
+        "experimented with"
+      ],
+      [
+        "3",
+        "poetic devices"
+      ],
+      [
+        "4",
+        "such alliteration and assonance."
+      ]
+    ],
+    "a": "4",
+    "exp": "NOT correct. 답 유지.",
+    "t": "such/so"
+  },
+  {
+    "i": "430",
+    "q": "It began to be denied that there is",
+    "c": [
+      [
+        "1",
+        "such a thing like human nature."
+      ],
+      [
+        "2",
+        "Rather, man grows and"
+      ],
+      [
+        "3",
+        "grows into culture; cultures are,"
+      ]
+    ],
+    "a": "3",
+    "exp": "'It began to be denied that there is such a thing as...'",
+    "t": "such"
+  },
+  {
+    "i": "431",
+    "q": "Prices at present are reasonably stable, and will probably remain ______.",
+    "c": [
+      [
+        "1",
+        "such"
+      ],
+      [
+        "2",
+        "so"
+      ],
+      [
+        "3",
+        "alike"
+      ],
+      [
+        "4",
+        "equal"
+      ]
+    ],
+    "a": "2",
+    "exp": "'Prices are stable and will probably remain so.'",
+    "t": "대명사"
+  },
+  {
+    "i": "432",
+    "q": "Let me give you two of the",
+    "c": [
+      [
+        "1",
+        "consequences of"
+      ],
+      [
+        "2",
+        "which I would guess that one will shock you while"
+      ],
+      [
+        "3",
+        "another may perhaps surprise you more"
+      ],
+      [
+        "4",
+        "favorably."
+      ]
+    ],
+    "a": "4",
+    "exp": "'Let me give you two of the most important reasons.'",
+    "t": "최상급"
+  },
+  {
+    "i": "433",
+    "q": "Struggling against fatigue, I forced myself to put one foot in front of ______.",
+    "c": [
+      [
+        "1",
+        "another"
+      ],
+      [
+        "2",
+        "others"
+      ],
+      [
+        "3",
+        "other"
+      ],
+      [
+        "4",
+        "the other"
+      ]
+    ],
+    "a": "1",
+    "exp": "'I forced myself to put one foot in front of the other.'",
+    "t": "other"
+  },
+  {
+    "i": "434",
+    "q": "①Some of the plants in this shop ②require very little care, but ③this one needs much more sunlight than ④other.",
+    "c": [
+      [
+        "1",
+        "Some of the plants in this shop"
+      ],
+      [
+        "2",
+        "require very little care, but"
+      ],
+      [
+        "3",
+        "this one needs much more sunlight than"
+      ],
+      [
+        "4",
+        "other."
+      ]
+    ],
+    "a": "4",
+    "exp": "than other->than the others(정관사+복수)",
+    "t": "other"
+  },
+  {
+    "i": "435",
+    "q": "Bob got fired. It's going to be difficult for him to find ______ job.",
+    "c": [
+      [
+        "1",
+        "other"
+      ],
+      [
+        "2",
+        "another"
+      ],
+      [
+        "3",
+        "the other"
+      ],
+      [
+        "4",
+        "the another"
+      ]
+    ],
+    "a": "2",
+    "exp": "'It's going to be difficult for him to find another job.'",
+    "t": "other/another"
+  },
+  {
+    "i": "436",
+    "q": "Because the first pair of shoes did not fit properly, she asked for _______.",
+    "c": [
+      [
+        "1",
+        "another shoes"
+      ],
+      [
+        "2",
+        "other shoes"
+      ],
+      [
+        "3",
+        "the other ones"
+      ],
+      [
+        "4",
+        "another pair"
+      ]
+    ],
+    "a": "4",
+    "exp": "another pair. another+단수. shoes=복수(X), other shoes 다른 신발(의미상 가능하나 문맥은 '또 다른 한 켤레').",
+    "t": "other/another"
+  },
+  {
+    "i": "437",
+    "q": "When a group of people",
+    "c": [
+      [
+        "1",
+        "go Dutch, each"
+      ],
+      [
+        "2",
+        "pay only for"
+      ],
+      [
+        "3",
+        "what the person"
+      ],
+      [
+        "4",
+        "has eaten."
+      ]
+    ],
+    "a": "2",
+    "exp": "'each pays only for what the person has eaten.' each=단수.",
+    "t": "수일치"
+  },
+  {
+    "i": "438",
+    "q": "All objects",
+    "c": [
+      [
+        "1",
+        "are composed of many molecules, and the"
+      ],
+      [
+        "2",
+        "force of gravity"
+      ],
+      [
+        "3",
+        "pulls on"
+      ],
+      [
+        "4",
+        "every of them."
+      ]
+    ],
+    "a": "1",
+    "exp": "'All objects fall at the same rate regardless of weight.'",
+    "t": "문법"
+  },
+  {
+    "i": "439",
+    "q": "①Skim lengthy reading passages before ②you begin reading to get a general idea of ③what the selection is about. When you skim a reading passage, you read the most important parts of it quickly, ④without reading every words.",
+    "c": [
+      [
+        "1",
+        "Skim lengthy reading passages before"
+      ],
+      [
+        "2",
+        "you begin reading to get a general idea of"
+      ],
+      [
+        "3",
+        "what the selection is about. When you skim a reading passage, you read the most "
+      ],
+      [
+        "4",
+        "without reading every words."
+      ]
+    ],
+    "a": "4",
+    "exp": "'without reading every word.' → 'every word' (every+단수).",
+    "t": "every"
+  },
+  {
+    "i": "440",
+    "q": "Every fuel has",
+    "c": [
+      [
+        "1",
+        "their own"
+      ],
+      [
+        "2",
+        "particular temperature"
+      ],
+      [
+        "3",
+        "at which it"
+      ]
+    ],
+    "a": "2",
+    "exp": "'Every fuel has its own particular temperature at which it begins to burn.'",
+    "t": "every"
+  },
+  {
+    "i": "441",
+    "q": "Animism is the",
+    "c": [
+      [
+        "1",
+        "belief that objects and natural"
+      ],
+      [
+        "2",
+        "phenomena such as rivers, rocks, and wind are"
+      ],
+      [
+        "3",
+        "live and have"
+      ],
+      [
+        "4",
+        "feelings."
+      ]
+    ],
+    "a": "3",
+    "exp": "'Animism is the belief that natural objects have souls.'",
+    "t": "문법"
+  },
+  {
+    "i": "442",
+    "q": "①Alive animals are ②greatly diversified ③in ④their sizes and shapes.",
+    "c": [
+      [
+        "1",
+        "Alive animals are"
+      ],
+      [
+        "2",
+        "greatly diversified"
+      ],
+      [
+        "3",
+        "in"
+      ],
+      [
+        "4",
+        "their sizes and shapes."
+      ]
+    ],
+    "a": "1",
+    "exp": "'Alive animals' → 'Living animals'. Alive은 서술적 용법만 가능.",
+    "t": "형용사"
+  },
+  {
+    "i": "443",
+    "q": "There will never be two snowflakes that are exactly ______.",
+    "c": [
+      [
+        "1",
+        "unlike"
+      ],
+      [
+        "2",
+        "alike"
+      ],
+      [
+        "3",
+        "like"
+      ],
+      [
+        "4",
+        "liking"
+      ]
+    ],
+    "a": "4",
+    "exp": "'two snowflakes that are exactly alike.' alike = 서술적 형용사.",
+    "t": "형용사"
+  },
+  {
+    "i": "444",
+    "q": "The bones of mammals,",
+    "c": [
+      [
+        "1",
+        "not alike"
+      ],
+      [
+        "2",
+        "those of"
+      ],
+      [
+        "3",
+        "other vertebrates,"
+      ],
+      [
+        "4",
+        "show a high degree of differentiation."
+      ]
+    ],
+    "a": "2",
+    "exp": "'The bones of mammals are similar to those of reptiles.'",
+    "t": "대명사"
+  },
+  {
+    "i": "445",
+    "q": "A: Do you like the Japanese food served in American restaurants? B: It's not bad but I prefer ______.",
+    "c": [
+      [
+        "1",
+        "Japanese food authentically"
+      ],
+      [
+        "2",
+        "Japanese authentic food"
+      ],
+      [
+        "3",
+        "food Japanese authentic"
+      ],
+      [
+        "4",
+        "authentic Japanese food ⑤ authentically Japanese food"
+      ]
+    ],
+    "a": "3",
+    "exp": "'No, they are not the same as Japanese food in Japan.'",
+    "t": "비교"
+  },
+  {
+    "i": "446",
+    "q": "A: Which shoes belong to his father? B: The ______.",
+    "c": [
+      [
+        "1",
+        "blue large five shoes"
+      ],
+      [
+        "2",
+        "five blue large shoes"
+      ],
+      [
+        "3",
+        "five large blue shoes"
+      ],
+      [
+        "4",
+        "large five blue shoes"
+      ]
+    ],
+    "a": "3",
+    "exp": "Adjective order: Number(five) > Size(large) > Color(blue) > Noun(shoes). five large blue shoes.",
+    "t": "대명사"
+  },
+  {
+    "i": "447",
+    "q": "The girl was carrying a ______ bag.",
+    "c": [
+      [
+        "1",
+        "blue big plastic"
+      ],
+      [
+        "2",
+        "big and blue plastic"
+      ],
+      [
+        "3",
+        "big blue plastic"
+      ],
+      [
+        "4",
+        "blue plastic big"
+      ]
+    ],
+    "a": "4",
+    "exp": "'The girl was carrying a small black leather bag.' 형용사 어순.",
+    "t": "형용사 어순"
+  },
+  {
+    "i": "448",
+    "q": "He gave lectures ______.",
+    "c": [
+      [
+        "1",
+        "last term at the college three days a week"
+      ],
+      [
+        "2",
+        "at the college three days a week last term"
+      ],
+      [
+        "3",
+        "at the college last term three days a week"
+      ],
+      [
+        "4",
+        "last term three days a week at the college"
+      ]
+    ],
+    "a": "2",
+    "exp": "'He gave lectures on modern European history.'",
+    "t": "형용사 어순"
+  },
+  {
+    "i": "449",
+    "q": "Is the book hard ______ immediately?",
+    "c": [
+      [
+        "1",
+        "his returning"
+      ],
+      [
+        "2",
+        "that he returns"
+      ],
+      [
+        "3",
+        "for him to return"
+      ],
+      [
+        "4",
+        "to him return"
+      ]
+    ],
+    "a": "3",
+    "exp": "'Is the book hard to read immediately?' hard + to RV.",
+    "t": "to부정사"
+  },
+  {
+    "i": "450",
+    "q": "A: Did the judge ask you many questions? B: Yes, and ______.",
+    "c": [
+      [
+        "1",
+        "they had difficulty being answered"
+      ],
+      [
+        "2",
+        "answering them was with difficulty"
+      ],
+      [
+        "3",
+        "they were difficult to answer"
+      ]
+    ],
+    "a": "1",
+    "exp": "'Yes, and they were very difficult to answer.'",
+    "t": "to부정사"
+  },
+  {
+    "i": "451",
+    "q": "It is easy ______ him.",
+    "c": [
+      [
+        "1",
+        "that we get on with"
+      ],
+      [
+        "2",
+        "for us to get on with"
+      ],
+      [
+        "3",
+        "our getting on with"
+      ],
+      [
+        "4",
+        "get on with"
+      ]
+    ],
+    "a": "4",
+    "exp": "'It is easy for him to understand.'",
+    "t": "to부정사"
+  },
+  {
+    "i": "452",
+    "q": "The improvement of this design is ______ your best efforts.",
+    "c": [
+      [
+        "1",
+        "worthy"
+      ],
+      [
+        "2",
+        "value"
+      ],
+      [
+        "3",
+        "edible"
+      ],
+      [
+        "4",
+        "worth"
+      ]
+    ],
+    "a": "2",
+    "exp": "'The improvement of this design is worth your best efforts.'",
+    "t": "worth"
+  },
+  {
+    "i": "453",
+    "q": "Which of the following is grammatically wrong? A: Is this camera cheap? B: It ______ what we paid.",
+    "c": [
+      [
+        "1",
+        "dose not deserve"
+      ],
+      [
+        "2",
+        "is not worth"
+      ],
+      [
+        "3",
+        "dose not merit"
+      ],
+      [
+        "4",
+        "is not worthy"
+      ]
+    ],
+    "a": "3",
+    "exp": "'Is this camera enough cheap for me to buy?' → cheap enough.",
+    "t": "enough"
+  },
+  {
+    "i": "454",
+    "q": "A: How about your mother? B: She isn't ______ three miles a day.",
+    "c": [
+      [
+        "1",
+        "enough strong to walk"
+      ],
+      [
+        "2",
+        "strong enough for walking"
+      ],
+      [
+        "3",
+        "strong enough to walk"
+      ],
+      [
+        "4",
+        "enough strong to walking"
+      ]
+    ],
+    "a": "1",
+    "exp": "'She isn't able to walk three miles a day.'",
+    "t": "able"
+  },
+  {
+    "i": "456",
+    "q": "Which of the following is grammatically wrong? When the management failed to cut the contract with the union's leader, it had to ______.",
+    "c": [
+      [
+        "1",
+        "lay off about a hundred workers"
+      ],
+      [
+        "2",
+        "lay about a hundred workers off"
+      ],
+      [
+        "3",
+        "lay them off by the hundred"
+      ],
+      [
+        "4",
+        "lay off them by the hundred"
+      ]
+    ],
+    "a": "4",
+    "exp": "Which grammatically wrong? 'When the manager came back...'",
+    "t": "문법"
+  },
+  {
+    "i": "457",
+    "q": "①Confronted with ②such harsh situations that others ③deemed informidable, we could ④go them through just by sticking together.",
+    "c": [
+      [
+        "1",
+        "Confronted with"
+      ],
+      [
+        "2",
+        "such harsh situations that others"
+      ],
+      [
+        "3",
+        "deemed informidable, we could"
+      ],
+      [
+        "4",
+        "go them through just by sticking together."
+      ]
+    ],
+    "a": "4",
+    "exp": "go them through->go through them(대명사목적어위치)",
+    "t": "such/so"
+  },
+  {
+    "i": "458",
+    "q": "Many years ago, ______ people believed that the earth was square and that a person would fall off its edge.",
+    "c": [
+      [
+        "1",
+        "most"
+      ],
+      [
+        "2",
+        "almost"
+      ],
+      [
+        "3",
+        "every"
+      ],
+      [
+        "4",
+        "none of these"
+      ]
+    ],
+    "a": "3",
+    "exp": "'Many years ago, most people believed...'",
+    "t": "most"
+  },
+  {
+    "i": "459",
+    "q": "After experiencing one of the worst traffic jams in years, ______ the nation's land transportations returned to normal again when the heaviest snowfall died down yesterday.",
+    "c": [
+      [
+        "1",
+        "almost"
+      ],
+      [
+        "2",
+        "most all of"
+      ],
+      [
+        "3",
+        "most"
+      ],
+      [
+        "4",
+        "most of"
+      ]
+    ],
+    "a": "1",
+    "exp": "'After experiencing...almost all of the commuters...'",
+    "t": "most"
+  },
+  {
+    "i": "460",
+    "q": "By the time he was",
+    "c": [
+      [
+        "1",
+        "finally captured, the thief"
+      ],
+      [
+        "2",
+        "had spent"
+      ],
+      [
+        "3",
+        "most all the money he"
+      ]
+    ],
+    "a": "2",
+    "exp": "By the time he was forty(과거) -> had become(대과거). 과거 시점까지 완료된 일.",
+    "t": "시제"
+  },
+  {
+    "i": "461",
+    "q": "In Korea, it's been the norm rather than the exception that most workers are paid ______.",
+    "c": [
+      [
+        "1",
+        "by an month"
+      ],
+      [
+        "2",
+        "by a month"
+      ],
+      [
+        "3",
+        "by the month"
+      ],
+      [
+        "4",
+        "by month"
+      ]
+    ],
+    "a": "3",
+    "exp": "by the month. 임금 단위. 답 유지.",
+    "t": "문법"
+  },
+  {
+    "i": "462",
+    "q": "A: Did Judy fly across the Caspian Sea? B: No, she crossed both ways ______.",
+    "c": [
+      [
+        "1",
+        "by a ship"
+      ],
+      [
+        "2",
+        "to the ship"
+      ],
+      [
+        "3",
+        "on ships"
+      ],
+      [
+        "4",
+        "by ship"
+      ]
+    ],
+    "a": "3",
+    "exp": "'No, she crossed by land.' by + 교통수단.",
+    "t": "전치사"
+  },
+  {
+    "i": "463",
+    "q": "A: Where is our school located, Bob? B: It is ______.",
+    "c": [
+      [
+        "1",
+        "on the five avenue at New York"
+      ],
+      [
+        "2",
+        "on Fifth Avenue in New York"
+      ],
+      [
+        "3",
+        "in fifth avenue in New York"
+      ],
+      [
+        "4",
+        "on Fifth Avenue at New York"
+      ]
+    ],
+    "a": "2",
+    "exp": "on Fifth Avenue in New York. 고유명사 Fifth Avenue + 도시는 in.",
+    "t": "전치사"
+  },
+  {
+    "i": "464",
+    "q": "With new technology, cameras can take pictures of underwater valleys ______ color.",
+    "c": [
+      [
+        "1",
+        "in"
+      ],
+      [
+        "2",
+        "by"
+      ],
+      [
+        "3",
+        "for"
+      ],
+      [
+        "4",
+        "with"
+      ]
+    ],
+    "a": "4",
+    "exp": "'With new technology, cameras can take pictures of underwater life.'",
+    "t": "전치사"
+  },
+  {
+    "i": "465",
+    "q": "The stolen jewels must be recovered ______.",
+    "c": [
+      [
+        "1",
+        "for any cost"
+      ],
+      [
+        "2",
+        "at any cost"
+      ],
+      [
+        "3",
+        "with any expense"
+      ],
+      [
+        "4",
+        "no matter any expenditure"
+      ]
+    ],
+    "a": "2",
+    "exp": "'The stolen jewels must be recovered at any cost.'",
+    "t": "전치사"
+  },
+  {
+    "i": "466",
+    "q": "His late joining ______, his manager is confident that he will fit right in the group.",
+    "c": [
+      [
+        "1",
+        "even though"
+      ],
+      [
+        "2",
+        "notwithstanding"
+      ],
+      [
+        "3",
+        "if"
+      ],
+      [
+        "4",
+        "despite"
+      ]
+    ],
+    "a": "2",
+    "exp": "notwithstanding.",
+    "t": "전치사"
+  },
+  {
+    "i": "467",
+    "q": "A: Can you repair my watch ______ Tuesday? B: No, I'll need to keep it ______ Saturday.",
+    "c": [
+      [
+        "1",
+        "by -- by"
+      ],
+      [
+        "2",
+        "until -- by"
+      ],
+      [
+        "3",
+        "by -- until"
+      ],
+      [
+        "4",
+        "until -- until"
+      ]
+    ],
+    "a": "3",
+    "exp": "'Can you repair my watch by Tuesday? No, I'll need until Friday.'",
+    "t": "전치사"
+  },
+  {
+    "i": "468",
+    "q": "Doctoral students who are preparing to take their qualifying exams have been studying in the library every night ______ the last three months.",
+    "c": [
+      [
+        "1",
+        "until"
+      ],
+      [
+        "2",
+        "since"
+      ],
+      [
+        "3",
+        "for"
+      ],
+      [
+        "4",
+        "from"
+      ]
+    ],
+    "a": "3",
+    "exp": "for the last three months. 기간(duration) -> for. since는 특정시점.",
+    "t": "전치사"
+  },
+  {
+    "i": "469",
+    "q": "Choose the one that is NOT correct according to the standard English.",
+    "c": [
+      [
+        "1",
+        "Have you seen her since we last met?"
+      ],
+      [
+        "2",
+        "I have known her during a very long time."
+      ],
+      [
+        "3",
+        "They remained calm throughout the negotiations."
+      ],
+      [
+        "4",
+        "I hope to get to your house by 7:00 at the latest."
+      ]
+    ],
+    "a": "2",
+    "exp": "I have known her DURING a very long time -> FOR a very long time. during+specific period, for+duration.",
+    "t": "전치사"
+  },
+  {
+    "i": "470",
+    "q": "It is important for us to distinguish ______ good and evil.",
+    "c": [
+      [
+        "1",
+        "from"
+      ],
+      [
+        "2",
+        "between"
+      ],
+      [
+        "3",
+        "among"
+      ]
+    ],
+    "a": "1",
+    "exp": "distinguish between A and B.",
+    "t": "전치사"
+  },
+  {
+    "i": "471",
+    "q": "The spinal cord is",
+    "c": [
+      [
+        "1",
+        "the main pathway"
+      ],
+      [
+        "2",
+        "for messages"
+      ],
+      [
+        "3",
+        "travelling between the brain"
+      ],
+      [
+        "4",
+        "to the rest of the body."
+      ]
+    ],
+    "a": "3",
+    "exp": "'The spinal cord is connected to the brain.'",
+    "t": "전치사"
+  },
+  {
+    "i": "472",
+    "q": "①The Metropolitan Museum of Art ②in New York City is ③located ④nearby Central Park.",
+    "c": [
+      [
+        "1",
+        "The Metropolitan Museum of Art"
+      ],
+      [
+        "2",
+        "in New York City is"
+      ],
+      [
+        "3",
+        "located"
+      ],
+      [
+        "4",
+        "nearby Central Park."
+      ]
+    ],
+    "a": "4",
+    "exp": "Choose NOT correct. 'located on Fifth Avenue' → 'located at Fifth Avenue'.",
+    "t": "전치사"
+  },
+  {
+    "i": "473",
+    "q": "The Lincoln Birthplace was presented ______ a gift to the nation by the Lincoln Farm Association.",
+    "c": [
+      [
+        "1",
+        "with"
+      ],
+      [
+        "2",
+        "about"
+      ],
+      [
+        "3",
+        "as"
+      ],
+      [
+        "4",
+        "against"
+      ]
+    ],
+    "a": "2",
+    "exp": "'The Lincoln Birthplace was presented as a gift to the nation.'",
+    "t": "전치사"
+  },
+  {
+    "i": "474",
+    "q": "Spending the money, he felt ______.",
+    "c": [
+      [
+        "1",
+        "as if a wealthy man"
+      ],
+      [
+        "2",
+        "as though a wealthy man"
+      ],
+      [
+        "3",
+        "like a wealthy man"
+      ],
+      [
+        "4",
+        "as if a man of wealthy"
+      ]
+    ],
+    "a": "1",
+    "exp": "'Spending the money, he felt as if he had been freed from debt.'",
+    "t": "as if"
+  },
+  {
+    "i": "476",
+    "q": "Since last month, the price of an average long-distance call has plummeted, ______ nearly 50 percent.",
+    "c": [
+      [
+        "1",
+        "on"
+      ],
+      [
+        "2",
+        "by"
+      ],
+      [
+        "3",
+        "for"
+      ],
+      [
+        "4",
+        "with"
+      ]
+    ],
+    "a": "2",
+    "exp": "by more than 20%. 변화폭은 by.",
+    "t": "전치사"
+  },
+  {
+    "i": "477",
+    "q": "James Thompson is wealthier than his brother ______ at least 2 million dollars.",
+    "c": [
+      [
+        "1",
+        "with"
+      ],
+      [
+        "2",
+        "by"
+      ],
+      [
+        "3",
+        "for"
+      ],
+      [
+        "4",
+        "in"
+      ]
+    ],
+    "a": "2",
+    "exp": "wealthier than his brother by 2 million dollars. by + 차이.",
+    "t": "전치사"
+  },
+  {
+    "i": "478",
+    "q": "Used frequently ______ Japanese liquor and cosmetics companies, Mobotron is a giant VCR with a screen measuring 10 ______ 13 feet. It is rented ______ the day and can go anywhere.",
+    "c": [
+      [
+        "1",
+        "at"
+      ],
+      [
+        "2",
+        "by"
+      ],
+      [
+        "3",
+        "in"
+      ],
+      [
+        "4",
+        "to"
+      ]
+    ],
+    "a": "2",
+    "exp": "'Used frequently by Japanese liquor and cosmetics companies...'",
+    "t": "전치사"
+  },
+  {
+    "i": "479",
+    "q": "______ a few species that live on the ground, most monkeys live in trees.",
+    "c": [
+      [
+        "1",
+        "There are"
+      ],
+      [
+        "2",
+        "In that there are"
+      ],
+      [
+        "3",
+        "All but the fact that there are"
+      ],
+      [
+        "4",
+        "Save that there are"
+      ]
+    ],
+    "a": "1",
+    "exp": "'Except for a few species that live on the ground...'",
+    "t": "전치사"
+  },
+  {
+    "i": "480",
+    "q": "Choose the one that is CORRECT according to the standard English.",
+    "c": [
+      [
+        "1",
+        "As far as I remember, you both have the same size."
+      ],
+      [
+        "2",
+        "As regard our working environment, the machines make too much noise."
+      ],
+      [
+        "3",
+        "We need to discover another source of income, beside oil."
+      ],
+      [
+        "4",
+        "The old lady never spoke to anyone except someone came to visit her."
+      ]
+    ],
+    "a": "3",
+    "exp": "CORRECT 문장. 답 유지.",
+    "t": "문법"
+  }
+];
