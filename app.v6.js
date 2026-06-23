@@ -397,7 +397,7 @@ function rateQuestion({X1, X2, X3, X4, X5, X6, X7}) {
 }
 
 function getScoreDelta(isCorrect, rate) {
-  return isCorrect ? +(1.5 * rate / 100) : -(rate / 100);
+  return isCorrect ? +(15 * rate / 100) : -(10 * rate / 100);
 }
 
 function readIrtAbility() {
@@ -405,28 +405,27 @@ function readIrtAbility() {
 }
 
 function writeIrtAbility(v) {
-  const capped = Math.max(0, Math.min(1000, v));
+  const capped = Math.max(0, Math.min(10000, v));
   try { localStorage.setItem(irtAbilityKey, String(Math.round(capped * 1000) / 1000)); } catch {}
 }
 
-// Tier thresholds scaled to 0–1000 (cap), proportional to original 0–2000 distribution
+// Tier thresholds scaled to 0–10000
 function getTier(score) {
-  const s = Math.max(0, Math.min(1000, score));
-  if (s >= 1000) return { name: '서성한메이저',     icon: '👑' };
-  if (s >= 840)  return { name: '서성한',           icon: '💠' };
-  if (s >= 690)  return { name: '서성한하위',       icon: '💎' };
-  if (s >= 530)  return { name: '중경외시 메이저',  icon: '🥇' };
-  if (s >= 370)  return { name: '중경외시 하위',    icon: '🥈' };
-  if (s >= 210)  return { name: '건동홍',           icon: '🥉' };
-  if (s >= 150)  return { name: '국숭세단',         icon: '📗' };
-  if (s >= 100)  return { name: '인가경',           icon: '📘' };
-  if (s >= 50)   return { name: '정붕이 파이팅', icon: '📙' };
+  const s = Math.max(0, Math.min(10000, score));
+  if (s >= 10000) return { name: '서성한메이저',     icon: '👑' };
+  if (s >= 9000)  return { name: '서성한',           icon: '💠' };
+  if (s >= 8000)  return { name: '서성한하위',       icon: '💎' };
+  if (s >= 6000)  return { name: '중경외시 메이저',  icon: '🥇' };
+  if (s >= 5000)  return { name: '중경외시 하위',    icon: '🥈' };
+  if (s >= 3500)  return { name: '건동홍',           icon: '🥉' };
+  if (s >= 2500)  return { name: '국숭세단',         icon: '📗' };
+  if (s >= 1600)  return { name: '인가경',           icon: '📘' };
   return { name: '정붕이', icon: '🌱' };
 }
 
 // Estimate IRT ability from public stats (correct/total) — assumes rate≈50
 function getTierForRanking(correct, total) {
-  const estAbility = correct * 0.75 - (total - correct) * 0.5;
+  const estAbility = correct * 7.5 - (total - correct) * 5;
   return getTier(estAbility);
 }
 
@@ -2116,7 +2115,6 @@ function showWordlist() {
       ${state.playerName ? `<button class="wl-jump-btn wl-hideknown-btn${wlHideKnown ? ' wl-hideknown-on' : ''}" type="button" title="아는 단어(✓) 숨기기">${wlHideKnown ? '✓ 아는 단어 숨김' : '아는 단어 안보기'}</button>` : ''}
       <button class="wl-jump-btn" type="button" data-jump-target="200" title="범주 200번으로 이동">범주200</button>
       <button class="wl-jump-btn" type="button" data-jump-target="400" title="범주 400번으로 이동">범주400</button>
-      <button class="wl-jump-btn wl-toggle-high-btn${wlCollapseHigh ? ' wl-toggle-high-on' : ''}" type="button" title="범주400~620 접기/펴기">${wlCollapseHigh ? '범주400~620 펴기' : '범주400~620 접기'}</button>
     </span>
   `;
   els.wordlistTitle.querySelectorAll('.wl-jump-btn[data-jump-target]').forEach((button) => {
@@ -2124,9 +2122,6 @@ function showWordlist() {
   });
   const hideBtn = els.wordlistTitle.querySelector('.wl-hideknown-btn');
   if (hideBtn) hideBtn.addEventListener('click', () => { wlHideKnown = !wlHideKnown; showWordlist(); });
-  const toggleHighBtn = els.wordlistTitle.querySelector('.wl-toggle-high-btn');
-  if (toggleHighBtn) toggleHighBtn.addEventListener('click', () => { wlCollapseHigh = !wlCollapseHigh; showWordlist(); });
-
   const hideKnown = wlHideKnown && state.playerName;
   let html = '<div class="wordlist-scroll">';
   // Split into three ranges for independent toggles
@@ -2144,8 +2139,10 @@ function showWordlist() {
         html += `<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">범주 200~399 — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 8px" onclick="document.getElementById('wl-mid-cats').hidden=true;wlCollapseMid=true;document.getElementById('wl-mid-collapsed').hidden=false;">접기</button></div>`;
       } else {
         html += '</div>'; // close wl-mid-cats
+        // Collapsed bar for 400-620 sits outside the hidden div
+        html += `<div id="wl-high-collapsed"${wlCollapseHigh ? '' : ' hidden'} style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404"><button type="button" class="wl-jump-btn" style="font-size:12px;padding:4px 16px" onclick="wlCollapseHigh=false;showWordlist()">범주 400~620 펴기 ▸</button></div>`;
         html += `<div id="wl-high-cats"${wlCollapseHigh ? ' hidden' : ''}>`;
-        html += `<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">범주 400~620 — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 8px" onclick="document.getElementById('wl-high-cats').hidden=true;wlCollapseHigh=true;">접기</button></div>`;
+        html += `<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">범주 400~620 — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 8px" onclick="document.getElementById('wl-high-cats').hidden=true;wlCollapseHigh=true;document.getElementById('wl-high-collapsed').hidden=false;">접기</button></div>`;
       }
       return;
     }
