@@ -3812,9 +3812,7 @@ function renderExamTab() {
         var btnStyle = 'font-size:14px;padding:4px 8px;border:1px solid var(--line);border-radius:2px;text-align:left;font:inherit;';
         if (isDone) {
           btnStyle += 'cursor:default;';
-          if (letter === q.a) btnStyle += 'background:#e8f5e9;';
-          else if (isWrong && !prog.correct.has(i)) btnStyle += '';
-          else btnStyle += 'background:transparent;';
+          btnStyle += letter === q.a ? 'background:#e8f5e9;' : 'background:transparent;';
         } else {
           btnStyle += 'cursor:pointer;background:transparent;';
         }
