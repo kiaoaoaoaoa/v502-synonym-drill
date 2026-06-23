@@ -3570,6 +3570,3594 @@ window.__V502_WORDBOOK3__ = [
     "p": "[kæskéid]",
     "pos": "n.",
     "m": "n. 작은 폭포(cataract, fall, rapids, waterfall)"
+  },
+  {
+    "w": "castigate",
+    "p": "[kǽstǝgèit]",
+    "pos": "v.",
+    "m": "v. 징계하다, 혹평하다(castigate, chide, rebuke, reproach)"
+  },
+  {
+    "w": "casualty",
+    "p": "[kǽʒuəlti]",
+    "pos": "n.",
+    "m": "n. 불상사, 재난, pl. 사망자수(death, fatality, victim)"
+  },
+  {
+    "w": "casuistry",
+    "p": "[kǽʒuistri]",
+    "pos": "n.",
+    "m": "n. 궤변(sophistry)"
+  },
+  {
+    "w": "cataclysm",
+    "p": "[kǽtǝklìzəm]",
+    "pos": "n.",
+    "m": "n. 대홍수, (정치·경제)대격변(calamity, catastrophe, disaster)"
+  },
+  {
+    "w": "catalyst",
+    "p": "[kǽtəlist]",
+    "pos": "n.",
+    "m": "n. 촉매, 자극(impetus, incentive, motivation, stimulus)"
+  },
+  {
+    "w": "catapult",
+    "p": "[kǽtǝpʌ̀lt]",
+    "pos": "n.",
+    "m": "n. 투석기(sling) v. 발사하다, 발진시키다(fling, hurl, launch, propel)"
+  },
+  {
+    "w": "cataract",
+    "p": "[kǽtǝræ̀kt]",
+    "pos": "n.",
+    "m": "n. 큰 폭포(cascade: 작은 폭포); 백내장(eye abnormality)"
+  },
+  {
+    "w": "categorical",
+    "p": "[kæ̀tǝgɔ́ːrikəl]",
+    "pos": "a.",
+    "m": "a. 절대적인, 무조건의(absolute, unconditional); 명백한"
+  },
+  {
+    "w": "cater",
+    "p": "[kéitǝr]",
+    "pos": "v.",
+    "m": "v. (저속한 욕구)충족시켜주다(to)(coddle, indulge, pamper)"
+  },
+  {
+    "w": "catholic",
+    "p": "[kǽθəlik]",
+    "pos": "a.",
+    "m": "a. 보편적인(universal)"
+  },
+  {
+    "w": "caucus",
+    "p": "[kɔ́ːkǝs]",
+    "pos": "n.",
+    "m": "n. (정당)간부회의(assembly, conclave, conference)"
+  },
+  {
+    "w": "caustic",
+    "p": "[kɔ́ːstik]",
+    "pos": "a.",
+    "m": "a. 부식성의, 신랄한(acrimonious, biting, sarcastic, scathing)"
+  },
+  {
+    "w": "cavil",
+    "p": "[kǽvǝl]",
+    "pos": "v.",
+    "m": "v. 트집을 잡다(raise trivial objections)"
+  },
+  {
+    "w": "cavort",
+    "p": "[kǝvɔ́ːrt]",
+    "pos": "v.",
+    "m": "v. 신나게 뛰놀다(caper, frisk, frolic, gambol)"
+  },
+  {
+    "w": "cede",
+    "p": "[siːd]",
+    "pos": "v.",
+    "m": "v. 권리를 양도하다; 요구를 인정하다(surrender, yield)"
+  },
+  {
+    "w": "celerity",
+    "p": "[sǝlérǝti]",
+    "pos": "n.",
+    "m": "n. 민첩함, 신속함(alacrity, dispatch, expedience, swiftness)"
+  },
+  {
+    "w": "celestial",
+    "p": "[sǝléstʃǝl]",
+    "pos": "a.",
+    "m": "a. 하늘의(astral, stellar); 거룩한(ethereal, divine, heavenly)"
+  },
+  {
+    "w": "celibacy",
+    "p": "[sélǝbǝsi]",
+    "pos": "n.",
+    "m": "n. 독신주의; 금욕(abstinence, chastity, continence)"
+  },
+  {
+    "w": "celibate",
+    "p": "[sélǝbèit]",
+    "pos": "n.",
+    "m": "n. 독신주의자(bachelor) a. 독신의"
+  },
+  {
+    "w": "censorious",
+    "p": "[sensɔ́ːriǝs]",
+    "pos": "a.",
+    "m": "a. 흠잡기 좋아하는(captious)"
+  },
+  {
+    "w": "censure",
+    "p": "[sénʃǝr]",
+    "pos": "v.",
+    "m": "v. 비난하다(denounce), 혹평하다(berate, castigate, upbraid)"
+  },
+  {
+    "w": "centaur",
+    "p": "[séntɔːr]",
+    "pos": "n.",
+    "m": "n. 반인반마"
+  },
+  {
+    "w": "centennial",
+    "p": "[senténiǝl]",
+    "pos": "a.",
+    "m": "a. 100년마다의, 100년의"
+  },
+  {
+    "w": "centrifugal",
+    "p": "[sentrífjǝgəl]",
+    "pos": "a.",
+    "m": "a. 원심력의"
+  },
+  {
+    "w": "centripetal",
+    "p": "[sentrípǝtl]",
+    "pos": "a.",
+    "m": "a. 구심력의"
+  },
+  {
+    "w": "cerebral",
+    "p": "[sérǝbrəl]",
+    "pos": "a.",
+    "m": "a. 뇌의; 머리가 좋은"
+  },
+  {
+    "w": "cerebrate",
+    "p": "[sérǝbrèit]",
+    "pos": "v.",
+    "m": "v. 뇌를 쓰다, 생각하다"
+  },
+  {
+    "w": "ceremonious",
+    "p": "[sèrǝmóuniǝs]",
+    "pos": "a.",
+    "m": "a. 예의바른; 격식을 차리는(formal, ritualistic)"
+  },
+  {
+    "w": "certify",
+    "p": "[sə́ːrtǝfài]",
+    "pos": "v.",
+    "m": "v. 증명하다; 증언하다(attest, authenticate, verify, vouch)"
+  },
+  {
+    "w": "chafe",
+    "p": "[tʃeif]",
+    "pos": "v.",
+    "m": "v. 쓸려서 벗겨지게 하다(abrade), 화나게 하다(gall, irritate)"
+  },
+  {
+    "w": "chaff",
+    "p": "[tʃæf]",
+    "pos": "n.",
+    "m": "n. 하찮은 것, 찌꺼기; 놀림, 조롱 v. 놀리다(banter, kid, rib)"
+  },
+  {
+    "w": "chagrin",
+    "p": "[ʃǝgrín]",
+    "pos": "n.",
+    "m": "n. 분함, 유감 v. 유감스럽게 하다(humiliation, mortification, shame)"
+  },
+  {
+    "w": "champ",
+    "p": "[tʃæmp]",
+    "pos": "v.",
+    "m": "v. (우적우적)씹다(chomp)"
+  },
+  {
+    "w": "champion",
+    "p": "[tʃǽmpiǝn]",
+    "pos": "v.",
+    "m": "v. 옹호하다, 지지하다(advocate, back, espouse, promote)"
+  },
+  {
+    "w": "chaotic",
+    "p": "[keiάtik]",
+    "pos": "a.",
+    "m": "a. 혼란의, 무질서한(disorganized, riotous, turbulent)"
+  },
+  {
+    "w": "charlatan",
+    "p": "[ʃάːrlǝtən]",
+    "pos": "n.",
+    "m": "n. 돌팔이의사, 사기꾼(fraud, humbug, impostor, quack)"
+  },
+  {
+    "w": "chary",
+    "p": "[tʃέəri]",
+    "pos": "a.",
+    "m": "a. 조심성 있는, 신중한(cautious)"
+  },
+  {
+    "w": "chasm",
+    "p": "[kǽzəm]",
+    "pos": "n.",
+    "m": "n. 갈라진 틈, 균열(abyss, canyon, crevasse, gorge, gulf)"
+  },
+  {
+    "w": "chaste",
+    "p": "[tʃeist]",
+    "pos": "a.",
+    "m": "a. 순결한, 정숙한(modest, pure, spotless, virginal, virtuous)"
+  },
+  {
+    "w": "chasten",
+    "p": "[tʃéisən]",
+    "pos": "v.",
+    "m": "v. (신)징벌하다(castigate, chastise, chide); (고생)단련시키다; (문체)세련되게 하다"
+  },
+  {
+    "w": "chastise",
+    "p": "[tʃæstáiz]",
+    "pos": "v.",
+    "m": "v. 몹시 비난하다(castigate, chide, rebuke, reproach)"
+  },
+  {
+    "w": "chattel",
+    "p": "[tʃǽtl]",
+    "pos": "n.",
+    "m": "n. 유동자산, 소지품, pl. 재산, 노예"
+  },
+  {
+    "w": "chauvinism",
+    "p": "[ʃóuvǝnìzəm]",
+    "pos": "n.",
+    "m": "n. 맹목적·호전적 애국주의(fanaticism, jingoism)"
+  },
+  {
+    "w": "checkered",
+    "p": "[tʃékərd]",
+    "pos": "a.",
+    "m": "a. 변화가 많은(variegated)"
+  },
+  {
+    "w": "cherish",
+    "p": "[tʃériʃ]",
+    "pos": "v.",
+    "m": "v. 소중히 여기다(esteem, prize, treasure)"
+  },
+  {
+    "w": "cherubic",
+    "p": "[tʃǝrúːbik]",
+    "pos": "a.",
+    "m": "a. 천사 같은(angelic, innocent-looking)"
+  },
+  {
+    "w": "chic",
+    "p": "[ʃi(ː)k]",
+    "pos": "a.",
+    "m": "a. 멋진, 세련된(stylish)"
+  },
+  {
+    "w": "chicanery",
+    "p": "[ʃikéinǝri]",
+    "pos": "n.",
+    "m": "n. 속임수, 사기(deceit, duplicity, falsehood, fraud, trickery)"
+  },
+  {
+    "w": "chide",
+    "p": "[tʃaid]",
+    "pos": "v.",
+    "m": "v. 꾸짖다, 비난하다(chasten, reprimand, scold, upbraid)"
+  },
+  {
+    "w": "chimerical",
+    "p": "[kimérikəl]",
+    "pos": "a.",
+    "m": "a. 공상의, 상상의, 기상천외한(fantastic)"
+  },
+  {
+    "w": "chink",
+    "p": "[tʃiŋk]",
+    "pos": "n.",
+    "m": "n. 갈라진 틈, 균열(cranny, crevice, hiatus, fissure)"
+  },
+  {
+    "w": "chintzy",
+    "p": "[tʃíntsi]",
+    "pos": "a.",
+    "m": "a. 값싼, 야한(cheap, miserly, penny-pinching, tight)"
+  },
+  {
+    "w": "chivalrous",
+    "p": "[ʃívəlrǝs]",
+    "pos": "a.",
+    "m": "a. 기사도의; 예의바른(courteous, courtly); 용감한(gallant)"
+  },
+  {
+    "w": "choke",
+    "p": "[tʃouk]",
+    "pos": "v.",
+    "m": "v. 질식시키다(asphyxiate, suffocate, smother, strangle)"
+  },
+  {
+    "w": "choleric",
+    "p": "[kάlǝrik]",
+    "pos": "a.",
+    "m": "a. 화를 잘 내는(cantankerous, irate, peevish, testy, touchy)"
+  },
+  {
+    "w": "chore",
+    "p": "[tʃɔːr]",
+    "pos": "n.",
+    "m": "n. 지루한 일, 잡일(assignment, errand, job, responsibility)"
+  },
+  {
+    "w": "choreography",
+    "p": "",
+    "pos": "n.",
+    "m": "n. (발레)안무, 무용"
+  },
+  {
+    "w": "chortle",
+    "p": "[tʃɔ́ːrtl]",
+    "pos": "v.",
+    "m": "v. (만족한 듯)크게 웃다(giggle, laugh, snicker, snigger)"
+  },
+  {
+    "w": "chronicle",
+    "p": "[krάnikl]",
+    "pos": "n.",
+    "m": "n. 연대기, 역사(annals)"
+  },
+  {
+    "w": "chubby",
+    "p": "[tʃʌ́bi]",
+    "pos": "a.",
+    "m": "a. 토실토실한, 통통한(fleshy, plump, pudgy, stocky, tubby)"
+  },
+  {
+    "w": "churlish",
+    "p": "[tʃə́(ː)rliʃ]",
+    "pos": "a.",
+    "m": "a. 시골사람의; 예절 없는(boorish, coarse, crass, crude)"
+  },
+  {
+    "w": "chutzpah",
+    "p": "[hútspǝ]",
+    "pos": "n.",
+    "m": "n. 뻔뻔스러움, 후안무치(brazen)"
+  },
+  {
+    "w": "cipher",
+    "p": "[sáifǝr]",
+    "pos": "n.",
+    "m": "n. 암호(secret code); 하찮은 사람·물건"
+  },
+  {
+    "w": "circa",
+    "p": "[sə́ːrkǝ]",
+    "pos": "ad.",
+    "m": "ad. (연도)대략; 경(approximately)"
+  },
+  {
+    "w": "circuitous",
+    "p": "[sǝːrkjúːitǝs]",
+    "pos": "a.",
+    "m": "a. 우회하는; 말을 돌리는(meandering, rambling, roundabout)"
+  },
+  {
+    "w": "circulation",
+    "p": "[sə̀ːrkjǝléiʃən]",
+    "pos": "n.",
+    "m": "n. 순환, (화폐)유통, (소문)유포"
+  },
+  {
+    "w": "circumlocution",
+    "p": "",
+    "pos": "n.",
+    "m": "n. 둘러대는 말, 완곡한 표현(digression, tautology, verbiage)"
+  },
+  {
+    "w": "circumnavigate",
+    "p": "",
+    "pos": "v.",
+    "m": "v. (배)세계일주하다"
+  },
+  {
+    "w": "circumscribe",
+    "p": "[sə̀ːrkǝmskráib]",
+    "pos": "v.",
+    "m": "v. 제한하다(restrict); (경계)정하다; 정의하다"
+  },
+  {
+    "w": "circumspect",
+    "p": "[sə́ːrkǝmspèkt]",
+    "pos": "a.",
+    "m": "a. 신중한(careful, cautious, guarded, prudent, vigilant)"
+  },
+  {
+    "w": "circumstantial",
+    "p": "",
+    "pos": "a.",
+    "m": "a. (증거)상황에 의한, 추정상의; 상세한(detailed); 우연한(accidental)"
+  },
+  {
+    "w": "citadel",
+    "p": "[sítǝdl]",
+    "pos": "n.",
+    "m": "n. 요새, 보루(acropolis, bastion, bulwark, fort, stronghold)"
+  },
+  {
+    "w": "civility",
+    "p": "[sivílǝti]",
+    "pos": "n.",
+    "m": "n. 공손함, 예의바름(courtesy, formality, manners, propriety)"
+  },
+  {
+    "w": "clairvoyant",
+    "p": "[klεǝrvɔ́iǝnt]",
+    "pos": "a.",
+    "m": "a. 선견지명이 있는, 통찰력이 있는(extrasensory, prescient)"
+  },
+  {
+    "w": "clamber",
+    "p": "[klǽmbǝr]",
+    "pos": "v.",
+    "m": "v. 기어 올라가다(ascend, climb, crawl, scramble)"
+  },
+  {
+    "w": "clamorous",
+    "p": "[klǽmərǝs]",
+    "pos": "a.",
+    "m": "a. 시끄러운, 소란스러운(boisterous, obstreperous, vociferous)"
+  },
+  {
+    "w": "clampdown",
+    "p": "[klæmpdaʊn]",
+    "pos": "n.",
+    "m": "n. 단속, 탄압(crackdown)"
+  },
+  {
+    "w": "clandestine",
+    "p": "[klændéstin]",
+    "pos": "a.",
+    "m": "a. 은밀한, 비밀의(covert, furtive, surreptitious, underground)"
+  },
+  {
+    "w": "clangor",
+    "p": "[klǽŋgǝr]",
+    "pos": "n.",
+    "m": "n. (시끄러운 금속성)소리(loud noise)"
+  },
+  {
+    "w": "claque",
+    "p": "[klæk]",
+    "pos": "n.",
+    "m": "n. (고용된)박수부대, 아첨 떠는 무리"
+  },
+  {
+    "w": "clarify",
+    "p": "[klǽrǝfài]",
+    "pos": "v.",
+    "m": "v. 분명하게 하다(define, elucidate, explain, illuminate)"
+  },
+  {
+    "w": "clash",
+    "p": "[klæʃ]",
+    "pos": "v.",
+    "m": "v. 충돌하다(crash, collide, conflict, difference, disagreement)"
+  },
+  {
+    "w": "classify",
+    "p": "[klǽsǝfài]",
+    "pos": "v.",
+    "m": "v. 분류하다(assort, categorize); 등급으로 나누다(grade, rank)"
+  },
+  {
+    "w": "claw",
+    "p": "[klɔː]",
+    "pos": "n.",
+    "m": "n. 발톱 v. 할퀴다(maul, scratch); 서서히 되찾다(back)"
+  },
+  {
+    "w": "cleave",
+    "p": "[kliːv]",
+    "pos": "v.",
+    "m": "v. 쪼개다; 격리하다(from); 집착하다, 고수하다(to)"
+  },
+  {
+    "w": "cleft",
+    "p": "[kleft]",
+    "pos": "n.",
+    "m": "n. 갈라진 틈(split) a. 갈라진, 쪼개진"
+  },
+  {
+    "w": "clemency",
+    "p": "[klémǝnsi]",
+    "pos": "n.",
+    "m": "n. 관대함(charity, lenience, mercy); (날씨)온화함"
+  },
+  {
+    "w": "cliché",
+    "p": "[kliːˈʃeɪ]",
+    "pos": "n.",
+    "m": "n. 진부한 표현(platitude), 상투어구(bromide)"
+  },
+  {
+    "w": "clime",
+    "p": "[klaim]",
+    "pos": "n.",
+    "m": "n. 지방(region); 기후(climate)"
+  },
+  {
+    "w": "clinch",
+    "p": "[klintʃ]",
+    "pos": "v.",
+    "m": "v. (계약)매듭을 짓다; 결말을 내다(assure, confirm, decide)"
+  },
+  {
+    "w": "clique",
+    "p": "[kliːk]",
+    "pos": "n.",
+    "m": "n. (배타적)소집단, 파벌(circle, clan, coterie, gang)"
+  },
+  {
+    "w": "clobber",
+    "p": "[klάbǝr]",
+    "pos": "v.",
+    "m": "v. 사정없이 때리다; 신랄하게 비판하다"
+  },
+  {
+    "w": "cloister",
+    "p": "[klɔ́istǝr]",
+    "pos": "n.",
+    "m": "n. 은둔처; 수도원(monastery), 수녀원(convent)"
+  },
+  {
+    "w": "clout",
+    "p": "[klaut]",
+    "pos": "n.",
+    "m": "n. 영향력(influence, power, pull, blow, cuff, slap)"
+  },
+  {
+    "w": "cloy",
+    "p": "[klɔi]",
+    "pos": "v.",
+    "m": "v. 물리다, 싫증나다(glut, gorge, satiate, saturate, surfeit)"
+  },
+  {
+    "w": "clumsy",
+    "p": "[klʌ́mzi]",
+    "pos": "a.",
+    "m": "a. 서투른, 솜씨 없는(awkward, gawky, bumbling, inept)"
+  },
+  {
+    "w": "coalesce",
+    "p": "[kòuǝlés]",
+    "pos": "v.",
+    "m": "v. 연합하다, 합동하다(combine, consolidate, cooperate)"
+  },
+  {
+    "w": "coax",
+    "p": "[kouks]",
+    "pos": "v.",
+    "m": "v. 감언으로 설득하다(cajole, implore, induce), 달래다"
+  },
+  {
+    "w": "coda",
+    "p": "[kóudǝ]",
+    "pos": "n.",
+    "m": "n. (문예 작품·연극)종결부; (고전 발레)피날레"
+  },
+  {
+    "w": "coddle",
+    "p": "[kɔ́dl]",
+    "pos": "v.",
+    "m": "v. 응석받이로 키우다(pamper), 애지중지하다"
+  },
+  {
+    "w": "codify",
+    "p": "[kάdǝfài]",
+    "pos": "v.",
+    "m": "v. 법전으로 편찬하다; 조목별로 요약하다(assort, order)"
+  },
+  {
+    "w": "coercive",
+    "p": "[kouə́ːrsiv]",
+    "pos": "a.",
+    "m": "a. 강제적인, 강압적인(compel, constrain, force, impel)"
+  },
+  {
+    "w": "coeval",
+    "p": "[kouíːvəl]",
+    "pos": "a.",
+    "m": "a. 같은 시대의(contemporary)"
+  },
+  {
+    "w": "cogent",
+    "p": "[kóudʒənt]",
+    "pos": "a.",
+    "m": "a. 설득력 있는(convincing, forceful, influential, persuasive)"
+  },
+  {
+    "w": "cogitate",
+    "p": "[kάdʒǝtèit]",
+    "pos": "v.",
+    "m": "v. 숙고하다(contemplate, deliberate, meditate, ponder)"
+  },
+  {
+    "w": "cognate",
+    "p": "[kάgneit]",
+    "pos": "a.",
+    "m": "a. 조상이 같은, 동족의(kindred)"
+  },
+  {
+    "w": "cognitive",
+    "p": "[kάgnǝtiv]",
+    "pos": "a.",
+    "m": "a. 인식의, 인식력이 있는(mental)"
+  },
+  {
+    "w": "cognomen",
+    "p": "[kɑgnóumǝn]",
+    "pos": "n.",
+    "m": "n. 성(family name, sur name); 이름, 별명"
+  },
+  {
+    "w": "cohesion",
+    "p": "[kouhíːʒən]",
+    "pos": "n.",
+    "m": "n. 결합력, 단결(solidarity)"
+  },
+  {
+    "w": "cohort",
+    "p": "[kóuhɔːrt]",
+    "pos": "n.",
+    "m": "n. 군대; 무리(colleague, co-worker, partner, companion)"
+  },
+  {
+    "w": "coincidence",
+    "p": "[kouínsǝdəns]",
+    "pos": "n.",
+    "m": "n. 우연의 일치, 동시발생(chance, happenstance, concurrence)"
+  },
+  {
+    "w": "collate",
+    "p": "[kǝléit]",
+    "pos": "v.",
+    "m": "v. 대조하다, 맞추어보다(classify, order, rank); (성직)주다"
+  },
+  {
+    "w": "colloquial",
+    "p": "[kǝlóukwiǝl]",
+    "pos": "a.",
+    "m": "a. 회화체의, 구어체의(conversational)"
+  },
+  {
+    "w": "colloquy",
+    "p": "[kάlǝkwi]",
+    "pos": "n.",
+    "m": "n. 자유토의(conference, conversation, dialogue)"
+  },
+  {
+    "w": "collude",
+    "p": "[kǝlúːd]",
+    "pos": "v.",
+    "m": "v. (은밀히)결탁하다, 공모하다(with)(connive, conspire, plot)"
+  },
+  {
+    "w": "comatose",
+    "p": "[kóumǝtòus]",
+    "pos": "a.",
+    "m": "a. 혼수상태의(catatonic, unconscious); 몹시 졸리는"
+  },
+  {
+    "w": "comestible",
+    "p": "[kǝméstǝbəl]",
+    "pos": "a.",
+    "m": "a. 먹을 수 있는(edible) pl. 식료품"
+  },
+  {
+    "w": "comeuppance",
+    "p": "[kʌ̀mʌ́pǝns]",
+    "pos": "n.",
+    "m": "n. 당연한 벌, 인과응보(deserts, rebuke)"
+  },
+  {
+    "w": "comity",
+    "p": "[kάmǝti]",
+    "pos": "n.",
+    "m": "n. 예의(courtesy, civility)"
+  },
+  {
+    "w": "commandeer",
+    "p": "[kὰmǝndíǝr]",
+    "pos": "v.",
+    "m": "v. 징집하다; 강제로 뺏다(confiscate, expropriate)"
+  },
+  {
+    "w": "commemorate",
+    "p": "[kǝmémǝrèit]",
+    "pos": "v.",
+    "m": "v. (사람·사건)기념 하다, 추도하다(commemorate, honor)"
+  },
+  {
+    "w": "commend",
+    "p": "[kǝménd]",
+    "pos": "v.",
+    "m": "v. 칭찬하다(acclaim, applaud, compliment, extol, praise)"
+  },
+  {
+    "w": "commiserate",
+    "p": "[kǝmízǝrèit]",
+    "pos": "v.",
+    "m": "v. 동정하다(empathize, sympathize, understand, approve)"
+  },
+  {
+    "w": "commitment",
+    "p": "[kǝmítmǝnt]",
+    "pos": "n.",
+    "m": "n. 공약(promise), 약속; 헌신; 위탁, 위임"
+  },
+  {
+    "w": "commodious",
+    "p": "[kǝmóudiǝs]",
+    "pos": "a.",
+    "m": "a. 넓은, 널찍한(roomy, spacious, comfortable, homelike)"
+  },
+  {
+    "w": "commotion",
+    "p": "[kǝmóuʃən]",
+    "pos": "n.",
+    "m": "n. 흥분(excitement); 폭동(disturbance, tumult, turmoil)"
+  },
+  {
+    "w": "commute",
+    "p": "[kǝmjúːt]",
+    "pos": "v.",
+    "m": "v. 교환하다, 감형하다; 통근하다"
+  },
+  {
+    "w": "compact",
+    "p": "[kǝmpǽkt]",
+    "pos": "n.",
+    "m": "n. 계약(contract) a. 아담한(crammed, crowded, dense)"
+  },
+  {
+    "w": "compassion",
+    "p": "[kǝmpǽʃən]",
+    "pos": "n.",
+    "m": "n. 동정심(commiseration, empathy, pity, sympathy)"
+  },
+  {
+    "w": "compelling",
+    "p": "[kǝmpéliŋ]",
+    "pos": "a.",
+    "m": "a. 매우 흥미로운(irresistible); 강제적인"
+  },
+  {
+    "w": "compendium",
+    "p": "[kǝmpéndiǝm]",
+    "pos": "n.",
+    "m": "n. 요약, 개요(summary)"
+  },
+  {
+    "w": "compile",
+    "p": "[kǝmpáil]",
+    "pos": "v.",
+    "m": "v. 편집하다; 자료를 모으다(amass, assemble, collect, gather)"
+  },
+  {
+    "w": "complacent",
+    "p": "[kǝmpléisənt]",
+    "pos": "a.",
+    "m": "a. 자기 만족하는(content, self-satisfied)"
+  },
+  {
+    "w": "complaisant",
+    "p": "[kǝmpléisənt]",
+    "pos": "a.",
+    "m": "a. 고분고분한(affable, agreeable, friendly, gracious); 공손한"
+  },
+  {
+    "w": "complement",
+    "p": "[kάmplǝmǝnt]",
+    "pos": "v.",
+    "m": "v. -를 보충하다(complete, consummate, perfect)"
+  },
+  {
+    "w": "compliant",
+    "p": "[kǝmpláiǝnt]",
+    "pos": "a.",
+    "m": "a. 고분고분한(acquiescent, agreeable, pliant, yielding)"
+  },
+  {
+    "w": "complicity",
+    "p": "[kǝmplísǝti]",
+    "pos": "n.",
+    "m": "n. 공모, 공범, 연루(connivance, machination, plot, scheme)"
+  },
+  {
+    "w": "compliment",
+    "p": "[kάmplǝmǝnt]",
+    "pos": "n.",
+    "m": "n. 칭찬 v. 칭찬하다(commend, extol, flatter, laud, praise)"
+  },
+  {
+    "w": "comport",
+    "p": "[kǝmpɔ́ːrt]",
+    "pos": "v.",
+    "m": "v. 처신하다, 행동하다(behave); 일치하다, 어울리다(with)"
+  },
+  {
+    "w": "composed",
+    "p": "[kǝmpóuzd]",
+    "pos": "a.",
+    "m": "a. 침착한, 차분한(calm, collected, cool, poised, sedate)"
+  },
+  {
+    "w": "composure",
+    "p": "[kǝmpóuʒǝr]",
+    "pos": "n.",
+    "m": "n. 침착, 평정(aplomb, dignity, equanimity, poise)"
+  },
+  {
+    "w": "compound",
+    "p": "[kǝmpáund]",
+    "pos": "v.",
+    "m": "v. 악화시키다(complicate); (요소·성분)혼합하다(fuse, mix)"
+  },
+  {
+    "w": "comprise",
+    "p": "[kǝmpráiz]",
+    "pos": "v.",
+    "m": "v. -로 구성 되다(contain, embrace, encompass, include)"
+  },
+  {
+    "w": "compunction",
+    "p": "[kǝmpʌ́ŋkʃən]",
+    "pos": "n.",
+    "m": "n. 양심의 가책, 후회(regret, remorse)"
+  },
+  {
+    "w": "concatenate",
+    "p": "[kɑnkǽtənèit]",
+    "pos": "v.",
+    "m": "v. 사슬같이 잇다, (사건)연관시키다(link)"
+  },
+  {
+    "w": "concave",
+    "p": "[kɑnkéiv]",
+    "pos": "a.",
+    "m": "a. 오목한(indented, sunken) opp. convex: 볼록한"
+  },
+  {
+    "w": "conceit",
+    "p": "[kǝnsíːt]",
+    "pos": "n.",
+    "m": "n. 자만, 자부심(narcissism, pride, vanity); 기발한 생각"
+  },
+  {
+    "w": "concentric",
+    "p": "[kǝnséntrik]",
+    "pos": "a.",
+    "m": "a. 중심이 같은; 집중적인"
+  },
+  {
+    "w": "conception",
+    "p": "[kǝnsépʃən]",
+    "pos": "n.",
+    "m": "n. 개념, 생각(idea); 시작(formation); 임신"
+  },
+  {
+    "w": "concerted",
+    "p": "[kənˈsɜːtɪd]",
+    "pos": "a.",
+    "m": "a. 협력하는, 합의된(collective, cooperative, joint, mutual)"
+  },
+  {
+    "w": "conclave",
+    "p": "[kάnkleiv]",
+    "pos": "n.",
+    "m": "n. 비밀회의(private meeting)"
+  },
+  {
+    "w": "concoct",
+    "p": "[kǝnkɔ́kt]",
+    "pos": "v.",
+    "m": "v. 꾸며내다(fabricate); 혼합해서 만들다(formulate)"
+  },
+  {
+    "w": "concomitant",
+    "p": "[kɑnkάmǝtənt]",
+    "pos": "n.",
+    "m": "n. 부산물 a. 동시에 생기는(with)(concurrent)"
+  },
+  {
+    "w": "concord",
+    "p": "[kάŋkǝrd]",
+    "pos": "n.",
+    "m": "n. 일치, 조화; 합의, 협정(accord, agreement, treaty)"
+  },
+  {
+    "w": "concordat",
+    "p": "[kɑnkɔ́ːrdæt]",
+    "pos": "n.",
+    "m": "n. 협약(agreement)"
+  },
+  {
+    "w": "concur",
+    "p": "[kǝnkə́ːr]",
+    "pos": "v.",
+    "m": "v. 동의하다(agree); (동시)발생하다(with)"
+  },
+  {
+    "w": "concurrent",
+    "p": "[kǝnkə́ːrǝnt]",
+    "pos": "a.",
+    "m": "a. 동시의(coinciding, simultaneous); 동의하는(agreeing)"
+  },
+  {
+    "w": "condescend",
+    "p": "[kὰndisénd]",
+    "pos": "v.",
+    "m": "v. 자신을 낮추어 -하다(deign, stoop); 생색내다"
+  },
+  {
+    "w": "condign",
+    "p": "[kǝndáin]",
+    "pos": "a.",
+    "m": "a. (처벌)적당한, 타당한(adequate)"
+  },
+  {
+    "w": "condiment",
+    "p": "[kάndǝmǝnt]",
+    "pos": "n.",
+    "m": "n. 양념, 조미료"
+  },
+  {
+    "w": "condolence",
+    "p": "[kǝndóulǝns]",
+    "pos": "n.",
+    "m": "n. 애도, 조의(consolation, pity, support, sympathy)"
+  },
+  {
+    "w": "conducive",
+    "p": "[kǝndjúːsiv]",
+    "pos": "a.",
+    "m": "a. 도움이 되는(contributory, favorable, instrumental)"
+  },
+  {
+    "w": "conduit",
+    "p": "[kάndjuit]",
+    "pos": "n.",
+    "m": "n. 물이 흐르는 관(aqueduct, conduit, duct, cylinder, hose)"
+  },
+  {
+    "w": "confabulate",
+    "p": "[kǝnfǽbjǝlèit]",
+    "pos": "v.",
+    "m": "v. (허물없이)이야기하다(with)"
+  },
+  {
+    "w": "confederate",
+    "p": "[kǝnfédərit]",
+    "pos": "n.",
+    "m": "n. 공범자(accomplice, ally, associate); 동맹자, 동맹국"
+  },
+  {
+    "w": "confer",
+    "p": "[kǝnfə́ːr]",
+    "pos": "v.",
+    "m": "v. 수여하다(accord, award, bestow); 의논하다(with)"
+  },
+  {
+    "w": "confidant",
+    "p": "[kὰnfidǽnt]",
+    "pos": "n.",
+    "m": "n. 절친한 친구(buddy, companion, comrade, confidant, pal)"
+  },
+  {
+    "w": "confidential",
+    "p": "[kὰnfidénʃəl]",
+    "pos": "a.",
+    "m": "a. 비밀의, 은밀한(classified, private, privy, secret); 친근한"
+  },
+  {
+    "w": "configuration",
+    "p": "",
+    "pos": "n.",
+    "m": "n. 배열, 배치(arrangement)"
+  },
+  {
+    "w": "confine",
+    "p": "[kǝnfáin]",
+    "pos": "v.",
+    "m": "v. 가두다; 제한하다(cabin, enclose, impound, isolate, jail)"
+  },
+  {
+    "w": "confiscate",
+    "p": "[kάnfiskèit]",
+    "pos": "v.",
+    "m": "v. 몰수하다, 압수하다(commandeer, expropriate, impound)"
+  },
+  {
+    "w": "conflagration",
+    "p": "",
+    "pos": "n.",
+    "m": "n. 대화재(blaze, fire, firestorm, inferno, wildfire)"
+  },
+  {
+    "w": "conflate",
+    "p": "[kǝnfléit]",
+    "pos": "v.",
+    "m": "v. 융합하다, 섞다"
+  },
+  {
+    "w": "confluence",
+    "p": "[kάnfluǝns]",
+    "pos": "n.",
+    "m": "n. (강)합류; (사람)집합(concourse, junction, nexus)"
+  },
+  {
+    "w": "conform",
+    "p": "[kǝnfɔ́ːrm]",
+    "pos": "v.",
+    "m": "v. 일치시키다(to)(accommodate, adapt, adjust, comply)"
+  },
+  {
+    "w": "confound",
+    "p": "[kǝnfáund]",
+    "pos": "v.",
+    "m": "v. 당황하게 하다(baffle, daze, fluster, perplex), 혼동하다"
+  },
+  {
+    "w": "congeal",
+    "p": "[kǝndʒíːl]",
+    "pos": "v.",
+    "m": "v. 굳어지다, 응고하다(coagulate, jell, solidify, thicken)"
+  },
+  {
+    "w": "congenital",
+    "p": "[kǝndʒénǝtl]",
+    "pos": "a.",
+    "m": "a. 선천적인(hereditary, inborn, inherited, natural)"
+  },
+  {
+    "w": "congested",
+    "p": "[kǝndʒéstid]",
+    "pos": "a.",
+    "m": "a. 혼잡한, 밀집한(blocked, clogged, crowded, jammed, obstructed, packed)"
+  },
+  {
+    "w": "congestion",
+    "p": "[kǝndʒéstʃən]",
+    "pos": "n.",
+    "m": "n. 혼잡함; 밀집(bottleneck, crowding, jam, obstruction)"
+  },
+  {
+    "w": "congregation",
+    "p": "[kὰŋgrigéiʃən]",
+    "pos": "n.",
+    "m": "n. (교회)회중, 집회(assembly, audience, crowd, multitude)"
+  },
+  {
+    "w": "congruent",
+    "p": "[kάŋgruǝnt]",
+    "pos": "a.",
+    "m": "a. 일치하는, 어울리는(comparable, corresponding, similar, compatible)"
+  },
+  {
+    "w": "congruous",
+    "p": "[kάŋgruǝs]",
+    "pos": "a.",
+    "m": "a. 일치하는(congruent, consonant, harmonious)"
+  },
+  {
+    "w": "conifer",
+    "p": "[kóunǝfǝr]",
+    "pos": "n.",
+    "m": "n. 침엽수"
+  },
+  {
+    "w": "conjecture",
+    "p": "[kǝndʒéktʃǝr]",
+    "pos": "v.",
+    "m": "v. 추측하다(forecast, prophesy, suppose, surmise, suspect)"
+  },
+  {
+    "w": "conjure",
+    "p": "[kάndʒǝr]",
+    "pos": "v.",
+    "m": "v. 생각해내다; 불러내다(call up, invoke, summon)"
+  },
+  {
+    "w": "connive",
+    "p": "[kǝnáiv]",
+    "pos": "v.",
+    "m": "v. 공모하다, 묵인하다(collude, conspire, plot)"
+  },
+  {
+    "w": "connotation",
+    "p": "[kὰnoutéiʃən]",
+    "pos": "n.",
+    "m": "n. (함축적)의미, (내포된)의미 opp. denotation: 드러난 의미"
+  },
+  {
+    "w": "connubial",
+    "p": "[kǝnjúːbiǝl]",
+    "pos": "a.",
+    "m": "a. 결혼의, 부부의(conjugal, nuptial)"
+  },
+  {
+    "w": "consanguine",
+    "p": "[kɑnsæ̀ŋgwin]",
+    "pos": "a.",
+    "m": "a. 혈족의, 동족의"
+  },
+  {
+    "w": "consanguinity",
+    "p": "",
+    "pos": "n.",
+    "m": "n. 혈족, 친족(blood relationship, family tie, kinship, lineage)"
+  },
+  {
+    "w": "conscientious",
+    "p": "[kὰnʃiénʃǝs]",
+    "pos": "a.",
+    "m": "a. 양심적인(scrupulous), 성실한(exact, fastidious, meticulous)"
+  },
+  {
+    "w": "conscript",
+    "p": "[kάnskript]",
+    "pos": "n.",
+    "m": "n. 징집병(draftee) v. 징집하다(draft, recruit)"
+  },
+  {
+    "w": "consecrate",
+    "p": "[kάnsikrèit]",
+    "pos": "v.",
+    "m": "v. 신성하게하다(bless, hallow, sanctify); -에 전념하다(to)"
+  },
+  {
+    "w": "consecutive",
+    "p": "[kǝnsékjǝtiv]",
+    "pos": "a.",
+    "m": "a. 연속적인, 잇따른(continuous, serial, successive)"
+  },
+  {
+    "w": "consensus",
+    "p": "[kǝnsénsǝs]",
+    "pos": "n.",
+    "m": "n. (의견)일치, 합의(concordance, consensus, unanimity)"
+  },
+  {
+    "w": "consequential",
+    "p": "",
+    "pos": "a.",
+    "m": "a. 결과적인, 필연적인; 중요한; 거만한"
+  },
+  {
+    "w": "consign",
+    "p": "[kǝnsáin]",
+    "pos": "v.",
+    "m": "v. 건네주다(convey, remit), 맡기다(delegate, entrust)"
+  },
+  {
+    "w": "consistent",
+    "p": "[kǝnsístənt]",
+    "pos": "a.",
+    "m": "a. 일관된, 일치하는(with)(constant, invariable, steady)"
+  },
+  {
+    "w": "console",
+    "p": "[kǝnsóul]",
+    "pos": "v.",
+    "m": "v. 위로하다(calm, cheer, comfort, solace, soothe, succor)"
+  },
+  {
+    "w": "consolidate",
+    "p": "[kǝnsάlǝdèit]",
+    "pos": "v.",
+    "m": "v. 결합하다, 통합하다(combine, incorporate, merge, unite)"
+  },
+  {
+    "w": "consonant",
+    "p": "[kάnsǝnǝnt]",
+    "pos": "a.",
+    "m": "a. 일치하는, 조화하는(with)(congruous, congruent)"
+  },
+  {
+    "w": "consort",
+    "p": "[kάnsɔːrt]",
+    "pos": "n.",
+    "m": "n. 배우자 v. (나쁜 사람)사귀다, 교제하다(with)(associate)"
+  },
+  {
+    "w": "conspicuous",
+    "p": "[kǝnspíkjuǝs]",
+    "pos": "a.",
+    "m": "a. 눈에 띄는, 특징적인(apparent, marked, noticeable)"
+  },
+  {
+    "w": "conspirator",
+    "p": "[kǝnspírǝtǝr]",
+    "pos": "n.",
+    "m": "n. 공모자, 음모자(accessory, associate, cohort, confederate)"
+  },
+  {
+    "w": "consternate",
+    "p": "[kάnstǝrnèit]",
+    "pos": "v.",
+    "m": "v. (깜짝)놀라게 하다(alarm, fear, shock, dismay, perplexity)"
+  },
+  {
+    "w": "constituency",
+    "p": "[kǝnstítʃuǝnsi]",
+    "pos": "n.",
+    "m": "n. 유권자, 선거구민; 단골, 지지자(component, element)"
+  },
+  {
+    "w": "constituent",
+    "p": "[kǝnstítʃuǝnt]",
+    "pos": "n.",
+    "m": "n. 구성요소; 유권자 a. 성분을 이루는"
+  },
+  {
+    "w": "constrain",
+    "p": "[kǝnstréin]",
+    "pos": "v.",
+    "m": "v. 강요하다(compel, coerce, oblige); 속박하다"
+  },
+  {
+    "w": "constrict",
+    "p": "[kǝnstríkt]",
+    "pos": "v.",
+    "m": "v. 압축하다, 수축시키다(choke, pinch, squeeze, strangle)"
+  },
+  {
+    "w": "construe",
+    "p": "[kǝnstrúː]",
+    "pos": "v.",
+    "m": "v. 해석하다; 추론하다(comprehend, deduce, infer, interpret)"
+  },
+  {
+    "w": "consummate",
+    "p": "[kάnsǝmèit]",
+    "pos": "v.",
+    "m": "v. 완성하다(complete, crown) a. 완전한(perfect)"
+  },
+  {
+    "w": "contagious",
+    "p": "[kǝntéidʒǝs]",
+    "pos": "a.",
+    "m": "a. 전염성의(communicable, infectious, transmittable)"
+  },
+  {
+    "w": "contaminate",
+    "p": "[kǝntǽmǝnèit]",
+    "pos": "v.",
+    "m": "v. 오염시키다(infect, poison, pollute, spoil), 더럽히다"
+  },
+  {
+    "w": "contemplate",
+    "p": "[kάntǝmplèit]",
+    "pos": "v.",
+    "m": "v. 숙고하다(meditate, ponder, cogitate, ruminate, speculate)"
+  },
+  {
+    "w": "contemporary",
+    "p": "[kǝntémpǝrèri]",
+    "pos": "a.",
+    "m": "a. 동시대의(coeval), 현대의(current, modern)"
+  },
+  {
+    "w": "contemptible",
+    "p": "[kǝntémptǝbəl]",
+    "pos": "a.",
+    "m": "a. 경멸할 만한, 비열한(loathsome, mean, odious)"
+  },
+  {
+    "w": "contemptuous",
+    "p": "",
+    "pos": "a.",
+    "m": "a. 경멸하는(arrogant, condescending, disdainful, haughty)"
+  },
+  {
+    "w": "contentious",
+    "p": "[kǝnténʃǝs]",
+    "pos": "a.",
+    "m": "a. 따지기 좋아하는(argumentative, litigious, quarrelsome)"
+  },
+  {
+    "w": "contest",
+    "p": "[kάntest]",
+    "pos": "v.",
+    "m": "v. 논쟁하다, 다투다(challenge, debate, dispute, oppose)"
+  },
+  {
+    "w": "contiguous",
+    "p": "[kǝntígjuǝs]",
+    "pos": "a.",
+    "m": "a. 인접한(abutting, adjacent, adjoining, bordering)"
+  },
+  {
+    "w": "continent",
+    "p": "[kάntǝnǝnt]",
+    "pos": "a.",
+    "m": "a. 자제하는, 금욕하는(abstemious, moderate, restrained)"
+  },
+  {
+    "w": "contingent",
+    "p": "[kǝntíndʒənt]",
+    "pos": "a.",
+    "m": "a. 우연의; -을 조건으로 하는(on)(conditional, provisional)"
+  },
+  {
+    "w": "contort",
+    "p": "[kǝntɔ́ːrt]",
+    "pos": "v.",
+    "m": "v. 비틀다; 왜곡하다(bend, deform, distort, twist, warp)"
+  },
+  {
+    "w": "contour",
+    "p": "[kάntuǝr]",
+    "pos": "n.",
+    "m": "n. 윤곽(form, outline, profile, shape, silhouette); 상황"
+  },
+  {
+    "w": "contraband",
+    "p": "[kάntrǝbæ̀nd]",
+    "pos": "n.",
+    "m": "n. 밀수품(smuggled goods)"
+  },
+  {
+    "w": "contraption",
+    "p": "[kǝntrǽpʃən]",
+    "pos": "n.",
+    "m": "n. 기묘한 장치"
+  },
+  {
+    "w": "contravene",
+    "p": "[kὰntrǝvíːn]",
+    "pos": "v.",
+    "m": "v. 반박하다(refute), 위반하다(transgress, violate)"
+  },
+  {
+    "w": "contretemps",
+    "p": "[kάntrǝtὰːŋ]",
+    "pos": "n.",
+    "m": "n. 뜻하지 않은 불행, 뜻밖의 사고; 말다툼, 싸움"
+  },
+  {
+    "w": "contrive",
+    "p": "[kǝntráiv]",
+    "pos": "v.",
+    "m": "v. 고안하다(devise); (나쁜 일)꾸미다(plot, scheme)"
+  },
+  {
+    "w": "contrived",
+    "p": "[kənˈtraɪvd]",
+    "pos": "a.",
+    "m": "a. 부자연스러운, 인위적인(artificial, concoct, devise)"
+  },
+  {
+    "w": "controvert",
+    "p": "[kάntrǝvə̀ːrt]",
+    "pos": "v.",
+    "m": "v. 반박하다(refute), 부정하다(oppose)"
+  },
+  {
+    "w": "contumacious",
+    "p": "[kὰntjuméiʃǝs]",
+    "pos": "a.",
+    "m": "a. 반항적인; 오만한(disobedient)"
+  },
+  {
+    "w": "contumely",
+    "p": "[kǝntjúːmǝli]",
+    "pos": "n.",
+    "m": "n. (언어·태도)무례함; 모욕적 언동"
+  },
+  {
+    "w": "contusion",
+    "p": "[kənˈtjuːʒn]",
+    "pos": "n.",
+    "m": "n. 타박상(bruise, lesion)"
+  },
+  {
+    "w": "conundrum",
+    "p": "[kǝnʌ́ndrǝm]",
+    "pos": "n.",
+    "m": "n. 수수께끼(puzzle, riddle, enigma); 어려운 문제"
+  },
+  {
+    "w": "convene",
+    "p": "[kǝnvíːn]",
+    "pos": "v.",
+    "m": "v. 모이다, 소집하다(congregate, converge, convoke, rally)"
+  },
+  {
+    "w": "converge",
+    "p": "[kǝnvə́ːrdʒ]",
+    "pos": "v.",
+    "m": "v. 모이다(center, concentrate, focus, approach, intersect)"
+  },
+  {
+    "w": "conversant",
+    "p": "[kǝnvə́ːrsənt]",
+    "pos": "a.",
+    "m": "a. -을 잘 알고 있는(acquainted, familiar, versed-in)"
+  },
+  {
+    "w": "converse",
+    "p": "[kǝnvə́ːrs]",
+    "pos": "n.",
+    "m": "n. 반대, 역(the opposite) v. 대화하다(chat, discuss)"
+  },
+  {
+    "w": "convert",
+    "p": "[kǝnvə́ːrt]",
+    "pos": "v.",
+    "m": "v. 전환하다(alter, transform); 개종시키다(proselytize)"
+  },
+  {
+    "w": "convincing",
+    "p": "[kənˈvɪnsɪŋ]",
+    "pos": "a.",
+    "m": "a. 설득력 있는(persuasive)"
+  },
+  {
+    "w": "convivial",
+    "p": "[kǝnvíviǝl]",
+    "pos": "a.",
+    "m": "a. 연회를 좋아하는, 쾌활한(festive, hearty, jovial, merry)"
+  },
+  {
+    "w": "convoke",
+    "p": "[kǝnvóuk]",
+    "pos": "v.",
+    "m": "v. 회의를 소집하다(call)"
+  },
+  {
+    "w": "convoluted",
+    "p": "[kɒnvəluːtɪd]",
+    "pos": "a.",
+    "m": "a. 둘둘 감긴, 매우 복잡한(complex, complicated, tangled)"
+  },
+  {
+    "w": "coquette",
+    "p": "[koukét]",
+    "pos": "n.",
+    "m": "n. 요염한 여자, 바람둥이 여자(flirt, tease, hussy, vamp)"
+  },
+  {
+    "w": "cordial",
+    "p": "[kɔ́ːrdʒǝl]",
+    "pos": "a.",
+    "m": "a. 충심으로 부터의(affable, congenial, friendly, gracious, warm)"
+  },
+  {
+    "w": "cordon",
+    "p": "[kɔ́ːrdn]",
+    "pos": "n.",
+    "m": "n. 경계선 v. 비상선을 치다; 교통을 차단하다(off)"
+  },
+  {
+    "w": "corner",
+    "p": "[kɔ́ːrnǝr]",
+    "pos": "n.",
+    "m": "n. 모퉁이; 궁지(predicament) v. 사재기 하다(monopoly)"
+  },
+  {
+    "w": "cornucopia",
+    "p": "[kɔ̀ːrnjukóupiǝ]",
+    "pos": "n.",
+    "m": "n. 풍요, 풍부(abundance, affluence)"
+  },
+  {
+    "w": "corollary",
+    "p": "[kɔ́ːrǝlèri]",
+    "pos": "n.",
+    "m": "n. 당연한 결과"
+  },
+  {
+    "w": "corporal",
+    "p": "[kɔ́ːrpərǝl]",
+    "pos": "n.",
+    "m": "n. (육군)상병 a. 육체의(bodily, physical, somatic)"
+  },
+  {
+    "w": "corporeal",
+    "p": "[kɔːrpɔ́ːriǝl]",
+    "pos": "a.",
+    "m": "a. 육체의(bodily); 물질적인(tangible), 유형의"
+  },
+  {
+    "w": "corpse",
+    "p": "[kɔːrps]",
+    "pos": "n.",
+    "m": "n. 시체(body, cadaver, carcass)"
+  },
+  {
+    "w": "corpulent",
+    "p": "[kɔ́ːrpjǝlǝnt]",
+    "pos": "a.",
+    "m": "a. 뚱뚱한, 살찐(plump, stocky, stout, obese, fatty, greasy)"
+  },
+  {
+    "w": "correlation",
+    "p": "[kɒrəˈleɪʃn]",
+    "pos": "n.",
+    "m": "n. 상관관계(affinity, association, correlation, relationship)"
+  },
+  {
+    "w": "corroborate",
+    "p": "[kǝrάbǝrèit]",
+    "pos": "v.",
+    "m": "v. 확증하다(authenticate, confirm, corroborate)"
+  },
+  {
+    "w": "corrosive",
+    "p": "[kǝróusiv]",
+    "pos": "a.",
+    "m": "a. 부식하는(abrasive, erosive); 신랄한(acidic, caustic)"
+  },
+  {
+    "w": "corrugated",
+    "p": "[kɒrəɡeɪtɪd]",
+    "pos": "a.",
+    "m": "a. 주름잡힌, 물결모양의(wrinkled, ridged)"
+  },
+  {
+    "w": "cortege",
+    "p": "[kɔːrtéiʒ]",
+    "pos": "n.",
+    "m": "n. 수행원(retinue); 행렬(procession)"
+  },
+  {
+    "w": "coruscate",
+    "p": "[kɔ́ːrǝskèit]",
+    "pos": "v.",
+    "m": "v. 반짝이다(glitter), 번뜩이다(scintillate)"
+  },
+  {
+    "w": "cosmetic",
+    "p": "[kɑzmétik]",
+    "pos": "n.",
+    "m": "n. 화장품 a. 표면적인, 형식적인(superficial)"
+  },
+  {
+    "w": "cosmopolitan",
+    "p": "[kὰzmǝpάlǝtən]",
+    "pos": "a.",
+    "m": "a. 전 세계적인(global, international, universal)"
+  },
+  {
+    "w": "coterie",
+    "p": "[kóutǝri]",
+    "pos": "n.",
+    "m": "n. (같은 흥미를 가진)친구, 동료; 동호회"
+  },
+  {
+    "w": "countenance",
+    "p": "[káuntənǝns]",
+    "pos": "n.",
+    "m": "n. 표정, 안색 v. 묵인하다(condone, endorse, sanction)"
+  },
+  {
+    "w": "counteract",
+    "p": "[kaʊntərˈækt]",
+    "pos": "v.",
+    "m": "v. 반작용하다, 방해하다(cancel, neutralize, nullify)"
+  },
+  {
+    "w": "counterbalance",
+    "p": "",
+    "pos": "v.",
+    "m": "v. 균형 맞추다, (효과)상쇄하다(counteract, neutralize, offset)"
+  },
+  {
+    "w": "countercharge",
+    "p": "",
+    "pos": "n.",
+    "m": "n. 맞고소, 반격 v. 맞고소하다, 반격하다"
+  },
+  {
+    "w": "countermand",
+    "p": "[kàuntǝrmǽnd]",
+    "pos": "v.",
+    "m": "v. 취소하다, 철회하다(annul, cancel, rescind, repeal)"
+  },
+  {
+    "w": "counterpart",
+    "p": "[kaʊntəpɑːt]",
+    "pos": "n.",
+    "m": "n. 같은 자격의 상대방(companion, complement, correlative)"
+  },
+  {
+    "w": "countervail",
+    "p": "[kàuntǝrvéil]",
+    "pos": "v.",
+    "m": "v. 상쇄하다, 무효로 하다; -에 대항하다(against)"
+  },
+  {
+    "w": "coup",
+    "p": "[kuː]",
+    "pos": "n.",
+    "m": "n. 대성공(feat); 불의의 일격, 쿠데타(stroke)"
+  },
+  {
+    "w": "coup de grace",
+    "p": "",
+    "pos": "n.",
+    "m": "n. 최후의 일격, 숨통을 끊기"
+  },
+  {
+    "w": "courier",
+    "p": "[kúriǝr]",
+    "pos": "n.",
+    "m": "n. 급사, 특사(carrier, harbinger, herald, emissary)"
+  },
+  {
+    "w": "covenant",
+    "p": "[kʌ́vənǝnt]",
+    "pos": "n.",
+    "m": "n. 계약(bond, contract, oath, pledge, vow) v. 계약하다"
+  },
+  {
+    "w": "covert",
+    "p": "[kʌ́vǝrt]",
+    "pos": "a.",
+    "m": "a. 은밀한, 비밀의(clandestine, concealed, surreptitious, veiled)"
+  },
+  {
+    "w": "covet",
+    "p": "[kʌ́vit]",
+    "pos": "v.",
+    "m": "v. 몹시 탐내다(crave, desire, fancy, lust after, pine for)"
+  },
+  {
+    "w": "cower",
+    "p": "[káuǝr]",
+    "pos": "v.",
+    "m": "v. 움츠러들다, 위축되다(crawl, cringe, quail, recoil, shrink)"
+  },
+  {
+    "w": "coy",
+    "p": "[kɔi]",
+    "pos": "a.",
+    "m": "a. 수줍어하는(bashful, modest, sheepish, shy, timid)"
+  },
+  {
+    "w": "cozen",
+    "p": "[kʌ́zn]",
+    "pos": "v.",
+    "m": "v. 속이다, 사기 치다(hoodwink, swindle)"
+  },
+  {
+    "w": "cozy",
+    "p": "[kóuzi]",
+    "pos": "v.",
+    "m": "v. 위로하다 a. 안락한, 편안한(comfortable, homey, snug)"
+  },
+  {
+    "w": "crabbed",
+    "p": "[kræbɪd]",
+    "pos": "a.",
+    "m": "a. 심술궂은, 괴팍한(crooked, peevish)"
+  },
+  {
+    "w": "crackdown",
+    "p": "[krækdaʊn]",
+    "pos": "n.",
+    "m": "n. (위법 행위)단속, 탄압(clampdown)"
+  },
+  {
+    "w": "craft",
+    "p": "[kræft]",
+    "pos": "n.",
+    "m": "n. 기술, 솜씨(ability, adeptness, expertise, skill); 교활함 v. -을 정교하게 만들다"
+  },
+  {
+    "w": "cram",
+    "p": "[kræm]",
+    "pos": "v.",
+    "m": "v. (좁은 곳)밀어 넣다(fill, load, stuff); 벼락치기 하다"
+  },
+  {
+    "w": "cramp",
+    "p": "[kræmp]",
+    "pos": "n.",
+    "m": "n. 족쇠; 경련 v. 제한하다, 가두다(hamper, hinder, limit, restrict) a. 비좁은"
+  },
+  {
+    "w": "cramped",
+    "p": "[kræmpt]",
+    "pos": "a.",
+    "m": "a. 비좁은, 답답한(stuffy); 경련을 일으키는(spasm)"
+  },
+  {
+    "w": "cranny",
+    "p": "[krǽni]",
+    "pos": "n.",
+    "m": "n. 벌어진 틈, 갈라진 틈(cavity, chink, crack, fissure, rift)"
+  },
+  {
+    "w": "crass",
+    "p": "[kræs]",
+    "pos": "a.",
+    "m": "a. 세련되지 못한(boorish, coarse, crude), 어리석은"
+  },
+  {
+    "w": "crave",
+    "p": "[kreiv]",
+    "pos": "v.",
+    "m": "v. 갈망하다(desire, covet, hope for, hunger, long for)"
+  },
+  {
+    "w": "credence",
+    "p": "[kríːdəns]",
+    "pos": "n.",
+    "m": "n. 신용(belief, certainty, confidence, credibility)"
+  },
+  {
+    "w": "credential",
+    "p": "[kridénʃəl]",
+    "pos": "n.",
+    "m": "n. 증명서(certificate, license) v. 신임을 얻다"
+  },
+  {
+    "w": "credulous",
+    "p": "[krédʒǝlǝs]",
+    "pos": "a.",
+    "m": "a. 잘 믿는, 속기 쉬운(gullible, naive, trusting, unsuspecting)"
+  },
+  {
+    "w": "creed",
+    "p": "[kriːd]",
+    "pos": "n.",
+    "m": "n. 신조, 신념(belief, credo, doctrine, dogma, faith)"
+  },
+  {
+    "w": "crescendo",
+    "p": "[kriʃéndou]",
+    "pos": "n.",
+    "m": "n. 소리가 점점 커짐, 감정이 격해짐(climax)"
+  },
+  {
+    "w": "crestfallen",
+    "p": "[krestfɔːlən]",
+    "pos": "a.",
+    "m": "a. 풀이 죽은, 낙담한(dejected, disheartened, dispirited)"
+  },
+  {
+    "w": "crevice",
+    "p": "[krévis]",
+    "pos": "n.",
+    "m": "n. 갈라진 틈, 균열(chasm, crack, fissure, rift)"
+  },
+  {
+    "w": "cringe",
+    "p": "[krindʒ]",
+    "pos": "v.",
+    "m": "v. 움찔하다, 위축되다(cower, flinch, recoil, shrink, wince)"
+  },
+  {
+    "w": "cripple",
+    "p": "[krípəl]",
+    "pos": "n.",
+    "m": "n. 불구자 v. 불구로 만들다(maim, mangle, mutilate, wound)"
+  },
+  {
+    "w": "crone",
+    "p": "[kroun]",
+    "pos": "n.",
+    "m": "n. 쭈그렁 할멈(hag)"
+  },
+  {
+    "w": "cronyism",
+    "p": "[krəʊniɪzəm]",
+    "pos": "n.",
+    "m": "n. 연고주의[친구 등용주의]"
+  },
+  {
+    "w": "crooked",
+    "p": "[krúkid]",
+    "pos": "a.",
+    "m": "a. 구부러진(bent, curved, serpentine); 부정직한(tortuous)"
+  },
+  {
+    "w": "cross-current",
+    "p": "",
+    "pos": "n.",
+    "m": "n. 역류, 반주류적 경향, 상반되는 경향"
+  },
+  {
+    "w": "crossroad",
+    "p": "[krɔ́:sròud]",
+    "pos": "n.",
+    "m": "n. 교차로; (행동선택)지점(watershed, turning point)"
+  },
+  {
+    "w": "crotchety",
+    "p": "[krάtʃiti]",
+    "pos": "a.",
+    "m": "a. 신경질적인, 괴팍한(cantankerous, crabby, petulant)"
+  },
+  {
+    "w": "crumble",
+    "p": "[krʌ́mbl]",
+    "pos": "v.",
+    "m": "v. 무너지다, 붕괴되다(crush, grind, powder, pulverize)"
+  },
+  {
+    "w": "crutch",
+    "p": "[krʌtʃ]",
+    "pos": "n.",
+    "m": "n. 버팀목, 지주 v. -에 대다(center, middle, nucleus, crux)"
+  },
+  {
+    "w": "crux",
+    "p": "[krʌks]",
+    "pos": "n.",
+    "m": "n. 요점, 핵심(nucleus, crux, essence, gist, heart, pith)"
+  },
+  {
+    "w": "crypt",
+    "p": "[kript]",
+    "pos": "n.",
+    "m": "n. 지하실(catacomb, grave, mausoleum, sepulcher, tomb)"
+  },
+  {
+    "w": "crystallize",
+    "p": "[krístǝlàiz]",
+    "pos": "v.",
+    "m": "v. 구체화하다"
+  },
+  {
+    "w": "cubicle",
+    "p": "[kjúːbikl]",
+    "pos": "n.",
+    "m": "n. 작은 침실; 좁은 방, 칸막이 한 장소"
+  },
+  {
+    "w": "cuisine",
+    "p": "[kwizíːn]",
+    "pos": "n.",
+    "m": "n. 요리법, 요리"
+  },
+  {
+    "w": "cul-de-sac",
+    "p": "",
+    "pos": "n.",
+    "m": "n. 막다른 골목, 곤경, 궁지(blind alley)"
+  },
+  {
+    "w": "culinary",
+    "p": "[kʌ́lǝnèri]",
+    "pos": "a.",
+    "m": "a. 부엌의, 요리의"
+  },
+  {
+    "w": "cull",
+    "p": "[kʌl]",
+    "pos": "n.",
+    "m": "n. 선별; 도태된 사람 v. 골라내다(from); 도태하다"
+  },
+  {
+    "w": "culminate",
+    "p": "[kʌ́lmǝnèit]",
+    "pos": "v.",
+    "m": "v. 절정에 달하다(cap, climax); 완결시키다(complete)"
+  },
+  {
+    "w": "culprit",
+    "p": "[kʌ́lprit]",
+    "pos": "n.",
+    "m": "n. 범죄자(criminal, guilty party, malefactor, miscreant)"
+  },
+  {
+    "w": "cult",
+    "p": "[kʌlt]",
+    "pos": "n.",
+    "m": "n. 숭배; 유행; 이교도(band, faction, group)"
+  },
+  {
+    "w": "culvert",
+    "p": "[kʌ́lvǝrt]",
+    "pos": "n.",
+    "m": "n. 지하수로(aqueduct)"
+  },
+  {
+    "w": "cumbersome",
+    "p": "[kʌ́mbǝrsǝm]",
+    "pos": "a.",
+    "m": "a. 성가신, 귀찮은(awkward, clumsy, unwieldy)"
+  },
+  {
+    "w": "cumulate",
+    "p": "[kjúːmjǝlit]",
+    "pos": "v.",
+    "m": "v. 모으다, 축적하다(accumulate, aggregate, collective, total)"
+  },
+  {
+    "w": "cupidity",
+    "p": "[kjuːpídǝti]",
+    "pos": "n.",
+    "m": "n. 탐욕(greed), 물욕"
+  },
+  {
+    "w": "curator",
+    "p": "[kjuəréitǝr]",
+    "pos": "n.",
+    "m": "n. (박물관·도서관)관리자, 감독"
+  },
+  {
+    "w": "curb",
+    "p": "[kǝːrb]",
+    "pos": "v.",
+    "m": "v. (말)재갈을 물리다; 억제하다, 제한하다(bridle, check)"
+  },
+  {
+    "w": "curfew",
+    "p": "[kə́ːrfjuː]",
+    "pos": "n.",
+    "m": "n. (야간)통행금지"
+  },
+  {
+    "w": "curmudgeon",
+    "p": "[kǝrmʌ́dʒən]",
+    "pos": "n.",
+    "m": "n. 심술궂은 사람, 까다로운 사람[노인]"
+  },
+  {
+    "w": "cursive",
+    "p": "[kə́ːrsiv]",
+    "pos": "a.",
+    "m": "a. 필기체의, 흘려 쓴(flowing, running)"
+  },
+  {
+    "w": "cursory",
+    "p": "[kə́ːrsǝri]",
+    "pos": "a.",
+    "m": "a. 대충하는, 형식적인(desultory, hasty, perfunctory)"
+  },
+  {
+    "w": "custodian",
+    "p": "[kʌstóudiǝn]",
+    "pos": "n.",
+    "m": "n. 관리인, 수위(guardianship, protection, trusteeship)"
+  },
+  {
+    "w": "custody",
+    "p": "[kʌ́stǝdi]",
+    "pos": "n.",
+    "m": "n. 감금(confinement, detention); (이혼)아동양육권(care)"
+  },
+  {
+    "w": "cutthroat",
+    "p": "[kʌ́tθròut]",
+    "pos": "n.",
+    "m": "n. 살인자 a. 흉악한; (경쟁)치열한(internecine)"
+  },
+  {
+    "w": "cutting-edge",
+    "p": "",
+    "pos": "a.",
+    "m": "a. 날카로운, 최첨단의"
+  },
+  {
+    "w": "cynical",
+    "p": "[sínikəl]",
+    "pos": "a.",
+    "m": "a. 냉소적인(sarcastic, sardonic, satirical, scornful)"
+  },
+  {
+    "w": "cynosure",
+    "p": "[sáinǝʃùǝr]",
+    "pos": "n.",
+    "m": "n. 주목의 대상; 지침, 목표"
+  },
+  {
+    "w": "dabble",
+    "p": "[dǽbəl]",
+    "pos": "v.",
+    "m": "v. 물을 튀기다(splash); 장난삼아 하다(dally, fiddle)"
+  },
+  {
+    "w": "dabbler",
+    "p": "[dǽblər]",
+    "pos": "n.",
+    "m": "n. 취미 삼아하는 사람(amateur, dilettante, novice, tyro)"
+  },
+  {
+    "w": "dainty",
+    "p": "[déinti]",
+    "pos": "a.",
+    "m": "a. 고상한(delicate, exquisite); 까다로운(finicky, fussy)"
+  },
+  {
+    "w": "dais",
+    "p": "[déiis]",
+    "pos": "n.",
+    "m": "n. (귀빈용)높은 자리(podium, rostrum); (강당)연단, 교단"
+  },
+  {
+    "w": "dampen",
+    "p": "[dǽmpən]",
+    "pos": "v.",
+    "m": "v. 축축하게 하다(moisten, wet); 기를 꺾다(discourage)"
+  },
+  {
+    "w": "dangle",
+    "p": "[dǽŋgəl]",
+    "pos": "v.",
+    "m": "v. 매달리다(hang, suspend, swing); 자랑삼아 보이다"
+  },
+  {
+    "w": "dappled",
+    "p": "[dæpld]",
+    "pos": "a.",
+    "m": "a. 얼룩덜룩한(spotted)"
+  },
+  {
+    "w": "daredevil",
+    "p": "[deədevl]",
+    "pos": "n.",
+    "m": "n. 무모한 사람(hellcat, hotspur, stuntman)"
+  },
+  {
+    "w": "dastard",
+    "p": "[dǽstǝrd]",
+    "pos": "n.",
+    "m": "n. 겁쟁이, 비겁자(coward)"
+  },
+  {
+    "w": "daub",
+    "p": "[dɔːb]",
+    "pos": "n.",
+    "m": "n. 서투른 그림 v. 칠하다, 바르다(rub, smear, tarnish)"
+  },
+  {
+    "w": "daunt",
+    "p": "[dɔːnt]",
+    "pos": "v.",
+    "m": "v. 위협하다(intimidate); 기를 꺾다(dishearten, dismay)"
+  },
+  {
+    "w": "dauntless",
+    "p": "[dɔːntləs]",
+    "pos": "a.",
+    "m": "a. 겁 없는, 용감한(intrepid, undaunted, gallant, valiant)"
+  },
+  {
+    "w": "dawdle",
+    "p": "[dɔ́ːdl]",
+    "pos": "v.",
+    "m": "v. 빈둥거리다, 꾸물거리다(dally, idle, loiter, procrastinate)"
+  },
+  {
+    "w": "dazzle",
+    "p": "[dǽzəl]",
+    "pos": "v.",
+    "m": "v. 눈부시게 하다; 압도하다(awe, impress, overwhelm)"
+  },
+  {
+    "w": "de facto",
+    "p": "[deɪˈfæktəʊ]",
+    "pos": "a.",
+    "m": "a. 사실상의"
+  },
+  {
+    "w": "de jure",
+    "p": "[diː-ʒúəri]",
+    "pos": "a.",
+    "m": "a. 법에 의거한"
+  },
+  {
+    "w": "deadbeat",
+    "p": "[dedbiːt]",
+    "pos": "n.",
+    "m": "n. 게으름뱅이, 무임 승차자 a. 몹시 지친; (평판)나쁜"
+  },
+  {
+    "w": "deadpan",
+    "p": "[dedpæn]",
+    "pos": "a.",
+    "m": "a. 무표정한(wooden, impassive), 아무렇지 않은 태도"
+  },
+  {
+    "w": "debacle",
+    "p": "[deibάːkl]",
+    "pos": "n.",
+    "m": "n. 붕괴; (시장)폭락(calamity, cataclysm, catastrophe)"
+  },
+  {
+    "w": "debar",
+    "p": "[dibάːr]",
+    "pos": "v.",
+    "m": "v. 내쫓다, 방해하다 (from)"
+  },
+  {
+    "w": "debauch",
+    "p": "[dibɔ́ːtʃ]",
+    "pos": "v.",
+    "m": "v. 타락시키다(corrupt, debase, deprave, pervert)"
+  },
+  {
+    "w": "debilitate",
+    "p": "[dibílǝtèit]",
+    "pos": "v.",
+    "m": "v. (사람)약하게 만들다(cripple, devitalize, enervate, enfeeble)"
+  },
+  {
+    "w": "debonair",
+    "p": "[dèbǝnέǝr]",
+    "pos": "a.",
+    "m": "a. (남자)상냥한, 공손한(charming, suave, urbane); 활기찬"
+  },
+  {
+    "w": "debrief",
+    "p": "[diːbríːf]",
+    "pos": "v.",
+    "m": "v. 보고하다"
+  },
+  {
+    "w": "debris",
+    "p": "[dǝbríː]",
+    "pos": "n.",
+    "m": "n. 파편, 잔해(dregs, dross, rubble, trash, waste, remains)"
+  },
+  {
+    "w": "debunk",
+    "p": "[diːbʌ́ŋk]",
+    "pos": "v.",
+    "m": "v. 정체를 폭로하다(uncover, disclose, divulge, reveal)"
+  },
+  {
+    "w": "decadent",
+    "p": "[dékǝdənt]",
+    "pos": "a.",
+    "m": "a. 타락한, 퇴폐적인(debauched, degenerate, depraved)"
+  },
+  {
+    "w": "decapitate",
+    "p": "[dikǽpǝtèit]",
+    "pos": "v.",
+    "m": "v. 참수하다; 해고하다, 추방하다"
+  },
+  {
+    "w": "decease",
+    "p": "[disíːs]",
+    "pos": "v.",
+    "m": "v. 죽다, 사망하다(demise, die, pass way)"
+  },
+  {
+    "w": "deciduous",
+    "p": "[disídʒuːǝs]",
+    "pos": "a.",
+    "m": "a. 낙엽성의(shedding leaves); 일시적인, 덧없는"
+  },
+  {
+    "w": "decimate",
+    "p": "[désǝmèit]",
+    "pos": "v.",
+    "m": "v. (많은 사람)죽이다(demolish, devastate, ravage, ruin, wreck)"
+  },
+  {
+    "w": "declaim",
+    "p": "[dikléim]",
+    "pos": "v.",
+    "m": "v. 연설하다, 낭독하다; 비난하다(decry, denounce, tirade)"
+  },
+  {
+    "w": "declivity",
+    "p": "[diklíviti]",
+    "pos": "n.",
+    "m": "n. 내리막길, 경사(downward slope) opp. acclivity: 오르막길"
+  },
+  {
+    "w": "decomposition",
+    "p": "",
+    "pos": "v.",
+    "m": "v. 분해시키다(disintegrate); 부패하다(decay, putrefy)"
+  },
+  {
+    "w": "decorous",
+    "p": "[dékǝrǝs]",
+    "pos": "a.",
+    "m": "a. 예의바른(proper, polite), 단정한(puritanical, straitlaced)"
+  },
+  {
+    "w": "decoy",
+    "p": "[díːkɔi]",
+    "pos": "n.",
+    "m": "n. 미끼(bait) v. 유혹하다(attract, bait, entice, lure)"
+  },
+  {
+    "w": "decree",
+    "p": "[dikríː]",
+    "pos": "n.",
+    "m": "n. 법령, 포고령, 칙령(ordinance, ukase) v. 판결하다"
+  },
+  {
+    "w": "decrement",
+    "p": "[dékrǝmǝnt]",
+    "pos": "n.",
+    "m": "n. 감소(decrease), 소모 opp. increment: 증가"
+  },
+  {
+    "w": "decrepit",
+    "p": "[dikrépit]",
+    "pos": "a.",
+    "m": "a. 노쇠한, 늙어빠진(feeble, fragile, infirm, weak)"
+  },
+  {
+    "w": "decry",
+    "p": "[dikrái]",
+    "pos": "v.",
+    "m": "v. 비난하다(condemn, criticize, denounce, disparage, inveigh)"
+  },
+  {
+    "w": "dedicate",
+    "p": "[dédikèit]",
+    "pos": "v.",
+    "m": "v. 바치다, 헌납하다(devote, pledge, consecrate, sanctify)"
+  },
+  {
+    "w": "dedicated",
+    "p": "[dédikèitid]",
+    "pos": "a.",
+    "m": "a. 헌신적인, 오직 특정목적을 위한(committed, devoted, faithful, loyal)"
+  },
+  {
+    "w": "deduce",
+    "p": "[didjúːs]",
+    "pos": "v.",
+    "m": "v. 연역하다, 추론하다(conclude, infer, presume, reason)"
+  },
+  {
+    "w": "deem",
+    "p": "[diːm]",
+    "pos": "v.",
+    "m": "v. -라고 생각하다(believe, consider, judge, regard, think)"
+  },
+  {
+    "w": "deface",
+    "p": "[diféis]",
+    "pos": "v.",
+    "m": "v. 외관을 손상하다(damage, disfigure, mar, mark)"
+  },
+  {
+    "w": "defalcate",
+    "p": "[difǽlkeit]",
+    "pos": "v.",
+    "m": "v. 자금을 횡령하다(embezzle, peculate)"
+  },
+  {
+    "w": "defame",
+    "p": "[diféim]",
+    "pos": "v.",
+    "m": "v. 비방하다(calumniate, denigrate, disparage, libel, slander)"
+  },
+  {
+    "w": "default",
+    "p": "[difɔ́ːlt]",
+    "pos": "n.",
+    "m": "n. (약속)불이행, 태만(delinquency, dereliction, negligence)"
+  },
+  {
+    "w": "defect",
+    "p": "[difékt]",
+    "pos": "n.",
+    "m": "n. 단점(drawback, shortcoming) v. 버리다(desert)"
+  },
+  {
+    "w": "defenestrate",
+    "p": "[di:fènəstréiʃən]",
+    "pos": "n.",
+    "m": "n. (정당·관직)축출, 해직"
+  },
+  {
+    "w": "defer",
+    "p": "[difə́ːr]",
+    "pos": "v.",
+    "m": "v. 연기하다(postpone); 존중, 존경(to); 복종하다"
+  },
+  {
+    "w": "deference",
+    "p": "[défərǝns]",
+    "pos": "n.",
+    "m": "n. 존중, 경의(courtesy, esteem, honor, regard, respect)"
+  },
+  {
+    "w": "deficient",
+    "p": "[difíʃənt]",
+    "pos": "a.",
+    "m": "a. 모자라는, 불충분한(inadequate, insufficient, scanty, scarce)"
+  },
+  {
+    "w": "deficit",
+    "p": "[défǝsit]",
+    "pos": "n.",
+    "m": "n. 부족, 적자(deficiency, lack, paucity, shortage)"
+  },
+  {
+    "w": "defile",
+    "p": "[difáil]",
+    "pos": "v.",
+    "m": "v. 더럽히다, 신성모독하다(befoul, besmirch, blemish, smear)"
+  },
+  {
+    "w": "definitive",
+    "p": "[difínǝtiv]",
+    "pos": "a.",
+    "m": "a. 최종적인, 결정적인(conclusive, determining, ultimate)"
+  },
+  {
+    "w": "deflate",
+    "p": "[difléit]",
+    "pos": "v.",
+    "m": "v. 공기를 빼다; (희망)꺾다; (통화)긴축하다"
+  },
+  {
+    "w": "defraud",
+    "p": "[difrɔ́ːd]",
+    "pos": "v.",
+    "m": "v. 속여서 빼앗다, 사기 치다(bamboozle, bilk, fleece, gyp)"
+  },
+  {
+    "w": "defray",
+    "p": "[difréi]",
+    "pos": "v.",
+    "m": "v. (비용)지불하다(pay the costs of)"
+  },
+  {
+    "w": "defunct",
+    "p": "[difʌ́ŋkt]",
+    "pos": "a.",
+    "m": "a. 죽은, 현존하지 않는(dead, extinguished, perished)"
+  },
+  {
+    "w": "defy",
+    "p": "[difái]",
+    "pos": "v.",
+    "m": "v. 도전하다, 반대하다(oppose, resist, withstand)"
+  },
+  {
+    "w": "degenerate",
+    "p": "[didʒénǝrèit]",
+    "pos": "v.",
+    "m": "v. 타락하다, 변질되다(deteriorate, retrogress, sink, worsen)"
+  },
+  {
+    "w": "dehydrate",
+    "p": "[diːháidreit]",
+    "pos": "v.",
+    "m": "v. 탈수하다, 건조시키다(dry)"
+  },
+  {
+    "w": "deify",
+    "p": "[díːǝfài]",
+    "pos": "v.",
+    "m": "v. 신성시하다(idolize, reverence, venerate, worship)"
+  },
+  {
+    "w": "deign",
+    "p": "[dein]",
+    "pos": "v.",
+    "m": "v. -을 베풀어 주시다(patronize)"
+  },
+  {
+    "w": "deity",
+    "p": "[díːǝti]",
+    "pos": "n.",
+    "m": "n. 신(divinity, god, goddess, idol, supreme being)"
+  },
+  {
+    "w": "deject",
+    "p": "[didʒékt]",
+    "pos": "v.",
+    "m": "v. 낙담시키다(dampen, daunt, depress, dishearten, dismay)"
+  },
+  {
+    "w": "delectable",
+    "p": "[diléktǝbəl]",
+    "pos": "a.",
+    "m": "a. 즐거운, 기쁜(appetizing, delicious, luscious, savory)"
+  },
+  {
+    "w": "deleterious",
+    "p": "[dèlǝtíəriǝs]",
+    "pos": "a.",
+    "m": "a. 해로운, 유독한(detrimental, injurious, poisonous)"
+  },
+  {
+    "w": "deliberate",
+    "p": "[dilíbǝrit]",
+    "pos": "v.",
+    "m": "v. 숙고하다(ponder) a. 신중한, 고의적인"
+  },
+  {
+    "w": "delineate",
+    "p": "[dilínièit]",
+    "pos": "v.",
+    "m": "v. 윤곽을 그리다(outline, sketch); 묘사하다(limn, depict)"
+  },
+  {
+    "w": "delinquent",
+    "p": "[dilíŋkwǝnt]",
+    "pos": "n.",
+    "m": "n. 범죄자 a. 의무를 다하지 않는(derelict, negligent)"
+  },
+  {
+    "w": "delirious",
+    "p": "[dilíriǝs]",
+    "pos": "a.",
+    "m": "a. 미쳐 날뛰는(deranged, frantic); 기뻐서 흥분한(ecstatic)"
+  },
+  {
+    "w": "delirium",
+    "p": "[dilíriǝm]",
+    "pos": "n.",
+    "m": "n. 정신 착란(insanity, madness); 황홀(ecstasy, rapture)"
+  },
+  {
+    "w": "delude",
+    "p": "[dilúːd]",
+    "pos": "v.",
+    "m": "v. 현혹시키다, 속이다(deceive, dupe, fool, mislead)"
+  },
+  {
+    "w": "deluge",
+    "p": "[déljuːdʒ]",
+    "pos": "n.",
+    "m": "n. 대홍수(inundation, overflow, downpour, torrent)"
+  },
+  {
+    "w": "delve",
+    "p": "[delv]",
+    "pos": "v.",
+    "m": "v. 탐구하다, 연구하다(into)(explore, inspect, investigate)"
+  },
+  {
+    "w": "demagogue",
+    "p": "[démǝgɔ̀ːg]",
+    "pos": "n.",
+    "m": "n. 민중선동가(agitator, firebrand, incendiary, rabble-rouser)"
+  },
+  {
+    "w": "demarcate",
+    "p": "[dimάːrkeit]",
+    "pos": "v.",
+    "m": "v. 분리하다, 구별하다(differentiate, discriminate, distinguish)"
+  },
+  {
+    "w": "demean",
+    "p": "[dimíːn]",
+    "pos": "v.",
+    "m": "v. 비하하다, 떨어뜨리다(debase, demean, humiliate)"
+  },
+  {
+    "w": "demeanor",
+    "p": "[dimíːnǝr]",
+    "pos": "n.",
+    "m": "n. 행동(behavior), 태도(manner, deportment)"
+  },
+  {
+    "w": "demented",
+    "p": "[dɪˈmentɪd]",
+    "pos": "a.",
+    "m": "a. 미친(crazy, deranged, insane, lunatic, mad)"
+  },
+  {
+    "w": "demerit",
+    "p": "[diːmérit]",
+    "pos": "n.",
+    "m": "n. 결점, 단점 opp. merit: 우수함, 공로"
+  },
+  {
+    "w": "demise",
+    "p": "[dimáiz]",
+    "pos": "n.",
+    "m": "n. 사망, 별세, 소멸(death, decease, expiration)"
+  },
+  {
+    "w": "demography",
+    "p": "[dimάgrǝfi]",
+    "pos": "n.",
+    "m": "n. 인구통계학"
+  },
+  {
+    "w": "demoniac",
+    "p": "[dimóuniæ̀k]",
+    "pos": "a.",
+    "m": "a. 악마 같은(devilish, diabolical, fiendish, satanic), 잔인한"
+  },
+  {
+    "w": "demoralize",
+    "p": "[dimɔ́ːrǝlàiz]",
+    "pos": "v.",
+    "m": "v. 타락시키다; 사기를 저하시키다(discourage, dishearten)"
+  },
+  {
+    "w": "demote",
+    "p": "[dimóut]",
+    "pos": "v.",
+    "m": "v. 강등시키다(to lower in rank: degrade)"
+  },
+  {
+    "w": "demur",
+    "p": "[dimə́ːr]",
+    "pos": "v.",
+    "m": "v. 반대하다(disagree, disapprove, dispute, dissent)"
+  },
+  {
+    "w": "demure",
+    "p": "[dimjúǝr]",
+    "pos": "a.",
+    "m": "a. 점잔빼는(modest, reserved, retiring, shy, timid); 예의바른"
+  },
+  {
+    "w": "denigrate",
+    "p": "[dénigrèit]",
+    "pos": "v.",
+    "m": "v. 모욕하다(defame, denigrate, impugn, slander)"
+  },
+  {
+    "w": "denizen",
+    "p": "[dénǝzən]",
+    "pos": "n.",
+    "m": "n. 주민, 거주자(dweller, inhabitant, occupant)"
+  },
+  {
+    "w": "denomination",
+    "p": "",
+    "pos": "n.",
+    "m": "n. 명명, 명칭(name, title); 종파(religious sect)"
+  },
+  {
+    "w": "denotation",
+    "p": "[dìːnoutéiʃən]",
+    "pos": "n.",
+    "m": "n. 명시적 의미 opp. connotation: 함축적 의미"
+  },
+  {
+    "w": "denouement",
+    "p": "[deinúːmɑːŋ]",
+    "pos": "n.",
+    "m": "n. (연극)대단원, 종결부(the end)"
+  },
+  {
+    "w": "dent",
+    "p": "[dent]",
+    "pos": "v.",
+    "m": "v. 움푹 파이다(indent, pit); 손상하다, 약화시키다"
+  },
+  {
+    "w": "depict",
+    "p": "[dipíkt]",
+    "pos": "v.",
+    "m": "v. 묘사하다(delineate, describe, portray, render)"
+  },
+  {
+    "w": "deplete",
+    "p": "[diplíːt]",
+    "pos": "v.",
+    "m": "v. 고갈시키다(exhaust); 자원을 빼앗다(dissipate, drain)"
+  },
+  {
+    "w": "deplore",
+    "p": "[diplɔ́ːr]",
+    "pos": "v.",
+    "m": "v. 슬퍼하다(lament), 한탄하다(regret, lament, mourn)"
+  },
+  {
+    "w": "deploy",
+    "p": "[diplɔ́i]",
+    "pos": "v.",
+    "m": "v. (군대·무기)배치하다(arrange)"
+  },
+  {
+    "w": "depose",
+    "p": "[dipóuz]",
+    "pos": "v.",
+    "m": "v. 면직하다, 폐위시키다(dethrone, expel, oust, unseat)"
+  },
+  {
+    "w": "deposition",
+    "p": "[dèpǝzíʃən]",
+    "pos": "n.",
+    "m": "n. 증언(testimony under oath); 관직 박탈, 파면"
+  },
+  {
+    "w": "depravity",
+    "p": "[diprǽvǝti]",
+    "pos": "n.",
+    "m": "n. 타락(corruption),부패; 악행, 비행, 부패행위"
+  },
+  {
+    "w": "depreciate",
+    "p": "[dipríːʃièit]",
+    "pos": "v.",
+    "m": "v. 가치가 하락하다(deflate, devalue); 무시하다(belittle)"
+  },
+  {
+    "w": "depredate",
+    "p": "[déprǝdèit]",
+    "pos": "v.",
+    "m": "v. 약탈하다(plunder, harry, despoil)"
+  },
+  {
+    "w": "deranged",
+    "p": "[dɪˈreɪndʒd]",
+    "pos": "a.",
+    "m": "a. 정상이 아닌, 미친(demented, insane, irrational, lunatic)"
+  },
+  {
+    "w": "derelict",
+    "p": "[dérǝlikt]",
+    "pos": "a.",
+    "m": "a. 버려진(deserted, forsaken); 태만한(neglected, delinquent)"
+  },
+  {
+    "w": "deride",
+    "p": "[diráid]",
+    "pos": "v.",
+    "m": "v. 조롱하다, 비웃다(jeer, mock, ridicule, scoff, scorn, sneer)"
+  },
+  {
+    "w": "derivative",
+    "p": "[dirívǝtiv]",
+    "pos": "n.",
+    "m": "n. (금융)파생상품, 파생물 a. 파생된, 유도된"
+  },
+  {
+    "w": "derive",
+    "p": "[diráiv]",
+    "pos": "v.",
+    "m": "v. -를 끌어내다, -에서 유래하다(from)(descend, originate)"
+  },
+  {
+    "w": "dermatology",
+    "p": "[də̀ːrmǝtάlǝdʒi]",
+    "pos": "n.",
+    "m": "n. 피부병학"
+  },
+  {
+    "w": "derogatory",
+    "p": "[dirάgǝtɔ̀ːri]",
+    "pos": "a.",
+    "m": "a. (명예)손상하는, 경멸하는(contemptuous, disparaging)"
+  },
+  {
+    "w": "derring-do",
+    "p": "[dériŋdúː]",
+    "pos": "n.",
+    "m": "n. 필사의 용기, 만용, 대담한 행위(daring do)"
+  },
+  {
+    "w": "descant",
+    "p": "[déskænt]",
+    "pos": "v.",
+    "m": "v. 자세히 설명하다(expound, expatiate)"
+  },
+  {
+    "w": "descry",
+    "p": "[diskrái]",
+    "pos": "v.",
+    "m": "v. 찾아내다(discover); 어렴풋이 식별하다(discern)"
+  },
+  {
+    "w": "desecrate",
+    "p": "[désikrèit]",
+    "pos": "v.",
+    "m": "v. 신성을 더럽히다, 모독하다(contaminate, defile, profane)"
+  },
+  {
+    "w": "desensitize",
+    "p": "[diːsénsǝtàiz]",
+    "pos": "v.",
+    "m": "v. (감수성)줄이다; 둔감해지다; 둔감하게 하다"
+  },
+  {
+    "w": "desiccate",
+    "p": "[désikèit]",
+    "pos": "v.",
+    "m": "v. 건조시키다(dehydrate, dry, parch); 무기력하게 하다"
+  },
+  {
+    "w": "desideratum",
+    "p": "[disìdǝréitǝm]",
+    "pos": "n.",
+    "m": "n. 꼭 필요한 것, 꼭 바라는 것"
+  },
+  {
+    "w": "desist",
+    "p": "[dizíst]",
+    "pos": "v.",
+    "m": "v. 단념하다, 그만두다(cease, discontinue, renounce, surcease)"
+  },
+  {
+    "w": "desperate",
+    "p": "[déspərit]",
+    "pos": "a.",
+    "m": "a. 필사적인, 절망적인(despondent, downcast, wretched)"
+  },
+  {
+    "w": "despicable",
+    "p": "[déspikǝbəl]",
+    "pos": "a.",
+    "m": "a. 경멸할만한, 비열한(contemptible, detestable, disgraceful)"
+  },
+  {
+    "w": "despoil",
+    "p": "[dispɔ́il]",
+    "pos": "v.",
+    "m": "v. 약탈하다(loot, pillage, plunder, ravage)"
+  },
+  {
+    "w": "despondent",
+    "p": "[dispάndǝnt]",
+    "pos": "a.",
+    "m": "a. 낙담한(dejected, depressed, discouraged, disheartened)"
+  },
+  {
+    "w": "destitute",
+    "p": "[déstǝtjùːt]",
+    "pos": "a.",
+    "m": "a. 가난한, 결핍된(impoverished, indigent, needy, penniless)"
+  },
+  {
+    "w": "desuetude",
+    "p": "[déswitjùːd]",
+    "pos": "n.",
+    "m": "n. 더 이상 사용되지 않는 상태(disused condition)"
+  },
+  {
+    "w": "detached",
+    "p": "[dɪˈtætʃt]",
+    "pos": "a.",
+    "m": "a. 초연한(aloof, disinterested), 공평한(impartial, objective)"
+  },
+  {
+    "w": "detergent",
+    "p": "[ditə́ːrdʒǝnt]",
+    "pos": "n.",
+    "m": "n. 세제(cleansing agent)"
+  },
+  {
+    "w": "deterrent",
+    "p": "[ditə́ːrǝnt]",
+    "pos": "n.",
+    "m": "n. 억제력(discouragement, hindrance, obstacle, restraint)"
+  },
+  {
+    "w": "detonate",
+    "p": "[détənèit]",
+    "pos": "v.",
+    "m": "v. 폭발하다(blast, discharge, explode)"
+  },
+  {
+    "w": "detraction",
+    "p": "[ditrǽkʃən]",
+    "pos": "n.",
+    "m": "n. 욕설(slander), 비난; 훼손(diminish, lessen, reduce)"
+  },
+  {
+    "w": "deviate",
+    "p": "[díːvièit]",
+    "pos": "v.",
+    "m": "v. (길·원칙)벗어나다(awry, digress, err, stray, wander)"
+  },
+  {
+    "w": "devious",
+    "p": "[díːviǝs]",
+    "pos": "a.",
+    "m": "a. 정도를 벗어난(going astray), 멀리 돌아가는"
+  },
+  {
+    "w": "devoid",
+    "p": "[divɔ́id]",
+    "pos": "a.",
+    "m": "a. -이 없는, 부족한(deficient, lacking, wanting, without)"
+  },
+  {
+    "w": "devolve",
+    "p": "[divάlv]",
+    "pos": "v.",
+    "m": "v. (권리)위임하다, 맡기다(upon)(deputize)"
+  },
+  {
+    "w": "diabolic",
+    "p": "[dàiǝbάlik]",
+    "pos": "a.",
+    "m": "a. 악마의, 극악무도한(demonic, devilish, fiendish, satanic)"
+  },
+  {
+    "w": "diadem",
+    "p": "[dáiǝdèm]",
+    "pos": "n.",
+    "m": "n. 왕관(crown)"
+  },
+  {
+    "w": "diagnose",
+    "p": "[dáiǝgnòus]",
+    "pos": "v.",
+    "m": "v. 진단하다, 분석하다(ascertain, determine, distinguish)"
+  },
+  {
+    "w": "dialectic",
+    "p": "[dàiǝléktik]",
+    "pos": "n.",
+    "m": "n. 논리적 토론술(art of debate); 변증법"
+  },
+  {
+    "w": "diametrical",
+    "p": "[dàiǝmétrik]",
+    "pos": "a.",
+    "m": "a. 정반대의, 대립적인(completely opposed)"
+  },
+  {
+    "w": "diaphanous",
+    "p": "[daiǽfǝnǝs]",
+    "pos": "a.",
+    "m": "a. 아주 얇은(sheer), 반투명한(filmy, gossamer, translucent)"
+  },
+  {
+    "w": "diatribe",
+    "p": "[dáiǝtràib]",
+    "pos": "n.",
+    "m": "n. 통렬한 비난, 혹평(harangue, invective, vituperation)"
+  },
+  {
+    "w": "dichotomy",
+    "p": "[daikάtǝmi]",
+    "pos": "n.",
+    "m": "n. 이분법(branching into two parts)"
+  },
+  {
+    "w": "dicker",
+    "p": "[díkǝr]",
+    "pos": "v.",
+    "m": "v. (가격)흥정하다(bargain, barter, haggle); 거래하다"
+  },
+  {
+    "w": "dictum",
+    "p": "[díktǝm]",
+    "pos": "n.",
+    "m": "n. 공식견해(pronouncement); 격언(adage, maxim, proverb)"
+  },
+  {
+    "w": "didactic",
+    "p": "[daidǽktik]",
+    "pos": "a.",
+    "m": "a. 교훈적인(academic, moralizing, pedantic, preachy)"
+  },
+  {
+    "w": "diddle",
+    "p": "[dídl]",
+    "pos": "v.",
+    "m": "v. 속이다, 편취하다; 빈둥대다"
+  },
+  {
+    "w": "diehard",
+    "p": "[daɪhɑːd]",
+    "pos": "n.",
+    "m": "n. 보수파정치인(extreme) a. 끝까지 버티는, 완고한"
+  },
+  {
+    "w": "diffident",
+    "p": "[dífidǝnt]",
+    "pos": "a.",
+    "m": "a. 자신 없는, 내성적인(bashful, reserved, timid, timorous)"
+  },
+  {
+    "w": "diffuse",
+    "p": "[difjúːz]",
+    "pos": "v.",
+    "m": "v. 확산시키다(disseminate) a. 만연한; (문체)산만한"
+  },
+  {
+    "w": "digress",
+    "p": "[daigrés]",
+    "pos": "v.",
+    "m": "v. (주제)벗어나다(to stray from the main subject)"
+  },
+  {
+    "w": "digressive",
+    "p": "[daigrésiv]",
+    "pos": "a.",
+    "m": "a. 옆길로 새기 쉬운(deviate, diverge, drift, ramble, stray, wander)"
+  },
+  {
+    "w": "dilate",
+    "p": "[dailéit]",
+    "pos": "v.",
+    "m": "v. 넓히다(widen), 팽창시키다(distend, enlarge, inflate)"
+  },
+  {
+    "w": "dilatory",
+    "p": "[dílǝtɔ̀ːri]",
+    "pos": "a.",
+    "m": "a. 더딘, 꾸물거리는(indolent, lackadaisical, procrastinating)"
+  },
+  {
+    "w": "dilettante",
+    "p": "[dìlǝtάːnt]",
+    "pos": "n.",
+    "m": "n. 아마추어(amateur), 취미로 하는 사람(dabbler)"
+  },
+  {
+    "w": "dimension",
+    "p": "[diménʃən]",
+    "pos": "n.",
+    "m": "n. 치수, 규모(extent, magnitude, measure, measurements)"
+  },
+  {
+    "w": "din",
+    "p": "[din]",
+    "pos": "n.",
+    "m": "n. 소음 v. 시끄럽게 하다"
+  },
+  {
+    "w": "dingy",
+    "p": "[díndʒi]",
+    "pos": "n.",
+    "m": "n. (장소)음침한, 칙칙한(dismal, drab, dreary, dull, gloomy)"
+  },
+  {
+    "w": "dint",
+    "p": "[dint]",
+    "pos": "n.",
+    "m": "n. 힘, 폭력(effort, force, might, power); 움푹 팬 곳"
+  },
+  {
+    "w": "dip",
+    "p": "[dip]",
+    "pos": "v.",
+    "m": "v. 담그다(immerse); (가격·인기)떨어지다(plunge)"
+  },
+  {
+    "w": "dire",
+    "p": "[daiǝr]",
+    "pos": "a.",
+    "m": "a. 무서운, 무시무시한(dreadful); 비참한(dismal)"
+  },
+  {
+    "w": "directory",
+    "p": "[diréktəri]",
+    "pos": "n.",
+    "m": "n. 주소록; 이사회"
+  },
+  {
+    "w": "dirge",
+    "p": "[dǝːrdʒ]",
+    "pos": "n.",
+    "m": "n. 장례식 음악, 비가(elegy, requiem, threnody)"
+  },
+  {
+    "w": "disability",
+    "p": "[dìsǝbílǝti]",
+    "pos": "n.",
+    "m": "n. 무능, 무력; (신체)장애, 핸디캡"
+  },
+  {
+    "w": "disabuse",
+    "p": "[dìsǝbjúːz]",
+    "pos": "v.",
+    "m": "v. (잘못된 생각)깨닫게 하다(undeceive, disillusion)"
+  },
+  {
+    "w": "disaffect",
+    "p": "[dìsǝfékt]",
+    "pos": "v.",
+    "m": "v. (불만)품게 하다(alienate, estrange)"
+  },
+  {
+    "w": "disapprobation",
+    "p": "",
+    "pos": "n.",
+    "m": "n. 반대(disapproval), 비난"
+  },
+  {
+    "w": "disarray",
+    "p": "[dìsǝréi]",
+    "pos": "n.",
+    "m": "n. 무질서, 혼란"
+  },
+  {
+    "w": "disavow",
+    "p": "[dìsǝváu]",
+    "pos": "v.",
+    "m": "v. (관련성)부인하다(abjure, deny, disclaim, reject, renounce)"
+  },
+  {
+    "w": "disband",
+    "p": "[disbǽnd]",
+    "pos": "v.",
+    "m": "v. 해산하다, 해산시키다(dissipate, dissolve, disperse)"
+  },
+  {
+    "w": "disburse",
+    "p": "[disbə́ːrs]",
+    "pos": "v.",
+    "m": "v. 지급하다(allocate, dispense, distribute, defray, pay)"
+  },
+  {
+    "w": "discern",
+    "p": "[disə́ːrn]",
+    "pos": "v.",
+    "m": "v. 식별하다, 인식하다(descry, differentiate, distinguish)"
+  },
+  {
+    "w": "discerning",
+    "p": "[dɪˈsɜːnɪŋ]",
+    "pos": "a.",
+    "m": "a. 통찰력이 있는, 보는 눈이 있는(perspicacious)"
+  },
+  {
+    "w": "discharge",
+    "p": "[distʃάːrdʒ]",
+    "pos": "v.",
+    "m": "v. (짐)내리다(unload); 해고하다, 방출하다(liberate, release)"
+  },
+  {
+    "w": "disclaim",
+    "p": "[diskléim]",
+    "pos": "v.",
+    "m": "v. (책임)부인하다(deny); (권리)포기하다(forswear)"
+  },
+  {
+    "w": "disclose",
+    "p": "[disklóuz]",
+    "pos": "v.",
+    "m": "v. 폭로하다(confess, divulge, expose, leak, reveal)"
+  },
+  {
+    "w": "disconsolate",
+    "p": "[diskάnsəlit]",
+    "pos": "a.",
+    "m": "a. 쓸쓸한, 슬픈(dejected, depressed, despondent)"
+  },
+  {
+    "w": "discordant",
+    "p": "[diskɔ́ːrdənt]",
+    "pos": "a.",
+    "m": "a. 어울리지 않는(inharmonious, conflicting)"
+  },
+  {
+    "w": "discount",
+    "p": "[dískaunt]",
+    "pos": "v.",
+    "m": "v. 할인하다; 그대로 듣지 않다(depreciate, diminish)"
+  },
+  {
+    "w": "discourse",
+    "p": "[dískɔːrs]",
+    "pos": "n.",
+    "m": "n. 토론(formal discussion), 대화(conversation)"
+  },
+  {
+    "w": "discredit",
+    "p": "[diskrédit]",
+    "pos": "v.",
+    "m": "v. 믿지 않다; 의심하다(disbelieve, discount, distrust)"
+  },
+  {
+    "w": "discriminate",
+    "p": "[diskrímǝnèit]",
+    "pos": "v.",
+    "m": "v. 구별하다(from)(differentiate, distinguish); 차별하다"
+  },
+  {
+    "w": "discursive",
+    "p": "[diskə́ːrsiv]",
+    "pos": "a.",
+    "m": "a. (글·이야기)산만한(desultory, digressive, rambling)"
+  },
+  {
+    "w": "disdainful",
+    "p": "[disdéinfǝl]",
+    "pos": "a.",
+    "m": "a. 경멸적인(contemptuous), 오만한(arrogant, haughty)"
+  },
+  {
+    "w": "disfigure",
+    "p": "[disfígjǝr]",
+    "pos": "v.",
+    "m": "v. (외관)손상하다(distort, mar, warp, cripple)"
+  },
+  {
+    "w": "disgruntle",
+    "p": "[disgrʌ́ntl]",
+    "pos": "v.",
+    "m": "v. (불만)품게 하다(make discontented)"
+  },
+  {
+    "w": "disgusting",
+    "p": "[disgʌ́stiŋ]",
+    "pos": "a.",
+    "m": "a. 혐오스러운(repulsive), 메스꺼운(nauseating, repugnant)"
+  },
+  {
+    "w": "dishabille",
+    "p": "[dìsǝbíːl]",
+    "pos": "n.",
+    "m": "n. 평상복(undress); 단정치 못한 복장"
+  },
+  {
+    "w": "dishearten",
+    "p": "[dishάːrtn]",
+    "pos": "v.",
+    "m": "v. 낙담시키다(dampen, daunt, depress, dismay)"
+  },
+  {
+    "w": "disheveled",
+    "p": "[diʃévəld]",
+    "pos": "a.",
+    "m": "a. 단정치 못한(slovenly, unkempt, dowdy)"
+  },
+  {
+    "w": "disinformation",
+    "p": "",
+    "pos": "n.",
+    "m": "n. (적을 속이기 위한)그릇된 정보"
+  },
+  {
+    "w": "disingenuous",
+    "p": "[dìsindʒénjuːǝs]",
+    "pos": "a.",
+    "m": "a. 부정직한, 불성실한, 겉과 속이 다른(dishonest)"
+  },
+  {
+    "w": "disinter",
+    "p": "[dìsintə́ːr]",
+    "pos": "v.",
+    "m": "v. 파내다(exhume, unearth, excavate)"
+  },
+  {
+    "w": "disinterested",
+    "p": "[disíntəristid]",
+    "pos": "a.",
+    "m": "a. 공평한(impartial); 사심 없는"
+  },
+  {
+    "w": "dislodge",
+    "p": "[dislάdʒ]",
+    "pos": "v.",
+    "m": "v. 쫓아내다(displace, disturb, dispel, expel, extricate)"
+  },
+  {
+    "w": "dismantle",
+    "p": "[dismǽntl]",
+    "pos": "v.",
+    "m": "v. (기계)철거하다; (제도)폐지하다"
+  },
+  {
+    "w": "dismay",
+    "p": "[disméi]",
+    "pos": "v.",
+    "m": "v. 당황시키다, 낙담시키다"
+  },
+  {
+    "w": "dismember",
+    "p": "[dismémbǝr]",
+    "pos": "v.",
+    "m": "v. (팔·다리)절단하다; (국가·회사)분할하다"
+  },
+  {
+    "w": "dismiss",
+    "p": "[dismís]",
+    "pos": "v.",
+    "m": "v. 해고하다; 해산시키다"
+  },
+  {
+    "w": "dismissive",
+    "p": "[dismísiv]",
+    "pos": "a.",
+    "m": "a. (타인)경멸·멸시하는(of)"
+  },
+  {
+    "w": "disorient",
+    "p": "[disɔ́ːriǝnt]",
+    "pos": "v.",
+    "m": "v. 방향을 잃게 하다, 혼란스럽게 하다"
+  },
+  {
+    "w": "disparage",
+    "p": "[dispǽridʒ]",
+    "pos": "v.",
+    "m": "v. 깔보다(belittle); 비난하다"
+  },
+  {
+    "w": "disparate",
+    "p": "[díspǝrit]",
+    "pos": "a.",
+    "m": "a. 다른 종류의, 공통점이 없는"
+  },
+  {
+    "w": "dispassionate",
+    "p": "[dispǽʃənit]",
+    "pos": "a.",
+    "m": "a. 냉정한(calm, composed, detached); 공평한(impartial)"
+  },
+  {
+    "w": "dispel",
+    "p": "[dispél]",
+    "pos": "v.",
+    "m": "v. (불안)쫓아버리다, 없애다"
+  },
+  {
+    "w": "dispensary",
+    "p": "[dispénsǝri]",
+    "pos": "n.",
+    "m": "n. 의무실, 약국"
+  },
+  {
+    "w": "dispense",
+    "p": "[dispéns]",
+    "pos": "v.",
+    "m": "v. 분배하다, 나누어주다"
+  },
+  {
+    "w": "disperse",
+    "p": "[dispə́ːrs]",
+    "pos": "v.",
+    "m": "v. 흩어지게 하다, 전파시키다"
+  },
+  {
+    "w": "dispirited",
+    "p": "[dɪˈspɪrɪtɪd]",
+    "pos": "a.",
+    "m": "a. 낙담한(dejected, downcast, crestfallen)"
+  },
+  {
+    "w": "disport",
+    "p": "[dispɔ́ːrt]",
+    "pos": "v.",
+    "m": "v. 장난치다; 즐기게 하다; 과시하다"
+  },
+  {
+    "w": "disproportionate",
+    "p": "",
+    "pos": "a.",
+    "m": "a. 불균형의, 어울리지 않는(unbalanced)"
+  },
+  {
+    "w": "disprove",
+    "p": "[disprúːv]",
+    "pos": "v.",
+    "m": "v. 반박하다(contradict, discredit, invalidate, refute)"
+  },
+  {
+    "w": "disputatious",
+    "p": "[dìspjutéiʃǝs]",
+    "pos": "a.",
+    "m": "a. 논쟁적인(argumentative)"
+  },
+  {
+    "w": "disquiet",
+    "p": "[diskwáiǝt]",
+    "pos": "n.",
+    "m": "n. 불안, 걱정 v. 불안하게 하다"
+  },
+  {
+    "w": "disquisition",
+    "p": "[dìskwǝzíʃən]",
+    "pos": "n.",
+    "m": "n. 논문(dissertation, treatise, thesis)"
+  },
+  {
+    "w": "disregard",
+    "p": "[dìsrigάːrd]",
+    "pos": "v.",
+    "m": "v. 무시하다(ignore)"
+  },
+  {
+    "w": "disrepute",
+    "p": "[dìsripjúːt]",
+    "pos": "n.",
+    "m": "n. 나쁜 평판, 불명예(disgrace, dishonor, ignominy, infamy)"
+  },
+  {
+    "w": "disrupt",
+    "p": "[disrʌ́pt]",
+    "pos": "v.",
+    "m": "v. 붕괴시키다(disorder, disturb, unsettle, upset)"
+  },
+  {
+    "w": "dissemble",
+    "p": "[disémbəl]",
+    "pos": "v.",
+    "m": "v. 감정을 숨기다, -인체하다(conceal, disguise, dissimulate)"
+  },
+  {
+    "w": "dissident",
+    "p": "[dísǝdənt]",
+    "pos": "n.",
+    "m": "n. 의견을 달리하는(사람), 반체제인사(nonconformist)"
+  },
+  {
+    "w": "dissimulate",
+    "p": "[disímjǝlèit]",
+    "pos": "v.",
+    "m": "v. 감정을 숨기다, 모르는체하다(mask)"
+  },
+  {
+    "w": "distaff",
+    "p": "[dístæf]",
+    "pos": "a.",
+    "m": "a. 여성의(female), 모계의"
+  },
+  {
+    "w": "distend",
+    "p": "[disténd]",
+    "pos": "v.",
+    "m": "v. 부풀다, 팽창하다(balloon, bloat, bulge, expand, swell)"
+  },
+  {
+    "w": "distill",
+    "p": "[distíl]",
+    "pos": "v.",
+    "m": "v. 증류하다, 추출하다(condense, evaporate, vaporize)"
+  },
+  {
+    "w": "distinct",
+    "p": "[distíŋkt]",
+    "pos": "a.",
+    "m": "a. 별개의, 서로 다른(different); 뚜렷한(apparent, distinctive)"
+  },
+  {
+    "w": "distort",
+    "p": "[distɔ́ːrt]",
+    "pos": "v.",
+    "m": "v. 사실을 왜곡하다(garble, misconstrue, misinterpret, pervert)"
+  },
+  {
+    "w": "distract",
+    "p": "[distrǽkt]",
+    "pos": "v.",
+    "m": "v. 혼란시키다, 산만하게하다(divert); 즐겁게 하다(entertain)"
+  },
+  {
+    "w": "distrait",
+    "p": "[distréi]",
+    "pos": "a.",
+    "m": "a. 멍한, 넋이 나간(absent minded)"
+  },
+  {
+    "w": "distraught",
+    "p": "[distrɔ́ːt]",
+    "pos": "a.",
+    "m": "a. 정신이 혼란한, 미친(distressed, disturbed, frantic)"
+  },
+  {
+    "w": "dither",
+    "p": "[díðǝr]",
+    "pos": "v.",
+    "m": "v. 망설이다(hesitate), 안절부절못하다"
+  },
+  {
+    "w": "diva",
+    "p": "[díːvǝ]",
+    "pos": "n.",
+    "m": "n. (가극)주연여가수(prima donna), 탁월한 여가수"
+  },
+  {
+    "w": "diverge",
+    "p": "[divə́ːrdʒ]",
+    "pos": "v.",
+    "m": "v. (길·의견)갈라지다(branch, split); 빗나가다(deviate, digress)"
+  },
+  {
+    "w": "divergent",
+    "p": "[divə́ːrdʒǝnt]",
+    "pos": "a.",
+    "m": "a. (의견)매우 다른, 반대의"
+  },
+  {
+    "w": "diversify",
+    "p": "[divə́ːrsǝfài]",
+    "pos": "v.",
+    "m": "v. 다양화하다, 다각화하다"
+  },
+  {
+    "w": "divert",
+    "p": "[divə́ːrt]",
+    "pos": "v.",
+    "m": "v. 산만하게하다(distract); 즐겁게 하다(amuse, entertain)"
+  },
+  {
+    "w": "divest",
+    "p": "[divést]",
+    "pos": "v.",
+    "m": "v. 벗기다, 박탈하다(bare, strip, undress, deprive, dispossess)"
+  },
+  {
+    "w": "divination",
+    "p": "[dìvǝnéiʃən]",
+    "pos": "n.",
+    "m": "n. 예언, 예견, 선견지명(prophesy)"
+  },
+  {
+    "w": "divine",
+    "p": "[diváin]",
+    "pos": "v.",
+    "m": "v. 직관으로 알다(predict) a. 신성한(celestial, heavenly)"
+  },
+  {
+    "w": "dizzy",
+    "p": "[dízi]",
+    "pos": "a.",
+    "m": "a. 현기증 나는, 어지러운(reeling, whirling, faint, giddy)"
+  },
+  {
+    "w": "docile",
+    "p": "[dάsǝl]",
+    "pos": "a.",
+    "m": "a. 유순한, 온순한(obedient, pliant, submissive, tractable)"
+  },
+  {
+    "w": "doctrinaire",
+    "p": "[dὰktrǝnέǝr]",
+    "pos": "n.",
+    "m": "n. 이론가 a. 교조적인, 독단적인(dogmatic)"
+  },
+  {
+    "w": "dodder",
+    "p": "[dάdǝr]",
+    "pos": "v.",
+    "m": "v. 고령으로 떨다; 휘청거리다"
+  },
+  {
+    "w": "dodge",
+    "p": "[dɑdʒ]",
+    "pos": "v.",
+    "m": "v. 피하다, 교묘히 회피하다(duck, parry, shy, sidestep)"
+  },
+  {
+    "w": "doff",
+    "p": "[dɑf]",
+    "pos": "v.",
+    "m": "v. 옷을 벗다(lift, raise, remove, tip, bare, take off)"
+  },
+  {
+    "w": "dogged",
+    "p": "[dɒɡɪd]",
+    "pos": "a.",
+    "m": "a. 끈질긴(stubborn, obstinate, inflexible, unyielding)"
+  },
+  {
+    "w": "doggerel",
+    "p": "[dɔ́(ː)gərǝl]",
+    "pos": "n.",
+    "m": "n. 서투른 시"
+  },
+  {
+    "w": "dogmatic",
+    "p": "[dɔ(ː)gmǽtik]",
+    "pos": "a.",
+    "m": "a. 교리에 의거한, 독단적인"
+  },
+  {
+    "w": "doldrums",
+    "p": "[dóuldrǝmz]",
+    "pos": "n.",
+    "m": "n. 의기소침; 침체, 정체 상태"
+  },
+  {
+    "w": "dole",
+    "p": "[doul]",
+    "pos": "n.",
+    "m": "n. 구호품 v. 나누어 주다"
+  },
+  {
+    "w": "dolorous",
+    "p": "[dάlǝrǝs]",
+    "pos": "a.",
+    "m": "a. 슬픈, 비통한"
+  },
+  {
+    "w": "dolt",
+    "p": "[doult]",
+    "pos": "n.",
+    "m": "n. 멍청이, 바보"
+  },
+  {
+    "w": "domestic",
+    "p": "[douméstik]",
+    "pos": "a.",
+    "m": "a. 가정의, 국내의"
+  },
+  {
+    "w": "domesticate",
+    "p": "[douméstǝkèit]",
+    "pos": "v.",
+    "m": "v. (동물)길들이다(tame), 교화하다(train)"
+  },
+  {
+    "w": "domicile",
+    "p": "[dάmǝsàil]",
+    "pos": "n.",
+    "m": "n. 집, 주소, 거주지"
+  },
+  {
+    "w": "domineer",
+    "p": "[dὰmǝníǝr]",
+    "pos": "v.",
+    "m": "v. 권력을 휘두르다"
+  },
+  {
+    "w": "don",
+    "p": "[dɑn]",
+    "pos": "n.",
+    "m": "n. 거물, 유명인 v. (옷·모자)걸치다"
+  },
+  {
+    "w": "donate",
+    "p": "[dóuneit]",
+    "pos": "v.",
+    "m": "v. 기부하다"
+  },
+  {
+    "w": "doom",
+    "p": "[duːm]",
+    "pos": "n.",
+    "m": "n. 운명 v. 운명 짓다"
+  },
+  {
+    "w": "doomsday",
+    "p": "[dúːmzdèi]",
+    "pos": "n.",
+    "m": "n. 지구 최후의 날"
+  },
+  {
+    "w": "dormant",
+    "p": "[dɔ́ːrmǝnt]",
+    "pos": "a.",
+    "m": "a. 자고 있는, 활발하지 못한(idle, inactive, latent, lethargic)"
+  },
+  {
+    "w": "dorsal",
+    "p": "[dɔ́ːrsəl]",
+    "pos": "a.",
+    "m": "a. 등의, 지느러미의"
+  },
+  {
+    "w": "dossier",
+    "p": "[dάsièi]",
+    "pos": "n.",
+    "m": "n. 사건기록(file, folder, portfolio, record)"
+  },
+  {
+    "w": "dotage",
+    "p": "[dóutidʒ]",
+    "pos": "n.",
+    "m": "n. 노망(senility); 맹목적인 애정"
+  },
+  {
+    "w": "doughty",
+    "p": "[dáuti]",
+    "pos": "a.",
+    "m": "a. 용감한(dauntless, fearless, intrepid, unafraid, undaunted)"
   }
 ];
 
