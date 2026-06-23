@@ -1222,7 +1222,7 @@ async function handleLogin() {
   await cloudPullScores();
   // Cancel any pending debounced sync to avoid double writes
   if (_cloudSyncTimer) { clearTimeout(_cloudSyncTimer); _cloudSyncTimer = null; }
-  cloudSyncAll();
+  await cloudSyncAll();
   pushAllScoresToSupabase();
 }
 
@@ -1605,17 +1605,25 @@ async function cloudSyncAll() {
   const logicDone = JSON.stringify([...getLogicCompleted()]);
   const logicWrong = JSON.stringify([...getLogicWrong()]);
   const grammarData = JSON.stringify((readGrammarProgress()||{})[nk]||{correct:[],wrong:[]});
+  const synonymResult = JSON.stringify((readSynonymResult()||{})[nk]||{correct:[],wrong:[]});
+  const wordcheckResult = JSON.stringify((readWordcheckResult()||{})[nk]||{correct:[],wrong:[]});
+  const logicScore = JSON.stringify((readLogicScore()||{})[nk]||{score:0,questions:0});
+  const irtAbility = JSON.stringify(readIrtAbility());
 
   const payload = JSON.stringify({
     pw,
     displayName: state.playerName,
     word_knowledge: wordKnowledge,
     synonym_progress: synProgress,
+    synonym_result: synonymResult,
     wordcheck_progress: wcProg,
+    wordcheck_result: wordcheckResult,
     quiz_progress: quizProg,
     logic_completed: logicDone,
     logic_wrong: logicWrong,
+    logic_score: logicScore,
     grammar_progress: grammarData,
+    irt_ability: irtAbility,
     updated_at: new Date().toISOString()
   });
 
@@ -1684,6 +1692,24 @@ function cloudPullUserData(payload, nickname) {
       const gp = readGrammarProgress();
       gp[nk] = JSON.parse(obj.grammar_progress);
       try { localStorage.setItem(grammarProgressKey, JSON.stringify(gp)); } catch {}
+    }
+    if (obj.synonym_result) {
+      const sr = readSynonymResult();
+      sr[nk] = JSON.parse(obj.synonym_result);
+      try { localStorage.setItem(synonymResultKey, JSON.stringify(sr)); } catch {}
+    }
+    if (obj.wordcheck_result) {
+      const wr = readWordcheckResult();
+      wr[nk] = JSON.parse(obj.wordcheck_result);
+      try { localStorage.setItem(wordcheckResultKey, JSON.stringify(wr)); } catch {}
+    }
+    if (obj.logic_score) {
+      const ls = readLogicScore();
+      ls[nk] = JSON.parse(obj.logic_score);
+      try { localStorage.setItem(logicScoreKey, JSON.stringify(ls)); } catch {}
+    }
+    if (obj.irt_ability) {
+      try { localStorage.setItem(irtAbilityKey, String(JSON.parse(obj.irt_ability))); } catch {}
     }
     state.playerName = prevName;
   } catch(e) { console.warn('cloudPullUserData failed', e); }
@@ -2597,7 +2623,7 @@ function persistLogicRanking() {
   if (ws.questions === 0) return;
   // Scale weighted score to a display-friendly range (~0-100 for readability)
   // Raw weighted score per question: ~0.01 to ~1.5.  Scale up ×40 → 0.4 to 60 range.
-  const displayScore = Math.round(ws.score * 40 * 100) / 100;
+  const displayScore = Math.max(0, Math.round(ws.score * 40 * 100) / 100);
   const accuracy = Math.round((getLogicCompleted().size / (getLogicCompleted().size + getLogicWrong().size || 1)) * 100);
 
   // Local: replace any prior logic entries with a single cumulative weighted one
@@ -2841,6 +2867,14 @@ function updateNoExplainIndicator() {
   if (!el) return;
   el.textContent = noExplainMode ? '⚡ 해설ON' : '⚡ 해설OFF';
   el.classList.toggle('on', noExplainMode);
+}
+
+function syncNoExplainButtons() {
+  const label = noExplainMode ? '⚡ 해설ON' : '⚡ 해설OFF';
+  document.querySelectorAll('.quiz-noexplain-btn').forEach(b => {
+    b.textContent = label;
+    b.classList.toggle('on', noExplainMode);
+  });
 }
 
 function syncNoExplainButtons() {
@@ -3362,11 +3396,17 @@ function ensureSynonymSeed(k) {
   if (r[k]) return r;
   const prog = (readSynonymProgress() || {})[k] || {};
   const correct = [];
+  const wrong = [];
   for (const cat in prog) {
     if (cat === 'wrong') continue;
     (prog[cat] || []).forEach((w) => correct.push(cat + '|' + w));
   }
-  r[k] = { correct, wrong: [] };
+  // Also seed wrong entries from progress (saved per-category under .wrong)
+  const wrongByCat = prog.wrong || {};
+  for (const cat in wrongByCat) {
+    (wrongByCat[cat] || []).forEach((w) => wrong.push(cat + '|' + w));
+  }
+  r[k] = { correct, wrong };
   try { localStorage.setItem(synonymResultKey, JSON.stringify(r)); } catch {}
   return r;
 }
