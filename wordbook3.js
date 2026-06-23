@@ -2700,6 +2700,876 @@ window.__V502_WORDBOOK3__ = [
     "p": "blæntʃ",
     "pos": "v.",
     "m": "표백하다(whiten); 하얗게 질리다(turn pale)"
+  },
+  {
+    "w": "bland",
+    "p": "[blænd]",
+    "pos": "a.",
+    "m": "a. 부드러운, 온화한(mild); 재미없는(dull)"
+  },
+  {
+    "w": "blasé",
+    "p": "[blɑːˈzeɪ]",
+    "pos": "a.",
+    "m": "a. 이미 여러 번 겪은 일이라서)심드렁한"
+  },
+  {
+    "w": "blaspheme",
+    "p": "[blæsfíːm]",
+    "pos": "v.",
+    "m": "v. 불경스러운 말을 하다, 모독하다(desecrate, profane)"
+  },
+  {
+    "w": "blasphemous",
+    "p": "[blǽsfǝmǝs]",
+    "pos": "a.",
+    "m": "a. 불경스러운(impious, irreverent, profane, sacrilegious)"
+  },
+  {
+    "w": "blather",
+    "p": "[blǽðǝr]",
+    "pos": "v.",
+    "m": "v. 계속 지껄이다(talk nonsensically)"
+  },
+  {
+    "w": "blazon",
+    "p": "[bléizən]",
+    "pos": "n.",
+    "m": "n. 문장 v. 새기다(그리다)(emblazon)"
+  },
+  {
+    "w": "bleak",
+    "p": "[bliːk]",
+    "pos": "a.",
+    "m": "a. 황량한(dismal, dreary, gloomy, grim); 냉혹한, 모진(barren, desolate, lonely)"
+  },
+  {
+    "w": "blemish",
+    "p": "[blémiʃ]",
+    "pos": "n.",
+    "m": "n. 흠, 결점(defect) v. 흠을 내다(deface, disfigure, mar)"
+  },
+  {
+    "w": "blight",
+    "p": "[blait]",
+    "pos": "v.",
+    "m": "v. (식물)마르게 하다, 시들게 하다(ruin); 손상시키다"
+  },
+  {
+    "w": "blissful",
+    "p": "[blísfǝl]",
+    "pos": "a.",
+    "m": "a. 더 없이 행복한(beatific, ecstatic, jubilant)"
+  },
+  {
+    "w": "blitzkrieg",
+    "p": "[blítskrìːg]",
+    "pos": "n.",
+    "m": "n. 전격전(a sudden surprise military attack)"
+  },
+  {
+    "w": "bloat",
+    "p": "[blout]",
+    "pos": "v.",
+    "m": "v. 부풀다(swell, distend, inflate); 자부하다"
+  },
+  {
+    "w": "bloodshed",
+    "p": "[blʌdʃed]",
+    "pos": "n.",
+    "m": "n. 유혈참사, 학살(butchery, carnage, massacre, pogrom)"
+  },
+  {
+    "w": "bludgeon",
+    "p": "[blʌ́dʒən]",
+    "pos": "n.",
+    "m": "n. 곤봉(a thick club) v. 위협하다(bully)"
+  },
+  {
+    "w": "blunt",
+    "p": "[blʌnt]",
+    "pos": "a.",
+    "m": "a. 무뚝뚝한, 퉁명스러운(brusque); 둔감한"
+  },
+  {
+    "w": "blur",
+    "p": "[blǝːr]",
+    "pos": "n.",
+    "m": "n. 더러움; 불명예 v. 더럽히다(blot, blotch, smear); 흐려지게 하다(dim, obfuscate)"
+  },
+  {
+    "w": "blurt",
+    "p": "[blǝːrt]",
+    "pos": "v.",
+    "m": "v. -를 불쑥 말하다(out)(ejaculate, exclaim, shout, spout)"
+  },
+  {
+    "w": "bluster",
+    "p": "[blʌ́stǝr]",
+    "pos": "v.",
+    "m": "v. 고함치며 말하다; (물결)거세게 몰아치다"
+  },
+  {
+    "w": "blusterous",
+    "p": "[blʌ́stǝrǝs]",
+    "pos": "a.",
+    "m": "a. 시끄러운, 고함치는"
+  },
+  {
+    "w": "bode",
+    "p": "[boud]",
+    "pos": "v.",
+    "m": "v. 전조가 되다, 조짐이 보이다(foreshadow, portend)"
+  },
+  {
+    "w": "bog",
+    "p": "[bɔ(ː)g]",
+    "pos": "v.",
+    "m": "v. 교착 상태에 빠지다(down)(fen, marsh, quagmire, slough)"
+  },
+  {
+    "w": "bogus",
+    "p": "[bóugǝs]",
+    "pos": "a.",
+    "m": "a. 위조의, 가짜의(bogus, forged, fraudulent, sham)"
+  },
+  {
+    "w": "boisterous",
+    "p": "[bɔ́istərǝs]",
+    "pos": "a.",
+    "m": "a. 소란스러운(clamorous, obstreperous, vociferous)"
+  },
+  {
+    "w": "bolster",
+    "p": "[bóulstǝr]",
+    "pos": "v.",
+    "m": "v. 떠받치다, 지지하다(brace, prop up, support, truss)"
+  },
+  {
+    "w": "bombard",
+    "p": "[bɑmbάːrd]",
+    "pos": "v.",
+    "m": "v. 폭격하다; (질문)퍼붓다(assail, assault, barrage)"
+  },
+  {
+    "w": "bombastic",
+    "p": "[bɑmbǽstik]",
+    "pos": "a.",
+    "m": "a. 과장된(flamboyant, grandiloquent, pompous, pretentious)"
+  },
+  {
+    "w": "bombshell",
+    "p": "",
+    "pos": "n.",
+    "m": "n. 폭탄; 매력적인 미인"
+  },
+  {
+    "w": "bona fide",
+    "p": "",
+    "pos": "a.",
+    "m": "a. 진실한, 성의 있는"
+  },
+  {
+    "w": "bonanza",
+    "p": "[bounǽnzǝ]",
+    "pos": "n.",
+    "m": "n. 뜻밖의 대성공"
+  },
+  {
+    "w": "bondage",
+    "p": "[bɔ́ndidʒ]",
+    "pos": "n.",
+    "m": "n. 행동의 속박; 노예 신분(serfdom, servitude, slavery)"
+  },
+  {
+    "w": "boon",
+    "p": "[buːn]",
+    "pos": "n.",
+    "m": "n. 은혜(benediction, grace); 이익, 혜택(advantage, benefit)"
+  },
+  {
+    "w": "boorish",
+    "p": "[búəriʃ]",
+    "pos": "a.",
+    "m": "a. 촌스러운(coarse, crude, gauche, ill-bred, rustic, uncouth)"
+  },
+  {
+    "w": "bootleg",
+    "p": "[buːtleɡ]",
+    "pos": "v.",
+    "m": "v. (술)밀수입하다(sneak) a. 불법의, 밀매된"
+  },
+  {
+    "w": "booty",
+    "p": "[búːti]",
+    "pos": "n.",
+    "m": "n. 노획물, 약탈품(loot, plunder, prizes, spoils)"
+  },
+  {
+    "w": "botany",
+    "p": "[bάtǝni]",
+    "pos": "n.",
+    "m": "n. 식물학"
+  },
+  {
+    "w": "botch",
+    "p": "[bɑtʃ]",
+    "pos": "v.",
+    "m": "v. -를 망치다(blunder, bungle, foul up), 서투르게 하다"
+  },
+  {
+    "w": "bounteous",
+    "p": "[báuntiǝs]",
+    "pos": "a.",
+    "m": "a. 관대한; 풍부한(abundant, bountiful, copious, plentiful)"
+  },
+  {
+    "w": "bout",
+    "p": "[baut]",
+    "pos": "n.",
+    "m": "n. 한 판 승부; 일시적인 기간"
+  },
+  {
+    "w": "bovine",
+    "p": "[bóuvain]",
+    "pos": "a.",
+    "m": "a. 소의, 소 같은(cow-like); 둔한"
+  },
+  {
+    "w": "bowdlerize",
+    "p": "[bóudlǝràiz]",
+    "pos": "v.",
+    "m": "v. (부적절한 부분)삭제하다(expurgate)"
+  },
+  {
+    "w": "brace",
+    "p": "[breis]",
+    "pos": "n.",
+    "m": "n. 버팀목(prop, strut) v. 대비하다; 떠받치다(buttress, fortify)"
+  },
+  {
+    "w": "brackish",
+    "p": "[brǽkiʃ]",
+    "pos": "a.",
+    "m": "a. 소금기 있는, 짭짤한(saline, salty)"
+  },
+  {
+    "w": "braggadocio",
+    "p": "[bræ̀gǝdóuʃiòu]",
+    "pos": "n.",
+    "m": "n. 허풍(boasting)"
+  },
+  {
+    "w": "braggart",
+    "p": "[brǽgǝrt]",
+    "pos": "n.",
+    "m": "n. 허풍쟁이(boaster)"
+  },
+  {
+    "w": "brainchild",
+    "p": "[breɪntʃaɪld]",
+    "pos": "n.",
+    "m": "n. 창작물, (독자적)아이디어"
+  },
+  {
+    "w": "brainwash",
+    "p": "",
+    "pos": "v.",
+    "m": "v. 세뇌하다, (강제로)사상을 바꾸게하다"
+  },
+  {
+    "w": "brash",
+    "p": "[bræʃ]",
+    "pos": "a.",
+    "m": "a. 건방진(arrogant); 경솔한(impulsive, rash, reckless)"
+  },
+  {
+    "w": "brass",
+    "p": "[bræs]",
+    "pos": "n.",
+    "m": "n. 놋쇠; 뻔뻔스러움; 고위 장교"
+  },
+  {
+    "w": "bravado",
+    "p": "[brǝvάːdou]",
+    "pos": "n.",
+    "m": "n. 허세, 뽐내는 태도(swaggering)"
+  },
+  {
+    "w": "brawny",
+    "p": "[brɔ́ːni]",
+    "pos": "a.",
+    "m": "a. 늠름한, 억센, 튼튼한(burly, hefty, muscular)"
+  },
+  {
+    "w": "brazen",
+    "p": "[bréizən]",
+    "pos": "a.",
+    "m": "a. 놋쇠로 만든; 뻔뻔스러운(shameless); 시끄러운"
+  },
+  {
+    "w": "breach",
+    "p": "[briːtʃ]",
+    "pos": "n.",
+    "m": "n. 위반, 침해; 분열, 불화(rift); 틈, 구멍"
+  },
+  {
+    "w": "breakdown",
+    "p": "[bréikdàun]",
+    "pos": "n.",
+    "m": "n. 고장, 붕괴(collapse, malfunction); 분석(analysis)"
+  },
+  {
+    "w": "breathtaking",
+    "p": "[breθteɪkɪŋ]",
+    "pos": "a.",
+    "m": "a. 아슬아슬한, 굉장한, 깜짝 놀라게 하는"
+  },
+  {
+    "w": "breed",
+    "p": "[briːd]",
+    "pos": "n.",
+    "m": "n. 종류; 품종 v. 기르다; 발생시키다(cause)"
+  },
+  {
+    "w": "bridle",
+    "p": "[bráidl]",
+    "pos": "v.",
+    "m": "v. (말)고삐를 달다; 구속하다, 속박하다; 화내다(at)"
+  },
+  {
+    "w": "brigand",
+    "p": "[brígǝnd]",
+    "pos": "n.",
+    "m": "n. 산적, 도적(a bandit or robber)"
+  },
+  {
+    "w": "brindled",
+    "p": "[bríndld]",
+    "pos": "a.",
+    "m": "a. 얼룩무늬의(pied, piebald)"
+  },
+  {
+    "w": "brink",
+    "p": "[briŋk]",
+    "pos": "n.",
+    "m": "n. 가장자리, 테두리(edge)"
+  },
+  {
+    "w": "brisk",
+    "p": "[brisk]",
+    "pos": "a.",
+    "m": "a. 활발한, 활기 있는, 민첩한(agile)"
+  },
+  {
+    "w": "bristle",
+    "p": "[brísəl]",
+    "pos": "n.",
+    "m": "n. 뻣뻣한 털 v. (털)곤두세우다; (버럭)화내다"
+  },
+  {
+    "w": "brittle",
+    "p": "[brítl]",
+    "pos": "a.",
+    "m": "a. 부서지기 쉬운; 덧없는(breakable, delicate, fragile, frail)"
+  },
+  {
+    "w": "broach",
+    "p": "[broutʃ]",
+    "pos": "v.",
+    "m": "v. (이야기)끄집어내다, 화제로 삼다(introduce)"
+  },
+  {
+    "w": "brogue",
+    "p": "[broug]",
+    "pos": "n.",
+    "m": "n. 방언, 사투리(accent, regional dialect)"
+  },
+  {
+    "w": "bromide",
+    "p": "[bróumaid]",
+    "pos": "n.",
+    "m": "n. 틀에 박힌 문구, 진부한 표현(cliché)"
+  },
+  {
+    "w": "brook",
+    "p": "[bruk]",
+    "pos": "n.",
+    "m": "n. 개울, 시냇물 v. 견디다(tolerate)"
+  },
+  {
+    "w": "brouhaha",
+    "p": "[bruːhάːhɑː]",
+    "pos": "n.",
+    "m": "n. 무질서한 소동, 법석(uproar, hubbub)"
+  },
+  {
+    "w": "browbeat",
+    "p": "[braʊbiːt]",
+    "pos": "v.",
+    "m": "v. 위협하다(bully, dominate, harass, intimidate, threaten)"
+  },
+  {
+    "w": "bruise",
+    "p": "[bruːz]",
+    "pos": "n.",
+    "m": "n. 타박상(black mark)"
+  },
+  {
+    "w": "brunt",
+    "p": "[brʌnt]",
+    "pos": "n.",
+    "m": "n. (공격)예봉, 주력(force, impact)"
+  },
+  {
+    "w": "brusque",
+    "p": "[brusk]",
+    "pos": "a.",
+    "m": "a. 퉁명스러운(abrupt, blunt, curt, gruff, harsh, short)"
+  },
+  {
+    "w": "brutal",
+    "p": "[brúːtl]",
+    "pos": "a.",
+    "m": "a. 짐승 같은, 잔인한(cruel, harsh, inhuman, ruthless)"
+  },
+  {
+    "w": "bucolic",
+    "p": "[bjuːkάlik]",
+    "pos": "a.",
+    "m": "a. 전원생활의, 목가적인(pastoral)"
+  },
+  {
+    "w": "budge",
+    "p": "[bʌdʒ]",
+    "pos": "v.",
+    "m": "v. 조금 움직이다; 의견을 바꾸다(yield)"
+  },
+  {
+    "w": "buffoon",
+    "p": "[bǝfúːn]",
+    "pos": "n.",
+    "m": "n. 어릿광대, 익살꾼(clown)"
+  },
+  {
+    "w": "buffoonery",
+    "p": "[bǝfúːnǝri]",
+    "pos": "n.",
+    "m": "n. 어릿광대, 익살꾼(clown, comic, jester, joker) v. 익살부리다"
+  },
+  {
+    "w": "bulge",
+    "p": "[bʌldʒ]",
+    "pos": "v.",
+    "m": "v. 부풀다(balloon, bloat, distend, protrude, swell)"
+  },
+  {
+    "w": "bully",
+    "p": "[búli]",
+    "pos": "v.",
+    "m": "v. (약한자)괴롭히다(browbeat, domineer, harass, trample)"
+  },
+  {
+    "w": "bulwark",
+    "p": "[búlwǝrk]",
+    "pos": "n.",
+    "m": "n. 성벽, 방어물, 보루"
+  },
+  {
+    "w": "bumble",
+    "p": "[bʌ́mbəl]",
+    "pos": "n.",
+    "m": "n. 실수 v. 실수하다; 더듬거리며 말하다"
+  },
+  {
+    "w": "bumper",
+    "p": "[bʌ́mpǝr]",
+    "pos": "n.",
+    "m": "n. 흥행, 대성공(hit) a. 풍작의 v. 건배하다"
+  },
+  {
+    "w": "bumptious",
+    "p": "[bʌ́mpʃǝs]",
+    "pos": "a.",
+    "m": "a. 거만한(arrogant, self-assertive)"
+  },
+  {
+    "w": "bungle",
+    "p": "[bʌ́ŋgəl]",
+    "pos": "v.",
+    "m": "v. 실패하다, 실수하다(blunder, botch, mismanage)"
+  },
+  {
+    "w": "buoyant",
+    "p": "[búːjǝnt]",
+    "pos": "a.",
+    "m": "a. 부력이 있는(floating); 쾌활한(bouncy, optimistic)"
+  },
+  {
+    "w": "bureaucracy",
+    "p": "[bjuərάkrǝsi]",
+    "pos": "n.",
+    "m": "n. 관료정치; 번잡한 절차(red-tape)"
+  },
+  {
+    "w": "burgeon",
+    "p": "[bə́ːrdʒən]",
+    "pos": "n.",
+    "m": "n. 싹 v. 싹트다(sprout); 급성장하다(flourish)"
+  },
+  {
+    "w": "burlesque",
+    "p": "[bǝːrlésk]",
+    "pos": "v.",
+    "m": "v. 우습게 하다; 흉내 내다(ape, imitate, lampoon)"
+  },
+  {
+    "w": "burly",
+    "p": "[bə́ːrli]",
+    "pos": "a.",
+    "m": "a. 신체 건장한(brawny, husky, stout, sturdy, thickset)"
+  },
+  {
+    "w": "burnish",
+    "p": "[bə́ːrniʃ]",
+    "pos": "n.",
+    "m": "n. 광택, 윤기 v. 닦다, 광내다(polish, shine)"
+  },
+  {
+    "w": "burrow",
+    "p": "[bə́ːrou]",
+    "pos": "n.",
+    "m": "n. 굴, 피난처 v. (굴)파다(dig, excavate, hollow out); 몰두하다"
+  },
+  {
+    "w": "bust",
+    "p": "[bʌst]",
+    "pos": "n.",
+    "m": "n. 실패, 파산(bankrupt); 상반신 v. 파괴시키다(shatter)"
+  },
+  {
+    "w": "bustle",
+    "p": "[bʌ́sl]",
+    "pos": "n.",
+    "m": "n. 소동, 혼잡 v. 소란 떨다(dash, fly, hurry); 혼잡하다"
+  },
+  {
+    "w": "buxom",
+    "p": "[bʌ́ksǝm]",
+    "pos": "a.",
+    "m": "a. (여자)통통하고 귀여운, 풍만한(plump, voluptuous)"
+  },
+  {
+    "w": "buzzword",
+    "p": "[bʌzwɜːd]",
+    "pos": "n.",
+    "m": "n. 언론에서 많이 사용되는 유행어"
+  },
+  {
+    "w": "byzantine",
+    "p": "[bízǝntìːn]",
+    "pos": "a.",
+    "m": "a. 미로처럼 복잡한; 권모술수적인"
+  },
+  {
+    "w": "cabal",
+    "p": "[kǝbǽl]",
+    "pos": "n.",
+    "m": "n. 음모(intrigue) v. 음모를 꾸미다(plot)"
+  },
+  {
+    "w": "cache",
+    "p": "[kæʃ]",
+    "pos": "n.",
+    "m": "n. 은닉물(accumulation) v. 숨기다(hide, stash, hoard)"
+  },
+  {
+    "w": "cadaver",
+    "p": "[kǝdǽvǝr]",
+    "pos": "n.",
+    "m": "n. 시체(body, carcass, corpse, remains)"
+  },
+  {
+    "w": "cadence",
+    "p": "[kéidəns]",
+    "pos": "n.",
+    "m": "n. 소리의 높고 낮음; 운율(beat, count, measure, pattern)"
+  },
+  {
+    "w": "cadre",
+    "p": "[kǽdri]",
+    "pos": "n.",
+    "m": "n. 간부; 줄거리; 뼈대(framework)"
+  },
+  {
+    "w": "cajole",
+    "p": "[kǝdʒóul]",
+    "pos": "v.",
+    "m": "v. 감언으로 속이다(coax, wheedle)"
+  },
+  {
+    "w": "calamity",
+    "p": "[kǝlǽmǝti]",
+    "pos": "n.",
+    "m": "n. 재난, 참사(cataclysm, catastrophe, disaster, misfortune)"
+  },
+  {
+    "w": "caliber",
+    "p": "[kǽlǝbǝr]",
+    "pos": "n.",
+    "m": "n. 직경(diameter); 능력, 재능(ability, capacity)"
+  },
+  {
+    "w": "calibrate",
+    "p": "[kǽlǝbrèit]",
+    "pos": "v.",
+    "m": "v. -에 맞추다, -로 조정하다(correct, regulate, tune)"
+  },
+  {
+    "w": "calligraphy",
+    "p": "[kǝlígrǝfi]",
+    "pos": "n.",
+    "m": "n. 달필(beautiful writing), 서예 opp. cacography: 악필"
+  },
+  {
+    "w": "callous",
+    "p": "[kǽlǝs]",
+    "pos": "a.",
+    "m": "a. 굳은 살 박힌; 무정한, 냉담한(cold-hearted, heartless, insensitive, obdurate)"
+  },
+  {
+    "w": "calorific",
+    "p": "[kæ̀lǝrífik]",
+    "pos": "a.",
+    "m": "a. 열을 발생하는(heat-producing)"
+  },
+  {
+    "w": "calumniate",
+    "p": "[kǝlʌ́mnièit]",
+    "pos": "v.",
+    "m": "v. 비방하다, 중상하다(besmirch, defame, malign, sully)"
+  },
+  {
+    "w": "calumny",
+    "p": "[kǽlǝmni]",
+    "pos": "n.",
+    "m": "n. 중상, 비방(calumny, defamation, libel, misrepresentation)"
+  },
+  {
+    "w": "camaraderie",
+    "p": "[kæ̀mərǽdǝri]",
+    "pos": "n.",
+    "m": "n. 우정(companionship, comradeship, esprit de corps)"
+  },
+  {
+    "w": "camouflage",
+    "p": "[kǽmuflὰːʒ]",
+    "pos": "v.",
+    "m": "v. 위장하다, 속이다(conceal, cover up, disguise, hide)"
+  },
+  {
+    "w": "canalize",
+    "p": "[kǝnǽlaiz]",
+    "pos": "v.",
+    "m": "v. 수로를 파다; 어떤 방향으로 이끌다"
+  },
+  {
+    "w": "canard",
+    "p": "[kǝnάːrd]",
+    "pos": "n.",
+    "m": "n. 허위보도(unfounded rumor) v. 뜬소문이 퍼지다"
+  },
+  {
+    "w": "canine",
+    "p": "[kéinain]",
+    "pos": "a.",
+    "m": "a. 개와 같은; 개과의 짐승의"
+  },
+  {
+    "w": "canker",
+    "p": "[kǽŋkǝr]",
+    "pos": "n.",
+    "m": "n. 구강궤양; 해로운 것(ulcerous sore, any evil)"
+  },
+  {
+    "w": "cannibal",
+    "p": "[kǽnǝbəl]",
+    "pos": "n.",
+    "m": "n. 서로 잡아먹는 동물 종, 식인종 a. 서로 잡아먹는"
+  },
+  {
+    "w": "canny",
+    "p": "[kǽni]",
+    "pos": "a.",
+    "m": "a. 영리한, 약삭빠른; 신중한, 빈틈없는(shrewd)"
+  },
+  {
+    "w": "canon",
+    "p": "[kǽnǝn]",
+    "pos": "n.",
+    "m": "n. 교회법; 법규, 규범(doctrine, dogma, law, scripture, code)"
+  },
+  {
+    "w": "cant",
+    "p": "[kænt]",
+    "pos": "n.",
+    "m": "n. 위선적인 말투; 경사 v. 기울이다"
+  },
+  {
+    "w": "cantankerous",
+    "p": "",
+    "pos": "a.",
+    "m": "a. 심술궂은, 성미 고약한(crabby, grouchy, petulant)"
+  },
+  {
+    "w": "canter",
+    "p": "[kǽntǝr]",
+    "pos": "v.",
+    "m": "v. 천천히 달리다"
+  },
+  {
+    "w": "canvass",
+    "p": "[kǽnvǝs]",
+    "pos": "v.",
+    "m": "v. 선거유세하다(campaign); 조사하다(investigate, scrutinize)"
+  },
+  {
+    "w": "capacious",
+    "p": "[kǝpéiʃǝs]",
+    "pos": "a.",
+    "m": "a. 넓은, 널찍한(immense, massive, roomy, spacious, vast)"
+  },
+  {
+    "w": "capitulate",
+    "p": "[kǝpítʃǝlèit]",
+    "pos": "v.",
+    "m": "v. 조건부로 항복하다(acquiesce, relent, succumb, surrender)"
+  },
+  {
+    "w": "caprice",
+    "p": "[kǝpríːs]",
+    "pos": "n.",
+    "m": "n. 변덕(eccentricity, fancy, impulse, vagary, whim)"
+  },
+  {
+    "w": "capricious",
+    "p": "[kǝpríʃǝs]",
+    "pos": "a.",
+    "m": "a. 변덕스러운(eccentric, erratic, fickle)"
+  },
+  {
+    "w": "capsize",
+    "p": "[kǽpsaiz]",
+    "pos": "v.",
+    "m": "v. 뒤집히다; 전복시키다(invert, keel, overturn, tip over)"
+  },
+  {
+    "w": "caption",
+    "p": "[kǽpʃən]",
+    "pos": "n.",
+    "m": "n. 표제, 제목(title); 설명문(legend); 영화자막(subtitle)"
+  },
+  {
+    "w": "captious",
+    "p": "[kǽpʃǝs]",
+    "pos": "a.",
+    "m": "a. 트집을 잡는(carping, faultfinding); 억지를 쓰는"
+  },
+  {
+    "w": "captive",
+    "p": "[kǽptiv]",
+    "pos": "n.",
+    "m": "n. 포로, 죄수(hostage, prisoner, slave)"
+  },
+  {
+    "w": "capture",
+    "p": "[kǽptʃǝr]",
+    "pos": "v.",
+    "m": "v. 사로잡다(catch), 체포하다(arrest, collar, secure)"
+  },
+  {
+    "w": "carceral",
+    "p": "[kάːrsərəl]",
+    "pos": "a.",
+    "m": "a. 감금의"
+  },
+  {
+    "w": "carcinogenic",
+    "p": "",
+    "pos": "a.",
+    "m": "a. 암을 유발하는(causing cancer)"
+  },
+  {
+    "w": "careen",
+    "p": "[kǝríːn]",
+    "pos": "v.",
+    "m": "v. (차·배)한쪽으로 기울다(lurch, stagger, sway, weave, lean)"
+  },
+  {
+    "w": "carefree",
+    "p": "[keəfriː]",
+    "pos": "a.",
+    "m": "a. 걱정 없는; 느긋한(breezy, lighthearted, optimistic, relaxed)"
+  },
+  {
+    "w": "carnage",
+    "p": "[kάːrnidʒ]",
+    "pos": "n.",
+    "m": "n. 살육, 대량학살(bloodshed, butchery, killing)"
+  },
+  {
+    "w": "carnal",
+    "p": "[kάːrnl]",
+    "pos": "a.",
+    "m": "a. 육체의(bodily), 세속적인(worldly); 육욕의(lustful, sensual)"
+  },
+  {
+    "w": "carnivore",
+    "p": "[kάːrnǝvɔ̀ːr]",
+    "pos": "n.",
+    "m": "n. 육식성동물"
+  },
+  {
+    "w": "carnivorous",
+    "p": "[kɑːrnívərǝs]",
+    "pos": "a.",
+    "m": "a. 육식성의"
+  },
+  {
+    "w": "carousal",
+    "p": "[kǝráuzəl]",
+    "pos": "n.",
+    "m": "n. 술잔치(debauch, live it up, party, revel)"
+  },
+  {
+    "w": "carp",
+    "p": "[kɑːrp]",
+    "pos": "n.",
+    "m": "n. 불평 v. 흠 잡다, 시끄럽게 잔소리하다"
+  },
+  {
+    "w": "carping",
+    "p": "",
+    "pos": "a.",
+    "m": "a. 잔소리하는"
+  },
+  {
+    "w": "carte blanche",
+    "p": "",
+    "pos": "n.",
+    "m": "n. (무한한 권한·자유)백지위임"
+  },
+  {
+    "w": "cartograph",
+    "p": "[kɑːrtάgrǝfǝr]",
+    "pos": "n.",
+    "m": "n. 삽화가 있는 지도(map)"
+  },
+  {
+    "w": "cascade",
+    "p": "[kæskéid]",
+    "pos": "n.",
+    "m": "n. 작은 폭포(cataract, fall, rapids, waterfall)"
   }
 ];
 
