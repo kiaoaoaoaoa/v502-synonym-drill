@@ -1609,6 +1609,7 @@ async function cloudSyncAll() {
   const wordcheckResult = JSON.stringify((readWordcheckResult()||{})[nk]||{correct:[],wrong:[]});
   const logicScore = JSON.stringify((readLogicScore()||{})[nk]||{score:0,questions:0});
   const irtAbility = JSON.stringify(readIrtAbility());
+  const examData = JSON.stringify((readExamProgress()||{})[nk]||{});
 
   const payload = JSON.stringify({
     pw,
@@ -1623,6 +1624,7 @@ async function cloudSyncAll() {
     logic_wrong: logicWrong,
     logic_score: logicScore,
     grammar_progress: grammarData,
+    exam_progress: examData,
     irt_ability: irtAbility,
     updated_at: new Date().toISOString()
   });
@@ -1692,6 +1694,11 @@ function cloudPullUserData(payload, nickname) {
       const gp = readGrammarProgress();
       gp[nk] = JSON.parse(obj.grammar_progress);
       try { localStorage.setItem(grammarProgressKey, JSON.stringify(gp)); } catch {}
+    }
+    if (obj.exam_progress) {
+      const ep = readExamProgress();
+      ep[nk] = JSON.parse(obj.exam_progress);
+      try { localStorage.setItem(examProgressKey, JSON.stringify(ep)); } catch {}
     }
     if (obj.synonym_result) {
       const sr = readSynonymResult();
@@ -2569,6 +2576,38 @@ function getGrammarWrong() {
   const p = readGrammarProgress();
   const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
   return new Set((p[key] && p[key].wrong) || []);
+}
+
+/* Exam progress persistence */
+const examProgressKey = "v502-exam-progress";
+function readExamProgress() {
+  try { return JSON.parse(localStorage.getItem(examProgressKey)) || {}; }
+  catch { return {}; }
+}
+function saveExamCorrect(tab, idx) {
+  const p = readExamProgress();
+  const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
+  if (!p[key]) p[key] = {};
+  if (!p[key][tab]) p[key][tab] = { correct: [], wrong: [] };
+  if (!p[key][tab].correct.includes(idx)) p[key][tab].correct.push(idx);
+  p[key][tab].wrong = (p[key][tab].wrong || []).filter(function(id) { return id !== idx; });
+  try { localStorage.setItem(examProgressKey, JSON.stringify(p)); } catch {}
+  scheduleCloudSync();
+}
+function saveExamWrong(tab, idx) {
+  const p = readExamProgress();
+  const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
+  if (!p[key]) p[key] = {};
+  if (!p[key][tab]) p[key][tab] = { correct: [], wrong: [] };
+  if (!p[key][tab].wrong.includes(idx) && !p[key][tab].correct.includes(idx)) p[key][tab].wrong.push(idx);
+  try { localStorage.setItem(examProgressKey, JSON.stringify(p)); } catch {}
+  scheduleCloudSync();
+}
+function getExamProgress(tab) {
+  const p = readExamProgress();
+  const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
+  const entry = (p[key] && p[key][tab]) || { correct: [], wrong: [] };
+  return { correct: new Set(entry.correct), wrong: new Set(entry.wrong) };
 }
 
 /* Weighted scoring using the 7-factor regression seed */
@@ -3744,9 +3783,17 @@ function renderExamTab() {
   html += '</div>';
 
   var questions = EXAM_REGISTRY[examTab] ? EXAM_REGISTRY[examTab].data() : [];
+  var prog = getExamProgress(examTab);
+  var doneCount = prog.correct.size + prog.wrong.size;
+  if (doneCount > 0) {
+    html += `<div style="margin-bottom:12px;font-size:12px;color:var(--muted)">📋 진행상황: ✅ ${prog.correct.size} / ❌ ${prog.wrong.size} / ⬜ ${questions.length - doneCount} 문제 남음</div>`;
+  }
   questions.forEach((q, i) => {
-    html += `<div style="margin-bottom:16px;padding:16px;border-radius:2px;border:1px solid var(--line)" id="examQ${i}">`;
-    html += `<p style="font-weight:700;margin:0 0 8px;color:var(--accent)">${i+1}.</p>`;
+    var isCorrect = prog.correct.has(i);
+    var isWrong = prog.wrong.has(i);
+    var isDone = isCorrect || isWrong;
+    html += `<div style="margin-bottom:16px;padding:16px;border-radius:2px;border:1px solid var(--line);${isCorrect?'background:#f1f8e9':isWrong?'background:#fff3f0':''}" id="examQ${i}">`;
+    html += `<p style="font-weight:700;margin:0 0 8px;color:var(--accent)">${i+1}.` + (isCorrect ? ' ✅' : isWrong ? ' ❌' : '') + `</p>`;
     if (q.p && q.p.length > 30) {
       var pHtml = escapeHtml(q.p).replace(/「([^」]+)」/g, '<u>$1</u>');
       html += `<div style="margin:0 0 12px;padding:10px 14px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;font-size:14px;line-height:1.7">${pHtml}</div>`;
@@ -3762,11 +3809,33 @@ function renderExamTab() {
     if (q.c && q.c.length > 0) {
       html += '<div style="display:grid;gap:4px">';
       q.c.forEach(([letter, text]) => {
-        html += `<button onclick="checkExamAnswer('${examTab}',${i},'${escapeHtml(letter)}',this)" style="font-size:14px;padding:4px 8px;background:transparent;border:1px solid var(--line);border-radius:2px;text-align:left;cursor:pointer;font:inherit">(${escapeHtml(letter)}) ${escapeHtml(text)}</button>`;
+        var btnStyle = 'font-size:14px;padding:4px 8px;border:1px solid var(--line);border-radius:2px;text-align:left;font:inherit;';
+        if (isDone) {
+          btnStyle += 'cursor:default;';
+          if (letter === q.a) btnStyle += 'background:#e8f5e9;';
+          else if (isWrong && !prog.correct.has(i)) btnStyle += '';
+          else btnStyle += 'background:transparent;';
+        } else {
+          btnStyle += 'cursor:pointer;background:transparent;';
+        }
+        html += `<button onclick="checkExamAnswer('${examTab}',${i},'${escapeHtml(letter)}',this)" style="${btnStyle}"${isDone?' disabled':''}>(${escapeHtml(letter)}) ${escapeHtml(text)}</button>`;
       });
       html += '</div>';
     }
-    html += `<div id="examFeedback${i}" style="margin-top:6px;font-size:13px;min-height:20px"></div>`;
+    var fbHtml = '';
+    if (isDone && q.a) {
+      if (isCorrect) {
+        fbHtml = '<span style="color:#2e7d32;font-weight:700">✅ 정답! (' + q.a + ')</span>';
+      } else {
+        fbHtml = '<span style="color:#c62828;font-weight:700">❌ 오답 — 정답은 (' + q.a + ')</span>';
+      }
+      if (q.k) {
+        fbHtml += '<div style="margin-top:8px;padding:10px 12px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;line-height:1.7">' + q.k + '</div>';
+      } else if (q.explanation) {
+        fbHtml += '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation) + '</div>';
+      }
+    }
+    html += `<div id="examFeedback${i}" style="margin-top:6px;font-size:13px;min-height:20px">${fbHtml}</div>`;
     html += '</div>';
   });
   html += '</div>';
@@ -3778,6 +3847,9 @@ function checkExamAnswer(tab, idx, letter, btn) {
   if (!q || !q.a) return;
 
   var correct = letter === q.a;
+  if (correct) saveExamCorrect(tab, idx);
+  else saveExamWrong(tab, idx);
+
   var fb = document.getElementById('examFeedback' + idx);
   if (fb) {
     var head = correct
