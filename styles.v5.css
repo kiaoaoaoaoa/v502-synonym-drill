@@ -671,6 +671,110 @@ h2 {
   font-style: italic;
 }
 
+/* ── Wordbook 3 (2-column grid) ── */
+.wb3-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.wb3-card {
+  background: #fff;
+  border: 1px solid #eef1f5;
+  border-radius: 6px;
+  padding: 8px 10px;
+  break-inside: avoid;
+}
+.wb3-word-row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 2px;
+}
+.wb3-word {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 13px;
+  white-space: nowrap;
+}
+.wb3-pron {
+  color: var(--muted);
+  font-size: 11px;
+}
+.wb3-body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px;
+}
+.wb3-pos {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 1px 5px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.wb3-meaning {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.wb3-header {
+  margin-bottom: 10px;
+}
+.wb3-header h4 {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+@media (max-width: 840px) {
+  .wb3-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+  .wb3-card {
+    padding: 6px 8px;
+  }
+  .wb3-word {
+    font-size: 12px;
+  }
+  .wb3-pron {
+    font-size: 10px;
+  }
+  .wb3-meaning {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wb3-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+  .wb3-card {
+    padding: 5px 6px;
+    border-radius: 4px;
+  }
+  .wb3-word {
+    font-size: 11px;
+  }
+  .wb3-pron {
+    font-size: 9px;
+  }
+  .wb3-pos {
+    font-size: 9px;
+    padding: 0 4px;
+  }
+  .wb3-meaning {
+    font-size: 10px;
+    line-height: 1.4;
+  }
+}
+
 @media (max-width: 840px) {
   .wordlist-scroll {
     padding-right: 4px;

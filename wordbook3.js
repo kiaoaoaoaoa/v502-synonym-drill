@@ -2720,26 +2720,32 @@ window.__V502_WORDBOOK3__ = [
 
     panel.hidden = false;
 
-    var html = '<div class="wordlist-scroll"><div class="wordlist-cat">';
+    var html = '<div class="wordlist-scroll">';
+    html += '<div class="wb3-header">';
     html += '<h4><span class="wl-cat-num">단어장3</span> Vocabulary Book 3 — ' + data.length + ' words</h4>';
-    html += '<div class="wordlist2-entries">';
+    html += '</div>';
+    html += '<div class="wb3-grid">';
 
     data.forEach(function(item, idx) {
       var w = item.w || '';
       var p = item.p || '';
       var pos = item.pos || '';
       var m = item.m || '';
-      html += '<div class="wl2-entry">';
-      html += '<span class="wl2-word">';
-      html += '<strong>' + escapeHtml(w) + '</strong>';
-      if (p) html += ' <span style="color:var(--muted);font-size:0.85em">[' + escapeHtml(p) + ']</span>';
-      html += '</span>';
-      if (pos) html += '<span class="wl2-meaning" style="color:var(--accent);font-size:0.85em">' + escapeHtml(pos) + '</span>';
-      if (m) html += '<span class="wl2-meaning">' + escapeHtml(m) + '</span>';
+      html += '<div class="wb3-card">';
+      html += '<div class="wb3-word-row">';
+      html += '<span class="wb3-word">' + escapeHtml(w) + '</span>';
+      if (p) html += ' <span class="wb3-pron">[' + escapeHtml(p) + ']</span>';
+      html += '</div>';
+      if (pos || m) {
+        html += '<div class="wb3-body">';
+        if (pos) html += '<span class="wb3-pos">' + escapeHtml(pos) + '</span>';
+        if (m) html += '<span class="wb3-meaning">' + escapeHtml(m) + '</span>';
+        html += '</div>';
+      }
       html += '</div>';
     });
 
-    html += '</div></div></div>';
+    html += '</div></div>';
     content.innerHTML = html;
   }
 
