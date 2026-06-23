@@ -3648,10 +3648,11 @@ function renderGrammarQuestion() {
       html += `<button onclick="submitGrammarAnswer('${escapeHtml(letter)}')" style="min-height:40px;padding:8px 14px;border:1px solid var(--line);border-radius:2px;background:var(--panel);text-align:left;font:inherit;font-size:14px;cursor:pointer">(${escapeHtml(letter)}) ${escapeHtml(text)}</button>`;
     });
     html += '</div>';
+    // After answering, auto-advance so no need for a separate "next" button
+  } else {
+    // No-choice informational item — just a next button
+    html += `<button onclick="grammarState.index++; if(grammarState.index>=grammarState.total)finishGrammarQuiz();else renderGrammarQuestion();" style="min-height:36px;padding:0 16px;border:1px solid var(--line);border-radius:2px;background:var(--panel);cursor:pointer;font:inherit">다음 ▸</button>`;
   }
-
-  // For no-choice questions, add navigation
-  html += `<button onclick="grammarState.index++; if(grammarState.index>=grammarState.total)finishGrammarQuiz();else renderGrammarQuestion();" style="min-height:36px;padding:0 16px;border:1px solid var(--line);border-radius:2px;background:var(--panel);cursor:pointer;font:inherit">다음 ▸</button>`;
   html += '</div>';
   els.grammar201Content.innerHTML = html;
 }
@@ -3666,12 +3667,28 @@ function submitGrammarAnswer(letter) {
   } else {
     saveGrammarWrong(q.i);
   }
-  grammarState.index++;
-  if (grammarState.index >= grammarState.total) {
-    finishGrammarQuiz();
-  } else {
-    renderGrammarQuestion();
-  }
+  // Show feedback in-place, then let user advance
+  let html = `<div style="max-width:700px">`;
+  html += `<p style="font-size:12px;color:var(--muted);margin:0 0 8px">${grammarState.index + 1} / ${items.length} | ✅ ${grammarState.correct} | ❌ ${grammarState.index - grammarState.correct}</p>`;
+  html += `<p style="font-size:13px;color:var(--accent);font-weight:600;margin:0 0 4px">${escapeHtml(q.i)}. ${escapeHtml(q.t)}</p>`;
+  html += `<p style="font-size:15px;line-height:1.7;margin:0 0 16px">${escapeHtml(q.q)}</p>`;
+  // Highlight choices
+  html += '<div style="display:grid;gap:8px;margin-bottom:12px">';
+  q.c.forEach(([l, text]) => {
+    const isSelected = l === letter;
+    const isCorrect = l === q.a;
+    let bg = 'var(--panel)';
+    if (isSelected && correct) bg = '#d4edda';
+    else if (isSelected && !correct) bg = '#f8d7da';
+    else if (isCorrect) bg = '#d4edda';
+    html += `<span style="display:block;padding:8px 14px;border-radius:2px;font-size:14px;border:1px solid var(--line);background:${bg}">${isSelected ? (correct ? '✅ ' : '❌ ') : (isCorrect ? '✅ ' : '   ')}(${escapeHtml(l)}) ${escapeHtml(text)}</span>`;
+  });
+  html += '</div>';
+  html += `<p style="margin:0 0 8px;font-size:13px;font-weight:700;color:${correct ? 'var(--ok)' : 'var(--warn)'}">${correct ? '✅ Correct!' : '❌ Incorrect'}</p>`;
+  html += `<p style="margin:0 0 16px;font-size:13px;color:var(--muted)">💡 ${escapeHtml(q.exp)}</p>`;
+  html += `<button onclick="grammarState.index++; if(grammarState.index>=grammarState.total)finishGrammarQuiz();else renderGrammarQuestion();" style="min-height:36px;padding:0 16px;border:1px solid var(--line);border-radius:2px;background:var(--panel);cursor:pointer;font:inherit">다음 ▸</button>`;
+  html += '</div>';
+  els.grammar201Content.innerHTML = html;
 }
 
 function finishGrammarQuiz() {
