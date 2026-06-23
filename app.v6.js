@@ -470,7 +470,7 @@ function updateTierDisplay() {
   if (!el) return;
   const ability = readIrtAbility();
   const tier = getTier(ability);
-  el.textContent = `${tier.icon} ${tier.name}`;
+  el.innerHTML = `${tier.icon} ${tier.name}`;
   el.title = `IRT Ability: ${ability.toFixed(1)}`;
 }
 let supabaseClient = null;
@@ -1950,7 +1950,7 @@ async function completeQuiz() {
   els.resultPanel.hidden = false;
   const tier = getTier(readIrtAbility());
   els.resultTitle.textContent = `${displayName}'s Result`;
-  els.resultSummary.textContent = `${entry.correct}/${entry.total} correct — ${accuracy}% accuracy — ${tier.icon} ${tier.name}`;
+  els.resultSummary.innerHTML = `${entry.correct}/${entry.total} correct — ${accuracy}% accuracy — ${tier.icon} ${tier.name}`;
 
   // Show question-by-question review
   let reviewHTML = '<div style="max-height:50vh;overflow-y:auto;margin:16px 0">';
