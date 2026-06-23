@@ -1604,6 +1604,7 @@ async function cloudSyncAll() {
   try { quizProg = JSON.stringify(JSON.parse(localStorage.getItem(quizProgressKey)||'{}')[nk]||{}); } catch {}
   const logicDone = JSON.stringify([...getLogicCompleted()]);
   const logicWrong = JSON.stringify([...getLogicWrong()]);
+  const grammarData = JSON.stringify((readGrammarProgress()||{})[nk]||{correct:[],wrong:[]});
 
   const payload = JSON.stringify({
     pw,
@@ -1614,6 +1615,7 @@ async function cloudSyncAll() {
     quiz_progress: quizProg,
     logic_completed: logicDone,
     logic_wrong: logicWrong,
+    grammar_progress: grammarData,
     updated_at: new Date().toISOString()
   });
 
@@ -1677,6 +1679,11 @@ function cloudPullUserData(payload, nickname) {
       const lp = readLogicProgress();
       lp[nk] = { correct: obj.logic_completed ? JSON.parse(obj.logic_completed) : [], wrong: obj.logic_wrong ? JSON.parse(obj.logic_wrong) : [] };
       try { localStorage.setItem(logicProgressKey, JSON.stringify(lp)); } catch {}
+    }
+    if (obj.grammar_progress) {
+      const gp = readGrammarProgress();
+      gp[nk] = JSON.parse(obj.grammar_progress);
+      try { localStorage.setItem(grammarProgressKey, JSON.stringify(gp)); } catch {}
     }
     state.playerName = prevName;
   } catch(e) { console.warn('cloudPullUserData failed', e); }
@@ -1918,8 +1925,8 @@ function renderPublicResult(displayName, accuracy, correct, total) {
           ${cumulative.slice(0, 20).map((item, idx) => `
             <li>
               <span>${idx + 1}. ${escapeHtml(item.name)}</span>
-              <b>${item.accuracy}%</b>
-              <small>${item.correct}/${item.total}</small>
+              <b>${item.correct}점</b>
+              <small>${item.accuracy}% · ${item.correct}/${item.total}</small>
             </li>
           `).join("")}
         </ol>
@@ -2026,8 +2033,8 @@ function showRanking() {
           <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;opacity:0.7;margin-bottom:4px">#${idx+1}</div>
           <div style="font-size:16px;font-weight:800;margin-bottom:2px;word-break:break-all">${escapeHtml(item.name)}</div>
           <div style="font-size:11px;opacity:0.85;margin-bottom:6px">${tier.icon} ${tier.name}</div>
-          <div style="font-size:28px;font-weight:900;line-height:1">${item.accuracy}<span style="font-size:14px;font-weight:400">%</span></div>
-          <div style="font-size:11px;opacity:0.7">${item.correct}/${item.total}</div>
+          <div style="font-size:28px;font-weight:900;line-height:1">${item.correct}<span style="font-size:14px;font-weight:400">점</span></div>
+          <div style="font-size:11px;opacity:0.7">${item.accuracy}% · ${item.correct}/${item.total}</div>
         </div>`;
       });
       html += '</div>';
@@ -2039,14 +2046,14 @@ function showRanking() {
           const rank = idx + 4;
           const tier = getTierForRanking(item.correct, item.total);
           const barW = Math.min(100, item.accuracy);
-          html += `<div style="display:grid;grid-template-columns:28px 1fr 60px 50px;align-items:center;gap:10px;padding:8px 12px;background:#fff;border-radius:10px;border:1px solid #eee">
+          html += `<div style="display:grid;grid-template-columns:28px 1fr 55px 55px;align-items:center;gap:10px;padding:8px 12px;background:#fff;border-radius:10px;border:1px solid #eee">
             <span style="font-size:12px;font-weight:700;color:var(--muted);text-align:right">${rank}</span>
             <div style="min-width:0">
               <div style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${escapeHtml(item.name)} <span style="font-size:11px;opacity:0.6">${tier.icon} ${tier.name}</span></div>
               <div style="height:4px;border-radius:2px;background:#f0f0f0;margin-top:4px"><div style="height:100%;width:${barW}%;border-radius:2px;background:${colors[rank % colors.length]}"></div></div>
             </div>
-            <span style="font-size:18px;font-weight:800;text-align:right">${item.accuracy}<span style="font-size:10px;font-weight:400;color:var(--muted)">%</span></span>
-            <span style="font-size:11px;color:var(--muted);text-align:right">${item.correct}/${item.total}</span>
+            <span style="font-size:18px;font-weight:800;text-align:right">${item.correct}<span style="font-size:10px;font-weight:400;color:var(--muted)">점</span></span>
+            <span style="font-size:11px;color:var(--muted);text-align:right">${item.accuracy}%</span>
           </div>`;
         });
         html += '</div>';
@@ -2509,6 +2516,35 @@ function saveLogicWrong(qid) {
   scheduleCloudSync();
 }
 
+/* Grammar progress persistence */
+const grammarProgressKey = "v502-grammar-progress";
+function readGrammarProgress() {
+  try { return JSON.parse(localStorage.getItem(grammarProgressKey)) || {}; }
+  catch { return {}; }
+}
+function saveGrammarCorrect(qid) {
+  const p = readGrammarProgress();
+  const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
+  if (!p[key]) p[key] = { correct: [], wrong: [] };
+  if (!p[key].correct.includes(qid)) p[key].correct.push(qid);
+  p[key].wrong = (p[key].wrong || []).filter(id => id !== qid);
+  try { localStorage.setItem(grammarProgressKey, JSON.stringify(p)); } catch {}
+  scheduleCloudSync();
+}
+function saveGrammarWrong(qid) {
+  const p = readGrammarProgress();
+  const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
+  if (!p[key]) p[key] = { correct: [], wrong: [] };
+  if (!p[key].wrong.includes(qid) && !p[key].correct.includes(qid)) p[key].wrong.push(qid);
+  try { localStorage.setItem(grammarProgressKey, JSON.stringify(p)); } catch {}
+  scheduleCloudSync();
+}
+function getGrammarWrong() {
+  const p = readGrammarProgress();
+  const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
+  return new Set((p[key] && p[key].wrong) || []);
+}
+
 /* Weighted scoring using the 7-factor regression seed */
 function readLogicScore() {
   try { return JSON.parse(localStorage.getItem(logicScoreKey)) || {}; }
@@ -2802,7 +2838,17 @@ let noExplainMode = localStorage.getItem('v502-noexplain') === '1';
 
 function updateNoExplainIndicator() {
   const el = document.getElementById('noExplainIndicator');
-  if (el) el.style.display = noExplainMode ? '' : 'none';
+  if (!el) return;
+  el.textContent = noExplainMode ? '⚡ 해설ON' : '⚡ 해설OFF';
+  el.classList.toggle('on', noExplainMode);
+}
+
+function syncNoExplainButtons() {
+  const label = noExplainMode ? '⚡ 해설ON' : '⚡ 해설OFF';
+  document.querySelectorAll('.quiz-noexplain-btn').forEach(b => {
+    b.textContent = label;
+    b.classList.toggle('on', noExplainMode);
+  });
 }
 
 function syncNoExplainButtons() {
@@ -3053,6 +3099,7 @@ function renderMyInfoTab(tab) {
   html += `<button onclick="renderMyInfoTab('review')" style="flex:1;min-height:36px;border:1px solid var(--line);border-radius:2px;font-size:13px;font-weight:600;cursor:pointer;${tab==='review'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📊 내 리뷰</button>`;
   html += `<button onclick="renderMyInfoTab('wrong')" style="flex:1;min-height:36px;border:1px solid var(--line);border-radius:2px;font-size:13px;font-weight:600;cursor:pointer;${tab==='wrong'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📕 오답노트</button>`;
   html += `<button onclick="renderMyInfoTab('logic')" style="flex:1;min-height:36px;border:1px solid var(--line);border-radius:2px;font-size:13px;font-weight:600;cursor:pointer;${tab==='logic'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">🧩 논리오답</button>`;
+  html += `<button onclick="renderMyInfoTab('grammar')" style="flex:1;min-height:36px;border:1px solid var(--line);border-radius:2px;font-size:13px;font-weight:600;cursor:pointer;${tab==='grammar'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📝 문법오답</button>`;
   html += '</div>';
 
   if (tab === 'review') {
@@ -3131,6 +3178,31 @@ function renderMyInfoTab(tab) {
           html += `</div>`;
         }
         html += `<p style="font-size:12px;color:var(--muted);margin:0">💡 ${escapeHtml(q.explanation)}</p>`;
+        html += `</div>`;
+      });
+    }
+  } else if (tab === 'grammar') {
+    const allQuestions = window.__V502_GRAMMAR__ || [];
+    const wrongSet = getGrammarWrong();
+    const wrongQuestions = allQuestions.filter(q => wrongSet.has(q.i));
+    if (wrongQuestions.length === 0) {
+      html += '<p style="color:var(--muted)">틀린 문법문제가 없습니다! 🎉</p>';
+    } else {
+      html += `<p style="margin-bottom:12px;color:var(--muted)">총 <b>${wrongQuestions.length}</b>개의 틀린 문제</p>`;
+      wrongQuestions.forEach((q, idx) => {
+        html += `<div style="margin-bottom:12px;padding:12px;background:#fff8f0;border-radius:8px;border:1px solid #f0d8c0">`;
+        html += `<p style="font-weight:700;margin:0 0 4px">#${q.i} <span style="font-size:12px;color:var(--muted)">${escapeHtml(q.t)}</span></p>`;
+        html += `<p style="margin:0 0 8px;font-size:14px">${escapeHtml(q.q)}</p>`;
+        if (q.c && q.c.length) {
+          html += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:8px">`;
+          q.c.forEach(([letter, text]) => {
+            const isCorrect = letter === q.a;
+            html += `<span style="display:block;padding:6px 10px;border-radius:6px;font-size:13px;font-weight:600;${isCorrect ? 'background:#d4edda;color:#155724;border:1px solid #8fc7a8' : 'background:#f0f0f0;color:#666;border:1px solid #ddd'}">${isCorrect ? '✓ ' : ''}(${letter}) ${escapeHtml(text)}</span>`;
+          });
+          html += `</div>`;
+        }
+        html += `<p style="margin:0;font-size:12px;color:var(--muted)"><strong>정답:</strong> (${escapeHtml(q.a)})</p>`;
+        html += `<p style="margin:4px 0 0;font-size:12px;color:var(--ok)">💡 ${escapeHtml(q.exp)}</p>`;
         html += `</div>`;
       });
     }
@@ -3553,6 +3625,15 @@ function renderGrammarQuestion() {
 }
 
 function submitGrammarAnswer(letter) {
+  const items = window.__V502_GRAMMAR__ || [];
+  const q = items[grammarState.index];
+  const correct = letter === q.a;
+  if (correct) {
+    grammarState.correct++;
+    saveGrammarCorrect(q.i);
+  } else {
+    saveGrammarWrong(q.i);
+  }
   grammarState.index++;
   if (grammarState.index >= grammarState.total) {
     finishGrammarQuiz();
@@ -3562,7 +3643,8 @@ function submitGrammarAnswer(letter) {
 }
 
 function finishGrammarQuiz() {
-  els.grammar201Content.innerHTML = `<div style="text-align:center;padding:40px"><h3>문법 201 완료</h3><p>${grammarState.total}개 항목 확인 완료</p><button onclick="showGrammar201()" class="text-btn" style="min-height:40px;margin-top:12px">다시 보기</button></div>`;
+  const pct = Math.round(grammarState.correct / grammarState.total * 100);
+  els.grammar201Content.innerHTML = `<div style="text-align:center;padding:40px"><h3>문법 201 완료</h3><p>${grammarState.correct}/${grammarState.total} 정답 (${pct}%)</p><button onclick="showGrammar201()" class="text-btn" style="min-height:40px;margin-top:12px">다시 보기</button></div>`;
 }
 
 els.grammar201Btn.addEventListener('click', showGrammar201);
