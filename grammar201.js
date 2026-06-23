@@ -95,9 +95,9 @@ window.__V502_GRAMMAR__ = [
         "joined -- taught"
       ]
     ],
-    "a": "1",
+    "a": "3",
     "t": "3형식: 유사형태 자/타동사",
-    "exp": "discharged from vs gone into vs joined. ① discharged from -- become이 어색. 맥락상 gone into/joined가 자연스러움."
+    "exp": "정답 3번: joined -- made. (해설 재작성 예정)"
   },
   {
     "i": "005",
@@ -345,9 +345,9 @@ window.__V502_GRAMMAR__ = [
         "lays aside"
       ]
     ],
-    "a": "1",
+    "a": "3",
     "t": "every/neither/each 수일치",
-    "exp": "lie along -> lay down? 눈을 속이는 -> the defensive linemen's eyes를 속이다는 의미로 'lie'가 아니라 'look into' 등. 원문 확인필요."
+    "exp": "정답 3번: lies in. (해설 재작성 예정)"
   },
   {
     "i": "015",
@@ -370,9 +370,9 @@ window.__V502_GRAMMAR__ = [
         "forced to alter"
       ]
     ],
-    "a": "2",
+    "a": "1",
     "t": "분수/퍼센트 수일치",
-    "exp": "raised -> risen. rise-rose-risen(자동사). raise(타동사)."
+    "exp": "정답 1번: 「raised」 부분이 틀림. (해설 재작성 예정)"
   },
   {
     "i": "016",
@@ -489,11 +489,15 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "say"
+      ],
+      [
+        "4",
+        "speak of"
       ]
     ],
-    "a": "1",
+    "a": "3",
     "t": "대명사 일치 ②",
-    "exp": "[auto: 4th choice missing, fallback to 1st]"
+    "exp": "정답 3번: say. (해설 재작성 예정)"
   },
   {
     "i": "021",
@@ -516,9 +520,9 @@ window.__V502_GRAMMAR__ = [
         "made me a cake"
       ]
     ],
-    "a": "2",
+    "a": "4",
     "t": "대과거 vs. 과거",
-    "exp": "had graduated. 대과거. 아버지가 졸업한 것은 내가 가기 전."
+    "exp": "정답 4번: made me a cake. (해설 재작성 예정)"
   },
   {
     "i": "022",
@@ -541,9 +545,9 @@ window.__V502_GRAMMAR__ = [
         "I don't know whether he has a ticket to the show and whether he will go."
       ]
     ],
-    "a": "4",
+    "a": "2",
     "t": "현재 vs. 현재진행",
-    "exp": "was having. 진행형 과거. had가 소유면 진행형 불가이나, have a good time은 가능."
+    "exp": "정답 2번: You should not ask such questions to your parents.. (해설 재작성 예정)"
   },
   {
     "i": "023",
@@ -570,9 +574,9 @@ window.__V502_GRAMMAR__ = [
         "want him to"
       ]
     ],
-    "a": "2",
+    "a": "3",
     "t": "현재진행: 가까운 미래",
-    "exp": "has been working. 현재완료진행."
+    "exp": "정답 3번: 「cost」 부분이 틀림. (해설 재작성 예정)"
   },
   {
     "i": "024",
@@ -595,9 +599,9 @@ window.__V502_GRAMMAR__ = [
         "describe"
       ]
     ],
-    "a": "1",
+    "a": "3",
     "t": "시간/조건 부사절 시제",
-    "exp": "will have been. by Christmas + for three months = 미래완료."
+    "exp": "정답 3번: describe it to me. (해설 재작성 예정)"
   },
   {
     "i": "025",
@@ -695,9 +699,9 @@ window.__V502_GRAMMAR__ = [
         "marks"
       ]
     ],
-    "a": "3",
+    "a": "1",
     "t": "before 완료시제",
-    "exp": "until he. has been pursuing + until he graduated 충돌."
+    "exp": "정답 1번: says. (해설 재작성 예정)"
   },
   {
     "i": "029",
@@ -720,9 +724,9 @@ window.__V502_GRAMMAR__ = [
         "talked"
       ]
     ],
-    "a": "3",
+    "a": "2",
     "t": "가정법과거 vs. 가정법과거완료",
-    "exp": "were closed -> had been closed."
+    "exp": "정답 2번: told. (해설 재작성 예정)"
   },
   {
     "i": "030",
@@ -739,11 +743,15 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "Ellen told to Helen to leave the room."
+      ],
+      [
+        "4",
+        "Ellen told Helen that she wasn't ready."
       ]
     ],
-    "a": "1",
+    "a": "4",
     "t": "5형식: 사역/지각동사 목적보어 형태",
-    "exp": "Q030 has 3 choices. Option 1 is the marked correct answer from the original PDF."
+    "exp": "정답 4번: Ellen told Helen that she wasn't ready.. (해설 재작성 예정)"
   },
   {
     "i": "031",
@@ -766,9 +774,9 @@ window.__V502_GRAMMAR__ = [
         "recall"
       ]
     ],
-    "a": "3",
+    "a": "1",
     "t": "가정법미래 vs. 가정법과거",
-    "exp": "would finish -> will have finished."
+    "exp": "정답 1번: remind. (해설 재작성 예정)"
   },
   {
     "i": "032",
@@ -891,9 +899,9 @@ window.__V502_GRAMMAR__ = [
         "ambushing"
       ]
     ],
-    "a": "3",
+    "a": "2",
     "t": "it is time 가정법",
-    "exp": "went. It's about time + 과거동사."
+    "exp": "정답 2번: ambush their prey. (해설 재작성 예정)"
   },
   {
     "i": "037",
@@ -916,9 +924,9 @@ window.__V502_GRAMMAR__ = [
         "surfaced"
       ]
     ],
-    "a": "1",
+    "a": "2",
     "t": "would rather 가정법",
-    "exp": "would rather not. would rather + RV."
+    "exp": "정답 2번: 「wrung」 부분이 틀림. (해설 재작성 예정)"
   },
   {
     "i": "038",
@@ -985,11 +993,15 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "I let her talk without interrupting."
+      ],
+      [
+        "4",
+        "The doctor forbade me smoke."
       ]
     ],
-    "a": "3",
+    "a": "4",
     "t": "목적격 오해 주격 관계대명사",
-    "exp": "지각동사는 목적보어로 원형부정사(rv) 사용. 'I let her talk'은 사역동사로 옳음. ①②도 옳음. ④는 선택지 누락."
+    "exp": "정답 4번: The doctor forbade me smoke.. (해설 재작성 예정)"
   },
   {
     "i": "041",
@@ -1012,9 +1024,9 @@ window.__V502_GRAMMAR__ = [
         "as it might have been"
       ]
     ],
-    "a": "2",
+    "a": "1",
     "t": "소유격 관계대명사",
-    "exp": "whose. 소유격 관계대명사."
+    "exp": "정답 1번: 「was being considered」 부분이 틀림. (해설 재작성 예정)"
   },
   {
     "i": "042",
@@ -1037,9 +1049,9 @@ window.__V502_GRAMMAR__ = [
         "in"
       ]
     ],
-    "a": "4",
+    "a": "3",
     "t": "소유격 관계대명사와 the",
-    "exp": "that was. 선행사에 최상급 -> that."
+    "exp": "정답 3번: 「has」 부분이 틀림. (해설 재작성 예정)"
   },
   {
     "i": "043",
@@ -1087,9 +1099,9 @@ window.__V502_GRAMMAR__ = [
         "as"
       ]
     ],
-    "a": "1",
+    "a": "3",
     "t": "관계대명사 that 용법",
-    "exp": "that. 선행사 all -> that."
+    "exp": "정답 3번: was. (해설 재작성 예정)"
   },
   {
     "i": "045",
@@ -1112,9 +1124,9 @@ window.__V502_GRAMMAR__ = [
         "knowing"
       ]
     ],
-    "a": "3",
+    "a": "2",
     "t": "관계대명사 what 관용표현",
-    "exp": "what. what = the thing which."
+    "exp": "정답 2번: know. (해설 재작성 예정)"
   },
   {
     "i": "046",
@@ -1237,9 +1249,9 @@ window.__V502_GRAMMAR__ = [
         "of the habit"
       ]
     ],
-    "a": "1",
+    "a": "2",
     "t": "관계대명사와 전치사",
-    "exp": "in which. 전치사 + 관계대명사."
+    "exp": "정답 2번: 「are」 부분이 틀림. (해설 재작성 예정)"
   },
   {
     "i": "051",
@@ -1287,9 +1299,9 @@ window.__V502_GRAMMAR__ = [
         "differ"
       ]
     ],
-    "a": "2",
+    "a": "4",
     "t": "유사분사",
-    "exp": "compared to. 과거분사."
+    "exp": "정답 4번: 「differ」 부분이 틀림. (해설 재작성 예정)"
   },
   {
     "i": "053",
@@ -1387,9 +1399,9 @@ window.__V502_GRAMMAR__ = [
         "to extinction"
       ]
     ],
-    "a": "4",
+    "a": "1",
     "t": "접속사와 병렬구조",
-    "exp": "not only A but also B 병렬."
+    "exp": "정답 1번: 「has been lost」 부분이 틀림. (해설 재작성 예정)"
   },
   {
     "i": "057",
@@ -1412,9 +1424,9 @@ window.__V502_GRAMMAR__ = [
         "run"
       ]
     ],
-    "a": "2",
+    "a": "1",
     "t": "접속사 if vs. whether",
-    "exp": "whether. if는 명사절 주어 불가."
+    "exp": "정답 1번: 「facilitate」 부분이 틀림. (해설 재작성 예정)"
   },
   {
     "i": "058",
@@ -1437,9 +1449,9 @@ window.__V502_GRAMMAR__ = [
         "may prove irrelevant"
       ]
     ],
-    "a": "1",
+    "a": "2",
     "t": "접속사 vs. 전치사 vs. 부사",
-    "exp": "because. 접속사 vs 전치사."
+    "exp": "정답 2번: 「have given」 부분이 틀림. (해설 재작성 예정)"
   },
   {
     "i": "059",
@@ -1537,9 +1549,9 @@ window.__V502_GRAMMAR__ = [
         "which were"
       ]
     ],
-    "a": "2",
+    "a": "1",
     "t": "동명사 목적어 동사",
-    "exp": "Five miles=단수취급(거리). was a fire."
+    "exp": "정답 1번: was. (해설 재작성 예정)"
   },
   {
     "i": "063",
@@ -1612,9 +1624,9 @@ window.__V502_GRAMMAR__ = [
         "is denied"
       ]
     ],
-    "a": "1",
+    "a": "4",
     "t": "동명사 관용표현",
-    "exp": "cannot help ~ing."
+    "exp": "정답 4번: 「is denied」 부분이 틀림. (해설 재작성 예정)"
   },
   {
     "i": "066",
@@ -1899,9 +1911,9 @@ window.__V502_GRAMMAR__ = [
         "seems"
       ]
     ],
-    "a": "4",
+    "a": "5",
     "t": "의무 should/ought to/must",
-    "exp": "seems -> seem. 선행사 clouds 복수."
+    "exp": "정답 5번: 「seems」 부분이 틀림. (해설 재작성 예정)"
   },
   {
     "i": "077",
@@ -1974,9 +1986,9 @@ window.__V502_GRAMMAR__ = [
         "calmly"
       ]
     ],
-    "a": "1",
+    "a": "3",
     "t": "조동사 관용표현",
-    "exp": "would rather. 조동사 관용표현."
+    "exp": "정답 3번: 「he was」 부분이 틀림. (해설 재작성 예정)"
   },
   {
     "i": "080",
@@ -2024,9 +2036,9 @@ window.__V502_GRAMMAR__ = [
         "was moved"
       ]
     ],
-    "a": "2",
+    "a": "1",
     "t": "원급 관용표현",
-    "exp": "as brave as. 원급 비교."
+    "exp": "정답 1번: 「has been」 부분이 틀림. (해설 재작성 예정)"
   },
   {
     "i": "082",
@@ -2074,9 +2086,9 @@ window.__V502_GRAMMAR__ = [
         "has taken"
       ]
     ],
-    "a": "2",
+    "a": "3",
     "t": "비교급: than vs. to",
-    "exp": "to. superior to."
+    "exp": "정답 3번: had taken. (해설 재작성 예정)"
   },
   {
     "i": "084",
@@ -2249,9 +2261,9 @@ window.__V502_GRAMMAR__ = [
         "was"
       ]
     ],
-    "a": "3",
+    "a": "4",
     "t": "도치 일반원칙",
-    "exp": "decide...what our health WAS like -> IS like. Tense consistency. Choice 3 is incorrect."
+    "exp": "정답 4번: 「was」 부분이 틀림. (해설 재작성 예정)"
   },
   {
     "i": "091",
@@ -2399,9 +2411,9 @@ window.__V502_GRAMMAR__ = [
         "am completed"
       ]
     ],
-    "a": "3",
+    "a": "2",
     "t": "many vs. much",
-    "exp": "much money. money = 불가산."
+    "exp": "정답 2번: complete. (해설 재작성 예정)"
   },
   {
     "i": "097",
@@ -2699,9 +2711,9 @@ window.__V502_GRAMMAR__ = [
         "graduated"
       ]
     ],
-    "a": "3",
+    "a": "1",
     "t": "시제 일치",
-    "exp": "'has been pursuing'은 현재완료진행. 'until he graduated'(과거)와 시제 충돌. ③이 틀림."
+    "exp": "정답 1번: 「pursuing」 부분이 틀림. (해설 재작성 예정)"
   },
   {
     "i": "109",
@@ -2743,6 +2755,10 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "will have completed"
+      ],
+      [
+        "4",
+        "have completed"
       ]
     ],
     "a": "3",
@@ -2995,9 +3011,9 @@ window.__V502_GRAMMAR__ = [
         "knows"
       ]
     ],
-    "a": "3",
+    "a": "4",
     "t": "that절 목적어 전치사",
-    "exp": "문장 말단 절단. there가 문법적 오류이거나 불완전 종결. 4번째 선택지 유실."
+    "exp": "정답 4번: 「knows」 부분이 틀림. (해설 재작성 예정)"
   },
   {
     "i": "121",
@@ -3239,10 +3255,14 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "had failed"
+      ],
+      [
+        "4",
+        "were to fail"
       ]
     ],
-    "a": "3",
-    "exp": "Given that has lived -> if had failed best fit",
+    "a": "4",
+    "exp": "정답 4번: were to fail. (해설 재작성 예정)",
     "t": "분사구문"
   },
   {
@@ -3485,6 +3505,10 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "If it had not been for"
+      ],
+      [
+        "4",
+        "Having it not been for"
       ]
     ],
     "a": "3",
@@ -3731,10 +3755,14 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "I'll decide"
+      ],
+      [
+        "4",
+        "I decided"
       ]
     ],
-    "a": "2",
-    "exp": "it's about time + past. 'I'd decided' = I had decided (past form).",
+    "a": "4",
+    "exp": "정답 4번: I decided. (해설 재작성 예정)",
     "t": "관계대명사 that"
   },
   {
@@ -4008,8 +4036,8 @@ window.__V502_GRAMMAR__ = [
         "when thinking"
       ]
     ],
-    "a": "1",
-    "exp": "however(접속부사) cannot connect two independent clauses without semicolon. Use 'but'.",
+    "a": "2",
+    "exp": "정답 2번: that they think. (해설 재작성 예정)",
     "t": "접속사 vs. 접속부사"
   },
   {
@@ -4033,8 +4061,8 @@ window.__V502_GRAMMAR__ = [
         "whatever"
       ]
     ],
-    "a": "4",
-    "exp": "not only A but also B structure. A and B must be parallel.",
+    "a": "2",
+    "exp": "정답 2번: who. (해설 재작성 예정)",
     "t": "접속사와 병렬구조"
   },
   {
@@ -4133,8 +4161,8 @@ window.__V502_GRAMMAR__ = [
         "understanding"
       ]
     ],
-    "a": "3",
-    "exp": "enjoy/finish/avoid + ~ing. 동명사 목적어 동사.",
+    "a": "2",
+    "exp": "정답 2번: 「who」 부분이 틀림. (해설 재작성 예정)",
     "t": "동명사 목적어 동사"
   },
   {
@@ -4158,8 +4186,8 @@ window.__V502_GRAMMAR__ = [
         "increasing"
       ]
     ],
-    "a": "1",
-    "exp": "remember ~ing (과거 일 기억) vs. remember to RV (미래 할 일).",
+    "a": "2",
+    "exp": "정답 2번: 「whom」 부분이 틀림. (해설 재작성 예정)",
     "t": "동명사 vs. 부정사"
   },
   {
@@ -4208,8 +4236,8 @@ window.__V502_GRAMMAR__ = [
         "whose"
       ]
     ],
-    "a": "2",
-    "exp": "cannot help ~ing. 동명사 관용표현.",
+    "a": "4",
+    "exp": "정답 4번: whose. (해설 재작성 예정)",
     "t": "동명사 관용표현"
   },
   {
@@ -4227,6 +4255,10 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "whose"
+      ],
+      [
+        "4",
+        "whose meanings we do not know"
       ]
     ],
     "a": "3",
@@ -4304,8 +4336,8 @@ window.__V502_GRAMMAR__ = [
         "which"
       ]
     ],
-    "a": "2",
-    "exp": "want/ask/tell + O + to RV. to부정사 목적보어.",
+    "a": "3",
+    "exp": "정답 3번: that. (해설 재작성 예정)",
     "t": "to부정사 목적보어"
   },
   {
@@ -4329,8 +4361,8 @@ window.__V502_GRAMMAR__ = [
         "that"
       ]
     ],
-    "a": "3",
-    "exp": "expect + O + to RV (O가 to RV하기를 기대). hope + that절.",
+    "a": "4",
+    "exp": "정답 4번: 「that」 부분이 틀림. (해설 재작성 예정)",
     "t": "expect/hope/want"
   },
   {
@@ -4354,8 +4386,8 @@ window.__V502_GRAMMAR__ = [
         "that means"
       ]
     ],
-    "a": "1",
-    "exp": "자동사는 수동태 불가. 'was happened' (X) -> 'happened' (O).",
+    "a": "4",
+    "exp": "정답 4번: 「that means」 부분이 틀림. (해설 재작성 예정)",
     "t": "자동사와 수동태"
   },
   {
@@ -4404,8 +4436,8 @@ window.__V502_GRAMMAR__ = [
         "How"
       ]
     ],
-    "a": "2",
-    "exp": "5형식 사역동사 수동태: 목적보어에 to부정사. 'was made to clean'.",
+    "a": "1",
+    "exp": "정답 1번: What. (해설 재작성 예정)",
     "t": "사역/지각동사 수동태"
   },
   {
@@ -4454,8 +4486,8 @@ window.__V502_GRAMMAR__ = [
         "whose"
       ]
     ],
-    "a": "4",
-    "exp": "make + O + OC. 'have made me what I am'. 명사절 보어.",
+    "a": "1",
+    "exp": "정답 1번: what. (해설 재작성 예정)",
     "t": "5형식"
   },
   {
@@ -4473,10 +4505,14 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "what are words"
+      ],
+      [
+        "4",
+        "what words are"
       ]
     ],
-    "a": "1",
-    "exp": "조동사 + have p.p. 'must have been' 과거 강한 추측.",
+    "a": "4",
+    "exp": "정답 4번: what words are. (해설 재작성 예정)",
     "t": "조동사+have+pp"
   },
   {
@@ -4500,8 +4536,8 @@ window.__V502_GRAMMAR__ = [
         "however it's size is"
       ]
     ],
-    "a": "4",
-    "exp": "should have p.p. 과거 유감. 'should have told me'.",
+    "a": "1",
+    "exp": "정답 1번: whatever its size. (해설 재작성 예정)",
     "t": "should have pp"
   },
   {
@@ -4525,8 +4561,8 @@ window.__V502_GRAMMAR__ = [
         "did happen"
       ]
     ],
-    "a": "2",
-    "exp": "must have p.p. 'He must have been tired'.",
+    "a": "3",
+    "exp": "정답 3번: happens. (해설 재작성 예정)",
     "t": "must have pp"
   },
   {
@@ -4575,8 +4611,8 @@ window.__V502_GRAMMAR__ = [
         "whomever"
       ]
     ],
-    "a": "1",
-    "exp": "cannot have p.p. 과거 불가능. 'cannot have seen me'.",
+    "a": "2",
+    "exp": "정답 2번: whenever. (해설 재작성 예정)",
     "t": "cannot have pp"
   },
   {
@@ -4625,8 +4661,8 @@ window.__V502_GRAMMAR__ = [
         "those"
       ]
     ],
-    "a": "2",
-    "exp": "비교급 + than. 'better than'.",
+    "a": "3",
+    "exp": "정답 3번: whoever. (해설 재작성 예정)",
     "t": "비교급"
   },
   {
@@ -4675,8 +4711,8 @@ window.__V502_GRAMMAR__ = [
         "where"
       ]
     ],
-    "a": "1",
-    "exp": "the + 최상급 + of/in. 'the best of all'.",
+    "a": "4",
+    "exp": "정답 4번: where. (해설 재작성 예정)",
     "t": "최상급"
   },
   {
@@ -4700,8 +4736,8 @@ window.__V502_GRAMMAR__ = [
         "that"
       ]
     ],
-    "a": "4",
-    "exp": "as many/much as. 원급 관용표현.",
+    "a": "2",
+    "exp": "정답 2번: where. (해설 재작성 예정)",
     "t": "원급 관용표현"
   },
   {
@@ -4719,6 +4755,10 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "where the city influences French"
+      ],
+      [
+        "4",
+        "where the French influence the city"
       ]
     ],
     "a": "2",
@@ -4746,8 +4786,8 @@ window.__V502_GRAMMAR__ = [
         "some other"
       ]
     ],
-    "a": "3",
-    "exp": "superior/inferior + to (not than).",
+    "a": "1",
+    "exp": "정답 1번: 「universe where I live」 부분이 틀림. (해설 재작성 예정)",
     "t": "than vs. to"
   },
   {
@@ -4771,8 +4811,8 @@ window.__V502_GRAMMAR__ = [
         "the way"
       ]
     ],
-    "a": "1",
-    "exp": "twice as ~ as. 배수표현.",
+    "a": "4",
+    "exp": "정답 4번: the way. (해설 재작성 예정)",
     "t": "배수표현"
   },
   {
@@ -4796,8 +4836,8 @@ window.__V502_GRAMMAR__ = [
         "How in which I look at it"
       ]
     ],
-    "a": "4",
-    "exp": "비교대상 생략. 문맥상 명확할 때 가능.",
+    "a": "2",
+    "exp": "정답 2번: The way I look at it. (해설 재작성 예정)",
     "t": "비교대상 생략"
   },
   {
@@ -4825,8 +4865,8 @@ window.__V502_GRAMMAR__ = [
         "comprehend"
       ]
     ],
-    "a": "2",
-    "exp": "부가의문문: 긍정문 -> 부정, 부정문 -> 긍정.",
+    "a": "3",
+    "exp": "정답 3번: 「existing」 부분이 틀림. (해설 재작성 예정)",
     "t": "부가의문문"
   },
   {
@@ -4850,8 +4890,8 @@ window.__V502_GRAMMAR__ = [
         "but"
       ]
     ],
-    "a": "3",
-    "exp": "부정어 도치. Never have I seen...",
+    "a": "4",
+    "exp": "정답 4번: but. (해설 재작성 예정)",
     "t": "도치 일반"
   },
   {
@@ -4872,11 +4912,15 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "There is no man that commit errors. ⑤ There is no man but commits errors."
+        "There is no man that commit errors."
+      ],
+      [
+        "5",
+        "There is no man but commits errors."
       ]
     ],
-    "a": "1",
-    "exp": "So do I / Neither do I.",
+    "a": "5",
+    "exp": "정답 5번: There is no man but commits errors.. (해설 재작성 예정)",
     "t": "So/Neither do I"
   },
   {
@@ -4900,8 +4944,8 @@ window.__V502_GRAMMAR__ = [
         "through which"
       ]
     ],
-    "a": "4",
-    "exp": "Here/There + V + S 도치.",
+    "a": "1",
+    "exp": "정답 1번: at which. (해설 재작성 예정)",
     "t": "1형식문장 도치"
   },
   {
@@ -4925,8 +4969,8 @@ window.__V502_GRAMMAR__ = [
         "which tend"
       ]
     ],
-    "a": "2",
-    "exp": "불가산명사: information, advice, furniture.",
+    "a": "4",
+    "exp": "정답 4번: 「which tend」 부분이 틀림. (해설 재작성 예정)",
     "t": "불가산명사"
   },
   {
@@ -4975,8 +5019,8 @@ window.__V502_GRAMMAR__ = [
         "This is the kind of plant that you usually have to fertilize it regularly. LOGIC"
       ]
     ],
-    "a": "3",
-    "exp": "Actually review: 96.5 FM is one radio station that I listen a lot. Needs TO: listen TO. But Q may be corrupted. Leaving a=3.",
+    "a": "2",
+    "exp": "정답 2번: My economics professor will let me take my final exam after vacation, for which . (해설 재작성 예정)",
     "t": "many vs. much"
   },
   {
@@ -5029,8 +5073,8 @@ window.__V502_GRAMMAR__ = [
         "give a new test"
       ]
     ],
-    "a": "4",
-    "exp": "정관사 the: 유일물, 앞에 언급.",
+    "a": "3",
+    "exp": "정답 3번: 「disappointed」 부분이 틀림. (해설 재작성 예정)",
     "t": "정관사 the"
   },
   {
@@ -5054,8 +5098,8 @@ window.__V502_GRAMMAR__ = [
         "only"
       ]
     ],
-    "a": "3",
-    "exp": "Even if + 가정법. would be + only new cars would be.",
+    "a": "2",
+    "exp": "정답 2번: 「nonpolluted」 부분이 틀림. (해설 재작성 예정)",
     "t": "가정법"
   },
   {
@@ -5154,8 +5198,8 @@ window.__V502_GRAMMAR__ = [
         "more"
       ]
     ],
-    "a": "3",
-    "exp": "look forward to reading -> look forward to read? NO. look forward to+~ing. ③이 틀린게 아니라... 문장 전체 맥락 확인필요. Reading...look forward to reading more. 맞는 문장. 답은 ③ 유지.",
+    "a": "1",
+    "exp": "정답 1번: 「Reading」 부분이 틀림. (해설 재작성 예정)",
     "t": "other vs. another"
   },
   {
@@ -5179,8 +5223,8 @@ window.__V502_GRAMMAR__ = [
         "broke"
       ]
     ],
-    "a": "2",
-    "exp": "every + 단수명사 + 단수동사.",
+    "a": "1",
+    "exp": "정답 1번: 「Having eaten」 부분이 틀림. (해설 재작성 예정)",
     "t": "every의 용법"
   },
   {
@@ -5204,8 +5248,8 @@ window.__V502_GRAMMAR__ = [
         "renewed"
       ]
     ],
-    "a": "1",
-    "exp": "서술적 형용사: alive, asleep, awake만 보어로.",
+    "a": "3",
+    "exp": "정답 3번: 「having been」 부분이 틀림. (해설 재작성 예정)",
     "t": "형용사"
   },
   {
@@ -5308,8 +5352,8 @@ window.__V502_GRAMMAR__ = [
         "Having not met him before"
       ]
     ],
-    "a": "1",
-    "exp": "enough: 형용사/부사 + enough + to RV.",
+    "a": "2",
+    "exp": "정답 2번: Not having met him before. (해설 재작성 예정)",
     "t": "enough 용법"
   },
   {
@@ -5333,8 +5377,8 @@ window.__V502_GRAMMAR__ = [
         "him to be watching"
       ]
     ],
-    "a": "4",
-    "exp": "이어동사: look for, give up, put off.",
+    "a": "3",
+    "exp": "정답 3번: him watching. (해설 재작성 예정)",
     "t": "이어동사"
   },
   {
@@ -5387,8 +5431,8 @@ window.__V502_GRAMMAR__ = [
         "to him"
       ]
     ],
-    "a": "2",
-    "exp": "전치사: on time(정각) vs. in time(늦지 않게).",
+    "a": "1",
+    "exp": "정답 1번: 「traveling」 부분이 틀림. (해설 재작성 예정)",
     "t": "전치사"
   },
   {
@@ -5481,6 +5525,10 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "included"
+      ],
+      [
+        "4",
+        "regarding"
       ]
     ],
     "a": "3",
@@ -5508,8 +5556,8 @@ window.__V502_GRAMMAR__ = [
         "while"
       ]
     ],
-    "a": "2",
-    "exp": "접속사 but 필요. looked everywhere but can't find.",
+    "a": "1",
+    "exp": "정답 1번: ; however. (해설 재작성 예정)",
     "t": "접속사"
   },
   {
@@ -5533,8 +5581,8 @@ window.__V502_GRAMMAR__ = [
         "whereas"
       ]
     ],
-    "a": "3",
-    "exp": "although 양보. not really eggs, although they look like eggs.",
+    "a": "2",
+    "exp": "정답 2번: but. (해설 재작성 예정)",
     "t": "접속사"
   },
   {
@@ -5558,8 +5606,8 @@ window.__V502_GRAMMAR__ = [
         "whereas"
       ]
     ],
-    "a": "1",
-    "exp": "find oneself ~ing. 분사구문.",
+    "a": "4",
+    "exp": "정답 4번: whereas. (해설 재작성 예정)",
     "t": "분사"
   },
   {
@@ -5633,8 +5681,8 @@ window.__V502_GRAMMAR__ = [
         "admissions"
       ]
     ],
-    "a": "3",
-    "exp": "연결어. however, therefore, moreover 중 선택.",
+    "a": "2",
+    "exp": "정답 2번: 「to ability」 부분이 틀림. (해설 재작성 예정)",
     "t": "연결어"
   },
   {
@@ -5727,6 +5775,10 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "with haunting beauties"
+      ],
+      [
+        "4",
+        "but their beauty is haunting"
       ]
     ],
     "a": "1",
@@ -5754,8 +5806,8 @@ window.__V502_GRAMMAR__ = [
         "Which"
       ]
     ],
-    "a": "1",
-    "exp": "Whether S V. 명사절 주어.",
+    "a": "3",
+    "exp": "정답 3번: Whether. (해설 재작성 예정)",
     "t": "접속사"
   },
   {
@@ -5779,8 +5831,8 @@ window.__V502_GRAMMAR__ = [
         "Whether or not"
       ]
     ],
-    "a": "2",
-    "exp": "I think she should take. 조동사 should.",
+    "a": "4",
+    "exp": "정답 4번: Whether or not. (해설 재작성 예정)",
     "t": "조동사"
   },
   {
@@ -5804,8 +5856,8 @@ window.__V502_GRAMMAR__ = [
         "the federal government"
       ]
     ],
-    "a": "3",
-    "exp": "were characterized by. 수동태.",
+    "a": "1",
+    "exp": "정답 1번: whether the federal government. (해설 재작성 예정)",
     "t": "수동태"
   },
   {
@@ -5879,8 +5931,8 @@ window.__V502_GRAMMAR__ = [
         "for all"
       ]
     ],
-    "a": "2",
-    "exp": "despite + 명사. 접속사 vs. 전치사.",
+    "a": "3",
+    "exp": "정답 3번: although. (해설 재작성 예정)",
     "t": "접속사"
   },
   {
@@ -5954,8 +6006,8 @@ window.__V502_GRAMMAR__ = [
         "and"
       ]
     ],
-    "a": "4",
-    "exp": "not respond until. until 접속사.",
+    "a": "2",
+    "exp": "정답 2번: until. (해설 재작성 예정)",
     "t": "접속사"
   },
   {
@@ -6004,8 +6056,8 @@ window.__V502_GRAMMAR__ = [
         "that the president had failed informing themselves"
       ]
     ],
-    "a": "2",
-    "exp": "resent + ~ing. being informed.",
+    "a": "3",
+    "exp": "정답 3번: the president's not informing them. (해설 재작성 예정)",
     "t": "동명사"
   },
   {
@@ -6029,8 +6081,8 @@ window.__V502_GRAMMAR__ = [
         "lifetime injury"
       ]
     ],
-    "a": "3",
-    "exp": "Unless+physically fit, there is him sacrificing himself... 문장구조 확인. 답 유지.",
+    "a": "2",
+    "exp": "정답 2번: 「him」 부분이 틀림. (해설 재작성 예정)",
     "t": "접속사"
   },
   {
@@ -6079,8 +6131,8 @@ window.__V502_GRAMMAR__ = [
         "at"
       ]
     ],
-    "a": "4",
-    "exp": "I do not understand what you mean. 의문사절.",
+    "a": "3",
+    "exp": "정답 3번: 「me having played」 부분이 틀림. (해설 재작성 예정)",
     "t": "의문사절"
   },
   {
@@ -6104,8 +6156,8 @@ window.__V502_GRAMMAR__ = [
         "having stolen"
       ]
     ],
-    "a": "2",
-    "exp": "confessed to having broken. confess to + ~ing.",
+    "a": "4",
+    "exp": "정답 4번: having stolen. (해설 재작성 예정)",
     "t": "동명사"
   },
   {
@@ -6129,8 +6181,8 @@ window.__V502_GRAMMAR__ = [
         "so"
       ]
     ],
-    "a": "1",
-    "exp": "suggested that the meeting be postponed. suggest + that + RV.",
+    "a": "2",
+    "exp": "정답 2번: 「to waste」 부분이 틀림. (해설 재작성 예정)",
     "t": "가정법"
   },
   {
@@ -6154,8 +6206,8 @@ window.__V502_GRAMMAR__ = [
         "all three of"
       ]
     ],
-    "a": "3",
-    "exp": "The weekend having ended. 독립분사구문.",
+    "a": "2",
+    "exp": "정답 2번: 「to buy」 부분이 틀림. (해설 재작성 예정)",
     "t": "분사구문"
   },
   {
@@ -6223,10 +6275,14 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "to have received"
+      ],
+      [
+        "4",
+        "having been received"
       ]
     ],
-    "a": "2",
-    "exp": "acknowledge + ~ing. receiving.",
+    "a": "1",
+    "exp": "정답 1번: receiving. (해설 재작성 예정)",
     "t": "동명사"
   },
   {
@@ -6250,8 +6306,8 @@ window.__V502_GRAMMAR__ = [
         "against all odds"
       ]
     ],
-    "a": "3",
-    "exp": "satisfied with. 형용사 + 전치사.",
+    "a": "2",
+    "exp": "정답 2번: 「get」 부분이 틀림. (해설 재작성 예정)",
     "t": "전치사"
   },
   {
@@ -6379,8 +6435,8 @@ window.__V502_GRAMMAR__ = [
         "worth of telling"
       ]
     ],
-    "a": "3",
-    "exp": "Had he not believed...belongs. 가정법 도치.",
+    "a": "5",
+    "exp": "정답 5번: 「worth of telling」 부분이 틀림. (해설 재작성 예정)",
     "t": "가정법 도치"
   },
   {
@@ -6454,8 +6510,8 @@ window.__V502_GRAMMAR__ = [
         "to testing"
       ]
     ],
-    "a": "3",
-    "exp": "opposed to + 명사. 전치사.",
+    "a": "4",
+    "exp": "정답 4번: to testing. (해설 재작성 예정)",
     "t": "전치사"
   },
   {
@@ -6473,10 +6529,14 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "to boost"
+      ],
+      [
+        "4",
+        "to boosting"
       ]
     ],
-    "a": "1",
-    "exp": "we do not think lending is. 동명사 주어.",
+    "a": "4",
+    "exp": "정답 4번: to boosting. (해설 재작성 예정)",
     "t": "동명사"
   },
   {
@@ -6500,8 +6560,8 @@ window.__V502_GRAMMAR__ = [
         "for him to decide"
       ]
     ],
-    "a": "1",
-    "exp": "It is necessary to know. to부정사 진주어.",
+    "a": "4",
+    "exp": "정답 4번: for him to decide. (해설 재작성 예정)",
     "t": "to부정사"
   },
   {
@@ -6525,8 +6585,8 @@ window.__V502_GRAMMAR__ = [
         "generously"
       ]
     ],
-    "a": "2",
-    "exp": "Since money is. 접속사.",
+    "a": "3",
+    "exp": "정답 3번: 「to giving」 부분이 틀림. (해설 재작성 예정)",
     "t": "접속사"
   },
   {
@@ -6550,8 +6610,8 @@ window.__V502_GRAMMAR__ = [
         "Of"
       ]
     ],
-    "a": "3",
-    "exp": "For a state to survive. for + O + to RV.",
+    "a": "2",
+    "exp": "정답 2번: For. (해설 재작성 예정)",
     "t": "to부정사"
   },
   {
@@ -6575,8 +6635,8 @@ window.__V502_GRAMMAR__ = [
         "that -- to feel loved"
       ]
     ],
-    "a": "1",
-    "exp": "In order for children to thrive.",
+    "a": "3",
+    "exp": "정답 3번: for -- to feel loved. (해설 재작성 예정)",
     "t": "to부정사"
   },
   {
@@ -6600,8 +6660,8 @@ window.__V502_GRAMMAR__ = [
         "therefore"
       ]
     ],
-    "a": "4",
-    "exp": "when they are. 시간 접속사.",
+    "a": "3",
+    "exp": "정답 3번: if. (해설 재작성 예정)",
     "t": "접속사"
   },
   {
@@ -6650,8 +6710,8 @@ window.__V502_GRAMMAR__ = [
         "urged"
       ]
     ],
-    "a": "3",
-    "exp": "had the shipping department make. have + O + RV.",
+    "a": "4",
+    "exp": "정답 4번: urged. (해설 재작성 예정)",
     "t": "사역동사"
   },
   {
@@ -6675,8 +6735,8 @@ window.__V502_GRAMMAR__ = [
         "I accept"
       ]
     ],
-    "a": "1",
-    "exp": "demanded that I accept. demand + that + RV.",
+    "a": "4",
+    "exp": "정답 4번: I accept. (해설 재작성 예정)",
     "t": "가정법"
   },
   {
@@ -6750,8 +6810,8 @@ window.__V502_GRAMMAR__ = [
         "sustaining"
       ]
     ],
-    "a": "3",
-    "exp": "so costly that. such/so 구문.",
+    "a": "4",
+    "exp": "정답 4번: 「sustaining」 부분이 틀림. (해설 재작성 예정)",
     "t": "such/so"
   },
   {
@@ -6825,8 +6885,8 @@ window.__V502_GRAMMAR__ = [
         "they can pretend being in control"
       ]
     ],
-    "a": "4",
-    "exp": "hope to put others at ease. to부정사.",
+    "a": "3",
+    "exp": "정답 3번: to pretend to be in control. (해설 재작성 예정)",
     "t": "to부정사"
   },
   {
@@ -6850,8 +6910,8 @@ window.__V502_GRAMMAR__ = [
         "as having begun -- running"
       ]
     ],
-    "a": "2",
-    "exp": "are said to have begun. to부정사 완료.",
+    "a": "3",
+    "exp": "정답 3번: to have begun -- to run. (해설 재작성 예정)",
     "t": "to부정사"
   },
   {
@@ -6900,8 +6960,8 @@ window.__V502_GRAMMAR__ = [
         "extra money"
       ]
     ],
-    "a": "3",
-    "exp": "had hoped to have learned. to부정사 완료.",
+    "a": "1",
+    "exp": "정답 1번: 「to have learned」 부분이 틀림. (해설 재작성 예정)",
     "t": "to부정사"
   },
   {
@@ -6950,8 +7010,8 @@ window.__V502_GRAMMAR__ = [
         "I considered marrying with her, but decided not to."
       ]
     ],
-    "a": "1",
-    "exp": "CORRECT: I considered marrying her. consider+~ing. ①맞음. ④ marrying with(X).",
+    "a": "3",
+    "exp": "정답 3번: I considered marrying her, but decided not to.. (해설 재작성 예정)",
     "t": "문법"
   },
   {
@@ -7054,8 +7114,8 @@ window.__V502_GRAMMAR__ = [
         "secular"
       ]
     ],
-    "a": "2",
-    "exp": "Classicism which developed. 관계대명사.",
+    "a": "1",
+    "exp": "정답 1번: 「was originated」 부분이 틀림. (해설 재작성 예정)",
     "t": "관계대명사"
   },
   {
@@ -7179,8 +7239,8 @@ window.__V502_GRAMMAR__ = [
         "to be provided by the chance to look at"
       ]
     ],
-    "a": "4",
-    "exp": "a village just 72 km north. 동격.",
+    "a": "2",
+    "exp": "정답 2번: to be reminded of. (해설 재작성 예정)",
     "t": "문법"
   },
   {
@@ -7204,8 +7264,8 @@ window.__V502_GRAMMAR__ = [
         "was convincing"
       ]
     ],
-    "a": "3",
-    "exp": "tried to overcome. to부정사.",
+    "a": "4",
+    "exp": "정답 4번: 「was convincing」 부분이 틀림. (해설 재작성 예정)",
     "t": "접속사"
   },
   {
@@ -7223,10 +7283,14 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "was denied"
+      ],
+      [
+        "4",
+        "had denied"
       ]
     ],
-    "a": "2",
-    "exp": "requested time off. 동사 + 목적어.",
+    "a": "3",
+    "exp": "정답 3번: was denied. (해설 재작성 예정)",
     "t": "문법"
   },
   {
@@ -7250,8 +7314,8 @@ window.__V502_GRAMMAR__ = [
         "which considered"
       ]
     ],
-    "a": "1",
-    "exp": "a marvel even today. 동격.",
+    "a": "2",
+    "exp": "정답 2번: which is considered. (해설 재작성 예정)",
     "t": "동격"
   },
   {
@@ -7275,8 +7339,8 @@ window.__V502_GRAMMAR__ = [
         "acknowledges"
       ]
     ],
-    "a": "4",
-    "exp": "Dr. Park, a professor... 설명. 답 유지.",
+    "a": "1",
+    "exp": "정답 1번: is acknowledged. (해설 재작성 예정)",
     "t": "문법"
   },
   {
@@ -7300,8 +7364,8 @@ window.__V502_GRAMMAR__ = [
         "are not allowed"
       ]
     ],
-    "a": "3",
-    "exp": "having been repressed. 분사구문 완료수동.",
+    "a": "4",
+    "exp": "정답 4번: are not allowed. (해설 재작성 예정)",
     "t": "분사구문"
   },
   {
@@ -7325,8 +7389,8 @@ window.__V502_GRAMMAR__ = [
         "take care of the"
       ]
     ],
-    "a": "2",
-    "exp": "the lives of children. 수일치.",
+    "a": "3",
+    "exp": "정답 3번: 「ask to help the」 부분이 틀림. (해설 재작성 예정)",
     "t": "수일치"
   },
   {
@@ -7400,8 +7464,8 @@ window.__V502_GRAMMAR__ = [
         "wasn't noticed to entering"
       ]
     ],
-    "a": "3",
-    "exp": "was not seen to leave. 지각동사 수동태.",
+    "a": "2",
+    "exp": "정답 2번: wasn't noticed entering. (해설 재작성 예정)",
     "t": "수동태"
   },
   {
@@ -7425,8 +7489,8 @@ window.__V502_GRAMMAR__ = [
         "It is believed"
       ]
     ],
-    "a": "1",
-    "exp": "It is believed that. 수동태.",
+    "a": "4",
+    "exp": "정답 4번: It is believed. (해설 재작성 예정)",
     "t": "수동태"
   },
   {
@@ -7450,8 +7514,8 @@ window.__V502_GRAMMAR__ = [
         "are said"
       ]
     ],
-    "a": "2",
-    "exp": "Politics = 단수취급. is said to be.",
+    "a": "3",
+    "exp": "정답 3번: is said. (해설 재작성 예정)",
     "t": "수일치"
   },
   {
@@ -7469,10 +7533,14 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "are to suppose"
+      ],
+      [
+        "4",
+        "are supposed"
       ]
     ],
-    "a": "2",
-    "exp": "We are supposed to read. be supposed to RV.",
+    "a": "4",
+    "exp": "정답 4번: are supposed. (해설 재작성 예정)",
     "t": "to부정사"
   },
   {
@@ -7596,8 +7664,8 @@ window.__V502_GRAMMAR__ = [
         "should be finished"
       ]
     ],
-    "a": "4",
-    "exp": "should have done it. should have p.p.",
+    "a": "2",
+    "exp": "정답 2번: should have finished. (해설 재작성 예정)",
     "t": "should have pp"
   },
   {
@@ -7671,8 +7739,8 @@ window.__V502_GRAMMAR__ = [
         "should have been"
       ]
     ],
-    "a": "4",
-    "exp": "it looked barren. 형용사 보어.",
+    "a": "3",
+    "exp": "정답 3번: must have been. (해설 재작성 예정)",
     "t": "문법"
   },
   {
@@ -7696,8 +7764,8 @@ window.__V502_GRAMMAR__ = [
         "He must be being had interrogated by the police then."
       ]
     ],
-    "a": "3",
-    "exp": "All 4 options are unnatural. must+be+having+been+interrogated is least ungrammatical. Q possibly corrupted.",
+    "a": "1",
+    "exp": "정답 1번: He must have been being interrogated by the police then.. (해설 재작성 예정)",
     "t": "문법"
   },
   {
@@ -7715,6 +7783,10 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "may"
+      ],
+      [
+        "4",
+        "had better"
       ]
     ],
     "a": "1",
@@ -7767,8 +7839,8 @@ window.__V502_GRAMMAR__ = [
         "do not need to go"
       ]
     ],
-    "a": "4",
-    "exp": "should not have gone. should have p.p.",
+    "a": "2",
+    "exp": "정답 2번: need not have gone. (해설 재작성 예정)",
     "t": "should have pp"
   },
   {
@@ -7867,8 +7939,8 @@ window.__V502_GRAMMAR__ = [
         "calculations"
       ]
     ],
-    "a": "4",
-    "exp": "students should be allowed. 조동사 수동.",
+    "a": "1",
+    "exp": "정답 1번: 「who used to」 부분이 틀림. (해설 재작성 예정)",
     "t": "조동사"
   },
   {
@@ -7917,8 +7989,8 @@ window.__V502_GRAMMAR__ = [
         "should have been broken"
       ]
     ],
-    "a": "2",
-    "exp": "apology for breaking. 전치사 + ~ing.",
+    "a": "3",
+    "exp": "정답 3번: could have been broken. (해설 재작성 예정)",
     "t": "전치사"
   },
   {
@@ -7961,10 +8033,14 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "the prisoner be sentenced to death"
+      ],
+      [
+        "4",
+        "the prisoner shall be sentenced to death"
       ]
     ],
-    "a": "1",
-    "exp": "that the defendant be released. 가정법.",
+    "a": "3",
+    "exp": "정답 3번: the prisoner be sentenced to death. (해설 재작성 예정)",
     "t": "가정법"
   },
   {
@@ -7988,8 +8064,8 @@ window.__V502_GRAMMAR__ = [
         "not so sweet"
       ]
     ],
-    "a": "3",
-    "exp": "as + 형용사 + as 원급비교. as sweet as.",
+    "a": "4",
+    "exp": "정답 4번: not so sweet. (해설 재작성 예정)",
     "t": "원급"
   },
   {
@@ -8038,8 +8114,8 @@ window.__V502_GRAMMAR__ = [
         "to"
       ]
     ],
-    "a": "4",
-    "exp": "not so much A as B. 비교 구문.",
+    "a": "3",
+    "exp": "정답 3번: as. (해설 재작성 예정)",
     "t": "비교"
   },
   {
@@ -8063,8 +8139,8 @@ window.__V502_GRAMMAR__ = [
         "that"
       ]
     ],
-    "a": "2",
-    "exp": "inclination to fill. to부정사.",
+    "a": "3",
+    "exp": "정답 3번: as. (해설 재작성 예정)",
     "t": "to부정사"
   },
   {
@@ -8138,8 +8214,8 @@ window.__V502_GRAMMAR__ = [
         "that is the better suited of them"
       ]
     ],
-    "a": "2",
-    "exp": "the former is better. 비교.",
+    "a": "3",
+    "exp": "정답 3번: Mr. Grant is the better suited. (해설 재작성 예정)",
     "t": "비교"
   },
   {
@@ -8163,8 +8239,8 @@ window.__V502_GRAMMAR__ = [
         "largest of that"
       ]
     ],
-    "a": "3",
-    "exp": "the larger of which. 전치사 + 관계대명사.",
+    "a": "1",
+    "exp": "정답 1번: the larger of which. (해설 재작성 예정)",
     "t": "관계대명사"
   },
   {
@@ -8207,10 +8283,14 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "I like him the more because he has a few faults."
+      ],
+      [
+        "4",
+        "I like him none the less because he has few faults."
       ]
     ],
-    "a": "1",
-    "exp": "Despite his faults. 전치사.",
+    "a": "2",
+    "exp": "정답 2번: I don't like him the less because he has a few faults.. (해설 재작성 예정)",
     "t": "전치사"
   },
   {
@@ -8284,8 +8364,8 @@ window.__V502_GRAMMAR__ = [
         "watching"
       ]
     ],
-    "a": "3",
-    "exp": "the more dangerous...the more I like.",
+    "a": "1",
+    "exp": "정답 1번: 「is the sport」 부분이 틀림. (해설 재작성 예정)",
     "t": "the 비교급"
   },
   {
@@ -8334,8 +8414,8 @@ window.__V502_GRAMMAR__ = [
         "so"
       ]
     ],
-    "a": "2",
-    "exp": "much less his life. 비교 표현.",
+    "a": "1",
+    "exp": "정답 1번: much more. (해설 재작성 예정)",
     "t": "비교"
   },
   {
@@ -8359,8 +8439,8 @@ window.__V502_GRAMMAR__ = [
         "worse"
       ]
     ],
-    "a": "4",
-    "exp": "still less that he is dishonest.",
+    "a": "2",
+    "exp": "정답 2번: less. (해설 재작성 예정)",
     "t": "비교"
   },
   {
@@ -8384,8 +8464,8 @@ window.__V502_GRAMMAR__ = [
         "She is not more beautiful than her sister is beautiful."
       ]
     ],
-    "a": "1",
-    "exp": "no less beautiful than. 동등비교.",
+    "a": "3",
+    "exp": "정답 3번: She is no less beautiful than her sister is beautiful.. (해설 재작성 예정)",
     "t": "비교"
   },
   {
@@ -8409,8 +8489,8 @@ window.__V502_GRAMMAR__ = [
         "and the fastest"
       ]
     ],
-    "a": "3",
-    "exp": "runs the fastest. 최상급.",
+    "a": "1",
+    "exp": "정답 1번: fastest. (해설 재작성 예정)",
     "t": "최상급"
   },
   {
@@ -8453,10 +8533,14 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "most famous"
+      ],
+      [
+        "4",
+        "the most famous"
       ]
     ],
-    "a": "2",
-    "exp": "The Grapes of Wrath 설명. 답 유지.",
+    "a": "3",
+    "exp": "정답 3번: most famous. (해설 재작성 예정)",
     "t": "문법"
   },
   {
@@ -8480,8 +8564,8 @@ window.__V502_GRAMMAR__ = [
         "easily"
       ]
     ],
-    "a": "1",
-    "exp": "much easier. much + 비교급.",
+    "a": "2",
+    "exp": "정답 2번: easier. (해설 재작성 예정)",
     "t": "비교급"
   },
   {
@@ -8580,8 +8664,8 @@ window.__V502_GRAMMAR__ = [
         "much"
       ]
     ],
-    "a": "2",
-    "exp": "the most exciting. 최상급.",
+    "a": "3",
+    "exp": "정답 3번: the most. (해설 재작성 예정)",
     "t": "최상급"
   },
   {
@@ -8605,8 +8689,8 @@ window.__V502_GRAMMAR__ = [
         "the most important import"
       ]
     ],
-    "a": "1",
-    "exp": "the largest import. 최상급.",
+    "a": "4",
+    "exp": "정답 4번: the most important import. (해설 재작성 예정)",
     "t": "최상급"
   },
   {
@@ -8630,8 +8714,8 @@ window.__V502_GRAMMAR__ = [
         "the greatest"
       ]
     ],
-    "a": "4",
-    "exp": "330,000 times as great as. 배수.",
+    "a": "3",
+    "exp": "정답 3번: as great as. (해설 재작성 예정)",
     "t": "배수표현"
   },
   {
@@ -8680,8 +8764,8 @@ window.__V502_GRAMMAR__ = [
         "twice more than"
       ]
     ],
-    "a": "2",
-    "exp": "twice as much as. 배수.",
+    "a": "3",
+    "exp": "정답 3번: twice as much as. (해설 재작성 예정)",
     "t": "배수표현"
   },
   {
@@ -8755,8 +8839,8 @@ window.__V502_GRAMMAR__ = [
         "effort as much"
       ]
     ],
-    "a": "4",
-    "exp": "twice as long to understand. 답 유지.",
+    "a": "3",
+    "exp": "정답 3번: as much effort. (해설 재작성 예정)",
     "t": "배수표현"
   },
   {
@@ -8780,8 +8864,8 @@ window.__V502_GRAMMAR__ = [
         "twice as likely"
       ]
     ],
-    "a": "2",
-    "exp": "twice as likely. 배수.",
+    "a": "4",
+    "exp": "정답 4번: twice as likely. (해설 재작성 예정)",
     "t": "배수표현"
   },
   {
@@ -8805,8 +8889,8 @@ window.__V502_GRAMMAR__ = [
         "temperate climate"
       ]
     ],
-    "a": "1",
-    "exp": "more similar to. 비교.",
+    "a": "2",
+    "exp": "정답 2번: 「the Earth」 부분이 틀림. (해설 재작성 예정)",
     "t": "비교"
   },
   {
@@ -8855,8 +8939,8 @@ window.__V502_GRAMMAR__ = [
         "Englishman"
       ]
     ],
-    "a": "3",
-    "exp": "much less to Europe. 비교.",
+    "a": "4",
+    "exp": "정답 4번: 「Englishman」 부분이 틀림. (해설 재작성 예정)",
     "t": "비교"
   },
   {
@@ -8909,8 +8993,8 @@ window.__V502_GRAMMAR__ = [
         "sooner"
       ]
     ],
-    "a": "1",
-    "exp": "unusually tall. 부사 + 형용사.",
+    "a": "2",
+    "exp": "정답 2번: 「me」 부분이 틀림. (해설 재작성 예정)",
     "t": "문법"
   },
   {
@@ -8959,8 +9043,8 @@ window.__V502_GRAMMAR__ = [
         "by what"
       ]
     ],
-    "a": "1",
-    "exp": "[auto-fallback: 4th choice missing]",
+    "a": "4",
+    "exp": "정답 4번: 「by what」 부분이 틀림. (해설 재작성 예정)",
     "t": "병렬구조"
   },
   {
@@ -8984,8 +9068,8 @@ window.__V502_GRAMMAR__ = [
         "isn't he"
       ]
     ],
-    "a": "2",
-    "exp": "nominated to receive. to부정사.",
+    "a": "4",
+    "exp": "정답 4번: isn't he. (해설 재작성 예정)",
     "t": "to부정사"
   },
   {
@@ -9009,8 +9093,8 @@ window.__V502_GRAMMAR__ = [
         "can you"
       ]
     ],
-    "a": "4",
-    "exp": "Turn off the light, will you? 부가의문문.",
+    "a": "2",
+    "exp": "정답 2번: will you. (해설 재작성 예정)",
     "t": "부가의문문"
   },
   {
@@ -9034,8 +9118,8 @@ window.__V502_GRAMMAR__ = [
         "The police should not do such a thing, should he?"
       ]
     ],
-    "a": "1",
-    "exp": "부가의문문 CORRECT. 답 유지.",
+    "a": "3",
+    "exp": "정답 3번: I don't think he is smart, is he?. (해설 재작성 예정)",
     "t": "부가의문문"
   },
   {
@@ -9109,8 +9193,8 @@ window.__V502_GRAMMAR__ = [
         "as there are"
       ]
     ],
-    "a": "3",
-    "exp": "Hardly ever does one see. 도치.",
+    "a": "1",
+    "exp": "정답 1번: 「there have」 부분이 틀림. (해설 재작성 예정)",
     "t": "도치"
   },
   {
@@ -9134,8 +9218,8 @@ window.__V502_GRAMMAR__ = [
         "blaze meteors"
       ]
     ],
-    "a": "1",
-    "exp": "Rarely do they remain. 도치.",
+    "a": "3",
+    "exp": "정답 3번: do meteors blaze. (해설 재작성 예정)",
     "t": "도치"
   },
   {
@@ -9263,8 +9347,8 @@ window.__V502_GRAMMAR__ = [
         "in the mainstream"
       ]
     ],
-    "a": "1",
-    "exp": "Fingerprint recognition is used. 수동태.",
+    "a": "3",
+    "exp": "정답 3번: 「it is finding」 부분이 틀림. (해설 재작성 예정)",
     "t": "문법"
   },
   {
@@ -9313,8 +9397,8 @@ window.__V502_GRAMMAR__ = [
         "so go I"
       ]
     ],
-    "a": "4",
-    "exp": "so will I. 답 유지.",
+    "a": "2",
+    "exp": "정답 2번: so will I. (해설 재작성 예정)",
     "t": "도치"
   },
   {
@@ -9338,8 +9422,8 @@ window.__V502_GRAMMAR__ = [
         "John does so"
       ]
     ],
-    "a": "1",
-    "exp": "objects to being treated. object to + ~ing.",
+    "a": "4",
+    "exp": "정답 4번: 「John does so」 부분이 틀림. (해설 재작성 예정)",
     "t": "동명사"
   },
   {
@@ -9363,8 +9447,8 @@ window.__V502_GRAMMAR__ = [
         "Neither do I"
       ]
     ],
-    "a": "2",
-    "exp": "Neither do I. 부정 동의.",
+    "a": "4",
+    "exp": "정답 4번: Neither do I. (해설 재작성 예정)",
     "t": "도치"
   },
   {
@@ -9413,8 +9497,8 @@ window.__V502_GRAMMAR__ = [
         "Your teacher here comes."
       ]
     ],
-    "a": "1",
-    "exp": "There he goes. (대명사 주어 도치 불가).",
+    "a": "2",
+    "exp": "정답 2번: Here comes your teacher.. (해설 재작성 예정)",
     "t": "도치"
   },
   {
@@ -9438,8 +9522,8 @@ window.__V502_GRAMMAR__ = [
         "was the guest of honor sitting"
       ]
     ],
-    "a": "4",
-    "exp": "stands a statue. 장소부사 도치.",
+    "a": "3",
+    "exp": "정답 3번: was sitting the guest of honor. (해설 재작성 예정)",
     "t": "도치"
   },
   {
@@ -9457,6 +9541,10 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "is standing the house where"
+      ],
+      [
+        "4",
+        "is the house standing"
       ]
     ],
     "a": "3",
@@ -9509,8 +9597,8 @@ window.__V502_GRAMMAR__ = [
         "every"
       ]
     ],
-    "a": "2",
-    "exp": "Plenty of items are. 수일치.",
+    "a": "1",
+    "exp": "정답 1번: 「clothings」 부분이 틀림. (해설 재작성 예정)",
     "t": "수일치"
   },
   {
@@ -9534,8 +9622,8 @@ window.__V502_GRAMMAR__ = [
         "one piece of an information"
       ]
     ],
-    "a": "1",
-    "exp": "to get more information. to부정사 목적.",
+    "a": "2",
+    "exp": "정답 2번: some information. (해설 재작성 예정)",
     "t": "to부정사"
   },
   {
@@ -9659,8 +9747,8 @@ window.__V502_GRAMMAR__ = [
         "is"
       ]
     ],
-    "a": "1",
-    "exp": "statistics show. 통계수치 = 복수.",
+    "a": "2",
+    "exp": "정답 2번: 「makes」 부분이 틀림. (해설 재작성 예정)",
     "t": "수일치"
   },
   {
@@ -9703,10 +9791,14 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "Many of the mud were sold to China."
+      ],
+      [
+        "4",
+        "There was little wine left in the bottle."
       ]
     ],
-    "a": "2",
-    "exp": "CORRECT 수일치. 답 유지.",
+    "a": "4",
+    "exp": "정답 4번: There was little wine left in the bottle.. (해설 재작성 예정)",
     "t": "수일치"
   },
   {
@@ -9855,8 +9947,8 @@ window.__V502_GRAMMAR__ = [
         "billions"
       ]
     ],
-    "a": "2",
-    "exp": "The government has decided. 단수.",
+    "a": "4",
+    "exp": "정답 4번: 「billions」 부분이 틀림. (해설 재작성 예정)",
     "t": "문법"
   },
   {
@@ -9909,8 +10001,8 @@ window.__V502_GRAMMAR__ = [
         "hundred"
       ]
     ],
-    "a": "4",
-    "exp": "hundred->hundreds(hundreds of)",
+    "a": "5",
+    "exp": "정답 5번: 「hundred」 부분이 틀림. (해설 재작성 예정)",
     "t": "문법"
   },
   {
@@ -9953,10 +10045,14 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "some of John's friend"
+      ],
+      [
+        "4",
+        "some of John friends"
       ]
     ],
-    "a": "2",
-    "exp": "someone who knows you. 관계대명사.",
+    "a": "1",
+    "exp": "정답 1번: some of John's friends. (해설 재작성 예정)",
     "t": "관계대명사"
   },
   {
@@ -10080,8 +10176,8 @@ window.__V502_GRAMMAR__ = [
         "She looked me in the face."
       ]
     ],
-    "a": "3",
-    "exp": "CORRECT. 답 유지.",
+    "a": "4",
+    "exp": "정답 4번: She looked me in the face.. (해설 재작성 예정)",
     "t": "관사"
   },
   {
@@ -10130,8 +10226,8 @@ window.__V502_GRAMMAR__ = [
         "San Francisco"
       ]
     ],
-    "a": "4",
-    "exp": "'Jack London's life was as adventurous as his stories.'",
+    "a": "2",
+    "exp": "정답 2번: 「of Rocky Mountains」 부분이 틀림. (해설 재작성 예정)",
     "t": "비교"
   },
   {
@@ -10155,8 +10251,8 @@ window.__V502_GRAMMAR__ = [
         "of"
       ]
     ],
-    "a": "2",
-    "exp": "'Annie Smith Peck was a pioneering mountain climber.'",
+    "a": "1",
+    "exp": "정답 1번: 「the first woman in」 부분이 틀림. (해설 재작성 예정)",
     "t": "관사"
   },
   {
@@ -10180,8 +10276,8 @@ window.__V502_GRAMMAR__ = [
         "during"
       ]
     ],
-    "a": "3",
-    "exp": "'The Irish brought Halloween to America in the 1840s.'",
+    "a": "2",
+    "exp": "정답 2번: in the. (해설 재작성 예정)",
     "t": "관사"
   },
   {
@@ -10199,10 +10295,14 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "Mental retarded case teachers"
+      ],
+      [
+        "4",
+        "Teachers for the mentally retarded"
       ]
     ],
-    "a": "1",
-    "exp": "'Elementary school teachers are sought by...'",
+    "a": "4",
+    "exp": "정답 4번: Teachers for the mentally retarded. (해설 재작성 예정)",
     "t": "관사"
   },
   {
@@ -10251,8 +10351,8 @@ window.__V502_GRAMMAR__ = [
         "a"
       ]
     ],
-    "a": "3",
-    "exp": "'At seven o'clock...guards opened the gates.'",
+    "a": "2",
+    "exp": "정답 2번: 「the door to the」 부분이 틀림. (해설 재작성 예정)",
     "t": "관사"
   },
   {
@@ -10326,8 +10426,8 @@ window.__V502_GRAMMAR__ = [
         "what kind of a substance"
       ]
     ],
-    "a": "4",
-    "exp": "'Do you happen to know what insulin is?'",
+    "a": "3",
+    "exp": "정답 3번: what kind of substance. (해설 재작성 예정)",
     "t": "의문사"
   },
   {
@@ -10376,8 +10476,8 @@ window.__V502_GRAMMAR__ = [
         "the night"
       ]
     ],
-    "a": "3",
-    "exp": "'It was so beautiful a day that I did not want to go to bed.'",
+    "a": "2",
+    "exp": "정답 2번: a night. (해설 재작성 예정)",
     "t": "such/so"
   },
   {
@@ -10401,8 +10501,8 @@ window.__V502_GRAMMAR__ = [
         "so a short time"
       ]
     ],
-    "a": "2",
-    "exp": "'This work cannot be done in a day.'",
+    "a": "1",
+    "exp": "정답 1번: quite a short time. (해설 재작성 예정)",
     "t": "관사"
   },
   {
@@ -10445,10 +10545,14 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "a too honest"
+      ],
+      [
+        "4",
+        "so an honest"
       ]
     ],
-    "a": "1",
-    "exp": "too honest a girl to tell a lie. too + adj + a + noun. so/such need different article positions.",
+    "a": "2",
+    "exp": "정답 2번: too honest a. (해설 재작성 예정)",
     "t": "to부정사"
   },
   {
@@ -10472,8 +10576,8 @@ window.__V502_GRAMMAR__ = [
         "the risk"
       ]
     ],
-    "a": "1",
-    "exp": "'The property insurance industry has grown rapidly.'",
+    "a": "3",
+    "exp": "정답 3번: 「itself」 부분이 틀림. (해설 재작성 예정)",
     "t": "문법"
   },
   {
@@ -10497,8 +10601,8 @@ window.__V502_GRAMMAR__ = [
         "their"
       ]
     ],
-    "a": "3",
-    "exp": "'Ants are blind to red light, so they can be studied in red light.'",
+    "a": "2",
+    "exp": "정답 2번: 「themselves」 부분이 틀림. (해설 재작성 예정)",
     "t": "접속사"
   },
   {
@@ -10547,8 +10651,8 @@ window.__V502_GRAMMAR__ = [
         "themselves"
       ]
     ],
-    "a": "1",
-    "exp": "NOT correct. 답 유지.",
+    "a": "4",
+    "exp": "정답 4번: 「themselves」 부분이 틀림. (해설 재작성 예정)",
     "t": "문법"
   },
   {
@@ -10572,8 +10676,8 @@ window.__V502_GRAMMAR__ = [
         "sorrowfully"
       ]
     ],
-    "a": "3",
-    "exp": "'closest meaning' 동의어 선택.",
+    "a": "1",
+    "exp": "정답 1번: 「unconsciously」 부분이 틀림. (해설 재작성 예정)",
     "t": "어휘"
   },
   {
@@ -10622,8 +10726,8 @@ window.__V502_GRAMMAR__ = [
         "it"
       ]
     ],
-    "a": "1",
-    "exp": "'I plan to buy another one.' one vs. another.",
+    "a": "3",
+    "exp": "정답 3번: one. (해설 재작성 예정)",
     "t": "대명사"
   },
   {
@@ -10701,8 +10805,8 @@ window.__V502_GRAMMAR__ = [
         "growths"
       ]
     ],
-    "a": "3",
-    "exp": "'It began to be denied that there is such a thing as...'",
+    "a": "1",
+    "exp": "정답 1번: 「such a thing like」 부분이 틀림. (해설 재작성 예정)",
     "t": "such"
   },
   {
@@ -10751,8 +10855,8 @@ window.__V502_GRAMMAR__ = [
         "favorably"
       ]
     ],
-    "a": "4",
-    "exp": "'Let me give you two of the most important reasons.'",
+    "a": "3",
+    "exp": "정답 3번: 「another」 부분이 틀림. (해설 재작성 예정)",
     "t": "최상급"
   },
   {
@@ -10776,8 +10880,8 @@ window.__V502_GRAMMAR__ = [
         "the other"
       ]
     ],
-    "a": "1",
-    "exp": "'I forced myself to put one foot in front of the other.'",
+    "a": "4",
+    "exp": "정답 4번: the other. (해설 재작성 예정)",
     "t": "other"
   },
   {
@@ -10901,8 +11005,8 @@ window.__V502_GRAMMAR__ = [
         "every of"
       ]
     ],
-    "a": "1",
-    "exp": "'All objects fall at the same rate regardless of weight.'",
+    "a": "4",
+    "exp": "정답 4번: 「every of」 부분이 틀림. (해설 재작성 예정)",
     "t": "문법"
   },
   {
@@ -10951,8 +11055,8 @@ window.__V502_GRAMMAR__ = [
         "begins"
       ]
     ],
-    "a": "2",
-    "exp": "'Every fuel has its own particular temperature at which it begins to burn.'",
+    "a": "1",
+    "exp": "정답 1번: 「their own」 부분이 틀림. (해설 재작성 예정)",
     "t": "every"
   },
   {
@@ -11026,8 +11130,8 @@ window.__V502_GRAMMAR__ = [
         "liking"
       ]
     ],
-    "a": "4",
-    "exp": "'two snowflakes that are exactly alike.' alike = 서술적 형용사.",
+    "a": "2",
+    "exp": "정답 2번: alike. (해설 재작성 예정)",
     "t": "형용사"
   },
   {
@@ -11051,8 +11155,8 @@ window.__V502_GRAMMAR__ = [
         "show"
       ]
     ],
-    "a": "2",
-    "exp": "'The bones of mammals are similar to those of reptiles.'",
+    "a": "1",
+    "exp": "정답 1번: 「not alike」 부분이 틀림. (해설 재작성 예정)",
     "t": "대명사"
   },
   {
@@ -11073,11 +11177,15 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "authentic Japanese food ⑤ authentically Japanese food"
+        "authentic Japanese food"
+      ],
+      [
+        "5",
+        "authentically Japanese food"
       ]
     ],
-    "a": "3",
-    "exp": "'No, they are not the same as Japanese food in Japan.'",
+    "a": "4",
+    "exp": "정답 4번: authentic Japanese food. (해설 재작성 예정)",
     "t": "비교"
   },
   {
@@ -11126,8 +11234,8 @@ window.__V502_GRAMMAR__ = [
         "blue plastic big"
       ]
     ],
-    "a": "4",
-    "exp": "'The girl was carrying a small black leather bag.' 형용사 어순.",
+    "a": "3",
+    "exp": "정답 3번: big blue plastic. (해설 재작성 예정)",
     "t": "형용사 어순"
   },
   {
@@ -11195,10 +11303,14 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "they were difficult to answer"
+      ],
+      [
+        "4",
+        "to answer them was to be difficult"
       ]
     ],
-    "a": "1",
-    "exp": "'Yes, and they were very difficult to answer.'",
+    "a": "3",
+    "exp": "정답 3번: they were difficult to answer. (해설 재작성 예정)",
     "t": "to부정사"
   },
   {
@@ -11222,8 +11334,8 @@ window.__V502_GRAMMAR__ = [
         "get on with"
       ]
     ],
-    "a": "4",
-    "exp": "'It is easy for him to understand.'",
+    "a": "2",
+    "exp": "정답 2번: for us to get on with. (해설 재작성 예정)",
     "t": "to부정사"
   },
   {
@@ -11247,8 +11359,8 @@ window.__V502_GRAMMAR__ = [
         "worth"
       ]
     ],
-    "a": "2",
-    "exp": "'The improvement of this design is worth your best efforts.'",
+    "a": "4",
+    "exp": "정답 4번: worth. (해설 재작성 예정)",
     "t": "worth"
   },
   {
@@ -11272,8 +11384,8 @@ window.__V502_GRAMMAR__ = [
         "is not worthy"
       ]
     ],
-    "a": "3",
-    "exp": "'Is this camera enough cheap for me to buy?' → cheap enough.",
+    "a": "4",
+    "exp": "정답 4번: is not worthy. (해설 재작성 예정)",
     "t": "enough"
   },
   {
@@ -11297,8 +11409,8 @@ window.__V502_GRAMMAR__ = [
         "enough strong to walking"
       ]
     ],
-    "a": "1",
-    "exp": "'She isn't able to walk three miles a day.'",
+    "a": "3",
+    "exp": "정답 3번: strong enough to walk. (해설 재작성 예정)",
     "t": "able"
   },
   {
@@ -11401,8 +11513,8 @@ window.__V502_GRAMMAR__ = [
         "none of these"
       ]
     ],
-    "a": "3",
-    "exp": "'Many years ago, most people believed...'",
+    "a": "1",
+    "exp": "정답 1번: most. (해설 재작성 예정)",
     "t": "most"
   },
   {
@@ -11426,8 +11538,8 @@ window.__V502_GRAMMAR__ = [
         "most of"
       ]
     ],
-    "a": "1",
-    "exp": "'After experiencing...almost all of the commuters...'",
+    "a": "4",
+    "exp": "정답 4번: most of. (해설 재작성 예정)",
     "t": "most"
   },
   {
@@ -11451,8 +11563,8 @@ window.__V502_GRAMMAR__ = [
         "had stolen"
       ]
     ],
-    "a": "2",
-    "exp": "By the time he was forty(과거) -> had become(대과거). 과거 시점까지 완료된 일.",
+    "a": "3",
+    "exp": "정답 3번: 「most」 부분이 틀림. (해설 재작성 예정)",
     "t": "시제"
   },
   {
@@ -11501,8 +11613,8 @@ window.__V502_GRAMMAR__ = [
         "by ship"
       ]
     ],
-    "a": "3",
-    "exp": "'No, she crossed by land.' by + 교통수단.",
+    "a": "4",
+    "exp": "정답 4번: by ship. (해설 재작성 예정)",
     "t": "전치사"
   },
   {
@@ -11551,8 +11663,8 @@ window.__V502_GRAMMAR__ = [
         "with"
       ]
     ],
-    "a": "4",
-    "exp": "'With new technology, cameras can take pictures of underwater life.'",
+    "a": "1",
+    "exp": "정답 1번: in. (해설 재작성 예정)",
     "t": "전치사"
   },
   {
@@ -11695,10 +11807,14 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "among"
+      ],
+      [
+        "4",
+        "of"
       ]
     ],
-    "a": "1",
-    "exp": "distinguish between A and B.",
+    "a": "2",
+    "exp": "정답 2번: between. (해설 재작성 예정)",
     "t": "전치사"
   },
   {
@@ -11722,8 +11838,8 @@ window.__V502_GRAMMAR__ = [
         "to"
       ]
     ],
-    "a": "3",
-    "exp": "'The spinal cord is connected to the brain.'",
+    "a": "4",
+    "exp": "정답 4번: 「to」 부분이 틀림. (해설 재작성 예정)",
     "t": "전치사"
   },
   {
@@ -11772,8 +11888,8 @@ window.__V502_GRAMMAR__ = [
         "against"
       ]
     ],
-    "a": "2",
-    "exp": "'The Lincoln Birthplace was presented as a gift to the nation.'",
+    "a": "3",
+    "exp": "정답 3번: as. (해설 재작성 예정)",
     "t": "전치사"
   },
   {
@@ -11797,8 +11913,8 @@ window.__V502_GRAMMAR__ = [
         "as if a man of wealthy"
       ]
     ],
-    "a": "1",
-    "exp": "'Spending the money, he felt as if he had been freed from debt.'",
+    "a": "3",
+    "exp": "정답 3번: like a wealthy man. (해설 재작성 예정)",
     "t": "as if"
   },
   {
@@ -11922,8 +12038,8 @@ window.__V502_GRAMMAR__ = [
         "Save that there are"
       ]
     ],
-    "a": "1",
-    "exp": "'Except for a few species that live on the ground...'",
+    "a": "4",
+    "exp": "정답 4번: Save that there are. (해설 재작성 예정)",
     "t": "전치사"
   },
   {
@@ -11947,8 +12063,8 @@ window.__V502_GRAMMAR__ = [
         "The old lady never spoke to anyone except someone came to visit her."
       ]
     ],
-    "a": "3",
-    "exp": "CORRECT 문장. 답 유지.",
+    "a": "1",
+    "exp": "정답 1번: As far as I remember, you both have the same size.. (해설 재작성 예정)",
     "t": "문법"
   }
 ];
