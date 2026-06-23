@@ -1755,15 +1755,16 @@ const _cumRemoteTimers = {};
 const _cumRemoteLatest = {};
 function scheduleCumulativeRemoteWrite(quizSet, name, correct, total, accuracy) {
   if (!hasPublicConfig() || !name) return;
-  _cumRemoteLatest[quizSet] = { name, correct, total, accuracy };
-  if (_cumRemoteTimers[quizSet]) return; // a write is already pending; it will use the latest value
-  _cumRemoteTimers[quizSet] = setTimeout(() => {
-    _cumRemoteTimers[quizSet] = null;
-    const v = _cumRemoteLatest[quizSet];
+  const key = quizSet + '|' + name.toLowerCase();
+  _cumRemoteLatest[key] = { name, correct, total, accuracy };
+  if (_cumRemoteTimers[key]) return;
+  _cumRemoteTimers[key] = setTimeout(() => {
+    _cumRemoteTimers[key] = null;
+    const v = _cumRemoteLatest[key];
     if (!v) return;
     getSupabaseClient()
       .then((client) => client && writeCumulativeRow(client, quizSet, v.name, v.correct, v.total, v.accuracy))
-.catch((e) => { console.warn('cumulativeRemoteWrite failed', e); });
+      .catch((e) => { console.warn('cumulativeRemoteWrite failed', e); });
   }, 700);
 }
 
