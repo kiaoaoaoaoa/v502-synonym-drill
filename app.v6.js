@@ -2288,6 +2288,7 @@ function startQuiz() {
   els.quizPanel.hidden = false;
   els.shuffleBtn.disabled = false;
   els.resetBtn.disabled = false;
+  syncNoExplainButtons();
   updateSetDisplay();
   if (state.questions.length === 0) {
     els.feedback.hidden = false;
@@ -2597,6 +2598,7 @@ function startLogicQuiz() {
   logicState.correctCount = 0;
   logicState.active = true;
   els.logicPanel.hidden = false;
+  syncNoExplainButtons();
   if (logicState.questions.length === 0) {
     // Every question already answered — nothing left to show
     showLogicAllDone();
@@ -2803,12 +2805,30 @@ function updateNoExplainIndicator() {
   if (el) el.style.display = noExplainMode ? '' : 'none';
 }
 
+function syncNoExplainButtons() {
+  const label = noExplainMode ? '⚡ 해설ON' : '⚡ 해설OFF';
+  document.querySelectorAll('.quiz-noexplain-btn').forEach(b => {
+    b.textContent = label;
+    b.classList.toggle('on', noExplainMode);
+  });
+}
+
 function toggleNoExplainMode() {
   noExplainMode = !noExplainMode;
   localStorage.setItem('v502-noexplain', noExplainMode ? '1' : '0');
+  const label = noExplainMode ? '⚡ 해설ON' : '⚡ 해설OFF';
   const btn = document.getElementById('dashNoExplainBtn');
-  if (btn) btn.textContent = noExplainMode ? '⚡ 해설ON' : '⚡ 해설OFF';
+  if (btn) btn.textContent = label;
+  syncNoExplainButtons();
   updateNoExplainIndicator();
+  // Re-render active quiz so explanation visibility updates immediately
+  if (!els.quizPanel.hidden) {
+    renderQuestion();
+  } else if (!els.logicPanel.hidden && logicState.active) {
+    renderLogicQuestion();
+  } else if (!els.wordcheckPanel.hidden && wcState.index < wordcheckQuestions.length) {
+    renderWordcheckQuestion();
+  }
 }
 
 function showDashboard() {
@@ -2844,6 +2864,7 @@ function showDashboard() {
     noExBtn.style.display = loggedIn ? '' : 'none';
     noExBtn.textContent = noExplainMode ? '⚡ 해설ON' : '⚡ 해설OFF';
   }
+  syncNoExplainButtons();
   updateNoExplainIndicator();
 
   // Greeting lives in the stable hero header (which also holds the login /
@@ -3131,6 +3152,7 @@ let lastWordcheckLauncher = showWordcheck;
 function startWordcheck(questions, { shuffle = true } = {}) {
   switchMode('wordcheck');
   els.wordcheckPanel.hidden = false;
+  syncNoExplainButtons();
   wordcheckQuestions = questions;
   wcState = { index: 0, answers: [], correct: 0, total: wordcheckQuestions.length, completed: false };
   if (shuffle) wordcheckQuestions.sort(() => Math.random() - 0.5);
