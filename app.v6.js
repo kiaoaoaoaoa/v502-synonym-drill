@@ -1201,11 +1201,15 @@ async function handleLogin() {
   }
 
   if (cloudResult !== 'OK') {
-    // Cloud not available — fall back to local password store
+    // Cloud not available or account not found — fall back to local password store
     const store = readPasswordStore();
     const key = name.toLowerCase();
     if (!store[key]) {
-      els.authError.textContent = "등록되지 않은 닉네임입니다. '계정등록'을 먼저 해주세요.";
+      if (cloudResult === null) {
+        els.authError.textContent = "서버 연결에 실패했습니다. 인터넷 연결을 확인하고 다시 시도해주세요.";
+      } else {
+        els.authError.textContent = "등록되지 않은 닉네임입니다. '계정등록'을 먼저 해주세요.";
+      }
       els.authError.hidden = false;
       return;
     }
@@ -1640,28 +1644,47 @@ async function cloudSyncAll() {
     updated_at: new Date().toISOString()
   });
 
+  const table = getLeaderboardTable();
+  // Try upsert first (single atomic operation — needs UNIQUE constraint on nickname,quiz_set)
+  let upsertOk = false;
   try {
-    const table = getLeaderboardTable();
-    // Try upsert first (single atomic operation — needs UNIQUE constraint)
     await client.from(table).upsert({
       nickname: nk, quiz_set: 'USERDATA',
       correct_count: 1, total_count: 1, accuracy: 1, payload
     }, { onConflict: 'nickname,quiz_set' });
-  } catch(_upsertErr) {
-    // Fallback: DELETE old rows then INSERT with retry (works without UNIQUE constraint)
-    const table = getLeaderboardTable();
-    try { await client.from(table).delete().eq('nickname', nk).eq('quiz_set', 'USERDATA'); } catch(e) { console.warn('cloudSyncAll delete failed', e); }
+    upsertOk = true;
+  } catch(upsertErr) {
+    console.warn('cloudSyncAll upsert failed (will try insert)', upsertErr);
+  }
+
+  if (!upsertOk) {
+    // Insert without deleting first — never destroy data before confirming write
     for (let attempt = 0; attempt < 3; attempt++) {
       try {
         await client.from(table).insert({
           nickname: nk, quiz_set: 'USERDATA',
           correct_count: 1, total_count: 1, accuracy: 1, payload
         });
-        return;
+        upsertOk = true;
+        break;
       } catch(insertErr) {
         if (attempt === 2) console.warn('cloudSyncAll insert failed after 3 attempts', insertErr);
+        else await new Promise(r => setTimeout(r, 500 * (attempt + 1)));
       }
     }
+  }
+
+  // Clean up stale duplicates if any (keep only the newest row per nickname+quiz_set)
+  if (upsertOk) {
+    try {
+      const { data: rows } = await client.from(table)
+        .select('id,created_at').eq('nickname', nk).eq('quiz_set', 'USERDATA')
+        .order('created_at', { ascending: false });
+      if (rows && rows.length > 1) {
+        const idsToDelete = rows.slice(1).map(r => r.id);
+        await client.from(table).delete().in('id', idsToDelete);
+      }
+    } catch(e) { /* non-critical: duplicate cleanup failed */ }
   }
 }
 
@@ -1675,12 +1698,16 @@ async function cloudCheckCred(nickname, password) {
       .eq('nickname', nkLower).eq('quiz_set', 'USERDATA')
       .order('created_at', { ascending: false }).limit(1).maybeSingle();
     if (!data || !data.payload) return 'NOT_FOUND';
-    const obj = JSON.parse(data.payload);
+    let obj;
+    try { obj = JSON.parse(data.payload); } catch(parseErr) {
+      console.warn('cloudCheckCred payload parse error', parseErr);
+      return 'NOT_FOUND';
+    }
     if (obj.pw !== password) return 'WRONG_PW';
     // Restore all data
     cloudPullUserData(data.payload, nickname);
     return 'OK';
-  } catch(e) { console.warn('cloudCheckCred failed', e); return null; }
+  } catch(e) { console.warn('cloudCheckCred query failed', e); return null; }
 }
 
 function cloudPullUserData(payload, nickname) {
