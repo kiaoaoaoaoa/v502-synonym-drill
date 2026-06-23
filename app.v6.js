@@ -2851,14 +2851,6 @@ function syncNoExplainButtons() {
   });
 }
 
-function syncNoExplainButtons() {
-  const label = noExplainMode ? '⚡ 해설ON' : '⚡ 해설OFF';
-  document.querySelectorAll('.quiz-noexplain-btn').forEach(b => {
-    b.textContent = label;
-    b.classList.toggle('on', noExplainMode);
-  });
-}
-
 function toggleNoExplainMode() {
   noExplainMode = !noExplainMode;
   localStorage.setItem('v502-noexplain', noExplainMode ? '1' : '0');
