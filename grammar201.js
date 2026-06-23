@@ -26,11 +26,11 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "002",
-    "q": "For some reason, we have",
+    "q": "For some reason, we have ①decided that if these flesh lumps (i.e., our noses) have a certain shape, they are attractive; ②whereas lumps that do not ③conform that shape ④are considered ugly.",
     "c": [
       [
         "1",
-        "decided that if these flesh lumps (i.e., our noses) have a certain shape, they a"
+        "decided that if these flesh lumps (i.e., our noses) have a certain shape, they are attractive;"
       ],
       [
         "2",
@@ -47,7 +47,32 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "t": "2형식: 유사보어",
-    "exp": "conform that shape -> conform TO that shape."
+    "exp": "conform that shape -> conform TO that shape. ③이 틀린 부분."
+  },
+  {
+    "i": "003",
+    "q": "Economic ①goods often consist ②to material items, ③but they can also be services ④to people.",
+    "c": [
+      [
+        "1",
+        "goods often consist"
+      ],
+      [
+        "2",
+        "to material items,"
+      ],
+      [
+        "3",
+        "but they can also be services"
+      ],
+      [
+        "4",
+        "to people."
+      ]
+    ],
+    "a": "2",
+    "t": "3형식: 자동사 오해 타동사",
+    "exp": "consist of. consist는 자동사. ② to -> of."
   },
   {
     "i": "004",
@@ -98,6 +123,31 @@ window.__V502_GRAMMAR__ = [
     "a": "4",
     "t": "4형식: 3형식 전환 전치사: to, for, of",
     "exp": "sound a little different. sound + 형용사(2형식). differently(부사)는 틀림."
+  },
+  {
+    "i": "006",
+    "q": "People ①often seem ②anger when ③they do not get enough ④rest.",
+    "c": [
+      [
+        "1",
+        "often seem"
+      ],
+      [
+        "2",
+        "anger when"
+      ],
+      [
+        "3",
+        "they do not get enough"
+      ],
+      [
+        "4",
+        "rest."
+      ]
+    ],
+    "a": "2",
+    "t": "2형식: 유사보어",
+    "exp": "seem + 형용사(2형식). ② anger(명사) -> angry."
   },
   {
     "i": "007",
@@ -244,6 +294,31 @@ window.__V502_GRAMMAR__ = [
     "a": "1",
     "t": "(either) A or B 유형 수일치",
     "exp": "sat -> set. sat(자동사) -> set(타동사, 놓다)."
+  },
+  {
+    "i": "013",
+    "q": "If he ①had laid quietly ②under the tree as he ③had been instructed to do, we ④would have found him.",
+    "c": [
+      [
+        "1",
+        "had laid quietly"
+      ],
+      [
+        "2",
+        "under the tree as he"
+      ],
+      [
+        "3",
+        "had been instructed to do, we"
+      ],
+      [
+        "4",
+        "would have found him."
+      ]
+    ],
+    "a": "1",
+    "t": "자동사 lie vs 타동사 lay",
+    "exp": "눕다 lie-lay-lain. ① had laid -> had lain."
   },
   {
     "i": "014",
@@ -542,6 +617,56 @@ window.__V502_GRAMMAR__ = [
     "exp": "explain TO us that. explain+to+IO+that절."
   },
   {
+    "i": "026",
+    "q": "The robber ①admitted the detective that she was ②the one who ③had stolen the diamond necklace ④from the display.",
+    "c": [
+      [
+        "1",
+        "admitted the detective that she was"
+      ],
+      [
+        "2",
+        "the one who"
+      ],
+      [
+        "3",
+        "had stolen the diamond necklace"
+      ],
+      [
+        "4",
+        "from the display."
+      ]
+    ],
+    "a": "1",
+    "t": "자동사 오해 타동사",
+    "exp": "admit(~에게 말하다)은 사람 목적어에 to 필요. ① admitted the detective -> admitted to the detective."
+  },
+  {
+    "i": "027",
+    "q": "In order ①for you to improve your memory, ②key information should be written as soon as possible after it is given, ③so the memory of the instructions is fresh and you can capture all the detail you ④were provided.",
+    "c": [
+      [
+        "1",
+        "for you to improve your memory,"
+      ],
+      [
+        "2",
+        "key information should be written as soon as possible after it is given,"
+      ],
+      [
+        "3",
+        "so the memory of the instructions is fresh and you can capture all the detail you"
+      ],
+      [
+        "4",
+        "were provided."
+      ]
+    ],
+    "a": "4",
+    "t": "수동태 전치사",
+    "exp": "provide A with B의 수동. ④ were provided -> were provided with."
+  },
+  {
     "i": "028",
     "q": "A: Is it time to leave? B: Yes, the clock _______ two o'clock.",
     "c": [
@@ -638,6 +763,31 @@ window.__V502_GRAMMAR__ = [
     "exp": "would finish -> will have finished."
   },
   {
+    "i": "032",
+    "q": "Last night ①while I was trying ②to fall asleep, I heard ③the people in the next apartment ④sang and laugh.",
+    "c": [
+      [
+        "1",
+        "while I was trying"
+      ],
+      [
+        "2",
+        "to fall asleep, I heard"
+      ],
+      [
+        "3",
+        "the people in the next apartment"
+      ],
+      [
+        "4",
+        "sang and laugh."
+      ]
+    ],
+    "a": "4",
+    "t": "지각동사 목적보어",
+    "exp": "지각동사 hear + O + RV/~ing. ④ sang(과거형) -> sing 또는 singing."
+  },
+  {
     "i": "033",
     "q": "①To see so much power ②combining ③with such lack ④of foresight is really disquieting for us Europeans.",
     "c": [
@@ -664,11 +814,11 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "034",
-    "q": "①Thanks to the often dreadful, although lifesaving, nature of diagnostic tests, many of us are becoming ②experts at the art of procrastination. Who can be blamed for ③letting \"colonoscopy\" to slip to the bottom of the ④to-do list? 035 If you don't stop making that noise, you'll make your grandmother",
+    "q": "①Thanks to the often dreadful, although lifesaving, nature of diagnostic tests, many of us are becoming ②experts at the art of procrastination. Who can be blamed for ③letting \"colonoscopy\" to slip to the bottom of the ④to-do list?",
     "c": [
       [
         "1",
-        "Thanks to the often dreadful, although lifesaving, nature of diagnostic tests, m"
+        "Thanks to the often dreadful, although lifesaving, nature of diagnostic tests, many of us are becoming"
       ],
       [
         "2",
@@ -680,20 +830,37 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "to-do list? 035 If you don't stop making that noise, you'll make your grandmothe"
-      ],
-      [
-        "5",
-        "to complain"
-      ],
-      [
-        "6",
-        "complaining"
+        "to-do list?"
       ]
     ],
     "a": "3",
-    "t": "wish 가정법",
-    "exp": "letting colonoscopy to slip -> letting colonoscopy slip. let + O + RV (사역동사 원형부정사). to 제거해야 함."
+    "t": "사역동사 목적보어",
+    "exp": "letting colonoscopy to slip -> letting colonoscopy slip. let + O + RV(원형부정사). to 제거. ③이 틀림."
+  },
+  {
+    "i": "035",
+    "q": "If you don't stop making that noise, you'll make your grandmother ______.",
+    "c": [
+      [
+        "1",
+        "to complain"
+      ],
+      [
+        "2",
+        "complaining"
+      ],
+      [
+        "3",
+        "complain"
+      ],
+      [
+        "4",
+        "complaint"
+      ]
+    ],
+    "a": "3",
+    "t": "사역동사 목적보어",
+    "exp": "make + O + RV(원형부정사). complain."
   },
   {
     "i": "036",
@@ -1017,6 +1184,31 @@ window.__V502_GRAMMAR__ = [
     "exp": "have been -> has been. a generation = 단수."
   },
   {
+    "i": "049",
+    "q": "The merger ①as well as the obvious financial benefits ②are expected to allow ③us some breathing room with ④regards to R&D.",
+    "c": [
+      [
+        "1",
+        "as well as the obvious financial benefits"
+      ],
+      [
+        "2",
+        "are expected to allow"
+      ],
+      [
+        "3",
+        "us some breathing room with"
+      ],
+      [
+        "4",
+        "regards to R&D."
+      ]
+    ],
+    "a": "2",
+    "t": "A as well as B 수일치",
+    "exp": "주어는 The merger(단수). as well as B는 수식어구. ② are expected -> is expected."
+  },
+  {
     "i": "050",
     "q": "Every man, woman, and child",
     "c": [
@@ -1263,6 +1455,31 @@ window.__V502_GRAMMAR__ = [
     "exp": "no matter how. 복합관계부사."
   },
   {
+    "i": "060",
+    "q": "Two of the ①fungi which the researchers discovered ②was classified as new varieties ③and the botanists said that they were ④previously unknown.",
+    "c": [
+      [
+        "1",
+        "fungi which the researchers discovered"
+      ],
+      [
+        "2",
+        "was classified as new varieties"
+      ],
+      [
+        "3",
+        "and the botanists said that they were"
+      ],
+      [
+        "4",
+        "previously unknown."
+      ]
+    ],
+    "a": "2",
+    "t": "수일치",
+    "exp": "주어 Two(복수). ② was classified -> were classified."
+  },
+  {
     "i": "061",
     "q": "①There are no argument or proof ②that will convince most Americans that ③paying higher taxes will result in a higher standard of living ④for everyone.",
     "c": [
@@ -1455,7 +1672,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "are quite ⑤surprising."
+        "are quite"
+      ],
+      [
+        "5",
+        "surprising."
       ]
     ],
     "a": "4",
@@ -1502,6 +1723,10 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "there is no scientific evidence of"
+      ],
+      [
+        "4",
+        "their accuracy."
       ]
     ],
     "a": "2",
@@ -1651,12 +1876,41 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "which ⑤seems to injure man and deface nature."
+        "which"
+      ],
+      [
+        "5",
+        "seems to injure man and deface nature."
       ]
     ],
     "a": "4",
     "t": "의무 should/ought to/must",
     "exp": "seems -> seem. 선행사 clouds 복수."
+  },
+  {
+    "i": "077",
+    "q": "If you ①are to complete the task, ②one should research it ③beforehand so as to acquaint yourself ④with any possible happenings from it.",
+    "c": [
+      [
+        "1",
+        "are to complete the task,"
+      ],
+      [
+        "2",
+        "one should research it"
+      ],
+      [
+        "3",
+        "beforehand so as to acquaint yourself"
+      ],
+      [
+        "4",
+        "with any possible happenings from it."
+      ]
+    ],
+    "a": "2",
+    "t": "인칭 일치",
+    "exp": "you ... yourself와 호응해야 함. ② one -> you."
   },
   {
     "i": "078",
@@ -1714,7 +1968,7 @@ window.__V502_GRAMMAR__ = [
     "c": [
       [
         "1",
-        "Stockard Channing, who plays the role of the formidable First Lady in the televi"
+        "Stockard Channing, who plays the role of the formidable First Lady in the television show The West Wing,"
       ],
       [
         "2",
@@ -1723,6 +1977,10 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "they have loved her"
+      ],
+      [
+        "4",
+        "ever since."
       ]
     ],
     "a": "3",
@@ -1805,6 +2063,31 @@ window.__V502_GRAMMAR__ = [
     "exp": "to. superior to."
   },
   {
+    "i": "084",
+    "q": "After he ①was caught with the stolen car, the teen said he was very sorry ②for what he had done and for the damage he ③caused to the car. He realized that he had been very foolish and wanted people ④to forgive him.",
+    "c": [
+      [
+        "1",
+        "was caught with the stolen car, the teen said he was very sorry"
+      ],
+      [
+        "2",
+        "for what he had done and for the damage he"
+      ],
+      [
+        "3",
+        "caused to the car. He realized that he had been very foolish and wanted people"
+      ],
+      [
+        "4",
+        "to forgive him."
+      ]
+    ],
+    "a": "3",
+    "t": "시제(대과거)",
+    "exp": "for what he had done과 병렬. ③ caused -> had caused (말한 시점 이전)."
+  },
+  {
     "i": "085",
     "q": "①The letter I was waiting for ②didn't arrive because it ③has been sent ④to my old address.",
     "c": [
@@ -1864,7 +2147,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "2",
-        "Mrs. Green and her sister just bought two new winter coats at the clearance sale"
+        "Mrs. Green and her sister just bought two new winter coats at the clearance sale."
       ],
       [
         "3",
@@ -1876,8 +2159,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "t": "비교대상 생략",
-    "exp": "after he has finished -> after he HAD finished. Speaker went fishing(past) after earlier action."
+    "t": "시제",
+    "exp": "after he has finished -> after he HAD finished. 과거(went) 이전의 동작."
   },
   {
     "i": "088",
@@ -1944,6 +2227,10 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "decide, to some extent, what our health"
+      ],
+      [
+        "4",
+        "was like."
       ]
     ],
     "a": "3",
@@ -2026,6 +2313,31 @@ window.__V502_GRAMMAR__ = [
     "exp": "furniture. 불가산명사."
   },
   {
+    "i": "094",
+    "q": "From 1923 ①to 1929, Calvin Coolidge, ②known as a man of ③few words, ④was being president of the United States.",
+    "c": [
+      [
+        "1",
+        "to 1929, Calvin Coolidge,"
+      ],
+      [
+        "2",
+        "known as a man of"
+      ],
+      [
+        "3",
+        "few words,"
+      ],
+      [
+        "4",
+        "was being president of the United States."
+      ]
+    ],
+    "a": "4",
+    "t": "진행형 불가",
+    "exp": "상태 be동사는 진행형 불가. ④ was being president -> was president."
+  },
+  {
     "i": "095",
     "q": "Choose the one that is NOT correct according to the standard English.",
     "c": [
@@ -2076,6 +2388,31 @@ window.__V502_GRAMMAR__ = [
     "exp": "much money. money = 불가산."
   },
   {
+    "i": "097",
+    "q": "Please ①make sure you ②give me ③a ring immediately after you ④will get to the destination.",
+    "c": [
+      [
+        "1",
+        "make sure you"
+      ],
+      [
+        "2",
+        "give me"
+      ],
+      [
+        "3",
+        "a ring immediately after you"
+      ],
+      [
+        "4",
+        "will get to the destination."
+      ]
+    ],
+    "a": "4",
+    "t": "시간부사절 시제",
+    "exp": "시간부사절에서 미래는 현재로. ④ will get -> get."
+  },
+  {
     "i": "098",
     "q": "①As soon as ②these misunderstandings ③will be straightened out, we ④will be able to proceed.",
     "c": [
@@ -2101,6 +2438,56 @@ window.__V502_GRAMMAR__ = [
     "exp": "a friend of my father's. 이중소유격."
   },
   {
+    "i": "099",
+    "q": "Please ①dispose of food and ②beverage containers ③as you ④will leave the auditorium.",
+    "c": [
+      [
+        "1",
+        "dispose of food and"
+      ],
+      [
+        "2",
+        "beverage containers"
+      ],
+      [
+        "3",
+        "as you"
+      ],
+      [
+        "4",
+        "will leave the auditorium."
+      ]
+    ],
+    "a": "4",
+    "t": "시간부사절 시제",
+    "exp": "때를 나타내는 부사절(as)에서 미래 대신 현재. ④ will leave -> leave."
+  },
+  {
+    "i": "100",
+    "q": "If they ①will get a warning of a cyclone or a tidal wave, they ②will climb onto their roofs and tie ③themselves and their family down, hoping that the rushing waters will carry them away and put them ④safely.",
+    "c": [
+      [
+        "1",
+        "will get a warning of a cyclone or a tidal wave, they"
+      ],
+      [
+        "2",
+        "will climb onto their roofs and tie"
+      ],
+      [
+        "3",
+        "themselves and their family down, hoping that the rushing waters will carry them away and put them"
+      ],
+      [
+        "4",
+        "safely."
+      ]
+    ],
+    "a": "1",
+    "t": "조건부사절 시제",
+    "exp": "조건부사절에서 미래는 현재로. ① will get -> get."
+  },
+  {
     "i": "101",
     "q": "Mary ______ quite ill for the past few days.",
     "c": [
@@ -2124,6 +2511,31 @@ window.__V502_GRAMMAR__ = [
     "a": "3",
     "t": "현재완료 vs. 과거",
     "exp": "for the past/last + 기간 = 현재완료(have/has + p.p.)"
+  },
+  {
+    "i": "102",
+    "q": "It has ①always been thought ②that cell mutation ③is a random event; however, geneticists ④find evidence to the contrary over the past two years.",
+    "c": [
+      [
+        "1",
+        "always been thought"
+      ],
+      [
+        "2",
+        "that cell mutation"
+      ],
+      [
+        "3",
+        "is a random event; however, geneticists"
+      ],
+      [
+        "4",
+        "find evidence to the contrary over the past two years."
+      ]
+    ],
+    "a": "4",
+    "t": "현재완료",
+    "exp": "over the past two years -> 현재완료. ④ find -> have found."
   },
   {
     "i": "103",
@@ -2420,6 +2832,31 @@ window.__V502_GRAMMAR__ = [
     "a": "4",
     "t": "현재완료 vs. 과거",
     "exp": "ago/yesterday/last night = 명백한 과거시점 -> 단순과거."
+  },
+  {
+    "i": "115",
+    "q": "Years ①ago the people of what is now the Pacific Northwest ②begins to develop an economic system ③based ④mostly on fishing.",
+    "c": [
+      [
+        "1",
+        "ago the people of what is now the Pacific Northwest"
+      ],
+      [
+        "2",
+        "begins to develop an economic system"
+      ],
+      [
+        "3",
+        "based"
+      ],
+      [
+        "4",
+        "mostly on fishing."
+      ]
+    ],
+    "a": "2",
+    "t": "과거시제",
+    "exp": "Years ago는 과거. ② begins -> began (주어 the people과도 불일치)."
   },
   {
     "i": "116",
@@ -3356,6 +3793,31 @@ window.__V502_GRAMMAR__ = [
     "t": "분사구문 시제"
   },
   {
+    "i": "154",
+    "q": "Many a ①scientist suggested ②to me that Agassiz go back to his fossil fish and ③left geology ④to the experts.",
+    "c": [
+      [
+        "1",
+        "scientist suggested"
+      ],
+      [
+        "2",
+        "to me that Agassiz go back to his fossil fish and"
+      ],
+      [
+        "3",
+        "left geology"
+      ],
+      [
+        "4",
+        "to the experts."
+      ]
+    ],
+    "a": "3",
+    "t": "제안동사 가정법현재",
+    "exp": "suggest that S (should) RV. go back과 병렬. ③ left -> leave."
+  },
+  {
     "i": "155",
     "q": "Since his blood pressure is",
     "c": [
@@ -3495,6 +3957,10 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "died three days"
+      ],
+      [
+        "4",
+        "before the exam."
       ]
     ],
     "a": "2",
@@ -3552,6 +4018,31 @@ window.__V502_GRAMMAR__ = [
     "t": "접속사와 병렬구조"
   },
   {
+    "i": "163",
+    "q": "Jane is ①the only one of the girls ②whom as you know ③is not desirable ④for the group.",
+    "c": [
+      [
+        "1",
+        "the only one of the girls"
+      ],
+      [
+        "2",
+        "whom as you know"
+      ],
+      [
+        "3",
+        "is not desirable"
+      ],
+      [
+        "4",
+        "for the group."
+      ]
+    ],
+    "a": "2",
+    "t": "주격 관계대명사",
+    "exp": "관계사가 is의 주어. ② whom -> who."
+  },
+  {
     "i": "164",
     "q": "In the rain I met a gentleman ______ I believed to be a professor.",
     "c": [
@@ -3575,6 +4066,31 @@ window.__V502_GRAMMAR__ = [
     "a": "2",
     "exp": "동명사 의미상 주어: 소유격. 'his being late'.",
     "t": "동명사 의미상 주어"
+  },
+  {
+    "i": "165",
+    "q": "A person ①which kidneys have failed cannot ②do without the medical ③treatment known ④as dialysis.",
+    "c": [
+      [
+        "1",
+        "which kidneys have failed cannot"
+      ],
+      [
+        "2",
+        "do without the medical"
+      ],
+      [
+        "3",
+        "treatment known"
+      ],
+      [
+        "4",
+        "as dialysis."
+      ]
+    ],
+    "a": "1",
+    "t": "소유격 관계대명사",
+    "exp": "kidneys 앞 소유 관계. ① which -> whose."
   },
   {
     "i": "166",
@@ -3824,11 +4340,11 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "176",
-    "q": "The tax cut",
+    "q": "The tax cut ①is Bush's most profound attack on Clinton's economic legacy. In 1993, without Republican support, Clinton ②pushed through a budget ③what raised taxes on the affluent and ④sliced into the burgeoning deficit.",
     "c": [
       [
         "1",
-        "is Bush's most profound attack on Clinton's economic legacy. In 1993, without Re"
+        "is Bush's most profound attack on Clinton's economic legacy. In 1993, without Republican support, Clinton"
       ],
       [
         "2",
@@ -3843,9 +4359,9 @@ window.__V502_GRAMMAR__ = [
         "sliced into the burgeoning deficit."
       ]
     ],
-    "a": "4",
-    "exp": "4형식 수여동사 수동태: be p.p. + to/for + IO.",
-    "t": "수여동사 수동형"
+    "a": "3",
+    "t": "관계대명사 that/which",
+    "exp": "선행사 a budget가 있으므로 what 불가. ③ what -> that/which."
   },
   {
     "i": "177",
@@ -4390,6 +4906,31 @@ window.__V502_GRAMMAR__ = [
     "t": "불가산명사"
   },
   {
+    "i": "199",
+    "q": "Since I ①have been elected to do the ②duties of the President of our country, I wish to ③thank all of the people here for the great favor ④which they have looked to me.",
+    "c": [
+      [
+        "1",
+        "have been elected to do the"
+      ],
+      [
+        "2",
+        "duties of the President of our country, I wish to"
+      ],
+      [
+        "3",
+        "thank all of the people here for the great favor"
+      ],
+      [
+        "4",
+        "which they have looked to me."
+      ]
+    ],
+    "a": "4",
+    "t": "관계대명사와 전치사",
+    "exp": "the great favor와 호응하는 절이 아님(look은 favor를 받지 못함). ④ which they have looked to me -> which they have shown me."
+  },
+  {
     "i": "200",
     "q": "Choose the one that is CORRECT according to the standard English.",
     "c": [
@@ -4478,7 +5019,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "prescribed Federal standards for clean air, the effect in big cities would be sl"
+        "prescribed Federal standards for clean air, the effect in big cities would be slight because"
       ],
       [
         "4",
@@ -4653,7 +5194,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "Danes communicate in stolen glances and occasional whispered words. This is not "
+        "Danes communicate in stolen glances and occasional whispered words. This is not the way their new life"
+      ],
+      [
+        "4",
+        "was supposed to work out."
       ]
     ],
     "a": "1",
@@ -4691,7 +5236,7 @@ window.__V502_GRAMMAR__ = [
     "c": [
       [
         "1",
-        "The side of Rousseau's thought that arouses nostalgia for nature came to the Uni"
+        "The side of Rousseau's thought that arouses nostalgia for nature came to the United States"
       ],
       [
         "2",
@@ -4703,7 +5248,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "joining to many other movements, it ⑤came to full flower and found a wide public"
+        "joining to many other movements, it"
+      ],
+      [
+        "5",
+        "came to full flower and found a wide public."
       ]
     ],
     "a": "4",
@@ -4762,7 +5311,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "215",
-    "q": "Fortune is proud",
+    "q": "Fortune is proud ①to announce its second annual competition for Asia's best business plans. The ②winning submission will ③advance to the semi-final round of E-Chron's annual business competition, with that winner ④walks away with up to $1,000,000 ⑤in prize awards.",
     "c": [
       [
         "1",
@@ -4774,16 +5323,20 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "advance to the semi-final round of E-Chron's annual business competition, with t"
+        "advance to the semi-final round of E-Chron's annual business competition, with that winner"
       ],
       [
         "4",
-        "walks away with up to $1,000,000 ⑤in prize awards."
+        "walks away with up to $1,000,000"
+      ],
+      [
+        "5",
+        "in prize awards."
       ]
     ],
-    "a": "3",
-    "exp": "most + N, almost + 모든 품사.",
-    "t": "most vs. almost"
+    "a": "4",
+    "t": "with 분사구문",
+    "exp": "with + 명사 + 분사. ④ walks away -> walking away."
   },
   {
     "i": "216",
@@ -4811,16 +5364,41 @@ window.__V502_GRAMMAR__ = [
     "t": "전치사"
   },
   {
+    "i": "217",
+    "q": "Seriously ①burned in a terrible car accident, the doctor was not sure that John ②could be protected from infection ③long enough for his body to begin to heal ④itself.",
+    "c": [
+      [
+        "1",
+        "burned in a terrible car accident, the doctor was not sure that John"
+      ],
+      [
+        "2",
+        "could be protected from infection"
+      ],
+      [
+        "3",
+        "long enough for his body to begin to heal"
+      ],
+      [
+        "4",
+        "itself."
+      ]
+    ],
+    "a": "1",
+    "t": "분사구문(현수분사)",
+    "exp": "주절 주어는 the doctor인데 화상 입은 사람은 John. ① burned가 주어와 불일치."
+  },
+  {
     "i": "218",
     "q": "Choose the one that is CORRECT according to the standard English.",
     "c": [
       [
         "1",
-        "Thought to be a cause of teenage skin problems, people with such problems should"
+        "Thought to be a cause of teenage skin problems, people with such problems should avoid the plant."
       ],
       [
         "2",
-        "Known for its nutritional value, chocolate is included in the diets of astronaut"
+        "Known for its nutritional value, chocolate is included in the diets of astronauts."
       ],
       [
         "3",
@@ -4831,9 +5409,34 @@ window.__V502_GRAMMAR__ = [
         "Roasted and shelled, workers then grind the beans."
       ]
     ],
-    "a": "1",
-    "exp": "besides(~외에) vs. beside(~옆에).",
-    "t": "의미혼돈 전치사"
+    "a": "2",
+    "t": "분사구문 의미상 주어",
+    "exp": "분사구문의 의미상 주어는 주절 주어와 일치. ② chocolate known for ~만 올바름. ①③④는 현수분사."
+  },
+  {
+    "i": "219",
+    "q": "Pyongyang ①is now pursuing a policy that ②calls for improved economic and technical ties with all nations, ③included capitalist countries that have no diplomatic ties with ④North Korea.",
+    "c": [
+      [
+        "1",
+        "is now pursuing a policy that"
+      ],
+      [
+        "2",
+        "calls for improved economic and technical ties with all nations,"
+      ],
+      [
+        "3",
+        "included capitalist countries that have no diplomatic ties with"
+      ],
+      [
+        "4",
+        "North Korea."
+      ]
+    ],
+    "a": "3",
+    "t": "분사",
+    "exp": "능동(포함하는) 의미. ③ included -> including."
   },
   {
     "i": "220",
@@ -4930,6 +5533,31 @@ window.__V502_GRAMMAR__ = [
     "a": "1",
     "exp": "find oneself ~ing. 분사구문.",
     "t": "분사"
+  },
+  {
+    "i": "224",
+    "q": "\"There is ①no general mythology today\", Campbell says, \"②or can there ever be again.\" Our lives are too ③greatly various in their backgrounds, aims and possibilities for any single order of symbols to work effectively ④on us all.",
+    "c": [
+      [
+        "1",
+        "no general mythology today\", Campbell says, \""
+      ],
+      [
+        "2",
+        "or can there ever be again.\" Our lives are too"
+      ],
+      [
+        "3",
+        "greatly various in their backgrounds, aims and possibilities for any single order of symbols to work effectively"
+      ],
+      [
+        "4",
+        "on us all."
+      ]
+    ],
+    "a": "3",
+    "t": "형용사 수식",
+    "exp": "too + 형용사(various). ③ greatly 불필요 -> too various."
   },
   {
     "i": "225",
@@ -5033,7 +5661,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "229",
-    "q": "\"Sexual harassment\" is a term",
+    "q": "\"Sexual harassment\" is a term ①that is used to describe behavior at work that is ②sexually offense or inappropriate. It includes behavior that ③makes an employee feel uncomfortable because of his or her gender, but it can also include any behavior that is sexual ④in nature.",
     "c": [
       [
         "1",
@@ -5045,16 +5673,16 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "makes an employee feel uncomfortable because of his or her gender, but it can al"
+        "makes an employee feel uncomfortable because of his or her gender, but it can also include any behavior that is sexual"
       ],
       [
         "4",
         "in nature."
       ]
     ],
-    "a": "3",
-    "exp": "a term that describes. 관계대명사.",
-    "t": "관계대명사"
+    "a": "2",
+    "t": "형용사 자리",
+    "exp": "부사 sexually의 수식을 받는 형용사 필요. ② offense(명사) -> offensive."
   },
   {
     "i": "230",
@@ -5317,6 +5945,10 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "did Mr. Peterson"
+      ],
+      [
+        "4",
+        "reveal the company's intentions."
       ]
     ],
     "a": "1",
@@ -5499,6 +6131,56 @@ window.__V502_GRAMMAR__ = [
     "t": "분사구문"
   },
   {
+    "i": "248",
+    "q": "Koreans ①are planning to stop ②to smoke ③since the government ④has required health warnings on cigarette packages.",
+    "c": [
+      [
+        "1",
+        "are planning to stop"
+      ],
+      [
+        "2",
+        "to smoke"
+      ],
+      [
+        "3",
+        "since the government"
+      ],
+      [
+        "4",
+        "has required health warnings on cigarette packages."
+      ]
+    ],
+    "a": "2",
+    "t": "동명사 목적어",
+    "exp": "stop ~ing(~을 멈추다). ② to smoke -> smoking."
+  },
+  {
+    "i": "249",
+    "q": "If you're ①planning ②to be near the post office today, ③could you stop ④buying some stamps?",
+    "c": [
+      [
+        "1",
+        "planning"
+      ],
+      [
+        "2",
+        "to be near the post office today,"
+      ],
+      [
+        "3",
+        "could you stop"
+      ],
+      [
+        "4",
+        "buying some stamps?"
+      ]
+    ],
+    "a": "4",
+    "t": "stop to do(목적)",
+    "exp": "stop to buy(사기 위해 멈추다)가 문맥상 적절. ④ buying -> to buy."
+  },
+  {
     "i": "250",
     "q": "The college administrator acknowledged ______ my letter of recommendation.",
     "c": [
@@ -5662,7 +6344,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "would not have been ⑤worth of telling."
+        "would not have been"
+      ],
+      [
+        "5",
+        "worth of telling."
       ]
     ],
     "a": "3",
@@ -6005,6 +6691,10 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "have become increasingly interested in"
+      ],
+      [
+        "4",
+        "identifying the potential risk factors."
       ]
     ],
     "a": "2",
@@ -6251,6 +6941,10 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "than we have given"
+      ],
+      [
+        "4",
+        "so far."
       ]
     ],
     "a": "1",
@@ -6283,6 +6977,31 @@ window.__V502_GRAMMAR__ = [
     "t": "시제"
   },
   {
+    "i": "282",
+    "q": "Whenever ①election are occurred in this country, there ②is often a candidate, as well as a few media broadcasters, ③who becomes ④an immortalized figure on the landscape of American history.",
+    "c": [
+      [
+        "1",
+        "election are occurred in this country, there"
+      ],
+      [
+        "2",
+        "is often a candidate, as well as a few media broadcasters,"
+      ],
+      [
+        "3",
+        "who becomes"
+      ],
+      [
+        "4",
+        "an immortalized figure on the landscape of American history."
+      ]
+    ],
+    "a": "1",
+    "t": "자동사 수동 불가",
+    "exp": "occur는 자동사. ① election are occurred -> elections occur."
+  },
+  {
     "i": "283",
     "q": "Classicism which",
     "c": [
@@ -6306,6 +7025,31 @@ window.__V502_GRAMMAR__ = [
     "a": "2",
     "exp": "Classicism which developed. 관계대명사.",
     "t": "관계대명사"
+  },
+  {
+    "i": "284",
+    "q": "Where he ①was seemed to be is a question ②for the courts to determine, ③not television jurors ④like you and me.",
+    "c": [
+      [
+        "1",
+        "was seemed to be is a question"
+      ],
+      [
+        "2",
+        "for the courts to determine,"
+      ],
+      [
+        "3",
+        "not television jurors"
+      ],
+      [
+        "4",
+        "like you and me."
+      ]
+    ],
+    "a": "1",
+    "t": "seem 수동 불가",
+    "exp": "seem은 수동태 불가. ① was seemed to be -> seemed to be."
   },
   {
     "i": "285",
@@ -7759,6 +8503,31 @@ window.__V502_GRAMMAR__ = [
     "t": "비교급"
   },
   {
+    "i": "344",
+    "q": "It's bad ①enough when you get ②divorced, but far ③bad when you lose your children ④as well.",
+    "c": [
+      [
+        "1",
+        "enough when you get"
+      ],
+      [
+        "2",
+        "divorced, but far"
+      ],
+      [
+        "3",
+        "bad when you lose your children"
+      ],
+      [
+        "4",
+        "as well."
+      ]
+    ],
+    "a": "3",
+    "t": "비교급 강조",
+    "exp": "far(훨씬)는 비교급 강조. ③ bad -> worse."
+  },
+  {
     "i": "345",
     "q": "By far ______ exciting of the dog's qualities is his inherent working ability.",
     "c": [
@@ -7885,7 +8654,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "350",
-    "q": "Researchers",
+    "q": "Researchers ①have found that children ②experience twice as much deep sleep ③than adults, ④a fact which may teach us something about the connection between age and learning ability.",
     "c": [
       [
         "1",
@@ -7901,12 +8670,12 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "a fact which may teach us something about the connection between age and learnin"
+        "a fact which may teach us something about the connection between age and learning ability."
       ]
     ],
-    "a": "1",
-    "exp": "Researchers have found. 현재완료.",
-    "t": "문법"
+    "a": "3",
+    "t": "배수 비교",
+    "exp": "twice as much A as B. ③ than -> as."
   },
   {
     "i": "351",
@@ -8076,12 +8845,16 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "My cultural background and intellectual training are as good as anyone's. ⑤ My c"
+        "My cultural background and intellectual training are as good as anyone's."
+      ],
+      [
+        "5",
+        "My cultural background and intellectual training are on the higher level."
       ]
     ],
-    "a": "2",
-    "exp": "second to none. 최상급 의미 관용표현.",
-    "t": "비교"
+    "a": "4",
+    "t": "비교 관용표현",
+    "exp": "second to none(누구에게도 뒤지지 않는) = as good as anyone's."
   },
   {
     "i": "358",
@@ -8109,6 +8882,31 @@ window.__V502_GRAMMAR__ = [
     "t": "문법"
   },
   {
+    "i": "359",
+    "q": "Venus ①approaches the Earth ②more closely ③than any other ④planet is.",
+    "c": [
+      [
+        "1",
+        "approaches the Earth"
+      ],
+      [
+        "2",
+        "more closely"
+      ],
+      [
+        "3",
+        "than any other"
+      ],
+      [
+        "4",
+        "planet is."
+      ]
+    ],
+    "a": "4",
+    "t": "비교 대상",
+    "exp": "than any other planet (does). ④ planet is -> planet."
+  },
+  {
     "i": "360",
     "q": "The ①judges' decisions can ②be based upon what is right ③rather than ④by what is popular.",
     "c": [
@@ -8123,6 +8921,10 @@ window.__V502_GRAMMAR__ = [
       [
         "3",
         "rather than"
+      ],
+      [
+        "4",
+        "by what is popular."
       ]
     ],
     "a": "1",
@@ -8205,6 +9007,31 @@ window.__V502_GRAMMAR__ = [
     "t": "부가의문문"
   },
   {
+    "i": "364",
+    "q": "Never ①in the history of humanity ②there have been ③more people ④living on this relatively small planet.",
+    "c": [
+      [
+        "1",
+        "in the history of humanity"
+      ],
+      [
+        "2",
+        "there have been"
+      ],
+      [
+        "3",
+        "more people"
+      ],
+      [
+        "4",
+        "living on this relatively small planet."
+      ]
+    ],
+    "a": "2",
+    "t": "부정어 도치",
+    "exp": "부정어 Never 문두 -> 도치. ② there have been -> have there been."
+  },
+  {
     "i": "365",
     "q": "______ anyone know that the old gentleman in the audience had once been an outstanding scholar.",
     "c": [
@@ -8280,6 +9107,31 @@ window.__V502_GRAMMAR__ = [
     "t": "도치"
   },
   {
+    "i": "368",
+    "q": "Not only ①the Japanese machine was judged ②easier to operate and more flexible than the American model, but ③it was priced $60,000 lower and ④could be delivered faster.",
+    "c": [
+      [
+        "1",
+        "the Japanese machine was judged"
+      ],
+      [
+        "2",
+        "easier to operate and more flexible than the American model, but"
+      ],
+      [
+        "3",
+        "it was priced $60,000 lower and"
+      ],
+      [
+        "4",
+        "could be delivered faster."
+      ]
+    ],
+    "a": "1",
+    "t": "Not only 도치",
+    "exp": "Not only 문두 -> 도치. ① the Japanese machine was judged -> was the Japanese machine judged."
+  },
+  {
     "i": "369",
     "q": "①Neither in her campaign nor in her acceptance speech ②do Miss Eliot ③acknowledge those ④whose assistance had ⑤won her the nomination.",
     "c": [
@@ -8297,7 +9149,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "whose assistance had ⑤won her the nomination."
+        "whose assistance had"
+      ],
+      [
+        "5",
+        "won her the nomination."
       ]
     ],
     "a": "2",
@@ -8572,6 +9428,31 @@ window.__V502_GRAMMAR__ = [
     "t": "도치"
   },
   {
+    "i": "381",
+    "q": "How long ①did it take you ②to ③learn to make ④a furniture like this?",
+    "c": [
+      [
+        "1",
+        "did it take you"
+      ],
+      [
+        "2",
+        "to"
+      ],
+      [
+        "3",
+        "learn to make"
+      ],
+      [
+        "4",
+        "a furniture like this?"
+      ]
+    ],
+    "a": "4",
+    "t": "불가산명사",
+    "exp": "furniture는 불가산. ④ a furniture -> furniture(a piece of furniture)."
+  },
+  {
     "i": "382",
     "q": "Plenty of items of",
     "c": [
@@ -8747,6 +9628,31 @@ window.__V502_GRAMMAR__ = [
     "t": "수일치"
   },
   {
+    "i": "389",
+    "q": "Before the ①invention of ②railroads, the only ③mean of land transportation was ④the horse.",
+    "c": [
+      [
+        "1",
+        "invention of"
+      ],
+      [
+        "2",
+        "railroads, the only"
+      ],
+      [
+        "3",
+        "mean of land transportation was"
+      ],
+      [
+        "4",
+        "the horse."
+      ]
+    ],
+    "a": "3",
+    "t": "명사 형태(means)",
+    "exp": "수단의 means는 단·복수 동형. ③ mean -> means."
+  },
+  {
     "i": "390",
     "q": "Choose the one that is CORRECT according to the standard English.",
     "c": [
@@ -8794,7 +9700,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "392",
-    "q": "Elephants are",
+    "q": "Elephants are ①capable of doing very hard work. They ②can be used in the jungles where machines cannot go. A grown elephant may consumes ③as many as 200 pounds of food a day, a disadvantage which ④tends to offset its capacity for heavy work.",
     "c": [
       [
         "1",
@@ -8802,7 +9708,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "2",
-        "can be used in the jungles where machines cannot go. A grown elephant may consum"
+        "can be used in the jungles where machines cannot go. A grown elephant may consumes"
       ],
       [
         "3",
@@ -8814,8 +9720,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "among the most intelligent. 최상급.",
-    "t": "최상급"
+    "t": "가산/불가산",
+    "exp": "food는 불가산명사. ③ as many as -> as much as."
   },
   {
     "i": "393",
@@ -8856,7 +9762,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "increasingly more powerful batteries for the growing number of portable electric"
+        "increasingly more powerful batteries for the growing number of portable electrical"
       ],
       [
         "4",
@@ -8866,6 +9772,31 @@ window.__V502_GRAMMAR__ = [
     "a": "4",
     "exp": "more powerful as well -> more powerful too.",
     "t": "as well"
+  },
+  {
+    "i": "395",
+    "q": "The mayor ①expressed concern about the large ②amount of ③people injured at ④crossings.",
+    "c": [
+      [
+        "1",
+        "expressed concern about the large"
+      ],
+      [
+        "2",
+        "amount of"
+      ],
+      [
+        "3",
+        "people injured at"
+      ],
+      [
+        "4",
+        "crossings."
+      ]
+    ],
+    "a": "2",
+    "t": "many/much (가산·불가산)",
+    "exp": "people는 가산명사. ② amount of -> number of."
   },
   {
     "i": "396",
@@ -8935,7 +9866,11 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "4",
-        "the way he did ⑤hundred of years ago."
+        "the way he did"
+      ],
+      [
+        "5",
+        "hundred of years ago."
       ]
     ],
     "a": "4",
@@ -9037,6 +9972,31 @@ window.__V502_GRAMMAR__ = [
     "a": "1",
     "exp": "'The size of the United States Supreme Court...' A → The.",
     "t": "관사"
+  },
+  {
+    "i": "403",
+    "q": "Although ①many of his songs are well known to the public, ②little is known about ③his early childhood and college background ④of country singer Johnny Lee.",
+    "c": [
+      [
+        "1",
+        "many of his songs are well known to the public,"
+      ],
+      [
+        "2",
+        "little is known about"
+      ],
+      [
+        "3",
+        "his early childhood and college background"
+      ],
+      [
+        "4",
+        "of country singer Johnny Lee."
+      ]
+    ],
+    "a": "3",
+    "t": "관사/대명사",
+    "exp": "of country singer Johnny Lee가 한정. ③ his -> the."
   },
   {
     "i": "404",
@@ -9915,7 +10875,7 @@ window.__V502_GRAMMAR__ = [
       ],
       [
         "3",
-        "what the selection is about. When you skim a reading passage, you read the most "
+        "what the selection is about. When you skim a reading passage, you read the most important parts of it quickly,"
       ],
       [
         "4",
@@ -10292,6 +11252,35 @@ window.__V502_GRAMMAR__ = [
     "a": "1",
     "exp": "'She isn't able to walk three miles a day.'",
     "t": "able"
+  },
+  {
+    "i": "455",
+    "q": "Blowing ①out the birthday candles is ②an ancient test to see if a ③growing child is ④enough strong to blow out ⑤a greater number each year.",
+    "c": [
+      [
+        "1",
+        "out the birthday candles is"
+      ],
+      [
+        "2",
+        "an ancient test to see if a"
+      ],
+      [
+        "3",
+        "growing child is"
+      ],
+      [
+        "4",
+        "enough strong to blow out"
+      ],
+      [
+        "5",
+        "a greater number each year."
+      ]
+    ],
+    "a": "4",
+    "t": "enough 어순",
+    "exp": "형용사 + enough. ④ enough strong -> strong enough."
   },
   {
     "i": "456",
@@ -10759,6 +11748,31 @@ window.__V502_GRAMMAR__ = [
     "a": "1",
     "exp": "'Spending the money, he felt as if he had been freed from debt.'",
     "t": "as if"
+  },
+  {
+    "i": "475",
+    "q": "Today ①just as a college graduate, a ②high-school graduate will find ③his earnings proportionate ④to his abilities.",
+    "c": [
+      [
+        "1",
+        "just as a college graduate, a"
+      ],
+      [
+        "2",
+        "high-school graduate will find"
+      ],
+      [
+        "3",
+        "his earnings proportionate"
+      ],
+      [
+        "4",
+        "to his abilities."
+      ]
+    ],
+    "a": "1",
+    "t": "like vs as",
+    "exp": "명사 앞에서는 like. ① just as -> just like."
   },
   {
     "i": "476",
