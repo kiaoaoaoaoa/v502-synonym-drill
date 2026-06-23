@@ -2216,7 +2216,7 @@ function showWordlist() {
 
     html += `<div class="wordlist-cat" data-cat-id="${escapeHtml(cat.id)}">`;
     html += `<div class="wl-cat-header-row">`;
-    html += `<h4 class="wl-cat-header" onclick="toggleCatFold('${escapeHtml(cat.id)}')" style="cursor:pointer">`;
+    html += `<h4 class="wl-cat-header" onclick="event.stopPropagation();toggleCatFold('${escapeHtml(cat.id)}')" style="cursor:pointer">`;
     html += `<span class="wl-cat-num">${escapeHtml(cat.id)}</span> ${escapeHtml(summary)}`;
     html += `<span class="wl-fold-indicator">▼</span>`;
     html += `</h4>`;
@@ -2297,12 +2297,12 @@ function showWordlist() {
 }
 
 function toggleCatFold(catId) {
-  const words = document.getElementById(`wl-words-${catId}`);
-  const header = document.querySelector(`.wordlist-cat[data-cat-id="${catId}"] .wl-fold-indicator`);
-  if (words) {
-    words.hidden = !words.hidden;
-    if (header) header.textContent = words.hidden ? '▸' : '▼';
-  }
+  var words = document.getElementById('wl-words-' + catId);
+  if (!words) return;
+  words.hidden = !words.hidden;
+  var cat = words.closest('.wordlist-cat');
+  var indicator = cat ? cat.querySelector('.wl-fold-indicator') : null;
+  if (indicator) indicator.textContent = words.hidden ? '\u25B8' : '\u25BC';
 }
 
 function toggleCatKoreanUsage(catId) {
