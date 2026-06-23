@@ -553,6 +553,9 @@ h2 {
   grid-template-columns: 1fr 1fr;
   gap: 4px 12px;
 }
+.wordlist-words[hidden] {
+  display: none;
+}
 
 .wl-word {
   font-weight: 700;
