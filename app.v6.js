@@ -3400,6 +3400,23 @@ function renderWordcheckQuestion() {
     finishWordcheck();
     return;
   }
+  // Update jump bar — disable out-of-range, highlight nearest
+  const jumpBtns = document.querySelectorAll('.wc-jump-btn');
+  let bestDist = Infinity, bestBtn = null;
+  jumpBtns.forEach(function(btn) {
+    var t = parseInt(btn.dataset.target, 10);
+    var outOfRange = t > wordcheckQuestions.length;
+    btn.disabled = outOfRange;
+    btn.style.opacity = outOfRange ? '0.35' : '';
+    btn.style.background = '';
+    btn.style.color = '';
+    var dist = Math.abs(wcState.index + 1 - t);
+    if (!outOfRange && dist < bestDist) { bestDist = dist; bestBtn = btn; }
+  });
+  if (bestBtn) {
+    bestBtn.style.background = 'var(--accent)';
+    bestBtn.style.color = '#fff';
+  }
   const q = wordcheckQuestions[wcState.index];
   const prog = document.getElementById('wordcheckProgress');
   prog.textContent = `${wcState.index + 1} / ${wordcheckQuestions.length} | ✅ ${wcState.correct} | ❌ ${wcState.index - wcState.correct}`;
@@ -3724,6 +3741,15 @@ function getWordcheckProgress() {
 
 document.getElementById('wordcheckNext').addEventListener('click', () => {
   wcState.index++;
+  renderWordcheckQuestion();
+});
+
+document.getElementById('wcJumpBar').addEventListener('click', (e) => {
+  if (!e.target.classList.contains('wc-jump-btn')) return;
+  if (wcState.completed) return;
+  const target = Math.min(parseInt(e.target.dataset.target, 10) - 1, wordcheckQuestions.length - 1);
+  if (target < 0 || target === wcState.index) return;
+  wcState.index = target;
   renderWordcheckQuestion();
 });
 
