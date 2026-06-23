@@ -683,6 +683,13 @@ h2 {
   border-radius: 6px;
   padding: 8px 10px;
   break-inside: avoid;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+.wb3-card-inner {
+  flex: 1;
+  min-width: 0;
 }
 .wb3-word-row {
   display: flex;
@@ -951,6 +958,57 @@ h2 {
 .wl-hideknown-btn.wl-hideknown-on {
   background: var(--accent);
   color: #fff;
+}
+
+/* wordbook3 jump bar */
+.wl3-jump-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  margin: 16px 0;
+  background: #f0f4ff;
+  border: 2px dashed var(--accent);
+  border-radius: 8px;
+  font-size: 13px;
+}
+.wl3-jump-label {
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.wl3-jump-input {
+  width: 80px;
+  padding: 4px 8px;
+  border: 1px solid var(--accent-soft);
+  border-radius: 5px;
+  font-size: 13px;
+  text-align: center;
+}
+.wl3-jump-go {
+  padding: 4px 14px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.wl3-jump-go:hover {
+  opacity: 0.85;
+}
+
+/* word number in wordbook3 */
+.wl2-word-num {
+  display: inline-block;
+  width: 36px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  text-align: right;
+  margin-right: 4px;
+  flex-shrink: 0;
 }
 .wl-toggle-mid-btn.wl-toggle-mid-on,
 .wl-toggle-high-btn.wl-toggle-high-on {

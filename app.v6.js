@@ -657,6 +657,9 @@ const els = {
   wordlist2Btn: document.querySelector("#wordlist2Btn"),
   wordlist2Panel: document.querySelector("#wordlist2Panel"),
   wordlist2Content: document.querySelector("#wordlist2Content"),
+  wordbook3Btn: document.querySelector("#wordbook3Btn"),
+  wordbook3Panel: document.querySelector("#wordbook3Panel"),
+  wordbook3Content: document.querySelector("#wordbook3Content"),
   logicPanel: document.querySelector("#logicPanel"),
   logicProgressBar: document.querySelector("#logicProgressBar"),
   logicQuestionText: document.querySelector("#logicQuestionText"),
@@ -1959,6 +1962,7 @@ function switchMode(mode) {
   els.myinfoPanel.hidden = true;
   els.dashboardPanel.hidden = true;
   els.wordlist2Panel.hidden = true;
+  els.wordbook3Panel.hidden = true;
   els.wordcheckPanel.hidden = true;
   els.grammar201Panel.hidden = true;
   els.examPanel.hidden = true;
@@ -2322,7 +2326,6 @@ function showWordlist2() {
     hideBtn.addEventListener('click', () => { wlHideKnown = !wlHideKnown; showWordlist2(); });
   }
 }
-
 function jumpToCategory(targetId) {
   const targetEl = document.querySelector(`.wordlist-cat[data-cat-id="${targetId}"]`);
   if (targetEl) {
