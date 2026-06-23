@@ -19,6 +19,12 @@
 
 * { box-sizing: border-box; }
 
+u {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+}
+
 body {
   margin: 0;
   background: var(--bg);
@@ -1657,15 +1663,6 @@ h2 {
   font-weight: 700;
   color: var(--muted);
   min-width: 60px;
-}
-.logic-rate {
-  font-size: 13px;
-  font-weight: 500;
-  color: #5b7fa5;
-  background: #eef3f8;
-  padding: 2px 8px;
-  border-radius: 8px;
-  white-space: nowrap;
 }
 
 @media (max-width: 840px) {
