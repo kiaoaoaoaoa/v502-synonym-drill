@@ -1606,6 +1606,11 @@ async function cloudSyncAll() {
   let ok = false;
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
+      // Try upsert first (requires unique constraint on nickname+quiz_set)
+      // Falls back to select+insert/update if constraint doesn't exist
+      const { error: upsertErr } = await client.from(table).upsert(row, { onConflict: 'nickname,quiz_set', ignoreDuplicates: false });
+      if (!upsertErr) { ok = true; break; }
+      // Fallback: manual select-then-insert/update
       const { data: existing } = await client.from(table).select('id').eq('nickname', nk).eq('quiz_set', 'USERDATA');
       if (existing && existing.length > 0) {
         await client.from(table).update(row).eq('nickname', nk).eq('quiz_set', 'USERDATA');
