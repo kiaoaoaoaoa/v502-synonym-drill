@@ -2165,10 +2165,13 @@ function showWordlist() {
 
     html += `<div class="wordlist-cat" data-cat-id="${escapeHtml(cat.id)}">`;
     html += `<div class="wl-cat-header-row">`;
-    html += `<h4 class="wl-cat-header${hasCollocations ? ' wl-has-coll' : ''}"${hasCollocations ? ` onclick="toggleCatDetail('${escapeHtml(cat.id)}')"` : ''}>`;
+    html += `<h4 class="wl-cat-header" onclick="toggleCatFold('${escapeHtml(cat.id)}')" style="cursor:pointer">`;
     html += `<span class="wl-cat-num">${escapeHtml(cat.id)}</span> ${escapeHtml(summary)}`;
-    if (hasCollocations) html += `<span class="wl-coll-indicator">▸</span>`;
+    html += `<span class="wl-fold-indicator">▼</span>`;
     html += `</h4>`;
+    if (hasCollocations) {
+      html += `<button class="wl-diff-btn" type="button" onclick="event.stopPropagation();toggleCatDetail('${escapeHtml(cat.id)}')">차이</button>`;
+    }
     if (hasKoreanUsage) {
       html += `<button class="wl-usage-btn" type="button" onclick="event.stopPropagation();toggleCatKoreanUsage('${escapeHtml(cat.id)}')">📖 용례</button>`;
     }
@@ -2177,7 +2180,7 @@ function showWordlist() {
     }
     html += `</div>`;
 
-    html += `<div class="wordlist-words">`;
+    html += `<div class="wordlist-words" id="wl-words-${escapeHtml(cat.id)}">`;
     catWords.forEach((w) => {
       const m = wordMeanings[w] || '';
       const known = state.playerName && isWordKnown(w);
@@ -2240,6 +2243,15 @@ function showWordlist() {
   html += '</div>'; // close wl-high-cats (wl-mid-cats closed by second null sentinel)
   html += '</div>';
   els.wordlistContent.innerHTML = html;
+}
+
+function toggleCatFold(catId) {
+  const words = document.getElementById(`wl-words-${catId}`);
+  const header = document.querySelector(`.wordlist-cat[data-cat-id="${catId}"] .wl-fold-indicator`);
+  if (words) {
+    words.hidden = !words.hidden;
+    if (header) header.textContent = words.hidden ? '▸' : '▼';
+  }
 }
 
 function toggleCatKoreanUsage(catId) {
@@ -2322,11 +2334,7 @@ function jumpToCategory(targetId) {
 
 function toggleCatDetail(catId) {
   const detail = document.getElementById(`wl-detail-${catId}`);
-  const header = document.querySelector(`.wordlist-cat[data-cat-id="${catId}"] .wl-coll-indicator`);
-  if (detail) {
-    detail.hidden = !detail.hidden;
-    if (header) header.textContent = detail.hidden ? '▸' : '▾';
-  }
+  if (detail) detail.hidden = !detail.hidden;
 }
 
 function toggleCatExample(catId) {
