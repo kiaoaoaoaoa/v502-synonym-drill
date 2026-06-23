@@ -697,6 +697,18 @@ function getActiveSet() {
   return categorySets[state.activeSetId] || categorySets["001-010"];
 }
 
+function getNextSetId(currentSetId) {
+  const m = String(currentSetId || '').match(/^(\d+)-(\d+)$/);
+  if (!m) return null;
+  const start = parseInt(m[1], 10);
+  const end = parseInt(m[2], 10);
+  const step = end - start + 1;
+  const nextStart = start + step;
+  const nextEnd = end + step;
+  const nextId = `${String(nextStart).padStart(3, '0')}-${String(nextEnd).padStart(3, '0')}`;
+  return categorySets[nextId] ? nextId : null;
+}
+
 function getActiveCategories() {
   const activeIds = new Set(getActiveSet().ids);
   return categories.filter((category) => activeIds.has(category.id));
@@ -1895,6 +1907,16 @@ async function completeQuiz() {
     reviewHTML += `</div>`;
   });
   reviewHTML += '</div>';
+
+  // NEXT button to go to the next category set
+  const nextSetId = getNextSetId(state.activeSetId);
+  if (nextSetId) {
+    const nextLabel = categorySets[nextSetId] ? categorySets[nextSetId].label : nextSetId;
+    reviewHTML += `<div style="text-align:center;margin-top:16px">`;
+    reviewHTML += `<button class="text-btn" style="min-height:48px;min-width:220px;font-size:16px;font-weight:700;background:var(--ink);color:#fff;border-color:var(--ink)" onclick="els.resultPanel.hidden=true;openSet('${nextSetId}');startQuiz()">NEXT ▸ ${escapeHtml(nextLabel)}</button>`;
+    reviewHTML += `</div>`;
+  }
+
   els.leaderboard.innerHTML = reviewHTML;
 
   if (!state.playerName) {
