@@ -2054,7 +2054,7 @@ async function showRanking() {
 
       const colors = ['#FF6B35','#FFD449','#06D6A0','#118AB2','#EF476F','#073B4C','#8338EC','#FF006E'];
       const top3 = cumulative.slice(0, 3);
-      const rest = cumulative.slice(3, 30);
+      const rest = cumulative.slice(3, 50);
 
       let html = '';
       html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:32px">';
