@@ -1,3 +1,37 @@
+// ── SVG Icon system (replaces emojis for consistent cross-platform rendering) ──
+const I = {
+  gold:   '<svg width="1em" height="1em" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#F0A500"/><text x="12" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">1</text></svg>',
+  silver: '<svg width="1em" height="1em" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#A0AAB5"/><text x="12" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">2</text></svg>',
+  bronze: '<svg width="1em" height="1em" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#C4703F"/><text x="12" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">3</text></svg>',
+  book:   '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M12 2v19"/></svg>',
+  bluebook:'<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M12 2v19"/></svg>',
+  greenbook:'<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M12 2v19"/></svg>',
+  redbook:'<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M12 2v19"/></svg>',
+  books:  '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M2 7h2"/><path d="M2 11h2"/><path d="M2 15h2"/></svg>',
+  check:  '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" fill="#DCFCE7"/><path d="M8 12l3 3 5-5"/></svg>',
+  cross:  '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" fill="#FEE2E2"/><path d="M8 8l8 8M16 8l-8 8"/></svg>',
+  clip:   '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>',
+  party:  '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2M5.6 5.6l1.4 1.4M3 12h2M5.6 18.4l1.4-1.4M12 19v2M17 5l-1.4 1.4"/><circle cx="12" cy="12" r="3"/><path d="M4 20l16-16"/></svg>',
+  bolt:   '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-3 8 13-12h-7l4-8z"/></svg>',
+  memo:   '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>',
+  chart:  '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="12" width="4" height="8" rx="1"/><rect x="10" y="7" width="4" height="13" rx="1"/><rect x="17" y="3" width="4" height="17" rx="1"/></svg>',
+  puzzle: '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 3h-3.6a2.4 2.4 0 0 0-4.8 0H4.5v5.4h1.8a2.4 2.4 0 0 1 0 4.8H4.5V19.5h5.4v-1.8a2.4 2.4 0 1 1 4.8 0v1.8h5.4V10.2h-2.1a2.4 2.4 0 0 1 0-4.8h2.1V3z"/></svg>',
+  trophy: '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="#F0A500" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12v3a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V4z"/><path d="M6 4h12M8 21h8M12 17v4"/><path d="M2 7h3v2a3 3 0 0 1-3 3V7z"/><path d="M22 7h-3v2a3 3 0 0 0 3 3V7z"/></svg>',
+  doc:    '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg>',
+  lock:   '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>',
+  folder: '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>',
+  target: '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg>',
+  square: '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>',
+  person: '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 12 0v1"/></svg>',
+  diamond:'<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l6 8-6 8-6-8z"/><circle cx="12" cy="10" r="1.5" fill="#7C3AED" stroke="none"/></svg>',
+  gem:    '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 8 12 22 2 8"/><polygon points="12 2 12 22"/><polygon points="2 8 12 12 22 8"/></svg>',
+  sprout: '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21V11"/><path d="M12 11c-3-3-6-1-7 3"/><path d="M12 11c3-3 6-1 7 3"/></svg>',
+  crown:  '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="#F0A500" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l4 8 6-10 6 10 4-8"/><path d="M4 18h16"/><path d="M6 14h12"/></svg>',
+  globe:  '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><ellipse cx="12" cy="12" rx="4" ry="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg>',
+  bulb:   '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17h4v4h-4z"/><path d="M12 2a6 6 0 0 0-6 6c0 3 2 5 2 7h8s2-4 2-7a6 6 0 0 0-6-6z"/></svg>',
+};
+const icon = name => I[name] || '';
+
 const categories = [
   {
     id: "001",
@@ -410,25 +444,22 @@ function writeIrtAbility(v) {
 }
 
 // Tier thresholds scaled to 0–10000
-function _tierSVG(path, fill) {
-  return `<svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align:middle" aria-hidden="true"><g fill="${fill}">${path}</g></svg>`;
-}
 function getTier(score) {
   const s = Math.max(0, Math.min(10000, score));
-  if (s >= 10000) return { name: '서성한메이저',     icon: _tierSVG('<polygon points="1,12 1,5 4,7 8,1 12,7 15,5 15,12"/>', '#FFD700') };
-  if (s >= 9000)  return { name: '서성한',           icon: _tierSVG('<polygon points="8,1 15,8 8,15 1,8"/>', '#AF52DE') };
-  if (s >= 8000)  return { name: '서성한하위',       icon: _tierSVG('<polygon points="8,2 14,10 8,14 2,10"/>', '#BF5AF2') };
-  if (s >= 6000)  return { name: '중경외시 메이저',  icon: _tierSVG('<circle cx="8" cy="8" r="7"/>', '#FF9500') };
-  if (s >= 5000)  return { name: '중경외시 하위',    icon: _tierSVG('<circle cx="8" cy="8" r="7"/>', '#8E8E93') };
-  if (s >= 3500)  return { name: '건동홍',           icon: _tierSVG('<circle cx="8" cy="8" r="7"/>', '#CD7F32') };
-  if (s >= 2500)  return { name: '국숭세단',         icon: _tierSVG('<rect x="2" y="2" width="12" height="12" rx="1"/>', '#34C759') };
-  if (s >= 1600)  return { name: '인가경',           icon: _tierSVG('<rect x="2" y="2" width="12" height="12" rx="1"/>', '#007AFF') };
-  return { name: '정붕이', icon: _tierSVG('<circle cx="8" cy="12" r="2"/><path d="M8,11 Q8,2 14,2 Q10,5 8,11"/>', '#30D158') };
+  if (s >= 10000) return { name: '서성한메이저',     icon: icon('crown') };
+  if (s >= 9000)  return { name: '서성한',           icon: icon('diamond') };
+  if (s >= 8000)  return { name: '서성한하위',       icon: icon('gem') };
+  if (s >= 6000)  return { name: '중경외시 메이저',  icon: icon('gold') };
+  if (s >= 5000)  return { name: '중경외시 하위',    icon: icon('silver') };
+  if (s >= 3500)  return { name: '건동홍',           icon: icon('bronze') };
+  if (s >= 2500)  return { name: '국숭세단',         icon: icon('greenbook') };
+  if (s >= 1600)  return { name: '인가경',           icon: icon('bluebook') };
+  return { name: '정붕이', icon: icon('sprout') };
 }
 
 // Estimate IRT ability from public stats — accuracy-based, volume-bonus capped at 2000 Qs
 function getTierForRanking(correct, total) {
-  const accuracy = Math.min(1, total > 0 ? correct / total : 0);
+  const accuracy = total > 0 ? correct / total : 0;
   const volumeFactor = 0.7 + 0.3 * Math.min(1, total / 2000);
   const estAbility = accuracy * 10000 * volumeFactor;
   return getTier(estAbility);
@@ -439,7 +470,7 @@ function updateTierDisplay() {
   if (!el) return;
   const ability = readIrtAbility();
   const tier = getTier(ability);
-  el.innerHTML = `${tier.icon} ${tier.name}`;
+  el.textContent = `${tier.icon} ${tier.name}`;
   el.title = `IRT Ability: ${ability.toFixed(1)}`;
 }
 let supabaseClient = null;
@@ -899,7 +930,7 @@ function explainOption(word, question) {
     infoBlock += `<p class="explain-note"><strong>Definition:</strong> ${escapeHtml(note)}</p>`;
   }
   if (example) {
-    infoBlock += `<p class="explain-example"><strong>📖 Example:</strong> ${escapeHtml(example)}</p>`;
+    infoBlock += `<p class="explain-example"><strong>${icon('book')} Example:</strong> ${escapeHtml(example)}</p>`;
   }
 
   const statusLabel = isAnswer ? "CORRECT" : selected ? "YOUR PICK ✗" : "WRONG";
@@ -926,15 +957,15 @@ function showFeedback(correct, question) {
 
   els.feedback.innerHTML = `
     <div class="feedback-header">
-      <strong>${correct ? "✅ Correct!" : "❌ Incorrect."}</strong>
+      <strong>${correct ? icon('check') + ' Correct!' : icon('cross') + ' Incorrect.'}</strong>
     </div>
     <div class="feedback-prompt">
       <p><b>Prompt: ${escapeHtml(question.prompt)}</b> ${promptMeaning ? `— ${escapeHtml(promptMeaning)}` : ""}</p>
       ${promptNote ? `<p class="explain-note"><strong>Definition:</strong> ${escapeHtml(promptNote)}</p>` : ""}
-      ${promptExample ? `<p class="explain-example"><strong>📖 예문:</strong> ${escapeHtml(promptExample)}</p>` : ""}
+      ${promptExample ? `<p class="explain-example"><strong>${icon('book')} 예문:</strong> ${escapeHtml(promptExample)}</p>` : ""}
       <p><strong>Correct pair:</strong> ${escapeHtml(question.answer.join(" / "))}</p>
     </div>
-    <p class="explain-section-label collapsed" onclick="this.classList.toggle('collapsed');this.nextElementSibling.classList.toggle('hidden')">📋 Option Analysis ▾</p>
+    <p class="explain-section-label collapsed" onclick="this.classList.toggle('collapsed');this.nextElementSibling.classList.toggle('hidden')">${icon('clip')} Option Analysis ▾</p>
     <ul class="explain-list detailed hidden">${optionRows}</ul>
   `;
 }
@@ -1541,7 +1572,7 @@ function getLeaderboardTable() {
   return getDbConfig().tableName || "leaderboard_scores";
 }
 
-/* ── Supabase cloud sync (full data, payload column) ── */
+/* ── Supabase cloud sync (full data, payload column) ── **/
 
 async function pushAllScoresToSupabase() {
   if (!state.playerName || !hasPublicConfig()) return;
@@ -1590,7 +1621,7 @@ async function cloudPullScores() {
 }
 
 /* Debounced cloudSyncAll — coalesces per-action calls into a single write.
-   100 ms — imperceptible delay, fires near-instantly after last action. */
+   100 ms — imperceptible delay, fires near-instantly after last action. **/
 let _cloudSyncTimer = null;
 function scheduleCloudSync() {
   if (_cloudSyncTimer) {
@@ -1689,7 +1720,7 @@ async function cloudSyncAll() {
         const idsToDelete = rows.slice(1).map(r => r.id);
         await client.from(table).delete().in('id', idsToDelete);
       }
-    } catch(e) { /* non-critical: duplicate cleanup failed */ }
+    } catch(e) { /* non-critical: duplicate cleanup failed **/ }
   }
 }
 
@@ -1838,7 +1869,7 @@ async function savePublicScore(entry) {
 
 /* Debounced, race-free remote writer for cumulative buckets (LOGIC / WORDCHECK /
    SYNONYM). Rapid per-question calls coalesce into a single write of the latest
-   value, so we never race SELECT-then-INSERT into duplicate or stale rows. */
+   value, so we never race SELECT-then-INSERT into duplicate or stale rows. **/
 const _cumRemoteTimers = {};
 const _cumRemoteLatest = {};
 function scheduleCumulativeRemoteWrite(quizSet, name, correct, total, accuracy) {
@@ -1919,11 +1950,11 @@ async function completeQuiz() {
   els.resultPanel.hidden = false;
   const tier = getTier(readIrtAbility());
   els.resultTitle.textContent = `${displayName}'s Result`;
-  els.resultSummary.innerHTML = `${entry.correct}/${entry.total} correct — ${accuracy}% accuracy — ${tier.icon} ${tier.name}`;
+  els.resultSummary.textContent = `${entry.correct}/${entry.total} correct — ${accuracy}% accuracy — ${tier.icon} ${tier.name}`;
 
   // Show question-by-question review
   let reviewHTML = '<div style="max-height:50vh;overflow-y:auto;margin:16px 0">';
-  reviewHTML += '<h4 style="margin-bottom:8px">📋 문제별 리뷰</h4>';
+  reviewHTML += '<h4 style="margin-bottom:8px">' + icon('clip') + ' 문제별 리뷰</h4>';
   (state.setQuestions || state.questions).forEach((q, i) => {
     const saved = state.answers.get(q.id);
     const isCorrect = saved?.correct;
@@ -1931,7 +1962,7 @@ async function completeQuiz() {
     reviewHTML += `<div style="margin-bottom:6px;padding:8px 10px;border-radius:6px;font-size:13px;background:${isCorrect?'#ecf8f1':'#fff1ec'};border-left:3px solid ${isCorrect?'#8fc7a8':'#dda08c'}">`;
     reviewHTML += `<a href="#" onclick="reviewQuestion(${i});return false" style="font-weight:700;color:var(--ink);text-decoration:none">Q${i+1}.</a> `;
     reviewHTML += `<span style="color:var(--muted)">${escapeHtml(q.prompt)} — ${wordMeanings[q.prompt]||''}</span>`;
-    reviewHTML += `<span style="float:right;font-weight:700;color:${isCorrect?'var(--ok)':'var(--warn)'}">${isCorrect?'✅':'❌'}</span>`;
+    reviewHTML += `<span style="float:right;font-weight:700;color:${isCorrect?'var(--ok)':'var(--warn)'}">${isCorrect ? icon('check') : icon('cross')}</span>`;
     reviewHTML += `<br><small>선택: ${selected.map(w=>`${escapeHtml(w)}(${wordMeanings[w]||'?'})`).join(', ')}</small>`;
     if (!isCorrect) {
       reviewHTML += `<br><small style="color:var(--ok)">정답: ${q.answer.map(w=>`${escapeHtml(w)}(${wordMeanings[w]||'?'})`).join(', ')}</small>`;
@@ -1989,7 +2020,7 @@ function reviewQuestion(index) {
   els.nextTopBtn.onclick = els.nextBtn.onclick;
 }
 
-/* ---- Public ranking only ---- */
+/* ---- Public ranking only ---- **/
 function renderPublicResult(displayName, accuracy, correct, total) {
   // Append public ranking below existing content (don't overwrite review)
   const existingHTML = els.leaderboard.innerHTML;
@@ -2005,7 +2036,7 @@ function renderPublicResult(displayName, accuracy, correct, total) {
       const rank = cumulative.findIndex(e => e.name.toLowerCase() === displayName.toLowerCase()) + 1;
       els.resultSummary.textContent = `${correct}/${total} — ${accuracy}% — Public Rank #${rank || cumulative.length + 1}`;
       els.leaderboard.innerHTML = existingHTML + `
-        <h4>🌐 Public Ranking</h4>
+        <h4>${icon('globe')} Public Ranking</h4>
         <p class="ranking-note">Best per set · All 62 sets</p>
         <ol>
           ${cumulative.slice(0, 20).map((item, idx) => `
@@ -2023,7 +2054,7 @@ function renderPublicResult(displayName, accuracy, correct, total) {
   });
 }
 
-/* ---- Mode switching: only one panel active at a time ---- */
+/* ---- Mode switching: only one panel active at a time ---- **/
 function switchMode(mode) {
   els.startPanel.hidden = true;
   els.quizPanel.hidden = true;
@@ -2110,7 +2141,7 @@ function showRanking() {
       // Top 3 — hero blocks
       html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:32px">';
       top3.forEach((item, idx) => {
-        const medals = ['🥇','🥈','🥉'];
+        const medals = [icon('gold'),icon('silver'),icon('bronze')];
         const tier = getTierForRanking(item.correct, item.total);
         const sizes = ['160%','130%','110%'];
         const color = colors[idx];
@@ -2227,7 +2258,7 @@ function showWordlist() {
       html += `<button class="wl-diff-btn" type="button" onclick="event.stopPropagation();toggleCatDetail('${escapeHtml(cat.id)}')">차이</button>`;
     }
     if (hasKoreanUsage) {
-      html += `<button class="wl-usage-btn" type="button" onclick="event.stopPropagation();toggleCatKoreanUsage('${escapeHtml(cat.id)}')">📖 용례</button>`;
+      html += `<button class="wl-usage-btn" type="button" onclick="event.stopPropagation();toggleCatKoreanUsage('${escapeHtml(cat.id)}')">${icon('book')} 용례</button>`;
     }
     if (hasExamples) {
       html += `<button class="wl-example-btn" type="button" onclick="event.stopPropagation();toggleCatExample('${escapeHtml(cat.id)}')">예문</button>`;
@@ -2274,7 +2305,7 @@ function showWordlist() {
         const usage = (window.koreanUsage && window.koreanUsage[w]) ? window.koreanUsage[w] : '';
         if (usage) {
           html += `<li><strong class="wl-detail-word">${escapeHtml(w)}</strong>`;
-          html += `<p class="wl-usage">📝 ${escapeHtml(usage)}</p></li>`;
+          html += `<p class="wl-usage">${icon('memo')} ${escapeHtml(usage)}</p></li>`;
         }
       });
       html += `</ul></div>`;
@@ -2287,7 +2318,7 @@ function showWordlist() {
         const example = (window.examples && window.examples[w]) ? window.examples[w] : '';
         if (example && example.length > 20) {
           html += `<li><strong class="wl-detail-word">${escapeHtml(w)}</strong>`;
-          html += `<p class="wl-example">📖 ${escapeHtml(example)}</p></li>`;
+          html += `<p class="wl-example">${icon('book')} ${escapeHtml(example)}</p></li>`;
         }
       });
       html += `</ul></div>`;
@@ -2417,7 +2448,7 @@ function startQuiz() {
   if (state.questions.length === 0) {
     els.feedback.hidden = false;
     els.feedback.className = "feedback ok";
-    els.feedback.innerHTML = "<strong>이 카테고리의 모든 단어를 마스터했습니다! 🎉</strong><p>다른 카테고리를 선택해 주세요.</p>";
+    els.feedback.innerHTML = "<strong>이 카테고리의 모든 단어를 마스터했습니다! ${icon('party')}</strong><p>다른 카테고리를 선택해 주세요.</p>";
     els.submitBtn.disabled = true;
     els.nextBtn.disabled = true;
     els.postFeedbackActions.hidden = true;
@@ -2617,7 +2648,7 @@ window.addEventListener("beforeunload", () => { saveQuizProgress(); flushCloudSy
 window.addEventListener("pagehide", () => { saveQuizProgress(); flushCloudSync(); });
 window.addEventListener("pagehide", () => saveQuizProgress());
 
-/* ======== Logic Quiz ======== */
+/* ======== Logic Quiz ======== **/
 const logicProgressKey = "v502-logic-progress";
 const logicScoreKey = "v502-logic-score"; // weighted cumulative score
 const synonymProgressKey = "v502-synonym-progress";
@@ -2655,7 +2686,7 @@ function saveLogicWrong(qid) {
   scheduleCloudSync();
 }
 
-/* Grammar progress persistence */
+/* Grammar progress persistence **/
 const grammarProgressKey = "v502-grammar-progress";
 function readGrammarProgress() {
   try { return JSON.parse(localStorage.getItem(grammarProgressKey)) || {}; }
@@ -2684,7 +2715,7 @@ function getGrammarWrong() {
   return new Set((p[key] && p[key].wrong) || []);
 }
 
-/* Exam progress persistence */
+/* Exam progress persistence **/
 const examProgressKey = "v502-exam-progress";
 function readExamProgress() {
   try { return JSON.parse(localStorage.getItem(examProgressKey)) || {}; }
@@ -2716,7 +2747,7 @@ function getExamProgress(tab) {
   return { correct: new Set(entry.correct), wrong: new Set(entry.wrong) };
 }
 
-/* Weighted scoring using the 7-factor regression seed */
+/* Weighted scoring using the 7-factor regression seed **/
 function readLogicScore() {
   try { return JSON.parse(localStorage.getItem(logicScoreKey)) || {}; }
   catch { return {}; }
@@ -2760,32 +2791,33 @@ function getLogicTotal() {
   return (window.__V502_LOGIC__ && window.__V502_LOGIC__.questions || []).length;
 }
 
-/* Push the player's *cumulative* logic stats to the ranking using raw correct counts
-   (matching synonym/wordcheck scale). Weighted score tracked separately for tier display. */
+/* Push the player's *cumulative* logic stats to the ranking using WEIGHTED SCORES.
+   Each answer contributes a difficulty-adjusted delta, not just +1/-0. **/
 function persistLogicRanking() {
   if (!state.playerName) return;
-  const correct = getLogicCompleted().size;
-  const wrong = getLogicWrong().size;
-  const total = correct + wrong;
-  if (total === 0) return;
-  const accuracy = Math.round((correct / total) * 100);
+  const ws = getLogicWeightedScore();
+  if (ws.questions === 0) return;
+  // Scale weighted score to a display-friendly range (~0-100 for readability)
+  // Raw weighted score per question: ~0.01 to ~1.5.  Scale up ×40 → 0.4 to 60 range.
+  const displayScore = Math.max(0, Math.round(ws.score * 40 * 100) / 100);
+  const accuracy = Math.round((getLogicCompleted().size / (getLogicCompleted().size + getLogicWrong().size || 1)) * 100);
 
-  // Local: replace any prior logic entries with a single cumulative one
+  // Local: replace any prior logic entries with a single cumulative weighted one
   const nameKey = state.playerName.toLowerCase();
   const entries = readLeaderboard().filter(
     (e) => !(e.name.toLowerCase() === nameKey && String(e.setId || "").startsWith("LOGIC")),
   );
   entries.push({
     name: state.playerName,
-    correct,                              // raw correct count (not weighted)
-    total,                                // questions attempted
+    correct: displayScore,              // weighted score (scaled)
+    total: ws.questions,                // questions attempted
     accuracy,
-    setId: "LOGIC", setLabel: "Logic Quiz", completedAt: new Date().toISOString(),
+    setId: "LOGIC", setLabel: "Logic Quiz (weighted)", completedAt: new Date().toISOString(),
   });
   writeLeaderboard(entries);
 
   // Public: coalesced, race-free write of the single (nickname, LOGIC) cumulative row
-  scheduleCumulativeRemoteWrite("LOGIC", state.playerName, correct, total, accuracy);
+  scheduleCumulativeRemoteWrite("LOGIC", state.playerName, displayScore, ws.questions, accuracy);
 }
 
 function shuffleLogicQuestions() {
@@ -2951,7 +2983,7 @@ function submitLogicAnswer() {
   els.logicFeedback.hidden = false;
   els.logicFeedback.className = `feedback ${correct ? "ok" : "no"}`;
   els.logicFeedback.innerHTML = `
-    <strong>${correct ? "✅ Correct!" : "❌ Incorrect."}</strong>
+    <strong>${correct ? icon('check') + ' Correct!' : icon('cross') + ' Incorrect.'}</strong>
     <p style="margin-top:8px">${escapeHtml(q.explanation)}</p>
   `;
 
@@ -3018,12 +3050,12 @@ let noExplainMode = localStorage.getItem('v502-noexplain') === '1';
 function updateNoExplainIndicator() {
   const el = document.getElementById('noExplainIndicator');
   if (!el) return;
-  el.textContent = noExplainMode ? '⚡ 해설ON' : '⚡ 해설OFF';
+  el.textContent = noExplainMode ? icon('bolt') + ' 해설ON' : icon('bolt') + ' 해설OFF';
   el.classList.toggle('on', noExplainMode);
 }
 
 function syncNoExplainButtons() {
-  const label = noExplainMode ? '⚡ 해설ON' : '⚡ 해설OFF';
+  const label = noExplainMode ? icon('bolt') + ' 해설ON' : icon('bolt') + ' 해설OFF';
   document.querySelectorAll('.quiz-noexplain-btn').forEach(b => {
     b.textContent = label;
     b.classList.toggle('on', noExplainMode);
@@ -3031,7 +3063,7 @@ function syncNoExplainButtons() {
 }
 
 function syncNoExplainButtons() {
-  const label = noExplainMode ? '⚡ 해설ON' : '⚡ 해설OFF';
+  const label = noExplainMode ? icon('bolt') + ' 해설ON' : icon('bolt') + ' 해설OFF';
   document.querySelectorAll('.quiz-noexplain-btn').forEach(b => {
     b.textContent = label;
     b.classList.toggle('on', noExplainMode);
@@ -3041,7 +3073,7 @@ function syncNoExplainButtons() {
 function toggleNoExplainMode() {
   noExplainMode = !noExplainMode;
   localStorage.setItem('v502-noexplain', noExplainMode ? '1' : '0');
-  const label = noExplainMode ? '⚡ 해설ON' : '⚡ 해설OFF';
+  const label = noExplainMode ? icon('bolt') + ' 해설ON' : icon('bolt') + ' 해설OFF';
   const btn = document.getElementById('dashNoExplainBtn');
   if (btn) btn.textContent = label;
   syncNoExplainButtons();
@@ -3087,7 +3119,7 @@ function showDashboard() {
   const noExBtn = document.getElementById('dashNoExplainBtn');
   if (noExBtn) {
     noExBtn.style.display = loggedIn ? '' : 'none';
-    noExBtn.textContent = noExplainMode ? '⚡ 해설ON' : '⚡ 해설OFF';
+    noExBtn.textContent = noExplainMode ? icon('bolt') + ' 해설ON' : icon('bolt') + ' 해설OFF';
   }
   syncNoExplainButtons();
   updateNoExplainIndicator();
@@ -3108,33 +3140,33 @@ function showDashboard() {
     const score = cum ? cum.correct : 0;
     const tier = getTier(readIrtAbility());
     html += `<div class="dash-stats dash-stats-xl">`;
-    html += `<div class="dash-stat" onclick="showWordlist()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-num">${knownCount}</span><span class="dash-stat-label">📋 외운 단어</span></div>`;
-    html += `<div class="dash-stat" onclick="startLogicQuiz()" style="cursor:pointer" title="논리문제"><span class="dash-stat-num">${logicMastered}<small>/${getLogicTotal()}</small></span><span class="dash-stat-label">🧩 논리 마스터</span></div>`;
-    html += `<div class="dash-stat" onclick="showRanking()" style="cursor:pointer" title="통합랭킹 보기"><span class="dash-stat-num">${score}</span><span class="dash-stat-label">🏆 통합 점수</span></div>`;
+    html += `<div class="dash-stat" onclick="showWordlist()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-num">${knownCount}</span><span class="dash-stat-label">${icon('clip')} 외운 단어</span></div>`;
+    html += `<div class="dash-stat" onclick="startLogicQuiz()" style="cursor:pointer" title="논리문제"><span class="dash-stat-num">${logicMastered}<small>/${getLogicTotal()}</small></span><span class="dash-stat-label">${icon('puzzle')} 논리 마스터</span></div>`;
+    html += `<div class="dash-stat" onclick="showRanking()" style="cursor:pointer" title="통합랭킹 보기"><span class="dash-stat-num">${score}</span><span class="dash-stat-label">${icon('trophy')} 통합 점수</span></div>`;
     html += `<div class="dash-stat" style="cursor:default"><span class="dash-stat-num" style="font-size:18px">${tier.icon}</span><span class="dash-stat-label">${tier.name}</span></div>`;
-    html += `<div class="dash-stat" onclick="showWordlist()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-icon">📋</span><span class="dash-stat-label">단어일람</span></div>`;
-    html += `<div class="dash-stat" onclick="showWordlist2()" style="cursor:pointer" title="단어일람보기2"><span class="dash-stat-icon">🗂️</span><span class="dash-stat-label">단어일람2</span></div>`;
+    html += `<div class="dash-stat" onclick="showWordlist()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-icon">${icon('clip')}</span><span class="dash-stat-label">단어일람</span></div>`;
+    html += `<div class="dash-stat" onclick="showWordlist2()" style="cursor:pointer" title="단어일람보기2"><span class="dash-stat-icon">${icon('folder')}</span><span class="dash-stat-label">단어일람2</span></div>`;
     html += `</div>`;
   }
 
   // ---- Study cards ----
   html += '<p class="dash-section-label">학습</p>';
   html += '<div class="dash-grid">';
-  html += dashCard({ icon: '📝', title: '단어문제', desc: '동의어 짝 맞추기', accent: 'teal', onclick: "openSynonymPanel()" });
-  html += dashCard({ icon: '🧩', title: '논리문제', desc: '문맥 속 어휘 추론', accent: 'indigo', onclick: "startLogicQuiz()" });
-  html += dashCard({ icon: '📘', title: '201 단어퀴즈', desc: '4지선다 어휘 체크', accent: 'blue', onclick: "showWordcheck201()" });
-  html += dashCard({ icon: '📝', title: '문법 201', desc: '442개 문법 문제', accent: 'plum', onclick: "showGrammar201()" });
-  html += dashCard({ icon: '📄', title: '기출문제', desc: '2011-2026 성균관대 + 가천대', accent: 'slate', onclick: "showExam()" });
-  html += dashCard({ icon: '✅', title: '단어확인문제', desc: '전체 어휘 확인', accent: 'green', onclick: "showWordcheck()" });
+  html += dashCard({ icon: icon('memo'), title: '단어문제', desc: '동의어 짝 맞추기', accent: 'teal', onclick: "openSynonymPanel()" });
+  html += dashCard({ icon: icon('puzzle'), title: '논리문제', desc: '문맥 속 어휘 추론', accent: 'indigo', onclick: "startLogicQuiz()" });
+  html += dashCard({ icon: icon('bluebook'), title: '201 단어퀴즈', desc: '4지선다 어휘 체크', accent: 'blue', onclick: "showWordcheck201()" });
+  html += dashCard({ icon: icon('memo'), title: '문법 201', desc: '442개 문법 문제', accent: 'plum', onclick: "showGrammar201()" });
+  html += dashCard({ icon: icon('doc'), title: '기출문제', desc: '2011-2026 성균관대 + 가천대', accent: 'slate', onclick: "showExam()" });
+  html += dashCard({ icon: icon('check'), title: '단어확인문제', desc: '전체 어휘 확인', accent: 'green', onclick: "showWordcheck()" });
   html += '</div>';
 
   // ---- Review & info cards (logged-out only) ----
   if (!loggedIn) {
     html += '<p class="dash-section-label">계정</p>';
     html += '<div class="dash-grid">';
-    html += dashCard({ icon: '🔒', title: '로그인 필요', desc: '내정보 / 랭킹 이용 잠금', accent: 'slate', onclick: "document.getElementById('authNicknameInput').focus()" });
-    html += dashCard({ icon: '📋', title: '단어일람보기', desc: '전체 단어 사전', accent: 'slate', onclick: "showWordlist()" });
-    html += dashCard({ icon: '🗂️', title: '단어일람보기2', desc: 'MVP2 + V401 추가 단어', accent: 'slate', onclick: "showWordlist2()" });
+    html += dashCard({ icon: icon('lock'), title: '로그인 필요', desc: '내정보 / 랭킹 이용 잠금', accent: 'slate', onclick: "document.getElementById('authNicknameInput').focus()" });
+    html += dashCard({ icon: icon('clip'), title: '단어일람보기', desc: '전체 단어 사전', accent: 'slate', onclick: "showWordlist()" });
+    html += dashCard({ icon: icon('folder'), title: '단어일람보기2', desc: 'MVP2 + V401 추가 단어', accent: 'slate', onclick: "showWordlist2()" });
     html += '</div>';
   }
 
@@ -3179,7 +3211,7 @@ function showWrongNotes() {
 
   let totalWrong = 0;
   let html = '<div style="max-width:600px">';
-  html += '<h3 style="margin-bottom:12px">📕 오답노트</h3>';
+  html += '<h3 style="margin-bottom:12px">' + icon('redbook') + ' 오답노트</h3>';
 
   for (const catId in wrong) {
     const words = wrong[catId];
@@ -3197,7 +3229,7 @@ function showWrongNotes() {
   }
 
   if (totalWrong === 0) {
-    html += '<p style="color:var(--muted)">틀린 단어가 없습니다! 🎉</p>';
+    html += '<p style="color:var(--muted)">틀린 단어가 없습니다! ' + icon('party') + '</p>';
   }
   html += '</div>';
   els.myinfoContent.innerHTML = html;
@@ -3227,7 +3259,7 @@ function showMyReview() {
   for (const e of best.values()) { totalCorrect += e.correct; totalQuestions += e.total; }
 
   let html = '<div style="max-width:600px">';
-  html += '<h3 style="margin-bottom:12px">📊 내 리뷰</h3>';
+  html += '<h3 style="margin-bottom:12px">' + icon('chart') + ' 내 리뷰</h3>';
   html += `<div style="display:grid;gap:12px;grid-template-columns:1fr 1fr">`;
   html += `<div style="padding:16px;background:#f0f8f0;border-radius:8px;text-align:center"><strong style="font-size:24px">${completed}</strong><br><small>단어 마스터</small><br><small style="color:var(--muted)">/ ${totalSyn} (${pct}%)</small></div>`;
   html += `<div style="padding:16px;background:#f0f0f8;border-radius:8px;text-align:center"><strong style="font-size:24px">${logicMastered}</strong><br><small>논리 마스터</small><br><small style="color:var(--muted)">/ ${logicTotal}</small></div>`;
@@ -3240,7 +3272,7 @@ function showMyReview() {
   const key = getSynonymUserKey();
   const mastered = p[key] || {};
   const catIds = Object.keys(mastered).filter((c) => c !== 'wrong' && mastered[c] && mastered[c].length).sort();
-  html += '<h4 style="margin:18px 0 8px">📖 외운 단어</h4>';
+  html += '<h4 style="margin:18px 0 8px">' + icon('book') + ' 외운 단어</h4>';
   if (catIds.length === 0) {
     html += '<p style="color:var(--muted)">아직 외운 단어가 없습니다. 단어문제를 풀어보세요!</p>';
   } else {
@@ -3275,10 +3307,10 @@ function showMyInfo() {
 function renderMyInfoTab(tab) {
   let html = '<div style="max-width:600px">';
   html += '<div style="display:flex;gap:8px;margin-bottom:16px">';
-  html += `<button onclick="renderMyInfoTab('review')" style="flex:1;min-height:36px;border:1px solid var(--line);border-radius:2px;font-size:13px;font-weight:600;cursor:pointer;${tab==='review'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📊 내 리뷰</button>`;
-  html += `<button onclick="renderMyInfoTab('wrong')" style="flex:1;min-height:36px;border:1px solid var(--line);border-radius:2px;font-size:13px;font-weight:600;cursor:pointer;${tab==='wrong'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📕 오답노트</button>`;
-  html += `<button onclick="renderMyInfoTab('logic')" style="flex:1;min-height:36px;border:1px solid var(--line);border-radius:2px;font-size:13px;font-weight:600;cursor:pointer;${tab==='logic'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">🧩 논리오답</button>`;
-  html += `<button onclick="renderMyInfoTab('grammar')" style="flex:1;min-height:36px;border:1px solid var(--line);border-radius:2px;font-size:13px;font-weight:600;cursor:pointer;${tab==='grammar'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📝 문법오답</button>`;
+  html += `<button onclick="renderMyInfoTab('review')" style="flex:1;min-height:36px;border:1px solid var(--line);border-radius:2px;font-size:13px;font-weight:600;cursor:pointer;${tab==='review'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">${icon('chart')} 내 리뷰</button>`;
+  html += `<button onclick="renderMyInfoTab('wrong')" style="flex:1;min-height:36px;border:1px solid var(--line);border-radius:2px;font-size:13px;font-weight:600;cursor:pointer;${tab==='wrong'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">${icon('redbook')} 오답노트</button>`;
+  html += `<button onclick="renderMyInfoTab('logic')" style="flex:1;min-height:36px;border:1px solid var(--line);border-radius:2px;font-size:13px;font-weight:600;cursor:pointer;${tab==='logic'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">${icon('puzzle')} 논리오답</button>`;
+  html += `<button onclick="renderMyInfoTab('grammar')" style="flex:1;min-height:36px;border:1px solid var(--line);border-radius:2px;font-size:13px;font-weight:600;cursor:pointer;${tab==='grammar'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">${icon('memo')} 문법오답</button>`;
   html += '</div>';
 
   if (tab === 'review') {
@@ -3309,7 +3341,7 @@ function renderMyInfoTab(tab) {
     const key = getSynonymUserKey();
     const mastered = p[key] || {};
     const catIds = Object.keys(mastered).filter((c) => c !== 'wrong' && mastered[c] && mastered[c].length).sort();
-    html += '<h4 style="margin:18px 0 8px">📖 외운 단어</h4>';
+    html += '<h4 style="margin:18px 0 8px">' + icon('book') + ' 외운 단어</h4>';
     if (catIds.length === 0) {
       html += '<p style="color:var(--muted)">아직 외운 단어가 없습니다. 단어문제를 풀어보세요!</p>';
     } else {
@@ -3335,14 +3367,14 @@ function renderMyInfoTab(tab) {
       html += `<span style="font-size:12px;color:var(--muted)">${words.map(w => { const m = wordMeanings[w]||''; return escapeHtml(w)+(m?' ('+escapeHtml(m)+')':''); }).join(', ')}</span></div>`;
     }
     if (totalWrong === 0) {
-      html += '<p style="color:var(--muted)">틀린 단어가 없습니다! 🎉</p>';
+      html += '<p style="color:var(--muted)">틀린 단어가 없습니다! ' + icon('party') + '</p>';
     }
   } else if (tab === 'logic') {
     const allQuestions = (window.__V502_LOGIC__ && window.__V502_LOGIC__.questions) || [];
     const wrongSet = getLogicWrong();
     const wrongQuestions = allQuestions.filter(q => wrongSet.has(q.id));
     if (wrongQuestions.length === 0) {
-      html += '<p style="color:var(--muted)">틀린 논리문제가 없습니다! 🎉</p>';
+      html += '<p style="color:var(--muted)">틀린 논리문제가 없습니다! ' + icon('party') + '</p>';
     } else {
       html += `<p style="margin-bottom:12px;color:var(--muted)">총 <b>${wrongQuestions.length}</b>개의 틀린 문제</p>`;
       wrongQuestions.forEach((q, i) => {
@@ -3365,7 +3397,7 @@ function renderMyInfoTab(tab) {
           });
           html += `</div>`;
         }
-        html += `<p style="font-size:12px;color:var(--muted);margin:0">💡 ${escapeHtml(q.explanation)}</p>`;
+        html += `<p style="font-size:12px;color:var(--muted);margin:0">${icon('bulb')} ${escapeHtml(q.explanation)}</p>`;
         html += `</div>`;
       });
     }
@@ -3374,7 +3406,7 @@ function renderMyInfoTab(tab) {
     const wrongSet = getGrammarWrong();
     const wrongQuestions = allQuestions.filter(q => wrongSet.has(q.i));
     if (wrongQuestions.length === 0) {
-      html += '<p style="color:var(--muted)">틀린 문법문제가 없습니다! 🎉</p>';
+      html += '<p style="color:var(--muted)">틀린 문법문제가 없습니다! ' + icon('party') + '</p>';
     } else {
       html += `<p style="margin-bottom:12px;color:var(--muted)">총 <b>${wrongQuestions.length}</b>개의 틀린 문제</p>`;
       wrongQuestions.forEach((q, idx) => {
@@ -3390,7 +3422,7 @@ function renderMyInfoTab(tab) {
           html += `</div>`;
         }
         html += `<p style="margin:0;font-size:12px;color:var(--muted)"><strong>정답:</strong> (${escapeHtml(q.a)})</p>`;
-        html += `<p style="margin:4px 0 0;font-size:12px;color:var(--ok)">💡 ${escapeHtml(q.exp)}</p>`;
+        html += `<p style="margin:4px 0 0;font-size:12px;color:var(--ok)">${icon('bulb')} ${escapeHtml(q.exp)}</p>`;
         html += `</div>`;
       });
     }
@@ -3454,7 +3486,7 @@ function renderWordcheckQuestion() {
   }
   const q = wordcheckQuestions[wcState.index];
   const prog = document.getElementById('wordcheckProgress');
-  prog.textContent = `${wcState.index + 1} / ${wordcheckQuestions.length} | ✅ ${wcState.correct} | ❌ ${wcState.index - wcState.correct}`;
+  prog.textContent = `${wcState.index + 1} / ${wordcheckQuestions.length} | ${icon('check')} ${wcState.correct} | ${icon('cross')} ${wcState.index - wcState.correct}`;
 
   const qEl = document.getElementById('wordcheckQuestion');
   // Underline quoted words (target vocabulary)
@@ -3574,7 +3606,7 @@ function persistWordcheckRanking() {
 /* ── Per-question 단어문제(synonym) tracking + cumulative ranking ──
    Mirrors the wordcheck model so synonym answers reflect in the ranking
    immediately, rather than only when a whole 30-question set is completed.
-   A dedicated result log (keyed by categoryId|prompt) keeps the count exact. */
+   A dedicated result log (keyed by categoryId|prompt) keeps the count exact. **/
 const synonymResultKey = 'v502-synonym-result';
 function readSynonymResult() {
   try { return JSON.parse(localStorage.getItem(synonymResultKey)) || {}; }
@@ -3698,8 +3730,8 @@ function submitWordcheckAnswer(letter) {
     fb.style.background = correct ? '#e8f5e9' : '#fce4ec';
     fb.style.borderColor = correct ? '#a5d6a7' : '#ef9a9a';
     fb.innerHTML = correct
-      ? '<strong style="color:#2e7d32">✅ Correct!</strong>'
-      : `<strong style="color:#c62828">❌ Wrong — answer is (${answerLetter})</strong>`;
+      ? '<strong style="color:#2e7d32">' + icon('check') + ' Correct!</strong>'
+      : `<strong style="color:#c62828">${icon('cross')} Wrong — answer is (${answerLetter})</strong>`;
 
     setTimeout(() => {
       toast.style.transform = 'translate(-50%,-50%) scale(0.3)';
@@ -3722,11 +3754,11 @@ function submitWordcheckAnswer(letter) {
   fb.style.borderColor = correct ? '#a5d6a7' : '#ef9a9a';
 
   let expHTML = correct
-    ? `<strong style="color:#2e7d32">✅ Correct!</strong>`
-    : `<strong style="color:#c62828">❌ Wrong — answer is (${answerLetter})</strong>`;
+    ? `<strong style="color:#2e7d32">${icon('check')} Correct!</strong>`
+    : `<strong style="color:#c62828">${icon('cross')} Wrong — answer is (${answerLetter})</strong>`;
 
   if (q.k) {
-    expHTML += `<p style="margin:8px 0 4px;font-size:13px">📝 ${q.k}</p>`;
+    expHTML += `<p style="margin:8px 0 4px;font-size:13px">${icon('memo')} ${q.k}</p>`;
   }
 
   expHTML += '<div style="margin-top:8px;font-size:13px">';
@@ -3755,7 +3787,7 @@ function finishWordcheck() {
   result.style.display = 'block';
   const pct = Math.round(wcState.correct / wcState.total * 100);
   document.getElementById('wordcheckScore').innerHTML = `
-    🎯 Score: <strong>${wcState.correct}</strong> / ${wcState.total}
+    ${icon('target')} Score: <strong>${wcState.correct}</strong> / ${wcState.total}
     <br><small>${pct}% correct</small>
   `;
 
@@ -3804,7 +3836,7 @@ els.wordcheckPanel.addEventListener('click', function(e) {
   if (e.target === this) { this.hidden = true; els.startPanel.hidden = false; }
 });
 
-/* ── Grammar 201 ── */
+/* ── Grammar 201 ── **/
 let grammarState = { index: 0, correct: 0, total: 0 };
 
 function showGrammar201() {
@@ -3823,7 +3855,7 @@ function renderGrammarQuestion() {
   }
   const q = items[grammarState.index];
   let html = `<div style="max-width:700px">`;
-  html += `<p style="font-size:12px;color:var(--muted);margin:0 0 8px">${grammarState.index + 1} / ${items.length} | ✅ ${grammarState.correct} | ❌ ${grammarState.index - grammarState.correct}</p>`;
+  html += `<p style="font-size:12px;color:var(--muted);margin:0 0 8px">${grammarState.index + 1} / ${items.length} | ${icon('check')} ${grammarState.correct} | ${icon('cross')} ${grammarState.index - grammarState.correct}</p>`;
   html += `<p style="font-size:13px;color:var(--accent);font-weight:600;margin:0 0 4px">${escapeHtml(q.i)}. ${escapeHtml(q.t)}</p>`;
   var qHtml = q.q
     .replace(/'([^']+)'/g, "'\uE000$1\uE001'")
@@ -3861,7 +3893,7 @@ function submitGrammarAnswer(letter) {
   }
   // Show feedback in-place, then let user advance
   let html = `<div style="max-width:700px">`;
-  html += `<p style="font-size:12px;color:var(--muted);margin:0 0 8px">${grammarState.index + 1} / ${items.length} | ✅ ${grammarState.correct} | ❌ ${grammarState.index - grammarState.correct}</p>`;
+  html += `<p style="font-size:12px;color:var(--muted);margin:0 0 8px">${grammarState.index + 1} / ${items.length} | ${icon('check')} ${grammarState.correct} | ${icon('cross')} ${grammarState.index - grammarState.correct}</p>`;
   html += `<p style="font-size:13px;color:var(--accent);font-weight:600;margin:0 0 4px">${escapeHtml(q.i)}. ${escapeHtml(q.t)}</p>`;
   html += `<p style="font-size:15px;line-height:1.7;margin:0 0 16px">${escapeHtml(q.q)}</p>`;
   // Highlight choices
@@ -3873,11 +3905,11 @@ function submitGrammarAnswer(letter) {
     if (isSelected && correct) bg = '#d4edda';
     else if (isSelected && !correct) bg = '#f8d7da';
     else if (isCorrect) bg = '#d4edda';
-    html += `<span style="display:block;padding:8px 14px;border-radius:2px;font-size:14px;border:1px solid var(--line);background:${bg}">${isSelected ? (correct ? '✅ ' : '❌ ') : (isCorrect ? '✅ ' : '   ')}(${escapeHtml(l)}) ${escapeHtml(text)}</span>`;
+    html += `<span style="display:block;padding:8px 14px;border-radius:2px;font-size:14px;border:1px solid var(--line);background:${bg}">${isSelected ? (correct ? icon('check') + ' ' : icon('cross') + ' ') : (isCorrect ? icon('check') + ' ' : '   ')}(${escapeHtml(l)}) ${escapeHtml(text)}</span>`;
   });
   html += '</div>';
-  html += `<p style="margin:0 0 8px;font-size:13px;font-weight:700;color:${correct ? 'var(--ok)' : 'var(--warn)'}">${correct ? '✅ Correct!' : '❌ Incorrect'}</p>`;
-  html += `<p style="margin:0 0 16px;font-size:13px;color:var(--muted)">💡 ${escapeHtml(q.exp)}</p>`;
+  html += `<p style="margin:0 0 8px;font-size:13px;font-weight:700;color:${correct ? 'var(--ok)' : 'var(--warn)'}">${correct ? icon('check') + ' Correct!' : icon('cross') + ' Incorrect'}</p>`;
+  html += `<p style="margin:0 0 16px;font-size:13px;color:var(--muted)">${icon('bulb')} ${escapeHtml(q.exp)}</p>`;
   html += `<button onclick="grammarState.index++; if(grammarState.index>=grammarState.total)finishGrammarQuiz();else renderGrammarQuestion();" style="min-height:36px;padding:0 16px;border:1px solid var(--line);border-radius:2px;background:var(--panel);cursor:pointer;font:inherit">다음 ▸</button>`;
   html += '</div>';
   els.grammar201Content.innerHTML = html;
@@ -3939,14 +3971,14 @@ function renderExamTab() {
   var prog = getExamProgress(examTab);
   var doneCount = prog.correct.size + prog.wrong.size;
   if (doneCount > 0) {
-    html += `<div style="margin-bottom:12px;font-size:12px;color:var(--muted)">📋 진행상황: ✅ ${prog.correct.size} / ❌ ${prog.wrong.size} / ⬜ ${questions.length - doneCount} 문제 남음</div>`;
+    html += `<div style="margin-bottom:12px;font-size:12px;color:var(--muted)">${icon('clip')} 진행상황: ${icon('check')} ${prog.correct.size} / ${icon('cross')} ${prog.wrong.size} / ${icon('square')} ${questions.length - doneCount} 문제 남음</div>`;
   }
   questions.forEach((q, i) => {
     var isCorrect = prog.correct.has(i);
     var isWrong = prog.wrong.has(i);
     var isDone = isCorrect || isWrong;
     html += `<div style="margin-bottom:16px;padding:16px;border-radius:2px;border:1px solid var(--line);${isCorrect?'background:#f1f8e9':isWrong?'background:#fff3f0':''}" id="examQ${i}">`;
-    html += `<p style="font-weight:700;margin:0 0 8px;color:var(--accent)">${i+1}.` + (isCorrect ? ' ✅' : isWrong ? ' ❌' : '') + `</p>`;
+    html += `<p style="font-weight:700;margin:0 0 8px;color:var(--accent)">${i+1}.` + (isCorrect ? icon('check') : isWrong ? icon('cross') : '') + `</p>`;
     if (q.p && q.p.length > 30) {
       var pHtml = escapeHtml(q.p).replace(/「([^」]+)」/g, '<u>$1</u>');
       html += `<div style="margin:0 0 12px;padding:10px 14px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;font-size:14px;line-height:1.7">${pHtml}</div>`;
@@ -3976,14 +4008,14 @@ function renderExamTab() {
     var fbHtml = '';
     if (isDone && q.a) {
       if (isCorrect) {
-        fbHtml = '<span style="color:#2e7d32;font-weight:700">✅ 정답! (' + q.a + ')</span>';
+        fbHtml = '<span style="color:#2e7d32;font-weight:700">' + icon('check') + ' 정답! (' + q.a + ')</span>';
       } else {
-        fbHtml = '<span style="color:#c62828;font-weight:700">❌ 오답 — 정답은 (' + q.a + ')</span>';
+        fbHtml = '<span style="color:#c62828;font-weight:700">' + icon('cross') + ' 오답 — 정답은 (' + q.a + ')</span>';
       }
       if (q.k) {
         fbHtml += '<div style="margin-top:8px;padding:10px 12px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;line-height:1.7">' + q.k + '</div>';
       } else if (q.explanation) {
-        fbHtml += '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation) + '</div>';
+        fbHtml += '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">' + icon('memo') + ' ' + escapeHtml(q.explanation) + '</div>';
       }
     }
     html += `<div id="examFeedback${i}" style="margin-top:6px;font-size:13px;min-height:20px">${fbHtml}</div>`;
@@ -4004,13 +4036,13 @@ function checkExamAnswer(tab, idx, letter, btn) {
   var fb = document.getElementById('examFeedback' + idx);
   if (fb) {
     var head = correct
-      ? '<span style="color:#2e7d32;font-weight:700">✅ 정답!</span>'
-      : '<span style="color:#c62828;font-weight:700">❌ 오답 — 정답은 (' + q.a + ')</span>';
+      ? '<span style="color:#2e7d32;font-weight:700">' + icon('check') + ' 정답!</span>'
+      : '<span style="color:#c62828;font-weight:700">' + icon('cross') + ' 오답 — 정답은 (' + q.a + ')</span>';
     var exp = '';
     if (q.k) {
       exp = '<div style="margin-top:8px;padding:10px 12px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;line-height:1.7">' + q.k + '</div>';
     } else if (q.explanation) {
-      exp = '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation) + '</div>';
+      exp = '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">' + icon('memo') + ' ' + escapeHtml(q.explanation) + '</div>';
     }
     fb.innerHTML = head + exp;
   }
