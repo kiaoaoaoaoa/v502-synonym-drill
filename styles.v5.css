@@ -1812,6 +1812,24 @@ h2 {
   min-width: 60px;
 }
 
+#logicJumpBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+#logicJumpBtn:hover {
+  opacity: 0.85;
+}
+
 @media (max-width: 840px) {
   .logic-question {
     font-size: 15px;

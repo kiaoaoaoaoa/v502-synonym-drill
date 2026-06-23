@@ -664,6 +664,7 @@ const els = {
   logicFeedback: document.querySelector("#logicFeedback"),
   logicSubmitBtn: document.querySelector("#logicSubmitBtn"),
   logicNextBtn: document.querySelector("#logicNextBtn"),
+  logicJumpBtn: document.querySelector("#logicJumpBtn"),
   logicCounter: document.querySelector("#logicCounter"),
   quizModeLabel: document.querySelector("#quizModeLabel"),
   wordcheckBtn: document.querySelector("#wordcheckBtn"),
@@ -2765,6 +2766,7 @@ function renderLogicQuestion() {
 
   els.logicSubmitBtn.style.display = noExplainMode ? 'none' : '';
   els.logicNextBtn.style.display = noExplainMode ? 'none' : '';
+  els.logicJumpBtn.style.display = noExplainMode ? 'none' : '';
 
   q.options.forEach((opt, i) => {
     const btn = document.createElement("button");
@@ -3975,6 +3977,13 @@ els.grammar201Panel.addEventListener('click', function(e) {
 
 els.logicSubmitBtn.addEventListener("click", submitLogicAnswer);
 els.logicNextBtn.addEventListener("click", nextLogicQuestion);
+els.logicJumpBtn.addEventListener("click", function() {
+  if (!logicState.active || !logicState.questions.length) return;
+  var target = Math.min(199, logicState.questions.length - 1);
+  if (target === logicState.currentIndex) return;
+  logicState.currentIndex = target;
+  renderLogicQuestion();
+});
 
 (function relocateFromSidebar() {
   const dashHeader = document.getElementById('dashHeader');
