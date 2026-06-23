@@ -2143,16 +2143,19 @@ h2 {
 .set-card[hidden] { display: none; }
 
 #noExplainIndicator {
-  display: none;
   font-size: 11px;
-  color: var(--warn);
   font-weight: 600;
   margin-left: 8px;
   padding: 3px 8px;
-  background: var(--accent-soft);
   border-radius: var(--radius);
   border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
 }
+#noExplainIndicator:hover { background: var(--accent-soft); color: var(--ink); }
+#noExplainIndicator.on { background: var(--accent-soft); color: var(--warn); }
 
 #quizModeLabel {
   font-size: 11px;
