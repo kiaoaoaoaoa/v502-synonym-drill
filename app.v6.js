@@ -423,9 +423,11 @@ function getTier(score) {
   return { name: '정붕이', icon: '🌱' };
 }
 
-// Estimate IRT ability from public stats (correct/total) — assumes rate≈50
+// Estimate IRT ability from public stats — accuracy-based, volume-bonus capped at 2000 Qs
 function getTierForRanking(correct, total) {
-  const estAbility = correct * 7.5 - (total - correct) * 5;
+  const accuracy = total > 0 ? correct / total : 0;
+  const volumeFactor = 0.7 + 0.3 * Math.min(1, total / 2000);
+  const estAbility = accuracy * 10000 * volumeFactor;
   return getTier(estAbility);
 }
 
