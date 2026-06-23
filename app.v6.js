@@ -1748,10 +1748,17 @@ async function savePublicScore(entry) {
     if (entry.accuracy <= bestExisting.accuracy) {
       return bestExisting.id;
     }
-    await client.from(getLeaderboardTable())
-      .delete()
-      .eq("nickname", entry.name)
-      .eq("quiz_set", entry.setId);
+    // DELETE blocked by RLS — update all existing rows for this set instead
+    for (const row of existingRows) {
+      await client.from(getLeaderboardTable())
+        .update({
+          correct_count: entry.correct,
+          total_count: entry.total,
+          accuracy: entry.accuracy,
+        })
+        .eq("id", row.id);
+    }
+    return existingRows[0].id;
   }
 
   const { data, error } = await client
