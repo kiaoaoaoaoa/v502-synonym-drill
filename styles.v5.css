@@ -79,7 +79,7 @@ h1, h2, h3, p { margin-top: 0; }
 
 h1 {
   margin-bottom: 2px;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -2054,8 +2054,8 @@ h2 {
   gap: 8px;
   border: none;
   background: transparent;
-  padding: 2px 0;
-  font-size: 18px;
+  padding: 4px 0;
+  font-size: 22px;
   font-weight: 800;
   color: var(--ink);
   cursor: pointer;
