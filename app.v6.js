@@ -389,7 +389,6 @@ const wordKnowledgeKey = "v502-synonym-drill-word-knowledge";
 const quizProgressKey = "v502-synonym-drill-quiz-progress";
 const irtAbilityKey = "v502-irt-ability";            // IRT-based cumulative ability score
 
-// IRT 난이도 평가 — 7-factor regression formula (2026-06-23: 수능영어 1등급 baseline)
 function rateQuestion({X1, X2, X3, X4, X5, X6, X7}) {
   const raw = 138 - 2.5*X1 - 2.0*X2 - 2.5*X3 - 2.5*X4
               - 2.5*(10-X5) - 2.5*X6 - 2.0*X7;
@@ -397,7 +396,7 @@ function rateQuestion({X1, X2, X3, X4, X5, X6, X7}) {
 }
 
 function getScoreDelta(isCorrect, rate) {
-  return isCorrect ? +(15 * rate / 100) : -(10 * rate / 100);
+  return isCorrect ? +(30 * rate / 100) : -(10 * rate / 100);
 }
 
 function readIrtAbility() {
@@ -409,7 +408,6 @@ function writeIrtAbility(v) {
   try { localStorage.setItem(irtAbilityKey, String(Math.round(capped * 1000) / 1000)); } catch {}
 }
 
-// Tier thresholds scaled to 0–10000
 function _tierSVG(path, fill) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="vertical-align:middle" aria-hidden="true"><g fill="${fill}">${path}</g></svg>`;
 }
@@ -426,7 +424,6 @@ function getTier(score) {
   return { name: '정붕이', icon: _tierSVG('<circle cx="8" cy="12" r="2"/><path d="M8,11 Q8,2 14,2 Q10,5 8,11"/>', '#30D158') };
 }
 
-// Estimate IRT ability from public stats — accuracy-based, volume-bonus capped at 2000 Qs
 function getTierForRanking(correct, total) {
   const accuracy = Math.min(1, total > 0 ? correct / total : 0);
   const volumeFactor = 0.7 + 0.3 * Math.min(1, total / 2000);
@@ -445,14 +442,12 @@ function updateTierDisplay() {
 let supabaseClient = null;
 let supabaseSdkPromise = null;
 
-// Merge categories 21-30+ if loaded
 if (window.__V502_EXT__) {
   const ext = window.__V502_EXT__;
   if (ext.categories) categories.push(...ext.categories);
   if (ext.wordMeanings) Object.assign(wordMeanings, ext.wordMeanings);
   if (ext.categorySummaries) Object.assign(categorySummaries, ext.categorySummaries);
   if (ext.confusionNotes) {
-    // Only add notes for words not already covered (preserve hand-written notes)
     for (const [k, v] of Object.entries(ext.confusionNotes)) {
       if (!confusionNotes[k]) confusionNotes[k] = v;
     }
@@ -466,10 +461,6 @@ if (window.__V502_EXT__) {
     Object.assign(window.koreanUsage, ext.koreanUsage);
   }
 }
-// Some category ranges are defined in more than one data file (e.g. 291-300
-// appear in both categories-251-300.js and categories-291-620.js). Drop any
-// duplicate category ids, keeping the first, so a set never quizzes the same
-// category twice.
 (function dedupeCategories() {
   const seen = new Set();
   for (let i = 0; i < categories.length; i++) {
@@ -479,7 +470,6 @@ if (window.__V502_EXT__) {
   }
 })();
 
-// Override with Korean titles from TOC
 if (window.__V502_TOC__) {
   Object.assign(categorySummaries, window.__V502_TOC__);
 }
@@ -644,7 +634,6 @@ const els = {
   wordlistContent: document.querySelector("#wordlistContent"),
   rankingSummary: document.querySelector("#rankingSummary"),
   rankingContent: document.querySelector("#rankingContent"),
-  // Auth
   authSection: document.querySelector("#authSection"),
   authLoggedOut: document.querySelector("#authLoggedOut"),
   authLoggedIn: document.querySelector("#authLoggedIn"),
@@ -655,11 +644,9 @@ const els = {
   authRegisterBtn: document.querySelector("#authRegisterBtn"),
   authPlayerName: document.querySelector("#authPlayerName"),
   authLogoutBtn: document.querySelector("#authLogoutBtn"),
-  // New start panel
   startQuizBtn: document.querySelector("#startQuizBtn"),
   startPanelTitle: document.querySelector("#startPanelTitle"),
   startPanelHint: document.querySelector("#startPanelHint"),
-  // Logic Quiz
   logicModeBtn: document.querySelector("#logicModeBtn"),
   synonymDrillBtn: document.querySelector("#synonymDrillBtn"),
   myinfoBtn: document.querySelector("#myinfoBtn"),
@@ -733,18 +720,12 @@ function buildQuestions() {
   const TARGET = 30;
   const viable = sourceCategories.filter(c => c.words.length >= 3);
 
-  // Distractors come from words OUTSIDE this set, so they never compete with
-  // the set's prompt/answer words and never repeat a word the user is studying.
   const setCatIds = new Set(sourceCategories.map(c => c.id));
   const distractorBank = allWords(categories).filter(e => !setCatIds.has(e.categoryId));
 
-  // No word may appear in more than one question across the whole set — not as a
-  // prompt, an answer, or a distractor. Each question consumes its words from
-  // this `used` set, so the same word is never shown twice.
   const used = new Set();
   const questions = [];
 
-  // Per category: shuffled pool of still-eligible words (mastered ones excluded)
   const pools = shuffle(viable.map(cat => {
     const mastered = state.playerName ? getCompletedPromptWords(cat.id) : new Set();
     return { cat, pool: shuffle(cat.words.filter(w => !mastered.has(w))) };
@@ -755,7 +736,6 @@ function buildQuestions() {
     progress = false;
     for (const { cat, pool } of pools) {
       if (questions.length >= TARGET) break;
-      // words from this category not yet used anywhere — need prompt + 2 answers
       const avail = pool.filter(w => !used.has(w));
       if (avail.length < 3) continue;
       const prompt = avail[0];
@@ -801,7 +781,6 @@ function renderQuestion() {
   els.submitBtn.disabled = Boolean(saved) || state.currentSelection.size !== 2;
   els.nextBtn.disabled = !saved;
   els.nextBtn.textContent = state.questionIndex === state.questions.length - 1 ? "Finish" : "Next";
-  // Sync top buttons
   els.prevTopBtn.disabled = els.prevBtn.disabled;
   els.submitTopBtn.disabled = els.submitBtn.disabled;
   els.nextTopBtn.disabled = els.nextBtn.disabled;
@@ -826,7 +805,6 @@ function renderQuestion() {
 
   if (saved) {
     if (noExplainMode) {
-      // 해설OFF: no explanation/feedback (submit auto-advances past answered questions)
       els.feedback.hidden = true;
       els.feedback.className = "feedback";
       els.feedback.textContent = "";
@@ -949,7 +927,6 @@ function toggleSelection(word) {
     state.currentSelection.add(word);
   }
 
-  // 해설OFF: as soon as two are picked, submit and jump straight to the next question
   if (noExplainMode && state.currentSelection.size === 2) {
     submitAnswer();
     return;
@@ -970,20 +947,16 @@ function submitAnswer() {
   state.correctAttempts += correct ? 1 : 0;
   state.streak = correct ? state.streak + 1 : 0;
   state.currentSelection = new Set();
-  // Track synonym progress for logged-in users
   if (state.playerName) {
     saveSynonymResult(question.categoryId, question.prompt, correct);
-    // If wrong, also mark the wrong choices
     if (!correct) {
       const wrongSelections = selected.filter(w => !question.answer.includes(w));
       wrongSelections.forEach(w => {
         saveSynonymResult(question.categoryId, w, false);
       });
     }
-    // Reflect this answer in the unified ranking right away (real-time 단어문제 score)
     saveSynonymRankResult(question.categoryId, question.prompt, correct);
     try { persistSynonymRanking(); } catch {}
-    // IRT ability score tracking
     const rate = (question.difficulty && typeof question.difficulty === 'object')
       ? rateQuestion(question.difficulty) : 50; // default 50% if no per-question rating
     const ability = readIrtAbility() + getScoreDelta(correct, rate);
@@ -992,7 +965,6 @@ function submitAnswer() {
   }
   try { saveQuizProgress(); } catch {}
   if (noExplainMode) {
-    // 해설OFF: flash correct/wrong on the buttons, then advance after a brief pause
     renderQuestion(); // shows correct/wrong colors on the current options
     disableOptions();
     const delay = state.questionIndex >= state.questions.length - 1 ? 800 : 600;
@@ -1065,7 +1037,6 @@ function clearSession() {
   localStorage.removeItem(sessionKey);
 }
 
-/* ---- Quiz progress save/resume (per category set, auto-resume) ---- */
 function saveQuizProgress() {
   if (!state.playerName || state.completed || state.answers.size === 0) return;
   const userKey = state.playerName.toLowerCase();
@@ -1094,7 +1065,6 @@ function getSavedProgress(setId = state.activeSetId) {
   if (!state.playerName) return null;
   const bucket = readQuizProgressStore()[state.playerName.toLowerCase()];
   if (!bucket) return null;
-  // Legacy single-progress format: only valid for its own set
   if (Array.isArray(bucket.questions)) return bucket.activeSetId === setId ? bucket : null;
   return bucket[setId] || null;
 }
@@ -1110,9 +1080,6 @@ function clearSavedProgress(setId = state.activeSetId) {
   localStorage.setItem(quizProgressKey, JSON.stringify(store));
 }
 
-// Build runtime state from a full question set + prior answers. The working
-// list (state.questions) holds only the still-unanswered questions, so answered
-// ones never reappear; cumulative stats are preserved for accuracy.
 function loadSetSession(fullQuestions, answersEntries, stats) {
   state.setQuestions = fullQuestions;
   state.answers = new Map(answersEntries || []);
@@ -1137,7 +1104,6 @@ function resumeQuiz(progress) {
   renderQuestion();
 }
 
-// Enter a category set: auto-resume its saved progress, otherwise start fresh.
 function openSet(setId) {
   if (!categorySets[setId]) return;
   state.activeSetId = setId;
@@ -1150,14 +1116,10 @@ function openSet(setId) {
   }
 }
 
-// The Start button on the start panel just enters the active category set,
-// which auto-resumes that set's saved progress (no prompt).
 function onStartQuizClick() {
   openSet(state.activeSetId);
 }
 
-// Opening the synonym panel immediately starts the quiz with current set,
-// and shows the category nav so the user can switch sets.
 function openSynonymPanel() {
   openSet(state.activeSetId);
 }
@@ -1196,7 +1158,6 @@ async function handleLogin() {
     return;
   }
 
-  // Always pull latest cloud data first — cloud is source of truth
   const cloudResult = await cloudCheckCred(name, pw);
 
   if (cloudResult === 'WRONG_PW') {
@@ -1206,7 +1167,6 @@ async function handleLogin() {
   }
 
   if (cloudResult !== 'OK') {
-    // Cloud not available or account not found — fall back to local password store
     const store = readPasswordStore();
     const key = name.toLowerCase();
     if (!store[key]) {
@@ -1227,7 +1187,6 @@ async function handleLogin() {
     }
   }
 
-  // Update local password store
   const store = readPasswordStore();
   store[name.toLowerCase()] = { password: btoa(pw), displayName: name };
   localStorage.setItem(passwordStoreKey, JSON.stringify(store));
@@ -1240,7 +1199,6 @@ async function handleLogin() {
   els.authPasswordInput.value = "";
   checkAndShowResume();
   await cloudPullScores();
-  // Cancel any pending debounced sync to avoid double writes
   if (_cloudSyncTimer) { clearTimeout(_cloudSyncTimer); _cloudSyncTimer = null; }
   await cloudSyncAll();
   pushAllScoresToSupabase();
@@ -1270,7 +1228,6 @@ async function handleRegister() {
     return;
   }
 
-  // Also check cloud for case-insensitive duplicate
   const cloudCheck = await cloudCheckCred(name, '');
   if (cloudCheck === 'WRONG_PW' || cloudCheck === 'OK') {
     els.authError.textContent = "이미 등록된 닉네임입니다. '로그인'을 해주세요.";
@@ -1292,8 +1249,6 @@ async function handleRegister() {
 }
 
 function checkAndShowResume() {
-  // No-op: resume now happens automatically when a category set is opened,
-  // per set, without a prompt. Kept as a stub for existing call sites.
 }
 
 function handleLogout() {
@@ -1305,10 +1260,8 @@ function handleLogout() {
   els.resultPanel.hidden = true;
   els.rankingPanel.hidden = true;
   els.startPanel.hidden = false;
-  // Reset dashboard greeting
   const greeting = document.getElementById('dashGreeting');
   if (greeting) greeting.textContent = 'V502 학습 대시보드';
-  // Hide noExplainMode button
   const noExBtn = document.getElementById('dashNoExplainBtn');
   if (noExBtn) noExBtn.style.display = 'none';
   updateNoExplainIndicator();
@@ -1333,7 +1286,6 @@ function isWordKnown(word) {
   return userWords.includes(word);
 }
 
-/* ---- Synonym quiz progress tracking ---- */
 function readSynonymProgress() {
   try { return JSON.parse(localStorage.getItem(synonymProgressKey)) || {}; }
   catch { return {}; }
@@ -1395,7 +1347,6 @@ function writePasswordStore(store) {
 
 function setPasswordForNickname(nickname, password) {
   const store = readPasswordStore();
-  // Simple hash for basic protection
   store[nickname.toLowerCase()] = btoa(password);
   writePasswordStore(store);
 }
@@ -1423,9 +1374,7 @@ function sortedLeaderboard(entries) {
   );
 }
 
-/* Cumulative leaderboard: best attempt per (nickname, setId), summed across sets */
 function cumulativeLeaderboard(entries, setId = null) {
-  // Non-score buckets used for cloud backup / auth — never count toward ranking.
   const JUNK_SETS = new Set(["USERDATA", "CRED", "SYNC"]);
   const best = new Map();
   const filtered = (setId ? entries.filter((e) => e.setId === setId || (!e.setId && setId === "001-010")) : entries)
@@ -1434,8 +1383,6 @@ function cumulativeLeaderboard(entries, setId = null) {
   for (const entry of filtered) {
     const rawSet = String(entry.setId || "001-010");
     if (JUNK_SETS.has(rawSet)) continue;
-    // Logic, wordcheck and synonym rows are cumulative single rows — collapse
-    // each into one bucket per user and keep the largest (latest) total.
     const cumPrefix = rawSet.startsWith("LOGIC") ? "LOGIC"
       : rawSet.startsWith("WORDCHECK") ? "WORDCHECK"
       : rawSet.startsWith("SYNONYM") ? "SYNONYM" : null;
@@ -1445,7 +1392,6 @@ function cumulativeLeaderboard(entries, setId = null) {
     if (!existing) {
       better = true;
     } else if (cumPrefix) {
-      // The cumulative row has the most questions attempted — pick the largest
       better = entry.total > existing.total ||
                (entry.total === existing.total && entry.correct > existing.correct);
     } else {
@@ -1455,22 +1401,16 @@ function cumulativeLeaderboard(entries, setId = null) {
     if (better) best.set(key, entry);
   }
 
-  // Users who now have a cumulative SYNONYM bucket: ignore their legacy per-set
-  // synonym rows so the old per-set model and the new cumulative one don't
-  // double-count. Users without a SYNONYM bucket keep their per-set scores.
   const hasSynonymBucket = new Set();
   for (const entry of best.values()) {
     if (String(entry.setId || "").startsWith("SYNONYM")) hasSynonymBucket.add(entry.name.toLowerCase());
   }
 
-  // Aggregate by nickname across sets
   const aggregated = new Map();
   for (const entry of best.values()) {
     const nameKey = entry.name.toLowerCase();
     const rawSet = String(entry.setId || "001-010");
     const isCumBucket = rawSet.startsWith("LOGIC") || rawSet.startsWith("WORDCHECK") || rawSet.startsWith("SYNONYM");
-    // In the unified view, drop legacy per-set synonym rows once the user has a
-    // cumulative SYNONYM bucket (prevents double counting).
     if (setId === null && !isCumBucket && hasSynonymBucket.has(nameKey)) continue;
     if (!aggregated.has(nameKey)) {
       aggregated.set(nameKey, { name: entry.name, correct: 0, total: 0 });
@@ -1482,11 +1422,9 @@ function cumulativeLeaderboard(entries, setId = null) {
 
   return [...aggregated.values()]
     .map((a) => ({ ...a, accuracy: a.total ? Math.round((a.correct / a.total) * 100) : 0 }))
-    // Rank by total correct answers (score); tie-break by accuracy
     .sort((a, b) => b.correct - a.correct || b.accuracy - a.accuracy);
 }
 
-/* Upsert: replace existing entry for same (name, setId) if new is better */
 function upsertLocalScore(entry) {
   const entries = readLeaderboard();
   const idx = entries.findIndex(
@@ -1541,8 +1479,6 @@ function getLeaderboardTable() {
   return getDbConfig().tableName || "leaderboard_scores";
 }
 
-/* ── Supabase cloud sync (full data, payload column) ── */
-
 async function pushAllScoresToSupabase() {
   if (!state.playerName || !hasPublicConfig()) return;
   var entries = readLeaderboard().filter(function(e) { return e.name.toLowerCase() === state.playerName.toLowerCase(); });
@@ -1589,8 +1525,6 @@ async function cloudPullScores() {
   } catch(e) { console.warn('cloudPullScores failed', e); }
 }
 
-/* Debounced cloudSyncAll — coalesces per-action calls into a single write.
-   100 ms — imperceptible delay, fires near-instantly after last action. */
 let _cloudSyncTimer = null;
 function scheduleCloudSync() {
   if (_cloudSyncTimer) {
@@ -1652,15 +1586,10 @@ async function cloudSyncAll() {
   const table = getLeaderboardTable();
   const row = { nickname: nk, quiz_set: 'USERDATA', correct_count: 1, total_count: 1, accuracy: 1, payload };
 
-  // Delete ALL existing USERDATA rows for this user, then insert one fresh row.
-  // Avoids relying on a UNIQUE constraint (which the table may not have) and
-  // guarantees exactly one row per user without duplicates.
   let ok = false;
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
-      // Delete old rows first (if any)
       await client.from(table).delete().eq('nickname', nk).eq('quiz_set', 'USERDATA');
-      // Insert the new row
       await client.from(table).insert(row);
       ok = true;
       break;
@@ -1671,7 +1600,6 @@ async function cloudSyncAll() {
   }
 
   if (!ok) {
-    // Show visible error so the user knows sync didn't work
     if (els.authError) {
       els.authError.textContent = '클라우드 동기화에 실패했습니다. 인터넷 연결을 확인해주세요.';
       els.authError.hidden = false;
@@ -1695,7 +1623,6 @@ async function cloudCheckCred(nickname, password) {
       return 'NOT_FOUND';
     }
     if (obj.pw !== password) return 'WRONG_PW';
-    // Restore all data
     cloudPullUserData(data.payload, nickname);
     return 'OK';
   } catch(e) { console.warn('cloudCheckCred query failed', e); return null; }
@@ -1706,14 +1633,12 @@ function cloudPullUserData(payload, nickname) {
     const obj = typeof payload === 'string' ? JSON.parse(payload) : payload;
     const nk = (nickname || state.playerName || '').toLowerCase();
     if (!nk) return;
-    // Temporarily set playerName so saveLogic* functions use the right key
     const prevName = state.playerName;
     state.playerName = nickname || prevName;
     if (obj.word_knowledge) { const s = readWordKnowledge(); s[nk] = JSON.parse(obj.word_knowledge); writeWordKnowledge(s); }
     if (obj.synonym_progress) { const s = readSynonymProgress(); s[nk] = JSON.parse(obj.synonym_progress); localStorage.setItem(synonymProgressKey, JSON.stringify(s)); }
     if (obj.wordcheck_progress) { const s = JSON.parse(localStorage.getItem('v502-wordcheck-progress')||'{}'); s[nk] = JSON.parse(obj.wordcheck_progress); localStorage.setItem('v502-wordcheck-progress', JSON.stringify(s)); }
     if (obj.quiz_progress) { const s = JSON.parse(localStorage.getItem(quizProgressKey)||'{}'); s[nk] = JSON.parse(obj.quiz_progress); localStorage.setItem(quizProgressKey, JSON.stringify(s)); }
-    // Write logic data directly to avoid triggering cloudSyncAll cascade
     if (obj.logic_completed || obj.logic_wrong) {
       const lp = readLogicProgress();
       lp[nk] = { correct: obj.logic_completed ? JSON.parse(obj.logic_completed) : [], wrong: obj.logic_wrong ? JSON.parse(obj.logic_wrong) : [] };
@@ -1769,7 +1694,6 @@ async function savePublicScore(entry) {
 
   const isCumulative = entry.setId === 'LOGIC' || entry.setId === 'WORDCHECK' || entry.setId === 'SYNONYM';
 
-  // Check if any rows already exist for this (nickname, quiz_set)
   const { data: existingRows } = await client
     .from(getLeaderboardTable())
     .select("id,accuracy")
@@ -1780,7 +1704,6 @@ async function savePublicScore(entry) {
 
   if (hasExisting) {
     if (isCumulative) {
-      // Update ALL matching rows — cumulative scores grow over time
       const { error } = await client
         .from(getLeaderboardTable())
         .update({
@@ -1793,19 +1716,16 @@ async function savePublicScore(entry) {
       if (error) throw error;
       return existingRows[0].id;
     }
-    // Non-cumulative: only update if new score is better
     const bestExisting = existingRows.reduce((a, b) => a.accuracy > b.accuracy ? a : b);
     if (entry.accuracy <= bestExisting.accuracy) {
       return bestExisting.id;
     }
-    // Delete old rows, insert new best score
     await client.from(getLeaderboardTable())
       .delete()
       .eq("nickname", entry.name)
       .eq("quiz_set", entry.setId);
   }
 
-  // Insert new score
   const { data, error } = await client
     .from(getLeaderboardTable())
     .insert({
@@ -1822,9 +1742,6 @@ async function savePublicScore(entry) {
   return data?.id || null;
 }
 
-/* Debounced, race-free remote writer for cumulative buckets (LOGIC / WORDCHECK /
-   SYNONYM). Rapid per-question calls coalesce into a single write of the latest
-   value, so we never race SELECT-then-INSERT into duplicate or stale rows. */
 const _cumRemoteTimers = {};
 const _cumRemoteLatest = {};
 function scheduleCumulativeRemoteWrite(quizSet, name, correct, total, accuracy) {
@@ -1846,7 +1763,6 @@ async function writeCumulativeRow(client, quizSet, name, correct, total, accurac
   const { data: existing } = await client
     .from(table).select('id').eq('nickname', name).eq('quiz_set', quizSet);
   if (existing && existing.length) {
-    // Keep every duplicate row in sync so whichever the leaderboard picks is current.
     return client.from(table)
       .update({ correct_count: correct, total_count: total, accuracy })
       .eq('nickname', name).eq('quiz_set', quizSet);
@@ -1875,7 +1791,6 @@ async function completeQuiz() {
   const setTotal = (state.setQuestions && state.setQuestions.length) || state.questions.length;
   if (state.completed || state.answers.size < setTotal) return;
   state.completed = true;
-  // The whole set is done — switch the active list to the full set for review
   if (state.setQuestions) state.questions = state.setQuestions;
   clearSavedProgress(state.activeSetId);
 
@@ -1891,12 +1806,10 @@ async function completeQuiz() {
     completedAt: new Date().toISOString(),
   };
 
-  // Save locally for sidebar completion tracking
   if (state.playerName) {
     upsertLocalScore(entry);
     updateSidebarCompletion();
   }
-  // Save public score if logged in
   if (state.playerName && hasPublicConfig()) {
     savePublicScore(entry).catch((e) => { console.warn('completeQuiz savePublicScore failed', e); });
   }
@@ -1907,7 +1820,6 @@ async function completeQuiz() {
   els.resultTitle.textContent = `${displayName}'s Result`;
   els.resultSummary.innerHTML = `${entry.correct}/${entry.total} correct — ${accuracy}% accuracy — ${tier.icon} ${tier.name}`;
 
-  // Show question-by-question review
   let reviewHTML = '<div style="max-height:50vh;overflow-y:auto;margin:16px 0">';
   reviewHTML += '<h4 style="margin-bottom:8px">📋 문제별 리뷰</h4>';
   (state.setQuestions || state.questions).forEach((q, i) => {
@@ -1926,7 +1838,6 @@ async function completeQuiz() {
   });
   reviewHTML += '</div>';
 
-  // NEXT button to go to the next category set
   const nextSetId = getNextSetId(state.activeSetId);
   if (nextSetId) {
     const nextLabel = categorySets[nextSetId] ? categorySets[nextSetId].label : nextSetId;
@@ -1942,22 +1853,18 @@ async function completeQuiz() {
     return;
   }
 
-  // Show public ranking
   renderPublicResult(displayName, accuracy, entry.correct, entry.total);
 }
 
 function reviewQuestion(index) {
-  // Navigate to the question in review mode (read-only)
   state.questionIndex = index;
   state.currentSelection = new Set();
   els.resultPanel.hidden = true;
   els.quizPanel.hidden = false;
   renderQuestion();
-  // Disable interaction
   els.submitBtn.disabled = true;
   els.submitTopBtn.disabled = true;
   els.options.querySelectorAll('.option').forEach(b => b.disabled = true);
-  // Add a "back to results" button
   els.nextBtn.textContent = "Back to Results";
   els.nextBtn.disabled = false;
   els.nextTopBtn.textContent = "Back to Results";
@@ -1968,16 +1875,13 @@ function reviewQuestion(index) {
     els.resultPanel.hidden = false;
     els.nextBtn.textContent = "Next";
     els.nextTopBtn.textContent = "Next";
-    // Reset buttons
     els.submitBtn.disabled = true;
     els.submitTopBtn.disabled = true;
   };
   els.nextTopBtn.onclick = els.nextBtn.onclick;
 }
 
-/* ---- Public ranking only ---- */
 function renderPublicResult(displayName, accuracy, correct, total) {
-  // Append public ranking below existing content (don't overwrite review)
   const existingHTML = els.leaderboard.innerHTML;
   els.leaderboard.innerHTML = existingHTML + `<p class="ranking-note" style="margin-top:12px">Loading public ranking…</p>`;
 
@@ -2009,7 +1913,6 @@ function renderPublicResult(displayName, accuracy, correct, total) {
   });
 }
 
-/* ---- Mode switching: only one panel active at a time ---- */
 function switchMode(mode) {
   els.startPanel.hidden = true;
   els.quizPanel.hidden = true;
@@ -2026,19 +1929,15 @@ function switchMode(mode) {
   logicState.active = false;
   els.shuffleBtn.disabled = true;
   els.resetBtn.disabled = true;
-  // The synonym-quiz toolbar/progress bar only make sense in quiz/start modes
   const isSynonym = (mode === 'quiz' || mode === 'start');
   const toolbar = document.querySelector('.workspace > .toolbar');
   const progress = document.querySelector('.workspace > .progress');
   if (toolbar) toolbar.style.display = isSynonym ? '' : 'none';
   if (progress) progress.style.display = isSynonym ? '' : 'none';
-  // The brand bar is the home button — redundant on the dashboard itself
   const appbar = document.querySelector('.workspace > .appbar');
   if (appbar) appbar.style.display = (mode === 'dashboard') ? 'none' : 'flex';
-  // Hide category nav wrapper except for quiz/start modes
   const catWrapper = document.querySelector('.cat-nav-wrapper');
   if (catWrapper) catWrapper.style.display = (mode === 'quiz' || mode === 'start') ? '' : 'none';
-  // Update current set display
   if (mode === 'logic') {
     els.activeSetLabel.textContent = "논리문제";
     els.activeSetMeta.textContent = `${getLogicTotal()} questions`;
@@ -2093,7 +1992,6 @@ function showRanking() {
       const rest = cumulative.slice(3, 30);
 
       let html = '';
-      // Top 3 — hero blocks
       html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:32px">';
       top3.forEach((item, idx) => {
         const medals = ['🥇','🥈','🥉'];
@@ -2106,26 +2004,24 @@ function showRanking() {
           <div style="font-size:16px;font-weight:800;margin-bottom:2px;word-break:break-all">${escapeHtml(item.name)}</div>
           <div style="font-size:11px;opacity:0.85;margin-bottom:6px">${tier.icon} ${tier.name}</div>
           <div style="font-size:28px;font-weight:900;line-height:1">${item.correct}<span style="font-size:14px;font-weight:400">점</span></div>
-          <div style="font-size:11px;opacity:0.7">${item.accuracy}%</div>
         </div>`;
       });
       html += '</div>';
 
-      // Rest — brutalist list
       if (rest.length) {
         html += '<div style="display:grid;gap:6px">';
+        const topScore = rest.length ? Math.max(...rest.map(r => r.correct), 1) : 1;
         rest.forEach((item, idx) => {
           const rank = idx + 4;
           const tier = getTierForRanking(item.correct, item.total);
-          const barW = Math.min(100, item.accuracy);
-          html += `<div style="display:grid;grid-template-columns:28px 1fr 55px 55px;align-items:center;gap:10px;padding:8px 12px;background:#fff;border-radius:10px;border:1px solid #eee">
+          const barW = Math.min(100, (item.correct / topScore) * 100);
+          html += `<div style="display:grid;grid-template-columns:28px 1fr 55px;align-items:center;gap:10px;padding:8px 12px;background:#fff;border-radius:10px;border:1px solid #eee">
             <span style="font-size:12px;font-weight:700;color:var(--muted);text-align:right">${rank}</span>
             <div style="min-width:0">
               <div style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${escapeHtml(item.name)} <span style="font-size:11px;opacity:0.6">${tier.icon} ${tier.name}</span></div>
               <div style="height:4px;border-radius:2px;background:#f0f0f0;margin-top:4px"><div style="height:100%;width:${barW}%;border-radius:2px;background:${colors[rank % colors.length]}"></div></div>
             </div>
             <span style="font-size:18px;font-weight:800;text-align:right">${item.correct}<span style="font-size:10px;font-weight:400;color:var(--muted)">점</span></span>
-            <span style="font-size:11px;color:var(--muted);text-align:right">${item.accuracy}%</span>
           </div>`;
         });
         html += '</div>';
@@ -2165,30 +2061,25 @@ function showWordlist() {
   if (hideBtn) hideBtn.addEventListener('click', () => { wlHideKnown = !wlHideKnown; showWordlist(); });
   const hideKnown = wlHideKnown && state.playerName;
   let html = '<div class="wordlist-scroll">';
-  // Split into four ranges for independent toggles
   const catsLowLow  = categories.filter(c => parseInt(c.id) < 100);
   const catsLowHigh = categories.filter(c => parseInt(c.id) >= 100 && parseInt(c.id) < 200);
   const catsMid     = categories.filter(c => parseInt(c.id) >= 200 && parseInt(c.id) < 400);
   const catsHigh    = categories.filter(c => parseInt(c.id) >= 400);
   let sentinelIdx = 0;
   [...catsLowLow, null, ...catsLowHigh, null, ...catsMid, null, ...catsHigh].forEach(cat => {
-    // null sentinel = boundary between ranges
     if (cat === null) {
       sentinelIdx++;
       if (sentinelIdx === 1) {
-        // Collapsed bar for 100-199 sits outside the hidden div
         html += `<div id="wl-low-collapsed"${wlCollapseLow ? '' : ' hidden'} style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404"><button type="button" class="wl-jump-btn" style="font-size:12px;padding:4px 16px" onclick="wlCollapseLow=false;showWordlist()">범주 100~199 펴기 ▸</button></div>`;
         html += `<div id="wl-low-cats"${wlCollapseLow ? ' hidden' : ''}>`;
         html += `<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">범주 100~199 — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 8px" onclick="document.getElementById('wl-low-cats').hidden=true;wlCollapseLow=true;document.getElementById('wl-low-collapsed').hidden=false;">접기</button></div>`;
       } else if (sentinelIdx === 2) {
         html += '</div>'; // close wl-low-cats
-        // Collapsed bar for 200-399 sits outside the hidden div
         html += `<div id="wl-mid-collapsed"${wlCollapseMid ? '' : ' hidden'} style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404"><button type="button" class="wl-jump-btn" style="font-size:12px;padding:4px 16px" onclick="wlCollapseMid=false;showWordlist()">범주 200~399 펴기 ▸</button></div>`;
         html += `<div id="wl-mid-cats"${wlCollapseMid ? ' hidden' : ''}>`;
         html += `<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">범주 200~399 — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 8px" onclick="document.getElementById('wl-mid-cats').hidden=true;wlCollapseMid=true;document.getElementById('wl-mid-collapsed').hidden=false;">접기</button></div>`;
       } else {
         html += '</div>'; // close wl-mid-cats
-        // Collapsed bar for 400-620 sits outside the hidden div
         html += `<div id="wl-high-collapsed"${wlCollapseHigh ? '' : ' hidden'} style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404"><button type="button" class="wl-jump-btn" style="font-size:12px;padding:4px 16px" onclick="wlCollapseHigh=false;showWordlist()">범주 400~620 펴기 ▸</button></div>`;
         html += `<div id="wl-high-cats"${wlCollapseHigh ? ' hidden' : ''}>`;
         html += `<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">범주 400~620 — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 8px" onclick="document.getElementById('wl-high-cats').hidden=true;wlCollapseHigh=true;document.getElementById('wl-high-collapsed').hidden=false;">접기</button></div>`;
@@ -2196,8 +2087,6 @@ function showWordlist() {
       return;
     }
     const summary = categorySummaries[cat.id] || '';
-    // When hiding known words, drop checked (✓) words; if the whole category is
-    // known, skip it entirely — name included — so only unknown words remain.
     const catWords = hideKnown ? cat.words.filter(w => !isWordKnown(w)) : cat.words;
     if (catWords.length === 0) return;
     const hasCollocations = catWords.some(w => {
@@ -2247,7 +2136,6 @@ function showWordlist() {
       html += `</span>`;
     });
     html += `</div>`;
-    // Collocation detail (hidden)
     if (hasCollocations) {
       html += `<div class="wl-detail" id="wl-detail-${escapeHtml(cat.id)}" hidden>`;
       html += `<ul class="wl-detail-list">`;
@@ -2261,7 +2149,6 @@ function showWordlist() {
       });
       html += `</ul></div>`;
     }
-    // Korean usage detail (hidden)
     if (hasKoreanUsage) {
       html += `<div class="wl-detail wl-detail-usage" id="wl-usage-${escapeHtml(cat.id)}" hidden>`;
       html += `<ul class="wl-detail-list">`;
@@ -2274,7 +2161,6 @@ function showWordlist() {
       });
       html += `</ul></div>`;
     }
-    // Example sentences detail (hidden)
     if (hasExamples) {
       html += `<div class="wl-detail wl-detail-examples" id="wl-example-${escapeHtml(cat.id)}" hidden>`;
       html += `<ul class="wl-detail-list">`;
@@ -2314,7 +2200,6 @@ function handleWordToggle(word, element) {
   const becameKnown = toggleWordKnown(word);
   if (becameKnown) {
     element.classList.add('wl-known');
-    // Add checkmark if not present
     if (!element.querySelector('.wl-check')) {
       const check = document.createElement('span');
       check.className = 'wl-check';
@@ -2366,7 +2251,6 @@ function showWordlist2() {
   html += '</div></div></div>';
   els.wordlist2Content.innerHTML = html;
 
-  // Attach hide button listener after DOM is set
   const hideBtn = document.getElementById('wl2HideBtn');
   if (hideBtn) {
     hideBtn.addEventListener('click', () => { wlHideKnown = !wlHideKnown; showWordlist2(); });
@@ -2433,7 +2317,6 @@ function updateSetDisplay() {
 
 function selectCategorySet(setId) {
   if (!categorySets[setId]) return;
-  // Re-selecting the active set is allowed so it resumes that set's progress
   if (state.playerName) {
     openSet(setId);
   } else {
@@ -2473,7 +2356,6 @@ function startWithName(event) {
 
   const pwd = els.passwordInput.value.trim();
 
-  // If nickname already has a password, it must match
   if (hasPassword(name)) {
     if (!pwd) {
       els.passwordHint.textContent = "This nickname is claimed. Enter your password.";
@@ -2492,7 +2374,6 @@ function startWithName(event) {
   state.playerName = name;
   state.playerPassword = pwd;
 
-  // Set password for new nicknames
   if (pwd) {
     setPasswordForNickname(name, pwd);
   }
@@ -2502,11 +2383,9 @@ function startWithName(event) {
   startQuiz();
 }
 
-// Auth event listeners
 els.authLoginBtn.addEventListener("click", handleLogin);
 els.authRegisterBtn.addEventListener("click", handleRegister);
 els.authLogoutBtn.addEventListener("click", handleLogout);
-// Enter key to login
 els.authNicknameInput.addEventListener("keydown", (e) => { if (e.key === 'Enter') els.authPasswordInput.focus(); });
 els.authPasswordInput.addEventListener("keydown", (e) => { if (e.key === 'Enter') handleLogin(); });
 els.startQuizBtn.addEventListener("click", onStartQuizClick);
@@ -2544,7 +2423,6 @@ function updateSidebarCompletion() {
       completed.set(e.setId, e);
     }
   }
-  // In-progress synonym tracking per set
   const synRes = readSynonymResult();
   const userSyn = synRes[nk] || { correct: [], wrong: [] };
   const answeredIds = new Set([...(userSyn.correct || []), ...(userSyn.wrong || [])]);
@@ -2558,7 +2436,6 @@ function updateSidebarCompletion() {
       smallEl.textContent = `✓ ${entry.accuracy}%`;
       button.style.borderColor = "rgba(20,108,108,0.5)";
     } else {
-      // Count in-progress answers for this set's categories
       const setCats = categorySets[setId] ? categorySets[setId].ids : [];
       let setTotal = 0, setAnswered = 0;
       setCats.forEach(catId => {
@@ -2580,7 +2457,6 @@ function updateSidebarCompletion() {
   });
 }
 
-// Restore session on page load
 const savedSession = getSession();
 if (savedSession && savedSession.name) {
   const store = readPasswordStore();
@@ -2588,7 +2464,6 @@ if (savedSession && savedSession.name) {
   if (store[key]) {
     const stored = store[key];
     state.playerName = (typeof stored === 'object' && stored.displayName) ? stored.displayName : savedSession.name;
-    // Pull latest cloud data + scores, then push local state
     const pw = typeof stored === 'string' ? stored : atob(stored.password);
     cloudCheckCred(state.playerName, pw).then(() => {
       return cloudPullScores();
@@ -2607,12 +2482,10 @@ els.quizPanel.hidden = true;
 renderAuthUI();
 updateSetDisplay();
 
-// Save quiz progress on tab close / navigation away
 window.addEventListener("beforeunload", () => { saveQuizProgress(); flushCloudSync(); });
 window.addEventListener("pagehide", () => { saveQuizProgress(); flushCloudSync(); });
 window.addEventListener("pagehide", () => saveQuizProgress());
 
-/* ======== Logic Quiz ======== */
 const logicProgressKey = "v502-logic-progress";
 const logicScoreKey = "v502-logic-score"; // weighted cumulative score
 const synonymProgressKey = "v502-synonym-progress";
@@ -2634,7 +2507,6 @@ function saveLogicCorrect(qid) {
   const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
   if (!p[key]) p[key] = { correct: [], wrong: [] };
   if (!p[key].correct.includes(qid)) p[key].correct.push(qid);
-  // Keep correct/wrong disjoint so cumulative total never double-counts a question
   p[key].wrong = (p[key].wrong || []).filter((id) => id !== qid);
   try { localStorage.setItem(logicProgressKey, JSON.stringify(p)); } catch {}
   addWeightedScore(qid, true);
@@ -2650,7 +2522,6 @@ function saveLogicWrong(qid) {
   scheduleCloudSync();
 }
 
-/* Grammar progress persistence */
 const grammarProgressKey = "v502-grammar-progress";
 function readGrammarProgress() {
   try { return JSON.parse(localStorage.getItem(grammarProgressKey)) || {}; }
@@ -2679,7 +2550,6 @@ function getGrammarWrong() {
   return new Set((p[key] && p[key].wrong) || []);
 }
 
-/* Exam progress persistence */
 const examProgressKey = "v502-exam-progress";
 function readExamProgress() {
   try { return JSON.parse(localStorage.getItem(examProgressKey)) || {}; }
@@ -2711,7 +2581,6 @@ function getExamProgress(tab) {
   return { correct: new Set(entry.correct), wrong: new Set(entry.wrong) };
 }
 
-/* Weighted scoring using the 7-factor regression seed */
 function readLogicScore() {
   try { return JSON.parse(localStorage.getItem(logicScoreKey)) || {}; }
   catch { return {}; }
@@ -2723,13 +2592,11 @@ function addWeightedScore(qid, isCorrect) {
   const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
   const scores = readLogicScore();
   if (!scores[key]) scores[key] = { score: 0, questions: 0 };
-  // Prevent double-counting: only add if this specific qid hasn't been scored yet
   const scoredKey = key + "_scored";
   const scored = readLogicScore()[scoredKey] || {};
   if (scored[qid]) return; // already counted
   scored[qid] = true;
   scores[scoredKey] = scored;
-  // Get difficulty-weighted delta
   const diff = window.__V502_LOGIC_DIFFICULTY__;
   const delta = diff && diff.getScoreDelta ? diff.getScoreDelta(isCorrect, qid) : (isCorrect ? 1.5 : -1);
   scores[key].score = +(scores[key].score + parseFloat(delta)).toFixed(4);
@@ -2755,8 +2622,6 @@ function getLogicTotal() {
   return (window.__V502_LOGIC__ && window.__V502_LOGIC__.questions || []).length;
 }
 
-/* Push the player's *cumulative* logic stats to the ranking using raw correct counts
-   (matching synonym/wordcheck scale). Weighted score tracked separately for tier display. */
 function persistLogicRanking() {
   if (!state.playerName) return;
   const correct = getLogicCompleted().size;
@@ -2765,7 +2630,6 @@ function persistLogicRanking() {
   if (total === 0) return;
   const accuracy = Math.round((correct / total) * 100);
 
-  // Local: replace any prior logic entries with a single cumulative one
   const nameKey = state.playerName.toLowerCase();
   const entries = readLeaderboard().filter(
     (e) => !(e.name.toLowerCase() === nameKey && String(e.setId || "").startsWith("LOGIC")),
@@ -2779,7 +2643,6 @@ function persistLogicRanking() {
   });
   writeLeaderboard(entries);
 
-  // Public: coalesced, race-free write of the single (nickname, LOGIC) cumulative row
   scheduleCumulativeRemoteWrite("LOGIC", state.playerName, correct, total, accuracy);
 }
 
@@ -2787,7 +2650,6 @@ function shuffleLogicQuestions() {
   const raw = (window.__V502_LOGIC__ && window.__V502_LOGIC__.questions) || [];
   const completed = getLogicCompleted();
   const wrong = getLogicWrong();
-  // Exclude every question already answered (correct OR wrong) so none repeats
   const remaining = raw.filter(q => !completed.has(q.id) && !wrong.has(q.id));
   logicState.questions = [...remaining].sort(() => Math.random() - 0.5);
 }
@@ -2801,7 +2663,6 @@ function startLogicQuiz() {
   els.logicPanel.hidden = false;
   syncNoExplainButtons();
   if (logicState.questions.length === 0) {
-    // Every question already answered — nothing left to show
     showLogicAllDone();
     return;
   }
@@ -2822,8 +2683,6 @@ function showLogicAllDone() {
 }
 
 function setBtnDisabled(btn, isDisabled) {
-  // Avoid toggling the native `disabled` attribute: iOS Safari can fail to
-  // re-register taps on a button re-enabled this way until the next reflow.
   if (isDisabled) btn.setAttribute("aria-disabled", "true");
   else btn.removeAttribute("aria-disabled");
 }
@@ -2847,7 +2706,6 @@ function renderLogicQuestion() {
   els.logicQuestionText.innerHTML = `<strong>Q${logicState.currentIndex + 1}.</strong>${rateTag} ${questionHtml}`;
   els.logicOptions.innerHTML = "";
 
-  // Hide submit/next in noExplainMode
   els.logicSubmitBtn.style.display = noExplainMode ? 'none' : '';
   els.logicNextBtn.style.display = noExplainMode ? 'none' : '';
 
@@ -2860,7 +2718,6 @@ function renderLogicQuestion() {
       if (logicState.answered) return;
       logicState.selectedOption = opt;
       if (noExplainMode) {
-        // Immediate submit + flash + auto-advance
         logicSubmitNoExplain(opt, btn, q);
       } else {
         els.logicOptions.querySelectorAll(".option").forEach(b => b.classList.remove("selected"));
@@ -2889,7 +2746,6 @@ function logicSubmitNoExplain(opt, clickedBtn, q) {
   }
   persistLogicRanking();
 
-  // Dramatic overlay toast
   const toast = document.createElement('div');
   const bg = correct ? '#34c759' : '#ff3b30';
   toast.style.cssText = `
@@ -2906,7 +2762,6 @@ function logicSubmitNoExplain(opt, clickedBtn, q) {
   document.body.appendChild(toast);
   requestAnimationFrame(() => { toast.style.transform = 'translate(-50%,-50%) scale(1)'; });
 
-  // Tint clicked button + highlight correct
   clickedBtn.style.background = correct ? '#e8f5e9' : '#fce4ec';
   if (!correct) {
     els.logicOptions.querySelectorAll(".option").forEach(b => {
@@ -2940,8 +2795,8 @@ function submitLogicAnswer() {
   } else {
     saveLogicWrong(q.id);
   }
-  // Reflect this answer in the unified ranking right away
   persistLogicRanking();
+  { const logicRate = (window.__V502_LOGIC_DIFFICULTY__ && window.__V502_LOGIC_DIFFICULTY__.get) ? window.__V502_LOGIC_DIFFICULTY__.get(q.id) : 50; const ability = readIrtAbility() + getScoreDelta(correct, logicRate); writeIrtAbility(ability); updateTierDisplay(); }
 
   els.logicFeedback.hidden = false;
   els.logicFeedback.className = `feedback ${correct ? "ok" : "no"}`;
@@ -2950,7 +2805,6 @@ function submitLogicAnswer() {
     <p style="margin-top:8px">${escapeHtml(q.explanation)}</p>
   `;
 
-  // Highlight correct/wrong options
   els.logicOptions.querySelectorAll(".option").forEach(btn => {
     const optText = btn.querySelector("span")?.textContent?.replace(/^[A-D]\. /, "");
     if (optText === q.answer) btn.classList.add("correct");
@@ -2985,19 +2839,15 @@ function finishLogicQuiz() {
   const ws = getLogicWeightedScore();
   els.logicPanel.hidden = true;
   els.resultPanel.hidden = false;
+  const logicTier = getTier(readIrtAbility());
   els.resultTitle.textContent = "Logic Quiz Result";
-  els.resultSummary.textContent = `이번 세션 ${logicState.correctCount}/${logicState.questions.length} (${sessionPct}%) · 누적 ${cumCorrect}/${cumTotal} (${cumPct}%) · 가중점수 ${ws.score.toFixed(2)} · 남은 ${remaining}문제`;
+  els.resultSummary.innerHTML = `이번 세션 ${logicState.correctCount}/${logicState.questions.length} (${sessionPct}%) · 누적 ${cumCorrect}/${cumTotal} (${cumPct}%) · 가중점수 ${ws.score.toFixed(2)} · 남은 ${remaining}문제<br><small>${logicTier.icon} ${logicTier.name}</small>`;
 }
 
-// Logic mode toggle
 els.logicModeBtn.addEventListener("click", () => {
   startLogicQuiz();
 });
 
-// Category nav HIDDEN by default - click 단어문제 to show
-// Toggle handled by inline onclick in index.html — no addEventListener needed
-
-/* ---- Dashboard ---- */
 function dashCard({ icon, title, desc, accent, onclick, badge }) {
   return `<button class="dash-card" data-accent="${accent}" onclick="${onclick}">
     <span class="dash-card-icon">${icon}</span>
@@ -3041,7 +2891,6 @@ function toggleNoExplainMode() {
   if (btn) btn.textContent = label;
   syncNoExplainButtons();
   updateNoExplainIndicator();
-  // Re-render active quiz so explanation visibility updates immediately
   if (!els.quizPanel.hidden) {
     renderQuestion();
   } else if (!els.logicPanel.hidden && logicState.active) {
@@ -3059,7 +2908,6 @@ function showDashboard() {
 
   if (loggedIn) flushCloudSync();
 
-  // Pull latest cloud data in background, then refresh dashboard (once)
   if (loggedIn && !state._dashSyncing) {
     const store = readPasswordStore();
     const stored = store[state.playerName.toLowerCase()];
@@ -3078,7 +2926,6 @@ function showDashboard() {
       }).catch((e) => { console.warn('dashboard sync failed', e); state._dashSyncing = false; });
     }
   }
-  // Update 해설 button visibility and state
   const noExBtn = document.getElementById('dashNoExplainBtn');
   if (noExBtn) {
     noExBtn.style.display = loggedIn ? '' : 'none';
@@ -3087,14 +2934,11 @@ function showDashboard() {
   syncNoExplainButtons();
   updateNoExplainIndicator();
 
-  // Greeting lives in the stable hero header (which also holds the login /
-  // 내정보 box), so it isn't wiped when the cards below re-render.
   const greeting = document.getElementById('dashGreeting');
   if (greeting) greeting.textContent = loggedIn ? `${state.playerName}님의 학습 대시보드` : 'V502 학습 대시보드';
 
   let html = '<div class="dash">';
 
-  // ---- Progress stats (logged-in) ----
   if (loggedIn) {
     const knownCount = getWordKnowledgeCount();
     const logicMastered = getLogicCompleted().size;
@@ -3112,7 +2956,6 @@ function showDashboard() {
     html += `</div>`;
   }
 
-  // ---- Study cards ----
   html += '<p class="dash-section-label">학습</p>';
   html += '<div class="dash-grid">';
   html += dashCard({ icon: '📝', title: '단어문제', desc: '동의어 짝 맞추기', accent: 'teal', onclick: "openSynonymPanel()" });
@@ -3123,7 +2966,6 @@ function showDashboard() {
   html += dashCard({ icon: '✅', title: '단어확인문제', desc: '전체 어휘 확인', accent: 'green', onclick: "showWordcheck()" });
   html += '</div>';
 
-  // ---- Review & info cards (logged-out only) ----
   if (!loggedIn) {
     html += '<p class="dash-section-label">계정</p>';
     html += '<div class="dash-grid">';
@@ -3205,11 +3047,9 @@ function showMyReview() {
   const totalSyn = 3980;
   const pct = Math.round((completed / totalSyn) * 100);
 
-  // Logic progress
   const logicMastered = getLogicCompleted().size;
   const logicTotal = getLogicTotal();
 
-  // Ranking
   const entries = readLeaderboard().filter(e => state.playerName && e.name.toLowerCase() === state.playerName.toLowerCase());
   const best = new Map();
   for (const e of entries) {
@@ -3230,7 +3070,6 @@ function showMyReview() {
   html += `<div style="padding:16px;background:#fff8f0;border-radius:8px;text-align:center"><strong style="font-size:24px">${totalCorrect}점</strong><br><small>통합 점수</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'} · ${totalQuestions}문제 풂</small></div>`;
   html += '</div>';
 
-  // List of memorized (mastered) words, grouped by category
   const p = readSynonymProgress();
   const key = getSynonymUserKey();
   const mastered = p[key] || {};
@@ -3453,7 +3292,6 @@ function renderMyInfoTab(tab) {
   els.myinfoContent.innerHTML = html;
 }
 
-/* ── Word Check Quiz ── */
 let wordcheckQuestions = [
   ...(window.__V502_WC_V101__ || []),
   ...(window.__V502_WC_V201__ || []),
@@ -3475,9 +3313,6 @@ function startWordcheck(questions, { shuffle = true } = {}) {
   renderWordcheckQuestion();
 }
 
-// Drop questions the logged-in user has already answered correctly so they
-// only study what they don't yet know. Falls back to the full set if every
-// question is already correct (so the quiz never opens empty).
 function wordcheckRemaining(all) {
   if (!state.playerName) return [...all];
   const done = getWordcheckCorrect();
@@ -3494,7 +3329,6 @@ function showWordcheck() {
   ]));
 }
 
-// [201 단어퀴즈] — V201 set only (200 문제), presented in order
 function showWordcheck201() {
   lastWordcheckLauncher = showWordcheck201;
   startWordcheck(wordcheckRemaining(window.__V502_WC_V201__ || []), { shuffle: false });
@@ -3510,7 +3344,6 @@ function renderWordcheckQuestion() {
   prog.textContent = `${wcState.index + 1} / ${wordcheckQuestions.length} | ✅ ${wcState.correct} | ❌ ${wcState.index - wcState.correct}`;
 
   const qEl = document.getElementById('wordcheckQuestion');
-  // Underline quoted words (target vocabulary)
   qEl.innerHTML = (() => {
     const raw = q.q
       .replace(/'([^']+)'/g, "'\uE000$1\uE001'")
@@ -3539,7 +3372,6 @@ function renderWordcheckQuestion() {
     btn.style.cssText = 'min-height:40px;padding:8px 14px;border:1px solid var(--line);border-radius:2px;background:var(--panel);text-align:left;font:inherit;font-size:14px;cursor:pointer';
     btn.onclick = () => {
       if (selectedLetter === letter) {
-        // Deselect on second click
         clearSelection();
         submitBtn.style.display = 'none';
         return;
@@ -3554,7 +3386,6 @@ function renderWordcheckQuestion() {
     choicesEl.appendChild(btn);
   });
 
-  // 해설ON: wire Submit button to confirm selection (해설OFF auto-submits on click)
   submitBtn.onclick = () => {
     if (selectedLetter) submitWordcheckAnswer(selectedLetter);
   };
@@ -3564,8 +3395,6 @@ function renderWordcheckQuestion() {
   document.getElementById('wordcheckFeedback').style.display = 'none';
 }
 
-// q.a may be a choice letter ("B") or a 1-based index ("2"); some data files
-// (e.g. the rebuilt v201) store the index. Resolve to the actual choice letter.
 function wordcheckCorrectLetter(q) {
   const a = String(q.a).trim();
   if (q.c.some(([l]) => l === a)) return a;
@@ -3574,7 +3403,6 @@ function wordcheckCorrectLetter(q) {
   return a;
 }
 
-/* ── Per-question wordcheck tracking + cumulative ranking ── */
 const wordcheckResultKey = 'v502-wordcheck-result';
 function readWordcheckResult() {
   try { return JSON.parse(localStorage.getItem(wordcheckResultKey)) || {}; }
@@ -3604,8 +3432,6 @@ function saveWordcheckResult(qid, correct) {
   try { localStorage.setItem(wordcheckResultKey, JSON.stringify(r)); } catch {}
 }
 
-// Push the player's cumulative wordcheck score to the ranking right after each
-// answer: correct answers raise the numerator, every answer raises the total.
 function persistWordcheckRanking() {
   if (!state.playerName) return;
   const correct = getWordcheckCorrect().size;
@@ -3624,17 +3450,11 @@ function persistWordcheckRanking() {
   scheduleCumulativeRemoteWrite('WORDCHECK', state.playerName, correct, total, accuracy);
 }
 
-/* ── Per-question 단어문제(synonym) tracking + cumulative ranking ──
-   Mirrors the wordcheck model so synonym answers reflect in the ranking
-   immediately, rather than only when a whole 30-question set is completed.
-   A dedicated result log (keyed by categoryId|prompt) keeps the count exact. */
 const synonymResultKey = 'v502-synonym-result';
 function readSynonymResult() {
   try { return JSON.parse(localStorage.getItem(synonymResultKey)) || {}; }
   catch { return {}; }
 }
-// Seed a user's result log from their existing drill history the first time,
-// so returning players keep their accumulated score the moment they answer.
 function ensureSynonymSeed(k) {
   const r = readSynonymResult();
   if (r[k]) return r;
@@ -3645,7 +3465,6 @@ function ensureSynonymSeed(k) {
     if (cat === 'wrong') continue;
     (prog[cat] || []).forEach((w) => correct.push(cat + '|' + w));
   }
-  // Also seed wrong entries from progress (saved per-category under .wrong)
   const wrongByCat = prog.wrong || {};
   for (const cat in wrongByCat) {
     (wrongByCat[cat] || []).forEach((w) => wrong.push(cat + '|' + w));
@@ -3684,7 +3503,6 @@ function saveSynonymRankResult(categoryId, prompt, correct) {
   try { localStorage.setItem(synonymResultKey, JSON.stringify(r)); } catch {}
 }
 
-// Push the player's cumulative 단어문제 score to the ranking after each answer.
 function persistSynonymRanking() {
   if (!state.playerName) return;
   const correct = getSynonymCorrectCount();
@@ -3712,12 +3530,12 @@ function submitWordcheckAnswer(letter) {
   wcState.answers.push({ id: q.i, correct });
   saveWordcheckResult(q.i, correct);
   try { persistWordcheckRanking(); } catch {}
+  { const ability = readIrtAbility() + getScoreDelta(correct, 50); writeIrtAbility(ability); updateTierDisplay(); }
 
   if (noExplainMode) {
     const buttons = document.querySelectorAll('#wordcheckChoices button');
     buttons.forEach(b => b.disabled = true);
 
-    // Dramatic overlay toast
     const toast = document.createElement('div');
     const isDark = document.querySelector('.sidebar') && getComputedStyle(document.querySelector('.sidebar')).backgroundColor.includes('32');
     const bg = correct ? '#34c759' : '#ff3b30';
@@ -3735,7 +3553,6 @@ function submitWordcheckAnswer(letter) {
     document.body.appendChild(toast);
     requestAnimationFrame(() => { toast.style.transform = 'translate(-50%,-50%) scale(1)'; });
 
-    // Also briefly tint the clicked button
     const clickedBtn = [...buttons].find(b => b.textContent.startsWith(`(${letter})`));
     if (clickedBtn) {
       clickedBtn.style.background = correct ? '#e8f5e9' : '#fce4ec';
@@ -3745,7 +3562,6 @@ function submitWordcheckAnswer(letter) {
       }
     }
 
-    // Show text feedback so 해설OFF also tells the answer result
     const fb = document.getElementById('wordcheckFeedback');
     fb.style.display = 'block';
     fb.style.background = correct ? '#e8f5e9' : '#fce4ec';
@@ -3768,7 +3584,6 @@ function submitWordcheckAnswer(letter) {
     return;
   }
 
-  // Highlight feedback
   const fb = document.getElementById('wordcheckFeedback');
   fb.style.display = 'block';
   fb.style.background = correct ? '#e8f5e9' : '#fce4ec';
@@ -3807,12 +3622,13 @@ function finishWordcheck() {
   const result = document.getElementById('wordcheckResult');
   result.style.display = 'block';
   const pct = Math.round(wcState.correct / wcState.total * 100);
+  const wcTier = getTier(readIrtAbility());
   document.getElementById('wordcheckScore').innerHTML = `
     🎯 Score: <strong>${wcState.correct}</strong> / ${wcState.total}
     <br><small>${pct}% correct</small>
+    <br><small>${wcTier.icon} ${wcTier.name}</small>
   `;
 
-  // Ranking is updated per question; ensure it's current and refresh the sidebar
   if (state.playerName) {
     persistWordcheckRanking();
     saveWordcheckProgress();
@@ -3857,7 +3673,6 @@ els.wordcheckPanel.addEventListener('click', function(e) {
   if (e.target === this) { this.hidden = true; els.startPanel.hidden = false; }
 });
 
-/* ── Grammar 201 ── */
 let grammarState = { index: 0, correct: 0, total: 0 };
 
 function showGrammar201() {
@@ -3893,9 +3708,7 @@ function renderGrammarQuestion() {
       html += `<button onclick="submitGrammarAnswer('${escapeHtml(letter)}')" style="min-height:40px;padding:8px 14px;border:1px solid var(--line);border-radius:2px;background:var(--panel);text-align:left;font:inherit;font-size:14px;cursor:pointer">(${escapeHtml(letter)}) ${escapeHtml(text)}</button>`;
     });
     html += '</div>';
-    // After answering, auto-advance so no need for a separate "next" button
   } else {
-    // No-choice informational item — just a next button
     html += `<button onclick="grammarState.index++; if(grammarState.index>=grammarState.total)finishGrammarQuiz();else renderGrammarQuestion();" style="min-height:36px;padding:0 16px;border:1px solid var(--line);border-radius:2px;background:var(--panel);cursor:pointer;font:inherit">다음 ▸</button>`;
   }
   html += '</div>';
@@ -3912,12 +3725,11 @@ function submitGrammarAnswer(letter) {
   } else {
     saveGrammarWrong(q.i);
   }
-  // Show feedback in-place, then let user advance
+  { const ability = readIrtAbility() + getScoreDelta(correct, 50); writeIrtAbility(ability); updateTierDisplay(); }
   let html = `<div style="max-width:700px">`;
   html += `<p style="font-size:12px;color:var(--muted);margin:0 0 8px">${grammarState.index + 1} / ${items.length} | ✅ ${grammarState.correct} | ❌ ${grammarState.index - grammarState.correct}</p>`;
   html += `<p style="font-size:13px;color:var(--accent);font-weight:600;margin:0 0 4px">${escapeHtml(q.i)}. ${escapeHtml(q.t)}</p>`;
   html += `<p style="font-size:15px;line-height:1.7;margin:0 0 16px">${escapeHtml(q.q)}</p>`;
-  // Highlight choices
   html += '<div style="display:grid;gap:8px;margin-bottom:12px">';
   q.c.forEach(([l, text]) => {
     const isSelected = l === letter;
@@ -3938,12 +3750,12 @@ function submitGrammarAnswer(letter) {
 
 function finishGrammarQuiz() {
   const pct = Math.round(grammarState.correct / grammarState.total * 100);
-  els.grammar201Content.innerHTML = `<div style="text-align:center;padding:40px"><h3>문법 201 완료</h3><p>${grammarState.correct}/${grammarState.total} 정답 (${pct}%)</p><button onclick="showGrammar201()" class="text-btn" style="min-height:40px;margin-top:12px">다시 보기</button></div>`;
+  const gTier = getTier(readIrtAbility());
+  els.grammar201Content.innerHTML = `<div style="text-align:center;padding:40px"><h3>문법 201 완료</h3><p>${grammarState.correct}/${grammarState.total} 정답 (${pct}%)</p><p><small>${gTier.icon} ${gTier.name}</small></p><button onclick="showGrammar201()" class="text-btn" style="min-height:40px;margin-top:12px">다시 보기</button></div>`;
 }
 
 els.grammar201Btn.addEventListener('click', showGrammar201);
 
-/* ── 기출문제 ── */
 let examTab = 'gachon2012';
 
 function showExam() {
@@ -3952,7 +3764,6 @@ function showExam() {
   renderExamTab();
 }
 
-/* ── Exam Registry ── */
 var EXAM_REGISTRY = {
   gachon2012:     { title: '2012 가천대',          data: function(){return window.__V502_EXAM_GACHON2012__||[]} },
   skku2011:       { title: '2011 성균관대 오전',    data: function(){return window.__V502_EXAM_SKKU2011__||[]} },
@@ -4053,6 +3864,7 @@ function checkExamAnswer(tab, idx, letter, btn) {
   var correct = letter === q.a;
   if (correct) saveExamCorrect(tab, idx);
   else saveExamWrong(tab, idx);
+  { const ability = readIrtAbility() + getScoreDelta(correct, 50); writeIrtAbility(ability); updateTierDisplay(); }
 
   var fb = document.getElementById('examFeedback' + idx);
   if (fb) {
@@ -4088,10 +3900,6 @@ els.grammar201Panel.addEventListener('click', function(e) {
 els.logicSubmitBtn.addEventListener("click", submitLogicAnswer);
 els.logicNextBtn.addEventListener("click", nextLogicQuestion);
 
-// Sidebar is removed — relocate its still-needed pieces (with their event
-// listeners intact, since we move the live DOM nodes) into the workspace:
-//  • the login / 내정보 section goes to the top of the dashboard
-//  • the category picker goes above the start panel
 (function relocateFromSidebar() {
   const dashHeader = document.getElementById('dashHeader');
   const authSec = document.getElementById('authSection');
@@ -4099,7 +3907,6 @@ els.logicNextBtn.addEventListener("click", nextLogicQuestion);
   const catNav = document.getElementById('categoryNav');
   const quizPanel = document.getElementById('quizPanel');
   if (catNav && quizPanel && quizPanel.parentNode) {
-    // Wrap category nav in a collapsible bottom section
     const wrapper = document.createElement('div');
     wrapper.className = 'cat-nav-wrapper';
     const toggle = document.createElement('button');
@@ -4124,7 +3931,4 @@ els.logicNextBtn.addEventListener("click", nextLogicQuestion);
   }
 })();
 
-// Land on the dashboard by default — the single, unified navigation hub.
-// Runs last so logicState and all handlers are initialized first.
 showDashboard();
-// v20260623syncfix
