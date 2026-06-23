@@ -1967,11 +1967,30 @@ function switchMode(mode) {
   updateNoExplainIndicator();
 }
 
-function showRanking() {
+async function flushCumulativeWrites() {
+  const keys = Object.keys(_cumRemoteTimers);
+  const promises = [];
+  for (const key of keys) {
+    clearTimeout(_cumRemoteTimers[key]);
+    _cumRemoteTimers[key] = null;
+    const v = _cumRemoteLatest[key];
+    if (!v) continue;
+    const quizSet = key.split('|')[0];
+    promises.push(
+      getSupabaseClient()
+        .then((client) => client && writeCumulativeRow(client, quizSet, v.name, v.correct, v.total, v.accuracy))
+        .catch((e) => { console.warn('flushCumulativeWrites failed', e); })
+    );
+  }
+  await Promise.all(promises);
+}
+
+async function showRanking() {
   switchMode('ranking');
   els.rankingPanel.hidden = false;
   flushCloudSync();
-  pushAllScoresToSupabase();
+  await flushCumulativeWrites();
+  await pushAllScoresToSupabase();
 
   els.rankingTitle.textContent = "RANKING";
   els.rankingSummary.textContent = "loading...";
