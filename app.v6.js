@@ -3507,7 +3507,14 @@ function renderGrammarQuestion() {
   let html = `<div style="max-width:700px">`;
   html += `<p style="font-size:12px;color:var(--muted);margin:0 0 8px">${grammarState.index + 1} / ${items.length} | ✅ ${grammarState.correct} | ❌ ${grammarState.index - grammarState.correct}</p>`;
   html += `<p style="font-size:13px;color:var(--accent);font-weight:600;margin:0 0 4px">${escapeHtml(q.i)}. ${escapeHtml(q.t)}</p>`;
-  html += `<p style="font-size:15px;line-height:1.7;margin:0 0 16px">${escapeHtml(q.q)}</p>`;
+  var qHtml = q.q
+    .replace(/'([^']+)'/g, "'\uE000$1\uE001'")
+    .replace(/「([^」]+)」/g, '\uE000$1\uE001')
+    .replace(/(_{2,})/g, '\uE002$1\uE003');
+  qHtml = escapeHtml(qHtml)
+    .replace(/\uE000/g, '<u>').replace(/\uE001/g, '</u>')
+    .replace(/\uE002/g, '<u>').replace(/\uE003/g, '</u>');
+  html += `<p style="font-size:15px;line-height:1.7;margin:0 0 16px">${qHtml}</p>`;
 
   if (q.c && q.c.length >= 2) {
     html += '<div style="display:grid;gap:8px;margin-bottom:16px">';
