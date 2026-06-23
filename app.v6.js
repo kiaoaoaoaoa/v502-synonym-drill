@@ -425,7 +425,7 @@ function getTier(score) {
 
 // Estimate IRT ability from public stats — accuracy-based, volume-bonus capped at 2000 Qs
 function getTierForRanking(correct, total) {
-  const accuracy = total > 0 ? correct / total : 0;
+  const accuracy = Math.min(1, total > 0 ? correct / total : 0);
   const volumeFactor = 0.7 + 0.3 * Math.min(1, total / 2000);
   const estAbility = accuracy * 10000 * volumeFactor;
   return getTier(estAbility);
@@ -2757,33 +2757,32 @@ function getLogicTotal() {
   return (window.__V502_LOGIC__ && window.__V502_LOGIC__.questions || []).length;
 }
 
-/* Push the player's *cumulative* logic stats to the ranking using WEIGHTED SCORES.
-   Each answer contributes a difficulty-adjusted delta, not just +1/-0. */
+/* Push the player's *cumulative* logic stats to the ranking using raw correct counts
+   (matching synonym/wordcheck scale). Weighted score tracked separately for tier display. */
 function persistLogicRanking() {
   if (!state.playerName) return;
-  const ws = getLogicWeightedScore();
-  if (ws.questions === 0) return;
-  // Scale weighted score to a display-friendly range (~0-100 for readability)
-  // Raw weighted score per question: ~0.01 to ~1.5.  Scale up ×40 → 0.4 to 60 range.
-  const displayScore = Math.max(0, Math.round(ws.score * 40 * 100) / 100);
-  const accuracy = Math.round((getLogicCompleted().size / (getLogicCompleted().size + getLogicWrong().size || 1)) * 100);
+  const correct = getLogicCompleted().size;
+  const wrong = getLogicWrong().size;
+  const total = correct + wrong;
+  if (total === 0) return;
+  const accuracy = Math.round((correct / total) * 100);
 
-  // Local: replace any prior logic entries with a single cumulative weighted one
+  // Local: replace any prior logic entries with a single cumulative one
   const nameKey = state.playerName.toLowerCase();
   const entries = readLeaderboard().filter(
     (e) => !(e.name.toLowerCase() === nameKey && String(e.setId || "").startsWith("LOGIC")),
   );
   entries.push({
     name: state.playerName,
-    correct: displayScore,              // weighted score (scaled)
-    total: ws.questions,                // questions attempted
+    correct,                              // raw correct count (not weighted)
+    total,                                // questions attempted
     accuracy,
-    setId: "LOGIC", setLabel: "Logic Quiz (weighted)", completedAt: new Date().toISOString(),
+    setId: "LOGIC", setLabel: "Logic Quiz", completedAt: new Date().toISOString(),
   });
   writeLeaderboard(entries);
 
   // Public: coalesced, race-free write of the single (nickname, LOGIC) cumulative row
-  scheduleCumulativeRemoteWrite("LOGIC", state.playerName, displayScore, ws.questions, accuracy);
+  scheduleCumulativeRemoteWrite("LOGIC", state.playerName, correct, total, accuracy);
 }
 
 function shuffleLogicQuestions() {
