@@ -2508,7 +2508,8 @@ els.categoryButtons.forEach((button) => {
 
 function updateSidebarCompletion() {
   if (!state.playerName) return;
-  const entries = readLeaderboard().filter(e => e.name.toLowerCase() === state.playerName.toLowerCase());
+  const nk = state.playerName.toLowerCase();
+  const entries = readLeaderboard().filter(e => e.name.toLowerCase() === nk);
   const completed = new Map();
   for (const e of entries) {
     const existing = completed.get(e.setId);
@@ -2516,6 +2517,11 @@ function updateSidebarCompletion() {
       completed.set(e.setId, e);
     }
   }
+  // In-progress synonym tracking per set
+  const synRes = readSynonymResult();
+  const userSyn = synRes[nk] || { correct: [], wrong: [] };
+  const answeredIds = new Set([...(userSyn.correct || []), ...(userSyn.wrong || [])]);
+
   els.categoryButtons.forEach((button) => {
     const setId = button.dataset.setId;
     const entry = completed.get(setId);
@@ -2525,7 +2531,23 @@ function updateSidebarCompletion() {
       smallEl.textContent = `✓ ${entry.accuracy}%`;
       button.style.borderColor = "rgba(20,108,108,0.5)";
     } else {
-      smallEl.textContent = "30";
+      // Count in-progress answers for this set's categories
+      const setCats = categorySets[setId] ? categorySets[setId].ids : [];
+      let setTotal = 0, setAnswered = 0;
+      setCats.forEach(catId => {
+        const cat = categories.find(c => c.id === catId);
+        if (cat) {
+          setTotal += cat.words.length;
+          cat.words.forEach(w => {
+            if (answeredIds.has(catId + '|' + w)) setAnswered++;
+          });
+        }
+      });
+      if (setAnswered > 0) {
+        smallEl.textContent = `${setAnswered}/${setTotal}`;
+      } else {
+        smallEl.textContent = setTotal;
+      }
       button.style.borderColor = "";
     }
   });
@@ -3577,6 +3599,7 @@ function persistSynonymRanking() {
   });
   writeLeaderboard(entries);
   scheduleCumulativeRemoteWrite('SYNONYM', state.playerName, correct, total, accuracy);
+  updateSidebarCompletion();
 }
 
 function submitWordcheckAnswer(letter) {
