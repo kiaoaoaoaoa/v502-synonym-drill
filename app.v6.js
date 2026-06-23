@@ -3727,6 +3727,19 @@ els.wordcheckPanel.addEventListener('click', function(e) {
 
 let grammarState = { index: 0, correct: 0, total: 0 };
 
+function renderGrammarCategoryNav() {
+  const jumps = [];
+  for (let i = 0; i < 12; i++) jumps.push(i * 40);
+  let html = '<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px">';
+  html += '<span style="font-size:12px;color:var(--muted);margin-right:4px;line-height:24px">카테고리:</span>';
+  jumps.forEach(function(idx) {
+    const isCurrent = grammarState.index >= idx && grammarState.index < idx + 40;
+    html += '<button onclick="grammarState.index=' + idx + ';renderGrammarQuestion()" style="min-height:24px;padding:2px 7px;border:1px solid var(--line);border-radius:2px;font-size:11px;cursor:pointer;' + (isCurrent ? 'background:var(--ink);color:#fff;font-weight:700' : 'background:var(--panel);color:var(--ink)') + '">' + (idx + 1) + '번</button>';
+  });
+  html += '</div>';
+  return html;
+}
+
 function showGrammar201() {
   switchMode('grammar');
   els.grammar201Panel.hidden = false;
@@ -3742,7 +3755,8 @@ function renderGrammarQuestion() {
     return;
   }
   const q = items[grammarState.index];
-  let html = `<div style="max-width:700px">`;
+  let html = renderGrammarCategoryNav();
+  html += `<div style="max-width:700px">`;
   html += `<p style="font-size:12px;color:var(--muted);margin:0 0 8px">${grammarState.index + 1} / ${items.length} | ✅ ${grammarState.correct} | ❌ ${grammarState.index - grammarState.correct}</p>`;
   html += `<p style="font-size:13px;color:var(--accent);font-weight:600;margin:0 0 4px">${escapeHtml(q.i)}. ${escapeHtml(q.t)}</p>`;
   var qHtml = q.q
@@ -3778,7 +3792,8 @@ function submitGrammarAnswer(letter) {
     saveGrammarWrong(q.i);
   }
   { const ability = readIrtAbility() + getScoreDelta(correct, 50); writeIrtAbility(ability); updateTierDisplay(); }
-  let html = `<div style="max-width:700px">`;
+  let html = renderGrammarCategoryNav();
+  html += `<div style="max-width:700px">`;
   html += `<p style="font-size:12px;color:var(--muted);margin:0 0 8px">${grammarState.index + 1} / ${items.length} | ✅ ${grammarState.correct} | ❌ ${grammarState.index - grammarState.correct}</p>`;
   html += `<p style="font-size:13px;color:var(--accent);font-weight:600;margin:0 0 4px">${escapeHtml(q.i)}. ${escapeHtml(q.t)}</p>`;
   html += `<p style="font-size:15px;line-height:1.7;margin:0 0 16px">${escapeHtml(q.q)}</p>`;
