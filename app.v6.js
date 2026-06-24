@@ -2387,7 +2387,6 @@ function showWordbook3() {
       if (known) h += '<span class="wl-check">✓</span>';
       h += escapeHtml(w) + '</span>';
       if (pos) h += '<span class="wl2-pos">' + escapeHtml(pos) + '</span>';
-      if (p) h += '<span class="wl2-pron">' + escapeHtml(p) + '</span>';
       if (m) h += '<span class="wl2-meaning" style="margin-left:4px">' + escapeHtml(m) + '</span>';
       h += '</div>';
     });
