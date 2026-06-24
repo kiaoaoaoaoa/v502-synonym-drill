@@ -3160,17 +3160,13 @@ function showDashboard() {
   let html = '<div class="dash">';
 
   if (loggedIn) {
-    const knownCount = getWordKnowledgeCount();
     const logicMastered = getLogicCompleted().size;
     const cum = cumulativeLeaderboard(readLeaderboard(), null)
       .find((e) => e.name.toLowerCase() === state.playerName.toLowerCase());
     const score = cum ? cum.correct : 0;
-    const tier = getTier(readIrtAbility());
     html += `<div class="dash-stats dash-stats-xl">`;
-    html += `<div class="dash-stat" onclick="showWordlist()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-num">${knownCount}</span><span class="dash-stat-label">📋 외운 단어</span></div>`;
-    html += `<div class="dash-stat" onclick="startLogicQuiz()" style="cursor:pointer" title="논리문제"><span class="dash-stat-num">${logicMastered}<small>/${getLogicTotal()}</small></span><span class="dash-stat-label">🧩 논리 마스터</span></div>`;
-    html += `<div class="dash-stat" onclick="showRanking()" style="cursor:pointer" title="통합랭킹 보기"><span class="dash-stat-num">${score}</span><span class="dash-stat-label">🏆 통합 점수</span></div>`;
-    html += `<div class="dash-stat" style="cursor:default"><span class="dash-stat-num" style="font-size:18px">${tier.icon}</span><span class="dash-stat-label">${tier.name}</span></div>`;
+    html += `<div class="dash-stat" onclick="startLogicQuiz()" style="cursor:pointer" title="논리문제"><span class="dash-stat-num">${logicMastered}<small>/${getLogicTotal()}</small></span><span class="dash-stat-label">논리 마스터</span></div>`;
+    html += `<div class="dash-stat" onclick="showRanking()" style="cursor:pointer" title="통합랭킹 보기"><span class="dash-stat-num">${score}</span><span class="dash-stat-label">통합 점수</span></div>`;
     html += `<div class="dash-stat" onclick="showWordlist()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-icon">📋</span><span class="dash-stat-label">단어일람</span></div>`;
     html += `<div class="dash-stat" onclick="showWordlist2()" style="cursor:pointer" title="단어일람보기2"><span class="dash-stat-icon">🗂️</span><span class="dash-stat-label">단어일람2</span></div>`;
 	    html += `<div class="dash-stat" onclick="showWordbook3()" style="cursor:pointer" title="단어장3"><span class="dash-stat-icon">📗</span><span class="dash-stat-label">단어장3</span></div>`;
