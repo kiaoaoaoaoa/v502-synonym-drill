@@ -3866,13 +3866,23 @@ function renderGrammarCategoryNav() {
 function showGrammar201() {
   switchMode('grammar');
   els.grammar201Panel.hidden = false;
-  const items = window.__V502_GRAMMAR__ || [];
-  grammarState = { index: 0, correct: 0, total: items.length };
+  const allItems = window.__V502_GRAMMAR__ || [];
+  const key = state.playerName ? state.playerName.toLowerCase() : '_guest';
+  const prog = readGrammarProgress();
+  const correctSet = new Set((prog[key] && prog[key].correct) || []);
+  const wrongSet = new Set((prog[key] && prog[key].wrong) || []);
+  // Filter: skip already-correct questions; show wrong + unanswered
+  const items = allItems.filter(q => !correctSet.has(q.i));
+  if (items.length === 0) {
+    els.grammar201Content.innerHTML = '<div style="text-align:center;padding:40px"><h3>문법 201 완료</h3><p>모든 문제를 맞췄습니다!</p><p><small>🎉</small></p><button onclick="showGrammar201()" class="text-btn" style="min-height:40px;margin-top:12px">다시 보기</button></div>';
+    return;
+  }
+  grammarState = { index: 0, correct: 0, total: items.length, items: items };
   renderGrammarQuestion();
 }
 
 function renderGrammarQuestion() {
-  const items = window.__V502_GRAMMAR__ || [];
+  const items = grammarState.items || window.__V502_GRAMMAR__ || [];
   if (grammarState.index >= items.length) {
     finishGrammarQuiz();
     return;
@@ -3905,7 +3915,7 @@ function renderGrammarQuestion() {
 }
 
 function submitGrammarAnswer(letter) {
-  const items = window.__V502_GRAMMAR__ || [];
+  const items = grammarState.items || window.__V502_GRAMMAR__ || [];
   const q = items[grammarState.index];
   const correct = letter === q.a;
   if (correct) {
