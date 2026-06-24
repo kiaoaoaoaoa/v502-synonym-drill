@@ -4061,9 +4061,13 @@ els.grammar201Btn.addEventListener('click', showGrammar201);
 
 let examTab = 'gachon2012';
 
+var examIndex = 0;
+var examOneByOne = true; // default: one question at a time
+
 function showExam() {
   switchMode('exam');
   els.examPanel.hidden = false;
+  examIndex = 0;
   renderExamTab();
 }
 
@@ -4128,33 +4132,59 @@ function renderExamTab() {
   var questions = EXAM_REGISTRY[examTab] ? EXAM_REGISTRY[examTab].data() : [];
   var prog = getExamProgress(examTab);
   var doneCount = prog.correct.size + prog.wrong.size;
-  if (doneCount > 0) {
-    html += `<div style="margin-bottom:12px;font-size:12px;color:var(--muted)">📋 진행상황: ✅ ${prog.correct.size} / ❌ ${prog.wrong.size} / ⬜ ${questions.length - doneCount} 문제 남음</div>`;
+
+  // Clamp examIndex
+  if (examIndex >= questions.length) examIndex = Math.max(0, questions.length - 1);
+  if (examIndex < 0) examIndex = 0;
+
+  // --- Top nav bar ---
+  html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">';
+  html += '<button onclick="examOneByOne=!examOneByOne;renderExamTab()" style="padding:4px 10px;border:1px solid var(--line);border-radius:4px;font-size:12px;cursor:pointer;background:transparent;color:var(--ink);white-space:nowrap">' + (examOneByOne?'📋 전체보기':'🔢 한문제씩') + '</button>';
+  html += '<span style="font-size:12px;color:var(--muted)">✅ ' + prog.correct.size + '</span><span style="font-size:12px;color:var(--muted)">❌ ' + prog.wrong.size + '</span><span style="font-size:12px;color:var(--muted)">⬜ ' + (questions.length - doneCount) + '</span>';
+  if (examOneByOne && questions.length > 1) {
+    html += '<div style="margin-left:auto;display:flex;align-items:center;gap:6px">';
+    html += '<button onclick="examIndex=0;renderExamTab()" style="padding:4px 8px;border:1px solid var(--line);border-radius:4px;font-size:12px;cursor:pointer;background:transparent;color:var(--ink)"' + (examIndex===0?' disabled':'') + '>⏮</button>';
+    html += '<button onclick="examIndex=Math.max(0,examIndex-1);renderExamTab()" style="padding:4px 8px;border:1px solid var(--line);border-radius:4px;font-size:12px;cursor:pointer;background:transparent;color:var(--ink)"' + (examIndex===0?' disabled':'') + '>◀</button>';
+    html += '<span style="font-size:13px;font-weight:700">' + (examIndex+1) + ' / ' + questions.length + '</span>';
+    html += '<button onclick="examIndex=Math.min(' + (questions.length-1) + ',examIndex+1);renderExamTab()" style="padding:4px 8px;border:1px solid var(--line);border-radius:4px;font-size:12px;cursor:pointer;background:transparent;color:var(--ink)"' + (examIndex>=questions.length-1?' disabled':'') + '>▶</button>';
+    html += '<button onclick="examIndex=' + (questions.length-1) + ';renderExamTab()" style="padding:4px 8px;border:1px solid var(--line);border-radius:4px;font-size:12px;cursor:pointer;background:transparent;color:var(--ink)"' + (examIndex>=questions.length-1?' disabled':'') + '>⏭</button>';
+    html += '</div>';
   }
-  questions.forEach((q, i) => {
+  html += '</div>';
+
+  // Progress bar
+  if (examOneByOne && questions.length > 1) {
+    html += '<div style="width:100%;height:4px;background:var(--line);border-radius:2px;margin-bottom:16px"><div style="width:' + Math.round((examIndex+1)/questions.length*100) + '%;height:100%;background:var(--accent);border-radius:2px;transition:width 0.2s"></div></div>';
+  }
+
+  // --- Render questions ---
+  var indices = examOneByOne ? [examIndex] : questions.map(function(_,i){return i});
+  indices.forEach(function(i) {
+    var q = questions[i];
     var isCorrect = prog.correct.has(i);
     var isWrong = prog.wrong.has(i);
     var isDone = isCorrect || isWrong;
     if (q.section) {
-      html += `<div style="margin:-8px 0 16px 0;padding:4px 10px;background:var(--accent);color:#fff;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:0.5px">${escapeHtml(q.section)}</div>`;
+      html += '<div style="margin:-8px 0 16px 0;padding:4px 10px;background:var(--accent);color:#fff;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:0.5px">' + escapeHtml(q.section) + '</div>';
     }
-    html += `<div style="margin-bottom:16px;padding:16px;border-radius:2px;border:1px solid var(--line);${isCorrect?'background:#f1f8e9':isWrong?'background:#fff3f0':''}" id="examQ${i}">`;
-    html += `<p style="font-weight:700;margin:0 0 8px;color:var(--accent)">${i+1}.` + (isCorrect ? ' ✅' : isWrong ? ' ❌' : '') + `</p>`;
+    html += '<div style="margin-bottom:16px;padding:16px;border-radius:2px;border:1px solid var(--line);' + (isCorrect?'background:#f1f8e9':isWrong?'background:#fff3f0':'') + '" id="examQ' + i + '">';
+    html += '<p style="font-weight:700;margin:0 0 8px;color:var(--accent)">' + (i+1) + '.' + (isCorrect ? ' ✅' : isWrong ? ' ❌' : '') + '</p>';
     if (q.p && q.p.length > 30) {
       var pHtml = escapeHtml(q.p).replace(/「([^」]+)」/g, '<u>$1</u>');
-      html += `<div style="margin:0 0 12px;padding:10px 14px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;font-size:14px;line-height:1.7">${pHtml}</div>`;
+      html += '<div style="margin:0 0 12px;padding:10px 14px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;font-size:14px;line-height:1.7">' + pHtml + '</div>';
     }
     var qHtml = q.q
-      .replace(/'([^']+)'/g, "'\uE000$1\uE001'")
-      .replace(/「([^」]+)」/g, '\uE000$1\uE001')
-      .replace(/(_{2,})/g, '\uE002$1\uE003');
+      .replace(/'([^']+)'/g, "'$1'")
+      .replace(/「([^」]+)」/g, '$1')
+      .replace(/(_{2,})/g, '$1');
     qHtml = escapeHtml(qHtml)
-      .replace(/\uE000/g, '<u>').replace(/\uE001/g, '</u>')
-      .replace(/\uE002/g, '<u>').replace(/\uE003/g, '</u>');
-    html += `<p style="font-weight:600;margin:0 0 10px">${qHtml}</p>`;
+      .replace(//g, '<u>').replace(//g, '</u>')
+      .replace(//g, '<u>').replace(//g, '</u>');
+    html += '<p style="font-weight:600;margin:0 0 10px">' + qHtml + '</p>';
     if (q.c && q.c.length > 0) {
       html += '<div style="display:grid;gap:4px">';
-      q.c.forEach(([letter, text]) => {
+      q.c.forEach(function(_ref) {
+        var letter = _ref[0], text = _ref[1];
         var btnStyle = 'font-size:14px;padding:4px 8px;border:1px solid var(--line);border-radius:2px;text-align:left;font:inherit;';
         if (isDone) {
           btnStyle += 'cursor:default;';
@@ -4162,7 +4192,7 @@ function renderExamTab() {
         } else {
           btnStyle += 'cursor:pointer;background:transparent;';
         }
-        html += `<button onclick="checkExamAnswer('${examTab}',${i},'${escapeHtml(letter)}',this)" style="${btnStyle}"${isDone?' disabled':''}>(${escapeHtml(letter)}) ${escapeHtml(text)}</button>`;
+        html += '<button onclick="checkExamAnswer(\'' + examTab + '\',' + i + ',\'' + escapeHtml(letter) + '\',this)" style="' + btnStyle + '"' + (isDone?' disabled':'') + '>(' + escapeHtml(letter) + ') ' + escapeHtml(text) + '</button>';
       });
       html += '</div>';
     }
@@ -4179,11 +4209,22 @@ function renderExamTab() {
         fbHtml += '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation).replace(/\n/g, '<br>') + '</div>';
       }
     }
-    html += `<div id="examFeedback${i}" style="margin-top:6px;font-size:13px;min-height:20px">${fbHtml}</div>`;
+    html += '<div id="examFeedback' + i + '" style="margin-top:6px;font-size:13px;min-height:20px">' + fbHtml + '</div>';
     html += '</div>';
   });
+
+  // --- Bottom nav ---
+  if (examOneByOne && questions.length > 1) {
+    html += '<div style="display:flex;justify-content:center;align-items:center;gap:12px;margin-top:16px">';
+    html += '<button onclick="examIndex=Math.max(0,examIndex-1);renderExamTab()" style="padding:6px 16px;border:1px solid var(--line);border-radius:4px;font-size:14px;cursor:pointer;background:transparent;color:var(--ink)"' + (examIndex===0?' disabled':'') + '>◀ 이전</button>';
+    html += '<span style="font-size:14px;font-weight:700;color:var(--accent)">' + (examIndex+1) + ' / ' + questions.length + '</span>';
+    html += '<button onclick="examIndex=Math.min(' + (questions.length-1) + ',examIndex+1);renderExamTab()" style="padding:6px 16px;border:1px solid var(--line);border-radius:4px;font-size:14px;cursor:pointer;background:var(--accent);color:#fff"' + (examIndex>=questions.length-1?' disabled':'') + '>다음 ▶</button>';
+    html += '</div>';
+  }
+
   html += '</div>';
   els.examContent.innerHTML = html;
+
 }
 function checkExamAnswer(tab, idx, letter, btn) {
   var questions = EXAM_REGISTRY[tab] ? EXAM_REGISTRY[tab].data() : [];
@@ -4216,6 +4257,14 @@ function checkExamAnswer(tab, idx, letter, btn) {
     if (bLetter === q.a) b.style.background = '#e8f5e9';
     else if (bLetter === letter && !correct) b.style.background = '#fce4ec';
   });
+
+  // Auto-advance on correct answer in one-by-one mode
+  if (correct && examOneByOne) {
+    var total = EXAM_REGISTRY[tab] ? EXAM_REGISTRY[tab].data().length : 0;
+    if (idx < total - 1) {
+      setTimeout(function() { examIndex = idx + 1; renderExamTab(); }, 800);
+    }
+  }
 }
 
 els.examBtn.addEventListener('click', showExam);
