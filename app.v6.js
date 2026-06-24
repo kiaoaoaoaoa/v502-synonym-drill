@@ -650,6 +650,8 @@ const els = {
   logicModeBtn: document.querySelector("#logicModeBtn"),
   synonymDrillBtn: document.querySelector("#synonymDrillBtn"),
   myinfoBtn: document.querySelector("#myinfoBtn"),
+  boardPanel: document.querySelector("#boardPanel"),
+  boardContent: document.querySelector("#boardContent"),
   myinfoPanel: document.querySelector("#myinfoPanel"),
   myinfoContent: document.querySelector("#myinfoContent"),
   myinfoCloseBtn: document.querySelector("#myinfoCloseBtn"),
@@ -657,6 +659,9 @@ const els = {
   wordlist2Btn: document.querySelector("#wordlist2Btn"),
   wordlist2Panel: document.querySelector("#wordlist2Panel"),
   wordlist2Content: document.querySelector("#wordlist2Content"),
+  wordbook3Btn: document.querySelector("#wordbook3Btn"),
+  wordbook3Panel: document.querySelector("#wordbook3Panel"),
+  wordbook3Content: document.querySelector("#wordbook3Content"),
   logicPanel: document.querySelector("#logicPanel"),
   logicProgressBar: document.querySelector("#logicProgressBar"),
   logicQuestionText: document.querySelector("#logicQuestionText"),
@@ -664,6 +669,7 @@ const els = {
   logicFeedback: document.querySelector("#logicFeedback"),
   logicSubmitBtn: document.querySelector("#logicSubmitBtn"),
   logicNextBtn: document.querySelector("#logicNextBtn"),
+  logicJumpBtn: document.querySelector("#logicJumpBtn"),
   logicCounter: document.querySelector("#logicCounter"),
   quizModeLabel: document.querySelector("#quizModeLabel"),
   wordcheckBtn: document.querySelector("#wordcheckBtn"),
@@ -956,7 +962,7 @@ function submitAnswer() {
       });
     }
     saveSynonymRankResult(question.categoryId, question.prompt, correct);
-    try { persistSynonymRanking(); } catch {}
+    persistSynonymRanking();
     const rate = (question.difficulty && typeof question.difficulty === 'object')
       ? rateQuestion(question.difficulty) : 50; // default 50% if no per-question rating
     const ability = readIrtAbility() + getScoreDelta(correct, rate);
@@ -1212,7 +1218,6 @@ async function handleLogin() {
   els.authPasswordInput.value = "";
   checkAndShowResume();
   await cloudPullScores();
-  if (_cloudSyncTimer) { clearTimeout(_cloudSyncTimer); _cloudSyncTimer = null; }
   await cloudSyncAll();
   pushAllScoresToSupabase();
 }
@@ -1293,14 +1298,25 @@ function readWordKnowledge() {
 }
 
 function writeWordKnowledge(store) {
-  localStorage.setItem(wordKnowledgeKey, JSON.stringify(store));
+  try { localStorage.setItem(wordKnowledgeKey, JSON.stringify(store)); } catch {}
 }
 
 function isWordKnown(word) {
   if (!state.playerName) return false;
   const store = readWordKnowledge();
-  const userWords = store[state.playerName.toLowerCase()] || [];
-  return userWords.includes(word);
+  const entry = store[state.playerName.toLowerCase()];
+  if (!entry) return false;
+  // Support both old array format and new object format
+  if (Array.isArray(entry)) return entry.includes(word);
+  return word in entry;
+}
+
+function getWordKnownDate(word) {
+  if (!state.playerName) return null;
+  const store = readWordKnowledge();
+  const entry = store[state.playerName.toLowerCase()];
+  if (!entry || Array.isArray(entry)) return null;
+  return entry[word] || null;
 }
 
 function readSynonymProgress() {
@@ -1346,16 +1362,22 @@ function toggleWordKnown(word) {
   if (!state.playerName) return false;
   const store = readWordKnowledge();
   const key = state.playerName.toLowerCase();
-  if (!store[key]) store[key] = [];
-  const idx = store[key].indexOf(word);
-  if (idx >= 0) {
-    store[key].splice(idx, 1);
+  // Migrate old array format to new object format
+  if (Array.isArray(store[key])) {
+    const arr = store[key];
+    store[key] = {};
+    arr.forEach(w => { store[key][w] = new Date().toISOString(); });
+  }
+  if (!store[key]) store[key] = {};
+  const wasKnown = word in store[key];
+  if (wasKnown) {
+    delete store[key][word];
   } else {
-    store[key].push(word);
+    store[key][word] = new Date().toISOString();
   }
   writeWordKnowledge(store);
   scheduleCloudSync();
-  return idx < 0; // true if now known
+  return !wasKnown; // true if now known
 }
 
 function writePasswordStore(store) {
@@ -1542,23 +1564,14 @@ async function cloudPullScores() {
   } catch(e) { console.warn('cloudPullScores failed', e); }
 }
 
-let _cloudSyncTimer = null;
 function scheduleCloudSync() {
-  if (_cloudSyncTimer) {
-    clearTimeout(_cloudSyncTimer);
-    _cloudSyncTimer = null;
-  }
-  _cloudSyncTimer = setTimeout(() => {
-    _cloudSyncTimer = null;
-    cloudSyncAll().catch((e) => { console.warn('scheduleCloudSync failed', e); });
-  }, 100);
+  // Sync immediately to Supabase — no debounce
+  cloudSyncAll().catch((e) => { console.warn('scheduleCloudSync failed', e); });
 }
 function flushCloudSync() {
-  if (!_cloudSyncTimer) return;
-  clearTimeout(_cloudSyncTimer);
-  _cloudSyncTimer = null;
   cloudSyncAll().catch((e) => { console.warn('flushCloudSync failed', e); });
 }
+window.addEventListener('beforeunload', () => { if (state.playerName) flushCloudSync(); });
 
 async function cloudSyncAll() {
   if (!state.playerName || !hasPublicConfig()) return true;
@@ -1568,7 +1581,8 @@ async function cloudSyncAll() {
   const pwStore = readPasswordStore();
   const pw = pwStore[nk] ? (typeof pwStore[nk]==='string' ? pwStore[nk] : atob(pwStore[nk].password)) : '';
 
-  const wordKnowledge = JSON.stringify((readWordKnowledge()||{})[nk]||[]);
+  const wkEntry = (readWordKnowledge()||{})[nk];
+  const wordKnowledge = JSON.stringify(wkEntry || {});
   const synProgress = JSON.stringify((readSynonymProgress()||{})[nk]||{});
   const wcProg = JSON.stringify(getWordcheckProgress());
   let quizProg = '{}';
@@ -1606,6 +1620,11 @@ async function cloudSyncAll() {
   let ok = false;
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
+      // Try upsert first (requires unique constraint on nickname+quiz_set)
+      // Falls back to select+insert/update if constraint doesn't exist
+      const { error: upsertErr } = await client.from(table).upsert(row, { onConflict: 'nickname,quiz_set', ignoreDuplicates: false });
+      if (!upsertErr) { ok = true; break; }
+      // Fallback: manual select-then-insert/update
       const { data: existing } = await client.from(table).select('id').eq('nickname', nk).eq('quiz_set', 'USERDATA');
       if (existing && existing.length > 0) {
         await client.from(table).update(row).eq('nickname', nk).eq('quiz_set', 'USERDATA');
@@ -1742,10 +1761,17 @@ async function savePublicScore(entry) {
     if (entry.accuracy <= bestExisting.accuracy) {
       return bestExisting.id;
     }
-    await client.from(getLeaderboardTable())
-      .delete()
-      .eq("nickname", entry.name)
-      .eq("quiz_set", entry.setId);
+    // DELETE blocked by RLS — update all existing rows for this set instead
+    for (const row of existingRows) {
+      await client.from(getLeaderboardTable())
+        .update({
+          correct_count: entry.correct,
+          total_count: entry.total,
+          accuracy: entry.accuracy,
+        })
+        .eq("id", row.id);
+    }
+    return existingRows[0].id;
   }
 
   const { data, error } = await client
@@ -1943,9 +1969,11 @@ function switchMode(mode) {
   els.rankingPanel.hidden = true;
   els.wordlistPanel.hidden = true;
   els.logicPanel.hidden = true;
+  els.boardPanel.hidden = true;
   els.myinfoPanel.hidden = true;
   els.dashboardPanel.hidden = true;
   els.wordlist2Panel.hidden = true;
+  els.wordbook3Panel.hidden = true;
   els.wordcheckPanel.hidden = true;
   els.grammar201Panel.hidden = true;
   els.examPanel.hidden = true;
@@ -2041,39 +2069,40 @@ async function showRanking() {
 
       const colors = ['#FF6B35','#FFD449','#06D6A0','#118AB2','#EF476F','#073B4C','#8338EC','#FF006E'];
       const top3 = cumulative.slice(0, 3);
-      const rest = cumulative.slice(3, 30);
+      const rest = cumulative.slice(3, 50);
 
       let html = '';
-      html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:32px">';
+      html += '<div class="rank-podium">';
       top3.forEach((item, idx) => {
         const medals = ['🥇','🥈','🥉'];
         const tier = getTierForRanking(item.correct, item.total);
-        const sizes = ['160%','130%','110%'];
+        const sizes = ['130%','115%','105%'];
         const color = colors[idx];
-        html += `<div style="background:${color};border-radius:2px;padding:20px 14px;text-align:center;color:#fff;position:relative;overflow:hidden">
-          <div style="font-size:${sizes[idx]};font-weight:900;line-height:1;opacity:0.25;position:absolute;top:4px;right:8px">${medals[idx]}</div>
-          <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;opacity:0.7;margin-bottom:4px">#${idx+1}</div>
-          <div style="font-size:16px;font-weight:800;margin-bottom:2px;word-break:break-all">${escapeHtml(item.name)}</div>
-          <div style="font-size:11px;opacity:0.85;margin-bottom:6px">${tier.icon} ${tier.name}</div>
-          <div style="font-size:28px;font-weight:900;line-height:1">${item.correct}<span style="font-size:14px;font-weight:400">점</span></div>
+        html += `<div class="rank-podium-card" style="background:${color}">
+          <div class="rank-podium-medal">${medals[idx]}</div>
+          <div class="rank-podium-rank">#${idx+1}</div>
+          <div class="rank-podium-name">${escapeHtml(item.name)}</div>
+          <div class="rank-podium-tier">${tier.icon} ${tier.name}</div>
+          <div class="rank-podium-score">${item.correct}<small>점</small></div>
         </div>`;
       });
       html += '</div>';
 
       if (rest.length) {
-        html += '<div style="display:grid;gap:6px">';
+        html += '<div class="rank-list">';
         const topScore = rest.length ? Math.max(...rest.map(r => r.correct), 1) : 1;
         rest.forEach((item, idx) => {
           const rank = idx + 4;
           const tier = getTierForRanking(item.correct, item.total);
           const barW = Math.min(100, (item.correct / topScore) * 100);
-          html += `<div style="display:grid;grid-template-columns:28px 1fr 55px;align-items:center;gap:10px;padding:8px 12px;background:#fff;border-radius:10px;border:1px solid #eee">
-            <span style="font-size:12px;font-weight:700;color:var(--muted);text-align:right">${rank}</span>
-            <div style="min-width:0">
-              <div style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${escapeHtml(item.name)} <span style="font-size:11px;opacity:0.6">${tier.icon} ${tier.name}</span></div>
-              <div style="height:4px;border-radius:2px;background:#f0f0f0;margin-top:4px"><div style="height:100%;width:${barW}%;border-radius:2px;background:${colors[rank % colors.length]}"></div></div>
+          const highlight = item.name.toLowerCase() === (state.playerName || '').toLowerCase() ? ' highlight' : '';
+          html += `<div class="rank-row${highlight}">
+            <span class="rank-row-num">${rank}</span>
+            <div class="rank-row-body">
+              <div class="rank-row-name">${escapeHtml(item.name)} <span class="rank-row-tier">${tier.icon} ${tier.name}</span></div>
+              <div class="rank-row-bar"><div class="rank-row-bar-fill" style="width:${barW}%;background:${colors[rank % colors.length]}"></div></div>
             </div>
-            <span style="font-size:18px;font-weight:800;text-align:right">${item.correct}<span style="font-size:10px;font-weight:400;color:var(--muted)">점</span></span>
+            <span class="rank-row-score">${item.correct}<small>점</small></span>
           </div>`;
         });
         html += '</div>';
@@ -2091,9 +2120,6 @@ function getActiveSetCount() {
 }
 
 let wlHideKnown = false;
-let wlCollapseLow = true;
-let wlCollapseMid = true;
-let wlCollapseHigh = true;
 
 function showWordlist() {
   switchMode('wordlist');
@@ -2113,31 +2139,18 @@ function showWordlist() {
   if (hideBtn) hideBtn.addEventListener('click', () => { wlHideKnown = !wlHideKnown; showWordlist(); });
   const hideKnown = wlHideKnown && state.playerName;
   let html = '<div class="wordlist-scroll">';
-  const catsLowLow  = categories.filter(c => parseInt(c.id) < 100);
-  const catsLowHigh = categories.filter(c => parseInt(c.id) >= 100 && parseInt(c.id) < 200);
-  const catsMid     = categories.filter(c => parseInt(c.id) >= 200 && parseInt(c.id) < 400);
-  const catsHigh    = categories.filter(c => parseInt(c.id) >= 400);
-  let sentinelIdx = 0;
-  [...catsLowLow, null, ...catsLowHigh, null, ...catsMid, null, ...catsHigh].forEach(cat => {
-    if (cat === null) {
-      sentinelIdx++;
-      if (sentinelIdx === 1) {
-        html += `<div id="wl-low-collapsed"${wlCollapseLow ? '' : ' hidden'} style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404"><button type="button" class="wl-jump-btn" style="font-size:12px;padding:4px 16px" onclick="wlCollapseLow=false;showWordlist()">범주 100~199 펴기 ▸</button></div>`;
-        html += `<div id="wl-low-cats"${wlCollapseLow ? ' hidden' : ''}>`;
-        html += `<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">범주 100~199 — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 8px" onclick="document.getElementById('wl-low-cats').hidden=true;wlCollapseLow=true;document.getElementById('wl-low-collapsed').hidden=false;">접기</button></div>`;
-      } else if (sentinelIdx === 2) {
-        html += '</div>'; // close wl-low-cats
-        html += `<div id="wl-mid-collapsed"${wlCollapseMid ? '' : ' hidden'} style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404"><button type="button" class="wl-jump-btn" style="font-size:12px;padding:4px 16px" onclick="wlCollapseMid=false;showWordlist()">범주 200~399 펴기 ▸</button></div>`;
-        html += `<div id="wl-mid-cats"${wlCollapseMid ? ' hidden' : ''}>`;
-        html += `<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">범주 200~399 — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 8px" onclick="document.getElementById('wl-mid-cats').hidden=true;wlCollapseMid=true;document.getElementById('wl-mid-collapsed').hidden=false;">접기</button></div>`;
-      } else {
-        html += '</div>'; // close wl-mid-cats
-        html += `<div id="wl-high-collapsed"${wlCollapseHigh ? '' : ' hidden'} style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404"><button type="button" class="wl-jump-btn" style="font-size:12px;padding:4px 16px" onclick="wlCollapseHigh=false;showWordlist()">범주 400~620 펴기 ▸</button></div>`;
-        html += `<div id="wl-high-cats"${wlCollapseHigh ? ' hidden' : ''}>`;
-        html += `<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">범주 400~620 — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 8px" onclick="document.getElementById('wl-high-cats').hidden=true;wlCollapseHigh=true;document.getElementById('wl-high-collapsed').hidden=false;">접기</button></div>`;
-      }
-      return;
-    }
+  // 20-category chunks
+  const CAT_CHUNK = 20;
+  const catChunks = [];
+  for (let i = 0; i < categories.length; i += CAT_CHUNK) {
+    catChunks.push(categories.slice(i, i + CAT_CHUNK));
+  }
+  catChunks.forEach((chunk, chunkIdx) => {
+    var firstId = chunk[0].id;
+    var lastId = chunk[chunk.length - 1].id;
+    html += '<details class="wb3-section"' + (chunkIdx === 0 ? ' open' : '') + '>';
+    html += '<summary class="wb3-summary">범주 ' + firstId + '~' + lastId + ' <small>(' + chunk.length + '개 범주)</small></summary>';
+    chunk.forEach(cat => {
     const summary = categorySummaries[cat.id] || '';
     const catWords = hideKnown ? cat.words.filter(w => !isWordKnown(w)) : cat.words;
     if (catWords.length === 0) return;
@@ -2227,7 +2240,8 @@ function showWordlist() {
     }
     html += `</div>`;
   });
-  html += '</div>'; // close wl-high-cats (wl-low-cats + wl-mid-cats closed by second and third sentinels)
+  html += '</details>';
+  });
   html += '</div>';
   els.wordlistContent.innerHTML = html;
 }
@@ -2282,30 +2296,123 @@ function showWordlist2() {
     html += '<button class="wl-jump-btn wl-hideknown-btn' + (wlHideKnown ? ' wl-hideknown-on' : '') + '" type="button" id="wl2HideBtn" title="아는 단어(✓) 숨기기">' + (wlHideKnown ? '✓ 아는 단어 숨김' : '아는 단어 안보기') + '</button>';
   }
   html += '</div>';
-  html += '<div class="wordlist2-entries">';
-  visible.forEach((item, idx) => {
-    const hasEx = item.ex && item.ex.length > 20;
-    const w = item.w || '';
-    const m = item.m || '';
-    const known = state.playerName && isWordKnown(w);
-    html += '<div class="wl2-entry">';
-    html += '<span class="wl2-word' + (known ? ' wl-known' : '') + (state.playerName ? ' wl-clickable' : '') + '"';
-    if (state.playerName) {
-      html += ' onclick="handleWordToggle(\'' + escapeHtml(w) + '\', this)" title="클릭하여 안다/모른다 표시"';
-    }
-    html += '>';
-    if (known) html += '<span class="wl-check">✓</span>';
-    html += escapeHtml(w) + '</span>';
-    if (m) html += '<span class="wl2-meaning">' + escapeHtml(m) + '</span>';
-    if (hasEx) html += '<div class="wl2-example">' + escapeHtml(item.ex) + '</div>';
-    html += '</div>';
+  // 300-word chunks
+  const CHUNK = 300;
+  const chunks = [];
+  for (let i = 0; i < visible.length; i += CHUNK) {
+    chunks.push({ start: i, end: Math.min(i + CHUNK - 1, visible.length - 1), items: visible.slice(i, i + CHUNK) });
+  }
+  function renderWL2Entries(items) {
+    let h = '<div class="wordlist2-entries">';
+    items.forEach((item) => {
+      const hasEx = item.ex && item.ex.length > 20;
+      const w = item.w || '';
+      const m = item.m || '';
+      const known = state.playerName && isWordKnown(w);
+      h += '<div class="wl2-entry">';
+      h += '<span class="wl2-word' + (known ? ' wl-known' : '') + (state.playerName ? ' wl-clickable' : '') + '"';
+      if (state.playerName) {
+        h += ' onclick="handleWordToggle(\'' + escapeHtml(w) + '\', this)" title="클릭하여 안다/모른다 표시"';
+      }
+      h += '>';
+      if (known) h += '<span class="wl-check">✓</span>';
+      h += escapeHtml(w) + '</span>';
+      if (m) h += '<span class="wl2-meaning">' + escapeHtml(m) + '</span>';
+      if (hasEx) h += '<div class="wl2-example">' + escapeHtml(item.ex) + '</div>';
+      h += '</div>';
+    });
+    h += '</div>';
+    return h;
+  }
+  chunks.forEach((chunk, idx) => {
+    html += '<details class="wb3-section"' + (idx === 0 ? ' open' : '') + '>';
+    html += '<summary class="wb3-summary">[' + (chunk.start + 1) + '~' + (chunk.end + 1) + '번] <small>(' + chunk.items.length + '개)</small></summary>';
+    html += renderWL2Entries(chunk.items);
+    html += '</details>';
   });
-  html += '</div></div></div>';
+  html += '</div></div>';
   els.wordlist2Content.innerHTML = html;
 
   const hideBtn = document.getElementById('wl2HideBtn');
   if (hideBtn) {
     hideBtn.addEventListener('click', () => { wlHideKnown = !wlHideKnown; showWordlist2(); });
+  }
+}
+
+let wb3HideKnown = false;
+
+function showWordbook3() {
+  switchMode('wordlist');
+  els.wordbook3Panel.hidden = false;
+  const words = window.__V502_WORDBOOK3__ || [];
+  const hideKnown = wb3HideKnown && state.playerName;
+  const visible = hideKnown ? words.filter(item => !isWordKnown(item.w || '')) : words;
+  const hiddenCount = words.length - visible.length;
+
+  let totalCountDisplay = words.length;
+  let html = '<div class="wordlist-scroll"><div class="wordlist-cat">';
+  html += '<h4><span class="wl-cat-num">WB3</span> 단어장3 — ' + visible.length + ' / ' + totalCountDisplay + ' 단어';
+  if (hiddenCount > 0) html += ' <small style="color:var(--muted);font-weight:400">(' + hiddenCount + '개 숨김)</small>';
+  html += '</h4>';
+  html += '<div style="margin-bottom:8px;display:flex;gap:6px;flex-wrap:wrap">';
+  if (state.playerName) {
+    html += '<button class="wl-jump-btn wl-hideknown-btn' + (wb3HideKnown ? ' wl-hideknown-on' : '') + '" type="button" id="wb3HideBtn" title="외운 단어(✓) 숨기기">' + (wb3HideKnown ? '✓ 외운 단어 숨김' : '외운 단어 안보기') + '</button>';
+  }
+  html += '</div>';
+
+  // 500-word chunks, all collapsed by default
+  const CHUNK = 500;
+  const totalChunks = Math.ceil(words.length / CHUNK);
+  const sections = [];
+  for (let c = 0; c < totalChunks; c++) {
+    sections.push({ start: c * CHUNK, end: Math.min((c + 1) * CHUNK - 1, words.length - 1), items: [] });
+  }
+
+  visible.forEach((item) => {
+    const originalIdx = words.indexOf(item);
+    const chunkIdx = Math.floor(originalIdx / CHUNK);
+    if (chunkIdx < sections.length) sections[chunkIdx].items.push(item);
+  });
+
+  function renderEntries(items) {
+    let h = '<div class="wordlist2-entries">';
+    items.forEach((item) => {
+      const w = item.w || '';
+      const m = item.m || '';
+      const p = item.p || '';
+      const pos = item.pos || '';
+      const known = state.playerName && isWordKnown(w);
+      h += '<div class="wl2-entry">';
+      h += '<span class="wl2-word' + (known ? ' wl-known' : '') + (state.playerName ? ' wl-clickable' : '') + '"';
+      if (state.playerName) {
+        h += ' onclick="handleWordToggle(\'' + escapeHtml(w) + '\', this)" title="클릭하여 안다/모른다 표시"';
+      }
+      h += '>';
+      if (known) h += '<span class="wl-check">✓</span>';
+      h += escapeHtml(w) + '</span>';
+      if (pos) h += '<span class="wl2-pos">' + escapeHtml(pos) + '</span>';
+      if (m) h += '<span class="wl2-meaning" style="margin-left:4px">' + escapeHtml(m) + '</span>';
+      h += '</div>';
+    });
+    h += '</div>';
+    return h;
+  }
+
+  sections.forEach((sec, idx) => {
+    if (sec.items.length === 0) return;
+    var label = sec.start + '~' + sec.end + '번 단어';
+    html += '<details class="wb3-section"' + (idx === 0 ? ' open' : '') + '>';
+    html += '<summary class="wb3-summary">[' + label + '] <small>(' + sec.items.length + '개)</small></summary>';
+    html += renderEntries(sec.items);
+    html += '</details>';
+  });
+
+  html += '</div></div>';
+  els.wordbook3Content.innerHTML = html;
+
+  const hideBtn = document.getElementById('wb3HideBtn');
+  if (hideBtn) {
+    hideBtn.addEventListener('click', () => { wb3HideKnown = !wb3HideKnown; showWordbook3(); });
   }
 }
 
@@ -2435,6 +2542,22 @@ function startWithName(event) {
   startQuiz();
 }
 
+function openBoard() {
+  switchMode('board');
+  renderBoard();
+}
+function renderBoard() {
+  let html = '<div style="max-width:900px">';
+  html += '<h3>게시판</h3>';
+  html += '<p style="color:var(--muted)">게시판 기능은 준비 중입니다.</p>';
+  html += '</div>';
+  els.boardPanel.innerHTML = html;
+  els.boardPanel.hidden = false;
+}
+els.boardPanel.addEventListener("click", function(e) {
+  if (e.target === this) { this.hidden = true; }
+});
+
 els.authLoginBtn.addEventListener("click", handleLogin);
 els.authRegisterBtn.addEventListener("click", handleRegister);
 els.authLogoutBtn.addEventListener("click", handleLogout);
@@ -2456,6 +2579,10 @@ if (els.rankingCloseBtn) els.rankingCloseBtn.addEventListener("click", hideRanki
 els.wordlistBtn.addEventListener("click", showWordlist);
 els.wordlist2Btn.addEventListener("click", showWordlist2);
 els.wordlist2Panel.addEventListener("click", function(e) {
+  if (e.target === this) { this.hidden = true; els.startPanel.hidden = false; }
+});
+els.wordbook3Btn.addEventListener("click", showWordbook3);
+els.wordbook3Panel.addEventListener("click", function(e) {
   if (e.target === this) { this.hidden = true; els.startPanel.hidden = false; }
 });
 els.categoryButtons.forEach((button) => {
@@ -2759,7 +2886,8 @@ function renderLogicQuestion() {
   els.logicOptions.innerHTML = "";
 
   els.logicSubmitBtn.style.display = noExplainMode ? 'none' : '';
-  els.logicNextBtn.style.display = noExplainMode ? 'none' : '';
+  els.logicNextBtn.style.display = '';
+  els.logicJumpBtn.style.display = '';
 
   q.options.forEach((opt, i) => {
     const btn = document.createElement("button");
@@ -2797,6 +2925,7 @@ function logicSubmitNoExplain(opt, clickedBtn, q) {
     saveLogicWrong(q.id);
   }
   persistLogicRanking();
+  { const logicRate = (window.__V502_LOGIC_DIFFICULTY__ && window.__V502_LOGIC_DIFFICULTY__.get) ? window.__V502_LOGIC_DIFFICULTY__.get(q.id) : 50; const ability = readIrtAbility() + getScoreDelta(correct, logicRate); writeIrtAbility(ability); updateTierDisplay(); }
 
   const toast = document.createElement('div');
   const bg = correct ? '#34c759' : '#ff3b30';
@@ -2815,25 +2944,29 @@ function logicSubmitNoExplain(opt, clickedBtn, q) {
   requestAnimationFrame(() => { toast.style.transform = 'translate(-50%,-50%) scale(1)'; });
 
   clickedBtn.style.background = correct ? '#e8f5e9' : '#fce4ec';
-  if (!correct) {
-    els.logicOptions.querySelectorAll(".option").forEach(b => {
-      const optText = b.querySelector("span")?.textContent?.replace(/^[A-D]\. /, "");
-      if (optText === q.answer) b.style.background = '#e8f5e9';
-      b.disabled = true;
-    });
-  }
+  els.logicOptions.querySelectorAll(".option").forEach(b => {
+    const optText = b.querySelector("span")?.textContent?.replace(/^[A-D]\. /, "");
+    if (optText === q.answer) b.classList.add("correct");
+    else if (optText === opt && !correct) b.classList.add("wrong");
+    b.disabled = true;
+  });
+
+  els.logicFeedback.hidden = false;
+  els.logicFeedback.className = `feedback ${correct ? "ok" : "no"}`;
+  els.logicFeedback.innerHTML = `
+    <strong>${correct ? "✅ Correct!" : "❌ Incorrect."}</strong>
+    <p style="margin-top:8px">${escapeHtml(q.explanation).replace(/\n/g, '<br>')}</p>
+  `;
+
+  setBtnDisabled(els.logicNextBtn, logicState.currentIndex >= logicState.questions.length - 1);
+  els.logicNextBtn.textContent = logicState.currentIndex >= logicState.questions.length - 1 ? "Finish" : "Next";
+  els.logicNextBtn.style.display = '';
 
   setTimeout(() => {
     toast.style.transform = 'translate(-50%,-50%) scale(0.3)';
     toast.style.opacity = '0';
     setTimeout(() => toast.remove(), 200);
-    logicState.currentIndex++;
-    if (logicState.currentIndex >= logicState.questions.length) {
-      finishLogicQuiz();
-    } else {
-      renderLogicQuestion();
-    }
-  }, 400);
+  }, 600);
 }
 
 function submitLogicAnswer() {
@@ -2854,7 +2987,7 @@ function submitLogicAnswer() {
   els.logicFeedback.className = `feedback ${correct ? "ok" : "no"}`;
   els.logicFeedback.innerHTML = `
     <strong>${correct ? "✅ Correct!" : "❌ Incorrect."}</strong>
-    <p style="margin-top:8px">${escapeHtml(q.explanation)}</p>
+    <p style="margin-top:8px">${escapeHtml(q.explanation).replace(/\n/g, '<br>')}</p>
   `;
 
   els.logicOptions.querySelectorAll(".option").forEach(btn => {
@@ -2992,19 +3125,15 @@ function showDashboard() {
   let html = '<div class="dash">';
 
   if (loggedIn) {
-    const knownCount = getWordKnowledgeCount();
     const logicMastered = getLogicCompleted().size;
     const cum = cumulativeLeaderboard(readLeaderboard(), null)
       .find((e) => e.name.toLowerCase() === state.playerName.toLowerCase());
     const score = cum ? cum.correct : 0;
-    const tier = getTier(readIrtAbility());
     html += `<div class="dash-stats dash-stats-xl">`;
-    html += `<div class="dash-stat" onclick="showWordlist()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-num">${knownCount}</span><span class="dash-stat-label">📋 외운 단어</span></div>`;
-    html += `<div class="dash-stat" onclick="startLogicQuiz()" style="cursor:pointer" title="논리문제"><span class="dash-stat-num">${logicMastered}<small>/${getLogicTotal()}</small></span><span class="dash-stat-label">🧩 논리 마스터</span></div>`;
-    html += `<div class="dash-stat" onclick="showRanking()" style="cursor:pointer" title="통합랭킹 보기"><span class="dash-stat-num">${score}</span><span class="dash-stat-label">🏆 통합 점수</span></div>`;
-    html += `<div class="dash-stat" style="cursor:default"><span class="dash-stat-num" style="font-size:18px">${tier.icon}</span><span class="dash-stat-label">${tier.name}</span></div>`;
+    html += `<div class="dash-stat" onclick="showRanking()" style="cursor:pointer" title="통합랭킹 보기"><span class="dash-stat-num">${score}</span><span class="dash-stat-label">통합 점수</span></div>`;
     html += `<div class="dash-stat" onclick="showWordlist()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-icon">📋</span><span class="dash-stat-label">단어일람</span></div>`;
     html += `<div class="dash-stat" onclick="showWordlist2()" style="cursor:pointer" title="단어일람보기2"><span class="dash-stat-icon">🗂️</span><span class="dash-stat-label">단어일람2</span></div>`;
+	    html += `<div class="dash-stat" onclick="showWordbook3()" style="cursor:pointer" title="단어장3"><span class="dash-stat-icon">📗</span><span class="dash-stat-label">단어장3</span></div>`;
     html += `</div>`;
   }
 
@@ -3024,6 +3153,7 @@ function showDashboard() {
     html += dashCard({ icon: '🔒', title: '로그인 필요', desc: '내정보 / 랭킹 이용 잠금', accent: 'slate', onclick: "document.getElementById('authNicknameInput').focus()" });
     html += dashCard({ icon: '📋', title: '단어일람보기', desc: '전체 단어 사전', accent: 'slate', onclick: "showWordlist()" });
     html += dashCard({ icon: '🗂️', title: '단어일람보기2', desc: 'MVP2 + V401 추가 단어', accent: 'slate', onclick: "showWordlist2()" });
+	    html += dashCard({ icon: '📗', title: '단어장3', desc: 'Vocabulary Book 3 단어', accent: 'slate', onclick: "showWordbook3()" });
     html += '</div>';
   }
 
@@ -3055,8 +3185,10 @@ function getCompletedPromptWordsCount() {
 function getWordKnowledgeCount() {
   if (!state.playerName) return 0;
   const store = readWordKnowledge();
-  const words = store[state.playerName.toLowerCase()] || [];
-  return words.length;
+  const entry = store[state.playerName.toLowerCase()];
+  if (!entry) return 0;
+  if (Array.isArray(entry)) return entry.length;
+  return Object.keys(entry).length;
 }
 
 function showWrongNotes() {
@@ -3067,7 +3199,7 @@ function showWrongNotes() {
   const wrong = (p[key] && p[key].wrong) || {};
 
   let totalWrong = 0;
-  let html = '<div style="max-width:600px">';
+  let html = '<div style="max-width:800px">';
   html += '<h3 style="margin-bottom:12px">📕 오답노트</h3>';
 
   for (const catId in wrong) {
@@ -3113,7 +3245,7 @@ function showMyReview() {
   let totalCorrect = 0, totalQuestions = 0;
   for (const e of best.values()) { totalCorrect += e.correct; totalQuestions += e.total; }
 
-  let html = '<div style="max-width:600px">';
+  let html = '<div style="max-width:800px">';
   html += '<h3 style="margin-bottom:12px">📊 내 리뷰</h3>';
   html += `<div style="display:grid;gap:12px;grid-template-columns:1fr 1fr">`;
   html += `<div style="padding:16px;background:#f0f8f0;border-radius:8px;text-align:center"><strong style="font-size:24px">${completed}</strong><br><small>단어 마스터</small><br><small style="color:var(--muted)">/ ${totalSyn} (${pct}%)</small></div>`;
@@ -3159,13 +3291,14 @@ function showMyInfo() {
 }
 
 function renderMyInfoTab(tab) {
-  let html = '<div style="max-width:600px">';
+  let html = '<div style="max-width:800px">';
   html += '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px">';
   html += `<button onclick="renderMyInfoTab('review')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='review'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📊 내 리뷰</button>`;
   html += `<button onclick="renderMyInfoTab('wrong')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='wrong'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📕 오답노트</button>`;
   html += `<button onclick="renderMyInfoTab('logic')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='logic'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">🧩 논리오답</button>`;
   html += `<button onclick="renderMyInfoTab('grammar')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='grammar'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📝 문법오답</button>`;
   html += `<button onclick="renderMyInfoTab('exam')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='exam'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📋 기출오답</button>`;
+  html += `<button onclick="renderMyInfoTab('learned')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='learned'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📅 학습한 단어</button>`;
   html += '</div>';
 
   if (tab === 'review') {
@@ -3252,7 +3385,7 @@ function renderMyInfoTab(tab) {
           });
           html += `</div>`;
         }
-        html += `<p style="font-size:12px;color:var(--muted);margin:0">💡 ${escapeHtml(q.explanation)}</p>`;
+        html += `<p style="font-size:12px;color:var(--muted);margin:0">💡 ${escapeHtml(q.explanation).replace(/\n/g, '<br>')}</p>`;
         html += `</div>`;
       });
     }
@@ -3332,11 +3465,52 @@ function renderMyInfoTab(tab) {
           if (q.k) {
             html += '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;font-size:12px;line-height:1.6">' + q.k + '</div>';
           } else if (q.explanation) {
-            html += '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation) + '</div>';
+            html += '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation).replace(/\n/g, '<br>') + '</div>';
           }
           html += '</div>';
         }
       }
+    }
+  } else if (tab === 'learned') {
+    const store = readWordKnowledge();
+    const key = state.playerName.toLowerCase();
+    let entry = store[key];
+    // Auto-migrate old array format
+    if (Array.isArray(entry)) {
+      const arr = entry;
+      store[key] = {};
+      arr.forEach(w => { store[key][w] = new Date().toISOString(); });
+      writeWordKnowledge(store);
+      entry = store[key];
+    }
+    if (!entry) entry = {};
+    if (Object.keys(entry).length === 0) {
+      html += '<p style="color:var(--muted)">아직 학습한 단어가 없습니다. 단어일람/단어장3에서 단어를 체크해보세요!</p>';
+    } else {
+      const words = Object.entries(entry);
+      // Group by date
+      const byDate = {};
+      words.forEach(([word, ts]) => {
+        try {
+          const d = new Date(ts);
+          const dateStr = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+          if (!byDate[dateStr]) byDate[dateStr] = [];
+          byDate[dateStr].push(word);
+        } catch { if (!byDate['알 수 없음']) byDate['알 수 없음'] = []; byDate['알 수 없음'].push(word); }
+      });
+      const dates = Object.keys(byDate).sort().reverse();
+      html += '<p style="color:var(--muted);margin-bottom:12px">총 <b>' + words.length + '</b>개 단어 학습</p>';
+      dates.forEach(dateStr => {
+        const dayWords = byDate[dateStr];
+        html += '<details class="wb3-section" style="margin-bottom:6px">';
+        html += '<summary class="wb3-summary" style="font-size:13px">📅 ' + dateStr + ' <small>(' + dayWords.length + '개)</small></summary>';
+        html += '<div style="padding:8px 14px;font-size:13px;line-height:1.8">';
+        dayWords.sort().forEach(w => {
+          const m = wordMeanings[w] || '';
+          html += '<span style="display:inline-block;margin:2px 4px;padding:2px 8px;background:#e8f0e8;border-radius:4px;font-size:13px">' + escapeHtml(w) + (m ? ' <span style="color:var(--muted);font-size:11px">' + escapeHtml(m) + '</span>' : '') + '</span>';
+        });
+        html += '</div></details>';
+      });
     }
   }
 
@@ -3345,8 +3519,6 @@ function renderMyInfoTab(tab) {
 }
 
 let wordcheckQuestions = [
-  ...(window.__V502_WC_V101__ || []),
-  ...(window.__V502_WC_V201__ || []),
   ...(window.__V502_WC_V401__ || [])
 ];
 let wcState = { index: 0, answers: [], correct: 0, total: 0, completed: false };
@@ -3375,8 +3547,6 @@ function wordcheckRemaining(all) {
 function showWordcheck() {
   lastWordcheckLauncher = showWordcheck;
   startWordcheck(wordcheckRemaining([
-    ...(window.__V502_WC_V101__ || []),
-    ...(window.__V502_WC_V201__ || []),
     ...(window.__V502_WC_V401__ || [])
   ]));
 }
@@ -3390,6 +3560,23 @@ function renderWordcheckQuestion() {
   if (wcState.index >= wordcheckQuestions.length) {
     finishWordcheck();
     return;
+  }
+  // Update jump bar — disable out-of-range, highlight nearest
+  const jumpBtns = document.querySelectorAll('.wc-jump-btn');
+  let bestDist = Infinity, bestBtn = null;
+  jumpBtns.forEach(function(btn) {
+    var t = parseInt(btn.dataset.target, 10);
+    var outOfRange = t > wordcheckQuestions.length;
+    btn.disabled = outOfRange;
+    btn.style.opacity = outOfRange ? '0.35' : '';
+    btn.style.background = '';
+    btn.style.color = '';
+    var dist = Math.abs(wcState.index + 1 - t);
+    if (!outOfRange && dist < bestDist) { bestDist = dist; bestBtn = btn; }
+  });
+  if (bestBtn) {
+    bestBtn.style.background = 'var(--accent)';
+    bestBtn.style.color = '#fff';
   }
   const q = wordcheckQuestions[wcState.index];
   const prog = document.getElementById('wordcheckProgress');
@@ -3582,7 +3769,7 @@ function submitWordcheckAnswer(letter) {
   if (correct) wcState.correct++;
   wcState.answers.push({ id: q.i, correct });
   saveWordcheckResult(q.i, correct);
-  try { persistWordcheckRanking(); } catch {}
+  persistWordcheckRanking();
   { const ability = readIrtAbility() + getScoreDelta(correct, 50); writeIrtAbility(ability); updateTierDisplay(); }
 
   if (noExplainMode) {
@@ -3718,6 +3905,15 @@ document.getElementById('wordcheckNext').addEventListener('click', () => {
   renderWordcheckQuestion();
 });
 
+document.getElementById('wcJumpBar').addEventListener('click', (e) => {
+  if (!e.target.classList.contains('wc-jump-btn')) return;
+  if (wcState.completed) return;
+  const target = Math.min(parseInt(e.target.dataset.target, 10) - 1, wordcheckQuestions.length - 1);
+  if (target < 0 || target === wcState.index) return;
+  wcState.index = target;
+  renderWordcheckQuestion();
+});
+
 document.getElementById('wordcheckRetry').addEventListener('click', () => lastWordcheckLauncher());
 
 els.wordcheckBtn.addEventListener('click', showWordcheck);
@@ -3745,20 +3941,30 @@ function renderGrammarCategoryNav() {
 function showGrammar201() {
   switchMode('grammar');
   els.grammar201Panel.hidden = false;
-  const items = window.__V502_GRAMMAR__ || [];
-  grammarState = { index: 0, correct: 0, total: items.length };
+  const allItems = window.__V502_GRAMMAR__ || [];
+  const key = state.playerName ? state.playerName.toLowerCase() : '_guest';
+  const prog = readGrammarProgress();
+  const correctSet = new Set((prog[key] && prog[key].correct) || []);
+  const wrongSet = new Set((prog[key] && prog[key].wrong) || []);
+  // Filter: skip already-correct questions; show wrong + unanswered
+  const items = allItems.filter(q => !correctSet.has(q.i));
+  if (items.length === 0) {
+    els.grammar201Content.innerHTML = '<div style="text-align:center;padding:40px"><h3>문법 201 완료</h3><p>모든 문제를 맞췄습니다!</p><p><small>🎉</small></p><button onclick="showGrammar201()" class="text-btn" style="min-height:40px;margin-top:12px">다시 보기</button></div>';
+    return;
+  }
+  grammarState = { index: 0, correct: 0, total: items.length, items: items };
   renderGrammarQuestion();
 }
 
 function renderGrammarQuestion() {
-  const items = window.__V502_GRAMMAR__ || [];
+  const items = grammarState.items || window.__V502_GRAMMAR__ || [];
   if (grammarState.index >= items.length) {
     finishGrammarQuiz();
     return;
   }
   const q = items[grammarState.index];
   let html = renderGrammarCategoryNav();
-  html += `<div style="max-width:700px">`;
+  html += `<div style="max-width:900px">`;
   html += `<p style="font-size:12px;color:var(--muted);margin:0 0 8px">${grammarState.index + 1} / ${items.length} | ✅ ${grammarState.correct} | ❌ ${grammarState.index - grammarState.correct}</p>`;
   html += `<p style="font-size:13px;color:var(--accent);font-weight:600;margin:0 0 4px">${escapeHtml(q.i)}. ${escapeHtml(q.t)}</p>`;
   var qHtml = q.q
@@ -3784,7 +3990,7 @@ function renderGrammarQuestion() {
 }
 
 function submitGrammarAnswer(letter) {
-  const items = window.__V502_GRAMMAR__ || [];
+  const items = grammarState.items || window.__V502_GRAMMAR__ || [];
   const q = items[grammarState.index];
   const correct = letter === q.a;
   if (correct) {
@@ -3795,7 +4001,7 @@ function submitGrammarAnswer(letter) {
   }
   { const ability = readIrtAbility() + getScoreDelta(correct, 50); writeIrtAbility(ability); updateTierDisplay(); }
   let html = renderGrammarCategoryNav();
-  html += `<div style="max-width:700px">`;
+  html += `<div style="max-width:900px">`;
   html += `<p style="font-size:12px;color:var(--muted);margin:0 0 8px">${grammarState.index + 1} / ${items.length} | ✅ ${grammarState.correct} | ❌ ${grammarState.index - grammarState.correct}</p>`;
   html += `<p style="font-size:13px;color:var(--accent);font-weight:600;margin:0 0 4px">${escapeHtml(q.i)}. ${escapeHtml(q.t)}</p>`;
   html += `<p style="font-size:15px;line-height:1.7;margin:0 0 16px">${escapeHtml(q.q)}</p>`;
@@ -3841,29 +4047,51 @@ var EXAM_REGISTRY = {
   skku2012pm:     { title: '2012 성균관대 오후',    data: function(){return window.__V502_EXAM_SKKU2012PM__||[]} },
   skku2013am:     { title: '2013 성균관대 오전',    data: function(){return window.__V502_EXAM_SKKU2013AM__||[]} },
   skku2013pm:     { title: '2013 성균관대 오후',    data: function(){return window.__V502_EXAM_SKKU2013PM__||[]} },
-  skku2014:       { title: '2014 성균관대',         data: function(){return window.__V502_EXAM_SKKU2014__||[]} },
-  skku2015:       { title: '2015 성균관대',         data: function(){return window.__V502_EXAM_SKKU2015__||[]} },
-  skku2016:       { title: '2016 성균관대',         data: function(){return window.__V502_EXAM_SKKU2016__||[]} },
-  skku2017:       { title: '2017 성균관대',         data: function(){return window.__V502_EXAM_SKKU2017__||[]} },
-  skku2018:       { title: '2018 성균관대',         data: function(){return window.__V502_EXAM_SKKU2018__||[]} },
+  skku2014:       { title: '2014 성균관대',         data: function(){return window.__V502_EXAM_SKKU2014__||[]}, hidden: true },
+  skku2015:       { title: '2015 성균관대',         data: function(){return window.__V502_EXAM_SKKU2015__||[]}, hidden: true },
+  skku2016:       { title: '2016 성균관대',         data: function(){return window.__V502_EXAM_SKKU2016__||[]}, hidden: true },
+  skku2017:       { title: '2017 성균관대',         data: function(){return window.__V502_EXAM_SKKU2017__||[]}, hidden: true },
+  skku2018:       { title: '2018 성균관대',         data: function(){return window.__V502_EXAM_SKKU2018__||[]}, hidden: true },
   skku2019:       { title: '2019 성균관대 인문',    data: function(){return window.__V502_EXAM_SKKU2019__||[]} },
-  skku2021:       { title: '2021 성균관대',         data: function(){return window.__V502_EXAM_SKKU2021__||[]} },
-  skku2022:       { title: '2022 성균관대',         data: function(){return window.__V502_EXAM_SKKU2022__||[]} },
-  skku2023:       { title: '2023 성균관대',         data: function(){return window.__V502_EXAM_SKKU2023__||[]} },
-  skku2024:       { title: '2024 성균관대',         data: function(){return window.__V502_EXAM_SKKU2024__||[]} },
-  skku2025:       { title: '2025 성균관대 인문',    data: function(){return window.__V502_EXAM_SKKU2025__||[]} },
-  skku2026mock:   { title: '2026 대비 예상문제',    data: function(){return window.__V502_EXAM_SKKU2026MOCK__||[]} }
+  skku2021:       { title: '2021 성균관대',         data: function(){return window.__V502_EXAM_SKKU2021__||[]}, hidden: true },
+  skku2022:       { title: '2022 성균관대',         data: function(){return window.__V502_EXAM_SKKU2022__||[]}, hidden: true },
+  skku2023:       { title: '2023 성균관대',         data: function(){return window.__V502_EXAM_SKKU2023__||[]}, hidden: true },
+  skku2024:       { title: '2024 성균관대',         data: function(){return window.__V502_EXAM_SKKU2024__||[]}, hidden: true },
+  skku2025:       { title: '2025 성균관대 인문',    data: function(){return window.__V502_EXAM_SKKU2025__||[]}, hidden: true },
+  skku2026mock:   { title: '2026 대비 예상문제',    data: function(){return window.__V502_EXAM_SKKU2026MOCK__||[]} },
+  jininsa2027_1:  { title: '진인사대천명 2027-1',     data: function(){return window.__V502_EXAM_JININSA_2027_1__||[]}, category: '정갤문제' }
 };
 
 function renderExamTab() {
-  var html = '<div style="max-width:700px">';
+  if (EXAM_REGISTRY[examTab] && EXAM_REGISTRY[examTab].hidden) {
+    examTab = Object.keys(EXAM_REGISTRY).find(k => !EXAM_REGISTRY[k].hidden) || examTab;
+  }
+  var html = '<div style="max-width:900px">';
+  if (examTab === 'skku2011') {
+    html += '<div style="margin-bottom:16px;padding:12px 16px;background:#f8f9fc;border-radius:4px;border:1px solid var(--line)">';
+    html += '<p style="margin:0 0 4px;font-size:12px;color:var(--muted)">성균관대학교</p>';
+    html += '<p style="margin:0;font-size:14px;font-weight:700;color:var(--accent)">2011학년도 일반·학사편입 [오전 A형] 90분 · 50문항</p>';
+    html += '</div>';
+  }
+  if (examTab === 'jininsa2027_1') {
+    html += '<div style="margin-bottom:16px;padding:12px 16px;background:#f8f9fc;border-radius:4px;border:1px solid var(--line)">';
+    html += '<p style="margin:0 0 4px;font-size:12px;color:var(--muted)">정병권 갤러리 · 盡人事待天命</p>';
+    html += '<p style="margin:0;font-size:14px;font-weight:700;color:var(--accent)">2027 대비 제1회 진인사대천명 편입영어 모의고사 | 40문항 60분</p>';
+    html += '</div>';
+  }
   html += '<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:16px">';
   var keys = Object.keys(EXAM_REGISTRY);
+  var lastCategory = '';
   for (var i = 0; i < keys.length; i++) {
     var key = keys[i];
     var sel = examTab === key;
     var entry = EXAM_REGISTRY[key];
+    if (entry.hidden) continue;
     var count = entry.data().length;
+    if (entry.category && entry.category !== lastCategory) {
+      lastCategory = entry.category;
+      html += `<span style="width:100%;margin-top:4px;font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px">▸ ${escapeHtml(entry.category)}</span>`;
+    }
     html += `<button onclick="examTab='${key}';renderExamTab()" style="min-height:32px;padding:3px 8px;border:1px solid var(--line);border-radius:2px;font-size:11px;font-weight:600;cursor:pointer;${sel?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">${entry.title} (${count})</button>`;
   }
   html += '</div>';
@@ -3878,6 +4106,9 @@ function renderExamTab() {
     var isCorrect = prog.correct.has(i);
     var isWrong = prog.wrong.has(i);
     var isDone = isCorrect || isWrong;
+    if (q.section) {
+      html += `<div style="margin:-8px 0 16px 0;padding:4px 10px;background:var(--accent);color:#fff;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:0.5px">${escapeHtml(q.section)}</div>`;
+    }
     html += `<div style="margin-bottom:16px;padding:16px;border-radius:2px;border:1px solid var(--line);${isCorrect?'background:#f1f8e9':isWrong?'background:#fff3f0':''}" id="examQ${i}">`;
     html += `<p style="font-weight:700;margin:0 0 8px;color:var(--accent)">${i+1}.` + (isCorrect ? ' ✅' : isWrong ? ' ❌' : '') + `</p>`;
     if (q.p && q.p.length > 30) {
@@ -3916,7 +4147,7 @@ function renderExamTab() {
       if (q.k) {
         fbHtml += '<div style="margin-top:8px;padding:10px 12px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;line-height:1.7">' + q.k + '</div>';
       } else if (q.explanation) {
-        fbHtml += '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation) + '</div>';
+        fbHtml += '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation).replace(/\n/g, '<br>') + '</div>';
       }
     }
     html += `<div id="examFeedback${i}" style="margin-top:6px;font-size:13px;min-height:20px">${fbHtml}</div>`;
@@ -3944,7 +4175,7 @@ function checkExamAnswer(tab, idx, letter, btn) {
     if (q.k) {
       exp = '<div style="margin-top:8px;padding:10px 12px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;line-height:1.7">' + q.k + '</div>';
     } else if (q.explanation) {
-      exp = '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation) + '</div>';
+      exp = '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation).replace(/\n/g, '<br>') + '</div>';
     }
     fb.innerHTML = head + exp;
   }
@@ -3968,6 +4199,13 @@ els.grammar201Panel.addEventListener('click', function(e) {
 
 els.logicSubmitBtn.addEventListener("click", submitLogicAnswer);
 els.logicNextBtn.addEventListener("click", nextLogicQuestion);
+els.logicJumpBtn.addEventListener("click", function() {
+  if (!logicState.active || !logicState.questions.length) return;
+  var target = Math.min(199, logicState.questions.length - 1);
+  if (target === logicState.currentIndex) return;
+  logicState.currentIndex = target;
+  renderLogicQuestion();
+});
 
 (function relocateFromSidebar() {
   const dashHeader = document.getElementById('dashHeader');
