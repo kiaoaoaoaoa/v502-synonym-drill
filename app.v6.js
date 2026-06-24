@@ -3483,38 +3483,44 @@ function renderMyInfoTab(tab) {
     }
   } else if (tab === 'learned') {
     const store = readWordKnowledge();
-    const entry = store[state.playerName.toLowerCase()] || {};
+    const key = state.playerName.toLowerCase();
+    let entry = store[key];
+    // Auto-migrate old array format
     if (Array.isArray(entry)) {
-      html += '<p style="color:var(--muted)">데이터를 불러오는 중입니다. 단어 체크를 다시 해주세요.</p>';
+      const arr = entry;
+      store[key] = {};
+      arr.forEach(w => { store[key][w] = new Date().toISOString(); });
+      writeWordKnowledge(store);
+      entry = store[key];
+    }
+    if (!entry) entry = {};
+    if (Object.keys(entry).length === 0) {
+      html += '<p style="color:var(--muted)">아직 학습한 단어가 없습니다. 단어일람/단어장3에서 단어를 체크해보세요!</p>';
     } else {
       const words = Object.entries(entry);
-      if (words.length === 0) {
-        html += '<p style="color:var(--muted)">아직 학습한 단어가 없습니다. 단어일람/단어장3에서 단어를 체크해보세요!</p>';
-      } else {
-        // Group by date
-        const byDate = {};
-        words.forEach(([word, ts]) => {
-          try {
-            const d = new Date(ts);
-            const dateStr = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
-            if (!byDate[dateStr]) byDate[dateStr] = [];
-            byDate[dateStr].push(word);
-          } catch { if (!byDate['알 수 없음']) byDate['알 수 없음'] = []; byDate['알 수 없음'].push(word); }
+      // Group by date
+      const byDate = {};
+      words.forEach(([word, ts]) => {
+        try {
+          const d = new Date(ts);
+          const dateStr = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+          if (!byDate[dateStr]) byDate[dateStr] = [];
+          byDate[dateStr].push(word);
+        } catch { if (!byDate['알 수 없음']) byDate['알 수 없음'] = []; byDate['알 수 없음'].push(word); }
+      });
+      const dates = Object.keys(byDate).sort().reverse();
+      html += '<p style="color:var(--muted);margin-bottom:12px">총 <b>' + words.length + '</b>개 단어 학습</p>';
+      dates.forEach(dateStr => {
+        const dayWords = byDate[dateStr];
+        html += '<details class="wb3-section" style="margin-bottom:6px">';
+        html += '<summary class="wb3-summary" style="font-size:13px">📅 ' + dateStr + ' <small>(' + dayWords.length + '개)</small></summary>';
+        html += '<div style="padding:8px 14px;font-size:13px;line-height:1.8">';
+        dayWords.sort().forEach(w => {
+          const m = wordMeanings[w] || '';
+          html += '<span style="display:inline-block;margin:2px 4px;padding:2px 8px;background:#e8f0e8;border-radius:4px;font-size:13px">' + escapeHtml(w) + (m ? ' <span style="color:var(--muted);font-size:11px">' + escapeHtml(m) + '</span>' : '') + '</span>';
         });
-        const dates = Object.keys(byDate).sort().reverse();
-        html += '<p style="color:var(--muted);margin-bottom:12px">총 <b>' + words.length + '</b>개 단어 학습</p>';
-        dates.forEach(dateStr => {
-          const dayWords = byDate[dateStr];
-          html += '<details class="wb3-section" style="margin-bottom:6px">';
-          html += '<summary class="wb3-summary" style="font-size:13px">📅 ' + dateStr + ' <small>(' + dayWords.length + '개)</small></summary>';
-          html += '<div style="padding:8px 14px;font-size:13px;line-height:1.8">';
-          dayWords.sort().forEach(w => {
-            const m = wordMeanings[w] || '';
-            html += '<span style="display:inline-block;margin:2px 4px;padding:2px 8px;background:#e8f0e8;border-radius:4px;font-size:13px">' + escapeHtml(w) + (m ? ' <span style="color:var(--muted);font-size:11px">' + escapeHtml(m) + '</span>' : '') + '</span>';
-          });
-          html += '</div></details>';
-        });
-      }
+        html += '</div></details>';
+      });
     }
   }
 
