@@ -2851,8 +2851,8 @@ function renderLogicQuestion() {
   els.logicOptions.innerHTML = "";
 
   els.logicSubmitBtn.style.display = noExplainMode ? 'none' : '';
-  els.logicNextBtn.style.display = noExplainMode ? 'none' : '';
-  els.logicJumpBtn.style.display = noExplainMode ? 'none' : '';
+  els.logicNextBtn.style.display = '';
+  els.logicJumpBtn.style.display = '';
 
   q.options.forEach((opt, i) => {
     const btn = document.createElement("button");
@@ -2890,6 +2890,7 @@ function logicSubmitNoExplain(opt, clickedBtn, q) {
     saveLogicWrong(q.id);
   }
   persistLogicRanking();
+  { const logicRate = (window.__V502_LOGIC_DIFFICULTY__ && window.__V502_LOGIC_DIFFICULTY__.get) ? window.__V502_LOGIC_DIFFICULTY__.get(q.id) : 50; const ability = readIrtAbility() + getScoreDelta(correct, logicRate); writeIrtAbility(ability); updateTierDisplay(); }
 
   const toast = document.createElement('div');
   const bg = correct ? '#34c759' : '#ff3b30';
@@ -2908,25 +2909,29 @@ function logicSubmitNoExplain(opt, clickedBtn, q) {
   requestAnimationFrame(() => { toast.style.transform = 'translate(-50%,-50%) scale(1)'; });
 
   clickedBtn.style.background = correct ? '#e8f5e9' : '#fce4ec';
-  if (!correct) {
-    els.logicOptions.querySelectorAll(".option").forEach(b => {
-      const optText = b.querySelector("span")?.textContent?.replace(/^[A-D]\. /, "");
-      if (optText === q.answer) b.style.background = '#e8f5e9';
-      b.disabled = true;
-    });
-  }
+  els.logicOptions.querySelectorAll(".option").forEach(b => {
+    const optText = b.querySelector("span")?.textContent?.replace(/^[A-D]\. /, "");
+    if (optText === q.answer) b.classList.add("correct");
+    else if (optText === opt && !correct) b.classList.add("wrong");
+    b.disabled = true;
+  });
+
+  els.logicFeedback.hidden = false;
+  els.logicFeedback.className = `feedback ${correct ? "ok" : "no"}`;
+  els.logicFeedback.innerHTML = `
+    <strong>${correct ? "✅ Correct!" : "❌ Incorrect."}</strong>
+    <p style="margin-top:8px">${escapeHtml(q.explanation).replace(/\n/g, '<br>')}</p>
+  `;
+
+  setBtnDisabled(els.logicNextBtn, logicState.currentIndex >= logicState.questions.length - 1);
+  els.logicNextBtn.textContent = logicState.currentIndex >= logicState.questions.length - 1 ? "Finish" : "Next";
+  els.logicNextBtn.style.display = '';
 
   setTimeout(() => {
     toast.style.transform = 'translate(-50%,-50%) scale(0.3)';
     toast.style.opacity = '0';
     setTimeout(() => toast.remove(), 200);
-    logicState.currentIndex++;
-    if (logicState.currentIndex >= logicState.questions.length) {
-      finishLogicQuiz();
-    } else {
-      renderLogicQuestion();
-    }
-  }, 400);
+  }, 600);
 }
 
 function submitLogicAnswer() {
