@@ -2396,10 +2396,10 @@ function showWordbook3() {
     return h;
   }
 
-  sections.forEach((sec) => {
+  sections.forEach((sec, idx) => {
     if (sec.items.length === 0) return;
     var label = sec.start + '~' + sec.end + '번 단어';
-    html += '<details class="wb3-section">';
+    html += '<details class="wb3-section"' + (idx === 0 ? ' open' : '') + '>';
     html += '<summary class="wb3-summary">[' + label + '] <small>(' + sec.items.length + '개)</small></summary>';
     html += renderEntries(sec.items);
     html += '</details>';
