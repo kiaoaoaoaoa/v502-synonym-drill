@@ -3995,22 +3995,25 @@ var EXAM_REGISTRY = {
   skku2012pm:     { title: '2012 성균관대 오후',    data: function(){return window.__V502_EXAM_SKKU2012PM__||[]} },
   skku2013am:     { title: '2013 성균관대 오전',    data: function(){return window.__V502_EXAM_SKKU2013AM__||[]} },
   skku2013pm:     { title: '2013 성균관대 오후',    data: function(){return window.__V502_EXAM_SKKU2013PM__||[]} },
-  skku2014:       { title: '2014 성균관대',         data: function(){return window.__V502_EXAM_SKKU2014__||[]} },
-  skku2015:       { title: '2015 성균관대',         data: function(){return window.__V502_EXAM_SKKU2015__||[]} },
-  skku2016:       { title: '2016 성균관대',         data: function(){return window.__V502_EXAM_SKKU2016__||[]} },
-  skku2017:       { title: '2017 성균관대',         data: function(){return window.__V502_EXAM_SKKU2017__||[]} },
-  skku2018:       { title: '2018 성균관대',         data: function(){return window.__V502_EXAM_SKKU2018__||[]} },
+  skku2014:       { title: '2014 성균관대',         data: function(){return window.__V502_EXAM_SKKU2014__||[]}, hidden: true },
+  skku2015:       { title: '2015 성균관대',         data: function(){return window.__V502_EXAM_SKKU2015__||[]}, hidden: true },
+  skku2016:       { title: '2016 성균관대',         data: function(){return window.__V502_EXAM_SKKU2016__||[]}, hidden: true },
+  skku2017:       { title: '2017 성균관대',         data: function(){return window.__V502_EXAM_SKKU2017__||[]}, hidden: true },
+  skku2018:       { title: '2018 성균관대',         data: function(){return window.__V502_EXAM_SKKU2018__||[]}, hidden: true },
   skku2019:       { title: '2019 성균관대 인문',    data: function(){return window.__V502_EXAM_SKKU2019__||[]} },
-  skku2021:       { title: '2021 성균관대',         data: function(){return window.__V502_EXAM_SKKU2021__||[]} },
-  skku2022:       { title: '2022 성균관대',         data: function(){return window.__V502_EXAM_SKKU2022__||[]} },
-  skku2023:       { title: '2023 성균관대',         data: function(){return window.__V502_EXAM_SKKU2023__||[]} },
-  skku2024:       { title: '2024 성균관대',         data: function(){return window.__V502_EXAM_SKKU2024__||[]} },
-  skku2025:       { title: '2025 성균관대 인문',    data: function(){return window.__V502_EXAM_SKKU2025__||[]} },
+  skku2021:       { title: '2021 성균관대',         data: function(){return window.__V502_EXAM_SKKU2021__||[]}, hidden: true },
+  skku2022:       { title: '2022 성균관대',         data: function(){return window.__V502_EXAM_SKKU2022__||[]}, hidden: true },
+  skku2023:       { title: '2023 성균관대',         data: function(){return window.__V502_EXAM_SKKU2023__||[]}, hidden: true },
+  skku2024:       { title: '2024 성균관대',         data: function(){return window.__V502_EXAM_SKKU2024__||[]}, hidden: true },
+  skku2025:       { title: '2025 성균관대 인문',    data: function(){return window.__V502_EXAM_SKKU2025__||[]}, hidden: true },
   skku2026mock:   { title: '2026 대비 예상문제',    data: function(){return window.__V502_EXAM_SKKU2026MOCK__||[]} },
   jininsa2027_1:  { title: '진인사대천명 2027-1',     data: function(){return window.__V502_EXAM_JININSA_2027_1__||[]}, category: '정갤문제' }
 };
 
 function renderExamTab() {
+  if (EXAM_REGISTRY[examTab] && EXAM_REGISTRY[examTab].hidden) {
+    examTab = Object.keys(EXAM_REGISTRY).find(k => !EXAM_REGISTRY[k].hidden) || examTab;
+  }
   var html = '<div style="max-width:900px">';
   if (examTab === 'skku2011') {
     html += '<div style="margin-bottom:16px;padding:12px 16px;background:#f8f9fc;border-radius:4px;border:1px solid var(--line)">';
@@ -4031,6 +4034,7 @@ function renderExamTab() {
     var key = keys[i];
     var sel = examTab === key;
     var entry = EXAM_REGISTRY[key];
+    if (entry.hidden) continue;
     var count = entry.data().length;
     if (entry.category && entry.category !== lastCategory) {
       lastCategory = entry.category;
