@@ -762,44 +762,88 @@ h2 {
 @media (max-width: 840px) {
   .wb3-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 6px;
+    gap: 8px;
   }
   .wb3-card {
-    padding: 6px 8px;
+    padding: 8px 10px;
   }
   .wb3-word {
-    font-size: 12px;
+    font-size: 13px;
   }
   .wb3-pron {
-    font-size: 10px;
+    font-size: 11px;
   }
   .wb3-meaning {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .wl2-word-num {
+    width: 30px;
     font-size: 11px;
+  }
+  .wl3-jump-bar {
+    padding: 10px 14px;
+    gap: 8px;
+  }
+  .wl3-jump-input {
+    min-width: 60px;
+    font-size: 15px;
+    padding: 5px 8px;
+  }
+  .wl3-jump-go {
+    padding: 5px 16px;
+    font-size: 13px;
   }
 }
 
 @media (max-width: 480px) {
   .wb3-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5px;
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
   .wb3-card {
-    padding: 5px 6px;
-    border-radius: 4px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    gap: 8px;
   }
   .wb3-word {
-    font-size: 11px;
+    font-size: 14px;
   }
   .wb3-pron {
-    font-size: 9px;
+    font-size: 11px;
   }
   .wb3-pos {
-    font-size: 9px;
-    padding: 0 4px;
+    font-size: 10px;
+    padding: 2px 6px;
   }
   .wb3-meaning {
-    font-size: 10px;
-    line-height: 1.4;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .wl2-word-num {
+    font-size: 12px;
+    width: 28px;
+    margin-right: 6px;
+  }
+  .wl3-jump-bar {
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  .wl3-jump-label {
+    width: 100%;
+    font-size: 12px;
+  }
+  .wl3-jump-input {
+    flex: 1;
+    min-width: 60px;
+    font-size: 16px;
+    padding: 6px 8px;
+  }
+  .wl3-jump-go {
+    padding: 6px 18px;
+    font-size: 14px;
   }
 }
 
