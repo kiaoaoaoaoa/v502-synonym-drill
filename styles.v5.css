@@ -650,6 +650,27 @@ h2 {
   font-size: 12px;
 }
 
+.wl2-pos {
+  font-weight: 400;
+  color: #7c8a9a;
+  font-size: 11px;
+  margin-left: 3px;
+  font-style: italic;
+}
+
+.wl2-pron {
+  font-weight: 400;
+  color: #8a9ba8;
+  font-size: 11px;
+  margin-left: 2px;
+}
+
+.wl-hideknown-on {
+  background: #1a73e8 !important;
+  color: #fff !important;
+  border-color: #1a73e8 !important;
+}
+
 .wl2-word.wl-clickable {
   cursor: pointer;
 }

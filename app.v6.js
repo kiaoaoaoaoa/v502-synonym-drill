@@ -2333,6 +2333,70 @@ function showWordlist2() {
     hideBtn.addEventListener('click', () => { wlHideKnown = !wlHideKnown; showWordlist2(); });
   }
 }
+
+let wb3HideKnown = false;
+
+function showWordbook3() {
+  switchMode('wordlist');
+  els.wordbook3Panel.hidden = false;
+  const words = window.__V502_WORDBOOK3__ || [];
+  const hideKnown = wb3HideKnown && state.playerName;
+  const visible = hideKnown ? words.filter(item => !isWordKnown(item.w || '')) : words;
+  const hiddenCount = words.length - visible.length;
+
+  let totalCountDisplay = words.length;
+  let html = '<div class="wordlist-scroll"><div class="wordlist-cat">';
+  html += '<h4><span class="wl-cat-num">WB3</span> 단어장3 — ' + visible.length + ' / ' + totalCountDisplay + ' 단어';
+  if (hiddenCount > 0) html += ' <small style="color:var(--muted);font-weight:400">(' + hiddenCount + '개 숨김)</small>';
+  html += '</h4>';
+  html += '<div style="margin-bottom:8px;display:flex;gap:6px;flex-wrap:wrap">';
+  if (state.playerName) {
+    html += '<button class="wl-jump-btn wl-hideknown-btn' + (wb3HideKnown ? ' wl-hideknown-on' : '') + '" type="button" id="wb3HideBtn" title="외운 단어(✓) 숨기기">' + (wb3HideKnown ? '✓ 외운 단어 숨김' : '외운 단어 안보기') + '</button>';
+  }
+  html += '<button class="wl-jump-btn" type="button" id="wb3ResetBtn" title="모든 외운 단어 표시 해제">외운 단어 초기화</button>';
+  html += '</div>';
+  html += '<div class="wordlist2-entries">';
+  visible.forEach((item) => {
+    const w = item.w || '';
+    const m = item.m || '';
+    const p = item.p || '';
+    const pos = item.pos || '';
+    const known = state.playerName && isWordKnown(w);
+    html += '<div class="wl2-entry">';
+    html += '<span class="wl2-word' + (known ? ' wl-known' : '') + (state.playerName ? ' wl-clickable' : '') + '"';
+    if (state.playerName) {
+      html += ' onclick="handleWordToggle(\'' + escapeHtml(w) + '\', this)" title="클릭하여 안다/모른다 표시"';
+    }
+    html += '>';
+    if (known) html += '<span class="wl-check">✓</span>';
+    html += escapeHtml(w) + '</span>';
+    if (pos) html += '<span class="wl2-pos">' + escapeHtml(pos) + '</span>';
+    if (p) html += '<span class="wl2-pron">' + escapeHtml(p) + '</span>';
+    if (m) html += '<span class="wl2-meaning" style="margin-left:4px">' + escapeHtml(m) + '</span>';
+    html += '</div>';
+  });
+  html += '</div></div></div>';
+  els.wordbook3Content.innerHTML = html;
+
+  const hideBtn = document.getElementById('wb3HideBtn');
+  if (hideBtn) {
+    hideBtn.addEventListener('click', () => { wb3HideKnown = !wb3HideKnown; showWordbook3(); });
+  }
+  const resetBtn = document.getElementById('wb3ResetBtn');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      if (!state.playerName) return;
+      if (!confirm('단어장3의 모든 외운 단어 표시를 해제할까요?')) return;
+      const words = window.__V502_WORDBOOK3__ || [];
+      words.forEach(item => {
+        const w = item.w || '';
+        if (isWordKnown(w)) toggleWordKnown(w);
+      });
+      showWordbook3();
+    });
+  }
+}
+
 function jumpToCategory(targetId) {
   const targetEl = document.querySelector(`.wordlist-cat[data-cat-id="${targetId}"]`);
   if (targetEl) {
@@ -2480,6 +2544,10 @@ if (els.rankingCloseBtn) els.rankingCloseBtn.addEventListener("click", hideRanki
 els.wordlistBtn.addEventListener("click", showWordlist);
 els.wordlist2Btn.addEventListener("click", showWordlist2);
 els.wordlist2Panel.addEventListener("click", function(e) {
+  if (e.target === this) { this.hidden = true; els.startPanel.hidden = false; }
+});
+els.wordbook3Btn.addEventListener("click", showWordbook3);
+els.wordbook3Panel.addEventListener("click", function(e) {
   if (e.target === this) { this.hidden = true; els.startPanel.hidden = false; }
 });
 els.categoryButtons.forEach((button) => {
