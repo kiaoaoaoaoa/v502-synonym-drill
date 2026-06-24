@@ -3165,7 +3165,6 @@ function showDashboard() {
       .find((e) => e.name.toLowerCase() === state.playerName.toLowerCase());
     const score = cum ? cum.correct : 0;
     html += `<div class="dash-stats dash-stats-xl">`;
-    html += `<div class="dash-stat" onclick="startLogicQuiz()" style="cursor:pointer" title="논리문제"><span class="dash-stat-num">${logicMastered}<small>/${getLogicTotal()}</small></span><span class="dash-stat-label">논리 마스터</span></div>`;
     html += `<div class="dash-stat" onclick="showRanking()" style="cursor:pointer" title="통합랭킹 보기"><span class="dash-stat-num">${score}</span><span class="dash-stat-label">통합 점수</span></div>`;
     html += `<div class="dash-stat" onclick="showWordlist()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-icon">📋</span><span class="dash-stat-label">단어일람</span></div>`;
     html += `<div class="dash-stat" onclick="showWordlist2()" style="cursor:pointer" title="단어일람보기2"><span class="dash-stat-icon">🗂️</span><span class="dash-stat-label">단어일람2</span></div>`;
