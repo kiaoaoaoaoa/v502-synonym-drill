@@ -3984,7 +3984,8 @@ var EXAM_REGISTRY = {
   skku2023:       { title: '2023 성균관대',         data: function(){return window.__V502_EXAM_SKKU2023__||[]} },
   skku2024:       { title: '2024 성균관대',         data: function(){return window.__V502_EXAM_SKKU2024__||[]} },
   skku2025:       { title: '2025 성균관대 인문',    data: function(){return window.__V502_EXAM_SKKU2025__||[]} },
-  skku2026mock:   { title: '2026 대비 예상문제',    data: function(){return window.__V502_EXAM_SKKU2026MOCK__||[]} }
+  skku2026mock:   { title: '2026 대비 예상문제',    data: function(){return window.__V502_EXAM_SKKU2026MOCK__||[]} },
+  jininsa2027_1:  { title: '진인사대천명 2027-1',     data: function(){return window.__V502_EXAM_JININSA_2027_1__||[]}, category: '정갤문제' }
 };
 
 function renderExamTab() {
@@ -3995,13 +3996,24 @@ function renderExamTab() {
     html += '<p style="margin:0;font-size:14px;font-weight:700;color:var(--accent)">2011학년도 일반·학사편입 [오전 A형] 90분 · 50문항</p>';
     html += '</div>';
   }
+  if (examTab === 'jininsa2027_1') {
+    html += '<div style="margin-bottom:16px;padding:12px 16px;background:#f8f9fc;border-radius:4px;border:1px solid var(--line)">';
+    html += '<p style="margin:0 0 4px;font-size:12px;color:var(--muted)">정병권 갤러리 · 盡人事待天命</p>';
+    html += '<p style="margin:0;font-size:14px;font-weight:700;color:var(--accent)">2027 대비 제1회 진인사대천명 편입영어 모의고사 | 40문항 60분</p>';
+    html += '</div>';
+  }
   html += '<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:16px">';
   var keys = Object.keys(EXAM_REGISTRY);
+  var lastCategory = '';
   for (var i = 0; i < keys.length; i++) {
     var key = keys[i];
     var sel = examTab === key;
     var entry = EXAM_REGISTRY[key];
     var count = entry.data().length;
+    if (entry.category && entry.category !== lastCategory) {
+      lastCategory = entry.category;
+      html += `<span style="width:100%;margin-top:4px;font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px">▸ ${escapeHtml(entry.category)}</span>`;
+    }
     html += `<button onclick="examTab='${key}';renderExamTab()" style="min-height:32px;padding:3px 8px;border:1px solid var(--line);border-radius:2px;font-size:11px;font-weight:600;cursor:pointer;${sel?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">${entry.title} (${count})</button>`;
   }
   html += '</div>';
