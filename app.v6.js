@@ -2568,7 +2568,7 @@ function openBoard() {
   renderBoard();
 }
 function renderBoard() {
-  let html = '<div style="max-width:700px">';
+  let html = '<div style="max-width:900px">';
   html += '<h3>게시판</h3>';
   html += '<p style="color:var(--muted)">게시판 기능은 준비 중입니다.</p>';
   html += '</div>';
@@ -3218,7 +3218,7 @@ function showWrongNotes() {
   const wrong = (p[key] && p[key].wrong) || {};
 
   let totalWrong = 0;
-  let html = '<div style="max-width:600px">';
+  let html = '<div style="max-width:800px">';
   html += '<h3 style="margin-bottom:12px">📕 오답노트</h3>';
 
   for (const catId in wrong) {
@@ -3264,7 +3264,7 @@ function showMyReview() {
   let totalCorrect = 0, totalQuestions = 0;
   for (const e of best.values()) { totalCorrect += e.correct; totalQuestions += e.total; }
 
-  let html = '<div style="max-width:600px">';
+  let html = '<div style="max-width:800px">';
   html += '<h3 style="margin-bottom:12px">📊 내 리뷰</h3>';
   html += `<div style="display:grid;gap:12px;grid-template-columns:1fr 1fr">`;
   html += `<div style="padding:16px;background:#f0f8f0;border-radius:8px;text-align:center"><strong style="font-size:24px">${completed}</strong><br><small>단어 마스터</small><br><small style="color:var(--muted)">/ ${totalSyn} (${pct}%)</small></div>`;
@@ -3310,7 +3310,7 @@ function showMyInfo() {
 }
 
 function renderMyInfoTab(tab) {
-  let html = '<div style="max-width:600px">';
+  let html = '<div style="max-width:800px">';
   html += '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px">';
   html += `<button onclick="renderMyInfoTab('review')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='review'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📊 내 리뷰</button>`;
   html += `<button onclick="renderMyInfoTab('wrong')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='wrong'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📕 오답노트</button>`;
@@ -3941,7 +3941,7 @@ function renderGrammarQuestion() {
   }
   const q = items[grammarState.index];
   let html = renderGrammarCategoryNav();
-  html += `<div style="max-width:700px">`;
+  html += `<div style="max-width:900px">`;
   html += `<p style="font-size:12px;color:var(--muted);margin:0 0 8px">${grammarState.index + 1} / ${items.length} | ✅ ${grammarState.correct} | ❌ ${grammarState.index - grammarState.correct}</p>`;
   html += `<p style="font-size:13px;color:var(--accent);font-weight:600;margin:0 0 4px">${escapeHtml(q.i)}. ${escapeHtml(q.t)}</p>`;
   var qHtml = q.q
@@ -3978,7 +3978,7 @@ function submitGrammarAnswer(letter) {
   }
   { const ability = readIrtAbility() + getScoreDelta(correct, 50); writeIrtAbility(ability); updateTierDisplay(); }
   let html = renderGrammarCategoryNav();
-  html += `<div style="max-width:700px">`;
+  html += `<div style="max-width:900px">`;
   html += `<p style="font-size:12px;color:var(--muted);margin:0 0 8px">${grammarState.index + 1} / ${items.length} | ✅ ${grammarState.correct} | ❌ ${grammarState.index - grammarState.correct}</p>`;
   html += `<p style="font-size:13px;color:var(--accent);font-weight:600;margin:0 0 4px">${escapeHtml(q.i)}. ${escapeHtml(q.t)}</p>`;
   html += `<p style="font-size:15px;line-height:1.7;margin:0 0 16px">${escapeHtml(q.q)}</p>`;
@@ -4040,7 +4040,7 @@ var EXAM_REGISTRY = {
 };
 
 function renderExamTab() {
-  var html = '<div style="max-width:700px">';
+  var html = '<div style="max-width:900px">';
   if (examTab === 'skku2011') {
     html += '<div style="margin-bottom:16px;padding:12px 16px;background:#f8f9fc;border-radius:4px;border:1px solid var(--line)">';
     html += '<p style="margin:0 0 4px;font-size:12px;color:var(--muted)">성균관대학교</p>';
