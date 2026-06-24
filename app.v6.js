@@ -1566,36 +1566,12 @@ async function cloudPullScores() {
 
 let _syncRunning = null;
 let _syncQueued = false;
+let _syncTimer = null;
 
-function scheduleCloudSync() {
-  // Serialize syncs: if one is already running, queue one more
-  if (!_syncRunning) {
-    _syncRunning = cloudSyncAll().catch((e) => { console.warn('scheduleCloudSync failed', e); }).finally(() => {
-      _syncRunning = null;
-      if (_syncQueued) { _syncQueued = false; scheduleCloudSync(); }
-    });
-  } else {
-    _syncQueued = true;
-  }
-}
-function flushCloudSync() {
-  // Wait for any in-flight sync, then run one final sync
-  if (_syncRunning) {
-    _syncRunning.finally(() => cloudSyncAll().catch((e) => { console.warn('flushCloudSync failed', e); }));
-  } else {
-    cloudSyncAll().catch((e) => { console.warn('flushCloudSync failed', e); });
-  }
-}
-window.addEventListener('beforeunload', () => { if (state.playerName) flushCloudSync(); });
-
-async function cloudSyncAll() {
-  if (!state.playerName || !hasPublicConfig()) return true;
-  const client = await getSupabaseClient(); if (!client) return false;
+function buildUserDataPayload() {
   const nk = state.playerName.toLowerCase();
-
   const pwStore = readPasswordStore();
   const pw = pwStore[nk] ? (typeof pwStore[nk]==='string' ? pwStore[nk] : atob(pwStore[nk].password)) : '';
-
   const wkEntry = (readWordKnowledge()||{})[nk];
   const wordKnowledge = JSON.stringify(wkEntry || {});
   const synProgress = JSON.stringify((readSynonymProgress()||{})[nk]||{});
@@ -1610,25 +1586,62 @@ async function cloudSyncAll() {
   const logicScore = JSON.stringify((readLogicScore()||{})[nk]||{score:0,questions:0});
   const irtAbility = JSON.stringify(readIrtAbility());
   const examData = JSON.stringify((readExamProgress()||{})[nk]||{});
-
-  const payload = JSON.stringify({
-    pw,
-    displayName: state.playerName,
-    word_knowledge: wordKnowledge,
-    synonym_progress: synProgress,
-    synonym_result: synonymResult,
-    wordcheck_progress: wcProg,
-    wordcheck_result: wordcheckResult,
-    quiz_progress: quizProg,
-    logic_completed: logicDone,
-    logic_wrong: logicWrong,
-    logic_score: logicScore,
-    grammar_progress: grammarData,
-    exam_progress: examData,
-    irt_ability: irtAbility,
+  return JSON.stringify({
+    pw, displayName: state.playerName,
+    word_knowledge: wordKnowledge, synonym_progress: synProgress,
+    synonym_result: synonymResult, wordcheck_progress: wcProg,
+    wordcheck_result: wordcheckResult, quiz_progress: quizProg,
+    logic_completed: logicDone, logic_wrong: logicWrong,
+    logic_score: logicScore, grammar_progress: grammarData,
+    exam_progress: examData, irt_ability: irtAbility,
     updated_at: new Date().toISOString()
   });
+}
 
+function scheduleCloudSync() {
+  // Debounce 3s: coalesce rapid changes
+  if (_syncTimer) clearTimeout(_syncTimer);
+  _syncTimer = setTimeout(() => {
+    _syncTimer = null;
+    if (!_syncRunning) {
+      _syncRunning = cloudSyncAll().catch((e) => { console.warn('scheduleCloudSync failed', e); }).finally(() => {
+        _syncRunning = null;
+        if (_syncQueued) { _syncQueued = false; scheduleCloudSync(); }
+      });
+    } else {
+      _syncQueued = true;
+    }
+  }, 3000);
+}
+function flushCloudSync() {
+  // Immediate sync: cancel debounce, run now
+  if (_syncTimer) { clearTimeout(_syncTimer); _syncTimer = null; }
+  if (_syncRunning) {
+    _syncRunning.finally(() => cloudSyncAll().catch((e) => { console.warn('flushCloudSync failed', e); }));
+  } else {
+    cloudSyncAll().catch((e) => { console.warn('flushCloudSync failed', e); });
+  }
+}
+// beforeunload: fetch+keepalive to guarantee sync survives page unload
+window.addEventListener('beforeunload', () => {
+  if (!state.playerName || !hasPublicConfig()) return;
+  const config = getDbConfig();
+  const nk = state.playerName.toLowerCase();
+  const table = config.tableName || 'leaderboard_scores';
+  const row = JSON.stringify({ nickname: nk, quiz_set: 'USERDATA', correct_count: 1, total_count: 1, accuracy: 1, payload: buildUserDataPayload() });
+  fetch(`${config.supabaseUrl}/rest/v1/${table}?nickname=eq.${encodeURIComponent(nk)}&quiz_set=eq.USERDATA`, {
+    method: 'PATCH',
+    headers: { 'apikey': config.supabaseAnonKey, 'Authorization': `Bearer ${config.supabaseAnonKey}`, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+    body: row,
+    keepalive: true
+  });
+});
+
+async function cloudSyncAll() {
+  if (!state.playerName || !hasPublicConfig()) return true;
+  const client = await getSupabaseClient(); if (!client) return false;
+  const nk = state.playerName.toLowerCase();
+  const payload = buildUserDataPayload();
   const table = getLeaderboardTable();
   const row = { nickname: nk, quiz_set: 'USERDATA', correct_count: 1, total_count: 1, accuracy: 1, payload };
 
