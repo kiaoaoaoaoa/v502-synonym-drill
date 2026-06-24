@@ -69,7 +69,6 @@ const MAP = {
 window.__V502_EXAM_SKKU2011__ = [
   {
     "q": "In the movies the death of a child 'justifies' both serious acts of violent revenge and violent displays of serious acting.",
-    "p": "In the movies the death of a child 「justifies」 both serious acts of violent revenge and violent displays of serious acting.",
     "c": [
       [
         "1",
@@ -97,7 +96,6 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "He describes the confusion and emotional chaos of dealing with the mentally ill with 'riveting' precision.",
-    "p": "He describes the confusion and emotional chaos of dealing with the mentally ill with 「riveting」 precision.",
     "c": [
       [
         "1",
@@ -125,7 +123,6 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "Mr. Brady has done something to 'bring home to us' the terrible reality of war.",
-    "p": "Mr. Brady has done something to 「bring home to us」 the terrible reality of war.",
     "c": [
       [
         "1",
@@ -153,7 +150,6 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "Perhaps some will say that animals have some 'inherent' value, only less than we have.",
-    "p": "Perhaps some will say that animals have some 「inherent」 value, only less than we have.",
     "c": [
       [
         "1",
@@ -181,7 +177,6 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "The three facets of the great writer ― magic, story, lesson ― are 'prone to blend' in one impression of unified and unique radiance.",
-    "p": "The three facets of the great writer ― magic, story, lesson ― are 「prone to blend」 in one impression of unified and unique radiance.",
     "c": [
       [
         "1",
@@ -479,7 +474,6 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "If you're an environmentalist, plastic is a word you tend to say with a sneer. It has become a symbol of our wasteful society. But there seems little concern it is here to stay, and the truth is, of course, that plastics have brought enormous benefits, even environmental ones. It's not really the plastics themselves that are the environmental disaster ― it's the way society chooses to use and ____",
-    "p": "If you're an environmentalist, plastic is a word you tend to say with a sneer. It has become a symbol of our wasteful society. But there seems little concern it is here to stay, and the truth is, of course, that plastics have brought enormous benefits, even environmental ones. It's not really the plastics themselves that are the environmental disaster ― it's the way society chooses to use and _______ them.",
     "c": [
       [
         "1",
@@ -506,7 +500,7 @@ window.__V502_EXAM_SKKU2011__ = [
     "explanation": "당신이 환경론자라면, 플라스틱은 당신이 조롱조로 말하는 경향이 있는 단어이다. 플라스틱은 낭비하는 우리 사회의 상징이 되어버렸다. 그러나 그것이 지속적으로 그럴 것이라는 걱정은 거의 없으며 사실은 물론, 플라스틱은 막대한 혜택을 심지어는 환경적인 혜택까지도 가져왔다. 환경재앙이 되는 것은 플라스틱 자체가 아니라 사회가 그것을 사용하고 버리는 방식인 것이다.\n\n플라스틱은 사용 후 버리는 것이므로 빈칸에는 '버리다'의 의미를 갖는 동사가 필요하다.\n\nsneer n 비웃음, 냉소\nendanger v 위험에 빠뜨리다(=jeopardize, imperil)\naccumulate v 축적하다, 모으다\ndispose v 처리하다, 버리다"
   },
   {
-    "q": "A Parisian villain broke into a house at the village of Lachelle in 1978. Once inside he began to feel decidedly peckish and so went in search of the icebox. There he found his favourite cheese which it would have been a shame not to try. He then found some Bath Oliver biscuits and three bottles of champagne. After a while he began to feel sleepy and decided that he would lie down and digest his m",
+    "q": "The best title of the passage would be _______.",
     "p": "A Parisian villain broke into a house at the village of Lachelle in 1978. Once inside he began to feel decidedly peckish and so went in search of the icebox. There he found his favourite cheese which it would have been a shame not to try. He then found some Bath Oliver biscuits and three bottles of champagne. After a while he began to feel sleepy and decided that he would lie down and digest his meal in comfort. He was arrested next morning fast asleep upstairs in the spare bedroom.",
     "c": [
       [
@@ -534,7 +528,7 @@ window.__V502_EXAM_SKKU2011__ = [
     "explanation": "파리의 한 악당이 1978년에 Lachelle이라는 한 마을의 주택에 침입했다. 일단 안으로 들어서자, 그는 몹시 배고픔을 느꼈고 아이스박스를 찾아갔다. 그는 박스 속에서 안 먹어보면 후회하게 될 그가 가장 좋아하는 치즈를 발견하였다. 그 다음에 그는 Bath Oliver 비스킷과 세 병의 샴페인도 찾아내었다. 잠시 후 그는 졸리기 시작했고 누워서 편안하게 음식을 소화시키기로 했다. 그는 위층의 빈 침실에서 곤히 잠든 채로 다음 날 아침 체포되었다.\n\n본분을 망각한 부주의한 도둑에 관한 이야기이므로 ④의 '가장 부주의한 도둑'이 이 글의 제목으로 알맞다.\n\nbreak into 침입[난입]하다\npeckish a 배가 고픈(=hungry)\nfast asleep 깊이 잠들어\nspare a 예비의, 여분의"
   },
   {
-    "q": "Women of 30 or 40 or older are apt to be juggling a career and the care of children, often without a husband. They have figured out their lives for themselves. They have style. They are grown-ups, and they don't conceal their ages; if their lives are tougher, they frequently possess a certain centeredness and strength that is unavailable to those much younger, who seem somehow unformed, incomplete",
+    "q": "The best title of the passage would be _______.",
     "p": "Women of 30 or 40 or older are apt to be juggling a career and the care of children, often without a husband. They have figured out their lives for themselves. They have style. They are grown-ups, and they don't conceal their ages; if their lives are tougher, they frequently possess a certain centeredness and strength that is unavailable to those much younger, who seem somehow unformed, incomplete, far less interesting ― and sometimes unbelievably ignorant.",
     "c": [
       [
