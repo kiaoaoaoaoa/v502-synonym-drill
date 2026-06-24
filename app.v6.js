@@ -962,7 +962,7 @@ function submitAnswer() {
       });
     }
     saveSynonymRankResult(question.categoryId, question.prompt, correct);
-    try { persistSynonymRanking(); } catch {}
+    persistSynonymRanking();
     const rate = (question.difficulty && typeof question.difficulty === 'object')
       ? rateQuestion(question.difficulty) : 50; // default 50% if no per-question rating
     const ability = readIrtAbility() + getScoreDelta(correct, rate);
@@ -3717,7 +3717,7 @@ function submitWordcheckAnswer(letter) {
   if (correct) wcState.correct++;
   wcState.answers.push({ id: q.i, correct });
   saveWordcheckResult(q.i, correct);
-  try { persistWordcheckRanking(); } catch {}
+  persistWordcheckRanking();
   { const ability = readIrtAbility() + getScoreDelta(correct, 50); writeIrtAbility(ability); updateTierDisplay(); }
 
   if (noExplainMode) {
