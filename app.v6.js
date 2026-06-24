@@ -1299,14 +1299,25 @@ function readWordKnowledge() {
 }
 
 function writeWordKnowledge(store) {
-  localStorage.setItem(wordKnowledgeKey, JSON.stringify(store));
+  try { localStorage.setItem(wordKnowledgeKey, JSON.stringify(store)); } catch {}
 }
 
 function isWordKnown(word) {
   if (!state.playerName) return false;
   const store = readWordKnowledge();
-  const userWords = store[state.playerName.toLowerCase()] || [];
-  return userWords.includes(word);
+  const entry = store[state.playerName.toLowerCase()];
+  if (!entry) return false;
+  // Support both old array format and new object format
+  if (Array.isArray(entry)) return entry.includes(word);
+  return word in entry;
+}
+
+function getWordKnownDate(word) {
+  if (!state.playerName) return null;
+  const store = readWordKnowledge();
+  const entry = store[state.playerName.toLowerCase()];
+  if (!entry || Array.isArray(entry)) return null;
+  return entry[word] || null;
 }
 
 function readSynonymProgress() {
@@ -1352,16 +1363,22 @@ function toggleWordKnown(word) {
   if (!state.playerName) return false;
   const store = readWordKnowledge();
   const key = state.playerName.toLowerCase();
-  if (!store[key]) store[key] = [];
-  const idx = store[key].indexOf(word);
-  if (idx >= 0) {
-    store[key].splice(idx, 1);
+  // Migrate old array format to new object format
+  if (Array.isArray(store[key])) {
+    const arr = store[key];
+    store[key] = {};
+    arr.forEach(w => { store[key][w] = new Date().toISOString(); });
+  }
+  if (!store[key]) store[key] = {};
+  const wasKnown = word in store[key];
+  if (wasKnown) {
+    delete store[key][word];
   } else {
-    store[key].push(word);
+    store[key][word] = new Date().toISOString();
   }
   writeWordKnowledge(store);
   scheduleCloudSync();
-  return idx < 0; // true if now known
+  return !wasKnown; // true if now known
 }
 
 function writePasswordStore(store) {
@@ -1574,7 +1591,8 @@ async function cloudSyncAll() {
   const pwStore = readPasswordStore();
   const pw = pwStore[nk] ? (typeof pwStore[nk]==='string' ? pwStore[nk] : atob(pwStore[nk].password)) : '';
 
-  const wordKnowledge = JSON.stringify((readWordKnowledge()||{})[nk]||[]);
+  const wkEntry = (readWordKnowledge()||{})[nk];
+  const wordKnowledge = JSON.stringify(wkEntry || {});
   const synProgress = JSON.stringify((readSynonymProgress()||{})[nk]||{});
   const wcProg = JSON.stringify(getWordcheckProgress());
   let quizProg = '{}';
@@ -3177,8 +3195,10 @@ function getCompletedPromptWordsCount() {
 function getWordKnowledgeCount() {
   if (!state.playerName) return 0;
   const store = readWordKnowledge();
-  const words = store[state.playerName.toLowerCase()] || [];
-  return words.length;
+  const entry = store[state.playerName.toLowerCase()];
+  if (!entry) return 0;
+  if (Array.isArray(entry)) return entry.length;
+  return Object.keys(entry).length;
 }
 
 function showWrongNotes() {
@@ -3288,6 +3308,7 @@ function renderMyInfoTab(tab) {
   html += `<button onclick="renderMyInfoTab('logic')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='logic'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">🧩 논리오답</button>`;
   html += `<button onclick="renderMyInfoTab('grammar')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='grammar'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📝 문법오답</button>`;
   html += `<button onclick="renderMyInfoTab('exam')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='exam'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📋 기출오답</button>`;
+  html += `<button onclick="renderMyInfoTab('learned')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='learned'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📅 학습한 단어</button>`;
   html += '</div>';
 
   if (tab === 'review') {
@@ -3458,6 +3479,41 @@ function renderMyInfoTab(tab) {
           }
           html += '</div>';
         }
+      }
+    }
+  } else if (tab === 'learned') {
+    const store = readWordKnowledge();
+    const entry = store[state.playerName.toLowerCase()] || {};
+    if (Array.isArray(entry)) {
+      html += '<p style="color:var(--muted)">데이터를 불러오는 중입니다. 단어 체크를 다시 해주세요.</p>';
+    } else {
+      const words = Object.entries(entry);
+      if (words.length === 0) {
+        html += '<p style="color:var(--muted)">아직 학습한 단어가 없습니다. 단어일람/단어장3에서 단어를 체크해보세요!</p>';
+      } else {
+        // Group by date
+        const byDate = {};
+        words.forEach(([word, ts]) => {
+          try {
+            const d = new Date(ts);
+            const dateStr = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+            if (!byDate[dateStr]) byDate[dateStr] = [];
+            byDate[dateStr].push(word);
+          } catch { if (!byDate['알 수 없음']) byDate['알 수 없음'] = []; byDate['알 수 없음'].push(word); }
+        });
+        const dates = Object.keys(byDate).sort().reverse();
+        html += '<p style="color:var(--muted);margin-bottom:12px">총 <b>' + words.length + '</b>개 단어 학습</p>';
+        dates.forEach(dateStr => {
+          const dayWords = byDate[dateStr];
+          html += '<details class="wb3-section" style="margin-bottom:6px">';
+          html += '<summary class="wb3-summary" style="font-size:13px">📅 ' + dateStr + ' <small>(' + dayWords.length + '개)</small></summary>';
+          html += '<div style="padding:8px 14px;font-size:13px;line-height:1.8">';
+          dayWords.sort().forEach(w => {
+            const m = wordMeanings[w] || '';
+            html += '<span style="display:inline-block;margin:2px 4px;padding:2px 8px;background:#e8f0e8;border-radius:4px;font-size:13px">' + escapeHtml(w) + (m ? ' <span style="color:var(--muted);font-size:11px">' + escapeHtml(m) + '</span>' : '') + '</span>';
+          });
+          html += '</div></details>';
+        });
       }
     }
   }
