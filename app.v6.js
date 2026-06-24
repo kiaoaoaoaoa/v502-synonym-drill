@@ -2310,25 +2310,41 @@ function showWordlist2() {
     html += '<button class="wl-jump-btn wl-hideknown-btn' + (wlHideKnown ? ' wl-hideknown-on' : '') + '" type="button" id="wl2HideBtn" title="아는 단어(✓) 숨기기">' + (wlHideKnown ? '✓ 아는 단어 숨김' : '아는 단어 안보기') + '</button>';
   }
   html += '</div>';
-  html += '<div class="wordlist2-entries">';
-  visible.forEach((item, idx) => {
-    const hasEx = item.ex && item.ex.length > 20;
-    const w = item.w || '';
-    const m = item.m || '';
-    const known = state.playerName && isWordKnown(w);
-    html += '<div class="wl2-entry">';
-    html += '<span class="wl2-word' + (known ? ' wl-known' : '') + (state.playerName ? ' wl-clickable' : '') + '"';
-    if (state.playerName) {
-      html += ' onclick="handleWordToggle(\'' + escapeHtml(w) + '\', this)" title="클릭하여 안다/모른다 표시"';
-    }
-    html += '>';
-    if (known) html += '<span class="wl-check">✓</span>';
-    html += escapeHtml(w) + '</span>';
-    if (m) html += '<span class="wl2-meaning">' + escapeHtml(m) + '</span>';
-    if (hasEx) html += '<div class="wl2-example">' + escapeHtml(item.ex) + '</div>';
-    html += '</div>';
+  // 300-word chunks
+  const CHUNK = 300;
+  const chunks = [];
+  for (let i = 0; i < visible.length; i += CHUNK) {
+    chunks.push({ start: i, end: Math.min(i + CHUNK - 1, visible.length - 1), items: visible.slice(i, i + CHUNK) });
+  }
+  function renderWL2Entries(items) {
+    let h = '<div class="wordlist2-entries">';
+    items.forEach((item) => {
+      const hasEx = item.ex && item.ex.length > 20;
+      const w = item.w || '';
+      const m = item.m || '';
+      const known = state.playerName && isWordKnown(w);
+      h += '<div class="wl2-entry">';
+      h += '<span class="wl2-word' + (known ? ' wl-known' : '') + (state.playerName ? ' wl-clickable' : '') + '"';
+      if (state.playerName) {
+        h += ' onclick="handleWordToggle(\'' + escapeHtml(w) + '\', this)" title="클릭하여 안다/모른다 표시"';
+      }
+      h += '>';
+      if (known) h += '<span class="wl-check">✓</span>';
+      h += escapeHtml(w) + '</span>';
+      if (m) h += '<span class="wl2-meaning">' + escapeHtml(m) + '</span>';
+      if (hasEx) h += '<div class="wl2-example">' + escapeHtml(item.ex) + '</div>';
+      h += '</div>';
+    });
+    h += '</div>';
+    return h;
+  }
+  chunks.forEach((chunk, idx) => {
+    html += '<details class="wb3-section"' + (idx === 0 ? ' open' : '') + '>';
+    html += '<summary class="wb3-summary">[' + (chunk.start + 1) + '~' + (chunk.end + 1) + '번] <small>(' + chunk.items.length + '개)</small></summary>';
+    html += renderWL2Entries(chunk.items);
+    html += '</details>';
   });
-  html += '</div></div></div>';
+  html += '</div></div>';
   els.wordlist2Content.innerHTML = html;
 
   const hideBtn = document.getElementById('wl2HideBtn');
