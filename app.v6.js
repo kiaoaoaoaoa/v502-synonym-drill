@@ -1218,7 +1218,6 @@ async function handleLogin() {
   els.authPasswordInput.value = "";
   checkAndShowResume();
   await cloudPullScores();
-  if (_cloudSyncTimer) { clearTimeout(_cloudSyncTimer); _cloudSyncTimer = null; }
   await cloudSyncAll();
   pushAllScoresToSupabase();
 }
@@ -1565,23 +1564,14 @@ async function cloudPullScores() {
   } catch(e) { console.warn('cloudPullScores failed', e); }
 }
 
-let _cloudSyncTimer = null;
 function scheduleCloudSync() {
-  if (_cloudSyncTimer) {
-    clearTimeout(_cloudSyncTimer);
-    _cloudSyncTimer = null;
-  }
-  _cloudSyncTimer = setTimeout(() => {
-    _cloudSyncTimer = null;
-    cloudSyncAll().catch((e) => { console.warn('scheduleCloudSync failed', e); });
-  }, 100);
+  // Sync immediately to Supabase — no debounce
+  cloudSyncAll().catch((e) => { console.warn('scheduleCloudSync failed', e); });
 }
 function flushCloudSync() {
-  if (!_cloudSyncTimer) return;
-  clearTimeout(_cloudSyncTimer);
-  _cloudSyncTimer = null;
   cloudSyncAll().catch((e) => { console.warn('flushCloudSync failed', e); });
 }
+window.addEventListener('beforeunload', () => { if (state.playerName) flushCloudSync(); });
 
 async function cloudSyncAll() {
   if (!state.playerName || !hasPublicConfig()) return true;
