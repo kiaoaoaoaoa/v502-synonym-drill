@@ -3445,8 +3445,6 @@ function renderMyInfoTab(tab) {
 }
 
 let wordcheckQuestions = [
-  ...(window.__V502_WC_V101__ || []),
-  ...(window.__V502_WC_V201__ || []),
   ...(window.__V502_WC_V401__ || [])
 ];
 let wcState = { index: 0, answers: [], correct: 0, total: 0, completed: false };
@@ -3475,8 +3473,6 @@ function wordcheckRemaining(all) {
 function showWordcheck() {
   lastWordcheckLauncher = showWordcheck;
   startWordcheck(wordcheckRemaining([
-    ...(window.__V502_WC_V101__ || []),
-    ...(window.__V502_WC_V201__ || []),
     ...(window.__V502_WC_V401__ || [])
   ]));
 }
