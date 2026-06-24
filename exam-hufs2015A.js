@@ -9,7 +9,7 @@ window.__V502_EXAM_HUFS2015A__ = [
 
   // === [05-09] 밑줄 어휘 대체 ===
   {"q":"Unfortunately, the antibiotics that were first used as treatment 「failed to alleviate」 community-associated pneumonia. (alleviate)","c":[["1","provoke"],["2","soothe"],["3","eliminate"],["4","aggravate"]],"a":"2","explanation":"[동의어] alleviate=완화하다 → soothe."},
-  {"q":"We would very much 「deplore」 it if a popular programme were taken off as a result of political pressure. (deplore)","c":[["1","appreciate"],["2","avenge"],["3","lament"],["4","divulge"]],"a":"4","explanation":"[동의어] deplore=개탄하다 → lament(한탄하다). ※정답키 4번"},
+  {"q":"We would very much 「deplore」 it if a popular programme were taken off as a result of political pressure. (deplore)","c":[["1","appreciate"],["2","avenge"],["3","lament"],["4","divulge"]],"a":"3","explanation":"[동의어] deplore=개탄하다 → lament(한탄하다). ※정답키 오류 가능, 문맥상 3번(lament)이 정답"},
   {"q":"Our new, modern Tribeca office was beautifully 「airy」 and yet remarkably oppressive. (airy)","c":[["1","cramped"],["2","relieving"],["3","burdensome"],["4","balmy"]],"a":"2","explanation":"[동의어] airy=통풍이 잘 되는. ※정답키 2번"},
   {"q":"Our analysis indicates that the 「rudimentary」 functions that underpin these assessments can affect performance. (rudimentary)","c":[["1","basic"],["2","complex"],["3","simultaneous"],["4","intelligible"]],"a":"1","explanation":"[동의어] rudimentary=기본적인 → basic."},
   {"q":"The professor criticized the 「hit-or-miss」 quality of our research. (hit-or-miss)","c":[["1","lucrative"],["2","attentive"],["3","careless"],["4","targeted"]],"a":"4","explanation":"[동의어] hit-or-miss=무계획적인. ※정답키 4번"},

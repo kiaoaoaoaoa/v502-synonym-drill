@@ -1,3 +1,31 @@
+// ── SVG Icon system (replaces emojis for consistent cross-platform rendering) ──
+const I = {
+  gold:   '<svg width="1em" height="1em" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#F0A500"/><text x="12" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">1</text></svg>',
+  silver: '<svg width="1em" height="1em" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#A0AAB5"/><text x="12" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">2</text></svg>',
+  bronze: '<svg width="1em" height="1em" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#C4703F"/><text x="12" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">3</text></svg>',
+  book:   '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M12 2v19"/></svg>',
+  bluebook:'<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M12 2v19"/></svg>',
+  greenbook:'<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M12 2v19"/></svg>',
+  redbook:'<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M12 2v19"/></svg>',
+  books:  '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M2 7h2"/><path d="M2 11h2"/><path d="M2 15h2"/></svg>',
+  check:  '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" fill="#DCFCE7"/><path d="M8 12l3 3 5-5"/></svg>',
+  cross:  '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" fill="#FEE2E2"/><path d="M8 8l8 8M16 8l-8 8"/></svg>',
+  clip:   '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>',
+  party:  '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2M5.6 5.6l1.4 1.4M3 12h2M5.6 18.4l1.4-1.4M12 19v2M17 5l-1.4 1.4"/><circle cx="12" cy="12" r="3"/><path d="M4 20l16-16"/></svg>',
+  bolt:   '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-3 8 13-12h-7l4-8z"/></svg>',
+  memo:   '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>',
+  chart:  '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="12" width="4" height="8" rx="1"/><rect x="10" y="7" width="4" height="13" rx="1"/><rect x="17" y="3" width="4" height="17" rx="1"/></svg>',
+  puzzle: '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 3h-3.6a2.4 2.4 0 0 0-4.8 0H4.5v5.4h1.8a2.4 2.4 0 0 1 0 4.8H4.5V19.5h5.4v-1.8a2.4 2.4 0 1 1 4.8 0v1.8h5.4V10.2h-2.1a2.4 2.4 0 0 1 0-4.8h2.1V3z"/></svg>',
+  trophy: '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="#F0A500" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12v3a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V4z"/><path d="M6 4h12M8 21h8M12 17v4"/><path d="M2 7h3v2a3 3 0 0 1-3 3V7z"/><path d="M22 7h-3v2a3 3 0 0 0 3 3V7z"/></svg>',
+  doc:    '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg>',
+  lock:   '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>',
+  folder: '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>',
+  target: '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg>',
+  square: '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>',
+  person: '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 12 0v1"/></svg>',
+};
+const icon = name => I[name] || '';
+
 const categories = [
   {
     id: "001",
@@ -389,6 +417,7 @@ const wordKnowledgeKey = "v502-synonym-drill-word-knowledge";
 const quizProgressKey = "v502-synonym-drill-quiz-progress";
 const irtAbilityKey = "v502-irt-ability";            // IRT-based cumulative ability score
 
+// IRT 난이도 평가 — 7-factor regression formula (2026-06-23: 수능영어 1등급 baseline)
 function rateQuestion({X1, X2, X3, X4, X5, X6, X7}) {
   const raw = 138 - 2.5*X1 - 2.0*X2 - 2.5*X3 - 2.5*X4
               - 2.5*(10-X5) - 2.5*X6 - 2.0*X7;
@@ -396,7 +425,7 @@ function rateQuestion({X1, X2, X3, X4, X5, X6, X7}) {
 }
 
 function getScoreDelta(isCorrect, rate) {
-  return isCorrect ? +(30 * rate / 100) : -(10 * rate / 100);
+  return isCorrect ? +(15 * rate / 100) : -(10 * rate / 100);
 }
 
 function readIrtAbility() {
@@ -408,25 +437,24 @@ function writeIrtAbility(v) {
   try { localStorage.setItem(irtAbilityKey, String(Math.round(capped * 1000) / 1000)); } catch {}
 }
 
-function _tierSVG(path, fill) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="vertical-align:middle" aria-hidden="true"><g fill="${fill}">${path}</g></svg>`;
-}
+// Tier thresholds scaled to 0–10000
 function getTier(score) {
   const s = Math.max(0, Math.min(10000, score));
-  if (s >= 10000) return { name: '서성한메이저',     icon: _tierSVG('<polygon points="1,12 1,5 4,7 8,1 12,7 15,5 15,12"/>', '#FFD700') };
-  if (s >= 9000)  return { name: '서성한',           icon: _tierSVG('<polygon points="8,1 15,8 8,15 1,8"/>', '#AF52DE') };
-  if (s >= 8000)  return { name: '서성한하위',       icon: _tierSVG('<polygon points="8,2 14,10 8,14 2,10"/>', '#BF5AF2') };
-  if (s >= 6000)  return { name: '중경외시 메이저',  icon: _tierSVG('<circle cx="8" cy="8" r="7"/>', '#FF9500') };
-  if (s >= 5000)  return { name: '중경외시 하위',    icon: _tierSVG('<circle cx="8" cy="8" r="7"/>', '#8E8E93') };
-  if (s >= 3500)  return { name: '건동홍',           icon: _tierSVG('<circle cx="8" cy="8" r="7"/>', '#CD7F32') };
-  if (s >= 2500)  return { name: '국숭세단',         icon: _tierSVG('<rect x="2" y="2" width="12" height="12" rx="1"/>', '#34C759') };
-  if (s >= 1600)  return { name: '인가경',           icon: _tierSVG('<rect x="2" y="2" width="12" height="12" rx="1"/>', '#007AFF') };
-  return { name: '정붕이', icon: _tierSVG('<circle cx="8" cy="12" r="2"/><path d="M8,11 Q8,2 14,2 Q10,5 8,11"/>', '#30D158') };
+  if (s >= 10000) return { name: '서성한메이저',     icon: '👑' };
+  if (s >= 9000)  return { name: '서성한',           icon: '💠' };
+  if (s >= 8000)  return { name: '서성한하위',       icon: '💎' };
+  if (s >= 6000)  return { name: '중경외시 메이저',  icon: '🥇' };
+  if (s >= 5000)  return { name: '중경외시 하위',    icon: '🥈' };
+  if (s >= 3500)  return { name: '건동홍',           icon: '🥉' };
+  if (s >= 2500)  return { name: '국숭세단',         icon: '📗' };
+  if (s >= 1600)  return { name: '인가경',           icon: '📘' };
+  return { name: '정붕이', icon: '🌱' };
 }
 
+// Estimate IRT ability from public stats — accuracy-based, volume-bonus capped at 2000 Qs
 function getTierForRanking(correct, total) {
-  const accuracy = Math.min(1, total > 0 ? correct / total : 0);
-  const volumeFactor = Math.min(1, total / 2000);
+  const accuracy = total > 0 ? correct / total : 0;
+  const volumeFactor = 0.7 + 0.3 * Math.min(1, total / 2000);
   const estAbility = accuracy * 10000 * volumeFactor;
   return getTier(estAbility);
 }
@@ -436,18 +464,20 @@ function updateTierDisplay() {
   if (!el) return;
   const ability = readIrtAbility();
   const tier = getTier(ability);
-  el.innerHTML = `${tier.icon} ${tier.name}`;
+  el.textContent = `${tier.icon} ${tier.name}`;
   el.title = `IRT Ability: ${ability.toFixed(1)}`;
 }
 let supabaseClient = null;
 let supabaseSdkPromise = null;
 
+// Merge categories 21-30+ if loaded
 if (window.__V502_EXT__) {
   const ext = window.__V502_EXT__;
   if (ext.categories) categories.push(...ext.categories);
   if (ext.wordMeanings) Object.assign(wordMeanings, ext.wordMeanings);
   if (ext.categorySummaries) Object.assign(categorySummaries, ext.categorySummaries);
   if (ext.confusionNotes) {
+    // Only add notes for words not already covered (preserve hand-written notes)
     for (const [k, v] of Object.entries(ext.confusionNotes)) {
       if (!confusionNotes[k]) confusionNotes[k] = v;
     }
@@ -461,6 +491,10 @@ if (window.__V502_EXT__) {
     Object.assign(window.koreanUsage, ext.koreanUsage);
   }
 }
+// Some category ranges are defined in more than one data file (e.g. 291-300
+// appear in both categories-251-300.js and categories-291-620.js). Drop any
+// duplicate category ids, keeping the first, so a set never quizzes the same
+// category twice.
 (function dedupeCategories() {
   const seen = new Set();
   for (let i = 0; i < categories.length; i++) {
@@ -470,6 +504,7 @@ if (window.__V502_EXT__) {
   }
 })();
 
+// Override with Korean titles from TOC
 if (window.__V502_TOC__) {
   Object.assign(categorySummaries, window.__V502_TOC__);
 }
@@ -634,6 +669,7 @@ const els = {
   wordlistContent: document.querySelector("#wordlistContent"),
   rankingSummary: document.querySelector("#rankingSummary"),
   rankingContent: document.querySelector("#rankingContent"),
+  // Auth
   authSection: document.querySelector("#authSection"),
   authLoggedOut: document.querySelector("#authLoggedOut"),
   authLoggedIn: document.querySelector("#authLoggedIn"),
@@ -644,14 +680,14 @@ const els = {
   authRegisterBtn: document.querySelector("#authRegisterBtn"),
   authPlayerName: document.querySelector("#authPlayerName"),
   authLogoutBtn: document.querySelector("#authLogoutBtn"),
+  // New start panel
   startQuizBtn: document.querySelector("#startQuizBtn"),
   startPanelTitle: document.querySelector("#startPanelTitle"),
   startPanelHint: document.querySelector("#startPanelHint"),
+  // Logic Quiz
   logicModeBtn: document.querySelector("#logicModeBtn"),
   synonymDrillBtn: document.querySelector("#synonymDrillBtn"),
   myinfoBtn: document.querySelector("#myinfoBtn"),
-  boardPanel: document.querySelector("#boardPanel"),
-  boardContent: document.querySelector("#boardContent"),
   myinfoPanel: document.querySelector("#myinfoPanel"),
   myinfoContent: document.querySelector("#myinfoContent"),
   myinfoCloseBtn: document.querySelector("#myinfoCloseBtn"),
@@ -659,9 +695,6 @@ const els = {
   wordlist2Btn: document.querySelector("#wordlist2Btn"),
   wordlist2Panel: document.querySelector("#wordlist2Panel"),
   wordlist2Content: document.querySelector("#wordlist2Content"),
-  wordbook3Btn: document.querySelector("#wordbook3Btn"),
-  wordbook3Panel: document.querySelector("#wordbook3Panel"),
-  wordbook3Content: document.querySelector("#wordbook3Content"),
   logicPanel: document.querySelector("#logicPanel"),
   logicProgressBar: document.querySelector("#logicProgressBar"),
   logicQuestionText: document.querySelector("#logicQuestionText"),
@@ -669,7 +702,6 @@ const els = {
   logicFeedback: document.querySelector("#logicFeedback"),
   logicSubmitBtn: document.querySelector("#logicSubmitBtn"),
   logicNextBtn: document.querySelector("#logicNextBtn"),
-  logicJumpBtn: document.querySelector("#logicJumpBtn"),
   logicCounter: document.querySelector("#logicCounter"),
   quizModeLabel: document.querySelector("#quizModeLabel"),
   wordcheckBtn: document.querySelector("#wordcheckBtn"),
@@ -726,12 +758,18 @@ function buildQuestions() {
   const TARGET = 30;
   const viable = sourceCategories.filter(c => c.words.length >= 3);
 
+  // Distractors come from words OUTSIDE this set, so they never compete with
+  // the set's prompt/answer words and never repeat a word the user is studying.
   const setCatIds = new Set(sourceCategories.map(c => c.id));
   const distractorBank = allWords(categories).filter(e => !setCatIds.has(e.categoryId));
 
+  // No word may appear in more than one question across the whole set — not as a
+  // prompt, an answer, or a distractor. Each question consumes its words from
+  // this `used` set, so the same word is never shown twice.
   const used = new Set();
   const questions = [];
 
+  // Per category: shuffled pool of still-eligible words (mastered ones excluded)
   const pools = shuffle(viable.map(cat => {
     const mastered = state.playerName ? getCompletedPromptWords(cat.id) : new Set();
     return { cat, pool: shuffle(cat.words.filter(w => !mastered.has(w))) };
@@ -742,6 +780,7 @@ function buildQuestions() {
     progress = false;
     for (const { cat, pool } of pools) {
       if (questions.length >= TARGET) break;
+      // words from this category not yet used anywhere — need prompt + 2 answers
       const avail = pool.filter(w => !used.has(w));
       if (avail.length < 3) continue;
       const prompt = avail[0];
@@ -787,6 +826,7 @@ function renderQuestion() {
   els.submitBtn.disabled = Boolean(saved) || state.currentSelection.size !== 2;
   els.nextBtn.disabled = !saved;
   els.nextBtn.textContent = state.questionIndex === state.questions.length - 1 ? "Finish" : "Next";
+  // Sync top buttons
   els.prevTopBtn.disabled = els.prevBtn.disabled;
   els.submitTopBtn.disabled = els.submitBtn.disabled;
   els.nextTopBtn.disabled = els.nextBtn.disabled;
@@ -811,6 +851,7 @@ function renderQuestion() {
 
   if (saved) {
     if (noExplainMode) {
+      // 해설OFF: no explanation/feedback (submit auto-advances past answered questions)
       els.feedback.hidden = true;
       els.feedback.className = "feedback";
       els.feedback.textContent = "";
@@ -933,6 +974,7 @@ function toggleSelection(word) {
     state.currentSelection.add(word);
   }
 
+  // 해설OFF: as soon as two are picked, submit and jump straight to the next question
   if (noExplainMode && state.currentSelection.size === 2) {
     submitAnswer();
     return;
@@ -953,16 +995,20 @@ function submitAnswer() {
   state.correctAttempts += correct ? 1 : 0;
   state.streak = correct ? state.streak + 1 : 0;
   state.currentSelection = new Set();
+  // Track synonym progress for logged-in users
   if (state.playerName) {
     saveSynonymResult(question.categoryId, question.prompt, correct);
+    // If wrong, also mark the wrong choices
     if (!correct) {
       const wrongSelections = selected.filter(w => !question.answer.includes(w));
       wrongSelections.forEach(w => {
         saveSynonymResult(question.categoryId, w, false);
       });
     }
+    // Reflect this answer in the unified ranking right away (real-time 단어문제 score)
     saveSynonymRankResult(question.categoryId, question.prompt, correct);
-    persistSynonymRanking();
+    try { persistSynonymRanking(); } catch {}
+    // IRT ability score tracking
     const rate = (question.difficulty && typeof question.difficulty === 'object')
       ? rateQuestion(question.difficulty) : 50; // default 50% if no per-question rating
     const ability = readIrtAbility() + getScoreDelta(correct, rate);
@@ -971,6 +1017,7 @@ function submitAnswer() {
   }
   try { saveQuizProgress(); } catch {}
   if (noExplainMode) {
+    // 해설OFF: flash correct/wrong on the buttons, then advance after a brief pause
     renderQuestion(); // shows correct/wrong colors on the current options
     disableOptions();
     const delay = state.questionIndex >= state.questions.length - 1 ? 800 : 600;
@@ -1043,6 +1090,7 @@ function clearSession() {
   localStorage.removeItem(sessionKey);
 }
 
+/* ---- Quiz progress save/resume (per category set, auto-resume) ---- */
 function saveQuizProgress() {
   if (!state.playerName || state.completed || state.answers.size === 0) return;
   const userKey = state.playerName.toLowerCase();
@@ -1071,6 +1119,7 @@ function getSavedProgress(setId = state.activeSetId) {
   if (!state.playerName) return null;
   const bucket = readQuizProgressStore()[state.playerName.toLowerCase()];
   if (!bucket) return null;
+  // Legacy single-progress format: only valid for its own set
   if (Array.isArray(bucket.questions)) return bucket.activeSetId === setId ? bucket : null;
   return bucket[setId] || null;
 }
@@ -1086,6 +1135,9 @@ function clearSavedProgress(setId = state.activeSetId) {
   localStorage.setItem(quizProgressKey, JSON.stringify(store));
 }
 
+// Build runtime state from a full question set + prior answers. The working
+// list (state.questions) holds only the still-unanswered questions, so answered
+// ones never reappear; cumulative stats are preserved for accuracy.
 function loadSetSession(fullQuestions, answersEntries, stats) {
   state.setQuestions = fullQuestions;
   state.answers = new Map(answersEntries || []);
@@ -1110,6 +1162,7 @@ function resumeQuiz(progress) {
   renderQuestion();
 }
 
+// Enter a category set: auto-resume its saved progress, otherwise start fresh.
 function openSet(setId) {
   if (!categorySets[setId]) return;
   state.activeSetId = setId;
@@ -1122,10 +1175,14 @@ function openSet(setId) {
   }
 }
 
+// The Start button on the start panel just enters the active category set,
+// which auto-resumes that set's saved progress (no prompt).
 function onStartQuizClick() {
   openSet(state.activeSetId);
 }
 
+// Opening the synonym panel immediately starts the quiz with current set,
+// and shows the category nav so the user can switch sets.
 function openSynonymPanel() {
   openSet(state.activeSetId);
 }
@@ -1164,6 +1221,7 @@ async function handleLogin() {
     return;
   }
 
+  // Always pull latest cloud data first — cloud is source of truth
   const cloudResult = await cloudCheckCred(name, pw);
 
   if (cloudResult === 'WRONG_PW') {
@@ -1173,6 +1231,7 @@ async function handleLogin() {
   }
 
   if (cloudResult !== 'OK') {
+    // Cloud not available or account not found — fall back to local password store
     const store = readPasswordStore();
     const key = name.toLowerCase();
     if (!store[key]) {
@@ -1191,21 +1250,9 @@ async function handleLogin() {
       els.authError.hidden = false;
       return;
     }
-    // cloud auth failed but local password matched — still try to pull latest cloud data
-    if (cloudResult === null && hasPublicConfig()) {
-      try {
-        const client = await getSupabaseClient();
-        if (client) {
-          const { data } = await client.from(getLeaderboardTable())
-            .select('payload')
-            .eq('nickname', key).eq('quiz_set', 'USERDATA')
-            .order('created_at', { ascending: false }).limit(1).maybeSingle();
-          if (data && data.payload) { cloudPullUserData(data.payload, name); }
-        }
-      } catch(e) { console.warn('cloud pull on local-login fallback failed', e); }
-    }
   }
 
+  // Update local password store
   const store = readPasswordStore();
   store[name.toLowerCase()] = { password: btoa(pw), displayName: name };
   localStorage.setItem(passwordStoreKey, JSON.stringify(store));
@@ -1218,6 +1265,8 @@ async function handleLogin() {
   els.authPasswordInput.value = "";
   checkAndShowResume();
   await cloudPullScores();
+  // Cancel any pending debounced sync to avoid double writes
+  if (_cloudSyncTimer) { clearTimeout(_cloudSyncTimer); _cloudSyncTimer = null; }
   await cloudSyncAll();
   pushAllScoresToSupabase();
 }
@@ -1246,6 +1295,7 @@ async function handleRegister() {
     return;
   }
 
+  // Also check cloud for case-insensitive duplicate
   const cloudCheck = await cloudCheckCred(name, '');
   if (cloudCheck === 'WRONG_PW' || cloudCheck === 'OK') {
     els.authError.textContent = "이미 등록된 닉네임입니다. '로그인'을 해주세요.";
@@ -1256,21 +1306,19 @@ async function handleRegister() {
   store[key] = { password: btoa(pw), displayName: name };
   localStorage.setItem(passwordStoreKey, JSON.stringify(store));
   state.playerName = name;
-  const syncOk = await cloudSyncAll();
-  if (!syncOk) {
-    els.authError.textContent = '클라우드 동기화에 실패했습니다. 인터넷 연결 확인 후 다시 로그인해주세요. (다른 기기에서 로그인이 안 될 수 있습니다)';
-    els.authError.hidden = false;
-  }
   saveSession(name);
   renderAuthUI();
   updateSidebarCompletion();
   els.authNicknameInput.value = "";
   els.authPasswordInput.value = "";
   checkAndShowResume();
+  await cloudSyncAll();
   pushAllScoresToSupabase();
 }
 
 function checkAndShowResume() {
+  // No-op: resume now happens automatically when a category set is opened,
+  // per set, without a prompt. Kept as a stub for existing call sites.
 }
 
 function handleLogout() {
@@ -1282,8 +1330,10 @@ function handleLogout() {
   els.resultPanel.hidden = true;
   els.rankingPanel.hidden = true;
   els.startPanel.hidden = false;
+  // Reset dashboard greeting
   const greeting = document.getElementById('dashGreeting');
   if (greeting) greeting.textContent = 'V502 학습 대시보드';
+  // Hide noExplainMode button
   const noExBtn = document.getElementById('dashNoExplainBtn');
   if (noExBtn) noExBtn.style.display = 'none';
   updateNoExplainIndicator();
@@ -1298,27 +1348,17 @@ function readWordKnowledge() {
 }
 
 function writeWordKnowledge(store) {
-  try { localStorage.setItem(wordKnowledgeKey, JSON.stringify(store)); } catch {}
+  localStorage.setItem(wordKnowledgeKey, JSON.stringify(store));
 }
 
 function isWordKnown(word) {
   if (!state.playerName) return false;
   const store = readWordKnowledge();
-  const entry = store[state.playerName.toLowerCase()];
-  if (!entry) return false;
-  // Support both old array format and new object format
-  if (Array.isArray(entry)) return entry.includes(word);
-  return word in entry;
+  const userWords = store[state.playerName.toLowerCase()] || [];
+  return userWords.includes(word);
 }
 
-function getWordKnownDate(word) {
-  if (!state.playerName) return null;
-  const store = readWordKnowledge();
-  const entry = store[state.playerName.toLowerCase()];
-  if (!entry || Array.isArray(entry)) return null;
-  return entry[word] || null;
-}
-
+/* ---- Synonym quiz progress tracking ---- */
 function readSynonymProgress() {
   try { return JSON.parse(localStorage.getItem(synonymProgressKey)) || {}; }
   catch { return {}; }
@@ -1362,22 +1402,16 @@ function toggleWordKnown(word) {
   if (!state.playerName) return false;
   const store = readWordKnowledge();
   const key = state.playerName.toLowerCase();
-  // Migrate old array format to new object format
-  if (Array.isArray(store[key])) {
-    const arr = store[key];
-    store[key] = {};
-    arr.forEach(w => { store[key][w] = new Date().toISOString(); });
-  }
-  if (!store[key]) store[key] = {};
-  const wasKnown = word in store[key];
-  if (wasKnown) {
-    delete store[key][word];
+  if (!store[key]) store[key] = [];
+  const idx = store[key].indexOf(word);
+  if (idx >= 0) {
+    store[key].splice(idx, 1);
   } else {
-    store[key][word] = new Date().toISOString();
+    store[key].push(word);
   }
   writeWordKnowledge(store);
   scheduleCloudSync();
-  return !wasKnown; // true if now known
+  return idx < 0; // true if now known
 }
 
 function writePasswordStore(store) {
@@ -1386,6 +1420,7 @@ function writePasswordStore(store) {
 
 function setPasswordForNickname(nickname, password) {
   const store = readPasswordStore();
+  // Simple hash for basic protection
   store[nickname.toLowerCase()] = btoa(password);
   writePasswordStore(store);
 }
@@ -1413,7 +1448,9 @@ function sortedLeaderboard(entries) {
   );
 }
 
+/* Cumulative leaderboard: best attempt per (nickname, setId), summed across sets */
 function cumulativeLeaderboard(entries, setId = null) {
+  // Non-score buckets used for cloud backup / auth — never count toward ranking.
   const JUNK_SETS = new Set(["USERDATA", "CRED", "SYNC"]);
   const best = new Map();
   const filtered = (setId ? entries.filter((e) => e.setId === setId || (!e.setId && setId === "001-010")) : entries)
@@ -1422,6 +1459,8 @@ function cumulativeLeaderboard(entries, setId = null) {
   for (const entry of filtered) {
     const rawSet = String(entry.setId || "001-010");
     if (JUNK_SETS.has(rawSet)) continue;
+    // Logic, wordcheck and synonym rows are cumulative single rows — collapse
+    // each into one bucket per user and keep the largest (latest) total.
     const cumPrefix = rawSet.startsWith("LOGIC") ? "LOGIC"
       : rawSet.startsWith("WORDCHECK") ? "WORDCHECK"
       : rawSet.startsWith("SYNONYM") ? "SYNONYM" : null;
@@ -1431,6 +1470,7 @@ function cumulativeLeaderboard(entries, setId = null) {
     if (!existing) {
       better = true;
     } else if (cumPrefix) {
+      // The cumulative row has the most questions attempted — pick the largest
       better = entry.total > existing.total ||
                (entry.total === existing.total && entry.correct > existing.correct);
     } else {
@@ -1440,16 +1480,22 @@ function cumulativeLeaderboard(entries, setId = null) {
     if (better) best.set(key, entry);
   }
 
+  // Users who now have a cumulative SYNONYM bucket: ignore their legacy per-set
+  // synonym rows so the old per-set model and the new cumulative one don't
+  // double-count. Users without a SYNONYM bucket keep their per-set scores.
   const hasSynonymBucket = new Set();
   for (const entry of best.values()) {
     if (String(entry.setId || "").startsWith("SYNONYM")) hasSynonymBucket.add(entry.name.toLowerCase());
   }
 
+  // Aggregate by nickname across sets
   const aggregated = new Map();
   for (const entry of best.values()) {
     const nameKey = entry.name.toLowerCase();
     const rawSet = String(entry.setId || "001-010");
     const isCumBucket = rawSet.startsWith("LOGIC") || rawSet.startsWith("WORDCHECK") || rawSet.startsWith("SYNONYM");
+    // In the unified view, drop legacy per-set synonym rows once the user has a
+    // cumulative SYNONYM bucket (prevents double counting).
     if (setId === null && !isCumBucket && hasSynonymBucket.has(nameKey)) continue;
     if (!aggregated.has(nameKey)) {
       aggregated.set(nameKey, { name: entry.name, correct: 0, total: 0 });
@@ -1461,9 +1507,11 @@ function cumulativeLeaderboard(entries, setId = null) {
 
   return [...aggregated.values()]
     .map((a) => ({ ...a, accuracy: a.total ? Math.round((a.correct / a.total) * 100) : 0 }))
+    // Rank by total correct answers (score); tie-break by accuracy
     .sort((a, b) => b.correct - a.correct || b.accuracy - a.accuracy);
 }
 
+/* Upsert: replace existing entry for same (name, setId) if new is better */
 function upsertLocalScore(entry) {
   const entries = readLeaderboard();
   const idx = entries.findIndex(
@@ -1518,6 +1566,8 @@ function getLeaderboardTable() {
   return getDbConfig().tableName || "leaderboard_scores";
 }
 
+/* ── Supabase cloud sync (full data, payload column) ── */
+
 async function pushAllScoresToSupabase() {
   if (!state.playerName || !hasPublicConfig()) return;
   var entries = readLeaderboard().filter(function(e) { return e.name.toLowerCase() === state.playerName.toLowerCase(); });
@@ -1564,16 +1614,35 @@ async function cloudPullScores() {
   } catch(e) { console.warn('cloudPullScores failed', e); }
 }
 
-let _syncRunning = null;
-let _syncQueued = false;
-let _syncTimer = null;
+/* Debounced cloudSyncAll — coalesces per-action calls into a single write.
+   100 ms — imperceptible delay, fires near-instantly after last action. */
+let _cloudSyncTimer = null;
+function scheduleCloudSync() {
+  if (_cloudSyncTimer) {
+    clearTimeout(_cloudSyncTimer);
+    _cloudSyncTimer = null;
+  }
+  _cloudSyncTimer = setTimeout(() => {
+    _cloudSyncTimer = null;
+    cloudSyncAll().catch((e) => { console.warn('scheduleCloudSync failed', e); });
+  }, 100);
+}
+function flushCloudSync() {
+  if (!_cloudSyncTimer) return;
+  clearTimeout(_cloudSyncTimer);
+  _cloudSyncTimer = null;
+  cloudSyncAll().catch((e) => { console.warn('flushCloudSync failed', e); });
+}
 
-function buildUserDataPayload() {
+async function cloudSyncAll() {
+  if (!state.playerName || !hasPublicConfig()) return;
+  const client = await getSupabaseClient(); if (!client) return;
   const nk = state.playerName.toLowerCase();
+
   const pwStore = readPasswordStore();
   const pw = pwStore[nk] ? (typeof pwStore[nk]==='string' ? pwStore[nk] : atob(pwStore[nk].password)) : '';
-  const wkEntry = (readWordKnowledge()||{})[nk];
-  const wordKnowledge = JSON.stringify(wkEntry || {});
+
+  const wordKnowledge = JSON.stringify((readWordKnowledge()||{})[nk]||[]);
   const synProgress = JSON.stringify((readSynonymProgress()||{})[nk]||{});
   const wcProg = JSON.stringify(getWordcheckProgress());
   let quizProg = '{}';
@@ -1586,94 +1655,67 @@ function buildUserDataPayload() {
   const logicScore = JSON.stringify((readLogicScore()||{})[nk]||{score:0,questions:0});
   const irtAbility = JSON.stringify(readIrtAbility());
   const examData = JSON.stringify((readExamProgress()||{})[nk]||{});
-  return JSON.stringify({
-    pw, displayName: state.playerName,
-    word_knowledge: wordKnowledge, synonym_progress: synProgress,
-    synonym_result: synonymResult, wordcheck_progress: wcProg,
-    wordcheck_result: wordcheckResult, quiz_progress: quizProg,
-    logic_completed: logicDone, logic_wrong: logicWrong,
-    logic_score: logicScore, grammar_progress: grammarData,
-    exam_progress: examData, irt_ability: irtAbility,
+
+  const payload = JSON.stringify({
+    pw,
+    displayName: state.playerName,
+    word_knowledge: wordKnowledge,
+    synonym_progress: synProgress,
+    synonym_result: synonymResult,
+    wordcheck_progress: wcProg,
+    wordcheck_result: wordcheckResult,
+    quiz_progress: quizProg,
+    logic_completed: logicDone,
+    logic_wrong: logicWrong,
+    logic_score: logicScore,
+    grammar_progress: grammarData,
+    exam_progress: examData,
+    irt_ability: irtAbility,
     updated_at: new Date().toISOString()
   });
-}
 
-function scheduleCloudSync() {
-  // Debounce 3s: coalesce rapid changes
-  if (_syncTimer) clearTimeout(_syncTimer);
-  _syncTimer = setTimeout(() => {
-    _syncTimer = null;
-    if (!_syncRunning) {
-      _syncRunning = cloudSyncAll().catch((e) => { console.warn('scheduleCloudSync failed', e); }).finally(() => {
-        _syncRunning = null;
-        if (_syncQueued) { _syncQueued = false; scheduleCloudSync(); }
-      });
-    } else {
-      _syncQueued = true;
-    }
-  }, 1000);
-}
-function flushCloudSync() {
-  // Immediate sync: cancel debounce, run now
-  if (_syncTimer) { clearTimeout(_syncTimer); _syncTimer = null; }
-  if (_syncRunning) {
-    _syncRunning.finally(() => cloudSyncAll().catch((e) => { console.warn('flushCloudSync failed', e); }));
-  } else {
-    cloudSyncAll().catch((e) => { console.warn('flushCloudSync failed', e); });
-  }
-}
-// beforeunload: fetch+keepalive to guarantee sync survives page unload
-window.addEventListener('beforeunload', () => {
-  if (!state.playerName || !hasPublicConfig()) return;
-  const config = getDbConfig();
-  const nk = state.playerName.toLowerCase();
-  const table = config.tableName || 'leaderboard_scores';
-  const row = JSON.stringify({ nickname: nk, quiz_set: 'USERDATA', correct_count: 1, total_count: 1, accuracy: 1, payload: buildUserDataPayload() });
-  fetch(`${config.supabaseUrl}/rest/v1/${table}?nickname=eq.${encodeURIComponent(nk)}&quiz_set=eq.USERDATA`, {
-    method: 'PATCH',
-    headers: { 'apikey': config.supabaseAnonKey, 'Authorization': `Bearer ${config.supabaseAnonKey}`, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
-    body: row,
-    keepalive: true
-  });
-});
-
-async function cloudSyncAll() {
-  if (!state.playerName || !hasPublicConfig()) return true;
-  const client = await getSupabaseClient(); if (!client) return false;
-  const nk = state.playerName.toLowerCase();
-  const payload = buildUserDataPayload();
   const table = getLeaderboardTable();
-  const row = { nickname: nk, quiz_set: 'USERDATA', correct_count: 1, total_count: 1, accuracy: 1, payload };
+  // Try upsert first (single atomic operation — needs UNIQUE constraint on nickname,quiz_set)
+  let upsertOk = false;
+  try {
+    await client.from(table).upsert({
+      nickname: nk, quiz_set: 'USERDATA',
+      correct_count: 1, total_count: 1, accuracy: 1, payload
+    }, { onConflict: 'nickname,quiz_set' });
+    upsertOk = true;
+  } catch(upsertErr) {
+    console.warn('cloudSyncAll upsert failed (will try insert)', upsertErr);
+  }
 
-  let ok = false;
-  for (let attempt = 0; attempt < 3; attempt++) {
-    try {
-      // Try upsert first (requires unique constraint on nickname+quiz_set)
-      // Falls back to select+insert/update if constraint doesn't exist
-      const { error: upsertErr } = await client.from(table).upsert(row, { onConflict: 'nickname,quiz_set', ignoreDuplicates: false });
-      if (!upsertErr) { ok = true; break; }
-      // Fallback: manual select-then-insert/update
-      const { data: existing } = await client.from(table).select('id').eq('nickname', nk).eq('quiz_set', 'USERDATA');
-      if (existing && existing.length > 0) {
-        await client.from(table).update(row).eq('nickname', nk).eq('quiz_set', 'USERDATA');
-      } else {
-        await client.from(table).insert(row);
+  if (!upsertOk) {
+    // Insert without deleting first — never destroy data before confirming write
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        await client.from(table).insert({
+          nickname: nk, quiz_set: 'USERDATA',
+          correct_count: 1, total_count: 1, accuracy: 1, payload
+        });
+        upsertOk = true;
+        break;
+      } catch(insertErr) {
+        if (attempt === 2) console.warn('cloudSyncAll insert failed after 3 attempts', insertErr);
+        else await new Promise(r => setTimeout(r, 500 * (attempt + 1)));
       }
-      ok = true;
-      break;
-    } catch(e) {
-      if (attempt === 2) console.warn('cloudSyncAll failed after 3 attempts', e);
-      else await new Promise(r => setTimeout(r, 500 * (attempt + 1)));
     }
   }
 
-  if (!ok) {
-    if (els.authError) {
-      els.authError.textContent = '클라우드 동기화에 실패했습니다. 인터넷 연결을 확인해주세요.';
-      els.authError.hidden = false;
-    }
+  // Clean up stale duplicates if any (keep only the newest row per nickname+quiz_set)
+  if (upsertOk) {
+    try {
+      const { data: rows } = await client.from(table)
+        .select('id,created_at').eq('nickname', nk).eq('quiz_set', 'USERDATA')
+        .order('created_at', { ascending: false });
+      if (rows && rows.length > 1) {
+        const idsToDelete = rows.slice(1).map(r => r.id);
+        await client.from(table).delete().in('id', idsToDelete);
+      }
+    } catch(e) { /* non-critical: duplicate cleanup failed */ }
   }
-  return ok;
 }
 
 async function cloudCheckCred(nickname, password) {
@@ -1692,6 +1734,7 @@ async function cloudCheckCred(nickname, password) {
       return 'NOT_FOUND';
     }
     if (obj.pw !== password) return 'WRONG_PW';
+    // Restore all data
     cloudPullUserData(data.payload, nickname);
     return 'OK';
   } catch(e) { console.warn('cloudCheckCred query failed', e); return null; }
@@ -1702,12 +1745,14 @@ function cloudPullUserData(payload, nickname) {
     const obj = typeof payload === 'string' ? JSON.parse(payload) : payload;
     const nk = (nickname || state.playerName || '').toLowerCase();
     if (!nk) return;
+    // Temporarily set playerName so saveLogic* functions use the right key
     const prevName = state.playerName;
     state.playerName = nickname || prevName;
     if (obj.word_knowledge) { const s = readWordKnowledge(); s[nk] = JSON.parse(obj.word_knowledge); writeWordKnowledge(s); }
     if (obj.synonym_progress) { const s = readSynonymProgress(); s[nk] = JSON.parse(obj.synonym_progress); localStorage.setItem(synonymProgressKey, JSON.stringify(s)); }
     if (obj.wordcheck_progress) { const s = JSON.parse(localStorage.getItem('v502-wordcheck-progress')||'{}'); s[nk] = JSON.parse(obj.wordcheck_progress); localStorage.setItem('v502-wordcheck-progress', JSON.stringify(s)); }
     if (obj.quiz_progress) { const s = JSON.parse(localStorage.getItem(quizProgressKey)||'{}'); s[nk] = JSON.parse(obj.quiz_progress); localStorage.setItem(quizProgressKey, JSON.stringify(s)); }
+    // Write logic data directly to avoid triggering cloudSyncAll cascade
     if (obj.logic_completed || obj.logic_wrong) {
       const lp = readLogicProgress();
       lp[nk] = { correct: obj.logic_completed ? JSON.parse(obj.logic_completed) : [], wrong: obj.logic_wrong ? JSON.parse(obj.logic_wrong) : [] };
@@ -1715,29 +1760,12 @@ function cloudPullUserData(payload, nickname) {
     }
     if (obj.grammar_progress) {
       const gp = readGrammarProgress();
-      const cloud = JSON.parse(obj.grammar_progress);
-      // Merge: union of correct, union of wrong minus correct
-      const local = gp[nk] || { correct: [], wrong: [] };
-      const mergedCorrect = [...new Set([...(local.correct||[]), ...(cloud.correct||[])])];
-      const mergedWrong = [...new Set([...(local.wrong||[]), ...(cloud.wrong||[])])].filter(id => !mergedCorrect.includes(id));
-      gp[nk] = { correct: mergedCorrect, wrong: mergedWrong };
+      gp[nk] = JSON.parse(obj.grammar_progress);
       try { localStorage.setItem(grammarProgressKey, JSON.stringify(gp)); } catch {}
     }
     if (obj.exam_progress) {
       const ep = readExamProgress();
-      const cloudExam = JSON.parse(obj.exam_progress);
-      const localExam = ep[nk] || {};
-      // Merge per exam key: union of correct/wrong
-      const mergedExam = {};
-      const allKeys = new Set([...Object.keys(localExam), ...Object.keys(cloudExam)]);
-      allKeys.forEach(k => {
-        const l = localExam[k] || { correct: [], wrong: [] };
-        const c = cloudExam[k] || { correct: [], wrong: [] };
-        const corr = [...new Set([...(l.correct||[]), ...(c.correct||[])])];
-        const wro = [...new Set([...(l.wrong||[]), ...(c.wrong||[])])].filter(id => !corr.includes(id));
-        mergedExam[k] = { correct: corr, wrong: wro };
-      });
-      ep[nk] = mergedExam;
+      ep[nk] = JSON.parse(obj.exam_progress);
       try { localStorage.setItem(examProgressKey, JSON.stringify(ep)); } catch {}
     }
     if (obj.synonym_result) {
@@ -1780,6 +1808,7 @@ async function savePublicScore(entry) {
 
   const isCumulative = entry.setId === 'LOGIC' || entry.setId === 'WORDCHECK' || entry.setId === 'SYNONYM';
 
+  // Check if any rows already exist for this (nickname, quiz_set)
   const { data: existingRows } = await client
     .from(getLeaderboardTable())
     .select("id,accuracy")
@@ -1790,6 +1819,7 @@ async function savePublicScore(entry) {
 
   if (hasExisting) {
     if (isCumulative) {
+      // Update ALL matching rows — cumulative scores grow over time
       const { error } = await client
         .from(getLeaderboardTable())
         .update({
@@ -1802,23 +1832,19 @@ async function savePublicScore(entry) {
       if (error) throw error;
       return existingRows[0].id;
     }
+    // Non-cumulative: only update if new score is better
     const bestExisting = existingRows.reduce((a, b) => a.accuracy > b.accuracy ? a : b);
     if (entry.accuracy <= bestExisting.accuracy) {
       return bestExisting.id;
     }
-    // DELETE blocked by RLS — update all existing rows for this set instead
-    for (const row of existingRows) {
-      await client.from(getLeaderboardTable())
-        .update({
-          correct_count: entry.correct,
-          total_count: entry.total,
-          accuracy: entry.accuracy,
-        })
-        .eq("id", row.id);
-    }
-    return existingRows[0].id;
+    // Delete old rows, insert new best score
+    await client.from(getLeaderboardTable())
+      .delete()
+      .eq("nickname", entry.name)
+      .eq("quiz_set", entry.setId);
   }
 
+  // Insert new score
   const { data, error } = await client
     .from(getLeaderboardTable())
     .insert({
@@ -1835,20 +1861,22 @@ async function savePublicScore(entry) {
   return data?.id || null;
 }
 
+/* Debounced, race-free remote writer for cumulative buckets (LOGIC / WORDCHECK /
+   SYNONYM). Rapid per-question calls coalesce into a single write of the latest
+   value, so we never race SELECT-then-INSERT into duplicate or stale rows. */
 const _cumRemoteTimers = {};
 const _cumRemoteLatest = {};
 function scheduleCumulativeRemoteWrite(quizSet, name, correct, total, accuracy) {
   if (!hasPublicConfig() || !name) return;
-  const key = quizSet + '|' + name.toLowerCase();
-  _cumRemoteLatest[key] = { name, correct, total, accuracy };
-  if (_cumRemoteTimers[key]) return;
-  _cumRemoteTimers[key] = setTimeout(() => {
-    _cumRemoteTimers[key] = null;
-    const v = _cumRemoteLatest[key];
+  _cumRemoteLatest[quizSet] = { name, correct, total, accuracy };
+  if (_cumRemoteTimers[quizSet]) return; // a write is already pending; it will use the latest value
+  _cumRemoteTimers[quizSet] = setTimeout(() => {
+    _cumRemoteTimers[quizSet] = null;
+    const v = _cumRemoteLatest[quizSet];
     if (!v) return;
     getSupabaseClient()
       .then((client) => client && writeCumulativeRow(client, quizSet, v.name, v.correct, v.total, v.accuracy))
-      .catch((e) => { console.warn('cumulativeRemoteWrite failed', e); });
+.catch((e) => { console.warn('cumulativeRemoteWrite failed', e); });
   }, 700);
 }
 
@@ -1857,6 +1885,7 @@ async function writeCumulativeRow(client, quizSet, name, correct, total, accurac
   const { data: existing } = await client
     .from(table).select('id').eq('nickname', name).eq('quiz_set', quizSet);
   if (existing && existing.length) {
+    // Keep every duplicate row in sync so whichever the leaderboard picks is current.
     return client.from(table)
       .update({ correct_count: correct, total_count: total, accuracy })
       .eq('nickname', name).eq('quiz_set', quizSet);
@@ -1885,6 +1914,7 @@ async function completeQuiz() {
   const setTotal = (state.setQuestions && state.setQuestions.length) || state.questions.length;
   if (state.completed || state.answers.size < setTotal) return;
   state.completed = true;
+  // The whole set is done — switch the active list to the full set for review
   if (state.setQuestions) state.questions = state.setQuestions;
   clearSavedProgress(state.activeSetId);
 
@@ -1900,10 +1930,12 @@ async function completeQuiz() {
     completedAt: new Date().toISOString(),
   };
 
+  // Save locally for sidebar completion tracking
   if (state.playerName) {
     upsertLocalScore(entry);
     updateSidebarCompletion();
   }
+  // Save public score if logged in
   if (state.playerName && hasPublicConfig()) {
     savePublicScore(entry).catch((e) => { console.warn('completeQuiz savePublicScore failed', e); });
   }
@@ -1912,8 +1944,9 @@ async function completeQuiz() {
   els.resultPanel.hidden = false;
   const tier = getTier(readIrtAbility());
   els.resultTitle.textContent = `${displayName}'s Result`;
-  els.resultSummary.innerHTML = `${entry.correct}/${entry.total} correct — ${accuracy}% accuracy — ${tier.icon} ${tier.name}`;
+  els.resultSummary.textContent = `${entry.correct}/${entry.total} correct — ${accuracy}% accuracy — ${tier.icon} ${tier.name}`;
 
+  // Show question-by-question review
   let reviewHTML = '<div style="max-height:50vh;overflow-y:auto;margin:16px 0">';
   reviewHTML += '<h4 style="margin-bottom:8px">📋 문제별 리뷰</h4>';
   (state.setQuestions || state.questions).forEach((q, i) => {
@@ -1932,6 +1965,7 @@ async function completeQuiz() {
   });
   reviewHTML += '</div>';
 
+  // NEXT button to go to the next category set
   const nextSetId = getNextSetId(state.activeSetId);
   if (nextSetId) {
     const nextLabel = categorySets[nextSetId] ? categorySets[nextSetId].label : nextSetId;
@@ -1947,18 +1981,22 @@ async function completeQuiz() {
     return;
   }
 
+  // Show public ranking
   renderPublicResult(displayName, accuracy, entry.correct, entry.total);
 }
 
 function reviewQuestion(index) {
+  // Navigate to the question in review mode (read-only)
   state.questionIndex = index;
   state.currentSelection = new Set();
   els.resultPanel.hidden = true;
   els.quizPanel.hidden = false;
   renderQuestion();
+  // Disable interaction
   els.submitBtn.disabled = true;
   els.submitTopBtn.disabled = true;
   els.options.querySelectorAll('.option').forEach(b => b.disabled = true);
+  // Add a "back to results" button
   els.nextBtn.textContent = "Back to Results";
   els.nextBtn.disabled = false;
   els.nextTopBtn.textContent = "Back to Results";
@@ -1969,13 +2007,16 @@ function reviewQuestion(index) {
     els.resultPanel.hidden = false;
     els.nextBtn.textContent = "Next";
     els.nextTopBtn.textContent = "Next";
+    // Reset buttons
     els.submitBtn.disabled = true;
     els.submitTopBtn.disabled = true;
   };
   els.nextTopBtn.onclick = els.nextBtn.onclick;
 }
 
+/* ---- Public ranking only ---- */
 function renderPublicResult(displayName, accuracy, correct, total) {
+  // Append public ranking below existing content (don't overwrite review)
   const existingHTML = els.leaderboard.innerHTML;
   els.leaderboard.innerHTML = existingHTML + `<p class="ranking-note" style="margin-top:12px">Loading public ranking…</p>`;
 
@@ -1996,7 +2037,7 @@ function renderPublicResult(displayName, accuracy, correct, total) {
             <li>
               <span>${idx + 1}. ${escapeHtml(item.name)}</span>
               <b>${item.correct}점</b>
-              <small>${item.accuracy}%</small>
+              <small>${item.accuracy}% · ${item.correct}/${item.total}</small>
             </li>
           `).join("")}
         </ol>
@@ -2007,6 +2048,7 @@ function renderPublicResult(displayName, accuracy, correct, total) {
   });
 }
 
+/* ---- Mode switching: only one panel active at a time ---- */
 function switchMode(mode) {
   els.startPanel.hidden = true;
   els.quizPanel.hidden = true;
@@ -2014,26 +2056,28 @@ function switchMode(mode) {
   els.rankingPanel.hidden = true;
   els.wordlistPanel.hidden = true;
   els.logicPanel.hidden = true;
-  els.boardPanel.hidden = true;
   els.myinfoPanel.hidden = true;
   els.dashboardPanel.hidden = true;
   els.wordlist2Panel.hidden = true;
-  els.wordbook3Panel.hidden = true;
   els.wordcheckPanel.hidden = true;
   els.grammar201Panel.hidden = true;
   els.examPanel.hidden = true;
   logicState.active = false;
   els.shuffleBtn.disabled = true;
   els.resetBtn.disabled = true;
+  // The synonym-quiz toolbar/progress bar only make sense in quiz/start modes
   const isSynonym = (mode === 'quiz' || mode === 'start');
   const toolbar = document.querySelector('.workspace > .toolbar');
   const progress = document.querySelector('.workspace > .progress');
   if (toolbar) toolbar.style.display = isSynonym ? '' : 'none';
   if (progress) progress.style.display = isSynonym ? '' : 'none';
+  // The brand bar is the home button — redundant on the dashboard itself
   const appbar = document.querySelector('.workspace > .appbar');
   if (appbar) appbar.style.display = (mode === 'dashboard') ? 'none' : 'flex';
+  // Hide category nav wrapper except for quiz/start modes
   const catWrapper = document.querySelector('.cat-nav-wrapper');
   if (catWrapper) catWrapper.style.display = (mode === 'quiz' || mode === 'start') ? '' : 'none';
+  // Update current set display
   if (mode === 'logic') {
     els.activeSetLabel.textContent = "논리문제";
     els.activeSetMeta.textContent = `${getLogicTotal()} questions`;
@@ -2053,30 +2097,11 @@ function switchMode(mode) {
   updateNoExplainIndicator();
 }
 
-async function flushCumulativeWrites() {
-  const keys = Object.keys(_cumRemoteTimers);
-  const promises = [];
-  for (const key of keys) {
-    clearTimeout(_cumRemoteTimers[key]);
-    _cumRemoteTimers[key] = null;
-    const v = _cumRemoteLatest[key];
-    if (!v) continue;
-    const quizSet = key.split('|')[0];
-    promises.push(
-      getSupabaseClient()
-        .then((client) => client && writeCumulativeRow(client, quizSet, v.name, v.correct, v.total, v.accuracy))
-        .catch((e) => { console.warn('flushCumulativeWrites failed', e); })
-    );
-  }
-  await Promise.all(promises);
-}
-
-async function showRanking() {
+function showRanking() {
   switchMode('ranking');
   els.rankingPanel.hidden = false;
   flushCloudSync();
-  await flushCumulativeWrites();
-  await pushAllScoresToSupabase();
+  pushAllScoresToSupabase();
 
   els.rankingTitle.textContent = "RANKING";
   els.rankingSummary.textContent = "loading...";
@@ -2093,17 +2118,7 @@ async function showRanking() {
       return;
     }
     readPublicLeaderboard().then((data) => {
-      const registered = new Map();
-      for (const row of data) {
-        if (row.setId === 'USERDATA') registered.set(row.name.toLowerCase(), row.name);
-      }
       const cumulative = cumulativeLeaderboard(data, null);
-      for (const [nk, displayName] of registered) {
-        if (!cumulative.find(c => c.name.toLowerCase() === nk)) {
-          cumulative.push({ name: displayName, correct: 0, total: 0, accuracy: 0 });
-        }
-      }
-      cumulative.sort((a, b) => b.correct - a.correct || b.accuracy - a.accuracy);
       const totalPlayers = cumulative.length;
       if (!cumulative.length) {
         els.rankingContent.innerHTML = "<p style='color:var(--muted);font-style:italic'>no scores yet</p>";
@@ -2114,40 +2129,42 @@ async function showRanking() {
 
       const colors = ['#FF6B35','#FFD449','#06D6A0','#118AB2','#EF476F','#073B4C','#8338EC','#FF006E'];
       const top3 = cumulative.slice(0, 3);
-      const rest = cumulative.slice(3, 50);
+      const rest = cumulative.slice(3, 30);
 
       let html = '';
-      html += '<div class="rank-podium">';
+      // Top 3 — hero blocks
+      html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:32px">';
       top3.forEach((item, idx) => {
         const medals = ['🥇','🥈','🥉'];
         const tier = getTierForRanking(item.correct, item.total);
-        const sizes = ['130%','115%','105%'];
+        const sizes = ['160%','130%','110%'];
         const color = colors[idx];
-        html += `<div class="rank-podium-card" style="background:${color}">
-          <div class="rank-podium-medal">${medals[idx]}</div>
-          <div class="rank-podium-rank">#${idx+1}</div>
-          <div class="rank-podium-name">${escapeHtml(item.name)}</div>
-          <div class="rank-podium-tier">${tier.icon} ${tier.name}</div>
-          <div class="rank-podium-score">${item.correct}<small>점</small></div>
+        html += `<div style="background:${color};border-radius:2px;padding:20px 14px;text-align:center;color:#fff;position:relative;overflow:hidden">
+          <div style="font-size:${sizes[idx]};font-weight:900;line-height:1;opacity:0.25;position:absolute;top:4px;right:8px">${medals[idx]}</div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;opacity:0.7;margin-bottom:4px">#${idx+1}</div>
+          <div style="font-size:16px;font-weight:800;margin-bottom:2px;word-break:break-all">${escapeHtml(item.name)}</div>
+          <div style="font-size:11px;opacity:0.85;margin-bottom:6px">${tier.icon} ${tier.name}</div>
+          <div style="font-size:28px;font-weight:900;line-height:1">${item.correct}<span style="font-size:14px;font-weight:400">점</span></div>
+          <div style="font-size:11px;opacity:0.7">${item.accuracy}% · ${item.correct}/${item.total}</div>
         </div>`;
       });
       html += '</div>';
 
+      // Rest — brutalist list
       if (rest.length) {
-        html += '<div class="rank-list">';
-        const topScore = rest.length ? Math.max(...rest.map(r => r.correct), 1) : 1;
+        html += '<div style="display:grid;gap:6px">';
         rest.forEach((item, idx) => {
           const rank = idx + 4;
           const tier = getTierForRanking(item.correct, item.total);
-          const barW = Math.min(100, (item.correct / topScore) * 100);
-          const highlight = item.name.toLowerCase() === (state.playerName || '').toLowerCase() ? ' highlight' : '';
-          html += `<div class="rank-row${highlight}">
-            <span class="rank-row-num">${rank}</span>
-            <div class="rank-row-body">
-              <div class="rank-row-name">${escapeHtml(item.name)} <span class="rank-row-tier">${tier.icon} ${tier.name}</span></div>
-              <div class="rank-row-bar"><div class="rank-row-bar-fill" style="width:${barW}%;background:${colors[rank % colors.length]}"></div></div>
+          const barW = Math.min(100, item.accuracy);
+          html += `<div style="display:grid;grid-template-columns:28px 1fr 55px 55px;align-items:center;gap:10px;padding:8px 12px;background:#fff;border-radius:10px;border:1px solid #eee">
+            <span style="font-size:12px;font-weight:700;color:var(--muted);text-align:right">${rank}</span>
+            <div style="min-width:0">
+              <div style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${escapeHtml(item.name)} <span style="font-size:11px;opacity:0.6">${tier.icon} ${tier.name}</span></div>
+              <div style="height:4px;border-radius:2px;background:#f0f0f0;margin-top:4px"><div style="height:100%;width:${barW}%;border-radius:2px;background:${colors[rank % colors.length]}"></div></div>
             </div>
-            <span class="rank-row-score">${item.correct}<small>점</small></span>
+            <span style="font-size:18px;font-weight:800;text-align:right">${item.correct}<span style="font-size:10px;font-weight:400;color:var(--muted)">점</span></span>
+            <span style="font-size:11px;color:var(--muted);text-align:right">${item.accuracy}%</span>
           </div>`;
         });
         html += '</div>';
@@ -2165,6 +2182,8 @@ function getActiveSetCount() {
 }
 
 let wlHideKnown = false;
+let wlCollapseMid = true;
+let wlCollapseHigh = true;
 
 function showWordlist() {
   switchMode('wordlist');
@@ -2173,8 +2192,8 @@ function showWordlist() {
     <span class="wl-title-main">전체 단어 일람 (${categories.length}개 범주)</span>
     <span class="wl-jump-controls">
       ${state.playerName ? `<button class="wl-jump-btn wl-hideknown-btn${wlHideKnown ? ' wl-hideknown-on' : ''}" type="button" title="아는 단어(✓) 숨기기">${wlHideKnown ? '✓ 아는 단어 숨김' : '아는 단어 안보기'}</button>` : ''}
-      <button class="wl-jump-btn" type="button" data-jump-target="199" title="범주 199번으로 이동">범주200</button>
-      <button class="wl-jump-btn" type="button" data-jump-target="399" title="범주 399번으로 이동">범주400</button>
+      <button class="wl-jump-btn" type="button" data-jump-target="200" title="범주 200번으로 이동">범주200</button>
+      <button class="wl-jump-btn" type="button" data-jump-target="400" title="범주 400번으로 이동">범주400</button>
     </span>
   `;
   els.wordlistTitle.querySelectorAll('.wl-jump-btn[data-jump-target]').forEach((button) => {
@@ -2184,19 +2203,31 @@ function showWordlist() {
   if (hideBtn) hideBtn.addEventListener('click', () => { wlHideKnown = !wlHideKnown; showWordlist(); });
   const hideKnown = wlHideKnown && state.playerName;
   let html = '<div class="wordlist-scroll">';
-  // 20-category chunks
-  const CAT_CHUNK = 20;
-  const catChunks = [];
-  for (let i = 0; i < categories.length; i += CAT_CHUNK) {
-    catChunks.push(categories.slice(i, i + CAT_CHUNK));
-  }
-  catChunks.forEach((chunk, chunkIdx) => {
-    var firstId = chunk[0].id;
-    var lastId = chunk[chunk.length - 1].id;
-    html += '<details class="wb3-section"' + (chunkIdx === 0 ? ' open' : '') + '>';
-    html += '<summary class="wb3-summary">범주 ' + firstId + '~' + lastId + ' <small>(' + chunk.length + '개 범주)</small></summary>';
-    chunk.forEach(cat => {
+  // Split into three ranges for independent toggles
+  const catsLow  = categories.filter(c => parseInt(c.id) < 200);
+  const catsMid  = categories.filter(c => parseInt(c.id) >= 200 && parseInt(c.id) < 400);
+  const catsHigh = categories.filter(c => parseInt(c.id) >= 400);
+  [...catsLow, null, ...catsMid, null, ...catsHigh].forEach(cat => {
+    // null sentinel = boundary between ranges
+    if (cat === null) {
+      const nextIsMid = html.indexOf('wl-mid-cats') === -1 && html.indexOf('wl-high-cats') === -1;
+      if (nextIsMid) {
+        // Collapsed bar sits outside the hidden div so it's always clickable
+        html += `<div id="wl-mid-collapsed"${wlCollapseMid ? '' : ' hidden'} style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404"><button type="button" class="wl-jump-btn" style="font-size:12px;padding:4px 16px" onclick="wlCollapseMid=false;showWordlist()">범주 200~399 펴기 ▸</button></div>`;
+        html += `<div id="wl-mid-cats"${wlCollapseMid ? ' hidden' : ''}>`;
+        html += `<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">범주 200~399 — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 8px" onclick="document.getElementById('wl-mid-cats').hidden=true;wlCollapseMid=true;document.getElementById('wl-mid-collapsed').hidden=false;">접기</button></div>`;
+      } else {
+        html += '</div>'; // close wl-mid-cats
+        // Collapsed bar for 400-620 sits outside the hidden div
+        html += `<div id="wl-high-collapsed"${wlCollapseHigh ? '' : ' hidden'} style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404"><button type="button" class="wl-jump-btn" style="font-size:12px;padding:4px 16px" onclick="wlCollapseHigh=false;showWordlist()">범주 400~620 펴기 ▸</button></div>`;
+        html += `<div id="wl-high-cats"${wlCollapseHigh ? ' hidden' : ''}>`;
+        html += `<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">범주 400~620 — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 8px" onclick="document.getElementById('wl-high-cats').hidden=true;wlCollapseHigh=true;document.getElementById('wl-high-collapsed').hidden=false;">접기</button></div>`;
+      }
+      return;
+    }
     const summary = categorySummaries[cat.id] || '';
+    // When hiding known words, drop checked (✓) words; if the whole category is
+    // known, skip it entirely — name included — so only unknown words remain.
     const catWords = hideKnown ? cat.words.filter(w => !isWordKnown(w)) : cat.words;
     if (catWords.length === 0) return;
     const hasCollocations = catWords.some(w => {
@@ -2246,6 +2277,7 @@ function showWordlist() {
       html += `</span>`;
     });
     html += `</div>`;
+    // Collocation detail (hidden)
     if (hasCollocations) {
       html += `<div class="wl-detail" id="wl-detail-${escapeHtml(cat.id)}" hidden>`;
       html += `<ul class="wl-detail-list">`;
@@ -2259,6 +2291,7 @@ function showWordlist() {
       });
       html += `</ul></div>`;
     }
+    // Korean usage detail (hidden)
     if (hasKoreanUsage) {
       html += `<div class="wl-detail wl-detail-usage" id="wl-usage-${escapeHtml(cat.id)}" hidden>`;
       html += `<ul class="wl-detail-list">`;
@@ -2271,6 +2304,7 @@ function showWordlist() {
       });
       html += `</ul></div>`;
     }
+    // Example sentences detail (hidden)
     if (hasExamples) {
       html += `<div class="wl-detail wl-detail-examples" id="wl-example-${escapeHtml(cat.id)}" hidden>`;
       html += `<ul class="wl-detail-list">`;
@@ -2285,8 +2319,7 @@ function showWordlist() {
     }
     html += `</div>`;
   });
-  html += '</details>';
-  });
+  html += '</div>'; // close wl-high-cats (wl-mid-cats closed by second null sentinel)
   html += '</div>';
   els.wordlistContent.innerHTML = html;
 }
@@ -2311,6 +2344,7 @@ function handleWordToggle(word, element) {
   const becameKnown = toggleWordKnown(word);
   if (becameKnown) {
     element.classList.add('wl-known');
+    // Add checkmark if not present
     if (!element.querySelector('.wl-check')) {
       const check = document.createElement('span');
       check.className = 'wl-check';
@@ -2341,123 +2375,31 @@ function showWordlist2() {
     html += '<button class="wl-jump-btn wl-hideknown-btn' + (wlHideKnown ? ' wl-hideknown-on' : '') + '" type="button" id="wl2HideBtn" title="아는 단어(✓) 숨기기">' + (wlHideKnown ? '✓ 아는 단어 숨김' : '아는 단어 안보기') + '</button>';
   }
   html += '</div>';
-  // 300-word chunks
-  const CHUNK = 300;
-  const chunks = [];
-  for (let i = 0; i < visible.length; i += CHUNK) {
-    chunks.push({ start: i, end: Math.min(i + CHUNK - 1, visible.length - 1), items: visible.slice(i, i + CHUNK) });
-  }
-  function renderWL2Entries(items) {
-    let h = '<div class="wordlist2-entries">';
-    items.forEach((item) => {
-      const hasEx = item.ex && item.ex.length > 20;
-      const w = item.w || '';
-      const m = item.m || '';
-      const known = state.playerName && isWordKnown(w);
-      h += '<div class="wl2-entry">';
-      h += '<span class="wl2-word' + (known ? ' wl-known' : '') + (state.playerName ? ' wl-clickable' : '') + '"';
-      if (state.playerName) {
-        h += ' onclick="handleWordToggle(\'' + escapeHtml(w) + '\', this)" title="클릭하여 안다/모른다 표시"';
-      }
-      h += '>';
-      if (known) h += '<span class="wl-check">✓</span>';
-      h += escapeHtml(w) + '</span>';
-      if (m) h += '<span class="wl2-meaning">' + escapeHtml(m) + '</span>';
-      if (hasEx) h += '<div class="wl2-example">' + escapeHtml(item.ex) + '</div>';
-      h += '</div>';
-    });
-    h += '</div>';
-    return h;
-  }
-  chunks.forEach((chunk, idx) => {
-    html += '<details class="wb3-section"' + (idx === 0 ? ' open' : '') + '>';
-    html += '<summary class="wb3-summary">[' + (chunk.start + 1) + '~' + (chunk.end + 1) + '번] <small>(' + chunk.items.length + '개)</small></summary>';
-    html += renderWL2Entries(chunk.items);
-    html += '</details>';
+  html += '<div class="wordlist2-entries">';
+  visible.forEach((item, idx) => {
+    const hasEx = item.ex && item.ex.length > 20;
+    const w = item.w || '';
+    const m = item.m || '';
+    const known = state.playerName && isWordKnown(w);
+    html += '<div class="wl2-entry">';
+    html += '<span class="wl2-word' + (known ? ' wl-known' : '') + (state.playerName ? ' wl-clickable' : '') + '"';
+    if (state.playerName) {
+      html += ' onclick="handleWordToggle(\'' + escapeHtml(w) + '\', this)" title="클릭하여 안다/모른다 표시"';
+    }
+    html += '>';
+    if (known) html += '<span class="wl-check">✓</span>';
+    html += escapeHtml(w) + '</span>';
+    if (m) html += '<span class="wl2-meaning">' + escapeHtml(m) + '</span>';
+    if (hasEx) html += '<div class="wl2-example">' + escapeHtml(item.ex) + '</div>';
+    html += '</div>';
   });
-  html += '</div></div>';
+  html += '</div></div></div>';
   els.wordlist2Content.innerHTML = html;
 
+  // Attach hide button listener after DOM is set
   const hideBtn = document.getElementById('wl2HideBtn');
   if (hideBtn) {
     hideBtn.addEventListener('click', () => { wlHideKnown = !wlHideKnown; showWordlist2(); });
-  }
-}
-
-let wb3HideKnown = false;
-
-function showWordbook3() {
-  switchMode('wordlist');
-  els.wordbook3Panel.hidden = false;
-  const words = window.__V502_WORDBOOK3__ || [];
-  const hideKnown = wb3HideKnown && state.playerName;
-  const visible = hideKnown ? words.filter(item => !isWordKnown(item.w || '')) : words;
-  const hiddenCount = words.length - visible.length;
-
-  let totalCountDisplay = words.length;
-  let html = '<div class="wordlist-scroll"><div class="wordlist-cat">';
-  html += '<h4><span class="wl-cat-num">WB3</span> 단어장3 — ' + visible.length + ' / ' + totalCountDisplay + ' 단어';
-  if (hiddenCount > 0) html += ' <small style="color:var(--muted);font-weight:400">(' + hiddenCount + '개 숨김)</small>';
-  html += '</h4>';
-  html += '<div style="margin-bottom:8px;display:flex;gap:6px;flex-wrap:wrap">';
-  if (state.playerName) {
-    html += '<button class="wl-jump-btn wl-hideknown-btn' + (wb3HideKnown ? ' wl-hideknown-on' : '') + '" type="button" id="wb3HideBtn" title="외운 단어(✓) 숨기기">' + (wb3HideKnown ? '✓ 외운 단어 숨김' : '외운 단어 안보기') + '</button>';
-  }
-  html += '</div>';
-
-  // 500-word chunks, all collapsed by default
-  const CHUNK = 500;
-  const totalChunks = Math.ceil(words.length / CHUNK);
-  const sections = [];
-  for (let c = 0; c < totalChunks; c++) {
-    sections.push({ start: c * CHUNK, end: Math.min((c + 1) * CHUNK - 1, words.length - 1), items: [] });
-  }
-
-  visible.forEach((item) => {
-    const originalIdx = words.indexOf(item);
-    const chunkIdx = Math.floor(originalIdx / CHUNK);
-    if (chunkIdx < sections.length) sections[chunkIdx].items.push(item);
-  });
-
-  function renderEntries(items) {
-    let h = '<div class="wordlist2-entries">';
-    items.forEach((item) => {
-      const w = item.w || '';
-      const m = item.m || '';
-      const p = item.p || '';
-      const pos = item.pos || '';
-      const known = state.playerName && isWordKnown(w);
-      h += '<div class="wl2-entry">';
-      h += '<span class="wl2-word' + (known ? ' wl-known' : '') + (state.playerName ? ' wl-clickable' : '') + '"';
-      if (state.playerName) {
-        h += ' onclick="handleWordToggle(\'' + escapeHtml(w) + '\', this)" title="클릭하여 안다/모른다 표시"';
-      }
-      h += '>';
-      if (known) h += '<span class="wl-check">✓</span>';
-      h += escapeHtml(w) + '</span>';
-      if (pos) h += '<span class="wl2-pos">' + escapeHtml(pos) + '</span>';
-      if (m) h += '<span class="wl2-meaning" style="margin-left:4px">' + escapeHtml(m) + '</span>';
-      h += '</div>';
-    });
-    h += '</div>';
-    return h;
-  }
-
-  sections.forEach((sec, idx) => {
-    if (sec.items.length === 0) return;
-    var label = sec.start + '~' + sec.end + '번 단어';
-    html += '<details class="wb3-section"' + (idx === 0 ? ' open' : '') + '>';
-    html += '<summary class="wb3-summary">[' + label + '] <small>(' + sec.items.length + '개)</small></summary>';
-    html += renderEntries(sec.items);
-    html += '</details>';
-  });
-
-  html += '</div></div>';
-  els.wordbook3Content.innerHTML = html;
-
-  const hideBtn = document.getElementById('wb3HideBtn');
-  if (hideBtn) {
-    hideBtn.addEventListener('click', () => { wb3HideKnown = !wb3HideKnown; showWordbook3(); });
   }
 }
 
@@ -2521,6 +2463,7 @@ function updateSetDisplay() {
 
 function selectCategorySet(setId) {
   if (!categorySets[setId]) return;
+  // Re-selecting the active set is allowed so it resumes that set's progress
   if (state.playerName) {
     openSet(setId);
   } else {
@@ -2560,6 +2503,7 @@ function startWithName(event) {
 
   const pwd = els.passwordInput.value.trim();
 
+  // If nickname already has a password, it must match
   if (hasPassword(name)) {
     if (!pwd) {
       els.passwordHint.textContent = "This nickname is claimed. Enter your password.";
@@ -2578,6 +2522,7 @@ function startWithName(event) {
   state.playerName = name;
   state.playerPassword = pwd;
 
+  // Set password for new nicknames
   if (pwd) {
     setPasswordForNickname(name, pwd);
   }
@@ -2587,25 +2532,11 @@ function startWithName(event) {
   startQuiz();
 }
 
-function openBoard() {
-  switchMode('board');
-  renderBoard();
-}
-function renderBoard() {
-  let html = '<div style="max-width:900px">';
-  html += '<h3>게시판</h3>';
-  html += '<p style="color:var(--muted)">게시판 기능은 준비 중입니다.</p>';
-  html += '</div>';
-  els.boardPanel.innerHTML = html;
-  els.boardPanel.hidden = false;
-}
-els.boardPanel.addEventListener("click", function(e) {
-  if (e.target === this) { this.hidden = true; }
-});
-
+// Auth event listeners
 els.authLoginBtn.addEventListener("click", handleLogin);
 els.authRegisterBtn.addEventListener("click", handleRegister);
 els.authLogoutBtn.addEventListener("click", handleLogout);
+// Enter key to login
 els.authNicknameInput.addEventListener("keydown", (e) => { if (e.key === 'Enter') els.authPasswordInput.focus(); });
 els.authPasswordInput.addEventListener("keydown", (e) => { if (e.key === 'Enter') handleLogin(); });
 els.startQuizBtn.addEventListener("click", onStartQuizClick);
@@ -2626,10 +2557,6 @@ els.wordlist2Btn.addEventListener("click", showWordlist2);
 els.wordlist2Panel.addEventListener("click", function(e) {
   if (e.target === this) { this.hidden = true; els.startPanel.hidden = false; }
 });
-els.wordbook3Btn.addEventListener("click", showWordbook3);
-els.wordbook3Panel.addEventListener("click", function(e) {
-  if (e.target === this) { this.hidden = true; els.startPanel.hidden = false; }
-});
 els.categoryButtons.forEach((button) => {
   button.addEventListener("click", () => selectCategorySet(button.dataset.setId));
   const smallEl = button.querySelector("small");
@@ -2647,6 +2574,7 @@ function updateSidebarCompletion() {
       completed.set(e.setId, e);
     }
   }
+  // In-progress synonym tracking per set
   const synRes = readSynonymResult();
   const userSyn = synRes[nk] || { correct: [], wrong: [] };
   const answeredIds = new Set([...(userSyn.correct || []), ...(userSyn.wrong || [])]);
@@ -2660,6 +2588,7 @@ function updateSidebarCompletion() {
       smallEl.textContent = `✓ ${entry.accuracy}%`;
       button.style.borderColor = "rgba(20,108,108,0.5)";
     } else {
+      // Count in-progress answers for this set's categories
       const setCats = categorySets[setId] ? categorySets[setId].ids : [];
       let setTotal = 0, setAnswered = 0;
       setCats.forEach(catId => {
@@ -2681,6 +2610,7 @@ function updateSidebarCompletion() {
   });
 }
 
+// Restore session on page load
 const savedSession = getSession();
 if (savedSession && savedSession.name) {
   const store = readPasswordStore();
@@ -2688,6 +2618,7 @@ if (savedSession && savedSession.name) {
   if (store[key]) {
     const stored = store[key];
     state.playerName = (typeof stored === 'object' && stored.displayName) ? stored.displayName : savedSession.name;
+    // Pull latest cloud data + scores, then push local state
     const pw = typeof stored === 'string' ? stored : atob(stored.password);
     cloudCheckCred(state.playerName, pw).then(() => {
       return cloudPullScores();
@@ -2706,10 +2637,12 @@ els.quizPanel.hidden = true;
 renderAuthUI();
 updateSetDisplay();
 
+// Save quiz progress on tab close / navigation away
 window.addEventListener("beforeunload", () => { saveQuizProgress(); flushCloudSync(); });
 window.addEventListener("pagehide", () => { saveQuizProgress(); flushCloudSync(); });
 window.addEventListener("pagehide", () => saveQuizProgress());
 
+/* ======== Logic Quiz ======== */
 const logicProgressKey = "v502-logic-progress";
 const logicScoreKey = "v502-logic-score"; // weighted cumulative score
 const synonymProgressKey = "v502-synonym-progress";
@@ -2731,6 +2664,7 @@ function saveLogicCorrect(qid) {
   const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
   if (!p[key]) p[key] = { correct: [], wrong: [] };
   if (!p[key].correct.includes(qid)) p[key].correct.push(qid);
+  // Keep correct/wrong disjoint so cumulative total never double-counts a question
   p[key].wrong = (p[key].wrong || []).filter((id) => id !== qid);
   try { localStorage.setItem(logicProgressKey, JSON.stringify(p)); } catch {}
   addWeightedScore(qid, true);
@@ -2746,6 +2680,7 @@ function saveLogicWrong(qid) {
   scheduleCloudSync();
 }
 
+/* Grammar progress persistence */
 const grammarProgressKey = "v502-grammar-progress";
 function readGrammarProgress() {
   try { return JSON.parse(localStorage.getItem(grammarProgressKey)) || {}; }
@@ -2774,6 +2709,7 @@ function getGrammarWrong() {
   return new Set((p[key] && p[key].wrong) || []);
 }
 
+/* Exam progress persistence */
 const examProgressKey = "v502-exam-progress";
 function readExamProgress() {
   try { return JSON.parse(localStorage.getItem(examProgressKey)) || {}; }
@@ -2805,6 +2741,7 @@ function getExamProgress(tab) {
   return { correct: new Set(entry.correct), wrong: new Set(entry.wrong) };
 }
 
+/* Weighted scoring using the 7-factor regression seed */
 function readLogicScore() {
   try { return JSON.parse(localStorage.getItem(logicScoreKey)) || {}; }
   catch { return {}; }
@@ -2816,11 +2753,13 @@ function addWeightedScore(qid, isCorrect) {
   const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
   const scores = readLogicScore();
   if (!scores[key]) scores[key] = { score: 0, questions: 0 };
+  // Prevent double-counting: only add if this specific qid hasn't been scored yet
   const scoredKey = key + "_scored";
   const scored = readLogicScore()[scoredKey] || {};
   if (scored[qid]) return; // already counted
   scored[qid] = true;
   scores[scoredKey] = scored;
+  // Get difficulty-weighted delta
   const diff = window.__V502_LOGIC_DIFFICULTY__;
   const delta = diff && diff.getScoreDelta ? diff.getScoreDelta(isCorrect, qid) : (isCorrect ? 1.5 : -1);
   scores[key].score = +(scores[key].score + parseFloat(delta)).toFixed(4);
@@ -2846,34 +2785,40 @@ function getLogicTotal() {
   return (window.__V502_LOGIC__ && window.__V502_LOGIC__.questions || []).length;
 }
 
+/* Push the player's *cumulative* logic stats to the ranking using WEIGHTED SCORES.
+   Each answer contributes a difficulty-adjusted delta, not just +1/-0. */
 function persistLogicRanking() {
   if (!state.playerName) return;
-  const correct = getLogicCompleted().size;
-  const wrong = getLogicWrong().size;
-  const total = correct + wrong;
-  if (total === 0) return;
-  const accuracy = Math.round((correct / total) * 100);
+  const ws = getLogicWeightedScore();
+  if (ws.questions === 0) return;
+  // Scale weighted score to a display-friendly range (~0-100 for readability)
+  // Raw weighted score per question: ~0.01 to ~1.5.  Scale up ×40 → 0.4 to 60 range.
+  const displayScore = Math.max(0, Math.round(ws.score * 40 * 100) / 100);
+  const accuracy = Math.round((getLogicCompleted().size / (getLogicCompleted().size + getLogicWrong().size || 1)) * 100);
 
+  // Local: replace any prior logic entries with a single cumulative weighted one
   const nameKey = state.playerName.toLowerCase();
   const entries = readLeaderboard().filter(
     (e) => !(e.name.toLowerCase() === nameKey && String(e.setId || "").startsWith("LOGIC")),
   );
   entries.push({
     name: state.playerName,
-    correct,                              // raw correct count (not weighted)
-    total,                                // questions attempted
+    correct: displayScore,              // weighted score (scaled)
+    total: ws.questions,                // questions attempted
     accuracy,
-    setId: "LOGIC", setLabel: "Logic Quiz", completedAt: new Date().toISOString(),
+    setId: "LOGIC", setLabel: "Logic Quiz (weighted)", completedAt: new Date().toISOString(),
   });
   writeLeaderboard(entries);
 
-  scheduleCumulativeRemoteWrite("LOGIC", state.playerName, correct, total, accuracy);
+  // Public: coalesced, race-free write of the single (nickname, LOGIC) cumulative row
+  scheduleCumulativeRemoteWrite("LOGIC", state.playerName, displayScore, ws.questions, accuracy);
 }
 
 function shuffleLogicQuestions() {
   const raw = (window.__V502_LOGIC__ && window.__V502_LOGIC__.questions) || [];
   const completed = getLogicCompleted();
   const wrong = getLogicWrong();
+  // Exclude every question already answered (correct OR wrong) so none repeats
   const remaining = raw.filter(q => !completed.has(q.id) && !wrong.has(q.id));
   logicState.questions = [...remaining].sort(() => Math.random() - 0.5);
 }
@@ -2887,6 +2832,7 @@ function startLogicQuiz() {
   els.logicPanel.hidden = false;
   syncNoExplainButtons();
   if (logicState.questions.length === 0) {
+    // Every question already answered — nothing left to show
     showLogicAllDone();
     return;
   }
@@ -2907,6 +2853,8 @@ function showLogicAllDone() {
 }
 
 function setBtnDisabled(btn, isDisabled) {
+  // Avoid toggling the native `disabled` attribute: iOS Safari can fail to
+  // re-register taps on a button re-enabled this way until the next reflow.
   if (isDisabled) btn.setAttribute("aria-disabled", "true");
   else btn.removeAttribute("aria-disabled");
 }
@@ -2930,9 +2878,9 @@ function renderLogicQuestion() {
   els.logicQuestionText.innerHTML = `<strong>Q${logicState.currentIndex + 1}.</strong>${rateTag} ${questionHtml}`;
   els.logicOptions.innerHTML = "";
 
+  // Hide submit/next in noExplainMode
   els.logicSubmitBtn.style.display = noExplainMode ? 'none' : '';
-  els.logicNextBtn.style.display = '';
-  els.logicJumpBtn.style.display = '';
+  els.logicNextBtn.style.display = noExplainMode ? 'none' : '';
 
   q.options.forEach((opt, i) => {
     const btn = document.createElement("button");
@@ -2943,6 +2891,7 @@ function renderLogicQuestion() {
       if (logicState.answered) return;
       logicState.selectedOption = opt;
       if (noExplainMode) {
+        // Immediate submit + flash + auto-advance
         logicSubmitNoExplain(opt, btn, q);
       } else {
         els.logicOptions.querySelectorAll(".option").forEach(b => b.classList.remove("selected"));
@@ -2970,8 +2919,8 @@ function logicSubmitNoExplain(opt, clickedBtn, q) {
     saveLogicWrong(q.id);
   }
   persistLogicRanking();
-  { const logicRate = (window.__V502_LOGIC_DIFFICULTY__ && window.__V502_LOGIC_DIFFICULTY__.get) ? window.__V502_LOGIC_DIFFICULTY__.get(q.id) : 50; const ability = readIrtAbility() + getScoreDelta(correct, logicRate); writeIrtAbility(ability); updateTierDisplay(); }
 
+  // Dramatic overlay toast
   const toast = document.createElement('div');
   const bg = correct ? '#34c759' : '#ff3b30';
   toast.style.cssText = `
@@ -2988,30 +2937,27 @@ function logicSubmitNoExplain(opt, clickedBtn, q) {
   document.body.appendChild(toast);
   requestAnimationFrame(() => { toast.style.transform = 'translate(-50%,-50%) scale(1)'; });
 
+  // Tint clicked button + highlight correct
   clickedBtn.style.background = correct ? '#e8f5e9' : '#fce4ec';
-  els.logicOptions.querySelectorAll(".option").forEach(b => {
-    const optText = b.querySelector("span")?.textContent?.replace(/^[A-D]\. /, "");
-    if (optText === q.answer) b.classList.add("correct");
-    else if (optText === opt && !correct) b.classList.add("wrong");
-    b.disabled = true;
-  });
-
-  els.logicFeedback.hidden = false;
-  els.logicFeedback.className = `feedback ${correct ? "ok" : "no"}`;
-  els.logicFeedback.innerHTML = `
-    <strong>${correct ? "✅ Correct!" : "❌ Incorrect."}</strong>
-    <p style="margin-top:8px">${escapeHtml(q.explanation).replace(/\n/g, '<br>')}</p>
-  `;
-
-  setBtnDisabled(els.logicNextBtn, logicState.currentIndex >= logicState.questions.length - 1);
-  els.logicNextBtn.textContent = logicState.currentIndex >= logicState.questions.length - 1 ? "Finish" : "Next";
-  els.logicNextBtn.style.display = '';
+  if (!correct) {
+    els.logicOptions.querySelectorAll(".option").forEach(b => {
+      const optText = b.querySelector("span")?.textContent?.replace(/^[A-D]\. /, "");
+      if (optText === q.answer) b.style.background = '#e8f5e9';
+      b.disabled = true;
+    });
+  }
 
   setTimeout(() => {
     toast.style.transform = 'translate(-50%,-50%) scale(0.3)';
     toast.style.opacity = '0';
     setTimeout(() => toast.remove(), 200);
-  }, 600);
+    logicState.currentIndex++;
+    if (logicState.currentIndex >= logicState.questions.length) {
+      finishLogicQuiz();
+    } else {
+      renderLogicQuestion();
+    }
+  }, 400);
 }
 
 function submitLogicAnswer() {
@@ -3025,16 +2971,17 @@ function submitLogicAnswer() {
   } else {
     saveLogicWrong(q.id);
   }
+  // Reflect this answer in the unified ranking right away
   persistLogicRanking();
-  { const logicRate = (window.__V502_LOGIC_DIFFICULTY__ && window.__V502_LOGIC_DIFFICULTY__.get) ? window.__V502_LOGIC_DIFFICULTY__.get(q.id) : 50; const ability = readIrtAbility() + getScoreDelta(correct, logicRate); writeIrtAbility(ability); updateTierDisplay(); }
 
   els.logicFeedback.hidden = false;
   els.logicFeedback.className = `feedback ${correct ? "ok" : "no"}`;
   els.logicFeedback.innerHTML = `
     <strong>${correct ? "✅ Correct!" : "❌ Incorrect."}</strong>
-    <p style="margin-top:8px">${escapeHtml(q.explanation).replace(/\n/g, '<br>')}</p>
+    <p style="margin-top:8px">${escapeHtml(q.explanation)}</p>
   `;
 
+  // Highlight correct/wrong options
   els.logicOptions.querySelectorAll(".option").forEach(btn => {
     const optText = btn.querySelector("span")?.textContent?.replace(/^[A-D]\. /, "");
     if (optText === q.answer) btn.classList.add("correct");
@@ -3069,15 +3016,19 @@ function finishLogicQuiz() {
   const ws = getLogicWeightedScore();
   els.logicPanel.hidden = true;
   els.resultPanel.hidden = false;
-  const logicTier = getTier(readIrtAbility());
   els.resultTitle.textContent = "Logic Quiz Result";
-  els.resultSummary.innerHTML = `이번 세션 ${logicState.correctCount}/${logicState.questions.length} (${sessionPct}%) · 누적 ${cumCorrect}/${cumTotal} (${cumPct}%) · 가중점수 ${ws.score.toFixed(2)} · 남은 ${remaining}문제<br><small>${logicTier.icon} ${logicTier.name}</small>`;
+  els.resultSummary.textContent = `이번 세션 ${logicState.correctCount}/${logicState.questions.length} (${sessionPct}%) · 누적 ${cumCorrect}/${cumTotal} (${cumPct}%) · 가중점수 ${ws.score.toFixed(2)} · 남은 ${remaining}문제`;
 }
 
+// Logic mode toggle
 els.logicModeBtn.addEventListener("click", () => {
   startLogicQuiz();
 });
 
+// Category nav HIDDEN by default - click 단어문제 to show
+// Toggle handled by inline onclick in index.html — no addEventListener needed
+
+/* ---- Dashboard ---- */
 function dashCard({ icon, title, desc, accent, onclick, badge }) {
   return `<button class="dash-card" data-accent="${accent}" onclick="${onclick}">
     <span class="dash-card-icon">${icon}</span>
@@ -3121,6 +3072,7 @@ function toggleNoExplainMode() {
   if (btn) btn.textContent = label;
   syncNoExplainButtons();
   updateNoExplainIndicator();
+  // Re-render active quiz so explanation visibility updates immediately
   if (!els.quizPanel.hidden) {
     renderQuestion();
   } else if (!els.logicPanel.hidden && logicState.active) {
@@ -3138,6 +3090,7 @@ function showDashboard() {
 
   if (loggedIn) flushCloudSync();
 
+  // Pull latest cloud data in background, then refresh dashboard (once)
   if (loggedIn && !state._dashSyncing) {
     const store = readPasswordStore();
     const stored = store[state.playerName.toLowerCase()];
@@ -3156,6 +3109,7 @@ function showDashboard() {
       }).catch((e) => { console.warn('dashboard sync failed', e); state._dashSyncing = false; });
     }
   }
+  // Update 해설 button visibility and state
   const noExBtn = document.getElementById('dashNoExplainBtn');
   if (noExBtn) {
     noExBtn.style.display = loggedIn ? '' : 'none';
@@ -3164,24 +3118,32 @@ function showDashboard() {
   syncNoExplainButtons();
   updateNoExplainIndicator();
 
+  // Greeting lives in the stable hero header (which also holds the login /
+  // 내정보 box), so it isn't wiped when the cards below re-render.
   const greeting = document.getElementById('dashGreeting');
   if (greeting) greeting.textContent = loggedIn ? `${state.playerName}님의 학습 대시보드` : 'V502 학습 대시보드';
 
   let html = '<div class="dash">';
 
+  // ---- Progress stats (logged-in) ----
   if (loggedIn) {
+    const knownCount = getWordKnowledgeCount();
     const logicMastered = getLogicCompleted().size;
     const cum = cumulativeLeaderboard(readLeaderboard(), null)
       .find((e) => e.name.toLowerCase() === state.playerName.toLowerCase());
     const score = cum ? cum.correct : 0;
+    const tier = getTier(readIrtAbility());
     html += `<div class="dash-stats dash-stats-xl">`;
-    html += `<div class="dash-stat" onclick="showRanking()" style="cursor:pointer" title="통합랭킹 보기"><span class="dash-stat-num">${score}</span><span class="dash-stat-label">통합 점수</span></div>`;
+    html += `<div class="dash-stat" onclick="showWordlist()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-num">${knownCount}</span><span class="dash-stat-label">📋 외운 단어</span></div>`;
+    html += `<div class="dash-stat" onclick="startLogicQuiz()" style="cursor:pointer" title="논리문제"><span class="dash-stat-num">${logicMastered}<small>/${getLogicTotal()}</small></span><span class="dash-stat-label">🧩 논리 마스터</span></div>`;
+    html += `<div class="dash-stat" onclick="showRanking()" style="cursor:pointer" title="통합랭킹 보기"><span class="dash-stat-num">${score}</span><span class="dash-stat-label">🏆 통합 점수</span></div>`;
+    html += `<div class="dash-stat" style="cursor:default"><span class="dash-stat-num" style="font-size:18px">${tier.icon}</span><span class="dash-stat-label">${tier.name}</span></div>`;
     html += `<div class="dash-stat" onclick="showWordlist()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-icon">📋</span><span class="dash-stat-label">단어일람</span></div>`;
     html += `<div class="dash-stat" onclick="showWordlist2()" style="cursor:pointer" title="단어일람보기2"><span class="dash-stat-icon">🗂️</span><span class="dash-stat-label">단어일람2</span></div>`;
-	    html += `<div class="dash-stat" onclick="showWordbook3()" style="cursor:pointer" title="단어장3"><span class="dash-stat-icon">📗</span><span class="dash-stat-label">단어장3</span></div>`;
     html += `</div>`;
   }
 
+  // ---- Study cards ----
   html += '<p class="dash-section-label">학습</p>';
   html += '<div class="dash-grid">';
   html += dashCard({ icon: '📝', title: '단어문제', desc: '동의어 짝 맞추기', accent: 'teal', onclick: "openSynonymPanel()" });
@@ -3192,13 +3154,13 @@ function showDashboard() {
   html += dashCard({ icon: '✅', title: '단어확인문제', desc: '전체 어휘 확인', accent: 'green', onclick: "showWordcheck()" });
   html += '</div>';
 
+  // ---- Review & info cards (logged-out only) ----
   if (!loggedIn) {
     html += '<p class="dash-section-label">계정</p>';
     html += '<div class="dash-grid">';
     html += dashCard({ icon: '🔒', title: '로그인 필요', desc: '내정보 / 랭킹 이용 잠금', accent: 'slate', onclick: "document.getElementById('authNicknameInput').focus()" });
     html += dashCard({ icon: '📋', title: '단어일람보기', desc: '전체 단어 사전', accent: 'slate', onclick: "showWordlist()" });
     html += dashCard({ icon: '🗂️', title: '단어일람보기2', desc: 'MVP2 + V401 추가 단어', accent: 'slate', onclick: "showWordlist2()" });
-	    html += dashCard({ icon: '📗', title: '단어장3', desc: 'Vocabulary Book 3 단어', accent: 'slate', onclick: "showWordbook3()" });
     html += '</div>';
   }
 
@@ -3230,10 +3192,8 @@ function getCompletedPromptWordsCount() {
 function getWordKnowledgeCount() {
   if (!state.playerName) return 0;
   const store = readWordKnowledge();
-  const entry = store[state.playerName.toLowerCase()];
-  if (!entry) return 0;
-  if (Array.isArray(entry)) return entry.length;
-  return Object.keys(entry).length;
+  const words = store[state.playerName.toLowerCase()] || [];
+  return words.length;
 }
 
 function showWrongNotes() {
@@ -3244,7 +3204,7 @@ function showWrongNotes() {
   const wrong = (p[key] && p[key].wrong) || {};
 
   let totalWrong = 0;
-  let html = '<div style="max-width:800px">';
+  let html = '<div style="max-width:600px">';
   html += '<h3 style="margin-bottom:12px">📕 오답노트</h3>';
 
   for (const catId in wrong) {
@@ -3276,9 +3236,11 @@ function showMyReview() {
   const totalSyn = 3980;
   const pct = Math.round((completed / totalSyn) * 100);
 
+  // Logic progress
   const logicMastered = getLogicCompleted().size;
   const logicTotal = getLogicTotal();
 
+  // Ranking
   const entries = readLeaderboard().filter(e => state.playerName && e.name.toLowerCase() === state.playerName.toLowerCase());
   const best = new Map();
   for (const e of entries) {
@@ -3290,15 +3252,16 @@ function showMyReview() {
   let totalCorrect = 0, totalQuestions = 0;
   for (const e of best.values()) { totalCorrect += e.correct; totalQuestions += e.total; }
 
-  let html = '<div style="max-width:800px">';
+  let html = '<div style="max-width:600px">';
   html += '<h3 style="margin-bottom:12px">📊 내 리뷰</h3>';
   html += `<div style="display:grid;gap:12px;grid-template-columns:1fr 1fr">`;
   html += `<div style="padding:16px;background:#f0f8f0;border-radius:8px;text-align:center"><strong style="font-size:24px">${completed}</strong><br><small>단어 마스터</small><br><small style="color:var(--muted)">/ ${totalSyn} (${pct}%)</small></div>`;
   html += `<div style="padding:16px;background:#f0f0f8;border-radius:8px;text-align:center"><strong style="font-size:24px">${logicMastered}</strong><br><small>논리 마스터</small><br><small style="color:var(--muted)">/ ${logicTotal}</small></div>`;
   html += `<div style="padding:16px;background:#e8f0e8;border-radius:8px;text-align:center"><strong style="font-size:24px">${wcProgress.correct}/${wcProgress.total}</strong><br><small>단어확인</small><br><small style="color:var(--muted)">${wcProgress.total > 0 ? Math.round(wcProgress.correct/wcProgress.total*100) + '%' : 'No data'}</small></div>`;
-  html += `<div style="padding:16px;background:#fff8f0;border-radius:8px;text-align:center"><strong style="font-size:24px">${totalCorrect}점</strong><br><small>통합 점수</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'} · ${totalQuestions}문제 풂</small></div>`;
+  html += `<div style="padding:16px;background:#fff8f0;border-radius:8px;text-align:center"><strong style="font-size:24px">${totalCorrect}/${totalQuestions}</strong><br><small>통합랭킹 점수</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'}</small></div>`;
   html += '</div>';
 
+  // List of memorized (mastered) words, grouped by category
   const p = readSynonymProgress();
   const key = getSynonymUserKey();
   const mastered = p[key] || {};
@@ -3336,15 +3299,12 @@ function showMyInfo() {
 }
 
 function renderMyInfoTab(tab) {
-  let html = '<div style="max-width:800px">';
-  html += '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px">';
-  html += `<button onclick="renderMyInfoTab('review')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='review'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📊 내 리뷰</button>`;
-  html += `<button onclick="renderMyInfoTab('wrong')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='wrong'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📕 오답노트</button>`;
-  html += `<button onclick="renderMyInfoTab('logic')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='logic'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">🧩 논리오답</button>`;
-  html += `<button onclick="renderMyInfoTab('grammar')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='grammar'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📝 문법오답</button>`;
-  html += `<button onclick="renderMyInfoTab('exam')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='exam'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📋 기출오답</button>`;
-  html += `<button onclick="renderMyInfoTab('learned')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='learned'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📅 학습한 단어</button>`;
-  html += `<button onclick="renderMyInfoTab('grammarTheory')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='grammarTheory'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📚 문법이론</button>`;
+  let html = '<div style="max-width:600px">';
+  html += '<div style="display:flex;gap:8px;margin-bottom:16px">';
+  html += `<button onclick="renderMyInfoTab('review')" style="flex:1;min-height:36px;border:1px solid var(--line);border-radius:2px;font-size:13px;font-weight:600;cursor:pointer;${tab==='review'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📊 내 리뷰</button>`;
+  html += `<button onclick="renderMyInfoTab('wrong')" style="flex:1;min-height:36px;border:1px solid var(--line);border-radius:2px;font-size:13px;font-weight:600;cursor:pointer;${tab==='wrong'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📕 오답노트</button>`;
+  html += `<button onclick="renderMyInfoTab('logic')" style="flex:1;min-height:36px;border:1px solid var(--line);border-radius:2px;font-size:13px;font-weight:600;cursor:pointer;${tab==='logic'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">🧩 논리오답</button>`;
+  html += `<button onclick="renderMyInfoTab('grammar')" style="flex:1;min-height:36px;border:1px solid var(--line);border-radius:2px;font-size:13px;font-weight:600;cursor:pointer;${tab==='grammar'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📝 문법오답</button>`;
   html += '</div>';
 
   if (tab === 'review') {
@@ -3368,7 +3328,7 @@ function renderMyInfoTab(tab) {
     html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid var(--ok);border-radius:2px;text-align:center"><strong style="font-size:24px">${completed}</strong><br><small>단어 마스터</small><br><small style="color:var(--muted)">/ ${totalSyn} (${pct}%)</small></div>`;
     html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid #4f46e5;border-radius:2px;text-align:center"><strong style="font-size:24px">${logicMastered}</strong><br><small>논리 마스터</small><br><small style="color:var(--muted)">/ ${logicTotal}</small></div>`;
     html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid var(--ink);border-radius:2px;text-align:center"><strong style="font-size:24px">${wcProgress.correct}/${wcProgress.total}</strong><br><small>단어확인</small><br><small style="color:var(--muted)">${wcProgress.total > 0 ? Math.round(wcProgress.correct/wcProgress.total*100) + '%' : 'No data'}</small></div>`;
-    html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:2px;text-align:center;cursor:pointer" onclick="showRanking()" title="통합랭킹 보기"><strong style="font-size:24px">${totalCorrect}점</strong><br><small>통합 점수 ▸</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'} · ${totalQuestions}문제 풂</small></div>`;
+    html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:2px;text-align:center;cursor:pointer" onclick="showRanking()" title="통합랭킹 보기"><strong style="font-size:24px">${totalCorrect}/${totalQuestions}</strong><br><small>통합랭킹 점수 ▸</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'}</small></div>`;
     html += '</div>';
 
     const p = readSynonymProgress();
@@ -3431,7 +3391,7 @@ function renderMyInfoTab(tab) {
           });
           html += `</div>`;
         }
-        html += `<p style="font-size:12px;color:var(--muted);margin:0">💡 ${escapeHtml(q.explanation).replace(/\n/g, '<br>')}</p>`;
+        html += `<p style="font-size:12px;color:var(--muted);margin:0">💡 ${escapeHtml(q.explanation)}</p>`;
         html += `</div>`;
       });
     }
@@ -3460,128 +3420,16 @@ function renderMyInfoTab(tab) {
         html += `</div>`;
       });
     }
-  } else if (tab === 'exam') {
-    const p = readExamProgress();
-    const key = state.playerName ? state.playerName.toLowerCase() : "_guest";
-    const userData = p[key] || {};
-    let totalWrong = 0;
-    const examKeys = Object.keys(EXAM_REGISTRY);
-    for (let i = 0; i < examKeys.length; i++) {
-      const entry = userData[examKeys[i]];
-      if (entry && entry.wrong && entry.wrong.length > 0) totalWrong += entry.wrong.length;
-    }
-    if (totalWrong === 0) {
-      html += '<p style="color:var(--muted)">틀린 기출문제가 없습니다!</p>';
-    } else {
-      html += '<p style="margin-bottom:12px;color:var(--muted)">총 <b>' + totalWrong + '</b>개의 틀린 문제</p>';
-      for (let i = 0; i < examKeys.length; i++) {
-        const examKey = examKeys[i];
-        const entry = userData[examKey];
-        if (!entry || !entry.wrong || entry.wrong.length === 0) continue;
-        const examInfo = EXAM_REGISTRY[examKey];
-        const questions = examInfo ? examInfo.data() : [];
-        html += '<h4 style="margin:16px 0 8px;padding:8px 12px;background:#fff0f0;border-left:3px solid #c62828;border-radius:2px">' + escapeHtml(examInfo ? examInfo.title : examKey) + ' — ' + entry.wrong.length + '문제</h4>';
-        for (let j = 0; j < entry.wrong.length; j++) {
-          const idx = entry.wrong[j];
-          const q = questions[idx];
-          if (!q) continue;
-          html += '<div style="margin-bottom:12px;padding:12px;background:#fff8f0;border-radius:8px;border:1px solid #f0d8c0">';
-          html += '<p style="font-weight:700;margin:0 0 8px;color:var(--accent)">#' + (idx + 1) + '</p>';
-          if (q.p && q.p.length > 30) {
-            html += '<div style="margin:0 0 10px;padding:8px 10px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;font-size:13px;line-height:1.6">' + escapeHtml(q.p).replace(/「([^」]+)」/g, '<u>$1</u>') + '</div>';
-          }
-          var qHtml = q.q
-            .replace(/'([^']+)'/g, "'\uE000$1\uE001'")
-            .replace(/「([^」]+)」/g, '\uE000$1\uE001')
-            .replace(/(_{2,})/g, '\uE002$1\uE003');
-          qHtml = escapeHtml(qHtml)
-            .replace(/\uE000/g, '<u>').replace(/\uE001/g, '</u>')
-            .replace(/\uE002/g, '<u>').replace(/\uE003/g, '</u>');
-          html += '<p style="font-weight:600;margin:0 0 8px">' + qHtml + '</p>';
-          if (q.c && q.c.length > 0) {
-            html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:8px">';
-            for (let k = 0; k < q.c.length; k++) {
-              var letter = q.c[k][0], text = q.c[k][1];
-              var isCorrect = letter === q.a;
-              html += '<span style="display:block;padding:6px 10px;border-radius:6px;font-size:13px;font-weight:600;' + (isCorrect ? 'background:#d4edda;color:#155724;border:1px solid #8fc7a8' : 'background:#f0f0f0;color:#666;border:1px solid #ddd') + '">' + (isCorrect ? '✓ ' : '') + '(' + escapeHtml(letter) + ') ' + escapeHtml(text) + '</span>';
-            }
-            html += '</div>';
-          }
-          html += '<p style="margin:0;font-size:12px;color:var(--muted)"><strong>정답:</strong> (' + escapeHtml(q.a) + ')</p>';
-          if (q.k) {
-            html += '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;font-size:12px;line-height:1.6">' + q.k + '</div>';
-          } else if (q.explanation) {
-            html += '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation).replace(/\n/g, '<br>') + '</div>';
-          }
-          html += '</div>';
-        }
-      }
-    }
-  } else if (tab === 'learned') {
-    const store = readWordKnowledge();
-    const key = state.playerName.toLowerCase();
-    let entry = store[key];
-    // Auto-migrate old array format
-    if (Array.isArray(entry)) {
-      const arr = entry;
-      store[key] = {};
-      arr.forEach(w => { store[key][w] = new Date().toISOString(); });
-      writeWordKnowledge(store);
-      entry = store[key];
-    }
-    if (!entry) entry = {};
-    if (Object.keys(entry).length === 0) {
-      html += '<p style="color:var(--muted)">아직 학습한 단어가 없습니다. 단어일람/단어장3에서 단어를 체크해보세요!</p>';
-    } else {
-      const words = Object.entries(entry);
-      // Group by date
-      const byDate = {};
-      words.forEach(([word, ts]) => {
-        try {
-          const d = new Date(ts);
-          const dateStr = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
-          if (!byDate[dateStr]) byDate[dateStr] = [];
-          byDate[dateStr].push(word);
-        } catch { if (!byDate['알 수 없음']) byDate['알 수 없음'] = []; byDate['알 수 없음'].push(word); }
-      });
-      const dates = Object.keys(byDate).sort().reverse();
-      html += '<p style="color:var(--muted);margin-bottom:12px">총 <b>' + words.length + '</b>개 단어 학습</p>';
-      dates.forEach(dateStr => {
-        const dayWords = byDate[dateStr];
-        html += '<details class="wb3-section" style="margin-bottom:6px">';
-        html += '<summary class="wb3-summary" style="font-size:13px">📅 ' + dateStr + ' <small>(' + dayWords.length + '개)</small></summary>';
-        html += '<div style="padding:8px 14px;font-size:13px;line-height:1.8">';
-        dayWords.sort().forEach(w => {
-          const m = wordMeanings[w] || '';
-          html += '<span style="display:inline-block;margin:2px 4px;padding:2px 8px;background:#e8f0e8;border-radius:4px;font-size:13px">' + escapeHtml(w) + (m ? ' <span style="color:var(--muted);font-size:11px">' + escapeHtml(m) + '</span>' : '') + '</span>';
-        });
-        html += '</div></details>';
-      });
-    }
-  } else if (tab === 'grammarTheory') {
-    const chapters = window.__V502_GRAMMAR_THEORY__ || [];
-    if (chapters.length === 0) {
-      html += '<p style="color:var(--muted)">문법이론 데이터가 없습니다.</p>';
-    } else {
-      html += '<p style="color:var(--muted);margin-bottom:12px">총 <b>' + chapters.length + '</b>개 챕터</p>';
-      chapters.forEach(function(ch, i) {
-        var bodyHtml = escapeHtml(ch.body);
-        // Highlight corrections: (O) green, (X) red
-        bodyHtml = bodyHtml.replace(/\(O\)/g, '<span style="color:#2e7d32;font-weight:700">(O)</span>');
-        bodyHtml = bodyHtml.replace(/\(X\)/g, '<span style="color:#c62828;font-weight:700">(X)</span>');
-        html += '<details class="wb3-section" style="margin-bottom:8px">';
-        html += '<summary class="wb3-summary" style="font-size:13px;font-weight:700;cursor:pointer;padding:8px 12px;background:#f8f9fc;border-radius:4px;border:1px solid var(--line)">📖 ' + escapeHtml(ch.title) + '</summary>';
-        html += '<div style="padding:12px 16px;font-size:13px;line-height:1.8;white-space:pre-wrap;background:#fff;border:1px solid var(--line);border-top:none;border-radius:0 0 4px 4px;max-height:60vh;overflow-y:auto">' + bodyHtml + '</div>';
-        html += '</details>';
-      });
-    }
   }
 
   html += '</div>';
   els.myinfoContent.innerHTML = html;
 }
 
+/* ── Word Check Quiz ── */
 let wordcheckQuestions = [
+  ...(window.__V502_WC_V101__ || []),
+  ...(window.__V502_WC_V201__ || []),
   ...(window.__V502_WC_V401__ || [])
 ];
 let wcState = { index: 0, answers: [], correct: 0, total: 0, completed: false };
@@ -3600,6 +3448,9 @@ function startWordcheck(questions, { shuffle = true } = {}) {
   renderWordcheckQuestion();
 }
 
+// Drop questions the logged-in user has already answered correctly so they
+// only study what they don't yet know. Falls back to the full set if every
+// question is already correct (so the quiz never opens empty).
 function wordcheckRemaining(all) {
   if (!state.playerName) return [...all];
   const done = getWordcheckCorrect();
@@ -3610,10 +3461,13 @@ function wordcheckRemaining(all) {
 function showWordcheck() {
   lastWordcheckLauncher = showWordcheck;
   startWordcheck(wordcheckRemaining([
+    ...(window.__V502_WC_V101__ || []),
+    ...(window.__V502_WC_V201__ || []),
     ...(window.__V502_WC_V401__ || [])
   ]));
 }
 
+// [201 단어퀴즈] — V201 set only (200 문제), presented in order
 function showWordcheck201() {
   lastWordcheckLauncher = showWordcheck201;
   startWordcheck(wordcheckRemaining(window.__V502_WC_V201__ || []), { shuffle: false });
@@ -3624,28 +3478,12 @@ function renderWordcheckQuestion() {
     finishWordcheck();
     return;
   }
-  // Update jump bar — disable out-of-range, highlight nearest
-  const jumpBtns = document.querySelectorAll('.wc-jump-btn');
-  let bestDist = Infinity, bestBtn = null;
-  jumpBtns.forEach(function(btn) {
-    var t = parseInt(btn.dataset.target, 10);
-    var outOfRange = t > wordcheckQuestions.length;
-    btn.disabled = outOfRange;
-    btn.style.opacity = outOfRange ? '0.35' : '';
-    btn.style.background = '';
-    btn.style.color = '';
-    var dist = Math.abs(wcState.index + 1 - t);
-    if (!outOfRange && dist < bestDist) { bestDist = dist; bestBtn = btn; }
-  });
-  if (bestBtn) {
-    bestBtn.style.background = 'var(--accent)';
-    bestBtn.style.color = '#fff';
-  }
   const q = wordcheckQuestions[wcState.index];
   const prog = document.getElementById('wordcheckProgress');
   prog.textContent = `${wcState.index + 1} / ${wordcheckQuestions.length} | ✅ ${wcState.correct} | ❌ ${wcState.index - wcState.correct}`;
 
   const qEl = document.getElementById('wordcheckQuestion');
+  // Underline quoted words (target vocabulary)
   qEl.innerHTML = (() => {
     const raw = q.q
       .replace(/'([^']+)'/g, "'\uE000$1\uE001'")
@@ -3674,6 +3512,7 @@ function renderWordcheckQuestion() {
     btn.style.cssText = 'min-height:40px;padding:8px 14px;border:1px solid var(--line);border-radius:2px;background:var(--panel);text-align:left;font:inherit;font-size:14px;cursor:pointer';
     btn.onclick = () => {
       if (selectedLetter === letter) {
+        // Deselect on second click
         clearSelection();
         submitBtn.style.display = 'none';
         return;
@@ -3688,6 +3527,7 @@ function renderWordcheckQuestion() {
     choicesEl.appendChild(btn);
   });
 
+  // 해설ON: wire Submit button to confirm selection (해설OFF auto-submits on click)
   submitBtn.onclick = () => {
     if (selectedLetter) submitWordcheckAnswer(selectedLetter);
   };
@@ -3697,6 +3537,8 @@ function renderWordcheckQuestion() {
   document.getElementById('wordcheckFeedback').style.display = 'none';
 }
 
+// q.a may be a choice letter ("B") or a 1-based index ("2"); some data files
+// (e.g. the rebuilt v201) store the index. Resolve to the actual choice letter.
 function wordcheckCorrectLetter(q) {
   const a = String(q.a).trim();
   if (q.c.some(([l]) => l === a)) return a;
@@ -3705,6 +3547,7 @@ function wordcheckCorrectLetter(q) {
   return a;
 }
 
+/* ── Per-question wordcheck tracking + cumulative ranking ── */
 const wordcheckResultKey = 'v502-wordcheck-result';
 function readWordcheckResult() {
   try { return JSON.parse(localStorage.getItem(wordcheckResultKey)) || {}; }
@@ -3732,9 +3575,10 @@ function saveWordcheckResult(qid, correct) {
     (r[k].wrong = r[k].wrong || []).push(qid);
   }
   try { localStorage.setItem(wordcheckResultKey, JSON.stringify(r)); } catch {}
-  scheduleCloudSync();
 }
 
+// Push the player's cumulative wordcheck score to the ranking right after each
+// answer: correct answers raise the numerator, every answer raises the total.
 function persistWordcheckRanking() {
   if (!state.playerName) return;
   const correct = getWordcheckCorrect().size;
@@ -3753,11 +3597,17 @@ function persistWordcheckRanking() {
   scheduleCumulativeRemoteWrite('WORDCHECK', state.playerName, correct, total, accuracy);
 }
 
+/* ── Per-question 단어문제(synonym) tracking + cumulative ranking ──
+   Mirrors the wordcheck model so synonym answers reflect in the ranking
+   immediately, rather than only when a whole 30-question set is completed.
+   A dedicated result log (keyed by categoryId|prompt) keeps the count exact. */
 const synonymResultKey = 'v502-synonym-result';
 function readSynonymResult() {
   try { return JSON.parse(localStorage.getItem(synonymResultKey)) || {}; }
   catch { return {}; }
 }
+// Seed a user's result log from their existing drill history the first time,
+// so returning players keep their accumulated score the moment they answer.
 function ensureSynonymSeed(k) {
   const r = readSynonymResult();
   if (r[k]) return r;
@@ -3768,6 +3618,7 @@ function ensureSynonymSeed(k) {
     if (cat === 'wrong') continue;
     (prog[cat] || []).forEach((w) => correct.push(cat + '|' + w));
   }
+  // Also seed wrong entries from progress (saved per-category under .wrong)
   const wrongByCat = prog.wrong || {};
   for (const cat in wrongByCat) {
     (wrongByCat[cat] || []).forEach((w) => wrong.push(cat + '|' + w));
@@ -3806,6 +3657,7 @@ function saveSynonymRankResult(categoryId, prompt, correct) {
   try { localStorage.setItem(synonymResultKey, JSON.stringify(r)); } catch {}
 }
 
+// Push the player's cumulative 단어문제 score to the ranking after each answer.
 function persistSynonymRanking() {
   if (!state.playerName) return;
   const correct = getSynonymCorrectCount();
@@ -3832,13 +3684,13 @@ function submitWordcheckAnswer(letter) {
   if (correct) wcState.correct++;
   wcState.answers.push({ id: q.i, correct });
   saveWordcheckResult(q.i, correct);
-  persistWordcheckRanking();
-  { const ability = readIrtAbility() + getScoreDelta(correct, 50); writeIrtAbility(ability); updateTierDisplay(); }
+  try { persistWordcheckRanking(); } catch {}
 
   if (noExplainMode) {
     const buttons = document.querySelectorAll('#wordcheckChoices button');
     buttons.forEach(b => b.disabled = true);
 
+    // Dramatic overlay toast
     const toast = document.createElement('div');
     const isDark = document.querySelector('.sidebar') && getComputedStyle(document.querySelector('.sidebar')).backgroundColor.includes('32');
     const bg = correct ? '#34c759' : '#ff3b30';
@@ -3856,6 +3708,7 @@ function submitWordcheckAnswer(letter) {
     document.body.appendChild(toast);
     requestAnimationFrame(() => { toast.style.transform = 'translate(-50%,-50%) scale(1)'; });
 
+    // Also briefly tint the clicked button
     const clickedBtn = [...buttons].find(b => b.textContent.startsWith(`(${letter})`));
     if (clickedBtn) {
       clickedBtn.style.background = correct ? '#e8f5e9' : '#fce4ec';
@@ -3865,6 +3718,7 @@ function submitWordcheckAnswer(letter) {
       }
     }
 
+    // Show text feedback so 해설OFF also tells the answer result
     const fb = document.getElementById('wordcheckFeedback');
     fb.style.display = 'block';
     fb.style.background = correct ? '#e8f5e9' : '#fce4ec';
@@ -3887,6 +3741,7 @@ function submitWordcheckAnswer(letter) {
     return;
   }
 
+  // Highlight feedback
   const fb = document.getElementById('wordcheckFeedback');
   fb.style.display = 'block';
   fb.style.background = correct ? '#e8f5e9' : '#fce4ec';
@@ -3925,13 +3780,12 @@ function finishWordcheck() {
   const result = document.getElementById('wordcheckResult');
   result.style.display = 'block';
   const pct = Math.round(wcState.correct / wcState.total * 100);
-  const wcTier = getTier(readIrtAbility());
   document.getElementById('wordcheckScore').innerHTML = `
     🎯 Score: <strong>${wcState.correct}</strong> / ${wcState.total}
     <br><small>${pct}% correct</small>
-    <br><small>${wcTier.icon} ${wcTier.name}</small>
   `;
 
+  // Ranking is updated per question; ensure it's current and refresh the sidebar
   if (state.playerName) {
     persistWordcheckRanking();
     saveWordcheckProgress();
@@ -3951,7 +3805,6 @@ function saveWordcheckProgress() {
     date: new Date().toISOString()
   };
   localStorage.setItem(key, JSON.stringify(store));
-  scheduleCloudSync();
 }
 
 function getWordcheckProgress() {
@@ -3968,15 +3821,6 @@ document.getElementById('wordcheckNext').addEventListener('click', () => {
   renderWordcheckQuestion();
 });
 
-document.getElementById('wcJumpBar').addEventListener('click', (e) => {
-  if (!e.target.classList.contains('wc-jump-btn')) return;
-  if (wcState.completed) return;
-  const target = Math.min(parseInt(e.target.dataset.target, 10) - 1, wordcheckQuestions.length - 1);
-  if (target < 0 || target === wcState.index) return;
-  wcState.index = target;
-  renderWordcheckQuestion();
-});
-
 document.getElementById('wordcheckRetry').addEventListener('click', () => lastWordcheckLauncher());
 
 els.wordcheckBtn.addEventListener('click', showWordcheck);
@@ -3986,48 +3830,25 @@ els.wordcheckPanel.addEventListener('click', function(e) {
   if (e.target === this) { this.hidden = true; els.startPanel.hidden = false; }
 });
 
+/* ── Grammar 201 ── */
 let grammarState = { index: 0, correct: 0, total: 0 };
-
-function renderGrammarCategoryNav() {
-  const jumps = [];
-  for (let i = 0; i < 12; i++) jumps.push(i * 40);
-  let html = '<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px">';
-  html += '<span style="font-size:12px;color:var(--muted);margin-right:4px;line-height:24px">카테고리:</span>';
-  jumps.forEach(function(idx) {
-    const isCurrent = grammarState.index >= idx && grammarState.index < idx + 40;
-    html += '<button onclick="grammarState.index=' + idx + ';renderGrammarQuestion()" style="min-height:24px;padding:2px 7px;border:1px solid var(--line);border-radius:2px;font-size:11px;cursor:pointer;' + (isCurrent ? 'background:var(--ink);color:#fff;font-weight:700' : 'background:var(--panel);color:var(--ink)') + '">' + (idx + 1) + '번</button>';
-  });
-  html += '</div>';
-  return html;
-}
 
 function showGrammar201() {
   switchMode('grammar');
   els.grammar201Panel.hidden = false;
-  const allItems = window.__V502_GRAMMAR__ || [];
-  const key = state.playerName ? state.playerName.toLowerCase() : '_guest';
-  const prog = readGrammarProgress();
-  const correctSet = new Set((prog[key] && prog[key].correct) || []);
-  const wrongSet = new Set((prog[key] && prog[key].wrong) || []);
-  // Filter: skip already-correct questions; show wrong + unanswered
-  const items = allItems.filter(q => !correctSet.has(q.i));
-  if (items.length === 0) {
-    els.grammar201Content.innerHTML = '<div style="text-align:center;padding:40px"><h3>문법 201 완료</h3><p>모든 문제를 맞췄습니다!</p><p><small>🎉</small></p><button onclick="showGrammar201()" class="text-btn" style="min-height:40px;margin-top:12px">다시 보기</button></div>';
-    return;
-  }
-  grammarState = { index: 0, correct: 0, total: items.length, items: items };
+  const items = window.__V502_GRAMMAR__ || [];
+  grammarState = { index: 0, correct: 0, total: items.length };
   renderGrammarQuestion();
 }
 
 function renderGrammarQuestion() {
-  const items = grammarState.items || window.__V502_GRAMMAR__ || [];
+  const items = window.__V502_GRAMMAR__ || [];
   if (grammarState.index >= items.length) {
     finishGrammarQuiz();
     return;
   }
   const q = items[grammarState.index];
-  let html = renderGrammarCategoryNav();
-  html += `<div style="max-width:900px">`;
+  let html = `<div style="max-width:700px">`;
   html += `<p style="font-size:12px;color:var(--muted);margin:0 0 8px">${grammarState.index + 1} / ${items.length} | ✅ ${grammarState.correct} | ❌ ${grammarState.index - grammarState.correct}</p>`;
   html += `<p style="font-size:13px;color:var(--accent);font-weight:600;margin:0 0 4px">${escapeHtml(q.i)}. ${escapeHtml(q.t)}</p>`;
   var qHtml = q.q
@@ -4045,7 +3866,9 @@ function renderGrammarQuestion() {
       html += `<button onclick="submitGrammarAnswer('${escapeHtml(letter)}')" style="min-height:40px;padding:8px 14px;border:1px solid var(--line);border-radius:2px;background:var(--panel);text-align:left;font:inherit;font-size:14px;cursor:pointer">(${escapeHtml(letter)}) ${escapeHtml(text)}</button>`;
     });
     html += '</div>';
+    // After answering, auto-advance so no need for a separate "next" button
   } else {
+    // No-choice informational item — just a next button
     html += `<button onclick="grammarState.index++; if(grammarState.index>=grammarState.total)finishGrammarQuiz();else renderGrammarQuestion();" style="min-height:36px;padding:0 16px;border:1px solid var(--line);border-radius:2px;background:var(--panel);cursor:pointer;font:inherit">다음 ▸</button>`;
   }
   html += '</div>';
@@ -4053,7 +3876,7 @@ function renderGrammarQuestion() {
 }
 
 function submitGrammarAnswer(letter) {
-  const items = grammarState.items || window.__V502_GRAMMAR__ || [];
+  const items = window.__V502_GRAMMAR__ || [];
   const q = items[grammarState.index];
   const correct = letter === q.a;
   if (correct) {
@@ -4062,12 +3885,12 @@ function submitGrammarAnswer(letter) {
   } else {
     saveGrammarWrong(q.i);
   }
-  { const ability = readIrtAbility() + getScoreDelta(correct, 50); writeIrtAbility(ability); updateTierDisplay(); }
-  let html = renderGrammarCategoryNav();
-  html += `<div style="max-width:900px">`;
+  // Show feedback in-place, then let user advance
+  let html = `<div style="max-width:700px">`;
   html += `<p style="font-size:12px;color:var(--muted);margin:0 0 8px">${grammarState.index + 1} / ${items.length} | ✅ ${grammarState.correct} | ❌ ${grammarState.index - grammarState.correct}</p>`;
   html += `<p style="font-size:13px;color:var(--accent);font-weight:600;margin:0 0 4px">${escapeHtml(q.i)}. ${escapeHtml(q.t)}</p>`;
   html += `<p style="font-size:15px;line-height:1.7;margin:0 0 16px">${escapeHtml(q.q)}</p>`;
+  // Highlight choices
   html += '<div style="display:grid;gap:8px;margin-bottom:12px">';
   q.c.forEach(([l, text]) => {
     const isSelected = l === letter;
@@ -4088,25 +3911,21 @@ function submitGrammarAnswer(letter) {
 
 function finishGrammarQuiz() {
   const pct = Math.round(grammarState.correct / grammarState.total * 100);
-  const gTier = getTier(readIrtAbility());
-  els.grammar201Content.innerHTML = `<div style="text-align:center;padding:40px"><h3>문법 201 완료</h3><p>${grammarState.correct}/${grammarState.total} 정답 (${pct}%)</p><p><small>${gTier.icon} ${gTier.name}</small></p><button onclick="showGrammar201()" class="text-btn" style="min-height:40px;margin-top:12px">다시 보기</button></div>`;
+  els.grammar201Content.innerHTML = `<div style="text-align:center;padding:40px"><h3>문법 201 완료</h3><p>${grammarState.correct}/${grammarState.total} 정답 (${pct}%)</p><button onclick="showGrammar201()" class="text-btn" style="min-height:40px;margin-top:12px">다시 보기</button></div>`;
 }
 
 els.grammar201Btn.addEventListener('click', showGrammar201);
 
+/* ── 기출문제 ── */
 let examTab = 'gachon2012';
-
-var examIndex = 0;
-var examOneByOne = true; // default: one question at a time
-var examHideCorrect = false; // hide correctly answered questions
 
 function showExam() {
   switchMode('exam');
   els.examPanel.hidden = false;
-  examIndex = 0;
   renderExamTab();
 }
 
+/* ── Exam Registry ── */
 var EXAM_REGISTRY = {
   gachon2012:     { title: '2012 가천대',          data: function(){return window.__V502_EXAM_GACHON2012__||[]} },
   skku2011:       { title: '2011 성균관대 오전',    data: function(){return window.__V502_EXAM_SKKU2011__||[]} },
@@ -4115,52 +3934,29 @@ var EXAM_REGISTRY = {
   skku2012pm:     { title: '2012 성균관대 오후',    data: function(){return window.__V502_EXAM_SKKU2012PM__||[]} },
   skku2013am:     { title: '2013 성균관대 오전',    data: function(){return window.__V502_EXAM_SKKU2013AM__||[]} },
   skku2013pm:     { title: '2013 성균관대 오후',    data: function(){return window.__V502_EXAM_SKKU2013PM__||[]} },
-  skku2014:       { title: '2014 성균관대',         data: function(){return window.__V502_EXAM_SKKU2014__||[]}, hidden: true },
-  skku2015:       { title: '2015 성균관대',         data: function(){return window.__V502_EXAM_SKKU2015__||[]}, hidden: true },
-  skku2016:       { title: '2016 성균관대',         data: function(){return window.__V502_EXAM_SKKU2016__||[]}, hidden: true },
-  skku2017:       { title: '2017 성균관대',         data: function(){return window.__V502_EXAM_SKKU2017__||[]}, hidden: true },
-  skku2018:       { title: '2018 성균관대',         data: function(){return window.__V502_EXAM_SKKU2018__||[]}, hidden: true },
+  skku2014:       { title: '2014 성균관대',         data: function(){return window.__V502_EXAM_SKKU2014__||[]} },
+  skku2015:       { title: '2015 성균관대',         data: function(){return window.__V502_EXAM_SKKU2015__||[]} },
+  skku2016:       { title: '2016 성균관대',         data: function(){return window.__V502_EXAM_SKKU2016__||[]} },
+  skku2017:       { title: '2017 성균관대',         data: function(){return window.__V502_EXAM_SKKU2017__||[]} },
+  skku2018:       { title: '2018 성균관대',         data: function(){return window.__V502_EXAM_SKKU2018__||[]} },
   skku2019:       { title: '2019 성균관대 인문',    data: function(){return window.__V502_EXAM_SKKU2019__||[]} },
-  skku2021:       { title: '2021 성균관대',         data: function(){return window.__V502_EXAM_SKKU2021__||[]}, hidden: true },
-  skku2022:       { title: '2022 성균관대',         data: function(){return window.__V502_EXAM_SKKU2022__||[]}, hidden: true },
-  skku2023:       { title: '2023 성균관대',         data: function(){return window.__V502_EXAM_SKKU2023__||[]}, hidden: true },
-  skku2024:       { title: '2024 성균관대',         data: function(){return window.__V502_EXAM_SKKU2024__||[]}, hidden: true },
-  skku2025:       { title: '2025 성균관대 인문',    data: function(){return window.__V502_EXAM_SKKU2025__||[]}, hidden: true },
-  skku2026mock:   { title: '2026 대비 예상문제',    data: function(){return window.__V502_EXAM_SKKU2026MOCK__||[]} },
-  jininsa2027_1:  { title: '진인사대천명 2027-1',     data: function(){return window.__V502_EXAM_JININSA_2027_1__||[]}, category: '정갤문제' },
-  hufs2015A:      { title: '2015 한국외대 A형',        data: function(){return window.__V502_EXAM_HUFS2015A__||[]} }
+  skku2021:       { title: '2021 성균관대',         data: function(){return window.__V502_EXAM_SKKU2021__||[]} },
+  skku2022:       { title: '2022 성균관대',         data: function(){return window.__V502_EXAM_SKKU2022__||[]} },
+  skku2023:       { title: '2023 성균관대',         data: function(){return window.__V502_EXAM_SKKU2023__||[]} },
+  skku2024:       { title: '2024 성균관대',         data: function(){return window.__V502_EXAM_SKKU2024__||[]} },
+  skku2025:       { title: '2025 성균관대 인문',    data: function(){return window.__V502_EXAM_SKKU2025__||[]} },
+  skku2026mock:   { title: '2026 대비 예상문제',    data: function(){return window.__V502_EXAM_SKKU2026MOCK__||[]} }
 };
 
 function renderExamTab() {
-  if (EXAM_REGISTRY[examTab] && EXAM_REGISTRY[examTab].hidden) {
-    examTab = Object.keys(EXAM_REGISTRY).find(k => !EXAM_REGISTRY[k].hidden) || examTab;
-  }
-  var html = '<div style="max-width:900px">';
-  if (examTab === 'skku2011') {
-    html += '<div style="margin-bottom:16px;padding:12px 16px;background:#f8f9fc;border-radius:4px;border:1px solid var(--line)">';
-    html += '<p style="margin:0 0 4px;font-size:12px;color:var(--muted)">성균관대학교</p>';
-    html += '<p style="margin:0;font-size:14px;font-weight:700;color:var(--accent)">2011학년도 일반·학사편입 [오전 A형] 90분 · 50문항</p>';
-    html += '</div>';
-  }
-  if (examTab === 'jininsa2027_1') {
-    html += '<div style="margin-bottom:16px;padding:12px 16px;background:#f8f9fc;border-radius:4px;border:1px solid var(--line)">';
-    html += '<p style="margin:0 0 4px;font-size:12px;color:var(--muted)">정병권 갤러리 · 盡人事待天命</p>';
-    html += '<p style="margin:0;font-size:14px;font-weight:700;color:var(--accent)">2027 대비 제1회 진인사대천명 편입영어 모의고사 | 40문항 60분</p>';
-    html += '</div>';
-  }
+  var html = '<div style="max-width:700px">';
   html += '<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:16px">';
   var keys = Object.keys(EXAM_REGISTRY);
-  var lastCategory = '';
   for (var i = 0; i < keys.length; i++) {
     var key = keys[i];
     var sel = examTab === key;
     var entry = EXAM_REGISTRY[key];
-    if (entry.hidden) continue;
     var count = entry.data().length;
-    if (entry.category && entry.category !== lastCategory) {
-      lastCategory = entry.category;
-      html += `<span style="width:100%;margin-top:4px;font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px">▸ ${escapeHtml(entry.category)}</span>`;
-    }
     html += `<button onclick="examTab='${key}';renderExamTab()" style="min-height:32px;padding:3px 8px;border:1px solid var(--line);border-radius:2px;font-size:11px;font-weight:600;cursor:pointer;${sel?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">${entry.title} (${count})</button>`;
   }
   html += '</div>';
@@ -4168,74 +3964,30 @@ function renderExamTab() {
   var questions = EXAM_REGISTRY[examTab] ? EXAM_REGISTRY[examTab].data() : [];
   var prog = getExamProgress(examTab);
   var doneCount = prog.correct.size + prog.wrong.size;
-
-  // Filter correct if hide mode on
-  var visibleQuestions = questions;
-  var visibleToOrig = null; // maps visibleIdx → originalIdx
-  if (examHideCorrect) {
-    visibleToOrig = [];
-    visibleQuestions = [];
-    questions.forEach(function(q, i) {
-      if (!prog.correct.has(i)) { visibleToOrig.push(i); visibleQuestions.push(q); }
-    });
+  if (doneCount > 0) {
+    html += `<div style="margin-bottom:12px;font-size:12px;color:var(--muted)">📋 진행상황: ✅ ${prog.correct.size} / ❌ ${prog.wrong.size} / ⬜ ${questions.length - doneCount} 문제 남음</div>`;
   }
-  function origIdx(vi) { return visibleToOrig ? visibleToOrig[vi] : vi; }
-
-  // Clamp examIndex
-  if (examIndex >= visibleQuestions.length) examIndex = Math.max(0, visibleQuestions.length - 1);
-  if (examIndex < 0) examIndex = 0;
-
-  // --- Top nav bar ---
-  html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">';
-  html += '<button onclick="examHideCorrect=!examHideCorrect;examIndex=0;renderExamTab()" style="padding:4px 10px;border:1px solid var(--line);border-radius:4px;font-size:12px;cursor:pointer;background:' + (examHideCorrect?'var(--ok)':'transparent') + ';color:' + (examHideCorrect?'#fff':'var(--ink)') + ';white-space:nowrap">👁 정답숨김</button>';
-  html += '<button onclick="examOneByOne=!examOneByOne;renderExamTab()" style="padding:4px 10px;border:1px solid var(--line);border-radius:4px;font-size:12px;cursor:pointer;background:transparent;color:var(--ink);white-space:nowrap">' + (examOneByOne?'📋 전체보기':'🔢 한문제씩') + '</button>';
-  html += '<span style="font-size:12px;color:var(--muted)">✅ ' + prog.correct.size + '</span><span style="font-size:12px;color:var(--muted)">❌ ' + prog.wrong.size + '</span><span style="font-size:12px;color:var(--muted)">⬜ ' + (questions.length - doneCount) + '</span>';
-  var vLen = visibleQuestions.length;
-  if (examOneByOne && vLen > 1) {
-    html += '<div style="margin-left:auto;display:flex;align-items:center;gap:6px">';
-    html += '<button onclick="examIndex=0;renderExamTab()" style="padding:4px 8px;border:1px solid var(--line);border-radius:4px;font-size:12px;cursor:pointer;background:transparent;color:var(--ink)"' + (examIndex===0?' disabled':'') + '>⏮</button>';
-    html += '<button onclick="examIndex=Math.max(0,examIndex-1);renderExamTab()" style="padding:4px 8px;border:1px solid var(--line);border-radius:4px;font-size:12px;cursor:pointer;background:transparent;color:var(--ink)"' + (examIndex===0?' disabled':'') + '>◀</button>';
-    html += '<span style="font-size:13px;font-weight:700">' + (examIndex+1) + ' / ' + vLen + '</span>';
-    html += '<button onclick="examIndex=Math.min(' + (vLen-1) + ',examIndex+1);renderExamTab()" style="padding:4px 8px;border:1px solid var(--line);border-radius:4px;font-size:12px;cursor:pointer;background:transparent;color:var(--ink)"' + (examIndex>=vLen-1?' disabled':'') + '>▶</button>';
-    html += '<button onclick="examIndex=' + (vLen-1) + ';renderExamTab()" style="padding:4px 8px;border:1px solid var(--line);border-radius:4px;font-size:12px;cursor:pointer;background:transparent;color:var(--ink)"' + (examIndex>=vLen-1?' disabled':'') + '>⏭</button>';
-    html += '</div>';
-  }
-  html += '</div>';
-
-  // Progress bar
-  if (examOneByOne && vLen > 1) {
-    html += '<div style="width:100%;height:4px;background:var(--line);border-radius:2px;margin-bottom:16px"><div style="width:' + Math.round((examIndex+1)/vLen*100) + '%;height:100%;background:var(--accent);border-radius:2px;transition:width 0.2s"></div></div>';
-  }
-
-  // --- Render questions ---
-  var indices = examOneByOne ? [examIndex] : visibleQuestions.map(function(_,i){return i});
-  indices.forEach(function(vi) {
-    var oi = origIdx(vi);
-    var q = questions[oi];
-    var isCorrect = prog.correct.has(oi);
-    var isWrong = prog.wrong.has(oi);
+  questions.forEach((q, i) => {
+    var isCorrect = prog.correct.has(i);
+    var isWrong = prog.wrong.has(i);
     var isDone = isCorrect || isWrong;
-    if (q.section) {
-      html += '<div style="margin:-8px 0 16px 0;padding:4px 10px;background:var(--accent);color:#fff;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:0.5px">' + escapeHtml(q.section) + '</div>';
-    }
-    html += '<div style="margin-bottom:16px;padding:16px;border-radius:2px;border:1px solid var(--line);' + (isCorrect?'background:#f1f8e9':isWrong?'background:#fff3f0':'') + '" id="examQ' + oi + '">';
-    html += '<p style="font-weight:700;margin:0 0 8px;color:var(--accent)">' + (oi+1) + '.' + (isCorrect ? ' ✅' : isWrong ? ' ❌' : '') + '</p>';
+    html += `<div style="margin-bottom:16px;padding:16px;border-radius:2px;border:1px solid var(--line);${isCorrect?'background:#f1f8e9':isWrong?'background:#fff3f0':''}" id="examQ${i}">`;
+    html += `<p style="font-weight:700;margin:0 0 8px;color:var(--accent)">${i+1}.` + (isCorrect ? ' ✅' : isWrong ? ' ❌' : '') + `</p>`;
     if (q.p && q.p.length > 30) {
       var pHtml = escapeHtml(q.p).replace(/「([^」]+)」/g, '<u>$1</u>');
-      html += '<div style="margin:0 0 12px;padding:10px 14px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;font-size:14px;line-height:1.7">' + pHtml + '</div>';
+      html += `<div style="margin:0 0 12px;padding:10px 14px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;font-size:14px;line-height:1.7">${pHtml}</div>`;
     }
     var qHtml = q.q
-      .replace(/'([^']+)'/g, "'$1'")
-      .replace(/「([^」]+)」/g, '$1')
-      .replace(/(_{2,})/g, '$1');
+      .replace(/'([^']+)'/g, "'\uE000$1\uE001'")
+      .replace(/「([^」]+)」/g, '\uE000$1\uE001')
+      .replace(/(_{2,})/g, '\uE002$1\uE003');
     qHtml = escapeHtml(qHtml)
-      .replace(//g, '<u>').replace(//g, '</u>')
-      .replace(//g, '<u>').replace(//g, '</u>');
-    html += '<p style="font-weight:600;margin:0 0 10px">' + qHtml + '</p>';
+      .replace(/\uE000/g, '<u>').replace(/\uE001/g, '</u>')
+      .replace(/\uE002/g, '<u>').replace(/\uE003/g, '</u>');
+    html += `<p style="font-weight:600;margin:0 0 10px">${qHtml}</p>`;
     if (q.c && q.c.length > 0) {
       html += '<div style="display:grid;gap:4px">';
-      q.c.forEach(function(_ref) {
-        var letter = _ref[0], text = _ref[1];
+      q.c.forEach(([letter, text]) => {
         var btnStyle = 'font-size:14px;padding:4px 8px;border:1px solid var(--line);border-radius:2px;text-align:left;font:inherit;';
         if (isDone) {
           btnStyle += 'cursor:default;';
@@ -4243,7 +3995,7 @@ function renderExamTab() {
         } else {
           btnStyle += 'cursor:pointer;background:transparent;';
         }
-        html += '<button onclick="checkExamAnswer(\'' + examTab + '\',' + oi + ',\'' + escapeHtml(letter) + '\',this)" style="' + btnStyle + '"' + (isDone?' disabled':'') + '>(' + escapeHtml(letter) + ') ' + escapeHtml(text) + '</button>';
+        html += `<button onclick="checkExamAnswer('${examTab}',${i},'${escapeHtml(letter)}',this)" style="${btnStyle}"${isDone?' disabled':''}>(${escapeHtml(letter)}) ${escapeHtml(text)}</button>`;
       });
       html += '</div>';
     }
@@ -4257,25 +4009,14 @@ function renderExamTab() {
       if (q.k) {
         fbHtml += '<div style="margin-top:8px;padding:10px 12px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;line-height:1.7">' + q.k + '</div>';
       } else if (q.explanation) {
-        fbHtml += '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation).replace(/\n/g, '<br>') + '</div>';
+        fbHtml += '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation) + '</div>';
       }
     }
-    html += '<div id="examFeedback' + oi + '" style="margin-top:6px;font-size:13px;min-height:20px">' + fbHtml + '</div>';
+    html += `<div id="examFeedback${i}" style="margin-top:6px;font-size:13px;min-height:20px">${fbHtml}</div>`;
     html += '</div>';
   });
-
-  // --- Bottom nav ---
-  if (examOneByOne && vLen > 1) {
-    html += '<div style="display:flex;justify-content:center;align-items:center;gap:12px;margin-top:16px">';
-    html += '<button onclick="examIndex=Math.max(0,examIndex-1);renderExamTab()" style="padding:6px 16px;border:1px solid var(--line);border-radius:4px;font-size:14px;cursor:pointer;background:transparent;color:var(--ink)"' + (examIndex===0?' disabled':'') + '>◀ 이전</button>';
-    html += '<span style="font-size:14px;font-weight:700;color:var(--accent)">' + (examIndex+1) + ' / ' + vLen + '</span>';
-    html += '<button onclick="examIndex=Math.min(' + (vLen-1) + ',examIndex+1);renderExamTab()" style="padding:6px 16px;border:1px solid var(--line);border-radius:4px;font-size:14px;cursor:pointer;background:var(--accent);color:#fff"' + (examIndex>=vLen-1?' disabled':'') + '>다음 ▶</button>';
-    html += '</div>';
-  }
-
   html += '</div>';
   els.examContent.innerHTML = html;
-
 }
 function checkExamAnswer(tab, idx, letter, btn) {
   var questions = EXAM_REGISTRY[tab] ? EXAM_REGISTRY[tab].data() : [];
@@ -4285,7 +4026,6 @@ function checkExamAnswer(tab, idx, letter, btn) {
   var correct = letter === q.a;
   if (correct) saveExamCorrect(tab, idx);
   else saveExamWrong(tab, idx);
-  { const ability = readIrtAbility() + getScoreDelta(correct, 50); writeIrtAbility(ability); updateTierDisplay(); }
 
   var fb = document.getElementById('examFeedback' + idx);
   if (fb) {
@@ -4296,7 +4036,7 @@ function checkExamAnswer(tab, idx, letter, btn) {
     if (q.k) {
       exp = '<div style="margin-top:8px;padding:10px 12px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;line-height:1.7">' + q.k + '</div>';
     } else if (q.explanation) {
-      exp = '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation).replace(/\n/g, '<br>') + '</div>';
+      exp = '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation) + '</div>';
     }
     fb.innerHTML = head + exp;
   }
@@ -4308,14 +4048,6 @@ function checkExamAnswer(tab, idx, letter, btn) {
     if (bLetter === q.a) b.style.background = '#e8f5e9';
     else if (bLetter === letter && !correct) b.style.background = '#fce4ec';
   });
-
-  // Auto-advance on correct answer in one-by-one mode
-  if (correct && examOneByOne) {
-    var total = EXAM_REGISTRY[tab] ? EXAM_REGISTRY[tab].data().length : 0;
-    if (idx < total - 1) {
-      setTimeout(function() { examIndex = idx + 1; renderExamTab(); }, 800);
-    }
-  }
 }
 
 els.examBtn.addEventListener('click', showExam);
@@ -4328,14 +4060,11 @@ els.grammar201Panel.addEventListener('click', function(e) {
 
 els.logicSubmitBtn.addEventListener("click", submitLogicAnswer);
 els.logicNextBtn.addEventListener("click", nextLogicQuestion);
-els.logicJumpBtn.addEventListener("click", function() {
-  if (!logicState.active || !logicState.questions.length) return;
-  var target = Math.min(199, logicState.questions.length - 1);
-  if (target === logicState.currentIndex) return;
-  logicState.currentIndex = target;
-  renderLogicQuestion();
-});
 
+// Sidebar is removed — relocate its still-needed pieces (with their event
+// listeners intact, since we move the live DOM nodes) into the workspace:
+//  • the login / 내정보 section goes to the top of the dashboard
+//  • the category picker goes above the start panel
 (function relocateFromSidebar() {
   const dashHeader = document.getElementById('dashHeader');
   const authSec = document.getElementById('authSection');
@@ -4343,6 +4072,7 @@ els.logicJumpBtn.addEventListener("click", function() {
   const catNav = document.getElementById('categoryNav');
   const quizPanel = document.getElementById('quizPanel');
   if (catNav && quizPanel && quizPanel.parentNode) {
+    // Wrap category nav in a collapsible bottom section
     const wrapper = document.createElement('div');
     wrapper.className = 'cat-nav-wrapper';
     const toggle = document.createElement('button');
@@ -4367,4 +4097,7 @@ els.logicJumpBtn.addEventListener("click", function() {
   }
 })();
 
+// Land on the dashboard by default — the single, unified navigation hub.
+// Runs last so logicState and all handlers are initialized first.
 showDashboard();
+// v20260623syncfix
