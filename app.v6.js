@@ -1611,7 +1611,7 @@ function scheduleCloudSync() {
     } else {
       _syncQueued = true;
     }
-  }, 3000);
+  }, 1000);
 }
 function flushCloudSync() {
   // Immediate sync: cancel debounce, run now
@@ -1715,12 +1715,29 @@ function cloudPullUserData(payload, nickname) {
     }
     if (obj.grammar_progress) {
       const gp = readGrammarProgress();
-      gp[nk] = JSON.parse(obj.grammar_progress);
+      const cloud = JSON.parse(obj.grammar_progress);
+      // Merge: union of correct, union of wrong minus correct
+      const local = gp[nk] || { correct: [], wrong: [] };
+      const mergedCorrect = [...new Set([...(local.correct||[]), ...(cloud.correct||[])])];
+      const mergedWrong = [...new Set([...(local.wrong||[]), ...(cloud.wrong||[])])].filter(id => !mergedCorrect.includes(id));
+      gp[nk] = { correct: mergedCorrect, wrong: mergedWrong };
       try { localStorage.setItem(grammarProgressKey, JSON.stringify(gp)); } catch {}
     }
     if (obj.exam_progress) {
       const ep = readExamProgress();
-      ep[nk] = JSON.parse(obj.exam_progress);
+      const cloudExam = JSON.parse(obj.exam_progress);
+      const localExam = ep[nk] || {};
+      // Merge per exam key: union of correct/wrong
+      const mergedExam = {};
+      const allKeys = new Set([...Object.keys(localExam), ...Object.keys(cloudExam)]);
+      allKeys.forEach(k => {
+        const l = localExam[k] || { correct: [], wrong: [] };
+        const c = cloudExam[k] || { correct: [], wrong: [] };
+        const corr = [...new Set([...(l.correct||[]), ...(c.correct||[])])];
+        const wro = [...new Set([...(l.wrong||[]), ...(c.wrong||[])])].filter(id => !corr.includes(id));
+        mergedExam[k] = { correct: corr, wrong: wro };
+      });
+      ep[nk] = mergedExam;
       try { localStorage.setItem(examProgressKey, JSON.stringify(ep)); } catch {}
     }
     if (obj.synonym_result) {
