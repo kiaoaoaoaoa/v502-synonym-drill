@@ -1564,12 +1564,27 @@ async function cloudPullScores() {
   } catch(e) { console.warn('cloudPullScores failed', e); }
 }
 
+let _syncRunning = null;
+let _syncQueued = false;
+
 function scheduleCloudSync() {
-  // Sync immediately to Supabase — no debounce
-  cloudSyncAll().catch((e) => { console.warn('scheduleCloudSync failed', e); });
+  // Serialize syncs: if one is already running, queue one more
+  if (!_syncRunning) {
+    _syncRunning = cloudSyncAll().catch((e) => { console.warn('scheduleCloudSync failed', e); }).finally(() => {
+      _syncRunning = null;
+      if (_syncQueued) { _syncQueued = false; scheduleCloudSync(); }
+    });
+  } else {
+    _syncQueued = true;
+  }
 }
 function flushCloudSync() {
-  cloudSyncAll().catch((e) => { console.warn('flushCloudSync failed', e); });
+  // Wait for any in-flight sync, then run one final sync
+  if (_syncRunning) {
+    _syncRunning.finally(() => cloudSyncAll().catch((e) => { console.warn('flushCloudSync failed', e); }));
+  } else {
+    cloudSyncAll().catch((e) => { console.warn('flushCloudSync failed', e); });
+  }
 }
 window.addEventListener('beforeunload', () => { if (state.playerName) flushCloudSync(); });
 
