@@ -2947,7 +2947,7 @@ function submitLogicAnswer() {
   els.logicFeedback.className = `feedback ${correct ? "ok" : "no"}`;
   els.logicFeedback.innerHTML = `
     <strong>${correct ? "✅ Correct!" : "❌ Incorrect."}</strong>
-    <p style="margin-top:8px">${escapeHtml(q.explanation)}</p>
+    <p style="margin-top:8px">${escapeHtml(q.explanation).replace(/\n/g, '<br>')}</p>
   `;
 
   els.logicOptions.querySelectorAll(".option").forEach(btn => {
@@ -3347,7 +3347,7 @@ function renderMyInfoTab(tab) {
           });
           html += `</div>`;
         }
-        html += `<p style="font-size:12px;color:var(--muted);margin:0">💡 ${escapeHtml(q.explanation)}</p>`;
+        html += `<p style="font-size:12px;color:var(--muted);margin:0">💡 ${escapeHtml(q.explanation).replace(/\n/g, '<br>')}</p>`;
         html += `</div>`;
       });
     }
@@ -3427,7 +3427,7 @@ function renderMyInfoTab(tab) {
           if (q.k) {
             html += '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;font-size:12px;line-height:1.6">' + q.k + '</div>';
           } else if (q.explanation) {
-            html += '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation) + '</div>';
+            html += '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation).replace(/\n/g, '<br>') + '</div>';
           }
           html += '</div>';
         }
@@ -4047,7 +4047,7 @@ function renderExamTab() {
       if (q.k) {
         fbHtml += '<div style="margin-top:8px;padding:10px 12px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;line-height:1.7">' + q.k + '</div>';
       } else if (q.explanation) {
-        fbHtml += '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation) + '</div>';
+        fbHtml += '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation).replace(/\n/g, '<br>') + '</div>';
       }
     }
     html += `<div id="examFeedback${i}" style="margin-top:6px;font-size:13px;min-height:20px">${fbHtml}</div>`;
@@ -4075,7 +4075,7 @@ function checkExamAnswer(tab, idx, letter, btn) {
     if (q.k) {
       exp = '<div style="margin-top:8px;padding:10px 12px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;line-height:1.7">' + q.k + '</div>';
     } else if (q.explanation) {
-      exp = '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation) + '</div>';
+      exp = '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation).replace(/\n/g, '<br>') + '</div>';
     }
     fb.innerHTML = head + exp;
   }
