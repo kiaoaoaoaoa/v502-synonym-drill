@@ -68,6 +68,7 @@ const MAP = {
 
 window.__V502_EXAM_SKKU2011__ = [
   {
+    "section": "[1-5] Choose one that is closest in meaning to the underlined expression.",
     "q": "In the movies the death of a child 'justifies' both serious acts of violent revenge and violent displays of serious acting.",
     "c": [
       [
@@ -203,6 +204,7 @@ window.__V502_EXAM_SKKU2011__ = [
     "explanation": "위대한 작가의 세 가지 측면인 마법, 이야기, 교훈은 통일되고 독특한 광채라는 하나의 인상 속에 혼합되는 경향이 있다.\n\nprone a 경향이 있는(=likely, liable)\nradiance n 광휘, 광채\nresistant a 저항하는, 내성이 있는"
   },
   {
+    "section": "[6-10] Choose one that is best for the blank.",
     "q": "Laurie has an _______ command of the Italian language.",
     "c": [
       [
@@ -338,6 +340,7 @@ window.__V502_EXAM_SKKU2011__ = [
     "explanation": "극단적인 날씨가 주민들에게 피해를 주었다.\n\ntake one's[a] toll on~ ~에 손상[피해]을 입히다\n정답 ④"
   },
   {
+    "section": "[11-15] Choose one that is either ungrammatical or unacceptable.",
     "q": "The general ①acceptance of the view created an ②expanded sense of guilt, ③for if the plague ④had been punishment there had to be terrible sin ⑤to have occasioned it.",
     "c": [
       [
@@ -473,6 +476,7 @@ window.__V502_EXAM_SKKU2011__ = [
     "explanation": "현재의 기름 과잉 공급에도 불구하고, 전 세계에 알려진 석유·천연 가스 매장량은 금세기 말에 감소될 것이라고 예상되고 있으므로, 남아있는 것을 전기 생산을 위해 다 써버린다면 어리석은 짓이 될 것이다.\n\n⑤ which remains가 명사절로 burn의 목적어가 되어야 하는데 which 앞에 선행사가 없으므로 선행사를 포함한 관계대명사 what로 고쳐야 한다.\n\n① world's known은 '소유격+형용사'의 형태로 뒤의 명사 reserves를 수식할 수 있다. ② 주어가 reserves로 복수명사이므로 복수동사 are는 적절하고 'be expected to 부정사(~하기로 예상되고 있다)'는 미래 대용어로 가까운 미래를 나타낼 때 쓰인다. ③ by the end of~는 '~말 까지는'의 의미이다. ④ 뒤에 진주어 to burn~가 있으므로 가주어 it이 나왔고, 조동사 would 다음에는 동사원형이 온다."
   },
   {
+    "section": "[16] Choose one that is best for the blank.",
     "q": "If you're an environmentalist, plastic is a word you tend to say with a sneer. It has become a symbol of our wasteful society. But there seems little concern it is here to stay, and the truth is, of course, that plastics have brought enormous benefits, even environmental ones. It's not really the plastics themselves that are the environmental disaster ― it's the way society chooses to use and ____",
     "c": [
       [
@@ -500,6 +504,7 @@ window.__V502_EXAM_SKKU2011__ = [
     "explanation": "당신이 환경론자라면, 플라스틱은 당신이 조롱조로 말하는 경향이 있는 단어이다. 플라스틱은 낭비하는 우리 사회의 상징이 되어버렸다. 그러나 그것이 지속적으로 그럴 것이라는 걱정은 거의 없으며 사실은 물론, 플라스틱은 막대한 혜택을 심지어는 환경적인 혜택까지도 가져왔다. 환경재앙이 되는 것은 플라스틱 자체가 아니라 사회가 그것을 사용하고 버리는 방식인 것이다.\n\n플라스틱은 사용 후 버리는 것이므로 빈칸에는 '버리다'의 의미를 갖는 동사가 필요하다.\n\nsneer n 비웃음, 냉소\nendanger v 위험에 빠뜨리다(=jeopardize, imperil)\naccumulate v 축적하다, 모으다\ndispose v 처리하다, 버리다"
   },
   {
+    "section": "[17-18] Choose the best title of the following passages.",
     "q": "The best title of the passage would be _______.",
     "p": "A Parisian villain broke into a house at the village of Lachelle in 1978. Once inside he began to feel decidedly peckish and so went in search of the icebox. There he found his favourite cheese which it would have been a shame not to try. He then found some Bath Oliver biscuits and three bottles of champagne. After a while he began to feel sleepy and decided that he would lie down and digest his meal in comfort. He was arrested next morning fast asleep upstairs in the spare bedroom.",
     "c": [
@@ -556,6 +561,7 @@ window.__V502_EXAM_SKKU2011__ = [
     "explanation": "30, 40, 혹은 더 나이든 여성들은 직업과 양육을 능숙하게 처리하는 경향이 있고 종종 남편이 없을 때도 그러하다. 그들은 스스로 인생의 의미를 알게 되었다. 그들에게는 스타일이 있다. 그들은 성숙한 사람들이고 나이를 감추지 않는다. 비록 그들의 삶은 더 힘들지라도, 그들은 종종 어느 정도 미숙하고, 불완전하고, 훨씬 덜 흥미롭고, 때로는 상당히 무지한 훨씬 더 젊은 여성에게는 없는 어떤 중심과 강인함을 갖고 있다.\n\n이 글의 요지가 젊은 여성과 비교되는 나이든 여성의 강점이므로 ④의 '나이든 여성에 대한 칭송'이 제목으로 알맞다.\n\njuggle v 절묘히 다루다, ~에 요술을 부리다, 조작하다\nfigure out 계산하다; 이해하다, 찾다; 생각해 내다\ncourtship n 구애, 구혼\nnarcissism n 자아도취"
   },
   {
+    "section": "[19-50] Read the following passage and answer the questions.",
     "q": "The best title of the passage would be _______.",
     "p": "As its critics so rightly claimed, inductivism depicted science as a heartless, almost inhuman discipline offering no legitimate place to quirkiness, intuition, and all the other subjective attributes adhering to our vernacular notion of genius. Great scientists, the critics claimed, are distinguished more by their powers of _______, than their skill in experiment or observation. The criticisms of inductivism are certainly valid and I welcome its dethroning during the past thirty years as a necessary prelude to better understanding. Yet, in attacking it so strongly, some critics have tried to substitute an alternative equally extreme and unproductive in its emphasis on the subjectivity of creative thought. In this \"eureka\" view, creativity is an ineffable something, accessible only to persons of genius. It arises like a bolt of lightning, unpredictable and unanticipated ― but the bolts strike only a few special people.",
     "c": [

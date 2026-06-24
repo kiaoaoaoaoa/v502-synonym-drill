@@ -3988,6 +3988,12 @@ var EXAM_REGISTRY = {
 
 function renderExamTab() {
   var html = '<div style="max-width:700px">';
+  if (examTab === 'skku2011') {
+    html += '<div style="margin-bottom:16px;padding:12px 16px;background:#f8f9fc;border-radius:4px;border:1px solid var(--line)">';
+    html += '<p style="margin:0 0 4px;font-size:12px;color:var(--muted)">성균관대학교</p>';
+    html += '<p style="margin:0;font-size:14px;font-weight:700;color:var(--accent)">2011학년도 일반·학사편입 [오전 A형] 90분 · 50문항</p>';
+    html += '</div>';
+  }
   html += '<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:16px">';
   var keys = Object.keys(EXAM_REGISTRY);
   for (var i = 0; i < keys.length; i++) {
@@ -4009,6 +4015,9 @@ function renderExamTab() {
     var isCorrect = prog.correct.has(i);
     var isWrong = prog.wrong.has(i);
     var isDone = isCorrect || isWrong;
+    if (q.section) {
+      html += `<div style="margin:-8px 0 16px 0;padding:4px 10px;background:var(--accent);color:#fff;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:0.5px">${escapeHtml(q.section)}</div>`;
+    }
     html += `<div style="margin-bottom:16px;padding:16px;border-radius:2px;border:1px solid var(--line);${isCorrect?'background:#f1f8e9':isWrong?'background:#fff3f0':''}" id="examQ${i}">`;
     html += `<p style="font-weight:700;margin:0 0 8px;color:var(--accent)">${i+1}.` + (isCorrect ? ' ✅' : isWrong ? ' ❌' : '') + `</p>`;
     if (q.p && q.p.length > 30) {
