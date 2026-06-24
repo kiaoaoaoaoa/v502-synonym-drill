@@ -31,6 +31,7 @@
             <p class="auth-label">Logged in as</p>
             <strong id="authPlayerName">—</strong>
             <span id="authTier" class="auth-tier">—</span>
+            <button id="boardBtn" class="auth-logout-btn" type="button" style="margin-right:4px" onclick="openBoard()">게시판</button>
             <button id="authLogoutBtn" class="auth-logout-btn" type="button">로그아웃</button>
           </div>
         </section>
@@ -309,6 +310,10 @@
           </div>
           <p id="rankingSummary" class="ranking-summary"></p>
           <div id="rankingContent" class="leaderboard"></div>
+        </section>
+
+        <section id="boardPanel" class="quiz-panel" hidden>
+          <div id="boardContent"></div>
         </section>
 
         <section id="myinfoPanel" class="quiz-panel" hidden>

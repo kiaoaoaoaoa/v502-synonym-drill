@@ -650,6 +650,8 @@ const els = {
   logicModeBtn: document.querySelector("#logicModeBtn"),
   synonymDrillBtn: document.querySelector("#synonymDrillBtn"),
   myinfoBtn: document.querySelector("#myinfoBtn"),
+  boardPanel: document.querySelector("#boardPanel"),
+  boardContent: document.querySelector("#boardContent"),
   myinfoPanel: document.querySelector("#myinfoPanel"),
   myinfoContent: document.querySelector("#myinfoContent"),
   myinfoCloseBtn: document.querySelector("#myinfoCloseBtn"),
@@ -1959,6 +1961,7 @@ function switchMode(mode) {
   els.rankingPanel.hidden = true;
   els.wordlistPanel.hidden = true;
   els.logicPanel.hidden = true;
+  els.boardPanel.hidden = true;
   els.myinfoPanel.hidden = true;
   els.dashboardPanel.hidden = true;
   els.wordlist2Panel.hidden = true;
@@ -2358,16 +2361,18 @@ function showWordbook3() {
 
   // Section boundaries
   const sections = [
-    { label: null, items: [] },
+    { label: '처음 ~ 999번 단어', items: [] },
+    { label: '[1000~1999 단어]', items: [] },
     { label: '[2000~2999 단어]', items: [] },
     { label: '[3000번 단어~마지막단어]', items: [] }
   ];
 
   visible.forEach((item, idx) => {
     const originalIdx = words.indexOf(item);
-    if (originalIdx < 2000) sections[0].items.push(item);
-    else if (originalIdx < 3000) sections[1].items.push(item);
-    else sections[2].items.push(item);
+    if (originalIdx < 1000) sections[0].items.push(item);
+    else if (originalIdx < 2000) sections[1].items.push(item);
+    else if (originalIdx < 3000) sections[2].items.push(item);
+    else sections[3].items.push(item);
   });
 
   function renderEntries(items) {
@@ -2394,25 +2399,33 @@ function showWordbook3() {
     return h;
   }
 
-  // Section 1: always open
+  // Section 1: 0-999, open by default
   html += '<details class="wb3-section" open>';
-  html += '<summary class="wb3-summary">처음 ~ 1999번 단어 <small>(' + sections[0].items.length + '개)</small></summary>';
+  html += '<summary class="wb3-summary">처음 ~ 999번 단어 <small>(' + sections[0].items.length + '개)</small></summary>';
   html += renderEntries(sections[0].items);
   html += '</details>';
 
-  // Section 2: 2000~2999, collapsed by default
+  // Section 2: 1000~1999, collapsed
   if (sections[1].items.length > 0) {
     html += '<details class="wb3-section">';
-    html += '<summary class="wb3-summary">[2000~2999 단어] <small>(' + sections[1].items.length + '개)</small></summary>';
+    html += '<summary class="wb3-summary">[1000~1999 단어] <small>(' + sections[1].items.length + '개)</small></summary>';
     html += renderEntries(sections[1].items);
     html += '</details>';
   }
 
-  // Section 3: 3000~, collapsed by default
+  // Section 3: 2000~2999, collapsed
   if (sections[2].items.length > 0) {
     html += '<details class="wb3-section">';
-    html += '<summary class="wb3-summary">[3000번 단어~마지막단어] <small>(' + sections[2].items.length + '개)</small></summary>';
+    html += '<summary class="wb3-summary">[2000~2999 단어] <small>(' + sections[2].items.length + '개)</small></summary>';
     html += renderEntries(sections[2].items);
+    html += '</details>';
+  }
+
+  // Section 4: 3000~, collapsed
+  if (sections[3].items.length > 0) {
+    html += '<details class="wb3-section">';
+    html += '<summary class="wb3-summary">[3000번 단어~마지막단어] <small>(' + sections[3].items.length + '개)</small></summary>';
+    html += renderEntries(sections[3].items);
     html += '</details>';
   }
 
@@ -2563,6 +2576,22 @@ function startWithName(event) {
   els.startPanel.hidden = true;
   startQuiz();
 }
+
+function openBoard() {
+  switchMode('board');
+  renderBoard();
+}
+function renderBoard() {
+  let html = '<div style="max-width:700px">';
+  html += '<h3>게시판</h3>';
+  html += '<p style="color:var(--muted)">게시판 기능은 준비 중입니다.</p>';
+  html += '</div>';
+  els.boardPanel.innerHTML = html;
+  els.boardPanel.hidden = false;
+}
+els.boardPanel.addEventListener("click", function(e) {
+  if (e.target === this) { this.hidden = true; }
+});
 
 els.authLoginBtn.addEventListener("click", handleLogin);
 els.authRegisterBtn.addEventListener("click", handleRegister);
