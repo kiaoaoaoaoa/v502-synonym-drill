@@ -4087,7 +4087,8 @@ var EXAM_REGISTRY = {
   skku2024:       { title: '2024 성균관대',         data: function(){return window.__V502_EXAM_SKKU2024__||[]}, hidden: true },
   skku2025:       { title: '2025 성균관대 인문',    data: function(){return window.__V502_EXAM_SKKU2025__||[]}, hidden: true },
   skku2026mock:   { title: '2026 대비 예상문제',    data: function(){return window.__V502_EXAM_SKKU2026MOCK__||[]} },
-  jininsa2027_1:  { title: '진인사대천명 2027-1',     data: function(){return window.__V502_EXAM_JININSA_2027_1__||[]}, category: '정갤문제' }
+  jininsa2027_1:  { title: '진인사대천명 2027-1',     data: function(){return window.__V502_EXAM_JININSA_2027_1__||[]}, category: '정갤문제' },
+  hufs2015A:      { title: '2015 한국외대 A형',        data: function(){return window.__V502_EXAM_HUFS2015A__||[]} }
 };
 
 function renderExamTab() {
