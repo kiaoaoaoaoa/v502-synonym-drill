@@ -2356,7 +2356,6 @@ function showWordbook3() {
   if (state.playerName) {
     html += '<button class="wl-jump-btn wl-hideknown-btn' + (wb3HideKnown ? ' wl-hideknown-on' : '') + '" type="button" id="wb3HideBtn" title="외운 단어(✓) 숨기기">' + (wb3HideKnown ? '✓ 외운 단어 숨김' : '외운 단어 안보기') + '</button>';
   }
-  html += '<button class="wl-jump-btn" type="button" id="wb3ResetBtn" title="모든 외운 단어 표시 해제">외운 단어 초기화</button>';
   html += '</div>';
 
   // Section boundaries
@@ -2435,19 +2434,6 @@ function showWordbook3() {
   const hideBtn = document.getElementById('wb3HideBtn');
   if (hideBtn) {
     hideBtn.addEventListener('click', () => { wb3HideKnown = !wb3HideKnown; showWordbook3(); });
-  }
-  const resetBtn = document.getElementById('wb3ResetBtn');
-  if (resetBtn) {
-    resetBtn.addEventListener('click', () => {
-      if (!state.playerName) return;
-      if (!confirm('단어장3의 모든 외운 단어 표시를 해제할까요?')) return;
-      const words = window.__V502_WORDBOOK3__ || [];
-      words.forEach(item => {
-        const w = item.w || '';
-        if (isWordKnown(w)) toggleWordKnown(w);
-      });
-      showWordbook3();
-    });
   }
 }
 

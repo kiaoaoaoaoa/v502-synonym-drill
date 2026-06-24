@@ -618,18 +618,18 @@ h2 {
 }
 
 .wl2-entry {
-  margin-bottom: 10px;
-  padding: 4px 0;
+  margin-bottom: 12px;
+  padding: 6px 0;
 }
 
 .wl2-word {
-  font-weight: 700;
-  color: var(--ink);
-  font-size: 13px;
+  font-weight: 800;
+  color: #1a1a2e;
+  font-size: 16px;
   background: #fff;
-  padding: 1px 6px;
+  padding: 3px 8px;
   border-radius: 4px;
-  border: 1px solid #eef1f5;
+  border: 1px solid #dde1e7;
   display: inline-block;
   white-space: nowrap;
   position: relative;
@@ -639,15 +639,15 @@ h2 {
   display: inline-block;
   margin-right: 2px;
   color: #2e7d32;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 800;
 }
 
 .wl2-meaning {
-  font-weight: 400;
-  color: var(--muted);
+  font-weight: 500;
+  color: #4a4a5a;
   margin-left: 4px;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .wl2-pos {
@@ -882,12 +882,14 @@ h2 {
   }
 
   .wl2-word {
-    font-size: 15px;
-    padding: 3px 9px;
+    font-size: 17px;
+    padding: 4px 10px;
   }
 
   .wl2-meaning {
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #4a4a5a;
   }
 
   .wl2-pos {
