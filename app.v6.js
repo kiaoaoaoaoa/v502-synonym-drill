@@ -3327,6 +3327,7 @@ function renderMyInfoTab(tab) {
   html += `<button onclick="renderMyInfoTab('grammar')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='grammar'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📝 문법오답</button>`;
   html += `<button onclick="renderMyInfoTab('exam')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='exam'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📋 기출오답</button>`;
   html += `<button onclick="renderMyInfoTab('learned')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='learned'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📅 학습한 단어</button>`;
+  html += `<button onclick="renderMyInfoTab('grammarTheory')" style="flex:1;min-width:80px;min-height:36px;padding:2px 4px;border:1px solid var(--line);border-radius:2px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;${tab==='grammarTheory'?'background:var(--ink);color:#fff':'background:transparent;color:var(--ink)'}">📚 문법이론</button>`;
   html += '</div>';
 
   if (tab === 'review') {
@@ -3538,6 +3539,25 @@ function renderMyInfoTab(tab) {
           html += '<span style="display:inline-block;margin:2px 4px;padding:2px 8px;background:#e8f0e8;border-radius:4px;font-size:13px">' + escapeHtml(w) + (m ? ' <span style="color:var(--muted);font-size:11px">' + escapeHtml(m) + '</span>' : '') + '</span>';
         });
         html += '</div></details>';
+      });
+    }
+  } else if (tab === 'grammarTheory') {
+    const chapters = window.__V502_GRAMMAR_THEORY__ || [];
+    if (chapters.length === 0) {
+      html += '<p style="color:var(--muted)">문법이론 데이터가 없습니다.</p>';
+    } else {
+      html += '<p style="color:var(--muted);margin-bottom:12px">총 <b>' + chapters.length + '</b>개 챕터</p>';
+      chapters.forEach(function(ch, i) {
+        var bodyHtml = escapeHtml(ch.body).replace(/\n/g, '<br>');
+        // Highlight corrections: (O) green, (X) red
+        bodyHtml = bodyHtml.replace(/\(O\)/g, '<span style="color:#2e7d32;font-weight:700">(O)</span>');
+        bodyHtml = bodyHtml.replace(/\(X\)/g, '<span style="color:#c62828;font-weight:700">(X)</span>');
+        // Bold the * entries
+        bodyHtml = bodyHtml.replace(/\*(.+?)(?=<br>|$)/g, '<strong>*$1</strong>');
+        html += '<details class="wb3-section" style="margin-bottom:8px">';
+        html += '<summary class="wb3-summary" style="font-size:14px;font-weight:700;cursor:pointer;padding:8px 12px;background:#f8f9fc;border-radius:4px;border:1px solid var(--line)">📖 ' + escapeHtml(ch.title) + '</summary>';
+        html += '<div style="padding:12px 16px;font-size:13px;line-height:1.9;background:#fff;border:1px solid var(--line);border-top:none;border-radius:0 0 4px 4px;max-height:60vh;overflow-y:auto">' + bodyHtml + '</div>';
+        html += '</details>';
       });
     }
   }
