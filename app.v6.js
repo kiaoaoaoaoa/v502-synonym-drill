@@ -2358,20 +2358,18 @@ function showWordbook3() {
   }
   html += '</div>';
 
-  // Section boundaries
-  const sections = [
-    { label: '처음 ~ 999번 단어', items: [] },
-    { label: '[1000~1999 단어]', items: [] },
-    { label: '[2000~2999 단어]', items: [] },
-    { label: '[3000번 단어~마지막단어]', items: [] }
-  ];
+  // 500-word chunks, all collapsed by default
+  const CHUNK = 500;
+  const totalChunks = Math.ceil(words.length / CHUNK);
+  const sections = [];
+  for (let c = 0; c < totalChunks; c++) {
+    sections.push({ start: c * CHUNK, end: Math.min((c + 1) * CHUNK - 1, words.length - 1), items: [] });
+  }
 
-  visible.forEach((item, idx) => {
+  visible.forEach((item) => {
     const originalIdx = words.indexOf(item);
-    if (originalIdx < 1000) sections[0].items.push(item);
-    else if (originalIdx < 2000) sections[1].items.push(item);
-    else if (originalIdx < 3000) sections[2].items.push(item);
-    else sections[3].items.push(item);
+    const chunkIdx = Math.floor(originalIdx / CHUNK);
+    if (chunkIdx < sections.length) sections[chunkIdx].items.push(item);
   });
 
   function renderEntries(items) {
@@ -2398,35 +2396,14 @@ function showWordbook3() {
     return h;
   }
 
-  // Section 1: 0-999, open by default
-  html += '<details class="wb3-section" open>';
-  html += '<summary class="wb3-summary">처음 ~ 999번 단어 <small>(' + sections[0].items.length + '개)</small></summary>';
-  html += renderEntries(sections[0].items);
-  html += '</details>';
-
-  // Section 2: 1000~1999, collapsed
-  if (sections[1].items.length > 0) {
+  sections.forEach((sec) => {
+    if (sec.items.length === 0) return;
+    var label = sec.start + '~' + sec.end + '번 단어';
     html += '<details class="wb3-section">';
-    html += '<summary class="wb3-summary">[1000~1999 단어] <small>(' + sections[1].items.length + '개)</small></summary>';
-    html += renderEntries(sections[1].items);
+    html += '<summary class="wb3-summary">[' + label + '] <small>(' + sec.items.length + '개)</small></summary>';
+    html += renderEntries(sec.items);
     html += '</details>';
-  }
-
-  // Section 3: 2000~2999, collapsed
-  if (sections[2].items.length > 0) {
-    html += '<details class="wb3-section">';
-    html += '<summary class="wb3-summary">[2000~2999 단어] <small>(' + sections[2].items.length + '개)</small></summary>';
-    html += renderEntries(sections[2].items);
-    html += '</details>';
-  }
-
-  // Section 4: 3000~, collapsed
-  if (sections[3].items.length > 0) {
-    html += '<details class="wb3-section">';
-    html += '<summary class="wb3-summary">[3000번 단어~마지막단어] <small>(' + sections[3].items.length + '개)</small></summary>';
-    html += renderEntries(sections[3].items);
-    html += '</details>';
-  }
+  });
 
   html += '</div></div>';
   els.wordbook3Content.innerHTML = html;
