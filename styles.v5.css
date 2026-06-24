@@ -878,16 +878,29 @@ h2 {
   }
 
   .wl2-entry {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
 
   .wl2-word {
-    font-size: 13px;
-    padding: 2px 7px;
+    font-size: 15px;
+    padding: 3px 9px;
   }
 
   .wl2-meaning {
+    font-size: 14px;
+  }
+
+  .wl2-pos {
     font-size: 12px;
+  }
+
+  .wl2-pron {
+    font-size: 12px;
+  }
+
+  .wb3-summary {
+    font-size: 16px;
+    padding: 12px 16px;
   }
 
   .wl2-example {
@@ -1023,6 +1036,41 @@ h2 {
 .wl-hideknown-btn.wl-hideknown-on {
   background: var(--accent);
   color: #fff;
+}
+
+/* wordbook3 collapsible sections */
+.wb3-section {
+  margin-bottom: 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.wb3-summary {
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  background: #f5f7fa;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+.wb3-summary::-webkit-details-marker {
+  display: none;
+}
+.wb3-summary::before {
+  content: '▸ ';
+  font-size: 11px;
+}
+details[open] > .wb3-summary::before {
+  content: '▾ ';
+}
+.wb3-summary small {
+  color: var(--muted);
+  font-weight: 400;
+}
+.wb3-section .wordlist2-entries {
+  padding: 8px 14px;
 }
 
 /* wordbook3 jump bar */

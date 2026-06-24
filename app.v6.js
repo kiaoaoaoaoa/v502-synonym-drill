@@ -2355,27 +2355,69 @@ function showWordbook3() {
   }
   html += '<button class="wl-jump-btn" type="button" id="wb3ResetBtn" title="모든 외운 단어 표시 해제">외운 단어 초기화</button>';
   html += '</div>';
-  html += '<div class="wordlist2-entries">';
-  visible.forEach((item) => {
-    const w = item.w || '';
-    const m = item.m || '';
-    const p = item.p || '';
-    const pos = item.pos || '';
-    const known = state.playerName && isWordKnown(w);
-    html += '<div class="wl2-entry">';
-    html += '<span class="wl2-word' + (known ? ' wl-known' : '') + (state.playerName ? ' wl-clickable' : '') + '"';
-    if (state.playerName) {
-      html += ' onclick="handleWordToggle(\'' + escapeHtml(w) + '\', this)" title="클릭하여 안다/모른다 표시"';
-    }
-    html += '>';
-    if (known) html += '<span class="wl-check">✓</span>';
-    html += escapeHtml(w) + '</span>';
-    if (pos) html += '<span class="wl2-pos">' + escapeHtml(pos) + '</span>';
-    if (p) html += '<span class="wl2-pron">' + escapeHtml(p) + '</span>';
-    if (m) html += '<span class="wl2-meaning" style="margin-left:4px">' + escapeHtml(m) + '</span>';
-    html += '</div>';
+
+  // Section boundaries
+  const sections = [
+    { label: null, items: [] },
+    { label: '[2000~2999 단어]', items: [] },
+    { label: '[3000번 단어~마지막단어]', items: [] }
+  ];
+
+  visible.forEach((item, idx) => {
+    const originalIdx = words.indexOf(item);
+    if (originalIdx < 2000) sections[0].items.push(item);
+    else if (originalIdx < 3000) sections[1].items.push(item);
+    else sections[2].items.push(item);
   });
-  html += '</div></div></div>';
+
+  function renderEntries(items) {
+    let h = '<div class="wordlist2-entries">';
+    items.forEach((item) => {
+      const w = item.w || '';
+      const m = item.m || '';
+      const p = item.p || '';
+      const pos = item.pos || '';
+      const known = state.playerName && isWordKnown(w);
+      h += '<div class="wl2-entry">';
+      h += '<span class="wl2-word' + (known ? ' wl-known' : '') + (state.playerName ? ' wl-clickable' : '') + '"';
+      if (state.playerName) {
+        h += ' onclick="handleWordToggle(\'' + escapeHtml(w) + '\', this)" title="클릭하여 안다/모른다 표시"';
+      }
+      h += '>';
+      if (known) h += '<span class="wl-check">✓</span>';
+      h += escapeHtml(w) + '</span>';
+      if (pos) h += '<span class="wl2-pos">' + escapeHtml(pos) + '</span>';
+      if (p) h += '<span class="wl2-pron">' + escapeHtml(p) + '</span>';
+      if (m) h += '<span class="wl2-meaning" style="margin-left:4px">' + escapeHtml(m) + '</span>';
+      h += '</div>';
+    });
+    h += '</div>';
+    return h;
+  }
+
+  // Section 1: always open
+  html += '<details class="wb3-section" open>';
+  html += '<summary class="wb3-summary">처음 ~ 1999번 단어 <small>(' + sections[0].items.length + '개)</small></summary>';
+  html += renderEntries(sections[0].items);
+  html += '</details>';
+
+  // Section 2: 2000~2999, collapsed by default
+  if (sections[1].items.length > 0) {
+    html += '<details class="wb3-section">';
+    html += '<summary class="wb3-summary">[2000~2999 단어] <small>(' + sections[1].items.length + '개)</small></summary>';
+    html += renderEntries(sections[1].items);
+    html += '</details>';
+  }
+
+  // Section 3: 3000~, collapsed by default
+  if (sections[2].items.length > 0) {
+    html += '<details class="wb3-section">';
+    html += '<summary class="wb3-summary">[3000번 단어~마지막단어] <small>(' + sections[2].items.length + '개)</small></summary>';
+    html += renderEntries(sections[2].items);
+    html += '</details>';
+  }
+
+  html += '</div></div>';
   els.wordbook3Content.innerHTML = html;
 
   const hideBtn = document.getElementById('wb3HideBtn');
