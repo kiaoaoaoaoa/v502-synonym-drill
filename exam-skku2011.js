@@ -69,6 +69,7 @@ const MAP = {
 window.__V502_EXAM_SKKU2011__ = [
   {
     "q": "In the movies the death of a child 'justifies' both serious acts of violent revenge and violent displays of serious acting.",
+    "p": "In the movies the death of a child 「justifies」 both serious acts of violent revenge and violent displays of serious acting.",
     "c": [
       [
         "1",
@@ -96,6 +97,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "He describes the confusion and emotional chaos of dealing with the mentally ill with 'riveting' precision.",
+    "p": "He describes the confusion and emotional chaos of dealing with the mentally ill with 「riveting」 precision.",
     "c": [
       [
         "1",
@@ -123,6 +125,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "Mr. Brady has done something to 'bring home to us' the terrible reality of war.",
+    "p": "Mr. Brady has done something to 「bring home to us」 the terrible reality of war.",
     "c": [
       [
         "1",
@@ -150,6 +153,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "Perhaps some will say that animals have some 'inherent' value, only less than we have.",
+    "p": "Perhaps some will say that animals have some 「inherent」 value, only less than we have.",
     "c": [
       [
         "1",
@@ -177,6 +181,7 @@ window.__V502_EXAM_SKKU2011__ = [
   },
   {
     "q": "The three facets of the great writer ― magic, story, lesson ― are 'prone to blend' in one impression of unified and unique radiance.",
+    "p": "The three facets of the great writer ― magic, story, lesson ― are 「prone to blend」 in one impression of unified and unique radiance.",
     "c": [
       [
         "1",
