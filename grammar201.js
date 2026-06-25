@@ -3237,7 +3237,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "1 marry with(X) 2 took care his children/left from(X) 3 have that tooth to pull(X) 4 Had he not died...would be correct",
+    "exp": "1 marry with (X) 2 took care his children/left from (X) 3 have that tooth to pull (X) 4 Had he not died...would be correct",
     "t": "가정법"
   },
   {
@@ -7215,7 +7215,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "faced with two cases. 과거분사 형용사구. facing with(X), which face(주어 court단수면 faces), faces(술어동사 위치 불가).",
+    "exp": "faced with two cases. 과거분사 형용사구. facing with (X), which face(주어 court단수면 faces), faces(술어동사 위치 불가).",
     "t": "분사구문"
   },
   {
@@ -10027,7 +10027,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "That remark of his. 이중소유격 올바른 형태. That his remark(X). That remark of he(X).",
+    "exp": "That remark of his. 이중소유격 올바른 형태. That his remark (X). That remark of he (X).",
     "t": "관계대명사"
   },
   {
@@ -10956,7 +10956,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "another pair. another+단수. shoes=복수(X), other shoes 다른 신발(의미상 가능하나 문맥은 '또 다른 한 켤레').",
+    "exp": "another pair. another+단수. shoes=복수 (X), other shoes 다른 신발(의미상 가능하나 문맥은 '또 다른 한 켤레').",
     "t": "other/another"
   },
   {
