@@ -696,16 +696,16 @@ h2 {
 .wb3-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  gap: 6px;
 }
 .wb3-card {
   background: #fff;
   border: 1px solid #eef1f5;
-  border-radius: 6px;
-  padding: 5px 8px;
+  border-radius: 5px;
+  padding: 4px 7px;
   break-inside: avoid;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 4px;
 }
 .wb3-card-inner {
@@ -717,7 +717,7 @@ h2 {
   align-items: baseline;
   flex-wrap: wrap;
   gap: 4px;
-  margin-bottom: 2px;
+  margin-bottom: 0;
 }
 .wb3-word {
   font-weight: 700;
@@ -730,8 +730,7 @@ h2 {
   font-size: 11px;
 }
 .wb3-body {
-  margin-top: 1px;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 .wb3-pos {
   display: inline-block;
@@ -762,10 +761,10 @@ h2 {
 @media (max-width: 840px) {
   .wb3-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    gap: 6px;
   }
   .wb3-card {
-    padding: 5px 8px;
+    padding: 4px 7px;
   }
   .wb3-word {
     font-size: 14px;
@@ -799,12 +798,12 @@ h2 {
 @media (max-width: 480px) {
   .wb3-grid {
     grid-template-columns: 1fr;
-    gap: 6px;
+    gap: 5px;
   }
   .wb3-card {
-    padding: 5px 8px;
-    border-radius: 6px;
-    gap: 6px;
+    padding: 4px 7px;
+    border-radius: 5px;
+    gap: 5px;
   }
   .wb3-word {
     font-size: 15px;
@@ -1042,14 +1041,14 @@ h2 {
 
 /* wordbook3 collapsible sections */
 .wb3-section {
-  margin-bottom: 12px;
+  margin-bottom: 6px;
   border: 1px solid var(--line);
   border-radius: 6px;
   overflow: hidden;
 }
 .wb3-summary {
-  padding: 10px 14px;
-  font-size: 14px;
+  padding: 6px 10px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--accent);
   background: #f5f7fa;
@@ -1075,7 +1074,7 @@ details[open] > .wb3-summary::before {
   padding: 8px 14px;
 }
 .wb3-section .wb3-grid {
-  padding: 10px 12px;
+  padding: 6px 8px;
 }
 
 /* wordbook3 card variants */
