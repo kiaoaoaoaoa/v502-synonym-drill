@@ -1481,9 +1481,13 @@ details[open] > .wb3-summary::before {
   font-size: 20px;
 }
 
-.option span {
+.option .option-meaning {
+  display: block;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 400;
+  margin-top: 3px;
+  line-height: 1.3;
 }
 
 .option.correct {
