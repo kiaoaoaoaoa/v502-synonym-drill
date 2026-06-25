@@ -2309,8 +2309,11 @@ function toggleCatKoreanUsage(catId) {
 
 function handleWordToggle(word, element) {
   const becameKnown = toggleWordKnown(word);
+  const isWb3 = element.classList.contains('wb3-word');
+  const card = isWb3 ? element.closest('.wb3-card') : null;
   if (becameKnown) {
     element.classList.add('wl-known');
+    if (isWb3) { element.classList.add('wb3-word-known'); if (card) card.classList.add('wb3-known'); }
     if (!element.querySelector('.wl-check')) {
       const check = document.createElement('span');
       check.className = 'wl-check';
@@ -2319,6 +2322,7 @@ function handleWordToggle(word, element) {
     }
   } else {
     element.classList.remove('wl-known');
+    if (isWb3) { element.classList.remove('wb3-word-known'); if (card) card.classList.remove('wb3-known'); }
     const check = element.querySelector('.wl-check');
     if (check) check.remove();
   }
