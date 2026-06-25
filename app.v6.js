@@ -2049,6 +2049,9 @@ function switchMode(mode) {
   } else if (mode === 'myinfo') {
     els.activeSetLabel.textContent = "내정보";
     els.activeSetMeta.textContent = "틀린 문제";
+  } else if (mode === 'board') {
+    els.activeSetLabel.textContent = "게시판";
+    els.activeSetMeta.textContent = "커뮤니티";
   }
   updateNoExplainIndicator();
 }
@@ -2603,18 +2606,245 @@ function startWithName(event) {
   startQuiz();
 }
 
-function openBoard() {
+// ── Board ────────────────────────────────────────────────
+const boardState = {
+  posts: [],
+  currentView: 'list',
+  currentPost: null,
+  currentComments: [],
+  page: 0,
+  pageSize: 20,
+  hasMore: false,
+};
+
+function getBoardTable() { return 'board_posts'; }
+function getCommentsTable() { return 'board_comments'; }
+
+function formatBoardDate(ts) {
+  if (!ts) return '';
+  const d = new Date(ts);
+  const pad = (n) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+}
+
+async function openBoard() {
   switchMode('board');
-  renderBoard();
-}
-function renderBoard() {
-  let html = '<div style="max-width:900px">';
-  html += '<h3>게시판</h3>';
-  html += '<p style="color:var(--muted)">게시판 기능은 준비 중입니다.</p>';
-  html += '</div>';
-  els.boardPanel.innerHTML = html;
+  boardState.currentView = 'list';
+  boardState.page = 0;
+  boardState.currentPost = null;
   els.boardPanel.hidden = false;
+  els.boardContent.innerHTML = '<p style="color:var(--muted)">불러오는 중...</p>';
+  await loadBoardPosts();
 }
+
+async function loadBoardPosts() {
+  const client = await getSupabaseClient();
+  if (!client) {
+    els.boardContent.innerHTML = '<p style="color:var(--muted);padding:24px">서버에 연결할 수 없습니다.</p>';
+    return;
+  }
+  const from = boardState.page * boardState.pageSize;
+  const to = from + boardState.pageSize - 1;
+  const { data, error } = await client
+    .from(getBoardTable())
+    .select('*', { count: 'exact' })
+    .order('created_at', { ascending: false })
+    .range(from, to);
+  if (error) {
+    els.boardContent.innerHTML = '<p style="color:var(--muted);padding:24px">게시글을 불러오지 못했습니다.</p>';
+    return;
+  }
+  boardState.posts = data || [];
+  boardState.hasMore = (data || []).length === boardState.pageSize;
+  renderPostList();
+}
+
+function renderPostList() {
+  let html = '<div class="board-container">';
+  html += '<div class="board-header">';
+  html += '<h3>게시판</h3>';
+  if (state.playerName) {
+    html += '<button class="board-write-btn" onclick="showPostForm()">글쓰기</button>';
+  }
+  html += '</div>';
+
+  if (!boardState.posts.length && boardState.page === 0) {
+    html += '<p class="board-empty">아직 게시글이 없습니다. 첫 글을 작성해보세요!</p>';
+  } else {
+    html += '<div class="board-post-list">';
+    for (const post of boardState.posts) {
+      const date = formatBoardDate(post.created_at);
+      html += '<div class="board-post-item" onclick="viewPost(' + post.id + ')">';
+      html += '<div class="board-post-title">' + escapeHtml(post.title) + '</div>';
+      html += '<div class="board-post-meta">';
+      html += '<span>' + escapeHtml(post.nickname) + '</span>';
+      html += '<span>' + date + '</span>';
+      html += '</div></div>';
+    }
+    html += '</div>';
+  }
+
+  html += '<div class="board-pagination">';
+  if (boardState.page > 0) {
+    html += '<button class="board-page-btn" onclick="boardPrevPage()">← 이전</button>';
+  }
+  if (boardState.hasMore) {
+    html += '<button class="board-page-btn" onclick="boardNextPage()">다음 →</button>';
+  }
+  html += '</div>';
+  html += '</div>';
+  els.boardContent.innerHTML = html;
+}
+
+function boardPrevPage() {
+  if (boardState.page > 0) {
+    boardState.page--;
+    loadBoardPosts();
+  }
+}
+
+function boardNextPage() {
+  if (boardState.hasMore) {
+    boardState.page++;
+    loadBoardPosts();
+  }
+}
+
+function showPostForm() {
+  if (!state.playerName) { alert('로그인이 필요합니다.'); return; }
+  boardState.currentView = 'form';
+  let html = '<div class="board-container">';
+  html += '<div class="board-header">';
+  html += '<h3>글쓰기</h3>';
+  html += '<button class="board-back-btn" onclick="openBoard()">목록</button>';
+  html += '</div>';
+  html += '<div class="board-form">';
+  html += '<input id="boardPostTitle" class="board-input" type="text" maxlength="100" placeholder="제목">';
+  html += '<textarea id="boardPostContent" class="board-textarea" rows="8" placeholder="내용을 입력하세요"></textarea>';
+  html += '<button class="board-submit-btn" onclick="submitPost()">등록</button>';
+  html += '</div></div>';
+  els.boardContent.innerHTML = html;
+}
+
+async function submitPost() {
+  if (!state.playerName) return;
+  const titleEl = document.getElementById('boardPostTitle');
+  const contentEl = document.getElementById('boardPostContent');
+  const title = (titleEl?.value || '').trim();
+  const content = (contentEl?.value || '').trim();
+  if (!title) { alert('제목을 입력하세요.'); return; }
+  if (!content) { alert('내용을 입력하세요.'); return; }
+
+  const client = await getSupabaseClient();
+  if (!client) { alert('서버 연결 실패'); return; }
+  const { error } = await client.from(getBoardTable()).insert({
+    nickname: state.playerName,
+    title: title,
+    content: content,
+  });
+  if (error) { alert('등록 실패: ' + error.message); return; }
+  openBoard();
+}
+
+async function viewPost(postId) {
+  const client = await getSupabaseClient();
+  if (!client) return;
+  const { data, error } = await client.from(getBoardTable()).select('*').eq('id', postId).single();
+  if (error || !data) { alert('게시글을 찾을 수 없습니다.'); return; }
+  boardState.currentView = 'detail';
+  boardState.currentPost = data;
+  await loadComments(postId);
+  renderPostDetail();
+}
+
+async function loadComments(postId) {
+  const client = await getSupabaseClient();
+  if (!client) { boardState.currentComments = []; return; }
+  const { data } = await client.from(getCommentsTable()).select('*').eq('post_id', postId).order('created_at', { ascending: true });
+  boardState.currentComments = data || [];
+}
+
+function renderPostDetail() {
+  const post = boardState.currentPost;
+  if (!post) return;
+  let html = '<div class="board-container">';
+  html += '<div class="board-header">';
+  html += '<button class="board-back-btn" onclick="openBoard()">← 목록</button>';
+  if (state.playerName === post.nickname) {
+    html += '<button class="board-delete-btn" onclick="deletePost(' + post.id + ')">삭제</button>';
+  }
+  html += '</div>';
+  html += '<div class="board-detail">';
+  html += '<h3 class="board-detail-title">' + escapeHtml(post.title) + '</h3>';
+  html += '<div class="board-detail-meta">';
+  html += '<span>' + escapeHtml(post.nickname) + '</span>';
+  html += '<span>' + formatBoardDate(post.created_at) + '</span>';
+  html += '</div>';
+  html += '<div class="board-detail-content">' + escapeHtml(post.content).replace(/\n/g, '<br>') + '</div>';
+  html += '</div>';
+
+  html += '<div class="board-comments">';
+  html += '<h4>댓글 (' + boardState.currentComments.length + ')</h4>';
+  if (boardState.currentComments.length === 0) {
+    html += '<p style="color:var(--muted);font-size:14px">댓글이 없습니다.</p>';
+  } else {
+    for (const c of boardState.currentComments) {
+      html += '<div class="board-comment-item">';
+      html += '<div class="board-comment-meta">';
+      html += '<strong>' + escapeHtml(c.nickname) + '</strong>';
+      html += '<span>' + formatBoardDate(c.created_at) + '</span>';
+      if (state.playerName === c.nickname) {
+        html += '<button class="board-comment-del" onclick="deleteComment(' + c.id + ',' + post.id + ')">삭제</button>';
+      }
+      html += '</div>';
+      html += '<div class="board-comment-content">' + escapeHtml(c.content).replace(/\n/g, '<br>') + '</div>';
+      html += '</div>';
+    }
+  }
+  if (state.playerName) {
+    html += '<div class="board-comment-form">';
+    html += '<textarea id="boardCommentInput" class="board-textarea" rows="3" placeholder="댓글을 입력하세요"></textarea>';
+    html += '<button class="board-submit-btn" onclick="submitComment(' + post.id + ')">댓글 등록</button>';
+    html += '</div>';
+  }
+  html += '</div>';
+  html += '</div>';
+  els.boardContent.innerHTML = html;
+}
+
+async function submitComment(postId) {
+  if (!state.playerName) return;
+  const input = document.getElementById('boardCommentInput');
+  const content = (input?.value || '').trim();
+  if (!content) { alert('댓글 내용을 입력하세요.'); return; }
+  const client = await getSupabaseClient();
+  if (!client) { alert('서버 연결 실패'); return; }
+  const { error } = await client.from(getCommentsTable()).insert({
+    post_id: postId,
+    nickname: state.playerName,
+    content: content,
+  });
+  if (error) { alert('등록 실패: ' + error.message); return; }
+  viewPost(postId);
+}
+
+async function deletePost(postId) {
+  if (!confirm('정말 삭제하시겠습니까?')) return;
+  const client = await getSupabaseClient();
+  if (!client) return;
+  await client.from(getCommentsTable()).delete().eq('post_id', postId);
+  await client.from(getBoardTable()).delete().eq('id', postId);
+  openBoard();
+}
+
+async function deleteComment(commentId, postId) {
+  if (!confirm('댓글을 삭제하시겠습니까?')) return;
+  const client = await getSupabaseClient();
+  if (!client) return;
+  await client.from(getCommentsTable()).delete().eq('id', commentId);
+  viewPost(postId);
+}
+
 els.boardPanel.addEventListener("click", function(e) {
   if (e.target === this) { this.hidden = true; }
 });

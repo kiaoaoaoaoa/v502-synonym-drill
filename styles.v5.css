@@ -2709,3 +2709,196 @@ details[open] > .wb3-summary::before {
 .grammar-content { max-height: 70vh; overflow-y: auto; }
 
 .panel-close-btn { margin-top: 16px; }
+
+/* ── Board ─────────────────────────────── */
+.board-container { max-width: 800px; }
+
+.board-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.board-header h3 { margin: 0; font-size: 20px; font-weight: 700; flex: 1; }
+
+.board-write-btn {
+  min-height: 38px;
+  padding: 0 18px;
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.board-write-btn:hover { background: #333; }
+
+.board-back-btn {
+  min-height: 36px;
+  padding: 0 14px;
+  font-size: 13px;
+  color: var(--muted);
+  border-color: var(--line);
+  background: transparent;
+  cursor: pointer;
+  border-radius: var(--radius);
+}
+.board-back-btn:hover { background: var(--accent-soft); }
+
+.board-delete-btn {
+  min-height: 36px;
+  padding: 0 14px;
+  font-size: 13px;
+  color: var(--warn);
+  border-color: var(--warn);
+  background: transparent;
+  cursor: pointer;
+  border-radius: var(--radius);
+}
+.board-delete-btn:hover { background: rgba(192,57,43,0.06); }
+
+.board-empty { color: var(--muted); font-size: 14px; padding: 24px 0; }
+
+.board-post-list { display: grid; gap: 0; }
+
+.board-post-item {
+  display: grid;
+  gap: 4px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--faint);
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.board-post-item:hover { background: var(--accent-soft); padding-left: 8px; }
+.board-post-title { font-size: 16px; font-weight: 600; }
+.board-post-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.board-pagination {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+}
+.board-page-btn {
+  min-height: 36px;
+  padding: 0 16px;
+  font-size: 14px;
+  border-color: var(--line);
+  background: transparent;
+  cursor: pointer;
+  border-radius: var(--radius);
+}
+.board-page-btn:hover { background: var(--accent-soft); }
+
+/* Post form */
+.board-form {
+  display: grid;
+  gap: 12px;
+}
+.board-input {
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font: inherit;
+  font-size: 15px;
+  background: #fff;
+  color: var(--ink);
+}
+.board-input:focus { outline: none; border-color: var(--ink); }
+.board-input::placeholder { color: var(--muted); }
+
+.board-textarea {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font: inherit;
+  font-size: 15px;
+  background: #fff;
+  color: var(--ink);
+  resize: vertical;
+}
+.board-textarea:focus { outline: none; border-color: var(--ink); }
+.board-textarea::placeholder { color: var(--muted); }
+
+.board-submit-btn {
+  justify-self: start;
+  min-height: 42px;
+  padding: 0 24px;
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.board-submit-btn:hover { background: #333; }
+
+/* Post detail */
+.board-detail {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.board-detail-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+.board-detail-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.board-detail-content {
+  font-size: 15px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+/* Comments */
+.board-comments { margin-top: 20px; }
+.board-comments h4 { font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+
+.board-comment-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--faint);
+}
+.board-comment-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+.board-comment-meta strong { font-size: 14px; }
+.board-comment-meta span { color: var(--muted); }
+
+.board-comment-del {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--warn);
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 2px 6px;
+}
+.board-comment-del:hover { text-decoration: underline; }
+
+.board-comment-content {
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+.board-comment-form {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
