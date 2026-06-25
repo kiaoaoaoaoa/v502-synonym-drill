@@ -736,7 +736,7 @@ h2 {
   display: inline-block;
   background: var(--accent);
   color: #fff;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   padding: 1px 5px;
   border-radius: 3px;
@@ -746,8 +746,8 @@ h2 {
 }
 .wb3-meaning {
   color: var(--muted);
-  font-size: 12px;
-  line-height: 1.5;
+  font-size: 13px;
+  line-height: 1.4;
 }
 .wb3-header {
   margin-bottom: 10px;
@@ -773,12 +773,12 @@ h2 {
     font-size: 11px;
   }
   .wb3-meaning {
-    font-size: 12px;
-    line-height: 1.5;
+    font-size: 13px;
+    line-height: 1.4;
   }
   .wl2-word-num {
     width: 30px;
-    font-size: 11px;
+    font-size: 12px;
   }
   .wl3-jump-bar {
     padding: 10px 14px;
@@ -812,12 +812,12 @@ h2 {
     font-size: 11px;
   }
   .wb3-pos {
-    font-size: 10px;
+    font-size: 11px;
     padding: 2px 6px;
   }
   .wb3-meaning {
-    font-size: 12px;
-    line-height: 1.5;
+    font-size: 13px;
+    line-height: 1.4;
   }
   .wl2-word-num {
     font-size: 12px;
@@ -1041,14 +1041,14 @@ h2 {
 
 /* wordbook3 collapsible sections */
 .wb3-section {
-  margin-bottom: 6px;
+  margin-bottom: 3px;
   border: 1px solid var(--line);
-  border-radius: 6px;
+  border-radius: 5px;
   overflow: hidden;
 }
 .wb3-summary {
-  padding: 6px 10px;
-  font-size: 13px;
+  padding: 3px 8px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--accent);
   background: #f5f7fa;
@@ -1074,7 +1074,7 @@ details[open] > .wb3-summary::before {
   padding: 8px 14px;
 }
 .wb3-section .wb3-grid {
-  padding: 6px 8px;
+  padding: 3px 6px;
 }
 
 /* wordbook3 card variants */
