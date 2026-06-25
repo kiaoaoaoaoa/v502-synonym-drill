@@ -662,6 +662,7 @@ const els = {
   wordbook3Btn: document.querySelector("#wordbook3Btn"),
   wordbook3Panel: document.querySelector("#wordbook3Panel"),
   wordbook3Content: document.querySelector("#wordbook3Content"),
+  wb3QuizPanel: document.querySelector("#wb3QuizPanel"),
   logicPanel: document.querySelector("#logicPanel"),
   logicProgressBar: document.querySelector("#logicProgressBar"),
   logicQuestionText: document.querySelector("#logicQuestionText"),
@@ -2022,6 +2023,7 @@ function switchMode(mode) {
   els.dashboardPanel.hidden = true;
   els.wordlist2Panel.hidden = true;
   els.wordbook3Panel.hidden = true;
+  els.wb3QuizPanel.hidden = true;
   els.wordcheckPanel.hidden = true;
   els.grammar201Panel.hidden = true;
   els.examPanel.hidden = true;
@@ -2476,7 +2478,7 @@ function showWordbook3() {
     html += '<details class="wb3-section"' + (idx === 0 ? ' open' : '') + '>';
     html += '<summary class="wb3-summary">[' + label + '] <small>(' + sec.items.length + '개)</small>';
     if (idx === 0) {
-      html += ' <a href="wordbook3-questions.html" class="wb3-quiz-btn" style="margin-left:8px;font-size:0.78rem;padding:2px 10px;border-radius:99px;background:#4c6ef5;color:#fff;text-decoration:none;font-weight:600;white-space:nowrap">📝 단어문제</a>';
+      html += ' <button onclick="showWb3Quiz()" class="wb3-quiz-btn" style="margin-left:8px;font-size:0.78rem;padding:2px 10px;border-radius:99px;background:#4c6ef5;color:#fff;border:none;cursor:pointer;font-weight:600;white-space:nowrap">📝 단어문제</button>';
     }
     html += '</summary>';
     html += renderCards(sec.items);
