@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>단어장3 단어문제 (1-100) — V502 Synonym Drill</title>
+<style>
+  :root {
+    --bg: #f8f9fc; --card-bg: #fff; --text: #1e293b; --muted: #94a3b8;
+    --accent: #4c6ef5; --accent-light: #dbe4ff; --border: #e2e8f0;
+    --answer-bg: #f0fdf4; --answer-text: #166534;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
+  .container { max-width: 860px; margin: 0 auto; padding: 24px 16px 80px; }
+
+  header { text-align: center; padding: 32px 0 24px; }
+  header h1 { font-size: 1.4rem; font-weight: 800; color: var(--text); }
+  header p { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
+  .back-link { display: inline-flex; align-items: center; gap: 4px; color: var(--accent); text-decoration: none; font-size: 0.85rem; margin-top: 8px; }
+  .back-link:hover { text-decoration: underline; }
+
+  .toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 20px; position: sticky; top: 0; background: var(--bg); padding: 12px 0; z-index: 10; border-bottom: 1px solid var(--border); }
+  .toolbar button { padding: 6px 14px; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.82rem; color: var(--text); white-space: nowrap; }
+  .toolbar button:hover { background: var(--accent-light); }
+  .toolbar button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .toolbar .count { font-size: 0.8rem; color: var(--muted); margin-left: auto; }
+
+  .q-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin-bottom: 12px; transition: box-shadow 0.15s; }
+  .q-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .q-num { display: inline-block; font-weight: 700; font-size: 0.8rem; color: var(--accent); background: var(--accent-light); padding: 2px 10px; border-radius: 99px; margin-right: 8px; }
+  .q-text { font-size: 0.95rem; margin-top: 10px; line-height: 1.75; }
+  .q-blank { display: inline-block; min-width: 80px; border-bottom: 2px dashed var(--accent); text-align: center; padding: 0 4px; color: var(--accent); font-weight: 600; }
+
+  .q-answer { margin-top: 10px; padding: 8px 12px; background: var(--answer-bg); border-radius: 6px; font-size: 0.85rem; color: var(--answer-text); display: none; }
+  .q-card.revealed .q-answer { display: block; }
+  .q-card.revealed .q-blank { background: #dcfce7; border-color: #16a34a; color: #166534; }
+
+  .toggle-answer { font-size: 0.78rem; color: var(--accent); cursor: pointer; user-select: none; margin-top: 6px; display: inline-block; }
+  .toggle-answer:hover { text-decoration: underline; }
+
+  #toTop { position: fixed; bottom: 24px; right: 24px; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 1.2rem; display: none; box-shadow: 0 2px 8px rgba(0,0,0,0.1); z-index: 20; }
+  #toTop:hover { background: var(--accent-light); }
+
+  @media (max-width: 600px) {
+    .q-card { padding: 14px 16px; }
+    .q-text { font-size: 0.88rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container" id="top">
+  <header>
+    <h1>📝 단어장3 단어문제 (1-100)</h1>
+    <p>GRE 레벨 빈칸 추론 · semantics · 영어학 · 논리 기반</p>
+    <a href="javascript:history.back()" class="back-link">← V502 Synonym Drill로 돌아가기</a>
+  </header>
+
+  <div class="toolbar" id="toolbar">
+    <button id="btnRevealAll" onclick="revealAll()">정답 모두 보기</button>
+    <button id="btnHideAll" onclick="hideAll()">정답 모두 가리기</button>
+    <button onclick="scrollToQ(1)">1-20</button>
+    <button onclick="scrollToQ(21)">21-40</button>
+    <button onclick="scrollToQ(41)">41-60</button>
+    <button onclick="scrollToQ(61)">61-80</button>
+    <button onclick="scrollToQ(81)">81-100</button>
+    <span class="count" id="progressCount">0/100 공개</span>
+  </div>
+
+  <div id="questions"></div>
+</div>
+<button id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="맨 위로">↑</button>
+
+<script>
+const QUESTIONS = [
+  {n:1,q:"Though the king claimed to rule by divine right, the rebels sought to ______ his authority by exposing his moral failings and stripping him of all ceremonial dignity.",a:"abase"},
+  {n:2,q:"The biologist noted that the specimen's morphology was markedly ______ from the established taxonomic norm, suggesting either a new species or a profound environmental mutation.",a:"aberrant"},
+  {n:3,q:"Negotiations were held in ______ while the parties awaited the arbitration panel's ruling on the jurisdictional dispute.",a:"abeyance"},
+  {n:4,q:"To enter the monastic order, the initiate must ______ all worldly possessions and renounce every attachment to material life.",a:"abnegate"},
+  {n:5,q:"After decades of wandering, the exile finally found a permanent ______, a place she could call home without fear of displacement.",a:"abode"},
+  {n:6,q:"The coup proved ______ when loyalist forces intercepted the plotters before a single government building had been seized.",a:"abortive"},
+  {n:7,q:"After the scandal broke, the CEO executed an abrupt ______, reversing every policy he had championed for the past decade.",a:"about-face"},
+  {n:8,q:"Colleagues avoided collaborating with him not because his ideas were poor but because his ______ feedback style turned every suggestion into a personal indictment, and creative exchange cannot survive in an atmosphere of perpetual accusation.",a:"abrasive"},
+  {n:9,q:"The editor was asked to ______ the 800-page manuscript into a digestible 200-page volume without sacrificing the central argument.",a:"abridge"},
+  {n:10,q:"When auditors discovered the embezzlement, the CFO attempted to ______ with the company funds, fleeing to a non-extradition jurisdiction overnight.",a:"abscond"},
+  {n:11,q:"Where other food critics offered balanced assessments, hers were reliably ______; restaurateurs referred to her column as \"the vinegar dispatch\" because every review proved so acerbic that even the most confident chef would brace before opening the Friday edition.",a:"acidulous"},
+  {n:12,q:"Before embedding with the tribe, the anthropologist spent months trying to ______ himself with kinship nomenclature, knowing that misnaming a relative-by-marriage could unravel months of rapport-building.",a:"acquaint"},
+  {n:13,q:"Though the board initially resisted, they eventually ______ to the shareholders' demands, conceding that further opposition would be futile.",a:"acquiesce"},
+  {n:14,q:"To call him ambitious understates the pathology; his ______ drive consumed every relationship, every principle, every boundary that stood between him and the next acquisition.",a:"acquisitive"},
+  {n:15,q:"The active ingredient constitutes only 0.3% of the tablet; the remaining mass is ______, consisting of binders, fillers, and stabilizers that facilitate absorption but contribute nothing to the therapeutic effect.",a:"additive"},
+  {n:16,q:"The detective found the suspect's alibi to be utterly ______; the timeline was so confused and contradictory that no coherent narrative emerged.",a:"addle"},
+  {n:17,q:"In his closing argument, the prosecutor sought to ______ three separate pieces of forensic evidence, each corroborating the defendant's presence at the scene.",a:"adduce"},
+  {n:18,q:"Every ideological movement requires not just leaders but a dedicated corps of ______ who will proselytize door-to-door and sustain the cause long after the founding charisma has faded into institutional memory.",a:"adherent"},
+  {n:19,q:"Engineers searching for a(n) ______ capable of securing heat-shield panels during atmospheric re-entry tested over four hundred compounds before finding one that held at 1,650 degrees Celsius.",a:"adhesive"},
+  {n:20,q:"When the prosecution's star witness failed to appear for the third consecutive session, the judge had grounds to ______ the trial sine die.",a:"adjourn"},
+  {n:21,q:"Courts in multijurisdictional disputes must first determine whether they possess the authority to ______ the matter at all — a threshold question of justiciability that precedes any examination of the merits.",a:"adjudicate"},
+  {n:22,q:"The professor insisted that the appendix was no mere ______ to the monograph but the evidentiary backbone on which the entire theoretical superstructure rested.",a:"adjunct"},
+  {n:23,q:"His arguments might have been taken seriously had their substance not been packaged in such relentlessly ______ rhetoric — every other sentence a gif, a meme, a playground taunt dressed in academic jargon.",a:"adolescent"},
+  {n:24,q:"Where the previous ambassador blundered into cultural taboos with alarming regularity, her replacement navigated every diplomatic reception with ______ grace, never once misreading a social cue or miscuing a ceremonial gesture.",a:"adroit"},
+  {n:25,q:"To ______ is to praise not the deed but the patron; the flatterer cares nothing for truth, only for the reflected warmth of power's favor.",a:"adulate"},
+  {n:26,q:"The preamble's function is not to state but to ______ the treaty's ambitions, casting a shadow that the subsequent articles will fill with operational detail in the same way a charcoal sketch precedes an oil painting.",a:"adumbrate"},
+  {n:27,q:"The paleontologist stressed that the fossil's presence in that geological stratum was entirely ______, a specimen washed in from a later era by glacial melt rather than evidence that the species had evolved earlier than previously thought.",a:"adventitious"},
+  {n:28,q:"The composer's argument that a landfill could be transformed into a concert hall seemed absurd until she unveiled the design: a structure of such ______ coherence that even the town's fiercest skeptics fell silent.",a:"aesthetic"},
+  {n:29,q:"The new department head was so genuinely ______ that students initially mistook his warmth for irony; they had simply never encountered a senior scholar who remembered every advisee's birthday and asked after their parents by name.",a:"affable"},
+  {n:30,q:"What galled her most was not his vanity but its concealment: the elaborate ______ of self-deprecation that he had perfected over decades, each \"humble\" remark calibrated to elicit contradiction and thus further praise.",a:"affectation"},
+  {n:31,q:"The nurse noticed how the patient's wife would adjust his pillow with a(n) ______ precision, each movement so manifestly tender that what should have been a clinical gesture became something approaching sacrament.",a:"affectionate"},
+  {n:32,q:"The whistleblower's attorney submitted a sworn ______ from each corroborating witness before the deposition, establishing a documentary baseline that would make subsequent recantations difficult.",a:"affidavit"},
+  {n:33,q:"The think tank's ______ with a major political party was never formally acknowledged, yet every position paper it published found its way verbatim into the party's legislative agenda within a fortnight.",a:"affiliation"},
+  {n:34,q:"Her ______ for Russian literature of the 1860s amounted to more than scholarly interest; she had, by her own count, read Anna Karenina in seven different translations and could debate the merits of each.",a:"affinity"},
+  {n:35,q:"Before the committee would release the funds, the director had to ______ under oath that no portion of the grant would be diverted to for-profit subsidiaries, a stipulation she accepted without hesitation.",a:"affirm"},
+  {n:36,q:"A minor shoving match between two fishmongers escalated within minutes into a full-scale ______ that spilled across three city blocks and required the deployment of riot police.",a:"affray"},
+  {n:37,q:"The trawler ran ______ not of another vessel but of an unmarked undersea cable, its nets tangled so catastrophically that the captain was forced to cut $80,000 of equipment loose.",a:"afoul"},
+  {n:38,q:"The jury sat ______ as the forensic pathologist detailed the twenty-seven distinct injuries; one alternate juror, unable to maintain composure, asked to be excused.",a:"agape"},
+  {n:39,q:"The data points ______ into meaningful clusters only after the algorithm had run for its twelve-thousandth iteration, a reminder that pattern recognition owes as much to sheer persistence as to computational sophistication.",a:"agglomerate"},
+  {n:40,q:"Every totalitarian regime seeks to ______ its founding myth until the myth dwarfs the history, until a skirmish becomes a crusade and a functionary becomes a father of the nation.",a:"aggrandize"},
+  {n:41,q:"Her intellectual ______ was as evident in the seminar room — where she could pivot from Husserl to Rawls mid-sentence without losing coherence — as it was on the tennis court, where her footwork confounded opponents half her age.",a:"agility"},
+  {n:42,q:"The incendiary pamphlets were traced to a printer who, under interrogation, admitted he had been paid to ______ discontent among the factory workers, though he claimed not to have anticipated the scale of the ensuing riots.",a:"agitate"},
+  {n:43,q:"Relatives of the hostages would later describe the years of waiting as a single protracted ______ in which each unconfirmed sighting became a fresh laceration on wounds that never had the chance to close.",a:"agonize"},
+  {n:44,q:"Her political base was neither urban nor industrial but solidly ______: she won every county where the primary employer was the land itself, and lost every county where it was not.",a:"agrarian"},
+  {n:45,q:"The physician cautioned that the symptoms did not point to a single, nameable ______ but rather to a systemic dysregulation for which the diagnostic manuals had no ready category.",a:"ailment"},
+  {n:46,q:"When the code-red page went out, the surgical team responded with a(n) ______ that surprised even the attending physician; the patient was on the table, prepped, and draped within eleven minutes of the first alert.",a:"alacrity"},
+  {n:47,q:"The journalist had published under a(n) ______ for so long that when her actual identity was finally revealed, even her closest friends struggled to reconcile the byline they had admired with the person they thought they knew.",a:"alias"},
+  {n:48,q:"Safety protocols required all passengers to ______ on the starboard side and descend the inflatable slides in under ninety seconds, a benchmark the cabin crew drilled relentlessly during calm-sea days precisely for moments like this.",a:"alight"},
+  {n:49,q:"The merger's success depended on the ability to ______ the two companies' inventory systems, a task that required mapping seventeen thousand SKUs from one taxonomy onto a wholly incompatible one.",a:"align"},
+  {n:50,q:"The ______ tract is astonishingly efficient at extracting every usable calorie from whatever enters it, yet it remains blissfully indifferent to whether that input was a Michelin-starred meal or a handful of foraged berries.",a:"alimentary"},
+  {n:51,q:"The divorce settlement stipulated ______ payments for a term of fifteen years, a provision the judge justified by noting that the recipient had abandoned her own professional career to support the family throughout two decades of the payor's ascent.",a:"alimony"},
+  {n:52,q:"A single well-timed concession can sometimes ______ a crisis that months of stonewalling only inflamed; the mediator's art lies in knowing which concession and when.",a:"allay"},
+  {n:53,q:"The prosecutor's opening statement was later found to contain a critical ______ for which no evidence would ever be presented, a claim so central to the narrative that its retraction caused the case to unravel.",a:"allegation"},
+  {n:54,q:"The shipment was ______ routed through a third country's port, though the documentation trail was so artfully muddied that investigators spent six months merely confirming what they had suspected on day one.",a:"allegedly"},
+  {n:55,q:"In the feudal ceremony, the vassal placed his hands between those of the lord and intoned an oath of ______ binding not only himself but his heirs, a pledge from which only death or attainder could release the bloodline.",a:"allegiance"},
+  {n:56,q:"The novelist's decision to structure the narrative as a(n) ______, with each character representing a different response to colonial occupation, allowed her to address the political without descending into the polemical.",a:"allegory"},
+  {n:57,q:"The ______ between the environmental groups and the labor unions was always fragile, a marriage of convenience brokered by the realization that neither could block the pipeline alone.",a:"alliance"},
+  {n:58,q:"The first line's insistent ______, in which the /k/ sound recurred four times across seven syllables, established an auditory texture of hardness and scraping that the poem's denouement would deliberately soften into sibilance.",a:"alliteration"},
+  {n:59,q:"The cardinal's Christmas ______ addressed not doctrine but despair, acknowledging that a congregation facing breadlines and evictions needed consolation more than theology.",a:"allocution"},
+  {n:60,q:"When the disaster relief fund reached thirty million dollars, the trustees convened to determine how to ______ the sum among the seventeen affected counties, a calculus rendered excruciating by the fact that need everywhere exceeded the available resources.",a:"allot"},
+  {n:61,q:"What began as a limited border incursion became, within a week, a(n) ______ war requiring general mobilization, rationing, and the conversion of automobile factories into armaments plants.",a:"all-out"},
+  {n:62,q:"Memory itself is properly understood not as a pure element but as a(n) ______, an amalgam of fact, interpretation, wish, and the stories we have told ourselves so often that they have hardened into something indistinguishable from truth.",a:"alloy"},
+  {n:63,q:"The senator was careful never to state the accusation directly; she preferred to ______ to impropriety through strategic silences and syntactical constructions that technically asserted nothing while implying everything.",a:"allude"},
+  {n:64,q:"Odysseus had the sirens; the modern casino has algorithmic payout schedules and near-miss lighting patterns, each era's technology bent to the same ancient purpose: to ______ human beings toward ruin dressed as reward.",a:"allure"},
+  {n:65,q:"In every major vote, the ambassador from the smallest member state proved a steadfast ______, never wavering from the coalition's position even when offered significant bilateral incentives to defect.",a:"ally"},
+  {n:66,q:"The abbess instructed the novices that ______ is not a transaction but a recognition: the food given to the hungry was never truly the giver's to withhold.",a:"alms"},
+  {n:67,q:"The peregrine falcon rode the thermal column ______, its silhouette a cruciform speck against the stratosphere, invisible to the rodents below who would never see the stoop coming.",a:"aloft"},
+  {n:68,q:"The Olmec ______ unearthed at La Venta, a massive stone table carved with offerings to jaguar deities, altered archaeological understanding of Mesoamerican ritual practice more fundamentally than any discovery of the preceding half-century.",a:"altar"},
+  {n:69,q:"The two linguisticians would ______ at every conference, each accusing the other of misreading the same phonemic data — yet colleagues noted that neither ever cited the other's work in print, as if the feud were a performance staged solely for the live audience.",a:"altercate"},
+  {n:70,q:"At that punishing ______, where the atmospheric pressure is less than half what the human body requires, cognitive impairment mimics intoxication and has contributed to more mountaineering fatalities than avalanches and crevasses combined.",a:"altitude"},
+  {n:71,q:"His ______ reputation preceded him into every salon: the love letters, the duels fought over other men's wives, the sonnets that left nothing to the anatomical imagination — matrons either clutched their pearls or leaned in closer at his approach.",a:"amatory"},
+  {n:72,q:"A single flickering candle on each table, the smell of old vellum, and the distant sound of a cello practicing: the bookshop's ______ was so carefully cultivated that customers unconsciously lowered their voices upon entering, as if stepping into a sanctuary.",a:"ambiance"},
+  {n:73,q:"Only a(n) ______ surgeon could have attempted that operation — the left hand retracting the dura mater with submillimeter precision while the right excised a tumor enmeshed in the motor cortex.",a:"ambidextrous"},
+  {n:74,q:"The film's power derives less from plot than from ______: the way rain slicks the cobblestones, how steam rises from manhole covers in the predawn blue, the particular clatter of a tram on tracks built before the empire fell.",a:"ambience"},
+  {n:75,q:"The lab's clean room maintains a constant ______ pressure slightly higher than the outside atmosphere, so that when the door opens, air flows outward — carrying potential contaminants away from the silicon wafers rather than toward them.",a:"ambient"},
+  {n:76,q:"The new apprentice was so thoroughly ______ that the master carpenter, after watching him splinter his fourth chisel in as many hours, gently suggested that the guild of accountants might prove a more satisfying vocation.",a:"ambisinister"},
+  {n:77,q:"Every Sunday without fail, the old professor would ______ through the botanical gardens, his pace unhurried, his gaze drifting from the taxonomy labels to the actual blossoms as if comparing a text against its living footnote.",a:"amble"},
+  {n:78,q:"After three weeks of military rations, the first fresh peach of the season tasted like ______; the men ate in reverent silence, juice dripping down chins, each bite a temporary reprieve from the brutish calculus of survival.",a:"ambrosia"},
+  {n:79,q:"Though she arrived at the ER unable to bear weight on either leg, by her third postoperative day the patient was ______ once more — the attending surgeon attributed this to a combination of excellent bone density, stubbornness, and what he called \"an unseemly eagerness to prove the textbooks wrong.\"",a:"ambulatory"},
+  {n:80,q:"A less ______ director would have stonewalled the regulators; this one not only complied with every request but opened the company's internal correspondence unprompted, correctly calculating that transparency would yield a smaller fine than obfuscation.",a:"amenable"},
+  {n:81,q:"The faculty senate resolved to ______ the honor code's ambiguous provisions before the next academic year, lest another reasonably confused undergraduate face expulsion for a violation that two deans had interpreted in directly contradictory ways.",a:"amend"},
+  {n:82,q:"The senior accountant sensed something ______ the moment she opened the ledger for the fourth-quarter audit: a set of entries too neat, too balanced, as if someone had worked backward from a desired bottom line rather than forward from actual transactions.",a:"amiss"},
+  {n:83,q:"The peculiar cruelty of her condition was its selectivity: the ______ had erased every memory involving her children while leaving intact her recollection of childhood acquaintances she had not thought about in forty years.",a:"amnesia"},
+  {n:84,q:"The new constitution's first substantive article declared a universal ______ for all political offenses committed during the transitional period — an absolution that the victors' supporters denounced as whitewash and the vanquished embraced as the price of peace.",a:"amnesty"},
+  {n:85,q:"The corporation's behavior was not illegal — the law had not yet caught up to the technology — but it was radically ______, conducted in a moral vacuum where the only operative question was \"can we\" rather than \"should we.\"",a:"amoral"},
+  {n:86,q:"Their correspondence began as scholarly exchange and became, over two years and three hundred letters, something unmistakably ______; the shift was marked by the moment he switched from \"Dear Professor Voss\" to \"My dear Clara.\"",a:"amorous"},
+  {n:87,q:"Before the invention of the mechanized mold, glass was prized precisely for its ______ nature: the artisan could coax it into any contour, then freeze that transitory shape into permanence through controlled cooling.",a:"amorphous"},
+  {n:88,q:"The ______ occupies a liminal taxonomic space that fascinated Victorian naturalists: neither fully aquatic nor fully terrestrial, its lifecycle recapitulates, in miniature, the evolutionary transition that gave rise to all land-dwelling vertebrates.",a:"amphibian"},
+  {n:89,q:"Publicly, the minister weathered the scandal with composure; privately, he confided that the editorial cartoon depicting him as a stooped, cringing supplicant had managed to ______ him more thoroughly than the formal censure motion itself.",a:"abash"},
+  {n:90,q:"International protocols require that any attempt to ______ a diplomatic envoy's family member be treated as an attack on the sending state itself — a legal fiction that has prevented more than one crisis from escalating into armed reprisal.",a:"abduct"},
+  {n:91,q:"The textbook assumed a reader so thoroughly ______ that it defined \"hypotenuse\" in a footnote on page 263; and yet, bafflingly, it devoted an entire chapter to non-Euclidean geometry without once defining \"manifold.\"",a:"abecedarian"},
+  {n:92,q:"The CEO did not personally approve the fraudulent prospectus, but by failing to question the irregularities his subordinates presented, he effectively ______ the deception — and the securities regulator charged him accordingly.",a:"abet"},
+  {n:93,q:"The ethicist was unusual in his era for extending moral consideration to animals, arguing that a being capable of suffering deserves our solicitude even if we ______ the factory-farming practices that make modern nutrition economically feasible.",a:"abhor"},
+  {n:94,q:"A society that requires its citizens to perform ______ deference to authority — to bow, to scrape, to kiss the ring — should not be surprised when those same citizens prove incapable of the independent moral reasoning that democratic self-governance demands.",a:"abject"},
+  {n:95,q:"The council's edict required every member of the sect to ______ the use of modern medicine, a collective abjuration that would result in hundreds of preventable deaths before the law was finally overturned.",a:"abjure"},
+  {n:96,q:"Within ninety minutes of the first alarm, the entire complex was ______ — the fire suppression systems having failed, the sprinklers dry due to a maintenance oversight that would launch a dozen wrongful-death suits.",a:"ablaze"},
+  {n:97,q:"Linguistic analysis of the toponyms — place-names for rivers, mountains, and settlements — revealed a(n) ______ stratum predating the colonial overlay, an original layer of meaning still embedded in the landscape's nomenclature.",a:"aboriginal"},
+  {n:98,q:"The two destroyers steamed ______ through the strait, their hulls within thirty meters of each other — a formation deliberately provocative, daring the coastal artillery to fire and thereby provide the casus belli.",a:"abreast"},
+  {n:99,q:"One of the first acts of the restored parliament was to ______ the emergency statutes under which the dictatorship had legitimized its worst excesses; the repeal was retroactive, vacating convictions that had sent thousands to prison camps.",a:"abrogate"},
+  {n:100,q:"To ______ is not merely to forgive but to declare that no offense ever occurred — a distinction the defendant understood perfectly when he wept with relief at the verdict, for exoneration, unlike pardon, restores not just liberty but innocence itself.",a:"absolve"}
+];
+
+let revealed = new Set();
+let allRevealed = false;
+
+function renderAll() {
+  const container = document.getElementById('questions');
+  let html = '';
+  QUESTIONS.forEach(q => {
+    html += '<div class="q-card" id="q-' + q.n + '">';
+    html += '<span class="q-num">#' + q.n + '</span>';
+    html += '<div class="q-text">' + q.q.replace(/______/g, '<span class="q-blank">______</span>') + '</div>';
+    html += '<div class="q-answer"><strong>정답:</strong> ' + q.a + '</div>';
+    html += '<span class="toggle-answer" onclick="toggleQ(' + q.n + ')">정답 보기 / 가리기</span>';
+    html += '</div>';
+  });
+  container.innerHTML = html;
+}
+
+function toggleQ(n) {
+  const card = document.getElementById('q-' + n);
+  card.classList.toggle('revealed');
+  if (card.classList.contains('revealed')) revealed.add(n);
+  else revealed.delete(n);
+  updateCount();
+}
+
+function revealAll() {
+  allRevealed = true;
+  QUESTIONS.forEach(q => {
+    document.getElementById('q-' + q.n).classList.add('revealed');
+    revealed.add(q.n);
+  });
+  updateCount();
+}
+
+function hideAll() {
+  allRevealed = false;
+  QUESTIONS.forEach(q => {
+    document.getElementById('q-' + q.n).classList.remove('revealed');
+    revealed.delete(q.n);
+  });
+  updateCount();
+}
+
+function updateCount() {
+  document.getElementById('progressCount').textContent = revealed.size + '/100 공개';
+}
+
+function scrollToQ(n) {
+  const el = document.getElementById('q-' + n);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+window.addEventListener('scroll', () => {
+  document.getElementById('toTop').style.display = window.scrollY > 400 ? 'block' : 'none';
+});
+
+renderAll();
+</script>
+</body>
+</html>
