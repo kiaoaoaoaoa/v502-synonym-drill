@@ -47,7 +47,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "t": "2형식: 유사보어",
-    "exp": "conform that shape -> conform\nTO that shape. ③이 틀린 부분."
+    "exp": "conform that shape -> conform TO that shape. ③이 틀린 부분."
   },
   {
     "i": "003",
@@ -201,7 +201,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "009",
-    "q": "Moments before\nShannon\nLucid departed ①「on her first space mission」, a reporter ②「approached to her」 and asked ③「what her thoughts were」. She replied that she was extremely proud ④「to participate」 in such an important project.",
+    "q": "Moments before Shannon Lucid departed ①「on her first space mission」, a reporter ②「approached to her」 and asked ③「what her thoughts were」. She replied that she was extremely proud ④「to participate」 in such an important project.",
     "c": [
       [
         "1",
@@ -251,7 +251,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "011",
-    "q": "①「The\nOlympic torch」 will be ②「reaching at」 Rice\n  -Eccles\nStadium ③「at」 the\nUniversity of\nUtah ④「in」 a month.",
+    "q": "①「The Olympic torch」 will be ②「reaching at」 Rice-Eccles Stadium ③「at」 the University of Utah ④「in」 a month.",
     "c": [
       [
         "1",
@@ -271,12 +271,12 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "(both) A and\nB 유형 수일치",
+    "t": "(both) A and B 유형 수일치",
     "exp": "reaching at -> reaching. reach는 타동사. at 불필요."
   },
   {
     "i": "012",
-    "q": "An\nAmerican ①「who survived from」 the terrorist ②「attack on」 the\nWorld\nTrade\nCenter ③「escaped with his life」 again when ④「a bomb blast」 ripped through a busy street in\nJerusalem.",
+    "q": "An American ①「who survived from」 the terrorist ②「attack on」 the World Trade Center ③「escaped with his life」 again when ④「a bomb blast」 ripped through a busy street in Jerusalem.",
     "c": [
       [
         "1",
@@ -296,7 +296,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "(either) A or\nB 유형 수일치",
+    "t": "(either) A or B 유형 수일치",
     "exp": "sat -> set. sat(자동사) -> set(타동사, 놓다)."
   },
   {
@@ -326,7 +326,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "014",
-    "q": "The secret to blocking for the\nOakland\nRaiders' quarterback\nRich\nGannon, according to tackle\nLincoln\nKennedy, ______ the defensive linemen's eyes.",
+    "q": "The secret to blocking for the Oakland Raiders' quarterback Rich Gannon, according to tackle Lincoln Kennedy, ______ the defensive linemen's eyes.",
     "c": [
       [
         "1",
@@ -426,7 +426,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "018",
-    "q": "One winter day when\nI was nine, carrying my books home from school across a snowy street as the light was turning, I slipped and ______.",
+    "q": "One winter day when I was nine, carrying my books home from school across a snowy street as the light was turning, I slipped and ______.",
     "c": [
       [
         "1",
@@ -526,7 +526,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "022",
-    "q": "Choose the one that is\nNOT correct according to the standard\nEnglish.",
+    "q": "Choose the one that is NOT correct according to the standard English.",
     "c": [
       [
         "1",
@@ -580,7 +580,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "024",
-    "q": "A: I think\nI understand his point. B: Then ______.",
+    "q": "A: I think I understand his point. B: Then ______.",
     "c": [
       [
         "1",
@@ -626,7 +626,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "t": "for/over 완료시제",
-    "exp": "explain\nTO us that. explain+to+IO+that절."
+    "exp": "explain TO us that. explain+to+IO+that절."
   },
   {
     "i": "026",
@@ -651,7 +651,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "t": "자동사 오해 타동사",
-    "exp": "admit(\n  ~에게 말하다)은 사람 목적어에 to 필요. ① admitted the detective -> admitted to the detective."
+    "exp": "admit(~에게 말하다)은 사람 목적어에 to 필요. ① admitted the detective -> admitted to the detective."
   },
   {
     "i": "027",
@@ -676,7 +676,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "4",
     "t": "수동태 전치사",
-    "exp": "provide\nA with\nB의 수동. ④ were provided -> were provided with."
+    "exp": "provide A with B의 수동. ④ were provided -> were provided with."
   },
   {
     "i": "028",
@@ -730,7 +730,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "030",
-    "q": "Choose the one that is\nCORRECT according to the standard\nEnglish.",
+    "q": "Choose the one that is CORRECT according to the standard English.",
     "c": [
       [
         "1",
@@ -751,7 +751,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "4",
     "t": "5형식: 사역/지각동사 목적보어 형태",
-    "exp": "정답 4번: Ellen told\nHelen that she wasn't ready.. (해설 재작성 예정)"
+    "exp": "정답 4번: Ellen told Helen that she wasn't ready.. (해설 재작성 예정)"
   },
   {
     "i": "031",
@@ -805,7 +805,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "033",
-    "q": "①「To」 see so much power ②「combining」 ③「with」 such lack ④「of」 foresight is really disquieting for us\nEuropeans.",
+    "q": "①「To」 see so much power ②「combining」 ③「with」 such lack ④「of」 foresight is really disquieting for us Europeans.",
     "c": [
       [
         "1",
@@ -826,7 +826,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "t": "가정법 대용",
-    "exp": "combining -> combined. see\nO combined(과거분사)."
+    "exp": "combining -> combined. see O combined(과거분사)."
   },
   {
     "i": "034",
@@ -955,7 +955,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "039",
-    "q": "Choose the one that is\nNOT correct according to the standard\nEnglish.",
+    "q": "Choose the one that is NOT correct according to the standard English.",
     "c": [
       [
         "1",
@@ -980,7 +980,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "040",
-    "q": "Choose the one that is\nNOT correct according to the standard\nEnglish.",
+    "q": "Choose the one that is NOT correct according to the standard English.",
     "c": [
       [
         "1",
@@ -1005,7 +1005,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "041",
-    "q": "Previously, Latin and\nFrench ①「was being considered」 more ②「suitable for」 literary expression than\nEnglish and consequently ③「the\nEnglish language」 had not been as fully developed ④「as it might have been」.",
+    "q": "Previously, Latin and French ①「was being considered」 more ②「suitable for」 literary expression than English and consequently ③「the English language」 had not been as fully developed ④「as it might have been」.",
     "c": [
       [
         "1",
@@ -1055,7 +1055,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "043",
-    "q": "Choose the one that is\nNOT correct according to the standard\nEnglish.",
+    "q": "Choose the one that is NOT correct according to the standard English.",
     "c": [
       [
         "1",
@@ -1076,7 +1076,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "t": "관계대명사 한정적/계속적 용법",
-    "exp": "NOT correct: These statistics\nSHOWS -> SHOW. statistics=복수. ③틀림."
+    "exp": "NOT correct: These statistics SHOWS -> SHOW. statistics=복수. ③틀림."
   },
   {
     "i": "044",
@@ -1176,11 +1176,11 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "t": "복합관계대명사의 격",
-    "exp": "Neither\nA nor\nB: B(condemnation,단수)에 수일치. have caused->has caused. ③틀림."
+    "exp": "Neither A nor B: B(condemnation,단수)에 수일치. have caused->has caused. ③틀림."
   },
   {
     "i": "048",
-    "q": "Not only destruction and death but also a generation of hatred ①「between」 the two communities ②「have been」 triggered by the war that played a huge role ③「in」 establishing the gulf between the\nWestern and the\nEastern ④「communities」.",
+    "q": "Not only destruction and death but also a generation of hatred ①「between」 the two communities ②「have been」 triggered by the war that played a huge role ③「in」 establishing the gulf between the Western and the Eastern ④「communities」.",
     "c": [
       [
         "1",
@@ -1225,8 +1225,8 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "A as well as\nB 수일치",
-    "exp": "주어는 The merger(단수). as well as\nB는 수식어구. ② are expected -> is expected."
+    "t": "A as well as B 수일치",
+    "exp": "주어는 The merger(단수). as well as B는 수식어구. ② are expected -> is expected."
   },
   {
     "i": "050",
@@ -1255,7 +1255,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "051",
-    "q": "Each of the\nMedic\nAlert bracelets ①「worn」 by millions of\nAmericans who ②「suffer from」 diabetes and drug allergic reactions ③「are」 individually engraved with ④「the wearer's」 name.",
+    "q": "Each of the Medic Alert bracelets ①「worn」 by millions of Americans who ②「suffer from」 diabetes and drug allergic reactions ③「are」 individually engraved with ④「the wearer's」 name.",
     "c": [
       [
         "1",
@@ -1280,7 +1280,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "052",
-    "q": "When one contrasts the ideas of the\nRomantic\nWilliam\nWordsworth ①「with」 ②「those of」 Neoclassicist\nJohn\nDryden, ③「one finds」 that neither of the poets ④「differ」 as much as one would expect.",
+    "q": "When one contrasts the ideas of the Romantic William Wordsworth ①「with」 ②「those of」 Neoclassicist John Dryden, ③「one finds」 that neither of the poets ④「differ」 as much as one would expect.",
     "c": [
       [
         "1",
@@ -1305,7 +1305,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "053",
-    "q": "①「Most of the\nEnglish people is descended」 from invaders who began settling in ②「the\nBritish\nIsles」 more than ③「2,500 years」 ④「ago」.",
+    "q": "①「Most of the English people is descended」 from invaders who began settling in ②「the British Isles」 more than ③「2,500 years」 ④「ago」.",
     "c": [
       [
         "1",
@@ -1405,7 +1405,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "057",
-    "q": "A pro\n  -American government in\nAfghanistan certainly ①「facilitate」 a more ②「acceptable」 agreement ③「regarding」 the new pipeline that must inevitably ④「run」 through that country.",
+    "q": "A pro-American government in Afghanistan certainly ①「facilitate」 a more ②「acceptable」 agreement ③「regarding」 the new pipeline that must inevitably ④「run」 through that country.",
     "c": [
       [
         "1",
@@ -1455,7 +1455,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "059",
-    "q": "Many people ①「were trapped」 in the capital and ②「unable to escape」, and a humanitarian escape corridor ③「set up」 on\nDecember 6 by\nRussian forces to allow people to flee the fighting ④「were ineffective」.",
+    "q": "Many people ①「were trapped」 in the capital and ②「unable to escape」, and a humanitarian escape corridor ③「set up」 on December 6 by Russian forces to allow people to flee the fighting ④「were ineffective」.",
     "c": [
       [
         "1",
@@ -1505,7 +1505,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "061",
-    "q": "①「There are no」 argument or proof ②「that will convince」 most\nAmericans that ③「paying higher」 taxes will result in a higher standard of living ④「for everyone」.",
+    "q": "①「There are no」 argument or proof ②「that will convince」 most Americans that ③「paying higher」 taxes will result in a higher standard of living ④「for everyone」.",
     "c": [
       [
         "1",
@@ -1605,7 +1605,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "065",
-    "q": "One principle that\nJefferson stated was ①「the right to a trial」 by a fair and impartial jury. This right ②「to be judged」 by ordinary people ③「is a privilege」 many in the world ④「is denied」.",
+    "q": "One principle that Jefferson stated was ①「the right to a trial」 by a fair and impartial jury. This right ②「to be judged」 by ordinary people ③「is a privilege」 many in the world ④「is denied」.",
     "c": [
       [
         "1",
@@ -1655,7 +1655,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "067",
-    "q": "The number of ①「wild horses」 on\nAssateague ②「are」 increasing lately, ③「resulting」 in ④「overgrazed」 marsh and dune grasses.",
+    "q": "The number of ①「wild horses」 on Assateague ②「are」 increasing lately, ③「resulting」 in ④「overgrazed」 marsh and dune grasses.",
     "c": [
       [
         "1",
@@ -1680,7 +1680,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "068",
-    "q": "①「The」 number of\nKorean students coming ②「to\nAmerica」 for ③「graduate training」 ④「are」 quite ⑤「surprising」.",
+    "q": "①「The」 number of Korean students coming ②「to America」 for ③「graduate training」 ④「are」 quite ⑤「surprising」.",
     "c": [
       [
         "1",
@@ -1730,7 +1730,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "t": "expect/hope/want 구문비교",
-    "exp": "hoped to have finished. hope + to\nRV."
+    "exp": "hoped to have finished. hope + to RV."
   },
   {
     "i": "070",
@@ -1963,7 +1963,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "t": "need vs. need to",
-    "exp": "need to. need + to\nRV (본동사)."
+    "exp": "need to. need + to RV (본동사)."
   },
   {
     "i": "079",
@@ -1992,7 +1992,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "080",
-    "q": "①「Stockard\nChanning」, who plays the role of the formidable\nFirst\nLady in the television show\nThe\nWest\nWing, ②「first came」 into the public eye in the movie production of the musical\nGrease; ③「they have」 loved her ④「ever」 since.",
+    "q": "①「Stockard Channing」, who plays the role of the formidable First Lady in the television show The West Wing, ②「first came」 into the public eye in the movie production of the musical Grease; ③「they have」 loved her ④「ever」 since.",
     "c": [
       [
         "1",
@@ -2017,7 +2017,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "081",
-    "q": "New\nYork\nCity ①「has been」 the ②「capital of」 New\nYork\nState until 1797, ③「when」 the state capital ④「was moved」 to\nAlbany.",
+    "q": "New York City ①「has been」 the ②「capital of」 New York State until 1797, ③「when」 the state capital ④「was moved」 to Albany.",
     "c": [
       [
         "1",
@@ -2042,7 +2042,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "082",
-    "q": "①「Even though」 Mr. Kim ②「has been studying」 English for eight years before he came ③「to the\nUnited\nStates」, it is still difficult ④「for him」 to master it.",
+    "q": "①「Even though」 Mr. Kim ②「has been studying」 English for eight years before he came ③「to the United States」, it is still difficult ④「for him」 to master it.",
     "c": [
       [
         "1",
@@ -2067,7 +2067,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "083",
-    "q": "When\nKen went to get some money from his wallet, he discovered that someone ______ it.",
+    "q": "When Ken went to get some money from his wallet, he discovered that someone ______ it.",
     "c": [
       [
         "1",
@@ -2167,7 +2167,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "087",
-    "q": "Choose the one that is\nNOT correct according to the standard\nEnglish.",
+    "q": "Choose the one that is NOT correct according to the standard English.",
     "c": [
       [
         "1",
@@ -2188,7 +2188,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "4",
     "t": "시제",
-    "exp": "after he has finished -> after he\nHAD finished. 과거(went) 이전의 동작."
+    "exp": "after he has finished -> after he HAD finished. 과거(went) 이전의 동작."
   },
   {
     "i": "088",
@@ -2267,7 +2267,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "091",
-    "q": "While\nI was studying in one room of our apartment, my roommate ______ in the other room.",
+    "q": "While I was studying in one room of our apartment, my roommate ______ in the other room.",
     "c": [
       [
         "1",
@@ -2287,7 +2287,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "So/Neither do\nI",
+    "t": "So/Neither do I",
     "exp": "was having. 과거진행 시제일치."
   },
   {
@@ -2342,7 +2342,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "094",
-    "q": "From 1923 ①「to」 1929, Calvin\nCoolidge, ②「known as」 a man of ③「few words」, ④「was being」 president of the\nUnited\nStates.",
+    "q": "From 1923 ①「to」 1929, Calvin Coolidge, ②「known as」 a man of ③「few words」, ④「was being」 president of the United States.",
     "c": [
       [
         "1",
@@ -2367,7 +2367,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "095",
-    "q": "Choose the one that is\nNOT correct according to the standard\nEnglish.",
+    "q": "Choose the one that is NOT correct according to the standard English.",
     "c": [
       [
         "1",
@@ -2392,7 +2392,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "096",
-    "q": "I will take full rest as soon as\nI ______ my project.",
+    "q": "I will take full rest as soon as I ______ my project.",
     "c": [
       [
         "1",
@@ -2617,7 +2617,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "105",
-    "q": "A: How long have you been in\nKorea? B: Since\nSeptember. C: Oh, so by\nChristmas you ______ here for three months.",
+    "q": "A: How long have you been in Korea? B: Since September. C: Oh, so by Christmas you ______ here for three months.",
     "c": [
       [
         "1",
@@ -2638,11 +2638,11 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "t": "미래완료",
-    "exp": "'by\nChristmas'(미래시점) + 'for three months'(기간) → 미래완료 'will have been'."
+    "exp": "'by Christmas'(미래시점) + 'for three months'(기간) → 미래완료 'will have been'."
   },
   {
     "i": "106",
-    "q": "①「The euro」 is not new: ②「it's used」 in electronic transactions and ③「by banks」 and international ④「businesses」 since\nJanuary 1999.",
+    "q": "①「The euro」 is not new: ②「it's used」 in electronic transactions and ③「by banks」 and international ④「businesses」 since January 1999.",
     "c": [
       [
         "1",
@@ -2667,7 +2667,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "107",
-    "q": "Choose the one that is\nBEST according to the standard\nEnglish.",
+    "q": "Choose the one that is BEST according to the standard English.",
     "c": [
       [
         "1",
@@ -2692,7 +2692,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "108",
-    "q": "My brother has been ①「pursuing」 a ②「career」 in medical research ③「until」 he ④「graduated」 last\nMay.",
+    "q": "My brother has been ①「pursuing」 a ②「career」 in medical research ③「until」 he ④「graduated」 last May.",
     "c": [
       [
         "1",
@@ -2742,7 +2742,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "110",
-    "q": "All trainers ______ eighty hours of instruction by the end of\nMarch.",
+    "q": "All trainers ______ eighty hours of instruction by the end of March.",
     "c": [
       [
         "1",
@@ -2763,7 +2763,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "t": "미래완료",
-    "exp": "'by the end of\nMarch'(미래시점) → 미래완료 'will have completed'."
+    "exp": "'by the end of March'(미래시점) → 미래완료 'will have completed'."
   },
   {
     "i": "111",
@@ -2792,7 +2792,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "112",
-    "q": "By the time the mayor gets to his office, his secretary ______ for\nSanta\nBarbara.",
+    "q": "By the time the mayor gets to his office, his secretary ______ for Santa Barbara.",
     "c": [
       [
         "1",
@@ -2817,7 +2817,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "113",
-    "q": "Have you ever been to\nNew\nYork ______?",
+    "q": "Have you ever been to New York ______?",
     "c": [
       [
         "1",
@@ -2842,7 +2842,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "114",
-    "q": "A: Has\nNick finished his work yet? B: Yes, he ______ half an hour ago.",
+    "q": "A: Has Nick finished his work yet? B: Yes, he ______ half an hour ago.",
     "c": [
       [
         "1",
@@ -2867,7 +2867,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "115",
-    "q": "Years ①「ago」 the people of what is now the\nPacific\nNorthwest ②「begins」 to develop an economic system ③「based」 ④「mostly」 on fishing.",
+    "q": "Years ①「ago」 the people of what is now the Pacific Northwest ②「begins」 to develop an economic system ③「based」 ④「mostly」 on fishing.",
     "c": [
       [
         "1",
@@ -2942,7 +2942,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "118",
-    "q": "When\nGeorge\nMoore began to write, ①「his style」 was poor; it gave ②「the impression that」 he ③「writes」 on wrapping paper ④「with a blunt pencil」.",
+    "q": "When George Moore began to write, ①「his style」 was poor; it gave ②「the impression that」 he ③「writes」 on wrapping paper ④「with a blunt pencil」.",
     "c": [
       [
         "1",
@@ -2967,7 +2967,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "119",
-    "q": "President\nLincoln, walking ①「with」 a friend, turned back to assist a beetle that ②「lie」 on ③「its」 back, legs clawing the air, vainly ④「trying」 to turn itself over.",
+    "q": "President Lincoln, walking ①「with」 a friend, turned back to assist a beetle that ②「lie」 on ③「its」 back, legs clawing the air, vainly ④「trying」 to turn itself over.",
     "c": [
       [
         "1",
@@ -2992,7 +2992,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "120",
-    "q": "The last time ①「a flu epidemic」 was named ②「after」 Hong\nKong, nobody ③「there」 ④「knows」 about the ducks and chickens.",
+    "q": "The last time ①「a flu epidemic」 was named ②「after」 Hong Kong, nobody ③「there」 ④「knows」 about the ducks and chickens.",
     "c": [
       [
         "1",
@@ -3037,7 +3037,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "If\nS + were (가정법 과거). were for all persons.",
+    "exp": "If S + were (가정법 과거). were for all persons.",
     "t": "가정법과거"
   },
   {
@@ -3067,7 +3067,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "123",
-    "q": "If\nI ______ speak\nEnglish as well as you do, I'd be very happy.",
+    "q": "If I ______ speak English as well as you do, I'd be very happy.",
     "c": [
       [
         "1",
@@ -3092,7 +3092,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "124",
-    "q": "A: What do you think about\nGerman? B: If\nI had known\nGerman was so difficult, I ______ it up.",
+    "q": "A: What do you think about German? B: If I had known German was so difficult, I ______ it up.",
     "c": [
       [
         "1",
@@ -3167,7 +3167,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "127",
-    "q": "If\nI had not missed my bus, I ______ at school by now.",
+    "q": "If I had not missed my bus, I ______ at school by now.",
     "c": [
       [
         "1",
@@ -3192,7 +3192,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "128",
-    "q": "If the\nUnited\nStates ①「had built」 more homes for ②「the poor」 in 2000, the ③「housing」 problems in some parts of this country ④「wouldn't have been」 so serious now.",
+    "q": "If the United States ①「had built」 more homes for ②「the poor」 in 2000, the ③「housing」 problems in some parts of this country ④「wouldn't have been」 so serious now.",
     "c": [
       [
         "1",
@@ -3217,7 +3217,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "129",
-    "q": "Choose the one that is\nCORRECT according to the standard\nEnglish.",
+    "q": "Choose the one that is CORRECT according to the standard English.",
     "c": [
       [
         "1",
@@ -3267,7 +3267,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "131",
-    "q": "If any signer of the\nConstitution ①「was」 to return to life ②「for a day」, his opinion ③「of」 our amendments ④「would be」 interesting.",
+    "q": "If any signer of the Constitution ①「was」 to return to life ②「for a day」, his opinion ③「of」 our amendments ④「would be」 interesting.",
     "c": [
       [
         "1",
@@ -3287,7 +3287,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "If\nS were to\nRV = subjunctive future. 'was to return' is marked incorrect part - should be 'were to return' (가정법 미래는 were to).",
+    "exp": "If S were to RV = subjunctive future. 'was to return' is marked incorrect part - should be 'were to return' (가정법 미래는 were to).",
     "t": "가정법미래"
   },
   {
@@ -3312,7 +3312,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "Should\nS RV = subjunctive future inversion. 'Should anyone call' = If anyone should call.",
+    "exp": "Should S RV = subjunctive future inversion. 'Should anyone call' = If anyone should call.",
     "t": "가정법 도치"
   },
   {
@@ -3337,7 +3337,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "Should\nS RV (원형). 'needing' -> 'need'. Subjunctive inversion requires base verb.",
+    "exp": "Should S RV (원형). 'needing' -> 'need'. Subjunctive inversion requires base verb.",
     "t": "가정법 도치"
   },
   {
@@ -3362,7 +3362,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "Were\nS p.p. = subjunctive past passive inversion. 'Were large sections cut away' = If large sections were cut away.",
+    "exp": "Were S p.p. = subjunctive past passive inversion. 'Were large sections cut away' = If large sections were cut away.",
     "t": "분사구문"
   },
   {
@@ -3387,7 +3387,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "Had\nS p.p. = subjunctive past perfect inversion. 'Had\nI known' = If\nI had known.",
+    "exp": "Had S p.p. = subjunctive past perfect inversion. 'Had I known' = If I had known.",
     "t": "가정법 도치"
   },
   {
@@ -3412,7 +3412,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "Had\nS p.p. inversion. 'Had it prepared better' = If it had prepared better.",
+    "exp": "Had S p.p. inversion. 'Had it prepared better' = If it had prepared better.",
     "t": "가정법 도치"
   },
   {
@@ -3437,7 +3437,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "had\nI known = If\nI had known. Inversion after main clause for emphasis.",
+    "exp": "had I known = If I had known. Inversion after main clause for emphasis.",
     "t": "가정법 과거완료"
   },
   {
@@ -3467,7 +3467,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "139",
-    "q": "Choose the one that is\nNOT correct according to the standard\nEnglish. ______ your help, I should have failed.",
+    "q": "Choose the one that is NOT correct according to the standard English. ______ your help, I should have failed.",
     "c": [
       [
         "1",
@@ -3487,7 +3487,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "If it\nWERE not for(now) + should have failed(past)=tense mismatch. Should be\nIf it\nHAD not been for.",
+    "exp": "If it WERE not for(now) + should have failed(past)=tense mismatch. Should be If it HAD not been for.",
     "t": "가정법과거완료"
   },
   {
@@ -3542,7 +3542,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "142",
-    "q": "I wish you ______ such a bad cold, because\nI'm sure you would have enjoyed the concert.",
+    "q": "I wish you ______ such a bad cold, because I'm sure you would have enjoyed the concert.",
     "c": [
       [
         "1",
@@ -3592,7 +3592,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "144",
-    "q": "That\nAmerican ①「speaks\nKorean」 ②「as fluently」 ③「as if」 he ④「is」 a\nKorean.",
+    "q": "That American ①「speaks Korean」 ②「as fluently」 ③「as if」 he ④「is」 a Korean.",
     "c": [
       [
         "1",
@@ -3612,7 +3612,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "as if + subjunctive. 'as if he were a\nKorean'. 'is' -> 'were'.",
+    "exp": "as if + subjunctive. 'as if he were a Korean'. 'is' -> 'were'.",
     "t": "관계부사"
   },
   {
@@ -3637,7 +3637,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "looked like he were -> looked as if he were. 'like' cannot introduce a clause in formal\nEnglish.",
+    "exp": "looked like he were -> looked as if he were. 'like' cannot introduce a clause in formal English.",
     "t": "관계부사"
   },
   {
@@ -3742,7 +3742,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "150",
-    "q": "A: What will you do during\nWinter vacation? B: I don't know, but it's about time ______ on something.",
+    "q": "A: What will you do during Winter vacation? B: I don't know, but it's about time ______ on something.",
     "c": [
       [
         "1",
@@ -3842,7 +3842,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "154",
-    "q": "Many a ①「scientist」 suggested ②「to」 me that\nAgassiz go back to his fossil fish and ③「left」 geology ④「to」 the experts.",
+    "q": "Many a ①「scientist」 suggested ②「to」 me that Agassiz go back to his fossil fish and ③「left」 geology ④「to」 the experts.",
     "c": [
       [
         "1",
@@ -3863,7 +3863,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "t": "제안동사 가정법현재",
-    "exp": "suggest that\nS (should) RV. go back과 병렬. ③ left -> leave."
+    "exp": "suggest that S (should) RV. go back과 병렬. ③ left -> leave."
   },
   {
     "i": "155",
@@ -3917,7 +3917,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "157",
-    "q": "It is necessary that an applicant ______ the form before\nJanuary 13.",
+    "q": "It is necessary that an applicant ______ the form before January 13.",
     "c": [
       [
         "1",
@@ -3937,12 +3937,12 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "It is necessary that\nS + RV (원형). 가정법 현재.",
+    "exp": "It is necessary that S + RV (원형). 가정법 현재.",
     "t": "분사"
   },
   {
     "i": "158",
-    "q": "It is not always necessary ______ the\nTOEIC examination to be admitted to the company.",
+    "q": "It is not always necessary ______ the TOEIC examination to be admitted to the company.",
     "c": [
       [
         "1",
@@ -3967,7 +3967,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "159",
-    "q": "I ①「would have done」 the assignment ②「earlier」, but\nI ③「had met」 an old friend of mine ④「on my way home」.",
+    "q": "I ①「would have done」 the assignment ②「earlier」, but I ③「had met」 an old friend of mine ④「on my way home」.",
     "c": [
       [
         "1",
@@ -4042,7 +4042,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "162",
-    "q": "I will employ the woman ______ they say speaks\nEnglish fluently.",
+    "q": "I will employ the woman ______ they say speaks English fluently.",
     "c": [
       [
         "1",
@@ -4092,7 +4092,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "164",
-    "q": "In the rain\nI met a gentleman ______ I believed to be a professor.",
+    "q": "In the rain I met a gentleman ______ I believed to be a professor.",
     "c": [
       [
         "1",
@@ -4142,7 +4142,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "166",
-    "q": "The modern\nOlympic\nGames began in\nAthens in 1896 as a result ①「of the」 initiative of\nBaron\nPierre de\nCoubertin, a\nFrench educator ②「who」 ③「desire」 was to promote international ④「understanding」 through athletics.",
+    "q": "The modern Olympic Games began in Athens in 1896 as a result ①「of the」 initiative of Baron Pierre de Coubertin, a French educator ②「who」 ③「desire」 was to promote international ④「understanding」 through athletics.",
     "c": [
       [
         "1",
@@ -4242,7 +4242,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "170",
-    "q": "Mark\nTwain, ______ real name was\nSamuel\nLanghorne clemens, wrote many world-famous novels.",
+    "q": "Mark Twain, ______ real name was Samuel Langhorne clemens, wrote many world-famous novels.",
     "c": [
       [
         "1",
@@ -4292,7 +4292,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "172",
-    "q": "I also have to look at my brother, ______ I have done so many times in my life, when\nI'm faced with a situation.",
+    "q": "I also have to look at my brother, ______ I have done so many times in my life, when I'm faced with a situation.",
     "c": [
       [
         "1",
@@ -4367,7 +4367,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "175",
-    "q": "Adolescence is the time of life ①「between childhood and adulthood」. The word is ②「derived from」 ③「the\nLatin word」 adolescere, ④「that means」 \"to grow into maturity.\"",
+    "q": "Adolescence is the time of life ①「between childhood and adulthood」. The word is ②「derived from」 ③「the Latin word」 adolescere, ④「that means」 \"to grow into maturity.\"",
     "c": [
       [
         "1",
@@ -4392,7 +4392,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "176",
-    "q": "The tax cut ①「is」 Bush's most profound attack on\nClinton's economic legacy. In 1993, without\nRepublican support, Clinton ②「pushed through」 a budget ③「what」 raised taxes on the affluent and ④「sliced into」 the burgeoning deficit.",
+    "q": "The tax cut ①「is」 Bush's most profound attack on Clinton's economic legacy. In 1993, without Republican support, Clinton ②「pushed through」 a budget ③「what」 raised taxes on the affluent and ④「sliced into」 the burgeoning deficit.",
     "c": [
       [
         "1",
@@ -4517,7 +4517,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "181",
-    "q": "No one knows exactly how big\nChina's\nInternet police force is these days, although estimates run as high as 40,000. But ______, its sophistication is greater than ever.",
+    "q": "No one knows exactly how big China's Internet police force is these days, although estimates run as high as 40,000. But ______, its sophistication is greater than ever.",
     "c": [
       [
         "1",
@@ -4567,7 +4567,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "183",
-    "q": "A: What do you think of\nJohn? B: He has no sense ______.",
+    "q": "A: What do you think of John? B: He has no sense ______.",
     "c": [
       [
         "1",
@@ -4717,7 +4717,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "189",
-    "q": "During the\nWar of 1812, the\nBritish attacked\nWashington, D.C., and the\nWhite\nHouse, ______ the president works and lives, was burned and important government buildings were destroyed.",
+    "q": "During the War of 1812, the British attacked Washington, D.C., and the White House, ______ the president works and lives, was burned and important government buildings were destroyed.",
     "c": [
       [
         "1",
@@ -4742,7 +4742,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "190",
-    "q": "In the\nUnited\nStates, ______ is the most concentrated is\nNew\nOrleans.",
+    "q": "In the United States, ______ is the most concentrated is New Orleans.",
     "c": [
       [
         "1",
@@ -4767,7 +4767,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "191",
-    "q": "In the multi-cultural ①「universe where\nI live」 in, it's safe not to worry about ②「explaining」 the story of\nPassover because if people don't ③「hear it from me」, they'll hear it ④「some other」 way.",
+    "q": "In the multi-cultural ①「universe where I live」 in, it's safe not to worry about ②「explaining」 the story of Passover because if people don't ③「hear it from me」, they'll hear it ④「some other」 way.",
     "c": [
       [
         "1",
@@ -4787,7 +4787,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "정답 1번: 「universe where\nI live」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 1번: 「universe where I live」 부분이 틀림. (해설 재작성 예정)",
     "t": "than vs. to"
   },
   {
@@ -4837,7 +4837,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "정답 2번: The way\nI look at it. (해설 재작성 예정)",
+    "exp": "정답 2번: The way I look at it. (해설 재작성 예정)",
     "t": "비교대상 생략"
   },
   {
@@ -4921,7 +4921,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "5",
     "exp": "정답 5번: There is no man but commits errors.. (해설 재작성 예정)",
-    "t": "So/Neither do\nI"
+    "t": "So/Neither do I"
   },
   {
     "i": "197",
@@ -4975,7 +4975,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "199",
-    "q": "Since\nI ①「have been elected」 to do the ②「duties of the」 President of our country, I wish to ③「thank all of the people」 here for the great favor ④「which they」 have looked to me.",
+    "q": "Since I ①「have been elected」 to do the ②「duties of the」 President of our country, I wish to ③「thank all of the people」 here for the great favor ④「which they」 have looked to me.",
     "c": [
       [
         "1",
@@ -5000,7 +5000,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "200",
-    "q": "Choose the one that is\nCORRECT according to the standard\nEnglish.",
+    "q": "Choose the one that is CORRECT according to the standard English.",
     "c": [
       [
         "1",
@@ -5154,7 +5154,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "206",
-    "q": "①「Two of」 the oldest and ②「most」 ③「developing」 money markets are ④「those」 of the\nUnited\nStates and\nGreat britain.",
+    "q": "①「Two of」 the oldest and ②「most」 ③「developing」 money markets are ④「those」 of the United States and Great britain.",
     "c": [
       [
         "1",
@@ -5229,7 +5229,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "209",
-    "q": "North\nKorea\nForeign\nMinistry officials ①「were」 ②「reportedly」 left all but speechless, ③「having been」 cheerfully assumed that\nKelly was coming to town with an offer of ④「renewed」 aid.",
+    "q": "North Korea Foreign Ministry officials ①「were」 ②「reportedly」 left all but speechless, ③「having been」 cheerfully assumed that Kelly was coming to town with an offer of ④「renewed」 aid.",
     "c": [
       [
         "1",
@@ -5304,7 +5304,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "212",
-    "q": "①「The side of」 Rousseau's thought that arouses nostalgia for nature came to the\nUnited\nStates ②「early on」. ③「Recently」, ④「joining」 to many other movements, it ⑤「came to full flower」 and found a wide public.",
+    "q": "①「The side of」 Rousseau's thought that arouses nostalgia for nature came to the United States ②「early on」. ③「Recently」, ④「joining」 to many other movements, it ⑤「came to full flower」 and found a wide public.",
     "c": [
       [
         "1",
@@ -5358,7 +5358,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "214",
-    "q": "\"Come on, Lisa. How can\nI feel relaxed with ______ me like that?\"",
+    "q": "\"Come on, Lisa. How can I feel relaxed with ______ me like that?\"",
     "c": [
       [
         "1",
@@ -5383,7 +5383,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "215",
-    "q": "Fortune is proud ①「to announce」 its second annual competition for\nAsia's best business plans. The ②「winning」 submission will ③「advance to」 the semi-final round of\nE\n  -Chron's annual business competition, with that winner ④「walks away」 with up to $1,000,000 ⑤「in」 prize awards.",
+    "q": "Fortune is proud ①「to announce」 its second annual competition for Asia's best business plans. The ②「winning」 submission will ③「advance to」 the semi-final round of E-Chron's annual business competition, with that winner ④「walks away」 with up to $1,000,000 ⑤「in」 prize awards.",
     "c": [
       [
         "1",
@@ -5412,7 +5412,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "216",
-    "q": "A few years ago, ①「traveling」 through\nItaly, the idea for a history ②「of」 Florentine architecture ③「occurred」 ④「to him」.",
+    "q": "A few years ago, ①「traveling」 through Italy, the idea for a history ②「of」 Florentine architecture ③「occurred」 ④「to him」.",
     "c": [
       [
         "1",
@@ -5437,7 +5437,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "217",
-    "q": "Seriously ①「burned」 in a terrible car accident, the doctor was not sure that\nJohn ②「could be protected」 from infection ③「long」 enough for his body to begin to heal ④「itself」.",
+    "q": "Seriously ①「burned」 in a terrible car accident, the doctor was not sure that John ②「could be protected」 from infection ③「long」 enough for his body to begin to heal ④「itself」.",
     "c": [
       [
         "1",
@@ -5462,7 +5462,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "218",
-    "q": "Choose the one that is\nCORRECT according to the standard\nEnglish.",
+    "q": "Choose the one that is CORRECT according to the standard English.",
     "c": [
       [
         "1",
@@ -5483,11 +5483,11 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "t": "분사구문 의미상 주어",
-    "exp": "분사구문의 의미상 주어는 주절 주어와 일치. ② chocolate known for \n  ~만 올바름. ①③④는 현수분사."
+    "exp": "분사구문의 의미상 주어는 주절 주어와 일치. ② chocolate known for ~만 올바름. ①③④는 현수분사."
   },
   {
     "i": "219",
-    "q": "Pyongyang ①「is now pursuing」 a policy that ②「calls for」 improved economic and technical ties with all nations, ③「included」 capitalist countries that have no diplomatic ties with ④「North\nKorea」.",
+    "q": "Pyongyang ①「is now pursuing」 a policy that ②「calls for」 improved economic and technical ties with all nations, ③「included」 capitalist countries that have no diplomatic ties with ④「North Korea」.",
     "c": [
       [
         "1",
@@ -5712,7 +5712,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "228",
-    "q": "Richard and\nAngela went out together several times: ①「to a movie」, to a party with some friends, and ②「then dinner」. They seemed to have a lot ③「in common」 and\nAngela commented that she couldn't remember ④「having」 such a good time.",
+    "q": "Richard and Angela went out together several times: ①「to a movie」, to a party with some friends, and ②「then dinner」. They seemed to have a lot ③「in common」 and Angela commented that she couldn't remember ④「having」 such a good time.",
     "c": [
       [
         "1",
@@ -5732,7 +5732,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "they seemed to get along. seem to\nRV.",
+    "exp": "they seemed to get along. seem to RV.",
     "t": "접속사"
   },
   {
@@ -5762,7 +5762,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "230",
-    "q": "The great wastes of the southeast quadrant of\nSaudi\nArabia are at once forbiddingly empty, climatically harsh, ______.",
+    "q": "The great wastes of the southeast quadrant of Saudi Arabia are at once forbiddingly empty, climatically harsh, ______.",
     "c": [
       [
         "1",
@@ -5837,7 +5837,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "233",
-    "q": "The early years of the\nUnited\nStates government were characterized by a debate concerning ______ or individual states should have more power.",
+    "q": "The early years of the United States government were characterized by a debate concerning ______ or individual states should have more power.",
     "c": [
       [
         "1",
@@ -5862,7 +5862,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "234",
-    "q": "Choose the one that is\nNOT correct according to the standard\nEnglish.",
+    "q": "Choose the one that is NOT correct according to the standard English.",
     "c": [
       [
         "1",
@@ -5882,7 +5882,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "I dont know\nTHAT this answer is correct\nOR NOT -> know\nWHETHER. know that+or not is wrong.",
+    "exp": "I dont know THAT this answer is correct OR NOT -> know WHETHER. know that+or not is wrong.",
     "t": "수일치"
   },
   {
@@ -5962,7 +5962,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "238",
-    "q": "Choose the one that is\nCORRECT according to the standard\nEnglish.",
+    "q": "Choose the one that is CORRECT according to the standard English.",
     "c": [
       [
         "1",
@@ -6032,7 +6032,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "Not until...did\nMr. Peterson realize. 도치.",
+    "exp": "Not until...did Mr. Peterson realize. 도치.",
     "t": "도치"
   },
   {
@@ -6187,7 +6187,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "247",
-    "q": "The weekend ①「before\nChristmas」, she had to finish ②「to buy」 gifts, prepare a holiday dinner ③「for 10 persons」 and organize birthday parties for ④「all three of」 her young children.",
+    "q": "The weekend ①「before Christmas」, she had to finish ②「to buy」 gifts, prepare a holiday dinner ③「for 10 persons」 and organize birthday parties for ④「all three of」 her young children.",
     "c": [
       [
         "1",
@@ -6233,7 +6233,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "t": "동명사 목적어",
-    "exp": "stop ~ing(\n  ~을 멈추다). ② to smoke -> smoking."
+    "exp": "stop ~ing(~을 멈추다). ② to smoke -> smoking."
   },
   {
     "i": "249",
@@ -6337,7 +6337,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "253",
-    "q": "Choose the one that is\nNOT correct according to the standard\nEnglish.",
+    "q": "Choose the one that is NOT correct according to the standard English.",
     "c": [
       [
         "1",
@@ -6357,12 +6357,12 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "must remember\nSEEING him next\nSunday -> must remember\nTO SEE. remember+Ving=past, but next\nSunday=future.",
+    "exp": "must remember SEEING him next Sunday -> must remember TO SEE. remember+Ving=past, but next Sunday=future.",
     "t": "문법"
   },
   {
     "i": "254",
-    "q": "Choose the one that is\nNOT correct according to the standard\nEnglish.",
+    "q": "Choose the one that is NOT correct according to the standard English.",
     "c": [
       [
         "1",
@@ -6466,7 +6466,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "258",
-    "q": "Elizabeth is ①「looking」 forward to ②「go」 to\nEurope after she ③「finishes」 her studies ④「at」 the university.",
+    "q": "Elizabeth is ①「looking」 forward to ②「go」 to Europe after she ③「finishes」 her studies ④「at」 the university.",
     "c": [
       [
         "1",
@@ -6666,7 +6666,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "266",
-    "q": "If the\nCIA ______ something like these devices had to be invented.",
+    "q": "If the CIA ______ something like these devices had to be invented.",
     "c": [
       [
         "1",
@@ -6686,7 +6686,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "If the\nCIA had known. 가정법 과거완료.",
+    "exp": "If the CIA had known. 가정법 과거완료.",
     "t": "가정법"
   },
   {
@@ -6766,7 +6766,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "270",
-    "q": "As ①「heart disease」 continues ②「being」 the number-one killer in the\nUnited\nStates, researchers ③「have become」 increasingly interested in ④「identifying」 the potential risk factors.",
+    "q": "As ①「heart disease」 continues ②「being」 the number-one killer in the United States, researchers ③「have become」 increasingly interested in ④「identifying」 the potential risk factors.",
     "c": [
       [
         "1",
@@ -6786,7 +6786,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "continues to be. continue + to\nRV.",
+    "exp": "continues to be. continue + to RV.",
     "t": "to부정사"
   },
   {
@@ -6891,7 +6891,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "275",
-    "q": "The original\nOlympic races are said ______ with\nOenomaus, who used to compel any suitor who sought his daughter's hand ______ against him in a race.",
+    "q": "The original Olympic races are said ______ with Oenomaus, who used to compel any suitor who sought his daughter's hand ______ against him in a race.",
     "c": [
       [
         "1",
@@ -6941,7 +6941,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "277",
-    "q": "I had hoped ①「to have learned」 French before my trip ②「to\nParis」, but\nI ③「did not」 have any ④「extra money」 for a course.",
+    "q": "I had hoped ①「to have learned」 French before my trip ②「to Paris」, but I ③「did not」 have any ④「extra money」 for a course.",
     "c": [
       [
         "1",
@@ -6991,7 +6991,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "279",
-    "q": "Choose the one that is\nCORRECT according to the standard\nEnglish.",
+    "q": "Choose the one that is CORRECT according to the standard English.",
     "c": [
       [
         "1",
@@ -7066,7 +7066,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "282",
-    "q": "Whenever ①「election are occurred」 in this country, there ②「is often」 a candidate, as well as a few media broadcasters, ③「who」 becomes ④「an immortalized」 figure on the landscape of\nAmerican history.",
+    "q": "Whenever ①「election are occurred」 in this country, there ②「is often」 a candidate, as well as a few media broadcasters, ③「who」 becomes ④「an immortalized」 figure on the landscape of American history.",
     "c": [
       [
         "1",
@@ -7091,7 +7091,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "283",
-    "q": "Classicism which ①「was originated」 in\nGreece and ②「continued」 in ancient\nRome, was the principal contributor ③「to」 that aspect of our life which ④「is usually」 referred to as ⑤「secular」.",
+    "q": "Classicism which ①「was originated」 in Greece and ②「continued」 in ancient Rome, was the principal contributor ③「to」 that aspect of our life which ④「is usually」 referred to as ⑤「secular」.",
     "c": [
       [
         "1",
@@ -7145,7 +7145,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "285",
-    "q": "Choose the one that is\nNOT correct according to the standard\nEnglish.",
+    "q": "Choose the one that is NOT correct according to the standard English.",
     "c": [
       [
         "1",
@@ -7165,12 +7165,12 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "His father\nIS RESEMBLED by\nJohn -> resemble cannot be passive. His father resembles\nJohn.",
+    "exp": "His father IS RESEMBLED by John -> resemble cannot be passive. His father resembles John.",
     "t": "문법"
   },
   {
     "i": "286",
-    "q": "①「Although」 a lawyer ②「by」 profession and ③「accustomed public」 speaking, Sir\nRobert\nBorden was not ④「a great orator」.",
+    "q": "①「Although」 a lawyer ②「by」 profession and ③「accustomed public」 speaking, Sir Robert Borden was not ④「a great orator」.",
     "c": [
       [
         "1",
@@ -7195,7 +7195,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "287",
-    "q": "Now the\nUS Supreme\nCourt, ______, will have to decide who deserves first crack at those scarce resources.",
+    "q": "Now the US Supreme Court, ______, will have to decide who deserves first crack at those scarce resources.",
     "c": [
       [
         "1",
@@ -7220,7 +7220,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "288",
-    "q": "Residents of\nLongbaoshan, a village just 72 km north of\nBeijing, only have to look out of the window ______ the deserts that are devouring huge swathes of\nChina's once-fertile farm land.",
+    "q": "Residents of Longbaoshan, a village just 72 km north of Beijing, only have to look out of the window ______ the deserts that are devouring huge swathes of China's once-fertile farm land.",
     "c": [
       [
         "1",
@@ -7245,7 +7245,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "289",
-    "q": "Though\nJohnson knew his serious defects, he ①「was broad-minded」 enough ②「to appoint」 the man ③「to」 the important position because he ④「was convincing」 of his ability.",
+    "q": "Though Johnson knew his serious defects, he ①「was broad-minded」 enough ②「to appoint」 the man ③「to」 the important position because he ④「was convincing」 of his ability.",
     "c": [
       [
         "1",
@@ -7295,7 +7295,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "291",
-    "q": "The\nChinese constructed the\nGreat\nWall ______ a marvel even today.",
+    "q": "The Chinese constructed the Great Wall ______ a marvel even today.",
     "c": [
       [
         "1",
@@ -7320,7 +7320,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "292",
-    "q": "Dr. Park, a professor at a prestigious private college in\nKorea, ______ as one of\nKorea's greatest researchers of science.",
+    "q": "Dr. Park, a professor at a prestigious private college in Korea, ______ as one of Korea's greatest researchers of science.",
     "c": [
       [
         "1",
@@ -7395,7 +7395,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "295",
-    "q": "①「With」 the advent of\nMicrosoft windows, ②「many other」 software makers were ③「forced upgrade」 their ④「own」 products.",
+    "q": "①「With」 the advent of Microsoft windows, ②「many other」 software makers were ③「forced upgrade」 their ④「own」 products.",
     "c": [
       [
         "1",
@@ -7415,7 +7415,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "forced upgrade->forced\nTO upgrade(to부정사)",
+    "exp": "forced upgrade->forced TO upgrade(to부정사)",
     "t": "수일치"
   },
   {
@@ -7440,7 +7440,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "were said not to go. be said to\nRV.",
+    "exp": "were said not to go. be said to RV.",
     "t": "to부정사"
   },
   {
@@ -7520,7 +7520,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "300",
-    "q": "We ______ to read\nMacbeth for tomorrow.",
+    "q": "We ______ to read Macbeth for tomorrow.",
     "c": [
       [
         "1",
@@ -7645,7 +7645,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "305",
-    "q": "A: Did you finish\nLesson 7 today? B: Yes, but\nI ______ it last\nFriday.",
+    "q": "A: Did you finish Lesson 7 today? B: Yes, but I ______ it last Friday.",
     "c": [
       [
         "1",
@@ -7745,7 +7745,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "309",
-    "q": "Choose the one that is\nCORRECT according to the standard\nEnglish.",
+    "q": "Choose the one that is CORRECT according to the standard English.",
     "c": [
       [
         "1",
@@ -7820,7 +7820,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "312",
-    "q": "I ______ to the movies with her last night. Thus\nI felt so tired this morning.",
+    "q": "I ______ to the movies with her last night. Thus I felt so tired this morning.",
     "c": [
       [
         "1",
@@ -7870,7 +7870,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "314",
-    "q": "Choose the one that is\nCORRECT according to the standard\nEnglish.",
+    "q": "Choose the one that is CORRECT according to the standard English.",
     "c": [
       [
         "1",
@@ -7890,12 +7890,12 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "lest they be overheard. lest+S+RV = so that\nS not\nRV. speak low lest they be overheard = correct.",
+    "exp": "lest they be overheard. lest+S+RV = so that S not RV. speak low lest they be overheard = correct.",
     "t": "조동사"
   },
   {
     "i": "315",
-    "q": "Choose the one that is\nCORRECT according to the standard\nEnglish.",
+    "q": "Choose the one that is CORRECT according to the standard English.",
     "c": [
       [
         "1",
@@ -7995,7 +7995,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "319",
-    "q": "I ①「intend to move」 that our committee ②「appoints」 Tom as chairman, and\nI ③「hope」 that you ④「will second」 my motion.",
+    "q": "I ①「intend to move」 that our committee ②「appoints」 Tom as chairman, and I ③「hope」 that you ④「will second」 my motion.",
     "c": [
       [
         "1",
@@ -8015,7 +8015,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "move that\nS RV. 가정법. appoints -> appoint.",
+    "exp": "move that S RV. 가정법. appoints -> appoint.",
     "t": "가정법"
   },
   {
@@ -8070,7 +8070,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "322",
-    "q": "①「Until」 Napoleon's dreams of empire led him ②「into the land of」 the pharaohs, his knowledge about\nEgypt had been ③「as obscurely as」 the hieroglyphics ④「on its」 stone facades.",
+    "q": "①「Until」 Napoleon's dreams of empire led him ②「into the land of」 the pharaohs, his knowledge about Egypt had been ③「as obscurely as」 the hieroglyphics ④「on its」 stone facades.",
     "c": [
       [
         "1",
@@ -8165,7 +8165,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "then\nI went home. 접속부사.",
+    "exp": "then I went home. 접속부사.",
     "t": "접속부사"
   },
   {
@@ -8370,7 +8370,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "334",
-    "q": "①「Most of the」 telephone ②「systems」 in\nVietnam were installed in ③「the 50's and」 60's and are inherently ④「much inferior」 than the modern systems already in use in\nMalaysia and\nThailand.",
+    "q": "①「Most of the」 telephone ②「systems」 in Vietnam were installed in ③「the 50's and」 60's and are inherently ④「much inferior」 than the modern systems already in use in Malaysia and Thailand.",
     "c": [
       [
         "1",
@@ -8390,7 +8390,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "much inferior than->much inferior\nTO",
+    "exp": "much inferior than->much inferior TO",
     "t": "수일치"
   },
   {
@@ -8520,7 +8520,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "340",
-    "q": "The\nGrapes of\nWrath, a novel about the\nDepression years of the 1930's, is one of\nJohn\nSteinbeck's ______ books.",
+    "q": "The Grapes of Wrath, a novel about the Depression years of the 1930's, is one of John Steinbeck's ______ books.",
     "c": [
       [
         "1",
@@ -8670,7 +8670,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "346",
-    "q": "By far ______ of\nKorea is oil.",
+    "q": "By far ______ of Korea is oil.",
     "c": [
       [
         "1",
@@ -8791,11 +8791,11 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "t": "배수 비교",
-    "exp": "twice as much\nA as\nB. ③ than -> as."
+    "exp": "twice as much A as B. ③ than -> as."
   },
   {
     "i": "351",
-    "q": "It is estimated that ______ the\nUnited\nStates.",
+    "q": "It is estimated that ______ the United States.",
     "c": [
       [
         "1",
@@ -8870,7 +8870,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "354",
-    "q": "The climates of\nVenus and\nMars ①「are」 closest to ②「the\nEarth」, but they are nowhere near ③「so comfortable」 as our planet's ④「temperate climate」.",
+    "q": "The climates of Venus and Mars ①「are」 closest to ②「the Earth」, but they are nowhere near ③「so comfortable」 as our planet's ④「temperate climate」.",
     "c": [
       [
         "1",
@@ -8890,12 +8890,12 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "정답 2번: 「the\nEarth」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 2번: 「the Earth」 부분이 틀림. (해설 재작성 예정)",
     "t": "비교"
   },
   {
     "i": "355",
-    "q": "Because sailors ①「are often assigned」 to ships ②「that remain」 at sea for months at a time, men in the\nNavy ③「spend」 more time away from home ④「than any branch of the」 service.",
+    "q": "Because sailors ①「are often assigned」 to ships ②「that remain」 at sea for months at a time, men in the Navy ③「spend」 more time away from home ④「than any branch of the」 service.",
     "c": [
       [
         "1",
@@ -8974,7 +8974,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "358",
-    "q": "Because\nRobert ①「ate faster」 than ②「me」, he ③「was able to」 leave the cafeteria ④「sooner」.",
+    "q": "Because Robert ①「ate faster」 than ②「me」, he ③「was able to」 leave the cafeteria ④「sooner」.",
     "c": [
       [
         "1",
@@ -8999,7 +8999,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "359",
-    "q": "Venus ①「approaches」 the\nEarth ②「more」 closely ③「than」 any other ④「planet is」.",
+    "q": "Venus ①「approaches」 the Earth ②「more」 closely ③「than」 any other ④「planet is」.",
     "c": [
       [
         "1",
@@ -9049,7 +9049,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "361",
-    "q": "Michael is going to be nominated to receive the\nAcademy\nAward for best director, ______?",
+    "q": "Michael is going to be nominated to receive the Academy Award for best director, ______?",
     "c": [
       [
         "1",
@@ -9099,7 +9099,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "363",
-    "q": "Choose the one that is\nCORRECT according to the standard\nEnglish.",
+    "q": "Choose the one that is CORRECT according to the standard English.",
     "c": [
       [
         "1",
@@ -9199,7 +9199,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "367",
-    "q": "Rarely ______ for more than a few seconds once they enter the\nEarth's atmosphere.",
+    "q": "Rarely ______ for more than a few seconds once they enter the Earth's atmosphere.",
     "c": [
       [
         "1",
@@ -9224,7 +9224,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "368",
-    "q": "Not only ①「the\nJapanese machine was」 judged ②「easier to operate」 and more flexible than the\nAmerican model, but ③「it」 was priced $60,000 lower and ④「could be」 delivered faster.",
+    "q": "Not only ①「the Japanese machine was」 judged ②「easier to operate」 and more flexible than the American model, but ③「it」 was priced $60,000 lower and ④「could be」 delivered faster.",
     "c": [
       [
         "1",
@@ -9245,11 +9245,11 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "t": "Not only 도치",
-    "exp": "Not only 문두 -> 도치. ① the\nJapanese machine was judged -> was the\nJapanese machine judged."
+    "exp": "Not only 문두 -> 도치. ① the Japanese machine was judged -> was the Japanese machine judged."
   },
   {
     "i": "369",
-    "q": "①「Neither」 in her campaign nor in her acceptance speech ②「do」 Miss\nEliot ③「acknowledge」 those ④「whose」 assistance had ⑤「won」 her the nomination.",
+    "q": "①「Neither」 in her campaign nor in her acceptance speech ②「do」 Miss Eliot ③「acknowledge」 those ④「whose」 assistance had ⑤「won」 her the nomination.",
     "c": [
       [
         "1",
@@ -9273,7 +9273,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "did\nMichelle... Neither 도치.",
+    "exp": "did Michelle... Neither 도치.",
     "t": "도치"
   },
   {
@@ -9398,7 +9398,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "정답 2번: so will\nI. (해설 재작성 예정)",
+    "exp": "정답 2번: so will I. (해설 재작성 예정)",
     "t": "도치"
   },
   {
@@ -9428,7 +9428,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "376",
-    "q": "A: I have a lot of classical records, but\nI don't understand modern jazz. B: ______. I think it's boring.",
+    "q": "A: I have a lot of classical records, but I don't understand modern jazz. B: ______. I think it's boring.",
     "c": [
       [
         "1",
@@ -9448,12 +9448,12 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "정답 4번: Neither do\nI. (해설 재작성 예정)",
+    "exp": "정답 4번: Neither do I. (해설 재작성 예정)",
     "t": "도치"
   },
   {
     "i": "377",
-    "q": "Choose the one that is\nCORRECT according to the standard\nEnglish.",
+    "q": "Choose the one that is CORRECT according to the standard English.",
     "c": [
       [
         "1",
@@ -9603,7 +9603,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "383",
-    "q": "Miss\nSmith went to the library to get ______.",
+    "q": "Miss Smith went to the library to get ______.",
     "c": [
       [
         "1",
@@ -9653,7 +9653,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "385",
-    "q": "Choose the one that is\nNOT correct according to the standard\nEnglish.",
+    "q": "Choose the one that is NOT correct according to the standard English.",
     "c": [
       [
         "1",
@@ -9673,12 +9673,12 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "The police\nWANTS -> The police\nWANT. police=plural.",
+    "exp": "The police WANTS -> The police WANT. police=plural.",
     "t": "문법"
   },
   {
     "i": "386",
-    "q": "In the early days of\nRome, cattle ______ for money.",
+    "q": "In the early days of Rome, cattle ______ for money.",
     "c": [
       [
         "1",
@@ -9778,7 +9778,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "390",
-    "q": "Choose the one that is\nCORRECT according to the standard\nEnglish.",
+    "q": "Choose the one that is CORRECT according to the standard English.",
     "c": [
       [
         "1",
@@ -9803,7 +9803,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "391",
-    "q": "Choose the one that is\nNOT correct according to the standard\nEnglish.",
+    "q": "Choose the one that is NOT correct according to the standard English.",
     "c": [
       [
         "1",
@@ -9823,7 +9823,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "a\nLITTLE bananas -> a\nFEW bananas. little+uncountable, bananas=countable.",
+    "exp": "a LITTLE bananas -> a FEW bananas. little+uncountable, bananas=countable.",
     "t": "수일치"
   },
   {
@@ -9853,7 +9853,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "393",
-    "q": "①「The」 number of battles were ②「fought」 ③「between」 the ④「fleets」 of\nNelson and\nNapoleon.",
+    "q": "①「The」 number of battles were ②「fought」 ③「between」 the ④「fleets」 of Nelson and Napoleon.",
     "c": [
       [
         "1",
@@ -9953,7 +9953,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "397",
-    "q": "In\nAfrica and\nAsia, five ①「percents」 of babies ②「die」 before ③「they」 are ④「one year」 old.",
+    "q": "In Africa and Asia, five ①「percents」 of babies ②「die」 before ③「they」 are ④「one year」 old.",
     "c": [
       [
         "1",
@@ -10052,7 +10052,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "정답 1번: some of\nJohn's friends. (해설 재작성 예정)",
+    "exp": "정답 1번: some of John's friends. (해설 재작성 예정)",
     "t": "관계대명사"
   },
   {
@@ -10082,7 +10082,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "402",
-    "q": "①「A size」 of the\nUnited\nStates\nSupreme\nCourt ②「was the」 focal point ③「of one」 of the most famous ④「attacks」 on the federal judiciary.",
+    "q": "①「A size」 of the United States Supreme Court ②「was the」 focal point ③「of one」 of the most famous ④「attacks」 on the federal judiciary.",
     "c": [
       [
         "1",
@@ -10102,12 +10102,12 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "'The size of the\nUnited\nStates\nSupreme\nCourt...' A → The.",
+    "exp": "'The size of the United States Supreme Court...' A → The.",
     "t": "관사"
   },
   {
     "i": "403",
-    "q": "Although ①「many」 of his songs are well known to the public, ②「little」 is known about ③「his」 early childhood and college background ④「of」 country singer\nJohnny\nLee.",
+    "q": "Although ①「many」 of his songs are well known to the public, ②「little」 is known about ③「his」 early childhood and college background ④「of」 country singer Johnny Lee.",
     "c": [
       [
         "1",
@@ -10128,7 +10128,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "t": "관사/대명사",
-    "exp": "of country singer\nJohnny\nLee가 한정. ③ his -> the."
+    "exp": "of country singer Johnny Lee가 한정. ③ his -> the."
   },
   {
     "i": "404",
@@ -10157,7 +10157,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "405",
-    "q": "Choose the one that is\nCORRECT according to the standard\nEnglish.",
+    "q": "Choose the one that is CORRECT according to the standard English.",
     "c": [
       [
         "1",
@@ -10182,7 +10182,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "406",
-    "q": "①「The\nEnglish」 has both regular and irregular verbs. Learn ②「the basic verb」 forms of these words ③「in order to form」 the tenses and avoid ④「mixing tenses」 in writing.",
+    "q": "①「The English」 has both regular and irregular verbs. Learn ②「the basic verb」 forms of these words ③「in order to form」 the tenses and avoid ④「mixing tenses」 in writing.",
     "c": [
       [
         "1",
@@ -10202,12 +10202,12 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "'The\nEnglish language has both...' The\nEnglish → The\nEnglish language.",
+    "exp": "'The English language has both...' The English → The English language.",
     "t": "관사"
   },
   {
     "i": "407",
-    "q": "Jack\nLondon's ①「tour」 ②「of\nRocky\nMountains」 ③「was delayed」 by his illness and the ④「San\nFrancisco」 earthquake of 1906.",
+    "q": "Jack London's ①「tour」 ②「of Rocky Mountains」 ③「was delayed」 by his illness and the ④「San Francisco」 earthquake of 1906.",
     "c": [
       [
         "1",
@@ -10227,12 +10227,12 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "정답 2번: 「of\nRocky\nMountains」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 2번: 「of Rocky Mountains」 부분이 틀림. (해설 재작성 예정)",
     "t": "비교"
   },
   {
     "i": "408",
-    "q": "Annie\nSmith\nPeck was ①「the first woman in」 Netherlands to navigate through ②「the\nNile」 and scale the\nMatterhorn, ③「the」 height and beauty ④「of」 which have made them the goal of all adventurers.",
+    "q": "Annie Smith Peck was ①「the first woman in」 Netherlands to navigate through ②「the Nile」 and scale the Matterhorn, ③「the」 height and beauty ④「of」 which have made them the goal of all adventurers.",
     "c": [
       [
         "1",
@@ -10257,7 +10257,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "409",
-    "q": "The\nIrish brought the popular custom of\nHalloween to\nAmerica ______ 1840s.",
+    "q": "The Irish brought the popular custom of Halloween to America ______ 1840s.",
     "c": [
       [
         "1",
@@ -10307,7 +10307,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "411",
-    "q": "For ①「half a century」, Samuel\nDulles has sold the fabric ②「by two yards」 ③「in」 local, ④「regional」, and national events.",
+    "q": "For ①「half a century」, Samuel Dulles has sold the fabric ②「by two yards」 ③「in」 local, ④「regional」, and national events.",
     "c": [
       [
         "1",
@@ -10457,7 +10457,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "417",
-    "q": "It was so beautiful ______ that\nI did not want to go to bed.",
+    "q": "It was so beautiful ______ that I did not want to go to bed.",
     "c": [
       [
         "1",
@@ -10527,12 +10527,12 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "Choose\nNOT correct. 'Exercising is as good a way as any...'",
+    "exp": "Choose NOT correct. 'Exercising is as good a way as any...'",
     "t": "원급"
   },
   {
     "i": "420",
-    "q": "I am sure that\nMary is ______ girl to tell a lie.",
+    "q": "I am sure that Mary is ______ girl to tell a lie.",
     "c": [
       [
         "1",
@@ -10607,7 +10607,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "423",
-    "q": "①「Lawyers」 with the\nAmerican\nCivil\nLiberties\nUnion ②「are compiling」 statistics that ③「may」 help ④「themselves」 to repeal the death penalty.",
+    "q": "①「Lawyers」 with the American Civil Liberties Union ②「are compiling」 statistics that ③「may」 help ④「themselves」 to repeal the death penalty.",
     "c": [
       [
         "1",
@@ -10682,7 +10682,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "426",
-    "q": "I don't have a nice bookcase, so\nI am going to ______.",
+    "q": "I don't have a nice bookcase, so I am going to ______.",
     "c": [
       [
         "1",
@@ -10707,7 +10707,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "427",
-    "q": "Yesterday\nI lost my watch in the subway, so\nI plan to buy ______.",
+    "q": "Yesterday I lost my watch in the subway, so I plan to buy ______.",
     "c": [
       [
         "1",
@@ -10961,7 +10961,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "437",
-    "q": "When a group of people ①「go\nDutch」, each ②「pay」 only for ③「what」 the person ④「has」 eaten.",
+    "q": "When a group of people ①「go Dutch」, each ②「pay」 only for ③「what」 the person ④「has」 eaten.",
     "c": [
       [
         "1",
@@ -11161,7 +11161,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "445",
-    "q": "A: Do you like the\nJapanese food served in\nAmerican restaurants? B: It's not bad but\nI prefer ______.",
+    "q": "A: Do you like the Japanese food served in American restaurants? B: It's not bad but I prefer ______.",
     "c": [
       [
         "1",
@@ -11185,7 +11185,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "정답 4번: authentic\nJapanese food. (해설 재작성 예정)",
+    "exp": "정답 4번: authentic Japanese food. (해설 재작성 예정)",
     "t": "비교"
   },
   {
@@ -11260,7 +11260,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "'He gave lectures on modern\nEuropean history.'",
+    "exp": "'He gave lectures on modern European history.'",
     "t": "형용사 어순"
   },
   {
@@ -11285,7 +11285,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "'Is the book hard to read immediately?' hard + to\nRV.",
+    "exp": "'Is the book hard to read immediately?' hard + to RV.",
     "t": "to부정사"
   },
   {
@@ -11569,7 +11569,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "461",
-    "q": "In\nKorea, it's been the norm rather than the exception that most workers are paid ______.",
+    "q": "In Korea, it's been the norm rather than the exception that most workers are paid ______.",
     "c": [
       [
         "1",
@@ -11594,7 +11594,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "462",
-    "q": "A: Did\nJudy fly across the\nCaspian\nSea? B: No, she crossed both ways ______.",
+    "q": "A: Did Judy fly across the Caspian Sea? B: No, she crossed both ways ______.",
     "c": [
       [
         "1",
@@ -11639,7 +11639,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "on\nFifth\nAvenue in\nNew\nYork. 고유명사 Fifth\nAvenue + 도시는 in.",
+    "exp": "on Fifth Avenue in New York. 고유명사 Fifth Avenue + 도시는 in.",
     "t": "전치사"
   },
   {
@@ -11739,7 +11739,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "'Can you repair my watch by\nTuesday? No, I'll need until\nFriday.'",
+    "exp": "'Can you repair my watch by Tuesday? No, I'll need until Friday.'",
     "t": "전치사"
   },
   {
@@ -11769,7 +11769,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "469",
-    "q": "Choose the one that is\nNOT correct according to the standard\nEnglish.",
+    "q": "Choose the one that is NOT correct according to the standard English.",
     "c": [
       [
         "1",
@@ -11789,7 +11789,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "I have known her\nDURING a very long time -> FOR a very long time. during+specific period, for+duration.",
+    "exp": "I have known her DURING a very long time -> FOR a very long time. during+specific period, for+duration.",
     "t": "전치사"
   },
   {
@@ -11844,7 +11844,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "472",
-    "q": "①「The」 Metropolitan\nMuseum of\nArt ②「in」 New\nYork\nCity is ③「located」 ④「nearby」 Central\nPark.",
+    "q": "①「The」 Metropolitan Museum of Art ②「in」 New York City is ③「located」 ④「nearby」 Central Park.",
     "c": [
       [
         "1",
@@ -11864,12 +11864,12 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "Choose\nNOT correct. 'located on\nFifth\nAvenue' → 'located at\nFifth\nAvenue'.",
+    "exp": "Choose NOT correct. 'located on Fifth Avenue' → 'located at Fifth Avenue'.",
     "t": "전치사"
   },
   {
     "i": "473",
-    "q": "The\nLincoln\nBirthplace was presented ______ a gift to the nation by the\nLincoln\nFarm\nAssociation.",
+    "q": "The Lincoln Birthplace was presented ______ a gift to the nation by the Lincoln Farm Association.",
     "c": [
       [
         "1",
@@ -11969,7 +11969,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "477",
-    "q": "James\nThompson is wealthier than his brother ______ at least 2 million dollars.",
+    "q": "James Thompson is wealthier than his brother ______ at least 2 million dollars.",
     "c": [
       [
         "1",
@@ -11994,7 +11994,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "478",
-    "q": "Used frequently ______ Japanese liquor and cosmetics companies, Mobotron is a giant\nVCR with a screen measuring 10 ______ 13 feet. It is rented ______ the day and can go anywhere.",
+    "q": "Used frequently ______ Japanese liquor and cosmetics companies, Mobotron is a giant VCR with a screen measuring 10 ______ 13 feet. It is rented ______ the day and can go anywhere.",
     "c": [
       [
         "1",
@@ -12014,7 +12014,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "'Used frequently by\nJapanese liquor and cosmetics companies...'",
+    "exp": "'Used frequently by Japanese liquor and cosmetics companies...'",
     "t": "전치사"
   },
   {
@@ -12044,7 +12044,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "480",
-    "q": "Choose the one that is\nCORRECT according to the standard\nEnglish.",
+    "q": "Choose the one that is CORRECT according to the standard English.",
     "c": [
       [
         "1",
@@ -12064,7 +12064,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "정답 1번: As far as\nI remember, you both have the same size.. (해설 재작성 예정)",
+    "exp": "정답 1번: As far as I remember, you both have the same size.. (해설 재작성 예정)",
     "t": "문법"
   }
 ];
