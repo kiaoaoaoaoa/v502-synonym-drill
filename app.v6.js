@@ -2408,47 +2408,59 @@ function showWordbook3() {
   // 100-word chunks, all collapsed by default
   const CHUNK = 100;
   const totalChunks = Math.ceil(words.length / CHUNK);
-  const sections = [];
+  const sectionItems = [];
   for (let c = 0; c < totalChunks; c++) {
-    sections.push({ start: c * CHUNK, end: Math.min((c + 1) * CHUNK - 1, words.length - 1), items: [] });
+    sectionItems.push({ start: c * CHUNK, end: Math.min((c + 1) * CHUNK - 1, words.length - 1), items: [] });
   }
 
+  // Store original indices for correct numbering
   visible.forEach((item) => {
     const originalIdx = words.indexOf(item);
     const chunkIdx = Math.floor(originalIdx / CHUNK);
-    if (chunkIdx < sections.length) sections[chunkIdx].items.push(item);
+    if (chunkIdx < sectionItems.length) sectionItems[chunkIdx].items.push({ word: item, origIdx: originalIdx });
   });
 
-  function renderEntries(items) {
-    let h = '<div class="wordlist2-entries">';
-    items.forEach((item) => {
+  function renderCards(items) {
+    let h = '<div class="wb3-grid">';
+    items.forEach((entry) => {
+      const item = entry.word;
       const w = item.w || '';
       const m = item.m || '';
       const p = item.p || '';
       const pos = item.pos || '';
+      const num = entry.origIdx + 1;
       const known = state.playerName && isWordKnown(w);
-      h += '<div class="wl2-entry">';
-      h += '<span class="wl2-word' + (known ? ' wl-known' : '') + (state.playerName ? ' wl-clickable' : '') + '"';
+      h += '<div class="wb3-card' + (known ? ' wb3-known' : '') + '" id="wl3-word-' + num + '">';
+      h += '<span class="wl2-word-num">' + num + '.</span>';
+      h += '<div class="wb3-card-inner">';
+      h += '<div class="wb3-word-row">';
+      h += '<span class="wb3-word' + (known ? ' wb3-word-known' : '') + (state.playerName ? ' wb3-word-clickable' : '') + '"';
       if (state.playerName) {
         h += ' onclick="handleWordToggle(\'' + escapeHtml(w) + '\', this)" title="클릭하여 안다/모른다 표시"';
       }
       h += '>';
       if (known) h += '<span class="wl-check">✓</span>';
       h += escapeHtml(w) + '</span>';
-      if (pos) h += '<span class="wl2-pos">' + escapeHtml(pos) + '</span>';
-      if (m) h += '<span class="wl2-meaning" style="margin-left:4px">' + escapeHtml(m) + '</span>';
+      if (p) h += ' <span class="wb3-pron">[' + escapeHtml(p) + ']</span>';
       h += '</div>';
+      if (pos || m) {
+        h += '<div class="wb3-body">';
+        if (pos) h += '<span class="wb3-pos">' + escapeHtml(pos) + '</span>';
+        if (m) h += '<span class="wb3-meaning">' + escapeHtml(m) + '</span>';
+        h += '</div>';
+      }
+      h += '</div></div>';
     });
     h += '</div>';
     return h;
   }
 
-  sections.forEach((sec, idx) => {
+  sectionItems.forEach((sec, idx) => {
     if (sec.items.length === 0) return;
     var label = sec.start + '~' + sec.end + '번 단어';
     html += '<details class="wb3-section"' + (idx === 0 ? ' open' : '') + '>';
     html += '<summary class="wb3-summary">[' + label + '] <small>(' + sec.items.length + '개)</small></summary>';
-    html += renderEntries(sec.items);
+    html += renderCards(sec.items);
     html += '</details>';
   });
 

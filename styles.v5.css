@@ -1074,6 +1074,26 @@ details[open] > .wb3-summary::before {
 .wb3-section .wordlist2-entries {
   padding: 8px 14px;
 }
+.wb3-section .wb3-grid {
+  padding: 10px 12px;
+}
+
+/* wordbook3 card variants */
+.wb3-card.wb3-known {
+  background: #f0faf0;
+  border-color: #b7dfb9;
+}
+.wb3-card .wb3-word.wb3-word-clickable {
+  cursor: pointer;
+}
+.wb3-card .wb3-word.wb3-word-clickable:hover {
+  text-decoration: underline;
+  background: #e8f0fe;
+  border-radius: 3px;
+}
+.wb3-card .wb3-word.wb3-word-known {
+  color: #2e7d32;
+}
 
 /* wordbook3 jump bar */
 .wl3-jump-bar {
