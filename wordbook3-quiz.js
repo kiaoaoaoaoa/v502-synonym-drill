@@ -206,7 +206,6 @@ var WB3_QUIZ = [
       q.o.forEach(function(o,i) { h += '<button class="wb3q-opt" onclick="wb3Pick(this,\'' + o.replace(/'/g,"\\'") + '\')" data-opt="' + o.replace(/"/g,'&quot;') + '"><span class="wb3q-letter">' + LETTERS[i] + '</span>' + o + '</button>'; });
       h += '</div><div class="wb3q-fb" id="wb3fb"></div><div class="wb3q-exp" id="wb3exp-'+q.n+'"></div>';
       h += '<span class="wb3q-exp-toggle" id="wb3tgl-'+q.n+'" style="display:none" onclick="var e=document.getElementById(\'wb3exp-'+q.n+'\');e.classList.toggle(\'show\');this.textContent=e.classList.contains(\'show\')?\'📖 해설 접기\':\'📖 해설 보기\'">📖 해설 보기</span>';
-      h += '<button class="wb3q-next" id="wb3btnNext" onclick="wb3SubmitNext()">제출 후 다음 ▶</button>';
       h += navHtml;
     }
     h += '</div>';
@@ -231,7 +230,6 @@ var WB3_QUIZ = [
       if (b === btn && !ok) b.classList.add('wrong');
     });
     var fb = document.getElementById('wb3fb'); if (fb) { fb.classList.add('show'); fb.classList.add(ok?'ok':'no'); fb.textContent = ok ? '✅ 정답입니다!' : '❌ 오답입니다. 정답: ' + q.a; }
-    var nb = document.getElementById('wb3btnNext'); if (nb) nb.classList.add('show');
 
     if (EXPLANATIONS && EXPLANATIONS[q.n]) {
       var optInfo = '';
@@ -249,10 +247,8 @@ var WB3_QUIZ = [
       var et = document.getElementById('wb3tgl-'+q.n); if (et) { et.style.display = 'inline-block'; et.textContent = '📖 해설 접기'; }
     }
 
-    // Auto-advance in noExplain mode after brief delay
-    if (isNoExplain) {
-      setTimeout(function() { wb3SubmitNext(); }, 600);
-    }
+    // Auto-advance to next unanswered/wrong question after answering
+    setTimeout(function() { wb3SubmitNext(); }, isNoExplain ? 400 : 800);
   };
 
   window.wb3Prev = function() {
