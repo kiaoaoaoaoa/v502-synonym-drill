@@ -2413,7 +2413,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "t": "many vs. much",
-    "exp": "정답 2번: complete. (해설 재작성 예정)"
+    "exp": "정답 2번: complete. as soon as 시간부사절에서는 미래시제 대신 현재시제 사용. \"as soon as I complete my project\" (will complete X)."
   },
   {
     "i": "097",
@@ -2713,7 +2713,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "t": "시제 일치",
-    "exp": "정답 1번: 「pursuing」 부분이 틀림. (해설 재작성 예정)"
+    "exp": "정답 1번: 「pursuing」 부분이 틀림. ② pursuing → had been pursuing. until he graduated가 과거 시점. 그때까지 \"추구해오고 있었다\"는 과거완료진행 had been pursuing 필요."
   },
   {
     "i": "109",
@@ -3013,7 +3013,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "4",
     "t": "that절 목적어 전치사",
-    "exp": "정답 4번: 「knows」 부분이 틀림. (해설 재작성 예정)"
+    "exp": "정답 4번: 「knows」 부분이 틀림. ④ knows → knew. The last time이 과거를 가리키므로 동사도 과거시제 knew. nobody knew about the ducal visit then."
   },
   {
     "i": "121",
@@ -3262,7 +3262,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "정답 4번: were to fail. (해설 재작성 예정)",
+    "exp": "정답 4번: were to fail. 가정법 과거. Given that절이 현재 사실을 전제하므로, if절은 가정법 과거(if the boy were to fail). 주절은 would be surprised.",
     "t": "분사구문"
   },
   {
@@ -3762,7 +3762,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "정답 4번: I decided. (해설 재작성 예정)",
+    "exp": "정답 4번: I decided. it is about time + 가정법 과거. \"it's about time I decided on something.\" about time 뒤에는 과거시제 사용.",
     "t": "관계대명사 that"
   },
   {
@@ -4037,7 +4037,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "정답 2번: that they think. (해설 재작성 예정)",
+    "exp": "정답 2번: that they think. 관계대명사 that의 목적격. 선행사 scenes가 목적어 역할 → that younger family members should not see (them).",
     "t": "접속사 vs. 접속부사"
   },
   {
@@ -4062,7 +4062,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "정답 2번: who. (해설 재작성 예정)",
+    "exp": "정답 2번: who. 주격 관계대명사 who. \"they say\"가 삽입절. 선행사 the woman이 speaks의 주어이므로 주격 who.",
     "t": "접속사와 병렬구조"
   },
   {
@@ -4162,7 +4162,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "정답 2번: 「who」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 2번: 「who」 부분이 틀림. ② who → whose. 선행사 initiative of Baron Pierre de Coubertin에서 이니셔티브의 ~가 수식받으므로 소유격 whose.",
     "t": "동명사 목적어 동사"
   },
   {
@@ -4187,7 +4187,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "정답 2번: 「whom」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 2번: 「whom」 부분이 틀림. ② whom → who. 선행사 patients가 diagnosis의 주체(\"진단이 이미 알려진 환자들\")가 아니고, 관계절 내에서 whom이 알맞은지 확인해야 함. diagnosis is already known to them → to whom.",
     "t": "동명사 vs. 부정사"
   },
   {
@@ -4237,7 +4237,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "정답 4번: whose. (해설 재작성 예정)",
+    "exp": "정답 4번: whose. 소유격 관계대명사 whose. \"whose short-wave radio\" = the sailboat's short-wave radio. 선행사 sailboat의 소유격.",
     "t": "동명사 관용표현"
   },
   {
@@ -4337,7 +4337,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "정답 3번: that. (해설 재작성 예정)",
+    "exp": "정답 3번: that. 서수(the first) + to부정사. \"the first man to come here.\" 서수 수식 시 to부정사가 정답.",
     "t": "to부정사 목적보어"
   },
   {
@@ -4362,7 +4362,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "정답 4번: 「that」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 4번: 「that」 부분이 틀림. ④「out」→「down」으로 보임. enable + 목적어 + to부정사: \"enables plant roots to send out tiny...\" 문장 구조는 맞고, enables가 5형식 동사로 to send를 목적보어로 취함.",
     "t": "expect/hope/want"
   },
   {
@@ -4387,7 +4387,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "정답 4번: 「that means」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 4번: 「that means」 부분이 틀림. ④「from」→ from이 아니라 Adolescence \"is derived from\" Latin 동사원형. 파생 어원 설명 부분에서 전치사 from 사용 적절.",
     "t": "자동사와 수동태"
   },
   {
@@ -4437,7 +4437,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "정답 1번: What. (해설 재작성 예정)",
+    "exp": "정답 1번: What. 문두 빈칸: What. \"What chiefly lies behind slang is...\" 명사절 주어로 쓰인 관계대명사 what. (~하는 것).",
     "t": "사역/지각동사 수동태"
   },
   {
@@ -4487,7 +4487,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "정답 1번: what. (해설 재작성 예정)",
+    "exp": "정답 1번: what. make + 목적어 + 목적보어(명사/형용사). \"made me what I am\" (나를 지금의 나로 만들었다). make 5형식.",
     "t": "5형식"
   },
   {
@@ -4512,7 +4512,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "정답 4번: what words are. (해설 재작성 예정)",
+    "exp": "정답 4번: what words are. what + to부정사/절. \"are to a painter what words are to an author.\" A is to B what C is to D 구문.",
     "t": "조동사+have+pp"
   },
   {
@@ -4537,7 +4537,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "정답 1번: whatever its size. (해설 재작성 예정)",
+    "exp": "정답 1번: whatever its size. estimates run as high as... \"run as high as + 숫자\"는 \"~에 달하다\"의 관용표현.",
     "t": "should have pp"
   },
   {
@@ -4562,7 +4562,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "정답 3번: happens. (해설 재작성 예정)",
+    "exp": "정답 3번: happens. Whatever happens. 양보 부사절: \"Whatever happens in the future\" (미래에 무슨 일이 있더라도). happens가 현재시제로 미래 대용.",
     "t": "must have pp"
   },
   {
@@ -4612,7 +4612,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "정답 2번: whenever. (해설 재작성 예정)",
+    "exp": "정답 2번: whenever. when/thwarted when... \"feel thwarted when their bill languishes.\" 시간 부사절 when + S + V.",
     "t": "cannot have pp"
   },
   {
@@ -4662,7 +4662,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "정답 3번: whoever. (해설 재작성 예정)",
+    "exp": "정답 3번: whoever. 복합관계대명사 whoever. \"to whoever came here first.\" 선행사 포함 whoever = anyone who.",
     "t": "비교급"
   },
   {
@@ -4712,7 +4712,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "정답 4번: where. (해설 재작성 예정)",
+    "exp": "정답 4번: where. 관계부사 where. 선행사 a dry place(장소) → where temperature extremes are minimal.",
     "t": "최상급"
   },
   {
@@ -4737,7 +4737,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "정답 2번: where. (해설 재작성 예정)",
+    "exp": "정답 2번: where. 관계대명사 whose. \"the White House, whose the president fled\" → \"from which the president fled\" 또는 \"where\". 선행사 the White House.",
     "t": "원급 관용표현"
   },
   {
@@ -4787,7 +4787,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "정답 1번: 「universe where I live」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 1번: 「universe where I live」 부분이 틀림. ①「universe where I live」→ \"universe where I live\" 또는 \"universe in which I live\". where I live in에서 in이 중복.",
     "t": "than vs. to"
   },
   {
@@ -4812,7 +4812,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "정답 4번: the way. (해설 재작성 예정)",
+    "exp": "정답 4번: the way. how. \"how photographic lenses are constructed.\" 의문사+주어+동사 어순으로 명사절.",
     "t": "배수표현"
   },
   {
@@ -4837,7 +4837,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "정답 2번: The way I look at it. (해설 재작성 예정)",
+    "exp": "정답 2번: The way I look at it. 개인 의견 표현. \"Personally\" 또는 \"In my opinion\"이 문맥상 적절. B의 의견 제시.",
     "t": "비교대상 생략"
   },
   {
@@ -4866,7 +4866,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "정답 3번: 「existing」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 3번: 「existing」 부분이 틀림. ②「being」→ \"for being\" → 이유의 for + 동명사. journalism has no reason for being = 저널리즘이 존재할 이유가 없다.",
     "t": "부가의문문"
   },
   {
@@ -4891,7 +4891,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "정답 4번: but. (해설 재작성 예정)",
+    "exp": "정답 4번: but. but. \"There is not one of us but wishes to help you.\" but = who...not (부정어 + but = ~하지 않는 사람은 없다).",
     "t": "도치 일반"
   },
   {
@@ -4920,7 +4920,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "5",
-    "exp": "정답 5번: There is no man but commits errors.. (해설 재작성 예정)",
+    "exp": "정답 5번: There is no man but commits errors. 부가의문문. Let's → shall we? 명령문 → will you? 평서문 → 동사에 맞게.",
     "t": "So/Neither do I"
   },
   {
@@ -4945,7 +4945,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "정답 1번: at which. (해설 재작성 예정)",
+    "exp": "정답 1번: at which. than. 비교급 slower ~ than. \"at a slower rate than the rate at which you are able...\" 비교 구문.",
     "t": "1형식문장 도치"
   },
   {
@@ -4970,7 +4970,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "정답 4번: 「which tend」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 4번: 「which tend」 부분이 틀림. ④「marital」→ marital. 문맥상 결혼/부부 관계 관련 범죄를 지칭. 오타 수준의 스펠링 문제로 보임. ①②③은 문법적으로 맞음.",
     "t": "불가산명사"
   },
   {
