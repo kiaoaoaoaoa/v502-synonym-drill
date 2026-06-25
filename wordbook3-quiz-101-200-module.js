@@ -75,13 +75,17 @@ var WB3_QUIZ_2 = WB3_QUIZ_101_200;
       h += '<div class="wb3q-opts">';
       q.o.forEach(function(o,i) { h += '<button class="wb3q-opt disabled correct"><span class="wb3q-letter">' + LETTERS[i] + '</span>' + o + '</button>'; });
       h += '</div><div class="wb3q-fb show ok">✅ 정답입니다!</div>';
+      if (typeof EXPLANATIONS_101_200 !== 'undefined' && EXPLANATIONS_101_200[q.n]) {
+        h += '<span class="wb3q-exp-toggle" onclick="var e=document.getElementById(\'wb3exp2-'+q.n+'\');e.classList.toggle(\'show\');this.textContent=e.classList.contains(\'show\')?\'📖 해설 접기\':\'📖 해설 보기\'">📖 해설 보기</span>';
+        h += '<div class="wb3q-exp" id="wb3exp2-' + q.n + '">' + EXPLANATIONS_101_200[q.n] + '</div>';
+      }
       h += navHtml;
     } else {
       if (wasWrong) h += '<div class="wb3q-fb show no" style="margin-bottom:10px">이전: <strong>' + picks[cur+1] + '</strong> (오답). 다시 풀어보세요.</div>';
       h += '<div class="wb3q-opts">';
       q.o.forEach(function(o,i) { h += '<button class="wb3q-opt" onclick="wb3Pick2(this,\'' + o.replace(/'/g,"\\'") + '\')" data-opt="' + o.replace(/"/g,'&quot;') + '"><span class="wb3q-letter">' + LETTERS[i] + '</span>' + o + '</button>'; });
-      h += '</div><div class="wb3q-fb" id="wb3fb2"></div>';
-      h += '<button class="wb3q-next" id="wb3btnNext2" style="display:none">.</button>';
+      h += '</div><div class="wb3q-fb" id="wb3fb2"></div><div class="wb3q-exp" id="wb3exp2-'+q.n+'"></div>';
+      h += '<span class="wb3q-exp-toggle" id="wb3tgl2-'+q.n+'" style="display:none" onclick="var e=document.getElementById(\'wb3exp2-'+q.n+'\');e.classList.toggle(\'show\');this.textContent=e.classList.contains(\'show\')?\'📖 해설 접기\':\'📖 해설 보기\'">📖 해설 보기</span>';
       h += navHtml;
     }
     h += '</div>';
@@ -106,6 +110,11 @@ var WB3_QUIZ_2 = WB3_QUIZ_101_200;
       if (b === btn && !ok) b.classList.add('wrong');
     });
     var fb = document.getElementById('wb3fb2'); if (fb) { fb.classList.add('show'); fb.classList.add(ok?'ok':'no'); fb.textContent = ok ? '✅ 정답입니다!' : '❌ 오답입니다. 정답: ' + q.a; }
+
+    if (typeof EXPLANATIONS_101_200 !== 'undefined' && EXPLANATIONS_101_200[q.n]) {
+      var ed = document.getElementById('wb3exp2-'+q.n); if (ed) { ed.innerHTML = EXPLANATIONS_101_200[q.n]; ed.classList.add('show'); }
+      var et = document.getElementById('wb3tgl2-'+q.n); if (et) { et.style.display = 'inline-block'; et.textContent = '📖 해설 접기'; }
+    }
 
     if (isNoExplain) { setTimeout(function() { wb3SubmitNext2(); }, 400); }
   };
