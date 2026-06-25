@@ -1775,7 +1775,7 @@ async function savePublicScore(entry) {
   const client = await getSupabaseClient();
   if (!client) return null;
 
-  const isCumulative = entry.setId === 'LOGIC' || entry.setId === 'WORDCHECK' || entry.setId === 'SYNONYM';
+  const isCumulative = entry.setId === 'LOGIC' || entry.setId === 'WORDCHECK' || entry.setId === 'SYNONYM' || entry.setId === 'EXAM' || entry.setId === 'GRAMMAR';
 
   const { data: existingRows } = await client
     .from(getLeaderboardTable())
