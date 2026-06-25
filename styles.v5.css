@@ -919,8 +919,8 @@ h2 {
   }
 
   .wb3-summary {
-    font-size: 12px;
-    padding: 3px 8px;
+    font-size: 14px;
+    padding: 4px 10px;
   }
 
   .wl2-example {
@@ -1067,8 +1067,8 @@ h2 {
   overflow: hidden;
 }
 .wb3-summary {
-  padding: 3px 8px;
-  font-size: 12px;
+  padding: 4px 10px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--accent);
   background: #f5f7fa;
