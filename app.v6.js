@@ -1550,7 +1550,13 @@ async function cloudPullScores() {
         completedAt: new Date().toISOString()
       };
       if (existingIdx >= 0) {
-        if (entry.accuracy > (entries[existingIdx].accuracy || 0)) {
+        const isCumulative = setId === 'LOGIC' || setId === 'WORDCHECK' || setId === 'SYNONYM' || setId === 'EXAM' || setId === 'GRAMMAR';
+        if (isCumulative) {
+          // Cumulative: prefer higher total (more questions answered = more recent)
+          if (entry.total > (entries[existingIdx].total || 0)) {
+            entries[existingIdx] = entry;
+          }
+        } else if (entry.accuracy > (entries[existingIdx].accuracy || 0)) {
           entries[existingIdx] = entry;
         }
       } else {
