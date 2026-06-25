@@ -23762,169 +23762,78 @@ window.__V502_WORDBOOK3__ = [
     var panel = document.getElementById('wordbook3Panel');
     var content = document.getElementById('wordbook3Content');
     if (!panel || !content) return;
-
-    // Hide other panels using the global switchMode if available
     if (typeof switchMode === 'function') switchMode('wordlist');
-
     panel.hidden = false;
 
-    var totalWords = data.length;
-    var fold0Start = 1000; // 1000-1499 folded by default
-    var fold1Start = 1500; // 1500-1999 folded by default
-    var fold2Start = 2000; // 2000-2999 folded by default
-    var fold3Start = 3000; // 3000+ folded by default
+    var total = data.length;
+    var groups = [];
+    for (var i = 0; i < total; i += 100) {
+      groups.push({start: i + 1, end: Math.min(i + 100, total), items: data.slice(i, i + 100)});
+    }
+
     var html = '<div class="wordlist-scroll">';
-    html += '<div class="wb3-header">';
-    html += '<h4><span class="wl-cat-num">단어장3</span> Vocabulary Book 3 — ' + totalWords + ' words</h4>';
-    html += '</div>';
-    html += '<div class="wb3-grid">';
+    html += '<div class="wb3-header"><h4><span class="wl-cat-num">단어장3</span> Vocabulary Book 3 — ' + total + ' words</h4></div>';
+    html += '<div style="text-align:center;margin-bottom:12px"><button type="button" id="wb3-toggle-all" class="wl-jump-btn" style="font-size:12px;padding:4px 24px" onclick="window.__wb3ToggleAll()">모두 펼치기</button></div>';
 
-    data.forEach(function(item, idx) {
-      var w = item.w || '';
-      var p = item.p || '';
-      var pos = item.pos || '';
-      var m = item.m || '';
-      var wordNum = idx + 1;
-
-      // === FOLD 000: 300-499 (collapsed by default) ===
-      if (wordNum === 300) {
-        html += '</div>'; // close first wb3-grid
-        html += '<div class="wl3-jump-bar" id="wl3-jump-300">';
-        html += '<span class="wl3-jump-label">⏩ Jump to word:</span>';
-        html += '<input type="number" class="wl3-jump-input" id="wl3JumpInput300" min="1" max="' + totalWords + '" placeholder="300" value="300">';
-        html += '<button type="button" class="wl3-jump-go" onclick="window.wl3JumpTo(parseInt(document.getElementById(\'wl3JumpInput300\').value), ' + totalWords + ')">이동</button>';
-        html += '</div>';
-        html += '<div id="wl3-fold000-collapsed" style="text-align:center;padding:10px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:13px;color:#856404">';
-        html += '<button type="button" class="wl-jump-btn" style="font-size:12px;padding:4px 20px" onclick="document.getElementById(\'wl3-fold000-collapsed\').hidden=true;document.getElementById(\'wl3-fold000-wrap\').hidden=false;">300~499 단어 펴기 ▸</button>';
-        html += '</div>';
-        html += '<div id="wl3-fold000-wrap" hidden>';
-        html += '<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">300~499 — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 10px" onclick="document.getElementById(\'wl3-fold000-wrap\').hidden=true;document.getElementById(\'wl3-fold000-collapsed\').hidden=false;">접기</button></div>';
-        html += '<div class="wb3-grid">';
-      }
-
-      // === FOLD 00: 500-999 (collapsed by default) ===
-      if (wordNum === 500) {
-        html += '</div>'; // close fold000 wb3-grid
-        html += '</div>'; // close wl3-fold000-wrap
-        html += '<div class="wl3-jump-bar" id="wl3-jump-500">';
-        html += '<span class="wl3-jump-label">⏩ Jump to word:</span>';
-        html += '<input type="number" class="wl3-jump-input" id="wl3JumpInput500" min="1" max="' + totalWords + '" placeholder="500" value="500">';
-        html += '<button type="button" class="wl3-jump-go" onclick="window.wl3JumpTo(parseInt(document.getElementById(\'wl3JumpInput500\').value), ' + totalWords + ')">이동</button>';
-        html += '</div>';
-        html += '<div id="wl3-fold00-collapsed" style="text-align:center;padding:10px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:13px;color:#856404">';
-        html += '<button type="button" class="wl-jump-btn" style="font-size:12px;padding:4px 20px" onclick="document.getElementById(\'wl3-fold00-collapsed\').hidden=true;document.getElementById(\'wl3-fold00-wrap\').hidden=false;">500~999 단어 펴기 ▸</button>';
-        html += '</div>';
-        html += '<div id="wl3-fold00-wrap" hidden>';
-        html += '<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">500~999 — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 10px" onclick="document.getElementById(\'wl3-fold00-wrap\').hidden=true;document.getElementById(\'wl3-fold00-collapsed\').hidden=false;">접기</button></div>';
-        html += '<div class="wb3-grid">';
-      }
-
-      // === FOLD 0: 1000-1499 (collapsed by default) ===
-      if (wordNum === fold0Start) {
-        html += '</div>'; // close fold00 wb3-grid
-        html += '</div>'; // close wl3-fold00-wrap
-        html += '<div class="wl3-jump-bar" id="wl3-jump-1000">';
-        html += '<span class="wl3-jump-label">⏩ Jump to word:</span>';
-        html += '<input type="number" class="wl3-jump-input" id="wl3JumpInput1000" min="1" max="' + totalWords + '" placeholder="1000" value="1000">';
-        html += '<button type="button" class="wl3-jump-go" onclick="window.wl3JumpTo(parseInt(document.getElementById(\'wl3JumpInput1000\').value), ' + totalWords + ')">이동</button>';
-        html += '</div>';
-        html += '<div id="wl3-fold0-collapsed" style="text-align:center;padding:10px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:13px;color:#856404">';
-        html += '<button type="button" class="wl-jump-btn" style="font-size:12px;padding:4px 20px" onclick="document.getElementById(\'wl3-fold0-collapsed\').hidden=true;document.getElementById(\'wl3-fold0-wrap\').hidden=false;">1000~1499 단어 펴기 ▸</button>';
-        html += '</div>';
-        html += '<div id="wl3-fold0-wrap" hidden>';
-        html += '<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">1000~1499 — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 10px" onclick="document.getElementById(\'wl3-fold0-wrap\').hidden=true;document.getElementById(\'wl3-fold0-collapsed\').hidden=false;">접기</button></div>';
-        html += '<div class="wb3-grid">';
-      }
-
-      // === FOLD 1: 1500-1999 (collapsed by default) ===
-      if (wordNum === fold1Start) {
-        html += '</div>'; // close fold0 wb3-grid
-        html += '</div>'; // close wl3-fold0-wrap
-        html += '<div class="wl3-jump-bar" id="wl3-jump-1500">';
-        html += '<span class="wl3-jump-label">⏩ Jump to word:</span>';
-        html += '<input type="number" class="wl3-jump-input" id="wl3JumpInput1500" min="1" max="' + totalWords + '" placeholder="1500" value="1500">';
-        html += '<button type="button" class="wl3-jump-go" onclick="window.wl3JumpTo(parseInt(document.getElementById(\'wl3JumpInput1500\').value), ' + totalWords + ')">이동</button>';
-        html += '</div>';
-        html += '<div id="wl3-fold1-collapsed" style="text-align:center;padding:10px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:13px;color:#856404">';
-        html += '<button type="button" class="wl-jump-btn" style="font-size:12px;padding:4px 20px" onclick="document.getElementById(\'wl3-fold1-collapsed\').hidden=true;document.getElementById(\'wl3-fold1-wrap\').hidden=false;">1500~1999 단어 펴기 ▸</button>';
-        html += '</div>';
-        html += '<div id="wl3-fold1-wrap" hidden>';
-        html += '<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">1500~1999 — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 10px" onclick="document.getElementById(\'wl3-fold1-wrap\').hidden=true;document.getElementById(\'wl3-fold1-collapsed\').hidden=false;">접기</button></div>';
-        html += '<div class="wb3-grid">';
-      }
-
-      // === FOLD 2: 2000-2999 (collapsed by default) ===
-      if (wordNum === fold2Start) {
-        html += '</div>'; // close fold1 wb3-grid
-        html += '</div>'; // close wl3-fold1-wrap
-        html += '<div class="wl3-jump-bar" id="wl3-jump-2000">';
-        html += '<span class="wl3-jump-label">⏩ Jump to word:</span>';
-        html += '<input type="number" class="wl3-jump-input" id="wl3JumpInput2000" min="1" max="' + totalWords + '" placeholder="2000" value="2000">';
-        html += '<button type="button" class="wl3-jump-go" onclick="window.wl3JumpTo(parseInt(document.getElementById(\'wl3JumpInput2000\').value), ' + totalWords + ')">이동</button>';
-        html += '</div>';
-        html += '<div id="wl3-fold2-collapsed" style="text-align:center;padding:10px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:13px;color:#856404">';
-        html += '<button type="button" class="wl-jump-btn" style="font-size:12px;padding:4px 20px" onclick="document.getElementById(\'wl3-fold2-collapsed\').hidden=true;document.getElementById(\'wl3-fold2-wrap\').hidden=false;">2000~2999 단어 펴기 ▸</button>';
-        html += '</div>';
-        html += '<div id="wl3-fold2-wrap" hidden>';
-        html += '<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">2000~2999 — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 10px" onclick="document.getElementById(\'wl3-fold2-wrap\').hidden=true;document.getElementById(\'wl3-fold2-collapsed\').hidden=false;">접기</button></div>';
-        html += '<div class="wb3-grid">';
-      }
-
-      // Insert jump bar after word 2499 (before word 2500) — inside fold2
-      if (wordNum === 2500) {
-        html += '<div class="wl3-jump-bar" id="wl3-jump-2500">';
-        html += '<span class="wl3-jump-label">⏩ Jump to word:</span>';
-        html += '<input type="number" class="wl3-jump-input" id="wl3JumpInput2500" min="1" max="' + totalWords + '" placeholder="2500" value="2500">';
-        html += '<button type="button" class="wl3-jump-go" onclick="window.wl3JumpTo(parseInt(document.getElementById(\'wl3JumpInput2500\').value), ' + totalWords + ')">이동</button>';
-        html += '</div>';
-      }
-
-      // === FOLD 3: 3000+ (collapsed by default) ===
-      if (wordNum === fold3Start) {
-        html += '</div>'; // close fold2 wb3-grid
-        html += '</div>'; // close wl3-fold2-wrap
-        html += '<div class="wl3-jump-bar" id="wl3-jump-3000">';
-        html += '<span class="wl3-jump-label">⏩ Jump to word:</span>';
-        html += '<input type="number" class="wl3-jump-input" id="wl3JumpInput3000" min="1" max="' + totalWords + '" placeholder="3000" value="3000">';
-        html += '<button type="button" class="wl3-jump-go" onclick="window.wl3JumpTo(parseInt(document.getElementById(\'wl3JumpInput3000\').value), ' + totalWords + ')">이동</button>';
-        html += '</div>';
-        html += '<div id="wl3-fold3-collapsed" style="text-align:center;padding:10px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:13px;color:#856404">';
-        html += '<button type="button" class="wl-jump-btn" style="font-size:12px;padding:4px 20px" onclick="document.getElementById(\'wl3-fold3-collapsed\').hidden=true;document.getElementById(\'wl3-fold3-wrap\').hidden=false;">3000~ 단어 펴기 ▸</button>';
-        html += '</div>';
-        html += '<div id="wl3-fold3-wrap" hidden>';
-        html += '<div style="text-align:center;padding:8px;margin:12px 0;background:#fff3cd;border-radius:6px;font-size:12px;color:#856404">3000~' + totalWords + ' — <button type="button" class="wl-jump-btn" style="font-size:11px;padding:2px 10px" onclick="document.getElementById(\'wl3-fold3-wrap\').hidden=true;document.getElementById(\'wl3-fold3-collapsed\').hidden=false;">접기</button></div>';
-        html += '<div class="wb3-grid">';
-      }
-
-      // Insert jump bar after word 3499 (before word 3500) — inside fold3
-      if (wordNum === 3500) {
-        html += '<div class="wl3-jump-bar" id="wl3-jump-3500">';
-        html += '<span class="wl3-jump-label">⏩ Jump to word:</span>';
-        html += '<input type="number" class="wl3-jump-input" id="wl3JumpInput3500" min="1" max="' + totalWords + '" placeholder="3500" value="3500">';
-        html += '<button type="button" class="wl3-jump-go" onclick="window.wl3JumpTo(parseInt(document.getElementById(\'wl3JumpInput3500\').value), ' + totalWords + ')">이동</button>';
-        html += '</div>';
-      }
-
-      html += '<div class="wb3-card" id="wl3-word-' + wordNum + '">';
-      html += '<span class="wl2-word-num">' + wordNum + '.</span>';
-      html += '<div class="wb3-card-inner">';
-      html += '<div class="wb3-word-row">';
-      html += '<span class="wb3-word">' + escapeHtml(w) + '</span>';
-      if (p) html += ' <span class="wb3-pron">[' + escapeHtml(p) + ']</span>';
+    groups.forEach(function(g, gi) {
+      var fid = 'wb3g' + gi;
+      var isFirst = (gi === 0);
+      html += '<div style="margin-bottom:6px;border:1px solid #e0e0e0;border-radius:8px;overflow:hidden">';
+      html += '<div style="display:flex;align-items:center;padding:10px 16px;cursor:pointer;background:' + (isFirst ? '#e8f0fe' : '#f8f9fa') + ';user-select:none" onclick="window.__wb3Toggle(\'' + fid + '\')">';
+      html += '<span style="font-weight:600;font-size:14px;color:#1a73e8">' + g.start + '~' + g.end + '</span>';
+      html += '<span style="margin-left:8px;font-size:12px;color:#888">(' + g.items.length + '단어)</span>';
+      html += '<span style="margin-left:auto;font-size:12px;color:#999;transition:transform 0.2s" id="' + fid + '-arrow">' + (isFirst ? '▲' : '▼') + '</span>';
       html += '</div>';
-      if (pos || m) {
-        html += '<div class="wb3-body">';
-        if (pos) html += '<span class="wb3-pos">' + escapeHtml(pos) + '</span>';
-        if (m) html += '<span class="wb3-meaning">' + escapeHtml(m) + '</span>';
+      html += '<div id="' + fid + '" style="' + (isFirst ? '' : 'display:none;') + '">';
+      html += '<div class="wb3-grid">';
+      g.items.forEach(function(item, wi) {
+        var num = g.start + wi;
+        var w = item.w || '';
+        var p = item.p || '';
+        var pos = item.pos || '';
+        var m = item.m || '';
+        html += '<div class="wb3-card" id="wl3-word-' + num + '">';
+        html += '<span class="wl2-word-num">' + num + '.</span>';
+        html += '<div class="wb3-card-inner">';
+        html += '<div class="wb3-word-row">';
+        html += '<span class="wb3-word">' + escapeHtml(w) + '</span>';
+        if (p) html += ' <span class="wb3-pron">[' + escapeHtml(p) + ']</span>';
         html += '</div>';
-      }
-      html += '</div></div>';
+        if (pos || m) {
+          html += '<div class="wb3-body">';
+          if (pos) html += '<span class="wb3-pos">' + escapeHtml(pos) + '</span>';
+          if (m) html += '<span class="wb3-meaning">' + escapeHtml(m) + '</span>';
+          html += '</div>';
+        }
+        html += '</div></div>';
+      });
+      html += '</div></div></div>';
     });
 
-    html += '</div>'; // close last wb3-grid
-    html += '</div>'; // close wl3-fold3-wrap
-    html += '</div>'; // close wordlist-scroll
+    html += '</div>';
     content.innerHTML = html;
+
+    window.__wb3Toggle = function(id) {
+      var el = document.getElementById(id);
+      var arrow = document.getElementById(id + '-arrow');
+      if (!el) return;
+      var isHidden = el.style.display === 'none';
+      el.style.display = isHidden ? '' : 'none';
+      arrow.textContent = isHidden ? '▲' : '▼';
+    };
+    window.__wb3ToggleAll = function() {
+      var btn = document.getElementById('wb3-toggle-all');
+      var expandAll = btn.textContent === '모두 펼치기';
+      for (var i = 0; i < groups.length; i++) {
+        var el = document.getElementById('wb3g' + i);
+        var arrow = document.getElementById('wb3g' + i + '-arrow');
+        if (el) {
+          el.style.display = expandAll ? '' : 'none';
+          if (arrow) arrow.textContent = expandAll ? '▲' : '▼';
+        }
+      }
+      btn.textContent = expandAll ? '모두 접기' : '모두 펼치기';
+    };
   }
 
   function wl3JumpTo(num, maxWords) {
