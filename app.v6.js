@@ -4672,10 +4672,40 @@ function renderExamTab() {
     html += '<div style="width:100%;height:4px;background:var(--line);border-radius:2px;margin-bottom:16px"><div style="width:' + Math.round((examIndex+1)/vLen*100) + '%;height:100%;background:var(--accent);border-radius:2px;transition:width 0.2s"></div></div>';
   }
 
-  // --- Render questions ---
+    // --- Render questions ---
+  // Helper: check if a question's p field is a shared-passage reference
+  function isSharedRef(p) { return p && p.length <= 30 && p.indexOf('(Same passage') === 0; }
+  // Helper: find the anchor (first question) for a shared-passage group
+  function findGroupAnchor(idx2) {
+    for (var k = idx2; k >= 0; k--) {
+      if (questions[k].p && questions[k].p.length > 30) return k;
+    }
+    return -1;
+  }
+  // Helper: count questions in the same passage group starting at anchor
+  function groupSize(anchor) {
+    var count = 1;
+    for (var k = anchor + 1; k < questions.length; k++) {
+      if (isSharedRef(questions[k].p)) count++; else break;
+    }
+    return count;
+  }
+  // Build a set of "skip" indices for follow-up questions already rendered inside a group
+  var skipRender = {};
+  if (!examOneByOne) {
+    for (var gi = 0; gi < questions.length; gi++) {
+      if (questions[gi].p && questions[gi].p.length > 30) {
+        var gs = groupSize(gi);
+        for (var gk = gi + 1; gk < gi + gs; gk++) { skipRender[gk] = true; }
+      }
+    }
+  }
+
   var indices = examOneByOne ? [examIndex] : visibleQuestions.map(function(_,i){return i});
   indices.forEach(function(vi) {
     var oi = origIdx(vi);
+    if (skipRender[oi]) return; // already rendered inside a passage group
+
     var q = questions[oi];
     var isCorrect = prog.correct.has(oi);
     var isWrong = prog.wrong.has(oi);
@@ -4683,54 +4713,91 @@ function renderExamTab() {
     if (q.section) {
       html += '<div style="margin:-8px 0 16px 0;padding:4px 10px;background:var(--accent);color:#fff;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:0.5px">' + escapeHtml(q.section) + '</div>';
     }
-    var hasPassage = q.p && q.p.length > 30;
-    html += '<div class="exam-q-block' + (hasPassage ? ' exam-two-col' : '') + '" style="' + (isCorrect?'background:#f1f8e9':isWrong?'background:#fff3f0':'') + '" id="examQ' + oi + '">';
-    html += '<p class="exam-q-num">' + (oi+1) + '.' + (isCorrect ? ' ✅' : isWrong ? ' ❌' : '') + '</p>';
-    if (hasPassage) {
-      var pHtml = escapeHtml(q.p).replace(/「([^」]+)」/g, '<u>$1</u>');
+
+    // Determine if this question starts a passage group, or belongs to one
+    var anchorOi = oi;
+    var hasFullPassage = q.p && q.p.length > 30;
+    var isRefQuestion = isSharedRef(q.p);
+    if (isRefQuestion) {
+      anchorOi = findGroupAnchor(oi);
+      if (anchorOi < 0) anchorOi = oi;
+    }
+    var anchorQ = questions[anchorOi];
+    var hasPassageGroup = anchorQ.p && anchorQ.p.length > 30;
+    var groupCount = hasPassageGroup ? groupSize(anchorOi) : 1;
+
+    // In one-by-one mode: redirect ref questions to their anchor
+    if (examOneByOne && isRefQuestion && anchorOi >= 0) {
+      oi = anchorOi;
+      q = questions[oi];
+      hasPassageGroup = q.p && q.p.length > 30;
+      groupCount = hasPassageGroup ? groupSize(oi) : 1;
+    }
+
+    var blockBg = (isCorrect?'background:#f1f8e9':isWrong?'background:#fff3f0':'');
+    html += '<div class="exam-q-block' + (hasPassageGroup ? ' exam-two-col' : '') + '" style="' + blockBg + '" id="examQ' + oi + '">';
+    html += '<p class="exam-q-num">' + (oi+1) + '.' + (isCorrect ? ' ✅' : isWrong ? ' ❌' : '') + (groupCount > 1 ? ' — Q' + (oi+1) + '~' + (oi+groupCount) : '') + '</p>';
+    if (hasPassageGroup) {
+      var pHtml = escapeHtml(anchorQ.p).replace(/「([^」]+)」/g, '<u>$1</u>');
       html += '<div class="exam-passage">' + pHtml + '</div>';
       html += '<div class="exam-q-right">';
     }
-    var qHtml = q.q
-      .replace(/(?<!\w)'([^']+)'(?!\w)/g, "'$1'")
-      .replace(/「([^」]+)」/g, '$1')
-      .replace(/(_{2,})/g, '$1');
-    qHtml = escapeHtml(qHtml)
-      .replace(//g, '<u>').replace(//g, '</u>')
-      .replace(//g, '<u>').replace(//g, '</u>');
-    html += '<p style="font-weight:600;margin:0 0 10px">' + qHtml + '</p>';
-    if (q.c && q.c.length > 0) {
-      html += '<div style="display:grid;gap:4px">';
-      q.c.forEach(function(_ref) {
-        var letter = _ref[0], text = _ref[1];
-        var btnStyle = 'font-size:14px;padding:4px 8px;border:1px solid var(--line);border-radius:2px;text-align:left;font:inherit;';
-        if (isDone) {
-          btnStyle += 'cursor:default;';
-          btnStyle += letter === q.a ? 'background:#e8f5e9;' : 'background:transparent;';
+
+    // Render all questions in this passage group
+    var groupEnd = oi + groupCount;
+    for (var gIdx = oi; gIdx < groupEnd; gIdx++) {
+      var gq = questions[gIdx];
+      var gIsCorrect = prog.correct.has(gIdx);
+      var gIsWrong = prog.wrong.has(gIdx);
+      var gIsDone = gIsCorrect || gIsWrong;
+      if (groupCount > 1) {
+        html += '<div id="examQ' + gIdx + '" style="' + (gIsCorrect?'background:#f1f8e9;padding:8px;border-radius:4px;margin-bottom:4px':gIsWrong?'background:#fff3f0;padding:8px;border-radius:4px;margin-bottom:4px':'padding:8px;margin-bottom:4px') + '">';
+        html += '<p style="font-weight:700;margin:0 0 8px;color:var(--accent);font-size:14px">' + (gIdx+1) + '.' + (gIsCorrect ? ' ✅' : gIsWrong ? ' ❌' : '') + '</p>';
+      }
+      var gqHtml = gq.q
+        .replace(/(?<!\w)'([^']+)'(?!\w)/g, "'$1'")
+        .replace(/「([^」]+)」/g, '$1')
+        .replace(/(_{2,})/g, '$1');
+      gqHtml = escapeHtml(gqHtml)
+        .replace(//g, '<u>').replace(//g, '</u>')
+        .replace(//g, '<u>').replace(//g, '</u>');
+      html += '<p style="font-weight:600;margin:0 0 10px">' + gqHtml + '</p>';
+      if (gq.c && gq.c.length > 0) {
+        html += '<div style="display:grid;gap:4px">';
+        gq.c.forEach(function(_ref) {
+          var letter = _ref[0], text = _ref[1];
+          var btnStyle = 'font-size:14px;padding:4px 8px;border:1px solid var(--line);border-radius:2px;text-align:left;font:inherit;';
+          if (gIsDone) {
+            btnStyle += 'cursor:default;';
+            btnStyle += letter === gq.a ? 'background:#e8f5e9;' : 'background:transparent;';
+          } else {
+            btnStyle += 'cursor:pointer;background:transparent;';
+          }
+          html += '<button onclick="checkExamAnswer(\'' + examTab + '\',' + gIdx + ',\'' + escapeHtml(letter) + '\',this)" style="' + btnStyle + '"' + (gIsDone?' disabled':'') + '>(' + escapeHtml(letter) + ') ' + escapeHtml(text) + '</button>';
+        });
+        html += '</div>';
+      }
+      var gFbHtml = '';
+      if (gIsDone && gq.a) {
+        if (gIsCorrect) {
+          gFbHtml = '<span style="color:#2e7d32;font-weight:700">✅ 정답! (' + gq.a + ')</span>';
         } else {
-          btnStyle += 'cursor:pointer;background:transparent;';
+          gFbHtml = '<span style="color:#c62828;font-weight:700">❌ 오답 — 정답은 (' + gq.a + ')</span>';
         }
-        html += '<button onclick="checkExamAnswer(\'' + examTab + '\',' + oi + ',\'' + escapeHtml(letter) + '\',this)" style="' + btnStyle + '"' + (isDone?' disabled':'') + '>(' + escapeHtml(letter) + ') ' + escapeHtml(text) + '</button>';
-      });
-      html += '</div>';
-    }
-    var fbHtml = '';
-    if (isDone && q.a) {
-      if (isCorrect) {
-        fbHtml = '<span style="color:#2e7d32;font-weight:700">✅ 정답! (' + q.a + ')</span>';
-      } else {
-        fbHtml = '<span style="color:#c62828;font-weight:700">❌ 오답 — 정답은 (' + q.a + ')</span>';
+        if (gq.k) {
+          gFbHtml += '<div style="margin-top:8px;padding:10px 12px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;line-height:1.7">' + gq.k + '</div>';
+        } else if (gq.explanation) {
+          gFbHtml += '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(gq.explanation).replace(/\n/g, '<br>') + '</div>';
+        }
       }
-      if (q.k) {
-        fbHtml += '<div style="margin-top:8px;padding:10px 12px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;line-height:1.7">' + q.k + '</div>';
-      } else if (q.explanation) {
-        fbHtml += '<div style="margin-top:6px;padding:8px 10px;background:#f8f9fc;border-radius:6px;font-size:12px;line-height:1.6;color:var(--muted)">📝 ' + escapeHtml(q.explanation).replace(/\n/g, '<br>') + '</div>';
-      }
+      html += '<div id="examFeedback' + gIdx + '" style="margin-top:6px;font-size:13px;min-height:20px">' + gFbHtml + '</div>';
+      if (groupCount > 1) html += '</div>'; // close groupped question wrapper
     }
-    html += '<div id="examFeedback' + oi + '" style="margin-top:6px;font-size:13px;min-height:20px">' + fbHtml + '</div>';
-    if (hasPassage) html += '</div>'; // close exam-q-right
+
+    if (hasPassageGroup) html += '</div>'; // close exam-q-right
     html += '</div>';
   });
+
 
   // --- Bottom nav ---
   if (examOneByOne && vLen > 1) {
