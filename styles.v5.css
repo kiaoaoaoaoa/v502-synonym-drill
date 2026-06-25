@@ -722,7 +722,7 @@ h2 {
 .wb3-word {
   font-weight: 700;
   color: var(--ink);
-  font-size: 15px;
+  font-size: 17px;
   white-space: nowrap;
 }
 .wb3-pron {
@@ -767,7 +767,7 @@ h2 {
     padding: 4px 7px;
   }
   .wb3-word {
-    font-size: 14px;
+    font-size: 16px;
   }
   .wb3-pron {
     font-size: 11px;
@@ -806,7 +806,7 @@ h2 {
     gap: 5px;
   }
   .wb3-word {
-    font-size: 15px;
+    font-size: 17px;
   }
   .wb3-pron {
     font-size: 11px;
