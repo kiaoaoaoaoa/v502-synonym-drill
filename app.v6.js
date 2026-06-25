@@ -2479,7 +2479,10 @@ function showWordbook3() {
     html += '<details class="wb3-section"' + (idx === 0 ? ' open' : '') + '>';
     html += '<summary class="wb3-summary">[' + label + '] <small>(' + sec.items.length + '개)</small>';
     if (idx === 0) {
-      html += ' <button onclick="showWb3Quiz()" class="wb3-quiz-btn" style="margin-left:8px;font-size:0.78rem;padding:2px 10px;border-radius:99px;background:#4c6ef5;color:#fff;border:none;cursor:pointer;font-weight:600;white-space:nowrap">📝 단어문제</button>';
+      html += ' <button onclick="showWb3Quiz()" class="wb3-quiz-btn" style="margin-left:8px;font-size:0.78rem;padding:2px 10px;border-radius:99px;background:#4c6ef5;color:#fff;border:none;cursor:pointer;font-weight:600;white-space:nowrap">📝 단어문제 1-100</button>';
+    }
+    if (idx === 1) {
+      html += ' <button onclick="showWb3Quiz2()" class="wb3-quiz-btn" style="margin-left:8px;font-size:0.78rem;padding:2px 10px;border-radius:99px;background:#16a34a;color:#fff;border:none;cursor:pointer;font-weight:600;white-space:nowrap">📝 단어문제 101-200</button>';
     }
     html += '</summary>';
     html += renderCards(sec.items);
