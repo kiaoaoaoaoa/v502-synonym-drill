@@ -305,9 +305,11 @@ h1 {
 .workspace {
   display: grid;
   grid-template-rows: auto auto auto 1fr;
-  gap: 20px;
-  padding: 24px 32px;
+  gap: 22px;
+  padding: 28px 36px;
   min-width: 0;
+  background: linear-gradient(180deg, #fafbfc 0%, #fff 100%);
+  min-height: 100vh;
 }
 
 .toolbar {
@@ -371,24 +373,25 @@ h2 {
 .start-panel,
 .result-panel,
 .ranking-panel {
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--panel);
+  border: 1px solid var(--faint);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 }
 
 .quiz-panel,
 .start-panel,
 .result-panel,
 .ranking-panel {
-  padding: 24px 28px;
+  padding: 28px 32px;
 }
 
 .start-panel h3,
 .result-panel h3,
 .ranking-panel h3 {
-  margin-bottom: 12px;
-  font-size: 20px;
-  font-weight: 700;
+  margin-bottom: 14px;
+  font-size: 22px;
+  font-weight: 800;
   letter-spacing: -0.01em;
 }
 
@@ -396,19 +399,22 @@ h2 {
   display: block;
   width: 100%;
   max-width: 420px;
-  min-height: 52px;
+  min-height: 54px;
   margin-top: 20px;
-  border: 1px solid var(--ink);
-  border-radius: var(--radius);
-  background: var(--ink);
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
   color: #fff;
   font-size: 17px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.1s;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
 #startQuizBtn:hover {
-  background: #333;
+  background: linear-gradient(135deg, #333 0%, #1a1a1a 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
 }
 
 #startPanelHint {
@@ -2413,7 +2419,14 @@ details[open] > .wb3-summary::before {
 .appbar {
   display: flex;
   align-items: center;
-  padding: 10px 0;
+  padding: 12px 20px;
+  margin: -28px -36px 0;
+  background: #fff;
+  border-bottom: 1px solid var(--faint);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(8px);
 }
 .appbrand {
   display: inline-flex;
@@ -2421,45 +2434,40 @@ details[open] > .wb3-summary::before {
   gap: 10px;
   border: none;
   background: transparent;
-  padding: 8px 12px;
-  font-size: 24px;
+  padding: 8px 14px;
+  font-size: 22px;
   font-weight: 800;
   color: var(--ink);
   cursor: pointer;
-  border-radius: 8px;
-  transition: all 0.15s;
-}
-
-@media (min-width: 841px) {
-  .appbrand {
-    padding: 10px 18px;
-    font-size: 30px;
-  }
+  border-radius: 10px;
+  transition: all 0.2s;
+  letter-spacing: -0.01em;
 }
 .appbrand:hover { background: var(--accent-soft); }
+@media (min-width: 841px) { .appbrand { font-size: 26px; } }
 
 .appbar-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px; height: 36px;
+  width: 38px; height: 38px;
   border: 1px solid transparent;
-  border-radius: 8px;
+  border-radius: 10px;
   background: transparent;
   color: var(--muted);
   font-size: 16px;
   cursor: pointer;
   transition: all 0.15s;
 }
-.appbar-btn:hover { background: var(--accent-soft); color: var(--ink); border-color: var(--line); }
+.appbar-btn:hover { background: var(--accent-soft); color: var(--ink); }
 
 .appbar-myinfo-btn {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   margin-left: auto;
-  padding: 7px 14px;
-  border: 1px solid var(--line);
+  padding: 8px 16px;
+  border: 1px solid var(--faint);
   border-radius: 10px;
   background: #fff;
   color: var(--ink);
@@ -2470,7 +2478,7 @@ details[open] > .wb3-summary::before {
   transition: all 0.2s;
   box-shadow: 0 1px 2px rgba(0,0,0,0.04);
 }
-.appbar-myinfo-btn:hover { background: var(--accent-soft); border-color: #ccc; }
+.appbar-myinfo-btn:hover { background: var(--accent-soft); border-color: #ccc; transform: translateY(-1px); }
 
 /* ── Login box in dashboard ──────────── */
 .dashboard-panel #authSection {
