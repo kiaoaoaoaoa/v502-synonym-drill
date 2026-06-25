@@ -2193,15 +2193,16 @@ details[open] > .wb3-summary::before {
 @media (max-width: 840px) {
   #logicOptions {
     grid-template-columns: 1fr;
-    gap: 4px;
+    gap: 6px;
   }
   .logic-question {
-    font-size: 15px;
-    padding: 10px 14px;
+    font-size: 16px;
+    line-height: 1.7;
+    padding: 12px 14px;
   }
   #logicOptions .option {
-    font-size: 14px;
-    padding: 12px 14px;
+    font-size: 16px;
+    padding: 14px 16px;
   }
 }
 
