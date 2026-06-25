@@ -1761,7 +1761,26 @@ function cloudPullUserData(payload, nickname) {
     if (!nk) return;
     const prevName = state.playerName;
     state.playerName = nickname || prevName;
-    if (obj.word_knowledge) { const s = readWordKnowledge(); s[nk] = JSON.parse(obj.word_knowledge); writeWordKnowledge(s); }
+    if (obj.word_knowledge) {
+      const s = readWordKnowledge();
+      const cloud = JSON.parse(obj.word_knowledge);
+      // Merge: local words take precedence (union of both sources)
+      const local = s[nk] || {};
+      const merged = Array.isArray(cloud) ? {} : {};
+      if (Array.isArray(cloud)) {
+        // Old array format: convert to object with timestamps
+        cloud.forEach(w => { merged[w] = new Date().toISOString(); });
+      } else {
+        Object.assign(merged, cloud);
+      }
+      if (Array.isArray(local)) {
+        local.forEach(w => { merged[w] = new Date().toISOString(); });
+      } else {
+        Object.assign(merged, local);
+      }
+      s[nk] = merged;
+      writeWordKnowledge(s);
+    }
     if (obj.synonym_progress) { const s = readSynonymProgress(); s[nk] = JSON.parse(obj.synonym_progress); localStorage.setItem(synonymProgressKey, JSON.stringify(s)); }
     if (obj.wordcheck_progress) { const s = JSON.parse(localStorage.getItem('v502-wordcheck-progress')||'{}'); s[nk] = JSON.parse(obj.wordcheck_progress); localStorage.setItem('v502-wordcheck-progress', JSON.stringify(s)); }
     if (obj.quiz_progress) { const s = JSON.parse(localStorage.getItem(quizProgressKey)||'{}'); s[nk] = JSON.parse(obj.quiz_progress); localStorage.setItem(quizProgressKey, JSON.stringify(s)); }
