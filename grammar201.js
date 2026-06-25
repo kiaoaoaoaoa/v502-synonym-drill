@@ -5020,7 +5020,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "정답 2번: My economics professor will let me take my final exam after vacation, for which . (해설 재작성 예정)",
+    "exp": "정답 2번: My economics professor will let me take my final exam after vacation, for which . ④「feelings」→ feelings. 문맥상 \"감정을 가진\" 의미로 alive가 아닌 with feelings.",
     "t": "many vs. much"
   },
   {
@@ -5074,7 +5074,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "정답 3번: 「disappointed」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 3번: 「disappointed」 부분이 틀림. ④「a loud, shrill cry」→ a loud, shrill cry. make + 목적어 + 목적보어. make a cry. 정상.",
     "t": "정관사 the"
   },
   {
@@ -5099,7 +5099,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "정답 2번: 「nonpolluted」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 2번: 「nonpolluted」 부분이 틀림. ③「use」→ used. elephants sometimes used their trunks. 과거시제.",
     "t": "가정법"
   },
   {
@@ -5199,7 +5199,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "정답 1번: 「Reading」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 1번: 「Reading」 부분이 틀림. ①「was」→ were. 주어가 복수(large numbers of people).",
     "t": "other vs. another"
   },
   {
@@ -5224,7 +5224,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "정답 1번: 「Having eaten」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 1번: 「Having eaten」 부분이 틀림. ④「to」→ for. reason for + 명사/동명사.",
     "t": "every의 용법"
   },
   {
@@ -5249,7 +5249,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "정답 3번: 「having been」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 3번: 「having been」 부분이 틀림. ②「has」→ have. 선행사 students(복수) + 관계절 내 동사.",
     "t": "형용사"
   },
   {
@@ -5353,7 +5353,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "정답 2번: Not having met him before. (해설 재작성 예정)",
+    "exp": "정답 2번: Not having met him before. ② enough 위치. 형용사/부사 뒤: \"large enough\" (enough large X).",
     "t": "enough 용법"
   },
   {
@@ -5378,7 +5378,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "정답 3번: him watching. (해설 재작성 예정)",
+    "exp": "정답 3번: him watching. 이어동사 타동사+부사. 대명사 목적어는 동사와 부사 사이: \"put it on.\"",
     "t": "이어동사"
   },
   {
@@ -5432,7 +5432,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "정답 1번: 「traveling」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 1번: 「traveling」 부분이 틀림. ① 전치사. \"on the team\" (팀 소속). in the team도 가능하나 문맥상 on.",
     "t": "전치사"
   },
   {
@@ -5557,7 +5557,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "정답 1번: ; however. (해설 재작성 예정)",
+    "exp": "정답 1번: ; however. 접속사 while. \"while they were sleeping\" → While sleeping (분사구문).",
     "t": "접속사"
   },
   {
@@ -5582,7 +5582,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "정답 2번: but. (해설 재작성 예정)",
+    "exp": "정답 2번: but. ② 접속사 that. it is ~ that... 강조구문.",
     "t": "접속사"
   },
   {
@@ -5607,7 +5607,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "정답 4번: whereas. (해설 재작성 예정)",
+    "exp": "정답 4번: whereas. ④ 현재분사 vs 과거분사. \"the surprising news\" (놀라게 하는).",
     "t": "분사"
   },
   {
@@ -5682,7 +5682,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "정답 2번: 「to ability」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 2번: 「to ability」 부분이 틀림. 연결어 however. 두 절 대비 → however (그러나).",
     "t": "연결어"
   },
   {
@@ -5807,7 +5807,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "정답 3번: Whether. (해설 재작성 예정)",
+    "exp": "정답 3번: Whether. ③ unless. \"unless it rains\" (비가 오지 않으면).",
     "t": "접속사"
   },
   {
@@ -5832,7 +5832,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "정답 4번: Whether or not. (해설 재작성 예정)",
+    "exp": "정답 4번: Whether or not. ④ must have pp. 과거 강한 추측: \"must have been.\"",
     "t": "조동사"
   },
   {
@@ -5857,7 +5857,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "정답 1번: whether the federal government. (해설 재작성 예정)",
+    "exp": "정답 1번: whether the federal government. ① 수동태. be pp + by. \"was written by.\"",
     "t": "수동태"
   },
   {
@@ -5932,7 +5932,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "정답 3번: although. (해설 재작성 예정)",
+    "exp": "정답 3번: although. ③ 접속사 whether. 명사절 if는 주어 자리 불가 → Whether.",
     "t": "접속사"
   },
   {
@@ -6007,7 +6007,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "정답 2번: until. (해설 재작성 예정)",
+    "exp": "정답 2번: until. ② 접속사 because. 이유의 부사절.",
     "t": "접속사"
   },
   {
@@ -6057,7 +6057,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "정답 3번: the president's not informing them. (해설 재작성 예정)",
+    "exp": "정답 3번: the president's not informing them. 동명사 목적어. resent + ~ing. \"resented the president's not informing.\"",
     "t": "동명사"
   },
   {
@@ -6082,7 +6082,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "정답 2번: 「him」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 2번: 「him」 부분이 틀림. ② 접속사. \"Now that\" (이제 ~이므로).",
     "t": "접속사"
   },
   {
@@ -6132,7 +6132,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "정답 3번: 「me having played」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 3번: 「me having played」 부분이 틀림. 의문사절. \"what to do\" (무엇을 해야 할지). 의문사 + to부정사.",
     "t": "의문사절"
   },
   {
@@ -6157,7 +6157,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "정답 4번: having stolen. (해설 재작성 예정)",
+    "exp": "정답 4번: having stolen. ④ 동명사. be used to + ~ing (~에 익숙하다).",
     "t": "동명사"
   },
   {
@@ -6182,7 +6182,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "정답 2번: 「to waste」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 2번: 「to waste」 부분이 틀림. 가정법 과거. \"If I were you\" → were (모든 인칭).",
     "t": "가정법"
   },
   {
@@ -6207,7 +6207,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "정답 2번: 「to buy」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 2번: 「to buy」 부분이 틀림. ② 분사구문. \"Walking down the street\" (능동) → 현재분사.",
     "t": "분사구문"
   },
   {
@@ -6282,7 +6282,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "정답 1번: receiving. (해설 재작성 예정)",
+    "exp": "정답 1번: receiving. 동명사 목적어. enjoy + ~ing. \"enjoy reading.\"",
     "t": "동명사"
   },
   {
@@ -6307,7 +6307,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "정답 2번: 「get」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 2번: 「get」 부분이 틀림. ② 전치사. \"in spite of\" = despite.",
     "t": "전치사"
   },
   {
@@ -6436,7 +6436,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "5",
-    "exp": "정답 5번: 「worth of telling」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 5번: 「worth of telling」 부분이 틀림. 가정법 도치. Had + S + pp = If + S + had pp. \"Had he known...\"",
     "t": "가정법 도치"
   },
   {
@@ -6511,7 +6511,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "정답 4번: to testing. (해설 재작성 예정)",
+    "exp": "정답 4번: to testing. ④ 전치사. \"on purpose\" (고의로).",
     "t": "전치사"
   },
   {
@@ -6536,7 +6536,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "정답 4번: to boosting. (해설 재작성 예정)",
+    "exp": "정답 4번: to boosting. ④ 동명사. \"It's no use crying\" (울어도 소용없다).",
     "t": "동명사"
   },
   {
@@ -6561,7 +6561,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "정답 4번: for him to decide. (해설 재작성 예정)",
+    "exp": "정답 4번: for him to decide. ④ to부정사. \"too ~ to...\" 구문.",
     "t": "to부정사"
   },
   {
@@ -6586,7 +6586,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "정답 3번: 「to giving」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 3번: 「to giving」 부분이 틀림. ③ 상관접속사. \"not only ~ but also...\" 병렬.",
     "t": "접속사"
   },
   {
@@ -6611,7 +6611,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "exp": "정답 2번: For. (해설 재작성 예정)",
+    "exp": "정답 2번: For. ② to부정사 의미상 주어. \"for him to do.\"",
     "t": "to부정사"
   },
   {
@@ -6636,7 +6636,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "정답 3번: for -- to feel loved. (해설 재작성 예정)",
+    "exp": "정답 3번: for -- to feel loved. ③ to부정사 부사적 용법. 목적: \"to see the doctor.\"",
     "t": "to부정사"
   },
   {
@@ -6661,7 +6661,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "정답 3번: if. (해설 재작성 예정)",
+    "exp": "정답 3번: if. ③ 접속사. \"as long as\" (~하는 한).",
     "t": "접속사"
   },
   {
@@ -6711,7 +6711,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "정답 4번: urged. (해설 재작성 예정)",
+    "exp": "정답 4번: urged. ④ 사역동사 have + O + pp. \"had his car repaired.\"",
     "t": "사역동사"
   },
   {
@@ -6736,7 +6736,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "정답 4번: I accept. (해설 재작성 예정)",
+    "exp": "정답 4번: I accept. 가정법. \"I wish I had studied\" (과거 사실 반대 → 과거완료).",
     "t": "가정법"
   },
   {
@@ -6811,7 +6811,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "exp": "정답 4번: 「sustaining」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 4번: 「sustaining」 부분이 틀림. ④ such + 명사 vs so + 형용사. \"such a good person.\"",
     "t": "such/so"
   },
   {
@@ -6886,7 +6886,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "정답 3번: to pretend to be in control. (해설 재작성 예정)",
+    "exp": "정답 3번: to pretend to be in control. ③ to부정사. want + O + to부정사. \"want him to go.\"",
     "t": "to부정사"
   },
   {
@@ -6911,7 +6911,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "exp": "정답 3번: to have begun -- to run. (해설 재작성 예정)",
+    "exp": "정답 3번: to have begun -- to run. ③ to부정사. be + to부정사 (예정/의무). \"are to finish.\"",
     "t": "to부정사"
   },
   {
@@ -6961,7 +6961,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "exp": "정답 1번: 「to have learned」 부분이 틀림. (해설 재작성 예정)",
+    "exp": "정답 1번: 「to have learned」 부분이 틀림. ① to부정사 부정. \"not to go\" (to부정사 부정은 not to).",
     "t": "to부정사"
   },
   {
