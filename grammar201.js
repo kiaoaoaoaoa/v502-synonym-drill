@@ -171,7 +171,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "4형식: 수여동사 오해 동사 ①",
+    "t": "2형식: 유사보어",
     "exp": "looked very badly -> looked very bad. look + 형용사(2형식). ①이 틀린 부분."
   },
   {
@@ -271,7 +271,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "(both) A and B 유형 수일치",
+    "t": "1형식/자동사",
     "exp": "reaching at -> reaching. reach는 타동사. at 불필요."
   },
   {
@@ -296,7 +296,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "(either) A or B 유형 수일치",
+    "t": "전치사",
     "exp": "sat -> set. sat(자동사) -> set(타동사, 놓다)."
   },
   {
@@ -321,7 +321,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "자동사 lie vs 타동사 lay",
+    "t": "가정법",
     "exp": "눕다 lie-lay-lain. ① had laid -> had lain."
   },
   {
@@ -371,7 +371,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "분수/퍼센트 수일치",
+    "t": "시제/자동사",
     "exp": "정답 1번: 「raised」 부분이 틀림. ① raised → have risen. raise는 타동사(올리다), rise는 자동사(오르다). 주어가 Food prices이므로 \"가격이 오르다\"는 자동사 rise가 필요. 현재완료(have risen)로 \"지금까지 올랐다\"는 의미."
   },
   {
@@ -396,7 +396,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "긴 주어 수일치",
+    "t": "시제",
     "exp": "were seated. seat은 타동사(앉히다). be seated = 앉아 있다."
   },
   {
@@ -421,7 +421,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "도치문장 수일치",
+    "t": "자동사",
     "exp": "sat -> set. set the suitcase down."
   },
   {
@@ -471,7 +471,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "대명사 일치 ①",
+    "t": "3형식",
     "exp": "dies -> dyes. dye her hair(염색하다). die(죽다)와 혼동."
   },
   {
@@ -700,7 +700,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "before 완료시제",
+    "t": "시제",
     "exp": "정답 1번: says. say가 정답. 시계가 \"~을 가리키다\"는 say를 사용 (The clock says two o'clock). tell, indicate, mark 모두 시계의 시각 표시에 부적절."
   },
   {
@@ -1025,7 +1025,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "소유격 관계대명사",
+    "t": "수일치",
     "exp": "정답 1번: 「was being considered」 부분이 틀림. ① was being considered → were being considered. 주어가 Latin and French (복수)이므로 복수 동사 were 필요."
   },
   {
@@ -1050,7 +1050,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "t": "소유격 관계대명사와 the",
+    "t": "수일치",
     "exp": "정답 3번: 「has」 부분이 틀림. ③ has → have. 주어가 The pioneer와 the space pioneer (A and B)로 복수이므로 have."
   },
   {
@@ -1075,7 +1075,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "t": "관계대명사 한정적/계속적 용법",
+    "t": "수일치",
     "exp": "NOT correct: These statistics SHOWS -> SHOW. statistics=복수. ③틀림."
   },
   {
@@ -1100,7 +1100,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "t": "관계대명사 that 용법",
+    "t": "수일치",
     "exp": "정답 3번: was. 상관접속사 Not only A but also B에서 동사는 B에 수일치. B가 your manager(단수)이므로 was."
   },
   {
@@ -1125,7 +1125,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "관계대명사 what 관용표현",
+    "t": "수일치",
     "exp": "정답 2번: know. 상관접속사 Either A or B에서 동사는 B에 수일치. B가 the children(복수)이므로 know."
   },
   {
@@ -1150,7 +1150,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "t": "복합관계대명사/복합관계형용사",
+    "t": "수일치",
     "exp": "were->was(B에수일치:editor)"
   },
   {
@@ -1175,7 +1175,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "t": "복합관계대명사의 격",
+    "t": "수일치",
     "exp": "Neither A nor B: B(condemnation,단수)에 수일치. have caused->has caused. ③틀림."
   },
   {
@@ -1200,7 +1200,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "관계부사",
+    "t": "시제",
     "exp": "have been -> has been. a generation = 단수."
   },
   {
@@ -1225,7 +1225,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "A as well as B 수일치",
+    "t": "시제",
     "exp": "주어는 The merger(단수). as well as B는 수식어구. ② are expected -> is expected."
   },
   {
@@ -1250,7 +1250,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "관계대명사와 전치사",
+    "t": "수일치",
     "exp": "정답 2번: 「are」 부분이 틀림. ② are → is. Every man, woman, and child는 의미상 복수지만 every + 단수명사 + and + 단수명사는 단수 취급."
   },
   {
@@ -2037,7 +2037,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "원급 관용표현",
+    "t": "시제",
     "exp": "정답 1번: 「has been」 부분이 틀림. ① has been → was. until 1797가 과거 시점을 나타내므로 현재완료 대신 과거시제 was 필요."
   },
   {
@@ -2062,7 +2062,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "비교급: the와 비교급",
+    "t": "시제",
     "exp": "has been studying->had been studying(before he came=대과거)"
   },
   {
@@ -2087,7 +2087,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "t": "비교급: than vs. to",
+    "t": "시제",
     "exp": "정답 3번: had taken. 과거완료 had taken. discovered(과거)보다 이전 시점에 \"돈을 가져간\" 행위 → 대과거(과거완료)."
   },
   {
@@ -2112,7 +2112,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "t": "시제(대과거)",
+    "t": "시제",
     "exp": "for what he had done과 병렬. ③ caused -> had caused (말한 시점 이전)."
   },
   {
@@ -2137,7 +2137,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "t": "비교표현 강조어구",
+    "t": "시제",
     "exp": "much faster. much + 비교급."
   },
   {
@@ -2412,7 +2412,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "many vs. much",
+    "t": "시제",
     "exp": "정답 2번: complete. as soon as 시간부사절에서는 미래시제 대신 현재시제 사용. \"as soon as I complete my project\" (will complete X)."
   },
   {
@@ -2712,7 +2712,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "시제 일치",
+    "t": "시제",
     "exp": "정답 1번: 「pursuing」 부분이 틀림. ② pursuing → had been pursuing. until he graduated가 과거 시점. 그때까지 \"추구해오고 있었다\"는 과거완료진행 had been pursuing 필요."
   },
   {
@@ -3012,7 +3012,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "4",
-    "t": "that절 목적어 전치사",
+    "t": "시제",
     "exp": "정답 4번: 「knows」 부분이 틀림. ④ knows → knew. The last time이 과거를 가리키므로 동사도 과거시제 knew. nobody knew about the ducal visit then."
   },
   {
@@ -3038,7 +3038,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "exp": "If S + were (가정법 과거). were for all persons.",
-    "t": "가정법과거"
+    "t": "가정법"
   },
   {
     "i": "122",
@@ -3063,7 +3063,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "exp": "was -> were. be in subjunctive if-clause",
-    "t": "가정법과거"
+    "t": "가정법"
   },
   {
     "i": "123",
@@ -3088,7 +3088,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "4",
     "exp": "I would(I'd) -> 가정법 과거. 능력은 could. may/can/will은 가정법 if절 불가.",
-    "t": "가정법과거"
+    "t": "가정법"
   },
   {
     "i": "124",
@@ -3113,7 +3113,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "exp": "had known -> would have p.p. would never have taken",
-    "t": "가정법과거완료"
+    "t": "가정법"
   },
   {
     "i": "125",
@@ -3138,7 +3138,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "exp": "had wanted -> could have gone. can have gone is ungrammatical",
-    "t": "혼합가정법"
+    "t": "가정법"
   },
   {
     "i": "126",
@@ -3263,7 +3263,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "4",
     "exp": "정답 4번: were to fail. 가정법 과거. Given that절이 현재 사실을 전제하므로, if절은 가정법 과거(if the boy were to fail). 주절은 would be surprised.",
-    "t": "분사구문"
+    "t": "가정법"
   },
   {
     "i": "131",
@@ -3763,7 +3763,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "4",
     "exp": "정답 4번: I decided. it is about time + 가정법 과거. \"it's about time I decided on something.\" about time 뒤에는 과거시제 사용.",
-    "t": "관계대명사 that"
+    "t": "가정법"
   },
   {
     "i": "151",
@@ -4038,7 +4038,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "exp": "정답 2번: that they think. 관계대명사 that의 목적격. 선행사 scenes가 목적어 역할 → that younger family members should not see (them).",
-    "t": "접속사 vs. 접속부사"
+    "t": "관계대명사"
   },
   {
     "i": "162",
@@ -4063,7 +4063,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "exp": "정답 2번: who. 주격 관계대명사 who. \"they say\"가 삽입절. 선행사 the woman이 speaks의 주어이므로 주격 who.",
-    "t": "접속사와 병렬구조"
+    "t": "관계대명사"
   },
   {
     "i": "163",
@@ -4087,7 +4087,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "주격 관계대명사",
+    "t": "관계대명사",
     "exp": "관계사가 is의 주어. ② whom -> who."
   },
   {
@@ -4113,7 +4113,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "exp": "동명사 의미상 주어: 소유격. 'his being late'.",
-    "t": "동명사 의미상 주어"
+    "t": "관계대명사"
   },
   {
     "i": "165",
@@ -4137,7 +4137,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "소유격 관계대명사",
+    "t": "관계대명사",
     "exp": "kidneys 앞 소유 관계. ① which -> whose."
   },
   {
@@ -4163,7 +4163,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "exp": "정답 2번: 「who」 부분이 틀림. ② who → whose. 선행사 initiative of Baron Pierre de Coubertin에서 이니셔티브의 ~가 수식받으므로 소유격 whose.",
-    "t": "동명사 목적어 동사"
+    "t": "동명사"
   },
   {
     "i": "167",
@@ -4188,7 +4188,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "exp": "정답 2번: 「whom」 부분이 틀림. ② whom → who. 선행사 patients가 diagnosis의 주체(\"진단이 이미 알려진 환자들\")가 아니고, 관계절 내에서 whom이 알맞은지 확인해야 함. diagnosis is already known to them → to whom.",
-    "t": "동명사 vs. 부정사"
+    "t": "동명사"
   },
   {
     "i": "168",
@@ -4238,7 +4238,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "4",
     "exp": "정답 4번: whose. 소유격 관계대명사 whose. \"whose short-wave radio\" = the sailboat's short-wave radio. 선행사 sailboat의 소유격.",
-    "t": "동명사 관용표현"
+    "t": "관계대명사"
   },
   {
     "i": "170",
@@ -4338,7 +4338,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "exp": "정답 3번: that. 서수(the first) + to부정사. \"the first man to come here.\" 서수 수식 시 to부정사가 정답.",
-    "t": "to부정사 목적보어"
+    "t": "to부정사"
   },
   {
     "i": "174",
@@ -4363,7 +4363,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "4",
     "exp": "정답 4번: 「that」 부분이 틀림. ④「out」→「down」으로 보임. enable + 목적어 + to부정사: \"enables plant roots to send out tiny...\" 문장 구조는 맞고, enables가 5형식 동사로 to send를 목적보어로 취함.",
-    "t": "expect/hope/want"
+    "t": "5형식"
   },
   {
     "i": "175",
@@ -4438,7 +4438,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "exp": "정답 1번: What. 문두 빈칸: What. \"What chiefly lies behind slang is...\" 명사절 주어로 쓰인 관계대명사 what. (~하는 것).",
-    "t": "사역/지각동사 수동태"
+    "t": "관계대명사"
   },
   {
     "i": "178",
@@ -4613,7 +4613,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "exp": "정답 2번: whenever. when/thwarted when... \"feel thwarted when their bill languishes.\" 시간 부사절 when + S + V.",
-    "t": "cannot have pp"
+    "t": "접속사"
   },
   {
     "i": "185",
@@ -4663,7 +4663,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "exp": "정답 3번: whoever. 복합관계대명사 whoever. \"to whoever came here first.\" 선행사 포함 whoever = anyone who.",
-    "t": "비교급"
+    "t": "복합관계대명사"
   },
   {
     "i": "187",
@@ -4713,7 +4713,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "4",
     "exp": "정답 4번: where. 관계부사 where. 선행사 a dry place(장소) → where temperature extremes are minimal.",
-    "t": "최상급"
+    "t": "관계부사"
   },
   {
     "i": "189",
@@ -4738,7 +4738,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "exp": "정답 2번: where. 관계대명사 whose. \"the White House, whose the president fled\" → \"from which the president fled\" 또는 \"where\". 선행사 the White House.",
-    "t": "원급 관용표현"
+    "t": "관계대명사"
   },
   {
     "i": "190",
@@ -4788,7 +4788,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "exp": "정답 1번: 「universe where I live」 부분이 틀림. ①「universe where I live」→ \"universe where I live\" 또는 \"universe in which I live\". where I live in에서 in이 중복.",
-    "t": "than vs. to"
+    "t": "관계부사"
   },
   {
     "i": "192",
@@ -4813,7 +4813,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "4",
     "exp": "정답 4번: the way. how. \"how photographic lenses are constructed.\" 의문사+주어+동사 어순으로 명사절.",
-    "t": "배수표현"
+    "t": "의문사절"
   },
   {
     "i": "193",
@@ -4892,7 +4892,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "4",
     "exp": "정답 4번: but. but. \"There is not one of us but wishes to help you.\" but = who...not (부정어 + but = ~하지 않는 사람은 없다).",
-    "t": "도치 일반"
+    "t": "관계대명사"
   },
   {
     "i": "196",
@@ -4946,7 +4946,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "exp": "정답 1번: at which. than. 비교급 slower ~ than. \"at a slower rate than the rate at which you are able...\" 비교 구문.",
-    "t": "1형식문장 도치"
+    "t": "비교"
   },
   {
     "i": "198",
@@ -5046,7 +5046,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "exp": "frightening->frightened(과거분사:겁먹은)",
-    "t": "이중소유격"
+    "t": "분사"
   },
   {
     "i": "202",
@@ -5075,7 +5075,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "exp": "정답 3번: 「disappointed」 부분이 틀림. ④「a loud, shrill cry」→ a loud, shrill cry. make + 목적어 + 목적보어. make a cry. 정상.",
-    "t": "정관사 the"
+    "t": "분사"
   },
   {
     "i": "203",
@@ -5100,7 +5100,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "exp": "정답 2번: 「nonpolluted」 부분이 틀림. ③「use」→ used. elephants sometimes used their trunks. 과거시제.",
-    "t": "가정법"
+    "t": "분사"
   },
   {
     "i": "204",
@@ -5125,7 +5125,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "exp": "bottling->bottled(과거분사:병에담긴)",
-    "t": "무관사"
+    "t": "분사"
   },
   {
     "i": "205",
@@ -5150,7 +5150,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "exp": "재귀대명사: S=O 일 때. He hurt himself.",
-    "t": "재귀대명사"
+    "t": "분사"
   },
   {
     "i": "206",
@@ -5354,7 +5354,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "exp": "정답 2번: Not having met him before. ② enough 위치. 형용사/부사 뒤: \"large enough\" (enough large X).",
-    "t": "enough 용법"
+    "t": "형용사"
   },
   {
     "i": "214",
@@ -5558,7 +5558,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "exp": "정답 1번: ; however. 접속사 while. \"while they were sleeping\" → While sleeping (분사구문).",
-    "t": "접속사"
+    "t": "분사구문"
   },
   {
     "i": "222",
@@ -6083,7 +6083,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "exp": "정답 2번: 「him」 부분이 틀림. ② 접속사. \"Now that\" (이제 ~이므로).",
-    "t": "접속사"
+    "t": "동명사"
   },
   {
     "i": "243",
@@ -6133,7 +6133,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "exp": "정답 3번: 「me having played」 부분이 틀림. 의문사절. \"what to do\" (무엇을 해야 할지). 의문사 + to부정사.",
-    "t": "의문사절"
+    "t": "동명사"
   },
   {
     "i": "245",
@@ -6437,7 +6437,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "5",
     "exp": "정답 5번: 「worth of telling」 부분이 틀림. 가정법 도치. Had + S + pp = If + S + had pp. \"Had he known...\"",
-    "t": "가정법 도치"
+    "t": "가정법"
   },
   {
     "i": "257",
@@ -7062,7 +7062,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "exp": "is happening to -> is happening in. 전치사.",
-    "t": "시제"
+    "t": "수동태"
   },
   {
     "i": "282",
@@ -7086,7 +7086,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "자동사 수동 불가",
+    "t": "수동태",
     "exp": "occur는 자동사. ① election are occurred -> elections occur."
   },
   {
@@ -7116,7 +7116,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "exp": "정답 1번: 「was originated」 부분이 틀림. (해설 재작성 예정)",
-    "t": "관계대명사"
+    "t": "수동태"
   },
   {
     "i": "284",
@@ -7140,7 +7140,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "1",
-    "t": "seem 수동 불가",
+    "t": "수동태",
     "exp": "seem은 수동태 불가. ① was seemed to be -> seemed to be."
   },
   {
@@ -7166,7 +7166,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "exp": "His father IS RESEMBLED by John -> resemble cannot be passive. His father resembles John.",
-    "t": "문법"
+    "t": "수동태"
   },
   {
     "i": "286",
@@ -8066,7 +8066,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "4",
     "exp": "정답 4번: not so sweet. (해설 재작성 예정)",
-    "t": "원급"
+    "t": "비교"
   },
   {
     "i": "322",
@@ -8091,7 +8091,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "exp": "as obscurely as->as obscure as(형용사). obscurely(부사)X",
-    "t": "문법"
+    "t": "비교"
   },
   {
     "i": "323",
@@ -8141,7 +8141,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "exp": "정답 3번: as. (해설 재작성 예정)",
-    "t": "to부정사"
+    "t": "비교"
   },
   {
     "i": "325",
@@ -8166,7 +8166,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "exp": "then I went home. 접속부사.",
-    "t": "접속부사"
+    "t": "비교"
   },
   {
     "i": "326",
@@ -9070,7 +9070,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "4",
     "exp": "정답 4번: isn't he. (해설 재작성 예정)",
-    "t": "to부정사"
+    "t": "부가의문문"
   },
   {
     "i": "362",
@@ -9144,7 +9144,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "2",
-    "t": "부정어 도치",
+    "t": "도치",
     "exp": "부정어 Never 문두 -> 도치. ② there have been -> have there been."
   },
   {
@@ -10127,7 +10127,7 @@ window.__V502_GRAMMAR__ = [
       ]
     ],
     "a": "3",
-    "t": "관사/대명사",
+    "t": "관사",
     "exp": "of country singer Johnny Lee가 한정. ③ his -> the."
   },
   {
@@ -11082,7 +11082,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "exp": "'Animism is the belief that natural objects have souls.'",
-    "t": "문법"
+    "t": "형용사"
   },
   {
     "i": "442",
@@ -11157,7 +11157,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "exp": "정답 1번: 「not alike」 부분이 틀림. (해설 재작성 예정)",
-    "t": "대명사"
+    "t": "부사"
   },
   {
     "i": "445",
@@ -11186,7 +11186,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "4",
     "exp": "정답 4번: authentic Japanese food. (해설 재작성 예정)",
-    "t": "비교"
+    "t": "부사"
   },
   {
     "i": "446",
