@@ -798,8 +798,7 @@ function renderQuestion() {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "option";
-    const meaning = wordMeanings[word] || '';
-    button.innerHTML = `<strong>${escapeHtml(word)}</strong>${meaning ? `<span class="option-meaning">${escapeHtml(meaning)}</span>` : ''}`;
+    button.innerHTML = `<strong>${escapeHtml(word)}</strong>`;
     button.disabled = Boolean(saved);
     button.setAttribute("aria-pressed", String(activeSelection.has(word)));
 

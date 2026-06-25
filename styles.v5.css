@@ -1533,15 +1533,6 @@ details[open] > .wb3-summary::before {
   font-size: 20px;
 }
 
-.option .option-meaning {
-  display: block;
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 400;
-  margin-top: 3px;
-  line-height: 1.3;
-}
-
 .option.correct {
   border-color: var(--ok);
   background: #f0faf2;
