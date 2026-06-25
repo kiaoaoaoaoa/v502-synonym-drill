@@ -251,7 +251,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "011",
-    "q": "①「The Olympic torch」 will be ②「reaching at」 Rice-Eccles Stadium ③「at」 the University of Utah ④「in」 a month.",
+    "q": "①「The Olympic torch」 will be ②「reaching at」 Rice\n  -Eccles Stadium ③「at」 the University of Utah ④「in」 a month.",
     "c": [
       [
         "1",
@@ -651,7 +651,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "t": "자동사 오해 타동사",
-    "exp": "admit(~에게 말하다)은 사람 목적어에 to 필요. ① admitted the detective -> admitted to the detective."
+    "exp": "admit(\n  ~에게 말하다)은 사람 목적어에 to 필요. ① admitted the detective -> admitted to the detective."
   },
   {
     "i": "027",
@@ -1405,7 +1405,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "057",
-    "q": "A pro-American government in Afghanistan certainly ①「facilitate」 a more ②「acceptable」 agreement ③「regarding」 the new pipeline that must inevitably ④「run」 through that country.",
+    "q": "A pro\n  -American government in Afghanistan certainly ①「facilitate」 a more ②「acceptable」 agreement ③「regarding」 the new pipeline that must inevitably ④「run」 through that country.",
     "c": [
       [
         "1",
@@ -5383,7 +5383,7 @@ window.__V502_GRAMMAR__ = [
   },
   {
     "i": "215",
-    "q": "Fortune is proud ①「to announce」 its second annual competition for Asia's best business plans. The ②「winning」 submission will ③「advance to」 the semi-final round of E-Chron's annual business competition, with that winner ④「walks away」 with up to $1,000,000 ⑤「in」 prize awards.",
+    "q": "Fortune is proud ①「to announce」 its second annual competition for Asia's best business plans. The ②「winning」 submission will ③「advance to」 the semi-final round of E\n  -Chron's annual business competition, with that winner ④「walks away」 with up to $1,000,000 ⑤「in」 prize awards.",
     "c": [
       [
         "1",
@@ -5483,7 +5483,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "t": "분사구문 의미상 주어",
-    "exp": "분사구문의 의미상 주어는 주절 주어와 일치. ② chocolate known for ~만 올바름. ①③④는 현수분사."
+    "exp": "분사구문의 의미상 주어는 주절 주어와 일치. ② chocolate known for \n  ~만 올바름. ①③④는 현수분사."
   },
   {
     "i": "219",
@@ -6233,7 +6233,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "t": "동명사 목적어",
-    "exp": "stop ~ing(~을 멈추다). ② to smoke -> smoking."
+    "exp": "stop ~ing(\n  ~을 멈추다). ② to smoke -> smoking."
   },
   {
     "i": "249",
