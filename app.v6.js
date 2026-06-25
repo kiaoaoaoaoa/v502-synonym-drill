@@ -3800,22 +3800,6 @@ function renderMyInfoTab(tab) {
         html += `<span style="font-size:12px;color:var(--muted)">${mastered[catId].map(w => { const m = wordMeanings[w]||''; return escapeHtml(w)+(m?' ('+escapeHtml(m)+')':''); }).join(', ')}</span></div>`;
       }
     }
-    const wkStore = readWordKnowledge();
-    const wkWords = wkStore[state.playerName.toLowerCase()] || {};
-    const wkList = Object.keys(wkWords);
-    if (wkList.length > 0) {
-      html += '<h4 style="margin:18px 0 8px">📗 단어장3 체크 단어</h4>';
-      const wkChunks = [];
-      for (let i = 0; i < wkList.length; i += 20) wkChunks.push(wkList.slice(i, i + 20));
-      wkChunks.forEach(chunk => {
-        html += '<div style="margin-bottom:6px;display:flex;flex-wrap:wrap;gap:4px">';
-        chunk.forEach(w => {
-          const m = wordMeanings[w] || '';
-          html += `<span style="padding:2px 8px;border-radius:4px;font-size:12px;border:1px solid #cfe6cf;background:#e8f5e9">${escapeHtml(w)}${m ? ' ('+escapeHtml(m)+')' : ''}</span>`;
-        });
-        html += '</div>';
-      });
-    }
   } else if (tab === 'wrong') {
     const p = readSynonymProgress();
     const key = getSynonymUserKey();
