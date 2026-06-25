@@ -209,6 +209,12 @@ h1 {
   background: var(--accent-soft);
 }
 
+#myinfoBtn {
+  min-height: 56px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
 .ranking-btn[active] {
   background: var(--accent-soft);
   color: var(--ink);
