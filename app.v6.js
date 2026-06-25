@@ -2341,8 +2341,8 @@ function showWordlist2() {
     html += '<button class="wl-jump-btn wl-hideknown-btn' + (wlHideKnown ? ' wl-hideknown-on' : '') + '" type="button" id="wl2HideBtn" title="아는 단어(✓) 숨기기">' + (wlHideKnown ? '✓ 아는 단어 숨김' : '아는 단어 안보기') + '</button>';
   }
   html += '</div>';
-  // 300-word chunks
-  const CHUNK = 300;
+  // 100-word chunks
+  const CHUNK = 100;
   const chunks = [];
   for (let i = 0; i < visible.length; i += CHUNK) {
     chunks.push({ start: i, end: Math.min(i + CHUNK - 1, visible.length - 1), items: visible.slice(i, i + CHUNK) });
