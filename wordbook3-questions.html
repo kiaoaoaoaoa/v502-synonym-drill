@@ -233,24 +233,24 @@ function getPlayerName() {
 
 function loadProgress() {
   var name = getPlayerName();
-  if (!name) return { answered: {}, picks: {}, score: 0 };
+  if (!name) return { answered: {}, picks: {}, scored: {}, score: 0 };
   try {
     var raw = localStorage.getItem(QUIZ_PROGRESS_KEY);
-    if (!raw) return { answered: {}, picks: {}, score: 0 };
+    if (!raw) return { answered: {}, picks: {}, scored: {}, score: 0 };
     var all = JSON.parse(raw);
     var key = name.toLowerCase();
-    return all[key] || { answered: {}, picks: {}, score: 0 };
-  } catch(e) { return { answered: {}, picks: {}, score: 0 }; }
+    return all[key] || { answered: {}, picks: {}, scored: {}, score: 0 };
+  } catch(e) { return { answered: {}, picks: {}, scored: {}, score: 0 }; }
 }
 
-function saveProgress(answered, picks, score) {
+function saveProgress(answered, picks, score, scored) {
   var name = getPlayerName();
   if (!name) return;
   try {
     var raw = localStorage.getItem(QUIZ_PROGRESS_KEY);
     var all = raw ? JSON.parse(raw) : {};
     var key = name.toLowerCase();
-    all[key] = { answered: answered, picks: picks, score: score, updated: Date.now() };
+    all[key] = { answered: answered, picks: picks, scored: scored, score: score, updated: Date.now() };
     localStorage.setItem(QUIZ_PROGRESS_KEY, JSON.stringify(all));
   } catch(e) {}
 }
@@ -285,6 +285,7 @@ var LETTERS = ['A','B','C','D','E'];
 var cur = 0;
 var answered = {};   // {qnum: true}
 var picks = {};      // {qnum: "chosen_word"}
+var scored = {};     // {qnum: true} — already counted in score
 var score = 0;
 var bestScore = 0;
 var playerName = null;
@@ -297,10 +298,11 @@ var playerName = null;
   var prog = loadProgress();
   if (prog.answered) answered = prog.answered;
   if (prog.picks) picks = prog.picks;
+  if (prog.scored) scored = prog.scored;
   if (typeof prog.score === 'number') score = prog.score;
-  // Find next unanswered question
+  // Skip correctly answered questions by default
   cur = 0;
-  while (cur < 100 && answered[cur+1]) cur++;
+  while (cur < 100 && answered[cur+1] && picks[cur+1] === QUIZ[cur].a) cur++;
   // Show user badge
   if (playerName) {
     var badge = document.getElementById('userBadge');
@@ -321,32 +323,35 @@ function render() {
   var q = QUIZ[cur];
   document.getElementById('progressFill').style.width = (cur/100*100) + '%';
   document.getElementById('progressText').textContent = (cur+1) + '/100';
-  document.getElementById('scoreBadge').textContent = score + '점';
+  document.getElementById('scoreBadge').textContent = Object.keys(scored).length + '/100';
 
-  var wasAnswered = !!answered[cur+1];
+  var wasCorrect = answered[cur+1] && picks[cur+1] === q.a;
+  var wasWrong = answered[cur+1] && picks[cur+1] !== q.a;
   var h = '<div class="q-card">';
   h += '<span class="q-num">문제 ' + q.n + '</span>';
-  if (wasAnswered) h += '<span class="q-solved">(풀이완료)</span>';
+  if (wasCorrect) h += '<span class="q-solved">✅ 맞춤</span>';
+  else if (wasWrong) h += '<span class="q-solved" style="color:var(--wrong)">❌ 오답 (재도전)</span>';
   h += '<div class="q-text">' + q.q.replace(/______/g, '<span class="q-blank">______</span>') + '</div>';
-  if (wasAnswered) {
-    // Show read-only state with highlights
+  if (wasCorrect) {
+    // Read-only: previously correct
     h += '<div class="options">';
     q.o.forEach(function(opt, i) {
       var cls = 'opt-btn disabled';
       if (opt === q.a) cls += ' show-correct';
-      else if (opt === picks[cur+1] && picks[cur+1] !== q.a) cls += ' wrong';
       h += '<button class="' + cls + '"><span class="letter">' + LETTERS[i] + '</span>' + opt + '</button>';
     });
     h += '</div>';
-    h += '<div class="feedback show ' + (picks[cur+1] === q.a ? 'correct-fb' : 'wrong-fb') + '">' + (picks[cur+1] === q.a ? '✅ 정답입니다!' : '❌ 오답입니다. 정답: ' + q.a) + '</div>';
-    // Explanation
+    h += '<div class="feedback show correct-fb">✅ 정답입니다!</div>';
     if (EXPLANATIONS[q.n]) {
       h += '<span class="exp-toggle" onclick="toggleExp(' + q.n + ')">📖 해설 보기</span>';
       h += '<div class="explanation" id="exp-' + q.n + '">' + EXPLANATIONS[q.n] + '</div>';
     }
     h += '<div class="action-row"><button class="btn-next show" onclick="next()">다음 문제 ▶</button></div>';
   } else {
-    // Active question
+    // Active question (unanswered or previously wrong)
+    if (wasWrong) {
+      h += '<div class="feedback show wrong-fb" style="margin-bottom:12px">이전에 "<strong>' + picks[cur+1] + '</strong>"를 골랐습니다. 다시 풀어보세요.</div>';
+    }
     h += '<div class="options">';
     q.o.forEach(function(opt, i) {
       h += '<button class="opt-btn" onclick="pick(this,\'' + opt.replace(/'/g,"\\'") + '\')" data-opt="' + opt.replace(/"/g,'&quot;') + '">';
@@ -373,13 +378,16 @@ function toggleExp(n) {
 
 // ── Answer ──────────────────────────────────
 function pick(btn, chosen) {
-  if (answered[cur+1]) return;
   var q = QUIZ[cur];
+  // Only block if already answered correctly; wrong answers can retry
+  if (answered[cur+1] && picks[cur+1] === q.a) return;
   var ok = (chosen === q.a);
+  var wasWrongBefore = answered[cur+1] && picks[cur+1] !== q.a;
   answered[cur+1] = true;
   picks[cur+1] = chosen;
-  if (ok) score++;
-  saveProgress(answered, picks, score);
+  // Increment score only on first correct answer
+  if (ok && !scored[cur+1]) { score++; scored[cur+1] = true; }
+  saveProgress(answered, picks, score, scored);
   saveBestScore(score);
 
   var btns = document.querySelectorAll('.opt-btn');
@@ -393,7 +401,7 @@ function pick(btn, chosen) {
   fb.classList.add(ok ? 'correct-fb' : 'wrong-fb');
   fb.textContent = ok ? '✅ 정답입니다!' : '❌ 오답입니다. 정답: ' + q.a;
   document.getElementById('btnNext').classList.add('show');
-  document.getElementById('scoreBadge').textContent = score + '점';
+  document.getElementById('scoreBadge').textContent = Object.keys(scored).length + '/100';
 
   // Show explanation toggle
   if (EXPLANATIONS[q.n]) {
@@ -411,7 +419,8 @@ function pick(btn, chosen) {
 }
 
 function next() {
-  do { cur++; } while (cur < 100 && answered[cur+1]);
+  // Skip only correctly answered questions; wrong ones stay in rotation
+  do { cur++; } while (cur < 100 && answered[cur+1] && picks[cur+1] === QUIZ[cur].a);
   if (cur >= 100) { showResult(); return; }
   render();
 }
@@ -421,13 +430,14 @@ function showResult() {
   document.getElementById('questionArea').style.display = 'none';
   document.getElementById('progressFill').style.width = '100%';
   document.getElementById('progressText').textContent = '100/100';
-  document.getElementById('scoreBadge').textContent = score + '점';
+  document.getElementById('scoreBadge').textContent = Object.keys(scored).length + '/100';
 
-  var totalAnswered = Object.keys(answered).length;
-  var pct = totalAnswered > 0 ? Math.round(score * 100 / totalAnswered) : 0;
+  var totalCorrect = Object.keys(scored).length;
+  var totalAttempted = Object.keys(answered).length;
+  var pct = totalCorrect;
 
   var p = document.getElementById('resultPanel'); p.classList.add('show');
-  document.getElementById('resultScore').textContent = score + ' / 100';
+  document.getElementById('resultScore').textContent = totalCorrect + ' / 100';
   var bestMsg = '';
   if (bestScore > 0) bestMsg = ' (개인 최고: ' + bestScore + '점)';
   document.getElementById('resultBest').textContent = bestMsg;
@@ -456,9 +466,9 @@ function showResult() {
 
 // ── Actions ─────────────────────────────────
 function restartQuiz() {
-  // Go back to first question, keep existing progress
+  // Skip correctly answered; re-show wrong/unanswered
   cur = 0;
-  while (cur < 100 && answered[cur+1]) cur++;
+  while (cur < 100 && answered[cur+1] && picks[cur+1] === QUIZ[cur].a) cur++;
   document.getElementById('resultPanel').classList.remove('show');
   document.getElementById('questionArea').style.display = 'block';
   render();
@@ -466,8 +476,8 @@ function restartQuiz() {
 
 function resetProgress() {
   if (!confirm('정말로 모든 진행상황과 점수를 초기화하시겠습니까? 이 작업은 되돌릴 수 없습니다.')) return;
-  answered = {}; picks = {}; score = 0; cur = 0;
-  saveProgress(answered, picks, score);
+  answered = {}; picks = {}; scored = {}; score = 0; cur = 0;
+  saveProgress(answered, picks, score, scored);
   QUIZ.forEach(function(q){ for(var i=q.o.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=q.o[i];q.o[i]=q.o[j];q.o[j]=t;} });
   document.getElementById('resultPanel').classList.remove('show');
   document.getElementById('questionArea').style.display = 'block';
