@@ -222,6 +222,8 @@ var WB3_QUIZ = [
     if (ok && !scored[cur+1]) { score++; scored[cur+1] = true; saveBest(); }
     save(); updateScore();
 
+    var isNoExplain = (function(){ try { return localStorage.getItem('v502-noexplain') === '1'; } catch(e) { return false; } })();
+
     var btns = document.querySelectorAll('#wb3QuizArea .wb3q-opt');
     btns.forEach(function(b) {
       b.classList.add('disabled');
@@ -245,6 +247,11 @@ var WB3_QUIZ = [
       }
       var ed = document.getElementById('wb3exp-'+q.n); if (ed) { ed.innerHTML = EXPLANATIONS[q.n] + optInfo; ed.classList.add('show'); }
       var et = document.getElementById('wb3tgl-'+q.n); if (et) { et.style.display = 'inline-block'; et.textContent = '📖 해설 접기'; }
+    }
+
+    // Auto-advance in noExplain mode after brief delay
+    if (isNoExplain) {
+      setTimeout(function() { wb3SubmitNext(); }, 600);
     }
   };
 
