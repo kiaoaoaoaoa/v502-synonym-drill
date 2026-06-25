@@ -546,12 +546,14 @@ h2 {
 
 .wordlist-words {
   margin: 0;
-  font-size: 13px;
-  line-height: 2;
   color: var(--ink);
   display: grid;
   grid-template-columns: 1fr;
-  gap: 5px;
+  gap: 1px;
+  background: #eef1f5;
+  border: 1px solid #eef1f5;
+  border-radius: 6px;
+  overflow: hidden;
 }
 .wordlist-words[hidden] {
   display: none;
@@ -561,17 +563,18 @@ h2 {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
-  gap: 4px 8px;
-  font-weight: 700;
+  gap: 2px 10px;
   color: var(--ink);
-  font-size: 13px;
-  background: #fafbfc;
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: 1px solid #eef1f5;
+  font-size: 14px;
+  background: #fff;
+  padding: 8px 12px;
   position: relative;
   user-select: none;
-  transition: background 100ms ease, border-color 100ms ease;
+  transition: background 100ms ease;
+}
+
+.wl-word:nth-child(even) {
+  background: #f8f9fb;
 }
 
 .wl-word.wl-clickable {
@@ -579,48 +582,54 @@ h2 {
 }
 
 .wl-word.wl-clickable:hover {
-  background: #eef2f6;
-  border-color: #d0d5dc;
+  background: #e9ecf2 !important;
 }
 
-.wl-word.wl-known {
+.wl-word.wl-known,
+.wl-word.wl-known:nth-child(even) {
   background: #e8f5e9;
-  border-color: #a5d6a7;
   color: #2e7d32;
 }
 
-.wl-word.wl-wrong {
-  background: #ffebee;
-  border-color: #ef9a9a;
+.wl-word.wl-wrong,
+.wl-word.wl-wrong:nth-child(even) {
+  background: #fff5f5;
   color: #c62828;
 }
 
 .wl-word.wl-clickable.wl-known:hover {
-  background: #c8e6c9;
+  background: #c8e6c9 !important;
 }
 .wl-word.wl-clickable.wl-wrong:hover {
-  background: #ffcdd2;
+  background: #ffcdd2 !important;
 }
 
 .wl-check {
-  display: inline-block;
-  margin-right: 1px;
-  color: #2e7d32;
-  font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: #43a047;
+  font-size: 10px;
   font-weight: 800;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
   flex-shrink: 0;
 }
 
 .wl-meaning {
   font-weight: 400;
-  color: #555;
-  font-size: 12px;
+  color: #888;
+  font-size: 13px;
   min-width: 0;
+  font-style: italic;
 }
 
 .wl-word-text {
   font-weight: 700;
-  color: inherit;
+  color: var(--ink);
+  font-size: 15px;
   flex-shrink: 0;
 }
 
@@ -631,50 +640,73 @@ h2 {
 /* ── Wordlist2 (extra words) ── */
 .wordlist2-entries {
   margin: 0;
-  font-size: 15px;
+  font-size: 13px;
   line-height: 1.8;
   color: var(--ink);
 }
 
 .wl2-entry {
-  margin-bottom: 10px;
-  padding: 8px 0;
-  border-bottom: 1px solid var(--faint);
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  padding: 9px 12px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  transition: background 100ms ease;
+}
+.wl2-entry:nth-child(even) {
+  background: #f8f9fb;
+}
+.wl2-entry:nth-child(odd) {
+  background: #fff;
+}
+.wl2-entry:hover {
+  background: #eef1f6 !important;
 }
 
 .wl2-word {
   font-weight: 800;
   color: #1a1a2e;
-  font-size: 19px;
-  background: #fff;
-  padding: 4px 10px;
-  border-radius: 4px;
+  font-size: 16px;
+  background: #fafbfc;
+  padding: 3px 10px;
+  border-radius: 5px;
   border: 1px solid #dde1e7;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   white-space: nowrap;
   position: relative;
   user-select: none;
+  transition: background 100ms ease, border-color 100ms ease;
+  flex-shrink: 0;
 }
 .wl2-word .wl-check {
-  display: inline-block;
-  margin-right: 2px;
-  color: #2e7d32;
-  font-size: 13px;
+  color: #fff;
+  background: #43a047;
+  font-size: 10px;
   font-weight: 800;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 }
 
 .wl2-meaning {
-  font-weight: 500;
-  color: #4a4a5a;
-  margin-left: 6px;
-  font-size: 16px;
+  font-weight: 400;
+  color: #777;
+  font-size: 14px;
+  font-style: italic;
 }
 
 .wl2-pos {
   font-weight: 400;
-  color: #7c8a9a;
+  color: #8a9ba8;
   font-size: 11px;
-  margin-left: 3px;
   font-style: italic;
 }
 
@@ -682,7 +714,6 @@ h2 {
   font-weight: 400;
   color: #8a9ba8;
   font-size: 11px;
-  margin-left: 2px;
 }
 
 .wl-hideknown-on {
@@ -695,21 +726,28 @@ h2 {
   cursor: pointer;
 }
 .wl2-word.wl-clickable:hover {
-  background: #f0f4f8;
+  background: #e9ecf2;
+  border-color: #c0c7d2;
 }
 .wl2-word.wl-known {
   background: #e8f5e9;
   border-color: #a5d6a7;
   color: #2e7d32;
 }
+.wl2-word.wl-known:hover {
+  background: #c8e6c9 !important;
+}
 
 .wl2-example {
   font-size: 12px;
-  color: var(--muted);
-  margin-top: 3px;
-  margin-left: 2px;
+  color: #999;
+  margin-top: 1px;
+  margin-left: 4px;
   line-height: 1.5;
   font-style: italic;
+  width: 100%;
+  padding-left: 8px;
+  border-left: 2px solid #e0e4ea;
 }
 
 /* ── Wordbook 3 (2-column grid) ── */
@@ -797,7 +835,7 @@ h2 {
     line-height: 1.4;
   }
   .wl2-word-num {
-    width: 24px;
+    min-width: 28px;
     font-size: 12px;
   }
   .wl3-jump-bar {
@@ -841,8 +879,8 @@ h2 {
   }
   .wl2-word-num {
     font-size: 12px;
-    width: 24px;
-    margin-right: 2px;
+    min-width: 28px;
+    margin-right: 4px;
   }
   .wl3-jump-bar {
     flex-wrap: wrap;
@@ -884,12 +922,16 @@ h2 {
   .wordlist-words {
     font-size: 13px;
     line-height: 2.2;
-    gap: 4px;
+    gap: 1px;
   }
 
   .wl-word {
     font-size: 13px;
-    padding: 5px 8px;
+    padding: 6px 10px;
+  }
+
+  .wl-word-text {
+    font-size: 14px;
   }
 
   .wl-meaning {
@@ -897,7 +939,7 @@ h2 {
   }
 
   .wl2-entry {
-    margin-bottom: 10px;
+    padding: 8px 10px;
   }
 
   .wl2-word {
@@ -907,8 +949,6 @@ h2 {
 
   .wl2-meaning {
     font-size: 15px;
-    font-weight: 500;
-    color: #4a4a5a;
   }
 
   .wl2-pos {
@@ -996,12 +1036,16 @@ h2 {
   .wordlist-words {
     font-size: 14px;
     line-height: 2.4;
-    gap: 5px;
+    gap: 1px;
   }
 
   .wl-word {
     font-size: 14px;
-    padding: 5px 9px;
+    padding: 6px 10px;
+  }
+
+  .wl-word-text {
+    font-size: 15px;
   }
 
   .wl-meaning {
@@ -1163,16 +1207,17 @@ details[open] > .wb3-summary::before {
   opacity: 0.85;
 }
 
-/* word number in wordbook3 */
+/* word number in wordbook3 & wordlist2 */
 .wl2-word-num {
   display: inline-block;
-  width: 26px;
-  color: var(--muted);
+  min-width: 30px;
+  color: #aaa;
   font-size: 11px;
   font-weight: 600;
   text-align: right;
-  margin-right: 2px;
+  margin-right: 4px;
   flex-shrink: 0;
+  font-family: var(--fm);
 }
 .wl-toggle-mid-btn.wl-toggle-mid-on,
 .wl-toggle-high-btn.wl-toggle-high-on {
@@ -2081,8 +2126,8 @@ details[open] > .wb3-summary::before {
 /* ── Hero ───────────────────────────── */
 .dash-hero {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  flex-direction: column;
+  gap: 18px;
   padding: 32px 32px;
   border-radius: 16px;
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 40%, #1a1a1a 100%);
