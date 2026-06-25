@@ -3033,8 +3033,8 @@ details[open] > .wb3-summary::before {
   gap: 14px;
   margin-bottom: 24px;
   padding: 20px 24px;
-  background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
-  border-radius: 12px;
+  background: var(--accent-soft);
+  border-radius: 14px;
   border: 1px solid var(--faint);
 }
 .board-header h3 {
@@ -3043,26 +3043,26 @@ details[open] > .wb3-summary::before {
   font-weight: 800;
   letter-spacing: -0.01em;
   flex: 1;
-  background: linear-gradient(135deg, #1a1a1a 0%, #555 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  
+  
+  
+  
 }
 
 .board-write-btn {
-  min-height: 40px;
-  padding: 0 22px;
-  background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+  min-height: 42px;
+  padding: 0 24px;
+  background: var(--ink);
   color: #fff;
   border: none;
   font-size: 14px;
   font-weight: 600;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12);
 }
-.board-write-btn:hover { background: linear-gradient(135deg, #333 0%, #1a1a1a 100%); transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,0.18); }
+.board-write-btn:hover { background: #000; }
 .board-write-btn:active { transform: translateY(0); }
 
 .board-back-btn {
