@@ -97,7 +97,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "t": "3형식: 유사형태 자/타동사",
-    "exp": "정답 3번: joined -- made. (해설 재작성 예정)"
+    "exp": "정답 3번: joined -- made. 빈칸에 \"joined the army\"와 \"made a good soldier\"가 들어가야 한다. join은 \"입대하다\"의 의미로 자동사/타동사 모두 가능. make은 5형식 동사로 \"make + 목적어 + 명사(보어)\" 구문에서 \"~를 ~로 만들다\"의 뜻. 3번 joined -- made가 문맥과 문법에 모두 맞다."
   },
   {
     "i": "005",
@@ -347,7 +347,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "t": "every/neither/each 수일치",
-    "exp": "정답 3번: lies in. (해설 재작성 예정)"
+    "exp": "정답 3번: lies in. \"The secret to blocking ... lies in the defensive linemen's eyes.\" lie in은 \"~에 있다\"의 의미로 주어가 추상명사(secret)일 때 사용. lay는 타동사로 목적어 필요. lie-lay-lain(자동사) vs lay-laid-laid(타동사) 구분 문제."
   },
   {
     "i": "015",
@@ -372,7 +372,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "t": "분수/퍼센트 수일치",
-    "exp": "정답 1번: 「raised」 부분이 틀림. (해설 재작성 예정)"
+    "exp": "정답 1번: 「raised」 부분이 틀림. ① raised → have risen. raise는 타동사(올리다), rise는 자동사(오르다). 주어가 Food prices이므로 \"가격이 오르다\"는 자동사 rise가 필요. 현재완료(have risen)로 \"지금까지 올랐다\"는 의미."
   },
   {
     "i": "016",
@@ -497,7 +497,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "t": "대명사 일치 ②",
-    "exp": "정답 3번: say. (해설 재작성 예정)"
+    "exp": "정답 3번: say. say가 정답. \"Some people say (that) ~\" 구문. tell은 4형식(tell + IO + DO) 또는 tell + 목적어 + that절만 가능. speak은 자동사로 that절 목적어 불가. talk은 자동사."
   },
   {
     "i": "021",
@@ -522,7 +522,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "4",
     "t": "대과거 vs. 과거",
-    "exp": "정답 4번: made me a cake. (해설 재작성 예정)"
+    "exp": "정답 4번: made me a cake. 4형식 수여동사 make + IO + DO = \"make me a cake\"(나에게 케이크를 만들어 주다). make + DO + to/for + IO도 가능하지만(make a cake for me), 보기 중 가장 자연스러운 4형식은 4번."
   },
   {
     "i": "022",
@@ -547,7 +547,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "t": "현재 vs. 현재진행",
-    "exp": "정답 2번: You should not ask such questions to your parents.. (해설 재작성 예정)"
+    "exp": "정답 2번: You should not ask such questions to your parents. 2번 \"ask such questions to your parents\"가 틀림. ask는 4형식 가능 동사: ask + IO + DO (ask your parents such questions). 3형식 전환 시 ask + DO + of + IO 형태 사용."
   },
   {
     "i": "023",
@@ -576,7 +576,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "t": "현재진행: 가까운 미래",
-    "exp": "정답 3번: 「cost」 부분이 틀림. (해설 재작성 예정)"
+    "exp": "정답 3번: 「cost」 부분이 틀림. ③ cost → cost her. cost는 \"~에게 ~를 초래하다\"의 의미로 4형식: cost + IO + DO. \"cost a lot of fame to her\"는 cost가 3형식으로 쓰인 오류."
   },
   {
     "i": "024",
@@ -601,7 +601,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "t": "시간/조건 부사절 시제",
-    "exp": "정답 3번: describe it to me. (해설 재작성 예정)"
+    "exp": "정답 3번: describe it to me. describe + DO + to + IO. \"describe it to me\"가 올바른 3형식 전환. describe는 4형식 불가 동사로, \"describe + IO + DO\" (describe me it) 형태는 틀림."
   },
   {
     "i": "025",
@@ -701,7 +701,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "t": "before 완료시제",
-    "exp": "정답 1번: says. (해설 재작성 예정)"
+    "exp": "정답 1번: says. say가 정답. 시계가 \"~을 가리키다\"는 say를 사용 (The clock says two o'clock). tell, indicate, mark 모두 시계의 시각 표시에 부적절."
   },
   {
     "i": "029",
@@ -726,7 +726,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "t": "가정법과거 vs. 가정법과거완료",
-    "exp": "정답 2번: told. (해설 재작성 예정)"
+    "exp": "정답 2번: told. tell + IO + that절 구문. say는 3형식만 가능 (say to + IO). talk는 자동사. speak는 언어 목적어 외에 that절 불가. told his customers that... 구조."
   },
   {
     "i": "030",
@@ -751,7 +751,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "4",
     "t": "5형식: 사역/지각동사 목적보어 형태",
-    "exp": "정답 4번: Ellen told Helen that she wasn't ready.. (해설 재작성 예정)"
+    "exp": "정답 4번: Ellen told Helen that she wasn't ready. Ellen told Helen that she wasn't ready. tell + IO + that절 (정답 4번). 1,2,3번 모두 tell + to + IO 형태로 tell이 3형식으로 잘못 쓰임."
   },
   {
     "i": "031",
@@ -776,7 +776,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "t": "가정법미래 vs. 가정법과거",
-    "exp": "정답 1번: remind. (해설 재작성 예정)"
+    "exp": "정답 1번: remind. remind + IO + of + DO. \"remind me of what you said\" 형태. remind A of B: A에게 B를 상기시키다."
   },
   {
     "i": "032",
@@ -901,7 +901,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "t": "it is time 가정법",
-    "exp": "정답 2번: ambush their prey. (해설 재작성 예정)"
+    "exp": "정답 2번: ambush their prey. help + 목적어 + (to) 동사원형. \"helps predators ... ambush\" (to 생략 가능). help는 목적보어로 to부정사 또는 원형부정사 모두 가능."
   },
   {
     "i": "037",
@@ -926,7 +926,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "t": "would rather 가정법",
-    "exp": "정답 2번: 「wrung」 부분이 틀림. (해설 재작성 예정)"
+    "exp": "정답 2번: 「wrung」 부분이 틀림. ② wrung → wringing. keep + 목적어 + ~ing (현재분사) 구문. \"keep professional ethicists wringing their hands\" (전문가들을 계속 손을 비틀게 하다)."
   },
   {
     "i": "038",
@@ -1001,7 +1001,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "4",
     "t": "목적격 오해 주격 관계대명사",
-    "exp": "정답 4번: The doctor forbade me smoke.. (해설 재작성 예정)"
+    "exp": "정답 4번: The doctor forbade me smoke. 4번 forbid + 목적어 + to부정사. \"forbade me to smoke\"가 맞음. forbid는 5형식 동사로 목적보어에 to부정사 필요. smoke만 쓰면 오류."
   },
   {
     "i": "041",
@@ -1026,7 +1026,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "t": "소유격 관계대명사",
-    "exp": "정답 1번: 「was being considered」 부분이 틀림. (해설 재작성 예정)"
+    "exp": "정답 1번: 「was being considered」 부분이 틀림. ① was being considered → were being considered. 주어가 Latin and French (복수)이므로 복수 동사 were 필요."
   },
   {
     "i": "042",
@@ -1051,7 +1051,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "t": "소유격 관계대명사와 the",
-    "exp": "정답 3번: 「has」 부분이 틀림. (해설 재작성 예정)"
+    "exp": "정답 3번: 「has」 부분이 틀림. ③ has → have. 주어가 The pioneer와 the space pioneer (A and B)로 복수이므로 have."
   },
   {
     "i": "043",
@@ -1101,7 +1101,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "t": "관계대명사 that 용법",
-    "exp": "정답 3번: was. (해설 재작성 예정)"
+    "exp": "정답 3번: was. 상관접속사 Not only A but also B에서 동사는 B에 수일치. B가 your manager(단수)이므로 was."
   },
   {
     "i": "045",
@@ -1126,7 +1126,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "t": "관계대명사 what 관용표현",
-    "exp": "정답 2번: know. (해설 재작성 예정)"
+    "exp": "정답 2번: know. 상관접속사 Either A or B에서 동사는 B에 수일치. B가 the children(복수)이므로 know."
   },
   {
     "i": "046",
@@ -1251,7 +1251,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "t": "관계대명사와 전치사",
-    "exp": "정답 2번: 「are」 부분이 틀림. (해설 재작성 예정)"
+    "exp": "정답 2번: 「are」 부분이 틀림. ② are → is. Every man, woman, and child는 의미상 복수지만 every + 단수명사 + and + 단수명사는 단수 취급."
   },
   {
     "i": "051",
@@ -1301,7 +1301,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "4",
     "t": "유사분사",
-    "exp": "정답 4번: 「differ」 부분이 틀림. (해설 재작성 예정)"
+    "exp": "정답 4번: 「differ」 부분이 틀림. ④ differ → differs. 주어가 one(단수)이므로 동사도 단수 differs. when절 내 주어가 one임을 확인."
   },
   {
     "i": "053",
@@ -1401,7 +1401,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "t": "접속사와 병렬구조",
-    "exp": "정답 1번: 「has been lost」 부분이 틀림. (해설 재작성 예정)"
+    "exp": "정답 1번: 「has been lost」 부분이 틀림. ① has been lost → have been lost. 주어가 Nearly 60% of the world's tropical rain forests (복수). 60% of + 복수명사 → 복수동사."
   },
   {
     "i": "057",
@@ -1426,7 +1426,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "t": "접속사 if vs. whether",
-    "exp": "정답 1번: 「facilitate」 부분이 틀림. (해설 재작성 예정)"
+    "exp": "정답 1번: 「facilitate」 부분이 틀림. ① facilitate → facilitates. 주어가 A pro-American government(단수)이므로 단수동사 facilitates."
   },
   {
     "i": "058",
@@ -1451,7 +1451,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "2",
     "t": "접속사 vs. 전치사 vs. 부사",
-    "exp": "정답 2번: 「have given」 부분이 틀림. (해설 재작성 예정)"
+    "exp": "정답 2번: 「have given」 부분이 틀림. ② have given → has given. 주어가 The variation(단수). in 이하 전치사구는 수식어일 뿐 주어 아님."
   },
   {
     "i": "059",
@@ -1551,7 +1551,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "t": "동명사 목적어 동사",
-    "exp": "정답 1번: was. (해설 재작성 예정)"
+    "exp": "정답 1번: was. 도치구문. \"Five miles beyond the hills was a fire.\" 장소 부사구가 앞에 오면 주어-동사 도치. 주어 a fire(단수)이므로 was."
   },
   {
     "i": "063",
@@ -1626,7 +1626,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "4",
     "t": "동명사 관용표현",
-    "exp": "정답 4번: 「is denied」 부분이 틀림. (해설 재작성 예정)"
+    "exp": "정답 4번: 「is denied」 부분이 틀림. ④ is denied → be denied. that절 내에서 주장/요구/제안의 가정법: \"the right ... (should) not be denied.\" should 생략 가능하나 동사원형 be 필요."
   },
   {
     "i": "066",
@@ -1913,7 +1913,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "5",
     "t": "의무 should/ought to/must",
-    "exp": "정답 5번: 「seems」 부분이 틀림. (해설 재작성 예정)"
+    "exp": "정답 5번: 「seems」 부분이 틀림. ⑤ seems → seem. 주어가 clouds(복수). we find ourselves amid clouds of uncertainty that seem... 관계대명사 that의 선행사 clouds(복수)."
   },
   {
     "i": "077",
@@ -1988,7 +1988,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "t": "조동사 관용표현",
-    "exp": "정답 3번: 「he was」 부분이 틀림. (해설 재작성 예정)"
+    "exp": "정답 3번: 「he was」 부분이 틀림. ③ he was → they were. 대명사 일치. 앞에 the coach and the team captain(두 사람/복수)을 받으므로 they."
   },
   {
     "i": "080",
@@ -2038,7 +2038,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "1",
     "t": "원급 관용표현",
-    "exp": "정답 1번: 「has been」 부분이 틀림. (해설 재작성 예정)"
+    "exp": "정답 1번: 「has been」 부분이 틀림. ① has been → was. until 1797가 과거 시점을 나타내므로 현재완료 대신 과거시제 was 필요."
   },
   {
     "i": "082",
@@ -2088,7 +2088,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "3",
     "t": "비교급: than vs. to",
-    "exp": "정답 3번: had taken. (해설 재작성 예정)"
+    "exp": "정답 3번: had taken. 과거완료 had taken. discovered(과거)보다 이전 시점에 \"돈을 가져간\" 행위 → 대과거(과거완료)."
   },
   {
     "i": "084",
@@ -2263,7 +2263,7 @@ window.__V502_GRAMMAR__ = [
     ],
     "a": "4",
     "t": "도치 일반원칙",
-    "exp": "정답 4번: 「was」 부분이 틀림. (해설 재작성 예정)"
+    "exp": "정답 4번: 「was」 부분이 틀림. ④ was → is. 현재 사실. 주절이 It is true that... 현재시제이므로 종속절도 현재시제 is."
   },
   {
     "i": "091",
