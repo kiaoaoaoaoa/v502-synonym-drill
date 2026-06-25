@@ -2669,23 +2669,31 @@ function renderPostList() {
   html += '<div class="board-header">';
   html += '<h3>게시판</h3>';
   if (state.playerName) {
-    html += '<button class="board-write-btn" onclick="showPostForm()">글쓰기</button>';
+    html += '<button class="board-write-btn" onclick="showPostForm()">+ 글쓰기</button>';
   }
   html += '</div>';
 
   if (!boardState.posts.length && boardState.page === 0) {
-    html += '<p class="board-empty">아직 게시글이 없습니다. 첫 글을 작성해보세요!</p>';
+    html += '<p class="board-empty">아직 게시글이 없습니다.<br>첫 글을 작성해보세요!</p>';
   } else {
     html += '<div class="board-post-list">';
-    for (const post of boardState.posts) {
-      const date = formatBoardDate(post.created_at);
-      const preview = (post.content || '').replace(/\s+/g, ' ').trim().slice(0, 120);
+    var startNum = boardState.page * boardState.pageSize;
+    for (var i = 0; i < boardState.posts.length; i++) {
+      var post = boardState.posts[i];
+      var date = formatBoardDate(post.created_at);
+      var preview = (post.content || '').replace(/\s+/g, ' ').trim().slice(0, 120);
+      var num = startNum + i + 1;
+      var initial = (post.nickname || '?')[0].toUpperCase();
       html += '<div class="board-post-item" onclick="viewPost(' + post.id + ')">';
+      html += '<div class="board-post-number">' + num + '</div>';
+      html += '<div class="board-post-body">';
       html += '<div class="board-post-title">' + escapeHtml(post.title) + '</div>';
       html += '<div class="board-post-preview">' + escapeHtml(preview) + (post.content && post.content.replace(/\s+/g, ' ').trim().length > 120 ? '...' : '') + '</div>';
       html += '<div class="board-post-meta">';
+      html += '<span class="board-post-avatar">' + initial + '</span>';
       html += '<span>' + escapeHtml(post.nickname) + '</span>';
       html += '<span>' + date + '</span>';
+      html += '</div>';
       html += '</div></div>';
     }
     html += '</div>';
@@ -2774,6 +2782,7 @@ async function loadComments(postId) {
 function renderPostDetail() {
   const post = boardState.currentPost;
   if (!post) return;
+  var initial = (post.nickname || '?')[0].toUpperCase();
   let html = '<div class="board-container">';
   html += '<div class="board-header">';
   html += '<button class="board-back-btn" onclick="openBoard()">← 목록</button>';
@@ -2782,36 +2791,46 @@ function renderPostDetail() {
   }
   html += '</div>';
   html += '<div class="board-detail">';
+  html += '<div class="board-detail-header">';
+  html += '<div class="board-detail-avatar">' + initial + '</div>';
+  html += '<div><strong style="font-size:15px">' + escapeHtml(post.nickname) + '</strong></div>';
+  html += '</div>';
   html += '<h3 class="board-detail-title">' + escapeHtml(post.title) + '</h3>';
   html += '<div class="board-detail-meta">';
-  html += '<span>' + escapeHtml(post.nickname) + '</span>';
   html += '<span>' + formatBoardDate(post.created_at) + '</span>';
   html += '</div>';
   html += '<div class="board-detail-content">' + escapeHtml(post.content).replace(/\n/g, '<br>') + '</div>';
   html += '</div>';
 
   html += '<div class="board-comments">';
-  html += '<h4>댓글 (' + boardState.currentComments.length + ')</h4>';
+  html += '<div class="board-comments-header">';
+  html += '댓글';
+  html += '<span class="board-comments-count">' + boardState.currentComments.length + '</span>';
+  html += '</div>';
   if (boardState.currentComments.length === 0) {
-    html += '<p style="color:var(--muted);font-size:14px">댓글이 없습니다.</p>';
+    html += '<p style="color:var(--muted);font-size:14px;padding:8px 0">아직 댓글이 없습니다. 첫 댓글을 남겨보세요.</p>';
   } else {
-    for (const c of boardState.currentComments) {
+    for (var i = 0; i < boardState.currentComments.length; i++) {
+      var c = boardState.currentComments[i];
+      var cInitial = (c.nickname || '?')[0].toUpperCase();
       html += '<div class="board-comment-item">';
+      html += '<div class="board-comment-avatar">' + cInitial + '</div>';
+      html += '<div class="board-comment-body">';
       html += '<div class="board-comment-meta">';
       html += '<strong>' + escapeHtml(c.nickname) + '</strong>';
-      html += '<span>' + formatBoardDate(c.created_at) + '</span>';
+      html += '<time>' + formatBoardDate(c.created_at) + '</time>';
       if (state.playerName === c.nickname) {
         html += '<button class="board-comment-del" onclick="deleteComment(' + c.id + ',' + post.id + ')">삭제</button>';
       }
       html += '</div>';
       html += '<div class="board-comment-content">' + escapeHtml(c.content).replace(/\n/g, '<br>') + '</div>';
-      html += '</div>';
+      html += '</div></div>';
     }
   }
   if (state.playerName) {
     html += '<div class="board-comment-form">';
-    html += '<textarea id="boardCommentInput" class="board-textarea" rows="3" placeholder="댓글을 입력하세요"></textarea>';
-    html += '<button class="board-submit-btn" onclick="submitComment(' + post.id + ')">댓글 등록</button>';
+    html += '<textarea id="boardCommentInput" class="board-textarea" rows="2" placeholder="댓글을 입력하세요"></textarea>';
+    html += '<button class="board-submit-btn" onclick="submitComment(' + post.id + ')">등록</button>';
     html += '</div>';
   }
   html += '</div>';
