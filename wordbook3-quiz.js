@@ -175,6 +175,13 @@ var WB3_QUIZ = [
     else if (wasWrong) h += '<span class="wb3q-solved" style="color:#dc2626">❌ 오답 (재도전)</span>';
     h += '<div class="wb3q-text">' + q.q.replace(/______/g, '<span class="wb3q-blank">______</span>') + '</div>';
 
+    // Nav buttons (always visible)
+    var navHtml = '<div style="display:flex;gap:8px;margin-top:14px">';
+    navHtml += '<button class="wb3q-btn sec" onclick="wb3Prev()"' + (cur === 0 ? ' disabled style="opacity:0.4"' : '') + '>◀ 이전</button>';
+    navHtml += '<span style="flex:1;text-align:center;font-size:0.8rem;color:#94a3b8;align-self:center">' + (cur+1) + ' / 100</span>';
+    navHtml += '<button class="wb3q-btn sec" onclick="wb3Next()"' + (cur === 99 ? ' disabled style="opacity:0.4"' : '') + '>다음 ▶</button>';
+    navHtml += '</div>';
+
     if (wasCorrect) {
       h += '<div class="wb3q-opts">';
       q.o.forEach(function(o,i) { h += '<button class="wb3q-opt disabled correct"><span class="wb3q-letter">' + LETTERS[i] + '</span>' + o + '</button>'; });
@@ -183,14 +190,15 @@ var WB3_QUIZ = [
         h += '<span class="wb3q-exp-toggle" onclick="var e=document.getElementById(\'wb3exp-'+q.n+'\');e.classList.toggle(\'show\');this.textContent=e.classList.contains(\'show\')?\'📖 해설 접기\':\'📖 해설 보기\'">📖 해설 보기</span>';
         h += '<div class="wb3q-exp" id="wb3exp-' + q.n + '">' + EXPLANATIONS[q.n] + '</div>';
       }
-      h += '<button class="wb3q-next show" onclick="wb3Next()">다음 문제 ▶</button>';
+      h += navHtml;
     } else {
       if (wasWrong) h += '<div class="wb3q-fb show no" style="margin-bottom:10px">이전: <strong>' + picks[cur+1] + '</strong> (오답). 다시 풀어보세요.</div>';
       h += '<div class="wb3q-opts">';
       q.o.forEach(function(o,i) { h += '<button class="wb3q-opt" onclick="wb3Pick(this,\'' + o.replace(/'/g,"\\'") + '\')" data-opt="' + o.replace(/"/g,'&quot;') + '"><span class="wb3q-letter">' + LETTERS[i] + '</span>' + o + '</button>'; });
       h += '</div><div class="wb3q-fb" id="wb3fb"></div><div class="wb3q-exp" id="wb3exp-'+q.n+'"></div>';
       h += '<span class="wb3q-exp-toggle" id="wb3tgl-'+q.n+'" style="display:none" onclick="var e=document.getElementById(\'wb3exp-'+q.n+'\');e.classList.toggle(\'show\');this.textContent=e.classList.contains(\'show\')?\'📖 해설 접기\':\'📖 해설 보기\'">📖 해설 보기</span>';
-      h += '<button class="wb3q-next" id="wb3btnNext" onclick="wb3Next()">다음 문제 ▶</button>';
+      h += '<button class="wb3q-next" id="wb3btnNext" onclick="wb3SubmitNext()">제출 후 다음 ▶</button>';
+      h += navHtml;
     }
     h += '</div>';
     var area = document.getElementById('wb3QuizArea');
@@ -220,10 +228,27 @@ var WB3_QUIZ = [
     }
   };
 
+  window.wb3Prev = function() {
+    if (cur > 0) cur--;
+    render();
+  };
+
   window.wb3Next = function() {
+    if (cur < 99) cur++; else { cur = 100; showResult(); return; }
+    render();
+  };
+
+  window.wb3SubmitNext = function() {
+    // After answering, skip correctly answered questions
     do { cur++; } while (cur < 100 && answered[cur+1] && picks[cur+1] === WB3_QUIZ[cur].a);
     if (cur >= 100) { showResult(); return; }
     render();
+  };
+
+  window.wb3JumpTo = function(n) {
+    cur = n;
+    if (cur >= 100) showResult();
+    else render();
   };
 
   function showResult() {
