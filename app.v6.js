@@ -3549,7 +3549,7 @@ function showDashboard() {
 
   if (loggedIn) flushCloudSync();
 
-  if (loggedIn && !state._dashSyncing) {
+  if (loggedIn && !state._dashSyncing && !state._dashRerender) {
     const store = readPasswordStore();
     const stored = store[state.playerName.toLowerCase()];
     if (stored) {
@@ -3561,6 +3561,10 @@ function showDashboard() {
         cloudSyncAll();
         pushAllScoresToSupabase();
         state._dashSyncing = false;
+        if (!els.dashboardPanel.hidden) {
+          state._dashRerender = true;
+          setTimeout(() => showDashboard(), 50);
+        }
       }).catch((e) => { console.warn('dashboard sync failed', e); state._dashSyncing = false; });
     }
   }
@@ -3610,6 +3614,7 @@ function showDashboard() {
 
   html += '</div>';
   document.getElementById('dashboardContent').innerHTML = html;
+  state._dashRerender = false;
 }
 
 function getSynonymWrongCount() {
