@@ -2702,6 +2702,8 @@ async function loadBoardPosts() {
   }
   boardState.posts = data || [];
   boardState.hasMore = (data || []).length === boardState.pageSize;
+  var nicknames = [...new Set((data || []).map(function(p) { return p.nickname; }))];
+  await fetchUserTiers(nicknames);
   renderPostList();
 }
 
@@ -2725,6 +2727,8 @@ function renderPostList() {
       var preview = (post.content || '').replace(/\s+/g, ' ').trim().slice(0, 120);
       var num = startNum + i + 1;
       var initial = (post.nickname || '?')[0].toUpperCase();
+      var tData = boardState.userTiers[post.nickname];
+      var tBadge = tData ? '<span class="board-tier-chip" style="color:' + tData.color + '">' + tData.icon + ' <small>' + tData.name + '</small></span>' : '';
       html += '<div class="board-post-item" onclick="viewPost(' + post.id + ')">';
       html += '<div class="board-post-number">' + num + '</div>';
       html += '<div class="board-post-body">';
@@ -2733,7 +2737,8 @@ function renderPostList() {
       html += '<div class="board-post-meta">';
       html += '<span class="board-post-avatar">' + initial + '</span>';
       html += '<span>' + escapeHtml(post.nickname) + '</span>';
-      html += '<span>' + date + '</span>';
+      if (tBadge) html += tBadge;
+      html += '<span style="margin-left:auto">' + date + '</span>';
       html += '</div>';
       html += '</div></div>';
     }
@@ -2810,6 +2815,11 @@ async function viewPost(postId) {
   boardState.currentView = 'detail';
   boardState.currentPost = data;
   await loadComments(postId);
+  var allNames = [data.nickname];
+  for (var ci = 0; ci < boardState.currentComments.length; ci++) {
+    allNames.push(boardState.currentComments[ci].nickname);
+  }
+  await fetchUserTiers([...new Set(allNames)]);
   renderPostDetail();
 }
 
@@ -2832,9 +2842,11 @@ function renderPostDetail() {
   }
   html += '</div>';
   html += '<div class="board-detail">';
+  var pTier = boardState.userTiers[post.nickname];
+  var pTierBadge = pTier ? '<span class="board-tier-chip" style="color:' + pTier.color + '">' + pTier.icon + ' <small>' + pTier.name + '</small></span>' : '';
   html += '<div class="board-detail-header">';
   html += '<div class="board-detail-avatar">' + initial + '</div>';
-  html += '<div><strong style="font-size:15px">' + escapeHtml(post.nickname) + '</strong></div>';
+  html += '<div><strong style="font-size:15px">' + escapeHtml(post.nickname) + '</strong>' + (pTierBadge ? ' ' + pTierBadge : '') + '</div>';
   html += '</div>';
   html += '<h3 class="board-detail-title">' + escapeHtml(post.title) + '</h3>';
   html += '<div class="board-detail-meta">';
@@ -2854,11 +2866,14 @@ function renderPostDetail() {
     for (var i = 0; i < boardState.currentComments.length; i++) {
       var c = boardState.currentComments[i];
       var cInitial = (c.nickname || '?')[0].toUpperCase();
+      var cTier = boardState.userTiers[c.nickname];
+      var cTierBadge = cTier ? '<span class="board-tier-chip board-tier-chip-sm" style="color:' + cTier.color + '">' + cTier.icon + '</span>' : '';
       html += '<div class="board-comment-item">';
       html += '<div class="board-comment-avatar">' + cInitial + '</div>';
       html += '<div class="board-comment-body">';
       html += '<div class="board-comment-meta">';
       html += '<strong>' + escapeHtml(c.nickname) + '</strong>';
+      if (cTierBadge) html += cTierBadge;
       html += '<time>' + formatBoardDate(c.created_at) + '</time>';
       if (state.playerName === c.nickname) {
         html += '<button class="board-comment-del" onclick="deleteComment(' + c.id + ',' + post.id + ')">삭제</button>';
