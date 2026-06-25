@@ -1,0 +1,2058 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logic Tree 문법 201 — 문제 통합본</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+    background: #f8f9fa;
+    color: #212529;
+    line-height: 1.7;
+    padding: 20px;
+  }
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    padding: 32px 24px;
+  }
+  h1 { font-size: 1.4rem; text-align: center; margin-bottom: 4px; color: #1a1a2e; }
+  .subtitle { text-align: center; color: #868e96; font-size: 0.85rem; margin-bottom: 20px; }
+  .top-nav {
+    text-align: center; margin-bottom: 28px; padding: 12px 16px;
+    background: #f1f3f5; border-radius: 8px; font-size: 0.85rem; line-height: 2.2;
+  }
+  .top-nav a { color: #4c6ef5; text-decoration: none; font-weight: 600; padding: 2px 6px; border-radius: 3px; }
+  .top-nav a:hover { background: #dbe4ff; }
+  .chapter-header {
+    background: #f8f9ff; border-left: 4px solid #4c6ef5;
+    padding: 12px 16px; margin: 32px 0 16px 0; border-radius: 0 8px 8px 0; scroll-margin-top: 20px;
+  }
+  .chapter-header h2 { font-size: 1.2rem; color: #1a1a2e; margin: 0; }
+  .chapter-header .topic-note { font-size: 0.8rem; color: #868e96; margin-top: 4px; }
+  .problem { padding: 10px 8px; border-bottom: 1px solid #f1f3f5; }
+  .problem:hover { background: #fafbfe; }
+  .problem-num { font-weight: 700; color: #4c6ef5; font-size: 0.85rem; margin-right: 8px; min-width: 32px; display: inline-block; }
+  .problem-text { color: #212529; line-height: 1.8; }
+  .problem-text .choice {
+    display: inline-block; background: #f8f9fa; padding: 0 6px; margin: 0 2px; border-radius: 3px; font-size: 0.9rem;
+  }
+  .back-top { text-align: right; margin-top: 16px; }
+  .back-top a { color: #868e96; font-size: 0.8rem; text-decoration: none; }
+  footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e9ecef; color: #868e96; font-size: 0.8rem; }
+  @media (max-width: 600px) {
+    .container { padding: 16px 10px; }
+    .problem { padding: 8px 4px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Logic Tree G201 — 문법 문제 통합본</h1>
+  <p class="subtitle">총 480문제 · 15개 챕터</p>
+  <nav class="top-nav"><a href="#ch1">Ch.1</a> <small>(10)</small> · <a href="#ch2">Ch.2</a> <small>(30)</small> · <a href="#ch3">Ch.3</a> <small>(40)</small> · <a href="#ch4">Ch.4</a> <small>(40)</small> · <a href="#ch5">Ch.5</a> <small>(40)</small> · <a href="#ch6">Ch.6</a> <small>(40)</small> · <a href="#ch7">Ch.7</a> <small>(40)</small> · <a href="#ch8">Ch.8</a> <small>(40)</small> · <a href="#ch9">Ch.9</a> <small>(40)</small> · <a href="#ch10">Ch.10</a> <small>(40)</small> · <a href="#ch11">Ch.11</a> <small>(20)</small> · <a href="#ch12">Ch.12</a> <small>(40)</small> · <a href="#ch13">Ch.13</a> <small>(20)</small> · <a href="#ch14">Ch.14</a> <small>(20)</small> · <a href="#ch15">Ch.15</a> <small>(20)</small></nav>
+
+  <div class="chapter-header" id="ch1">
+    <h2>Chapter 01. 문장형식과 동사 ①</h2>
+    <div class="topic-note">토픽: 001~004</div>
+  </div>
+  <div class="problem">
+    <span class="problem-num">001.</span>
+    <span class="problem-text">I felt uncomfortable <span class="choice">①complaining for the service; after all we </span><span class="choice">②were only guests </span><span class="choice">③at the reception, </span><span class="choice">④not the hosts.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">002.</span>
+    <span class="problem-text">For some reason, we have <span class="choice">①decided that if these flesh lumps (i.e., our noses) have a certain shape, they are attractive; </span><span class="choice">②whereas lumps that do not </span><span class="choice">③conform that shape </span><span class="choice">④are considered ugly.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">003.</span>
+    <span class="problem-text">Economic <span class="choice">①goods often consist </span><span class="choice">②to material items, </span><span class="choice">③but they can also be services </span><span class="choice">④to people.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">004.</span>
+    <span class="problem-text">A: What would you have done if you hadn't become a teacher? B: I'd probably have the army. A: Oh, you'd have a good soldier. B: Do you really think so? A: Yes, of course. 1 discharged from -- become 2 gone into -- joined 3 joined -- made 4 joined -- taught</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">005.</span>
+    <span class="problem-text">Improvisation is an important part of jazz. This means that the musicians make the music up as they go along, or create the music on the spot. This is why a jazz song might each time it is played. 1 sounds a little different 2 sound a little differently 3 sound little differently 4 sound a little different</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">006.</span>
+    <span class="problem-text">People Toften seem Danger when <span class="choice">③they do not get enough </span><span class="choice">④rest.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">007.</span>
+    <span class="problem-text">He looked very badly after 2 the operation, <span class="choice">③and we were all Aworried.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">008.</span>
+    <span class="problem-text">In the summer, I usually some kind of seminar at the urging of my company. 1 enroll at 2 attend go 4 attend to</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">009.</span>
+    <span class="problem-text">Moments before Shannon Lucid departed Don her first space mission, a reporter <span class="choice">②approached to her and asked 33what her thoughts were. She replied that she was extremely proud </span><span class="choice">④to participate in such an important project.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">010.</span>
+    <span class="problem-text">What happens when people of different origins, Ospeaking different languages and <span class="choice">②professing different religions, 3 inhabit in the same locality and </span><span class="choice">④live under the same political sovereignty?</span></span>
+  </div>
+  <div class="back-top"><a href="#top">↑ 맨 위로</a></div>
+  <div class="chapter-header" id="ch2">
+    <h2>Chapter 02. 문장형식과 동사 ②</h2>
+    <div class="topic-note">토픽: 005~010</div>
+  </div>
+  <div class="problem">
+    <span class="problem-num">011.</span>
+    <span class="problem-text"><span class="choice">①The Olympic torch will be </span><span class="choice">②reaching at Rice-Eccles Stadium </span><span class="choice">③at the University of Utah </span><span class="choice">④in a month.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">012.</span>
+    <span class="problem-text">An American <span class="choice">①who survived from the terrorist </span><span class="choice">②attack on the World Trade Center </span><span class="choice">③escaped with his life again when Aa bomb blast ripped through a busy street in Jerusalem.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">013.</span>
+    <span class="problem-text">If he Chad laid quietly <span class="choice">②under the tree as he </span><span class="choice">③had been instructed to do, we </span><span class="choice">④would have found him.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">014.</span>
+    <span class="problem-text">The secret to blocking for the Oakland Raiders' quarterback Rich Gannon, according to tackle Lincoln Kennedy, the defensive linemen's eyes. 1 lie along 2 lay down 3 lies in 4 lays aside</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">015.</span>
+    <span class="problem-text">Food prices have <span class="choice">①raised </span><span class="choice">②so rapidly in the past few months </span><span class="choice">③that some families have been Aforced to alter their eating habits.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">016.</span>
+    <span class="problem-text">A: When did the lecture begin? B: When all the students the professor began his lecture. 1 were seated 2 seat 3 seated sit</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">017.</span>
+    <span class="problem-text">| 1 sat the suitcase 2 down in front of a 3 hotel shop and <span class="choice">④called a taxi.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">018.</span>
+    <span class="problem-text">One winter day when I was nine, carrying my books home from school across a snowy street as the light was turning, I slipped and <span class="choice">①① fell 2 felled fall falled</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">019.</span>
+    <span class="problem-text">My neighbor dies her hair <span class="choice">③two times </span><span class="choice">④every month.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">020.</span>
+    <span class="problem-text">Some people the single most important factor in any business is service. 1 talk 3 say - 2 tell 4 speak of</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">021.</span>
+    <span class="problem-text">Yesterday was my birthday, my mother 1 made a cake to me 2 made a cake me 3 made for me a cake 4 made me a cake</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">022.</span>
+    <span class="problem-text">Choose the one that is NOT correct according to the standard English. 1 The tower rises above the other buildings. 2 You should not ask such questions to your parents. 3 When you fill in the form, I'll have the baggage brought in. 4 I don't know whether he has a ticket to the show and whether he will go.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">023.</span>
+    <span class="problem-text">She might never <span class="choice">①forgive him what he did to her, and it was </span><span class="choice">②such a dark part of her personality that </span><span class="choice">③cost a lot of fame to her and </span><span class="choice">④that she didn't 6want him to see.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">024.</span>
+    <span class="problem-text">A: I think I understand his point. B: Then 1 describe for me it 2 describe me it 3 describe it to me 4 describe</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">025.</span>
+    <span class="problem-text">The doctor explained that we should have a complete physical examination once a year. 1 us 3 to us 2 for us 4 at us</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">026.</span>
+    <span class="problem-text">The robber <span class="choice">①admitted the detective that she was </span><span class="choice">②the one who had stolen the diamond necklace </span><span class="choice">④from the display.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">027.</span>
+    <span class="problem-text">In order <span class="choice">①for you to improve your memory, </span><span class="choice">②key information should be written as soon as possible after it is given, </span><span class="choice">③so the memory of the instructions is fresh and you can capture all the detail you were provided.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">028.</span>
+    <span class="problem-text">A: Is it time to leave? B: Yes, the clock two o'clock. 1 says 3 told 2 indicates 4 marks</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">029.</span>
+    <span class="problem-text">The information officer at the bank his customers that there were several different kinds of checking accounts available. 1 said 3 conversed 2 told 4 talked</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">030.</span>
+    <span class="problem-text">Choose the one that is CORRECT according to the standard English. 1 Ellen told to Helen, "Leave the room." 2 Ellen told to leave the room. 3 Ellen told to Helen to leave the room. 4 Ellen told Helen that she wasn't ready.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">031.</span>
+    <span class="problem-text">Please me of what you said at the last meeting. 1 remind 2 help remind 3 remember 4 recall</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">032.</span>
+    <span class="problem-text">Last night <span class="choice">①while I was trying </span><span class="choice">②to fall asleep, I heard 33the people in the next apartment </span><span class="choice">④sang and laugh.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">033.</span>
+    <span class="problem-text"><span class="choice">①To see so much power 2 combining </span><span class="choice">③with such lack </span><span class="choice">④of foresight is really disquieting for us Europeans.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">034.</span>
+    <span class="problem-text"><span class="choice">①Thanks to the often dreadful, although lifesaving, nature of diagnostic tests, many of us are becoming 2 experts at the art of procrastination. Who can be blamed for 3 letting "colonoscopy" to slip to the bottom of the </span><span class="choice">④to-do list?</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">035.</span>
+    <span class="problem-text">If you don't stop making that noise, you'll make your grandmother 1 to complain 3 complain 2 complaining 4 complaint</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">036.</span>
+    <span class="problem-text">Camouflage helps predators such as tigers and leopards without being seen. 1 for ambushing his prey 2 ambush their prey 3 to ambush his prey 4 ambushing</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">037.</span>
+    <span class="problem-text">The idea of <span class="choice">①surrogate parenting has kept professional ethicists and jurists </span><span class="choice">②wrung their hands ever since the first case </span><span class="choice">④surfaced in 1978.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">038.</span>
+    <span class="problem-text">Book reviewers often <span class="choice">①find themselves </span><span class="choice">②are being carried away </span><span class="choice">③by their own dogma and a combination of flaws that </span><span class="choice">④is fatal for an impartial review.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">039.</span>
+    <span class="problem-text">Choose the one that is NOT correct according to the standard English. 1 She heard him lock the door. 2 There's nothing to do but wait. 3 We saw him enter the store with his wife. 4 I want you stand beside me and hold the torch.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">040.</span>
+    <span class="problem-text">Choose the one that is NOT correct according to the standard English. 1 I felt something touch my foot. 2 Did you hear a dog bark? 3 | let her talk without interrupting. 4 The doctor forbade me smoke.</span>
+  </div>
+  <div class="back-top"><a href="#top">↑ 맨 위로</a></div>
+  <div class="chapter-header" id="ch3">
+    <h2>Chapter 03. 수일치</h2>
+    <div class="topic-note">토픽: 011~020</div>
+  </div>
+  <div class="problem">
+    <span class="problem-num">041.</span>
+    <span class="problem-text">Previously, Latin and French <span class="choice">①was being considered more </span><span class="choice">②suitable for literary expression than English and consequently </span><span class="choice">③the English language had not been as fully developed </span><span class="choice">④as it might have been.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">042.</span>
+    <span class="problem-text">The pioneer <span class="choice">①of long ago and </span><span class="choice">②the space pioneer of today </span><span class="choice">③has many things </span><span class="choice">④in common.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">043.</span>
+    <span class="problem-text">Choose the one that is NOT correct according to the standard English. 1 Bread and butter is fattening. 2 Slow and steady wins the game. 3 These statistics shows deaths per 1,000 of population. 4 There is someone in the room.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">044.</span>
+    <span class="problem-text">Not only you but also your manager right. 1 were 3 was 2 are 4 as</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">045.</span>
+    <span class="problem-text">Either the teacher or the children where the principal is right now. <span class="choice">①① knew ) knows 2 know 4 knowing</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">046.</span>
+    <span class="problem-text">11Neither the reporters <span class="choice">②nor the editor </span><span class="choice">③ were satisfied with the salary </span><span class="choice">④offer made by the publisher.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">047.</span>
+    <span class="problem-text">Neither his friend's 1 betrayal nor his <span class="choice">②parents' condemnation 33have caused him any Agreat distress</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">048.</span>
+    <span class="problem-text">Not only destruction and death but also a generation of hatred 1 between the two communities <span class="choice">② have been triggered by the war that played a huge role </span><span class="choice">③in establishing the gulf between the Western and the Eastern </span><span class="choice">④communities.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">049.</span>
+    <span class="problem-text">The merger as well as the obvious financial benefits <span class="choice">②are expected to allow 3 us some breathing room with </span><span class="choice">④regards to R&D.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">050.</span>
+    <span class="problem-text">Every man, woman, and child <span class="choice">①in this community </span><span class="choice">②are now </span><span class="choice">③aware of the terrible consequences </span><span class="choice">④of the habit of smoking.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">051.</span>
+    <span class="problem-text">Each of the Medic Alert bracelets <span class="choice">①worn by millions of Americans who 2 suffer from diabetes and drug allergic reactions are individually engraved with </span><span class="choice">④the wearer's name.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">052.</span>
+    <span class="problem-text">When one contrasts the ideas of the Romantic William Wordsworth with <span class="choice">②those of Neoclassicist John Dryden, </span><span class="choice">③one finds that neither of the poets </span><span class="choice">④differ as much as one would expect.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">053.</span>
+    <span class="problem-text"><span class="choice">①Most of the English people is descended from invaders who began settling in </span><span class="choice">②the British Isles more than 32,500 years </span><span class="choice">④ago.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">054.</span>
+    <span class="problem-text">Most of the information <span class="choice">①received from the reporters in the field </span><span class="choice">②have to be edited before </span><span class="choice">③being </span><span class="choice">④considered for publication.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">055.</span>
+    <span class="problem-text">Approximately Done-fourth of a worker's income 2 are paid <span class="choice">③in taxes and social security </span><span class="choice">④to the government.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">056.</span>
+    <span class="problem-text">Nearly 60% of the world's tropical rain forests <span class="choice">①has been lost, and </span><span class="choice">②what remains is under extreme pressure from logging and human population growth. And once a forest is cut down, </span><span class="choice">③many of the living things it has harbored will be driven </span><span class="choice">④to extinction.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">057.</span>
+    <span class="problem-text">A pro-American government in Afghanistan certainly <span class="choice">①facilitate a more </span><span class="choice">②acceptable agreement 33regarding the new pipeline that must inevitably </span><span class="choice">④run through that country.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">058.</span>
+    <span class="problem-text">The variation in our ambition, impulses, prejudices and affections <span class="choice">②have given us a certain acceptance of the fact that the conventions and watch-words of one generation </span><span class="choice">④may prove irrelevant to the needs of the generations that follow.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">059.</span>
+    <span class="problem-text">Many people <span class="choice">①were trapped in the capital and </span><span class="choice">②unable to escape, and a humanitarian escape corridor 33set up on December 6 by Russian forces to allow people to flee the fighting </span><span class="choice">④were ineffective.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">060.</span>
+    <span class="problem-text">Two of the <span class="choice">①fungi which the researchers discovered </span><span class="choice">②was classified as new varieties </span><span class="choice">③and the botanists said that they were Apreviously unknown.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">061.</span>
+    <span class="problem-text"><span class="choice">①There are no argument or proof </span><span class="choice">②that will convince most Americans that 3 paying higher taxes will result in a higher standard of living </span><span class="choice">④for everyone.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">062.</span>
+    <span class="problem-text">Five miles beyond the hills a fire with its flames reaching up to the sky. was 2 were 3 were that 4 which were</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">063.</span>
+    <span class="problem-text">11On the desk <span class="choice">②was several notebooks and a book of </span><span class="choice">③poetry that had </span><span class="choice">④apparently been left in the library.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">064.</span>
+    <span class="problem-text">1 Just outside the ruins <span class="choice">②are a fortress </span><span class="choice">③surrounded by high walls and </span><span class="choice">④stately trees.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">065.</span>
+    <span class="problem-text">One principle that Jefferson stated was <span class="choice">①the right to a trial by a fair and impartial jury. This right </span><span class="choice">②to be judged by ordinary people </span><span class="choice">③is a privilege many in the world </span><span class="choice">④is denied.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">066.</span>
+    <span class="problem-text"><span class="choice">①There are 2 many a single person who believes that </span><span class="choice">③being married doesn't necessarily mean Aliving happily ever after.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">067.</span>
+    <span class="problem-text">The number of wild horses on Assateague <span class="choice">②are increasing lately, </span><span class="choice">③resulting in </span><span class="choice">④overgrazed marsh and dune grasses.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">068.</span>
+    <span class="problem-text">1 The number of Korean students coming <span class="choice">②to America for </span><span class="choice">③graduate training </span><span class="choice">④are quite 5 surprising.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">069.</span>
+    <span class="problem-text">We would like to know if you are one of those women <span class="choice">②who is actively involved in politics because we need someone </span><span class="choice">③to campaign for a law legalizing maternity leave for men </span><span class="choice">④as well as for women.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">070.</span>
+    <span class="problem-text">1 Although there are fortunetellers who 2 claims to predict future happenings, <span class="choice">③ there is no scientific evidence of their accuracy.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">071.</span>
+    <span class="problem-text">I want a wife who is a good nurturant <span class="choice">①attendant to my children, who arranges </span><span class="choice">②for their schooling, and </span><span class="choice">③make sure that </span><span class="choice">④they have an adequate social life with their peers.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">072.</span>
+    <span class="problem-text">To feel satisfied with your <span class="choice">②work published in a scholarly journal are to </span><span class="choice">④take pride in it.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">073.</span>
+    <span class="problem-text"><span class="choice">①Where the school districts will find the money </span><span class="choice">② for these programs are </span><span class="choice">④a problem.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">074.</span>
+    <span class="problem-text">The villainous <span class="choice">①characterizations of the wolf 2 in numerous folktales 3 have ignored that part of </span><span class="choice">④their nature that 6 is friendly and gregarious.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">075.</span>
+    <span class="problem-text"><span class="choice">①Most people </span><span class="choice">②aspire to good jobs or careers, which </span><span class="choice">③is increasingly difficult </span><span class="choice">④to obtain.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">076.</span>
+    <span class="problem-text">1 Contrary to our expectations we find <span class="choice">②ourselves these days amid </span><span class="choice">③clouds of dense pollutants, both material and spiritual, </span><span class="choice">④which seems to injure man and deface nature.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">077.</span>
+    <span class="problem-text">If you are to complete the task, <span class="choice">②one should research it </span><span class="choice">③beforehand so as to acquaint yourself with any possible happenings from it.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">078.</span>
+    <span class="problem-text">When one reaches the first plateau, it does not guarantee that <span class="choice">②you will complete </span><span class="choice">③the climb to the summit.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">079.</span>
+    <span class="problem-text">After the dispute <span class="choice">①over the unsuccessful play, the coach and the team captain agreed </span><span class="choice">②not to talk until </span><span class="choice">④he was able to do so ④calmly.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">080.</span>
+    <span class="problem-text"><span class="choice">①Stockard Channing, who plays the role of the formidable First Lady in the television show The West Wing, 2 first came into the public eye in the movie production of the musical Grease; </span><span class="choice">③they have loved her </span><span class="choice">④ever since. -</span></span>
+  </div>
+  <div class="back-top"><a href="#top">↑ 맨 위로</a></div>
+  <div class="chapter-header" id="ch4">
+    <h2>Chapter 04. 시제</h2>
+    <div class="topic-note">토픽: 021~028</div>
+  </div>
+  <div class="problem">
+    <span class="problem-num">081.</span>
+    <span class="problem-text">New York City has been the 2 capital of New York State until 1797, <span class="choice">③when the state capital </span><span class="choice">④was moved to Albany.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">082.</span>
+    <span class="problem-text">1 Even though Mr. Kim <span class="choice">②has been studying English for eight years before he came </span><span class="choice">③to the United States, it is still difficult for him to master it.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">083.</span>
+    <span class="problem-text">When Ken went to get some money from his wallet, he discovered that someone it. 1 takes 2 took 3 had taken ) has taken</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">084.</span>
+    <span class="problem-text">After he <span class="choice">①was caught with the stolen car, the teen said he was very sorry </span><span class="choice">②for what he had done and for the damage he </span><span class="choice">③caused to the car. He realized that he had been very foolish and wanted people </span><span class="choice">④to forgive him.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">085.</span>
+    <span class="problem-text"><span class="choice">①The letter I was waiting for 2 didn't arrive because it has been sent </span><span class="choice">④to my old address.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">086.</span>
+    <span class="problem-text">Before 1970 <span class="choice">①many technological advances 2 have been made in the field of computer science, </span><span class="choice">③which resulted in </span><span class="choice">④more efficient computers.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">087.</span>
+    <span class="problem-text">Choose the one that is NOT correct according to the standard English. 1 It was he who came running into the office with the boxes. 2 Mrs. Green and her sister just bought two new winter coats at the clearance sale. 3 He stopped typing the report because he had to leave for the hospital. 4 The president went fishing after he has finished the breakfast.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">088.</span>
+    <span class="problem-text">1 In general, newspapers emphasize current news, <span class="choice">②whereas magazines </span><span class="choice">③are dealing more </span><span class="choice">④with background materials.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">089.</span>
+    <span class="problem-text">The adult mosquito usually lives <span class="choice">①for about thirty days, </span><span class="choice">②although the life span </span><span class="choice">③is varying widely with temperature, humidity, and </span><span class="choice">④other factors of the environment.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">090.</span>
+    <span class="problem-text">It is true that the genes we inherit 2 from our parents <span class="choice">③decide, to some extent, what our health </span><span class="choice">④was like. 0</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">091.</span>
+    <span class="problem-text">While I was studying in one room of our apartment, my roommate in the other room. 1 had had a party 2 was having a party 3 is having a party 4 would have had a party</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">092.</span>
+    <span class="problem-text">While he the poster, a door somewhere behind him opened. 1 is staring at 2 did stare to 3 was staring at 4 looked carefully upon</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">093.</span>
+    <span class="problem-text"><span class="choice">①Weighed down by a mass of trivial details, a housewife </span><span class="choice">② is being fortunate if she does not soon 3 lose all her charm and </span><span class="choice">④three quarters of her intelligence.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">094.</span>
+    <span class="problem-text">From 1923 <span class="choice">①to 1929, Calvin Coolidge, 2 known as a man of </span><span class="choice">③few words, </span><span class="choice">④was being president of the United States.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">095.</span>
+    <span class="problem-text">Choose the one that is NOT correct according to the standard English. 1 I am having a party tonight. Will you join me? 2 I am having a good time with my colleagues. Why should I quit the job? 3 I am having this apartment right now, but I am selling it in two years. 4 I am having a lot of fun with this puzzle book.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">096.</span>
+    <span class="problem-text">I will take full rest as soon as I my project. 1 will complete 2 complete 3 completed 4 am completed</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">097.</span>
+    <span class="problem-text">Please make sure you <span class="choice">②give me 33a ring immediately after you </span><span class="choice">④will get to the destination.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">098.</span>
+    <span class="problem-text"><span class="choice">①As soon as 2 these misunderstandings </span><span class="choice">③will be straightened out, we </span><span class="choice">④will be able to proceed.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">099.</span>
+    <span class="problem-text">Please <span class="choice">①dispose of food and 2 beverage containers </span><span class="choice">③as you will leave the auditorium.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">100.</span>
+    <span class="problem-text">If they <span class="choice">①will get a warning of a cyclone or a tidal wave, they </span><span class="choice">②will climb onto their roofs and tie </span><span class="choice">③themselves and their family down, hoping that the rushing waters will carry them away and put them </span><span class="choice">④safely.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">101.</span>
+    <span class="problem-text">Mary quite ill for the past few days. 1 will be has been 2 is 4 had been</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">102.</span>
+    <span class="problem-text">It has always been thought 2 that cell mutation <span class="choice">③is a random event; however, geneticists </span><span class="choice">④find evidence to the contrary over the past two years.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">103.</span>
+    <span class="problem-text">Doctoral students who are preparing to take their qualifying exams have been studying in the library every night the last three months. 1 until for 2 since 4 from</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">104.</span>
+    <span class="problem-text">The famous painting has been hanging 1 on that room for a long time 2 on that wall many years ago 3 on that wall for many years 4 on that wall in 1988</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">105.</span>
+    <span class="problem-text">A: How long have you been in Korea? B: Since September. C: Oh, so by Christmas you for three months. here 1 will have been 2 are 3 would be 4 will be</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">106.</span>
+    <span class="problem-text">1 The euro is not new: <span class="choice">②it's used in electronic transactions and 33by banks and international </span><span class="choice">④businesses since January 1999.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">107.</span>
+    <span class="problem-text">Choose the one that is BEST according to the standard English. 1 The computer market has grown since it is early 1970s. 2 The computer market looks grown since the early 1970s. 3 The computer market grew from the time of early 1970s. 4 The computer market has seen very large growth since the early 1970s.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">108.</span>
+    <span class="problem-text">My brother has been <span class="choice">①pursuing a 2 career in medical research </span><span class="choice">③until he </span><span class="choice">④graduated last May.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">109.</span>
+    <span class="problem-text">1 By the time | <span class="choice">②reached the bank, the doors </span><span class="choice">③were closed; I </span><span class="choice">④could not cash my check.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">110.</span>
+    <span class="problem-text">All trainers eighty hours of instruction by the end of March. 1 complete 2 will be completing 3 will have completed 4 have completed</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">111.</span>
+    <span class="problem-text"><span class="choice">① By the time the vacation is </span><span class="choice">②over, the children </span><span class="choice">③would finish </span><span class="choice">④their assignments.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">112.</span>
+    <span class="problem-text">By the time the mayor gets to his office, his secretary for Santa Barbara. 1 will have left 2 left 3 is leaving 4 will leave</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">113.</span>
+    <span class="problem-text">Have you ever been to New York ? 1 before 2 prior 3 ago 4 previous</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">114.</span>
+    <span class="problem-text">A: Has Nick finished his work yet? B: Yes, he half an hour ago. 1 has finished 2 was finishing 3 finishes 4 finished</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">115.</span>
+    <span class="problem-text">Years Dago the people of what is now the Pacific Northwest 2 begins to develop an economic system <span class="choice">③based </span><span class="choice">④mostly on fishing.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">116.</span>
+    <span class="problem-text">For the recent exhibition, the museum <span class="choice">①acquired a rock </span><span class="choice">②from a volcano that </span><span class="choice">③has erupted Amore than two thousand years ago.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">117.</span>
+    <span class="problem-text">1 Learning a foreign language is especially difficult for <span class="choice">②those who </span><span class="choice">③had never learned </span><span class="choice">④one before.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">118.</span>
+    <span class="problem-text">When George Moore began to write, This style was poor; it gave <span class="choice">②the impression that he </span><span class="choice">③writes on wrapping paper </span><span class="choice">④with a blunt pencil.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">119.</span>
+    <span class="problem-text">President Lincoln, walking <span class="choice">①with a friend, turned back to assist a beetle that </span><span class="choice">②lie on </span><span class="choice">③its back, legs clawing the air, vainly </span><span class="choice">④trying to turn itself over.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">120.</span>
+    <span class="problem-text">The last time Da flu epidemic was named <span class="choice">②after Hong Kong, nobody 3 there </span><span class="choice">④knows about the ducks and chickens.</span></span>
+  </div>
+  <div class="back-top"><a href="#top">↑ 맨 위로</a></div>
+  <div class="chapter-header" id="ch5">
+    <h2>Chapter 05. 가정법</h2>
+    <div class="topic-note">토픽: 029~039</div>
+  </div>
+  <div class="problem">
+    <span class="problem-num">121.</span>
+    <span class="problem-text">If she the manager, she would not treat us so severely. 1 were 2 are 3 is 4 had been</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">122.</span>
+    <span class="problem-text">1 <span class="choice">①would be able to finish </span><span class="choice">②all my work if the day 33was thirty </span><span class="choice">④hours long.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">123.</span>
+    <span class="problem-text">If I speak English as well as you do, I'd be very happy. 1 may 3 will 2 can 4 could</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">124.</span>
+    <span class="problem-text">A: What do you think about German? B: If I had known German was so difficult, I it up. 1 would never have taken 2 would never take 3 will never take 4 would never had taken</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">125.</span>
+    <span class="problem-text">A friend of mine said boastfully that he abroad if he had only wanted to. 1 could have gone 2 could have been gone 3 can have gone 4 could go</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">126.</span>
+    <span class="problem-text">The human race long ago if people had ceased to aid each other. We cannot exist without mutual help. No one who has the power help can refuse it without guilt. 1 will be perished - to grant 2 would have perished - of granting 3 should have perished - of having granted 4 have been perished - to have granted</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">127.</span>
+    <span class="problem-text">If I had not missed my bus, I at school by now. 1 am 3 would be 2 were 4 would have been</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">128.</span>
+    <span class="problem-text">If the United States had built more homes for <span class="choice">②the poor in 2000, the 3 housing problems in some parts of this country 4 wouldn't have been so serious now.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">129.</span>
+    <span class="problem-text">Choose the one that is CORRECT according to the standard English. 1 The foreigner wants to marry with the beautiful Korean girl. 2 We took care his children when he left from Seoul. 3 You had better have that tooth to pull out. 4 Had he not died in the war, he would be 30 years old.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">130.</span>
+    <span class="problem-text">Given that the boy has always lived up to the expectations of those around him, if the boy they would be very surprised and shocked. 1 failed 3 had failed 4 - 2 was to fail 4 were to fail</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">131.</span>
+    <span class="problem-text">If any signer of the Constitution <span class="choice">①was to return to life 2 for a day, his opinion 33of our amendments </span><span class="choice">④would be interesting.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">132.</span>
+    <span class="problem-text">during my absence, please take a message. 1 If anyone will call 2 Would anyone call 3 Should anyone call 4 If anyone will have called</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">133.</span>
+    <span class="problem-text">1 Should a foreign student 2 needing <span class="choice">③help, he or she must see the foreign student advisor.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">134.</span>
+    <span class="problem-text">cut away, the wheel could be strengthened with struts or crossbars. 1 Were large sections of a wheel 2 Large sections of a wheel 3 Large sections of a wheel were 4 Large sections of a wheel to</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">135.</span>
+    <span class="problem-text">I known you were ill, I'd have called to see you. 1 If 2 Had 3 When 4 Should</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">136.</span>
+    <span class="problem-text">better, the team would have been able to defeat the opponent. 1 If it prepares 2 If prepares 3 Preparing 4 Had it prepared</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">137.</span>
+    <span class="problem-text">I would never have encouraged you to go into the field it would be so stressful for you. I'm sorry it's been so difficult for you. 1 had | known 2 and I had known 3 should I know 4 but I knew</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">138.</span>
+    <span class="problem-text">Many of our most successful men, <span class="choice">④had they been able to choose 2 for themselves, 3 would selected some quite different profession ④from that in which they have made their fortunes.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">139.</span>
+    <span class="problem-text">Choose the one that is NOT correct according to the standard English. your help, I should have failed. 1 But for 2 Without 3 If it were not for 4 Had it not been for</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">140.</span>
+    <span class="problem-text">the baby-sitter, they would not have been able to go to the rock concert last night. 1 Were it not for 2 If it has not been for 3 If it had not been for 4 Having it not been for</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">141.</span>
+    <span class="problem-text">Frankly, I wish he our problems a little better. 1 understood 3 understand 2 understands 4 can understand</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">142.</span>
+    <span class="problem-text">I wish you such a bad cold, because I'm sure you would have enjoyed the concert. 1 hadn't 2 wouldn't have 3 hadn't had 4 wouldn't have had</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">143.</span>
+    <span class="problem-text">It has been raining for several weeks; I wish 1 it would stop raining before tomorrow 2 | could stop it raining before tomorrow 3 it will stop raining before tomorrow 4 it would stop to rain before tomorrow</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">144.</span>
+    <span class="problem-text">That American <span class="choice">①speaks Korean </span><span class="choice">②as fluently </span><span class="choice">③as if he </span><span class="choice">④is a Korean.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">145.</span>
+    <span class="problem-text">He looked like he were in <span class="choice">②some strange land where </span><span class="choice">③dwarves were </span><span class="choice">④playing about in the garden.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">146.</span>
+    <span class="problem-text">The wind lulls as if 1 it feared to waken them 2 it must waken them 3 it fears to waken them 4 it is going to awaken them</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">147.</span>
+    <span class="problem-text">She looked at me as if she never seen me before. 1 had 2 is has 4 was</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">148.</span>
+    <span class="problem-text">James looked as if 1 he saw a ghost 2 he has seen a ghost 3 he was seeing a ghost 4 he had seen a ghost</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">149.</span>
+    <span class="problem-text">It's about time you to work; I mean, you are supposed to work on the project now. <span class="choice">①① go 2 had gone 3 went 4 have gone</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">150.</span>
+    <span class="problem-text">A: What will you do during Winter vacation? B: I don't know, but it's about time on something. 1 I'm deciding 2 I'd decided 3 I'll decide 4 I decided</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">151.</span>
+    <span class="problem-text">He told me that live with his roommate again next year. 1 he'll rather not 2 he'd rather not 3 he won't rather 4 he'd rather didn't</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">152.</span>
+    <span class="problem-text">A: Did you criticize him for his mistakes? B: Yes, but it. 1 I'd not rather 2 I'd rather not have done 3 I'd better not do 4 I'd rather not doing</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">153.</span>
+    <span class="problem-text">A: John wants to see you today. B: I would rather he tomorrow than today. 1 come 2 came 3 should come 4 has come</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">154.</span>
+    <span class="problem-text">Many a <span class="choice">①scientist suggested </span><span class="choice">②to me that Agassiz go back to his fossil fish and </span><span class="choice">③left geology </span><span class="choice">④to the experts.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">155.</span>
+    <span class="problem-text">Since his blood pressure is <span class="choice">①much higher </span><span class="choice">②than it should be, she insists that he </span><span class="choice">④will not smoke.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">156.</span>
+    <span class="problem-text">Jean's uncle, complaining of his back pain, moved in the hotel. 1 not staying 2 not to stay 3 that he not stay 4 staying not</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">157.</span>
+    <span class="problem-text">It is necessary that an applicant the form before January 13. 1 fills out and sends in 2 will fill out and send in 3 may fill out and send in 4 fill out and send in</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">158.</span>
+    <span class="problem-text">It is not always necessary the TOEIC examination to be admitted to the company. 1 to have to take 2 that you must take 3 to take 4 that you have to take</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">159.</span>
+    <span class="problem-text">| <span class="choice">①would have done the assignment </span><span class="choice">②earlier, but I had met an old friend of mine </span><span class="choice">④on my way home.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">160.</span>
+    <span class="problem-text">Sue 1 could have passed the exam, but she <span class="choice">②might not have enough time to study since her grandfather </span><span class="choice">③died three days </span><span class="choice">④before the exam. 7</span></span>
+  </div>
+  <div class="back-top"><a href="#top">↑ 맨 위로</a></div>
+  <div class="chapter-header" id="ch6">
+    <h2>Chapter 06. 관계대명사</h2>
+    <div class="topic-note">토픽: 040~049</div>
+  </div>
+  <div class="problem">
+    <span class="problem-num">161.</span>
+    <span class="problem-text">Censors delete scenes from movies shown younger family on television members should not see. 1 that thinks 3 to think 2 that they think 4 when thinking</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">162.</span>
+    <span class="problem-text">I will employ the woman they say speaks English fluently. 1 to whom 2 who ) what 4 whatever</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">163.</span>
+    <span class="problem-text">Jane is the only one of the girls <span class="choice">②whom as you know </span><span class="choice">③is not desirable </span><span class="choice">④for the group.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">164.</span>
+    <span class="problem-text">In the rain I met a gentleman 1 believed to be a professor. 1 who 3 of whom 2 whom 4 whose</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">165.</span>
+    <span class="problem-text">A person which kidneys have failed cannot 2 do without the medical <span class="choice">③treatment known </span><span class="choice">④as dialysis.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">166.</span>
+    <span class="problem-text">The modern Olympic Games began in Athens in 1896 as a result 1 of the initiative of Baron Pierre de Coubertin, a French educator <span class="choice">②who </span><span class="choice">③desire was to promote international </span><span class="choice">④understanding through athletics.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">167.</span>
+    <span class="problem-text">The number and percentage of patients <span class="choice">①with chronic disease, </span><span class="choice">②whom the diagnosis </span><span class="choice">③is already known, are 4 increasing.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">168.</span>
+    <span class="problem-text">Look at the mountain is covered with snow. 1 the top in which 2 of which top 3 what top 4 whose top</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">169.</span>
+    <span class="problem-text">He made the journey in a 30-foot sailboat, short-wave radio served as his only link with the outside world. 1 of which 2 what ) whom 4 whose</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">170.</span>
+    <span class="problem-text">Mark Twain, real name was Samuel Langhorne clemens, wrote many world-famous novels. 1 who had as his 2 whose the ) whose 4 in spite of his</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">171.</span>
+    <span class="problem-text">From time to time we must look up words 1 meaning of which we do not know 2 whose meanings we are not familiar 3 we do not know their meanings 4 whose meanings we do not know</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">172.</span>
+    <span class="problem-text">I also have to look at my brother, have done so many times in my life, when I'm faced with a situation. I 1 which 3 whom 2 who <span class="choice">④ that</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">173.</span>
+    <span class="problem-text">He was the first man the party. came here at 1 who 3 that ) whom which</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">174.</span>
+    <span class="problem-text">Humus, a substance <span class="choice">①found in soil, is 2 soft and spongy and enables plant roots to send out tiny hairs through </span><span class="choice">④that they absorb water and food.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">175.</span>
+    <span class="problem-text">Adolescence is the time of life 1 between childhood and adulthood. The word is <span class="choice">② derived from the Latin word adolescere, </span><span class="choice">④that means "to grow into maturity."</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">176.</span>
+    <span class="problem-text">The tax cut is Bush's most profound attack on Clinton's economic legacy. In 1993, without Republican support, Clinton 2 pushed through a budget <span class="choice">③what raised taxes on the affluent and </span><span class="choice">④sliced into the burgeoning deficit.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">177.</span>
+    <span class="problem-text">chiefly lies behind slang is simply a kind of linguistic exuberance, an excess of world-making energy. 1 What 2 That 3 It How</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">178.</span>
+    <span class="problem-text">had been deposited in the bank was withdrawn. 1 The money 2 That money What money 4 Some money</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">179.</span>
+    <span class="problem-text">My parents have made me I am. 1 what 2 where 3 those who 4 whose</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">180.</span>
+    <span class="problem-text">Color, line, mass, space, and texture are to a painter to an author. 1 are what words 2 words are what 3 what are words 4 what words are</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">181.</span>
+    <span class="problem-text">No one knows exactly how big China's Internet police force is these days, although estimates run as high as 40,000. But its sophistication is greater than ever. 1 whatever its size 2 however its size 3 whatever it's size is 4 however it's size is</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">182.</span>
+    <span class="problem-text">Whatever in the future, I will never forget your kindness. 1 happened 2 happen 3 happens 4 did happen</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">183.</span>
+    <span class="problem-text">A: What do you think of John? B: He has no sense 1 wherever 2 however 3 whatsoever 4 nevertheless</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">184.</span>
+    <span class="problem-text">Lawmakers eager to promote a piece of legislation no doubt feel thwarted their bill languishes in committee. 1 however whatever 2 whenever whomever</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">185.</span>
+    <span class="problem-text">1 Whoever inspected <span class="choice">②this radio </span><span class="choice">③should have put </span><span class="choice">④their identification number on the box.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">186.</span>
+    <span class="problem-text">They were prepared to give their book to came here first. 1 whomever 2 whom 3 whoever 4 those</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">187.</span>
+    <span class="problem-text">That rich man offered a reward to restore his lost car. 1 who should whom should 3 whoever should whomever should</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">188.</span>
+    <span class="problem-text">These materials should be stored in a dry place temperature extremes are minimal. 1 which what 2 how 4 where</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">189.</span>
+    <span class="problem-text">During the War of 1812, the British attacked Washington, D.C., and the White House, the president works and lives, was burned and important government buildings were destroyed. 1 which what 2 where that</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">190.</span>
+    <span class="problem-text">In the United States, is the most concentrated is New Orleans. 1 French influence the city 2 the city where French influence 3 where the city influences French 4 where the French influence the city</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">191.</span>
+    <span class="problem-text">In the multi-cultural universe where I live in, it's safe not to worry about 2 explaining the story of Passover because if people don't <span class="choice">③hear it from me, they'll hear it </span><span class="choice">④some other way.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">192.</span>
+    <span class="problem-text">The computer has dramatically affected photographic lenses are constructed. 1 the way how 2 that the way 3 which way do 4 the way</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">193.</span>
+    <span class="problem-text">A: What do you think of the nation's economic future? B: it is doomed. 1 The way I look 2 The way I look at it 3 The way how I look 4 How in which I look at it</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">194.</span>
+    <span class="problem-text">If people cannot rely on the news <span class="choice">①for facts, journalism has no reason for 2 being. The principal reason journalists </span><span class="choice">③existing in society is that people have a need to </span><span class="choice">④be informed of and 5 comprehend the details of experience.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">195.</span>
+    <span class="problem-text">There is not one of us help you. 1 which 3 whoever 2 whose 4 but wishes to</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">196.</span>
+    <span class="problem-text">모든 사람은 실수를 한다. 1 Every man cannot commit any error. 2 All men don't commit errors. 3 A man cannot commit errors. 4 There is no man that commit errors. 5 There is no man but commits errors.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">197.</span>
+    <span class="problem-text">If, through laziness, you read at a slower rate than the rate you are able to comprehend, there is great temptation for your mind to wander. 1 at which 3 as if 2 which 4 through which</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">198.</span>
+    <span class="problem-text">Recently, police officers and lawyers 1 have paid more attention to crimes 2 associated with marital violence, <span class="choice">③and to the prevention of situations in </span><span class="choice">④which tend to occur.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">199.</span>
+    <span class="problem-text">Since | 1 have been elected to do the 2 duties of the President of our country, I wish to 33thank all of the people here for the great favor Awhich they have looked to me.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">200.</span>
+    <span class="problem-text">Choose the one that is CORRECT according to the standard English. 1 The movie that Loretta and Jack went yesterday was Rain Man, which they loved. 2 My economics professor will let me take my final exam after vacation, for which I am very grateful. 3 96.5 FM is one radio station that I listen a lot. 4 This is the kind of plant that you usually have to fertilize it regularly.</span>
+  </div>
+  <div class="back-top"><a href="#top">↑ 맨 위로</a></div>
+  <div class="chapter-header" id="ch7">
+    <h2>Chapter 07. 분사 / 접속사</h2>
+    <div class="topic-note">토픽: 051~059</div>
+  </div>
+  <div class="problem">
+    <span class="problem-num">201.</span>
+    <span class="problem-text"><span class="choice">①When 2 frightening or exciting, elephants sometimes </span><span class="choice">③use their trunks to make </span><span class="choice">④a loud, shrill cry.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">202.</span>
+    <span class="problem-text">The professor <span class="choice">①said that 2 our examinations were 33disappointed and that he Awould give a new test.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">203.</span>
+    <span class="problem-text">1 Even if Detroit could provide <span class="choice">②nonpolluted cars by the original deadline to meet </span><span class="choice">③prescribed Federal standards for clean air, the effect in big cities would be slight because </span><span class="choice">④only new cars would be properly equipped.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">204.</span>
+    <span class="problem-text">1 Because of the flood, we will 2 have to drink <span class="choice">③bottling water </span><span class="choice">④instead of tap water.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">205.</span>
+    <span class="problem-text">1 Freezing foods are the 2 fastest 3 growing segment of the food <span class="choice">④industry.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">206.</span>
+    <span class="problem-text"><span class="choice">①Two of the oldest and 2 most 3 developing money markets are those of the United States and Great britain.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">207.</span>
+    <span class="problem-text">1 Reading two novels 2 by Hemingway during the summer vacation, I <span class="choice">③look forward to reading </span><span class="choice">④more of his works.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">208.</span>
+    <span class="problem-text">1 Having eaten the cherry pie, I 2 struck several pits and <span class="choice">③nearly </span><span class="choice">④broke a tooth.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">209.</span>
+    <span class="problem-text">North Korea Foreign Ministry officials <span class="choice">①were 2 reportedly left all but speechless, 3 having been cheerfully assumed that Kelly was coming to town with an offer of </span><span class="choice">④renewed aid.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">210.</span>
+    <span class="problem-text">1 Forbidding to speak <span class="choice">②to each other, the 3 Danes communicate in stolen glances and occasional whispered words. This is not the way their new life </span><span class="choice">④was supposed to work out.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">211.</span>
+    <span class="problem-text">1 Properly using, a good quality 2 polarizing filter can produce <span class="choice">③images of striking beauty by deepening and </span><span class="choice">④subtly changing the colors.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">212.</span>
+    <span class="problem-text"><span class="choice">①The side of Rousseau's thought that arouses nostalgia for nature came to the United States </span><span class="choice">②early on. </span><span class="choice">③Recently, </span><span class="choice">④joining to many other movements, it 5came to full flower and found a wide public.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">213.</span>
+    <span class="problem-text">I don't know him. 1 Meeting not him before 2 Not having met him before 3 As not meeting his before 4 Having not met him before</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">214.</span>
+    <span class="problem-text">"Come on, Lisa. How can I feel relaxed me like that?" with 1 his watching 2 him to watch 3 him watching 4 him to be watching</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">215.</span>
+    <span class="problem-text">Fortune is proud to announce its second annual competition for Asia's best business plans. The <span class="choice">②winning submission will 3 advance to the semi-final round of E-Chron's annual business competition, with that winner </span><span class="choice">④walks away with up to $1,000,000 5 in prize awards.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">216.</span>
+    <span class="problem-text">A few years ago, <span class="choice">①traveling through Italy, the idea for a history 2 of Florentine architecture </span><span class="choice">③occurred </span><span class="choice">④to him.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">217.</span>
+    <span class="problem-text">Seriously <span class="choice">①burned in a terrible car accident, the doctor was not sure that John 2 could be protected from infection </span><span class="choice">③long enough for his body to begin to heal </span><span class="choice">④itself.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">218.</span>
+    <span class="problem-text">Choose the one that is CORRECT according to the standard English. 1 Thought to be a cause of teenage skin problems, people with such problems should avoid the plant. 2 Known for its nutritional value, chocolate is included in the diets of astronauts. 3 Sweetened with sugar, the children consumed the drink with delight. 4 Roasted and shelled, workers then grind the beans.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">219.</span>
+    <span class="problem-text">Pyongyang <span class="choice">①①is now pursuing a policy that </span><span class="choice">②calls for improved economic and technical ties with all nations, 33 included capitalist countries that have no diplomatic ties with </span><span class="choice">④North Korea.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">220.</span>
+    <span class="problem-text">We offer an excellent benefits package, medical and life insurance 1 concerned 3 included 2 concerning 4 regarding</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">221.</span>
+    <span class="problem-text">I I've looked everywhere for them can't find them anywhere. <span class="choice">①① ; however 3 though 2 but 4 while</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">222.</span>
+    <span class="problem-text">These egg substitutes are not really eggs, they look somewhat like eggs when they are cooked. 1 and 3 so 2 but whereas</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">223.</span>
+    <span class="problem-text">In addition, she finds herself eating food that has just been taken from the refrigerator, she always ate her grandmother's freshly cooked meals in her home. 1 and 3 so 2 because A) whereas</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">224.</span>
+    <span class="problem-text">"There is no general mythology today", Campbell says, "2or can there ever be again." Our lives are too <span class="choice">③greatly various in their backgrounds, aims and possibilities for any single order of symbols to work effectively </span><span class="choice">④on us all.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">225.</span>
+    <span class="problem-text">The adult mosquito usually lives, <span class="choice">①for about thirty days, 2 although the life span varies 33widely with temperature, Ahumid and other factors of the environment.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">226.</span>
+    <span class="problem-text">Standardized tests, supposed indicators 1 of intellect, aptitude, readiness, knowledge, or <span class="choice">②to ability, are </span><span class="choice">③important in the college </span><span class="choice">④admissions process.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">227.</span>
+    <span class="problem-text"><span class="choice">① The idea that learning is a lifelong process </span><span class="choice">②has been expressed by philosophers and educations </span><span class="choice">④throughout the centuries.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">228.</span>
+    <span class="problem-text">Richard and Angela went out together several times: <span class="choice">①to a movie, to a party with some friends, and </span><span class="choice">②then dinner. They seemed to have a lot </span><span class="choice">③in common and Angela commented that she couldn't remember </span><span class="choice">④having such a good time.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">229.</span>
+    <span class="problem-text">"Sexual harassment" is a term <span class="choice">①that is used to describe behavior at work that is 2 sexually offense or inappropriate. It includes behavior that </span><span class="choice">③makes an employee feel uncomfortable because of his or her gender, but it can also include any behavior that is sexual </span><span class="choice">④in nature.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">230.</span>
+    <span class="problem-text">The great wastes of the southeast quadrant of Saudi Arabia are at once forbiddingly empty, climatically harsh, 1 and hauntingly beautiful 2 while their beauties are haunting 3 with haunting beauties 4 but their beauty is haunting</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">231.</span>
+    <span class="problem-text">the nuclear energy is used well or ill depends on the morality of the world. 1 What 2 That 3 Whether 4 Which</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">232.</span>
+    <span class="problem-text">A: Susan asked if she should get a ride with us to the party. B: Well, I'll speak to her. we will have room is still not clear. 1 What if 3 Only if 4 Whether or not 2 If or not so</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">233.</span>
+    <span class="problem-text">The early years of the United States government were characterized by a debate concerning or individual states should have more power. 1 whether the federal government 2 either the federal government 3 that the federal government 4 the federal government</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">234.</span>
+    <span class="problem-text">Choose the one that is NOT correct according to the standard English. 1 I don't know whether this answer is correct or not. 2 I don't know whether or not this answer is correct. 3 I don't know that this answer is correct or not. 4 I don't know if this answer is correct.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">235.</span>
+    <span class="problem-text">more than 2000 minerals are known, nearly all rocks are formed from seven mineral groups. 1 In spite of 2 However 3 Despite 4 Although</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">236.</span>
+    <span class="problem-text">Spider monkeys are the best climbers in the jungle, they do not have thumbs. 1 nevertheless 2 despite 3 although 4 for all</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">237.</span>
+    <span class="problem-text"><span class="choice">①Hardly he had entered </span><span class="choice">②the office when he realized that he </span><span class="choice">③had forgotten </span><span class="choice">④his wallet.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">238.</span>
+    <span class="problem-text">Choose the one that is CORRECT according to the standard English. 1 He refused to go except I went him. 2 No sooner had he left, it began to rain. 3 I'm sure it will be dark before he gets there. 4 A girl as she was, she was very brave.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">239.</span>
+    <span class="problem-text">The fire fighters will not respond the call is verified. <span class="choice">①① by 3 although 2 until 4 and</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">240.</span>
+    <span class="problem-text">1 None until the negotiations were <span class="choice">②over </span><span class="choice">③did Mr. Peterson </span><span class="choice">④reveal the company's intentions.</span></span>
+  </div>
+  <div class="back-top"><a href="#top">↑ 맨 위로</a></div>
+  <div class="chapter-header" id="ch8">
+    <h2>Chapter 08. 동명사 / 부정사</h2>
+    <div class="topic-note">토픽: 060~069</div>
+  </div>
+  <div class="problem">
+    <span class="problem-num">241.</span>
+    <span class="problem-text">The committee members resented the meeting. of <span class="choice">① the president that he did not tell them 2 the president not to inform them 3 the president's not informing them 4 that the president had failed informing themselves</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">242.</span>
+    <span class="problem-text">Unless an athlete is <span class="choice">①physically fit, there is no sense in </span><span class="choice">②him sacrificing </span><span class="choice">③himself for victory in any game and, therefore, facing a </span><span class="choice">④lifetime injury.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">243.</span>
+    <span class="problem-text">You don't object you by your first name, do you? 1 to my calling 2 that I am call 3 that I call 4 for calling</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">244.</span>
+    <span class="problem-text">I do not understand <span class="choice">①why Mother 2 should object to </span><span class="choice">③me having played the piano </span><span class="choice">④at the party.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">245.</span>
+    <span class="problem-text">John, scolded by his teacher, finally confessed to the book. 1 stealing 3 have stolen 2 steal 4 having stolen</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">246.</span>
+    <span class="problem-text">The director of the department <span class="choice">①advised the new employees to avoid </span><span class="choice">②to waste time </span><span class="choice">③studying methods that were </span><span class="choice">④so out-of-date.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">247.</span>
+    <span class="problem-text">The weekend <span class="choice">①before Christmas, she had to finish </span><span class="choice">②to buy gifts, prepare a holiday dinner </span><span class="choice">③for 10 persons and organize birthday parties for </span><span class="choice">④all three of her young children.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">248.</span>
+    <span class="problem-text">Koreans <span class="choice">④are planning to stop <span class="choice"></span>②to smoke </span><span class="choice">③since the government </span><span class="choice">④has required health warnings on cigarette packages.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">249.</span>
+    <span class="problem-text">If you're 1 planning <span class="choice">②to be near the post office today, </span><span class="choice">③could you stop </span><span class="choice">④buying some stamps?</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">250.</span>
+    <span class="problem-text">The college administrator acknowledged my letter of recommendation. 1 receiving 2 to receive 3 to have received 4 having been received</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">251.</span>
+    <span class="problem-text">I was satisfied with his devotion to <span class="choice">②get his job </span><span class="choice">③done well </span><span class="choice">④against all odds.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">252.</span>
+    <span class="problem-text">11 Using a lattice of lasers and ultra-cold temperatures, German scientists 2 have made a new type of matter that could <span class="choice">③overcome an obstacle to </span><span class="choice">④make quantum computers.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">253.</span>
+    <span class="problem-text">Choose the one that is NOT correct according to the standard English. 1 Gas lamps lit the street. 2 I must remember seeing him next Sunday. 3 | was always having trouble with my teeth. 4 We enjoyed too much and we nearly missed the plane.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">254.</span>
+    <span class="problem-text">Choose the one that is NOT correct according to the standard English. 1 | stopped buying coffee; it was too expensive. 2 I don't remember to mail the letter, but I think I did. 3 I'll never forget meeting Todd. He was so kind. 4 I regret to tell you that you failed the exam.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">255.</span>
+    <span class="problem-text">Several of these washers are out of order and 1 need to be repairing 2 require that they be repaired 3 repairing is required of them 4 need to be repaired</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">256.</span>
+    <span class="problem-text"><span class="choice">①Had he not believed that 2 every individual </span><span class="choice">③belongs to history, his story </span><span class="choice">④would not have been 6 worth of telling.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">257.</span>
+    <span class="problem-text">If you are used <span class="choice">①to analyze texts, you will be able to formulate a clear statement of </span><span class="choice">②what your draft </span><span class="choice">③turned out Ato be about.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">258.</span>
+    <span class="problem-text">Elizabeth is <span class="choice">①looking forward to </span><span class="choice">②go to Europe after she </span><span class="choice">③finishes her studies Aat the university.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">259.</span>
+    <span class="problem-text">Animal rights groups are opposed health and beauty products on animals. 1 to test 3 testing 2 tests of 4 to testing</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">260.</span>
+    <span class="problem-text">"With the country's growing credit crunch, we do not think lowering the call rate would contribute much the economy," said the governor of central bank. 1 boost 3 to boost 2 boosting 4 to boosting</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">261.</span>
+    <span class="problem-text">It is necessary how to cope with the new problems. 1 his deciding 2 what he decides 3 that he decides 4 for him to decide</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">262.</span>
+    <span class="problem-text">Since money is greatly needed, this is the time 2 for all of you <span class="choice">③to giving </span><span class="choice">④generously to the school.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">263.</span>
+    <span class="problem-text">a state to survive more than a fleeting historical moment, it must have the loyalty of its residents. 1 If 3 Then 2 For 4 Of</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">264.</span>
+    <span class="problem-text">In order children be treated with respect. they must 1 that -- felt loved 2 to -- for feel loved 3 for -- to feel loved 4 that -- to feel loved</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">265.</span>
+    <span class="problem-text">Men as well as women need some flexibility they are to be healthy. 1 or 3 if 2 but 4 therefore</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">266.</span>
+    <span class="problem-text">If the CIA something like these devices had to be invented. 1 were to exist 2 had not existed ) does not exist 4 was to exist</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">267.</span>
+    <span class="problem-text">1 the shipping department to make an overall revise on its shipping procedure. 1 asked for 2 called on 3 call for 4 urged</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">268.</span>
+    <span class="problem-text">She demanded this small present as a token of her appreciation. 1 me to accept 2 for me to accept 3 my acception 4 | accept</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">269.</span>
+    <span class="problem-text"><span class="choice">① The portable computer 2 allows people </span><span class="choice">③who are away from offices to </span><span class="choice">④continue to working.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">270.</span>
+    <span class="problem-text">As heart disease continues 2 being the number-one killer in the United States, researchers have become increasingly interested in <span class="choice">④identifying the potential risk factors. 8</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">271.</span>
+    <span class="problem-text">Space exploration is <span class="choice">①so costly that </span><span class="choice">② no single nation </span><span class="choice">③can hope </span><span class="choice">④sustaining a major program indefinitely.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">272.</span>
+    <span class="problem-text"><span class="choice">① There being 2 low sales, companies </span><span class="choice">③wanted that they were able to develop new </span><span class="choice">④products.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">273.</span>
+    <span class="problem-text">Mannerist artists artistic invention and imagination more important than the faithful reproduction of nature. 1 expected to consider 2 hoped people to consider 3 wanted that people would consider 4 expected people to be considered</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">274.</span>
+    <span class="problem-text">People laugh when they are nervous or afraid because they hope 1 others to pretend in control 2 to pretend being in control 3 to pretend to be in control 4 they can pretend being in control</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">275.</span>
+    <span class="problem-text">The original Olympic races are said with Oenomaus, who used to compel any suitor who sought his daughter's hand against him in a race. 1 to begin - to be running 2 to be begun - run 3 to have begun - to run 4 as having begun - running</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">276.</span>
+    <span class="problem-text"><span class="choice">①At the beginning of that year a particularly bad smog, </span><span class="choice">②which lasted for many weeks, </span><span class="choice">③was estimated </span><span class="choice">④to be caused between 4,000 and 8,000 deaths.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">277.</span>
+    <span class="problem-text">I had hoped <span class="choice">①to have learned French before my trip </span><span class="choice">②to Paris, but | </span><span class="choice">③did not have any </span><span class="choice">④extra money for a course.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">278.</span>
+    <span class="problem-text">1 After studying hard 2 to become an accountant, he discovered that 33it was not what he wanted <span class="choice">④to do.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">279.</span>
+    <span class="problem-text">Choose the one that is CORRECT according to the standard English. 1 | considered marrying her, but decided not. 2 | considered to marry her, but decide not to. 3 | considered marrying her, but decided not to. 4 | considered marrying with her, but decided not to.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">280.</span>
+    <span class="problem-text"><span class="choice">①To completely solve the problem </span><span class="choice">②requires more thought </span><span class="choice">③than we have given </span><span class="choice">④so far. 9</span></span>
+  </div>
+  <div class="back-top"><a href="#top">↑ 맨 위로</a></div>
+  <div class="chapter-header" id="ch9">
+    <h2>Chapter 09. 수동태 / 조동사</h2>
+    <div class="topic-note">토픽: 070~079</div>
+  </div>
+  <div class="problem">
+    <span class="problem-num">281.</span>
+    <span class="problem-text"><span class="choice">①A lot of baby boomers </span><span class="choice">②feel that a terrible thing </span><span class="choice">③is happened to the </span><span class="choice">④moral fiber of this country.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">282.</span>
+    <span class="problem-text">Whenever ®election are occurred in this country, there <span class="choice">②is often a candidate, as well as a few media broadcasters, </span><span class="choice">③who becomes Aan immortalized figure on the landscape of American history.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">283.</span>
+    <span class="problem-text">Classicism which <span class="choice">①was originated in Greece and </span><span class="choice">②continued in ancient Rome, was the principal contributor 33to that aspect of our life which </span><span class="choice">④is usually referred to as 5 secular.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">284.</span>
+    <span class="problem-text">Where he was seemed to be is a question <span class="choice">②for the courts to determine, </span><span class="choice">③not television jurors Alike you and me.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">285.</span>
+    <span class="problem-text">Choose the one that is NOT correct according to the standard English. 1 He was killed in the Vietnamese War. 2 William is called Bill for short. 3 His father is resembled by John. 4 This bed was not slept in.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">286.</span>
+    <span class="problem-text">1 Although a lawyer <span class="choice">②by profession and </span><span class="choice">③accustomed public speaking, Sir Robert Borden was not </span><span class="choice">④a great orator.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">287.</span>
+    <span class="problem-text">Now the US Supreme Court, , will have to decide who deserves first crack at those scarce resources. 1 facing with two potential landmark cases 2 which face two potential landmark cases 3 faced with two potential landmark cases 4 faces two potential landmark cases</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">288.</span>
+    <span class="problem-text">Residents of Longbaoshan, a village just 72 km north of Beijing, only have to look out of the window the deserts that are devouring huge swathes of China's once-fertile farm land. 1 to remind 2 to be reminded of 3 to be provided to the chance to look at 4 to be provided by the chance to look at</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">289.</span>
+    <span class="problem-text">Though Johnson knew his serious defects, he <span class="choice">①was broad-minded enough </span><span class="choice">②to appoint the man </span><span class="choice">③to the important position because he was convincing of his ability.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">290.</span>
+    <span class="problem-text">As a novice to the business, Mr. Kim time off work to take care of some personal business. 1 denied 3 was denied 2 will deny 4 had denied</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">291.</span>
+    <span class="problem-text">The Chinese constructed the Great Wall a marvel even today. 1 it is considered 2 which is considered 3 is considered 4 which considered</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">292.</span>
+    <span class="problem-text">Dr. Park, a professor at a prestigious private college in Korea, as one of Korea's greatest researchers of science. 1 is acknowledged 2 has acknowledgement 3 acknowledged 4 acknowledges</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">293.</span>
+    <span class="problem-text">He believes that the desires, having been repressed from consciousness because they are unacceptable to the socialized mind of the dreamer, to emerge even into the dream without disguise. 1 did not allowed 2 had not allowed 3 has not allowed 4 are not allowed</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">294.</span>
+    <span class="problem-text">When both mother and father work outside the home, the lives of all the family members change <span class="choice">①quite a bit. Dad must 2 help out more at home. The older children may </span><span class="choice">④ask to help the housework and ④take care of the younger children.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">295.</span>
+    <span class="problem-text"><span class="choice">①With the advent of Microsoft windows, </span><span class="choice">②many other software makers were </span><span class="choice">③forced upgrade their own products.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">296.</span>
+    <span class="problem-text">The children had been <span class="choice">②said not 33to go </span><span class="choice">④near the water.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">297.</span>
+    <span class="problem-text">He the room by anyone. 1 didn't notice to enter 2 wasn't noticed entering 3 didn't notice enter 4 wasn't noticed to entering</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">298.</span>
+    <span class="problem-text">that the formation of the sun, the planets and other stars began with the condensation of an interstellar gas cloud. 1 The belief 2 To believe 3 Believing 4 It is believed</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">299.</span>
+    <span class="problem-text">Politics to be the art of the impossible. <span class="choice">①① is told 3 is said 2 are told 4 are said</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">300.</span>
+    <span class="problem-text">We to read Macbeth for tomorrow. 1 suppose 2 are supposing 3 are to suppose 4 are supposed</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">301.</span>
+    <span class="problem-text">Ken <span class="choice">①must walk 7 miles </span><span class="choice">②yesterday </span><span class="choice">③because his car Abroke down.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">302.</span>
+    <span class="problem-text">Some of the milk turned sour before it reached the market and away. 1 had to be thrown 2 must be thrown 3 had to throw 4 must throw</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">303.</span>
+    <span class="problem-text">You had not better <span class="choice">②quit your job until you find another one. </span><span class="choice">③Once you are </span><span class="choice">④out of work, you may find it hard to get another.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">304.</span>
+    <span class="problem-text">He said that he 1 would not rather go 2 would rather not go 3 not would rather go 4 would rather go not</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">305.</span>
+    <span class="problem-text">A: Did you finish Lesson 7 today? B: Yes, but I it last Friday. 1 should finish 2 should have finished 3 should be finishing 4 should be finished</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">306.</span>
+    <span class="problem-text">You out yesterday without coat. No wonder you caught cold. 1 would rather not have gone 2 had better not go 3 should have gone 4 need have gone</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">307.</span>
+    <span class="problem-text">A: I wish we'd gone to the beach this weekend. B: You it sooner. 1 should have mentioned about 2 would have mentioned 3 ought to have mentioned on 4 had better have mentioned</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">308.</span>
+    <span class="problem-text">Even in summer this place did not look exactly hospitable; in winter, conditions exceedingly harsh. <span class="choice">①① be 2 have to be must have been 4 should have been</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">309.</span>
+    <span class="problem-text">Choose the one that is CORRECT according to the standard English. 1 He must have been being interrogated by the police then. 2 He must have being been interrogated by the police then. 3 He must be having been interrogated by the police then. 4 He must be being had interrogated by the police then.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">310.</span>
+    <span class="problem-text">That was very kind of you, but you have done it. 1 need not 2 can not 3 may 4 had better</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">311.</span>
+    <span class="problem-text">I think we working on time yesterday. 1 needed start 2 needed to start 3 need have started 4 need to</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">312.</span>
+    <span class="problem-text">I to the movies with her last night. Thus I felt so tired this morning. 1 did not need to go 2 need not have gone 3 need not go 4 do not need to go</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">313.</span>
+    <span class="problem-text">Jane took an umbrella because she thought it was going to rain. But it didn't rain. 1 she should have taken an umbrella 2 she would have taken an umbrella 3 She needn't have taken an umbrella 4 she mustn't have taken an umbrella</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">314.</span>
+    <span class="problem-text">Choose the one that is CORRECT according to the standard English. 1 They always speak low for fear that they should not be overheard. 2 They always speak low for fear of not being overheard. 3 They always speak low lest they be overheard. 4 They always speak low lest they should not be overheard.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">315.</span>
+    <span class="problem-text">Choose the one that is CORRECT according to the standard English. 1 I would smoke, but not now. 2 I used to smoke, but not now. 3 I would smoke, but I don't now. 4 I used to smoking, but not now.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">316.</span>
+    <span class="problem-text">Some reports argue that students <span class="choice">①who used to using a calculator 2 may forget </span><span class="choice">③how to do mental </span><span class="choice">④calculations.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">317.</span>
+    <span class="problem-text">A: Why are you angry with me? I didn't do anything. B: That's just it. You me. Instead, you sat there and did nothing. 1 helped 2 had helped 3 could help 4 could have helped</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">318.</span>
+    <span class="problem-text">A: Please accept my apology for breaking one of your favorite glasses. B: Well, I suppose it might have been worse. All of my glasses 1 won't never be broken 2 must have been broken 3 could have been broken 4 should have been broken</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">319.</span>
+    <span class="problem-text">I intend to move that our committee 2 appoints Tom as chairman, and | <span class="choice">③hope that you </span><span class="choice">④will second my motion.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">320.</span>
+    <span class="problem-text">The judge assented to the suggestion that 1 both of the criminals will soon be set free 2 some of the criminals will soon be guilty only 3 the prisoner be sentenced to death 4 the prisoner shall be sentenced to death</span>
+  </div>
+  <div class="back-top"><a href="#top">↑ 맨 위로</a></div>
+  <div class="chapter-header" id="ch10">
+    <h2>Chapter 10. 비교</h2>
+    <div class="topic-note">토픽: 080~088</div>
+  </div>
+  <div class="problem">
+    <span class="problem-num">321.</span>
+    <span class="problem-text">Wild strawberries are as cultivated strawberries. 1 no less sweeter 2 not sweeter 3 not as sweeter 4 not so sweet</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">322.</span>
+    <span class="problem-text">1 Until Napoleon's dreams of empire led him 2 into the land of the pharaohs, his knowledge about Egypt had been <span class="choice">③as obscurely as the hieroglyphics </span><span class="choice">④on its stone facades.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">323.</span>
+    <span class="problem-text">Employers, at the point of graduation, may not so much treasure a student's grades the habits and attitudes which those grades signify. 1 before 2 than as 4 to</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">324.</span>
+    <span class="problem-text">Living beings have a natural inclination to fill any habitat with as many individuals the nutrients and space in the area will allow. 1 on 2 how 3 as 4 that</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">325.</span>
+    <span class="problem-text">A: How long did you wait? B: I waited there for ten minutes; that seemed hours to me. 1 many 3 as many 4 so much 2 very much</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">326.</span>
+    <span class="problem-text">An elephant can lift a ton with its tusks. 1 so much that 2 it 3 most 4 as much as</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">327.</span>
+    <span class="problem-text">Of the two candidates, I think 1 Mr. Grant is best suited 2 Mr. Grant is suited best 3 Mr. Grant is the better suited 4 that is the better suited of them</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">328.</span>
+    <span class="problem-text">There were two large offices on this floor, served as a conference room. 1 the larger of which 2 the larger of them 3 the largest of which 4 largest of that</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">329.</span>
+    <span class="problem-text">We admire him because he is honest. 1 by far 3 all the more 2 the sooner 4 none the less</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">330.</span>
+    <span class="problem-text">그가 결점이 있음에도 불구하고 나는 여전히 그를 좋아한다. 1 I don't like him because he has few faults. 2 I don't like him the less because he has a few faults. 3 | like him the more because he has a few faults. 4 I like him none the less because he has few faults.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">331.</span>
+    <span class="problem-text">The more citizens who are alert to the possibility of stolen wallets and pocketbooks, thefts there will be. 1 the more 3 the less 2 the fewer 4 much less</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">332.</span>
+    <span class="problem-text">The more distant a star happens to be, the dimmer 1 that seems to us 2 seeming to us 3 seeming to us 4 it seems to us</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">333.</span>
+    <span class="problem-text">The more dangerous <span class="choice">①is the sport, the 2 more enthusiastically people </span><span class="choice">③appear to love </span><span class="choice">④watching it.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">334.</span>
+    <span class="problem-text">1 Most of the telephone 2 systems in Vietnam were installed in the 50's and 60's and are inherently <span class="choice">④much inferior than the modern systems already in use in Malaysia and Thailand.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">335.</span>
+    <span class="problem-text">Everyone has a right to enjoy his liberty, his life. 1 much more 3 indeed 2 much less 4 so</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">336.</span>
+    <span class="problem-text">I don't suggest that he is negligent, still that he is dishonest. 1 more 3 better 2 less worse</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">337.</span>
+    <span class="problem-text">그녀의 누이가 미인인 것처럼 그녀도 미인이다. 1 She is not as beautiful as her sister is. 2 She is not so much a beauty as her sister is 3 She is no less beautiful than her sister is beautiful. 4 She is not more beautiful than her sister is beautiful.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">338.</span>
+    <span class="problem-text">The cheetah, which runs among the land animals in the world, has been hunted almost to extinction. <span class="choice">①① fastest 2 the fastest 3 faster-than-expected 4 and the fastest</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">339.</span>
+    <span class="problem-text">An automobile is one of expensive things a person usually purchases. 1 most less 2 the better 4 the most</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">340.</span>
+    <span class="problem-text">The Grapes of Wrath, a novel about the Depression years of the 1930's, is one of John Steinbeck's books. 1 and most famous 2 are most famous 3 most famous 4 the most famous</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">341.</span>
+    <span class="problem-text">I passed my driver's test. It seemed much this time. 1 easy 3 easiest 2 easier 4 easily</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">342.</span>
+    <span class="problem-text"><span class="choice">①Modern athletes command much 2 great salaries for their </span><span class="choice">③services than the athletes of past generations </span><span class="choice">④did.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">343.</span>
+    <span class="problem-text">You could stay at the big 2 luxury hotels but the small hotels are <span class="choice">③very more Areasonable.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">344.</span>
+    <span class="problem-text">It's bad <span class="choice">④enough when you get 2 divorced, but far 33bad when you lose your children ④as well.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">345.</span>
+    <span class="problem-text">By far exciting of the dog's qualities is his inherent working ability. 1 the best 2 very 3 the most 4 much</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">346.</span>
+    <span class="problem-text">By far of Korea is oil. <span class="choice">① it is the most important import 2 the most important import is 3 that is the most important import 4 the most important import</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">347.</span>
+    <span class="problem-text">Although difficult to imagine, the mass of the sun is about 750 times that of all the planets combined. 1 the greatly 2 greater 3 as great as 4 the greatest</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">348.</span>
+    <span class="problem-text">A: John, which hotel would you recommend? B: Well, staying in this hotel costs staying in that one. 1 more than twice 2 as twice much as 3 as much as twice 4 twice as much as</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">349.</span>
+    <span class="problem-text">Last year, Matt earned his brother, who has a better position. 1 twice as many as 2 twice as more as 3 twice as much as 4 twice more than</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">350.</span>
+    <span class="problem-text">Researchers have found that children 2 experience twice as much deep sleep <span class="choice">③than adults, </span><span class="choice">④a fact which may teach us something about the connection between age and learning ability.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">351.</span>
+    <span class="problem-text">It is estimated that the United States. 1 the country is less than half of the population of 2 the country has less than half as many population as 3 the population of the country is less than half of 4 the country has less than half as large a population as</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">352.</span>
+    <span class="problem-text">Those taped lectures will take twice to understand. 1 effort 2 much effort 3 as much effort 4 effort as much</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">353.</span>
+    <span class="problem-text">According to the report, men who smoke are to die of cancer. 1 as twice likely 2 likely as twice 3 as likely twice 4 twice as likely</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">354.</span>
+    <span class="problem-text">The climates of Venus and Mars Dare closest to <span class="choice">②the Earth, but they are nowhere near </span><span class="choice">③so comfortable as our planet's </span><span class="choice">④temperate climate.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">355.</span>
+    <span class="problem-text">Because sailors <span class="choice">①are often assigned to ships </span><span class="choice">②that remain at sea for months at a time, men in the Navy </span><span class="choice">③spend more time away from home </span><span class="choice">④than any branch of the service.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">356.</span>
+    <span class="problem-text">Mr. Kim has never been out of Korea, <span class="choice">②yet his accent is very </span><span class="choice">③similar to an 4 Englishman.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">357.</span>
+    <span class="problem-text">나의 문화적 배경과 지적 교육은 어느 누구에게도 뒤떨어지지 않는다. 1 My cultural background and intellectual training are not behind other people. 2 My cultural background and intellectual training are as good as other people. 3 My cultural background and intellectual training are as good as other people's. 4 My cultural background and intellectual training are as good as anyone's. 5 My cultural background and intellectual training are on the higher level.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">358.</span>
+    <span class="problem-text">Because Robert Date faster than <span class="choice">②me, he </span><span class="choice">③was able to leave the cafeteria </span><span class="choice">④sooner.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">359.</span>
+    <span class="problem-text">Venus approaches the Earth 2 more closely <span class="choice">③than any other </span><span class="choice">④planet is.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">360.</span>
+    <span class="problem-text">The <span class="choice">①judges' decisions can 2 be based upon what is right </span><span class="choice">③rather than </span><span class="choice">④by what is popular. 7</span></span>
+  </div>
+  <div class="back-top"><a href="#top">↑ 맨 위로</a></div>
+  <div class="chapter-header" id="ch11">
+    <h2>Chapter 11. 도치와 강조</h2>
+    <div class="topic-note">토픽: 089~092</div>
+  </div>
+  <div class="problem">
+    <span class="problem-num">361.</span>
+    <span class="problem-text">Michael is going to be nominated to receive the Academy Award for best director, ? 1 won't he 3 didn't he 4 isn't he 2 doesn't he</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">362.</span>
+    <span class="problem-text">A: Turn off the light, ? B: Of course, I will. 1 do you 2 will you 3 shall you 4 can you</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">363.</span>
+    <span class="problem-text">Choose the one that is CORRECT according to the standard English. 1 He'd stayed home that night, wouldn't he? 2 He's writing his parents a letter, wasn't he? 3 I don't think he is smart, is he? 4 The police should not do such a thing, should he?</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">364.</span>
+    <span class="problem-text">Never in the history of humanity <span class="choice">②there have been 33more people 4 living on this relatively small planet.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">365.</span>
+    <span class="problem-text">anyone know that the old gentleman in the audience had once been an outstanding scholar. 1 So far as did 2 It was rare for 3 Not only had 4 Little did</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">366.</span>
+    <span class="problem-text">Hardly ever <span class="choice">①there have been </span><span class="choice">②so many choices for young people </span><span class="choice">④entering the work force ④as there are today.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">367.</span>
+    <span class="problem-text">Rarely for more than a few seconds once they enter the Earth's atmosphere. 1 while meteors blaze 2 meteors that blaze 3 do meteors blaze 4 blaze meteors</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">368.</span>
+    <span class="problem-text">Not only <span class="choice">①the Japanese machine was judged </span><span class="choice">②easier to operate and more flexible than the American model, but </span><span class="choice">③it was priced $60,000 lower and </span><span class="choice">④could be delivered faster.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">369.</span>
+    <span class="problem-text"><span class="choice">①Neither in her campaign nor in her acceptance speech </span><span class="choice">②do Miss Eliot </span><span class="choice">③acknowledge those </span><span class="choice">④whose assistance had 5won her the nomination.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">370.</span>
+    <span class="problem-text">Disabilities do not diminish the rights of individuals <span class="choice">②nor </span><span class="choice">③they have to reduce opportunities to participate in or contribute to society. 8</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">371.</span>
+    <span class="problem-text">1 Only then <span class="choice">②he became aware of the fact that there were more </span><span class="choice">③difficulties ahead than he </span><span class="choice">④had expected.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">372.</span>
+    <span class="problem-text">Fingerprint recognition has long been used in high-security 2 places like FBI headquarters, but only now 3 it is finding a place <span class="choice">④in the mainstream.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">373.</span>
+    <span class="problem-text">at conveying her underlying messages through topical plots and contemporary characters that by 1940 her book had sold some three million copies. 1 Grace L. Hill, so successful 2 So successful, Grace L. Hill 3 So successful was Grace L. Hill 4 Because Grace L. Hill was so successful</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">374.</span>
+    <span class="problem-text">A: Are you going to see him? B: If the boy goes, 1 so I go 3 | do so 2 so will I 4 so go l</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">375.</span>
+    <span class="problem-text">Mary objects <span class="choice">①to our buying this house 2 without the approval </span><span class="choice">③of our president, and </span><span class="choice">④John does so.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">376.</span>
+    <span class="problem-text">A: I have a lot of classical records, but I don't understand modern jazz. B: I think it's boring. 1 So do I 3 | do 2 I don't 4 Neither do I</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">377.</span>
+    <span class="problem-text">Choose the one that is CORRECT according to the standard English. 1 They didn't read the play. Neither they acted it. 2 They didn't read the play. They didn't acted it, either. 3 They didn't read the play. Nor they acted it, too. 4 They didn't read the play. Nor did they act it.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">378.</span>
+    <span class="problem-text">A: Can you tell me where my teacher is? B: Yes, of course! 1 Here comes he. 2 Here comes your teacher. 3 Comes your teacher. 4 Your teacher here comes.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">379.</span>
+    <span class="problem-text">In the center of the balcony 1 did sit the guest of honor 2 sit the guest of honor 3 was sitting the guest of honor 4 was the guest of honor sitting</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">380.</span>
+    <span class="problem-text">Over the river and through the woods my grandmother lives. 1 the house is standing where 2 where is standing the house 3 is standing the house where 4 is the house standing 9 - 093. 절대적 불가산명사 094. 변환가능 불가산명사 095. 명사 기타 096. many vs. much 097. 수단위 명사 특징 098. 이중소유격 099. 정관사 the 용법 1 100. 정관사 the 용법 2 101. 무관사용법 1 102. 무관사용법 2</span>
+  </div>
+  <div class="back-top"><a href="#top">↑ 맨 위로</a></div>
+  <div class="chapter-header" id="ch12">
+    <h2>Chapter 12. 명사 / 관사</h2>
+    <div class="topic-note">토픽: 093~102</div>
+  </div>
+  <div class="problem">
+    <span class="problem-num">381.</span>
+    <span class="problem-text">How long did it take you <span class="choice">②to </span><span class="choice">③learn to make </span><span class="choice">④a furniture like this?</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">382.</span>
+    <span class="problem-text">Plenty of items of 1 clothings and furniture 2 are displayed <span class="choice">③at the fair </span><span class="choice">④every Saturday.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">383.</span>
+    <span class="problem-text">Miss Smith went to the library to get 1 an information 2 some information 3 the information 4 one piece of an information</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">384.</span>
+    <span class="problem-text"><span class="choice">①This book explains </span><span class="choice">②all sorts of useful </span><span class="choice">③equipments on </span><span class="choice">④how to repair cars.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">385.</span>
+    <span class="problem-text">Choose the one that is NOT correct according to the standard English. 1 The police wants to interview the man about the robbery. 2 My pants are on the table. 3 Physics is my favorite subject. 4 Three days is not long enough for a good holiday.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">386.</span>
+    <span class="problem-text">In the early days of Rome, cattle money. for 1 was used 2 were used 3 can be used 4 had been used</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">387.</span>
+    <span class="problem-text">It is difficult to classify mathematics <span class="choice">①as simply </span><span class="choice">②an art or a science because </span><span class="choice">③they have </span><span class="choice">④elements of both.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">388.</span>
+    <span class="problem-text">The statistics released 1 by the state department <span class="choice">②makes the economic situation look 3 bleaker than it already </span><span class="choice">④is.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">389.</span>
+    <span class="problem-text">Before the <span class="choice">①invention of 2 railroads, the only </span><span class="choice">③mean of land transportation was </span><span class="choice">④the horse.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">390.</span>
+    <span class="problem-text">Choose the one that is CORRECT according to the standard English. 1 Much of the ships were wrecked off the coast. 2 John doesn't like book. 3 Many of the mud were sold to China. 4 There was little wine left in the bottle. 0 - 093. 절대적 불가산명사 094. 변환가능 불가산명사 095. 명사 기타 096. many vs. much 097. 수단위 명사 특징 098. 이중소유격 099. 정관사 the 용법 1 100. 정관사 the 용법 2 101. 무관사용법 1 102. 무관사용법 2</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">391.</span>
+    <span class="problem-text">Choose the one that is NOT correct according to the standard English. 1 We need a few apples. 2 We also need some butter. 3 Could you pick up a little bananas? 4 How much sugar do you want?</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">392.</span>
+    <span class="problem-text">Elephants are 1 capable of doing very hard work. They <span class="choice">②can be used in the jungles where machines cannot go. A grown elephant may consumes </span><span class="choice">③as many as 200 pounds of food a day, a disadvantage which </span><span class="choice">④tends to offset its capacity for heavy work.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">393.</span>
+    <span class="problem-text"><span class="choice">①The number of battles were </span><span class="choice">② fought 3 between the </span><span class="choice">④fleets of Nelson and Napoleon.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">394.</span>
+    <span class="problem-text"><span class="choice">①Through the years, scientists 2 have developed smaller but 3 increasingly more powerful batteries for the growing number of portable electrical </span><span class="choice">④device.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">395.</span>
+    <span class="problem-text">The mayor <span class="choice">①expressed concern about the large </span><span class="choice">②amount of </span><span class="choice">③people injured at </span><span class="choice">④crossings.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">396.</span>
+    <span class="problem-text">The government <span class="choice">①expects to attract foreign investment </span><span class="choice">②of </span><span class="choice">③as much as $15 </span><span class="choice">④billions this year.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">397.</span>
+    <span class="problem-text">In Africa and Asia, five 1 percents of babies <span class="choice">②die before </span><span class="choice">③they are </span><span class="choice">④one year old.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">398.</span>
+    <span class="problem-text">In <span class="choice">①spite of all the recent </span><span class="choice">②advances in opening up 33the sea, man still uses it pretty much </span><span class="choice">④the way he did 5 hundred of years ago.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">399.</span>
+    <span class="problem-text">was impertinent to the people present. 1 His that remark 2 That remark of his 3 That his remark 4 That remark of he</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">400.</span>
+    <span class="problem-text">A: Did you see anyone interesting at the party? B: Yes, were there. 1 some of John's friends 2 some friend of John's 3 some of John's friend 4 some of John friends 1 - 093. 절대적 불가산명사 094. 변환가능 불가산명사 095. 명사 기타 096. many vs. much 097. 수단위 명사 특징 098. 이중소유격 099. 정관사 the 용법 1 100. 정관사 the 용법 2 101. 무관사용법 1 102. 무관사용법 2</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">401.</span>
+    <span class="problem-text">You should sit on <span class="choice">②a left side </span><span class="choice">③of my father </span><span class="choice">④at the dinner table.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">402.</span>
+    <span class="problem-text"><span class="choice">①A size of the United States Supreme Court </span><span class="choice">②was the focal point 33of one of the most famous </span><span class="choice">④attacks on the federal judiciary.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">403.</span>
+    <span class="problem-text">Although <span class="choice">①many of his songs are well known to the public, 2 little is known about </span><span class="choice">③his early childhood and college background </span><span class="choice">④of country singer Johnny Lee.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">404.</span>
+    <span class="problem-text"><span class="choice">①All of a sudden the young woman </span><span class="choice">②rose to her feet and struck him </span><span class="choice">④on his face.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">405.</span>
+    <span class="problem-text">Choose the one that is CORRECT according to the standard English. 1 The Earth travels at a high rate of speed around sun. 2 The woman on white was standing with her head up. 3 The workers in America get paid by week. 4 She looked me in the face.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">406.</span>
+    <span class="problem-text">1 The English has both regular and irregular verbs. Learn <span class="choice">② the basic verb forms of these words </span><span class="choice">③in order to form the tenses and avoid </span><span class="choice">④mixing tenses in writing.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">407.</span>
+    <span class="problem-text">Jack London's tour 2 of Rocky Mountains <span class="choice">③ was delayed by his illness and the </span><span class="choice">④San Francisco earthquake of 1906.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">408.</span>
+    <span class="problem-text">Annie Smith Peck was the first woman in Netherlands to navigate through <span class="choice">②the Nile and scale the Matterhorn, </span><span class="choice">③the height and beauty </span><span class="choice">④of which have made them the goal of all adventurers.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">409.</span>
+    <span class="problem-text">The Irish brought the popular custom of Halloween to America 1840s. 1 into the 2 in the 3 within 4 during</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">410.</span>
+    <span class="problem-text">are sought by an elementary school. 1 Mentally retarded teachers 2 Teachers retarded for mental cases 3 Mental retarded case teachers 4 Teachers for the mentally retarded 2 - 093. 절대적 불가산명사 094. 변환가능 불가산명사 095. 명사 기타 096. many vs. much 097. 수단위 명사 특징 098. 이중소유격 099. 정관사 the 용법 1 100. 정관사 the 용법 2 101. 무관사용법 1 102. 무관사용법 2</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">411.</span>
+    <span class="problem-text">For 1 half a century, Samuel Dulles has sold the fabric 2 by two yards <span class="choice">③in local, </span><span class="choice">④regional, and national events.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">412.</span>
+    <span class="problem-text">At seven o'clock in the morning, guards <span class="choice">①rouse prisoners from </span><span class="choice">②the door to the door, </span><span class="choice">③leading the inmates into the dusty exercise yard of </span><span class="choice">④a Lao prison.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">413.</span>
+    <span class="problem-text">Some people Dare allergic to 2 certain type of food, <span class="choice">③for example, strawberries or </span><span class="choice">④seafood.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">414.</span>
+    <span class="problem-text"><span class="choice">①That is </span><span class="choice">② the kind of a house in </span><span class="choice">③which 1 </span><span class="choice">④should like to live.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">415.</span>
+    <span class="problem-text">Do you happen to know insulin is? 1 what kind a substance 2 of what kind of substance 3 what kind of substance 4 what kind of a substance</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">416.</span>
+    <span class="problem-text">The two main are permanent magnets and electromagnets. 1 kinds of magnet 2 kind of magnets 3 kinds magnets 4 kinds of magnets</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">417.</span>
+    <span class="problem-text">It was so beautiful that I did not want to go to bed. 1 night 3 day 2 a night 4 the night</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">418.</span>
+    <span class="problem-text">This work cannot be done in 1 quite a short time 2 a so short time 3 such short time 4 so a short time</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">419.</span>
+    <span class="problem-text">1 Exercising is as 2 good as a way as any <span class="choice">③to lose </span><span class="choice">④unwanted weight.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">420.</span>
+    <span class="problem-text">I am sure that Mary is girl to tell a lie. 1 too an honest 2 too honest a 3 a too honest 4 so an honest 3 - 104. 재귀대명사 105. one vs. it 106 such vs. so</span>
+  </div>
+  <div class="back-top"><a href="#top">↑ 맨 위로</a></div>
+  <div class="chapter-header" id="ch13">
+    <h2>Chapter 13. 대명사</h2>
+    <div class="topic-note">토픽: 104~108</div>
+  </div>
+  <div class="problem">
+    <span class="problem-num">421.</span>
+    <span class="problem-text">The property insurance industry has <span class="choice">①flourished because people do not want </span><span class="choice">②to expose </span><span class="choice">③itself to </span><span class="choice">④the risk of catastrophic loss.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">422.</span>
+    <span class="problem-text">Ants are blind to red light, so it is possible to observe 2 themselves in an artificial nest <span class="choice">③without disturbing their activities.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">423.</span>
+    <span class="problem-text">1 Lawyers with the American Civil Liberties Union <span class="choice">②are compiling statistics that </span><span class="choice">③may help themselves to repeal the death penalty.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">424.</span>
+    <span class="problem-text">1 Even though home schoolers are not 2 under the rigid curricular of traditional schools, they often spend more time <span class="choice">③on the subjects or topics that really interest </span><span class="choice">④themselves.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">425.</span>
+    <span class="problem-text">Choose the closest one to the meaning of the underlined part. On hearing from her son, she was shedding tears in spite of herself. 1 unconsciously 2 quietly 3 shyly 4 sorrowfully</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">426.</span>
+    <span class="problem-text">I don't have a nice bookcase, so I am going to 1 have it made 2 have that made 3 have it be made 4 have one made</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">427.</span>
+    <span class="problem-text">Yesterday I lost my watch in the subway, so I plan to buy 1 some 2 any 3 one 4 it</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">428.</span>
+    <span class="problem-text">The first three books are math books, the 2 next two ones are psychology books and <span class="choice">③the last </span><span class="choice">④book is about art.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">429.</span>
+    <span class="problem-text"><span class="choice">①Modern poets have 2 experimented with </span><span class="choice">③poetic devices </span><span class="choice">④such alliteration and assonance.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">430.</span>
+    <span class="problem-text">It began to be denied that there is <span class="choice">①such a thing like human nature. 2 Rather, man grows and </span><span class="choice">③grows into culture; cultures are, </span><span class="choice">④as is obvious from the word, 5 growths. 4 - 104. 재귀대명사 105. one vs. it 106 such vs. so</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">431.</span>
+    <span class="problem-text">Prices at present are reasonably stable, and will probably remain 1 such 2 so 3 alike 4 equal</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">432.</span>
+    <span class="problem-text">Let me give you two of the <span class="choice">①consequences of </span><span class="choice">②which I would guess that one will shock you while 33another may perhaps surprise you more </span><span class="choice">④favorably.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">433.</span>
+    <span class="problem-text">Struggling against fatigue, I forced myself to put one foot in front of 1 another 3 other 2 others 4 the other</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">434.</span>
+    <span class="problem-text"><span class="choice">①Some of the plants in this shop 2 require very little care, but </span><span class="choice">③this one needs much more sunlight than </span><span class="choice">④other.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">435.</span>
+    <span class="problem-text">Bob got fired. It's going to be difficult for him to find job. 1 other 3 the other 2 another 4 the another</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">436.</span>
+    <span class="problem-text">Because the first pair of shoes did not fit properly, she asked for 1 another shoes 2 other shoes 3 the other ones 4 another pair</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">437.</span>
+    <span class="problem-text">When a group of people <span class="choice">①go Dutch, each 2 pay only for 33what the person </span><span class="choice">④has eaten.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">438.</span>
+    <span class="problem-text">All objects <span class="choice">①are composed of many molecules, and the </span><span class="choice">②force of gravity </span><span class="choice">③pulls on </span><span class="choice">④every of them.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">439.</span>
+    <span class="problem-text">1 Skim lengthy reading passages before <span class="choice">②you begin reading to get a general idea of 33what the selection is about. When you skim a reading passage, you read the most important parts of it quickly, </span><span class="choice">④without reading every words.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">440.</span>
+    <span class="problem-text">Every fuel has <span class="choice">①their own 2 particular temperature 33at which it </span><span class="choice">④begins to burn. 5</span></span>
+  </div>
+  <div class="back-top"><a href="#top">↑ 맨 위로</a></div>
+  <div class="chapter-header" id="ch14">
+    <h2>Chapter 14. 형용사 / 부사</h2>
+    <div class="topic-note">토픽: 109~115</div>
+  </div>
+  <div class="problem">
+    <span class="problem-num">441.</span>
+    <span class="problem-text">Animism is the 1 belief that objects and natural <span class="choice">②phenomena such as rivers, rocks, and wind are </span><span class="choice">④live and have Afeelings.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">442.</span>
+    <span class="problem-text">1 Alive animals are 2 greatly diversified <span class="choice">③in </span><span class="choice">④their sizes and shapes.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">443.</span>
+    <span class="problem-text">There will never be two snowflakes that are exactly 1 unlike 2 alike 3 like 4 liking</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">444.</span>
+    <span class="problem-text">The bones of mammals, not alike 2 those of <span class="choice">③other vertebrates, Ashow a high degree of differentiation.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">445.</span>
+    <span class="problem-text">A: Do you like the Japanese food served in American restaurants? B: It's not bad but I prefer 1 Japanese food authentically 2 Japanese authentic food 3 food Japanese authentic 4 authentic Japanese food 5 authentically Japanese food</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">446.</span>
+    <span class="problem-text">A: Which shoes belong to his father? B: The 1 blue large five shoes 2 five blue large shoes 3 five large blue shoes 4 large five blue shoes</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">447.</span>
+    <span class="problem-text">The girl was carrying a bag. 1 blue big plastic 2 big and blue plastic 3 big blue plastic 4 blue plastic big</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">448.</span>
+    <span class="problem-text">He gave lectures 1 last term at the college three days a week 2 at the college three days a week last term 3 at the college last term three days a week 4 last term three days a week at the college</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">449.</span>
+    <span class="problem-text">Is the book hard immediately? 1 his returning 2 that he returns 3 for him to return 4 to him return</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">450.</span>
+    <span class="problem-text">A: Did the judge ask you many questions? B: Yes, and 1 they had difficulty being answered 2 answering them was with difficulty 3 they were difficult to answer 4 to answer them was to be difficult</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">451.</span>
+    <span class="problem-text">It is easy him. 1 that we get on with 2 for us to get on with 3 our getting on with 4 get on with</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">452.</span>
+    <span class="problem-text">The improvement of this design is your best efforts. 1 worthy 2 value 3 edible 4 worth</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">453.</span>
+    <span class="problem-text">Which of the following is grammatically wrong? A: Is this camera cheap? B: It what we paid. 1 dose not deserve 2 is not worth 3 dose not merit 4 is not worthy</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">454.</span>
+    <span class="problem-text">A: How about your mother? B: She isn't three miles a day. 1 enough strong to walk 2 strong enough for walking 3 strong enough to walk 4 enough strong to walking</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">455.</span>
+    <span class="problem-text">Blowing <span class="choice">①out the birthday candles is </span><span class="choice">②an ancient test to see if a </span><span class="choice">③growing child is </span><span class="choice">④enough strong to blow out 5a greater number each year.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">456.</span>
+    <span class="problem-text">Which of the following is grammatically wrong? When the management failed to cut the contract with the union's leader, it had to 1 lay off about a hundred workers 2 lay about a hundred workers off 3 lay them off by the hundred 4 lay off them by the hundred</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">457.</span>
+    <span class="problem-text">1 Confronted with <span class="choice">②such harsh situations that others 33deemed informidable, we could </span><span class="choice">④go them through just by sticking together.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">458.</span>
+    <span class="problem-text">Many years ago, people believed that the earth was square and that a person would fall off its edge. 1 most 3 every 2 almost 4 none of these</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">459.</span>
+    <span class="problem-text">After experiencing one of the worst traffic jams in years, the nation's land transportations returned to normal again when the heaviest snowfall died down yesterday. 1 almost 3 most 2 most all of 4 most of</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">460.</span>
+    <span class="problem-text">By the time he was finally captured, the thief <span class="choice">②had spent 33most all the money he </span><span class="choice">④had stolen. 7 116. 개별 전치사 용법 1 117. 개별 전치사 용법 2</span></span>
+  </div>
+  <div class="back-top"><a href="#top">↑ 맨 위로</a></div>
+  <div class="chapter-header" id="ch15">
+    <h2>Chapter 15. 전치사</h2>
+    <div class="topic-note">토픽: 116~120</div>
+  </div>
+  <div class="problem">
+    <span class="problem-num">461.</span>
+    <span class="problem-text">In Korea, it's been the norm rather than the exception that most workers are paid 1 by an month 2 by a month 3 by the month 4 by month</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">462.</span>
+    <span class="problem-text">A: Did Judy fly across the Caspian Sea? B: No, she crossed both ways 1 by a ship 3 on ships 2 to the ship 4 by ship</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">463.</span>
+    <span class="problem-text">A: Where is our school located, Bob? B: It is 1 on the five avenue at New York 2 on Fifth Avenue in New York 3 in fifth avenue in New York 4 on Fifth Avenue at New York</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">464.</span>
+    <span class="problem-text">With new technology, cameras can take pictures of underwater valleys color. <span class="choice">①① in 3 for 2 by 4 with</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">465.</span>
+    <span class="problem-text">The stolen jewels must be recovered 1 for any cost 2 at any cost 3 with any expense 4 no matter any expenditure</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">466.</span>
+    <span class="problem-text">His late joining , his manager is confident that he will fit right in the group. 1 even though 2 notwithstanding 3 if 4 despite</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">467.</span>
+    <span class="problem-text">A: Can you repair my watch Tuesday? B: No, I'll need to keep it Saturday. 1 by - by 2 until - by 3 by - until 4 until - until</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">468.</span>
+    <span class="problem-text">Doctoral students who are preparing to take their qualifying exams have been studying in the library every night the last three months. 1 until 3 for 2 since 4 from</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">469.</span>
+    <span class="problem-text">Choose the one that is NOT correct according to the standard English. 1 Have you seen her since we last met? 2 I have known her during a very long time. 3 They remained calm throughout the negotiations. 4 I hope to get to your house by 7:00 at the latest.</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">470.</span>
+    <span class="problem-text">It is important for us to distinguish good and evil. 1 from 3 among 2 between 4 of 8 - 116. 개별 전치사 용법 1 117. 개별 전치사 용법 2</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">471.</span>
+    <span class="problem-text">The spinal cord is <span class="choice">④the main pathway <span class="choice"></span>②for messages </span><span class="choice">③travelling between the brain </span><span class="choice">④to the rest of the body.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">472.</span>
+    <span class="problem-text">1 The Metropolitan Museum of Art 2 in New York City is <span class="choice">③located </span><span class="choice">④nearby Central Park.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">473.</span>
+    <span class="problem-text">The Lincoln Birthplace was presented a gift to the nation by the Lincoln Farm Association. <span class="choice">①① with 2 about 3 as 4 against</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">474.</span>
+    <span class="problem-text">Spending the money, he felt 1 as if a wealthy man 2 as though a wealthy man 3 like a wealthy man 4 as if a man of wealthy</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">475.</span>
+    <span class="problem-text">Today <span class="choice">①just as a college graduate, a 2 high-school graduate will find </span><span class="choice">③his earnings proportionate Ato his abilities.</span></span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">476.</span>
+    <span class="problem-text">Since last month, the price of an average long-distance call has plummeted, nearly 50 percent. 1 on 3 for 2 by 4 with</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">477.</span>
+    <span class="problem-text">James Thompson is wealthier than his brother at least 2 million dollars. 1 with for 2 by 4 in</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">478.</span>
+    <span class="problem-text">Used frequently Japanese liquor and cosmetics companies, Mobotron is a giant VCR with a screen measuring 10 13 feet. It is rented the day and can go anywhere. 1 at 3 in 2 by 4 to</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">479.</span>
+    <span class="problem-text">a few species that live on the ground, most monkeys live in trees. 1 There are 2 In that there are 3 All but the fact that there are 4 Save that there are</span>
+  </div>
+  <div class="problem">
+    <span class="problem-num">480.</span>
+    <span class="problem-text">Choose the one that is CORRECT according to the standard English. 1 As far as I remember, you both have the same size. 2 As regard our working environment, the machines make too much noise. 3 We need to discover another source of income, beside oil. 4 The old lady never spoke to anyone except someone came to visit her.</span>
+  </div>
+  <div class="back-top"><a href="#top">↑ 맨 위로</a></div>
+  <footer>Logic Tree G201 ver 10.2 · 총 480문제 · 15개 챕터</footer>
+</div>
+</body>
+</html>
