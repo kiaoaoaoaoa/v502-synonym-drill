@@ -1590,6 +1590,10 @@ function buildUserDataPayload() {
   const logicScore = JSON.stringify((readLogicScore()||{})[nk]||{score:0,questions:0});
   const irtAbility = JSON.stringify(readIrtAbility());
   const examData = JSON.stringify((readExamProgress()||{})[nk]||{});
+  const wb3quizProg = JSON.stringify(JSON.parse(localStorage.getItem('v502-synonym-drill-wb3quiz-progress')||'{}')[nk]||{});
+  const wb3quizBest = JSON.stringify(JSON.parse(localStorage.getItem('v502-synonym-drill-wb3quiz-best')||'{}')[nk]||0);
+  const wb3quiz2Prog = JSON.stringify(JSON.parse(localStorage.getItem('v502-synonym-drill-wb3quiz2-progress')||'{}')[nk]||{});
+  const wb3quiz2Best = JSON.stringify(JSON.parse(localStorage.getItem('v502-synonym-drill-wb3quiz2-best')||'{}')[nk]||0);
   return JSON.stringify({
     pw, displayName: state.playerName,
     word_knowledge: wordKnowledge, synonym_progress: synProgress,
@@ -1598,6 +1602,8 @@ function buildUserDataPayload() {
     logic_completed: logicDone, logic_wrong: logicWrong,
     logic_score: logicScore, grammar_progress: grammarData,
     exam_progress: examData, irt_ability: irtAbility,
+    wb3quiz_progress: wb3quizProg, wb3quiz_best: wb3quizBest,
+    wb3quiz2_progress: wb3quiz2Prog, wb3quiz2_best: wb3quiz2Best,
     updated_at: new Date().toISOString()
   });
 }
@@ -1762,6 +1768,10 @@ function cloudPullUserData(payload, nickname) {
     if (obj.irt_ability) {
       try { localStorage.setItem(irtAbilityKey, String(JSON.parse(obj.irt_ability))); } catch {}
     }
+    if (obj.wb3quiz_progress) { const s = JSON.parse(localStorage.getItem('v502-synonym-drill-wb3quiz-progress')||'{}'); s[nk] = JSON.parse(obj.wb3quiz_progress); localStorage.setItem('v502-synonym-drill-wb3quiz-progress', JSON.stringify(s)); }
+    if (obj.wb3quiz_best) { const s = JSON.parse(localStorage.getItem('v502-synonym-drill-wb3quiz-best')||'{}'); s[nk] = JSON.parse(obj.wb3quiz_best); localStorage.setItem('v502-synonym-drill-wb3quiz-best', JSON.stringify(s)); }
+    if (obj.wb3quiz2_progress) { const s = JSON.parse(localStorage.getItem('v502-synonym-drill-wb3quiz2-progress')||'{}'); s[nk] = JSON.parse(obj.wb3quiz2_progress); localStorage.setItem('v502-synonym-drill-wb3quiz2-progress', JSON.stringify(s)); }
+    if (obj.wb3quiz2_best) { const s = JSON.parse(localStorage.getItem('v502-synonym-drill-wb3quiz2-best')||'{}'); s[nk] = JSON.parse(obj.wb3quiz2_best); localStorage.setItem('v502-synonym-drill-wb3quiz2-best', JSON.stringify(s)); }
     state.playerName = prevName;
   } catch(e) { console.warn('cloudPullUserData failed', e); }
 	}

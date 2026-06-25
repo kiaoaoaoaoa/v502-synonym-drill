@@ -130,6 +130,7 @@ var WB3_QUIZ = [
       a[n.toLowerCase()] = { answered:answered, picks:picks, scored:scored, score:score, updated:Date.now() };
       localStorage.setItem(PROGRESS_KEY, JSON.stringify(a));
     } catch(e) {}
+    if (typeof scheduleCloudSync === 'function') scheduleCloudSync();
   }
 
   function loadBest() {

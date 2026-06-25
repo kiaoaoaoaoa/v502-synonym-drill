@@ -20,7 +20,7 @@ var WB3_QUIZ_2 = WB3_QUIZ_101_200;
 
   function save() {
     var n = getPlayer(); if (!n) return;
-    try { var r = localStorage.getItem(PROGRESS_KEY), a = r ? JSON.parse(r) : {}; a[n.toLowerCase()] = { answered:answered, picks:picks, scored:scored, score:score, updated:Date.now() }; localStorage.setItem(PROGRESS_KEY, JSON.stringify(a)); } catch(e) {}
+    try { var r = localStorage.getItem(PROGRESS_KEY), a = r ? JSON.parse(r) : {}; a[n.toLowerCase()] = { answered:answered, picks:picks, scored:scored, score:score, updated:Date.now() }; localStorage.setItem(PROGRESS_KEY, JSON.stringify(a)); } catch(e) {} if (typeof scheduleCloudSync === 'function') scheduleCloudSync();
   }
 
   function loadBest() {
