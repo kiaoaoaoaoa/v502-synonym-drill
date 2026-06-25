@@ -2878,6 +2878,8 @@ details[open] > .wb3-summary::before {
   flex-shrink: 0;
 }
 
+.board-post-views { font-size: 12px; color: var(--muted); }
+
 .board-post-comments {
   display: inline-flex;
   align-items: center;

@@ -2738,7 +2738,9 @@ function renderPostList() {
       html += '<span class="board-post-avatar">' + initial + '</span>';
       html += '<span>' + escapeHtml(post.nickname) + '</span>';
       if (tBadge) html += tBadge;
-      html += '<span style="margin-left:auto">' + date + '</span>';
+      html += '<span style="margin-left:auto;display:flex;align-items:center;gap:10px">';
+      html += '<span class="board-post-views">조회 ' + (post.view_count || 0) + '</span>';
+      html += '<span>' + date + '</span></span>';
       html += '</div>';
       html += '</div></div>';
     }
@@ -2814,6 +2816,9 @@ async function viewPost(postId) {
   if (error || !data) { alert('게시글을 찾을 수 없습니다.'); return; }
   boardState.currentView = 'detail';
   boardState.currentPost = data;
+  client.from(getBoardTable()).update({ view_count: (data.view_count || 0) + 1 }).eq('id', postId).then(function(r) {
+    if (!r.error) { boardState.currentPost.view_count = (data.view_count || 0) + 1; }
+  });
   await loadComments(postId);
   var allNames = [data.nickname];
   for (var ci = 0; ci < boardState.currentComments.length; ci++) {
@@ -2850,6 +2855,7 @@ function renderPostDetail() {
   html += '</div>';
   html += '<h3 class="board-detail-title">' + escapeHtml(post.title) + '</h3>';
   html += '<div class="board-detail-meta">';
+  html += '<span>조회 ' + (post.view_count || 0) + '</span>';
   html += '<span>' + formatBoardDate(post.created_at) + '</span>';
   html += '</div>';
   html += '<div class="board-detail-content">' + escapeHtml(post.content).replace(/\n/g, '<br>') + '</div>';
