@@ -2140,6 +2140,12 @@ details[open] > .wb3-summary::before {
   color: var(--ink);
 }
 
+#logicOptions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
 #logicOptions .option {
   text-align: left;
   padding: 14px 18px;
@@ -2190,7 +2196,30 @@ details[open] > .wb3-summary::before {
   opacity: 0.85;
 }
 
+@media (min-width: 841px) {
+  #logicQuestionArea {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .logic-question {
+    font-size: 19px;
+    line-height: 1.8;
+    padding: 18px 24px;
+  }
+  #logicOptions .option {
+    font-size: 17px;
+    padding: 16px 20px;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+  }
+}
+
 @media (max-width: 840px) {
+  #logicOptions {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
   .logic-question {
     font-size: 15px;
     padding: 10px 14px;
