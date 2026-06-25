@@ -1087,15 +1087,12 @@ details[open] > .wb3-summary::before {
   background: #f0faf0;
   border-color: #b7dfb9;
 }
-.wb3-card .wb3-word.wb3-word-clickable {
+.wb3-card[onclick] {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
-.wb3-card .wb3-word.wb3-word-clickable:hover {
-  text-decoration: underline;
-}
-.wb3-card .wb3-word.wb3-word-clickable:focus {
-  outline: none;
+.wb3-card[onclick]:hover {
+  border-color: #b0b8c5;
 }
 .wb3-card .wb3-word.wb3-word-known {
   color: #2e7d32;

@@ -2331,6 +2331,11 @@ function handleWordToggle(word, element) {
   }
 }
 
+function handleCardToggle(word, cardEl) {
+  var wordEl = cardEl.querySelector('.wb3-word');
+  if (wordEl) handleWordToggle(word, wordEl);
+}
+
 function showWordlist2() {
   switchMode('wordlist');
   els.wordlist2Panel.hidden = false;
@@ -2437,15 +2442,15 @@ function showWordbook3() {
       const pos = item.pos || '';
       const num = entry.origIdx + 1;
       const known = state.playerName && isWordKnown(w);
-      h += '<div class="wb3-card' + (known ? ' wb3-known' : '') + '" id="wl3-word-' + num + '">';
+      h += '<div class="wb3-card' + (known ? ' wb3-known' : '') + '" id="wl3-word-' + num + '"';
+      if (state.playerName) {
+        h += ' onclick="handleCardToggle(\'' + escapeHtml(w) + '\', this)"';
+      }
+      h += '>';
       h += '<span class="wl2-word-num">' + num + '.</span>';
       h += '<div class="wb3-card-inner">';
       h += '<div class="wb3-word-row">';
-      h += '<span class="wb3-word' + (known ? ' wb3-word-known' : '') + (state.playerName ? ' wb3-word-clickable' : '') + '"';
-      if (state.playerName) {
-        h += ' onclick="handleWordToggle(\'' + escapeHtml(w) + '\', this)" title="클릭하여 안다/모른다 표시"';
-      }
-      h += '>';
+      h += '<span class="wb3-word' + (known ? ' wb3-word-known' : '') + '">';
       if (known) h += '<span class="wl-check">✓</span>';
       h += escapeHtml(w) + '</span>';
       if (p) h += ' <span class="wb3-pron">[' + escapeHtml(p) + ']</span>';
