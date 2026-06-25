@@ -709,7 +709,7 @@ h2 {
 .wordlist2-entries {
   margin: 0;
   font-size: 13px;
-  line-height: 1.8;
+  line-height: 1.5;
   color: var(--ink);
 }
 
@@ -717,8 +717,8 @@ h2 {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
-  gap: 4px 10px;
-  padding: 9px 12px;
+  gap: 2px 8px;
+  padding: 5px 10px;
   border-radius: 5px;
   border: 1px solid transparent;
   transition: background 100ms ease;
@@ -1007,12 +1007,12 @@ h2 {
   }
 
   .wl2-entry {
-    padding: 8px 10px;
+    padding: 4px 8px;
   }
 
   .wl2-word {
     font-size: 17px;
-    padding: 4px 10px;
+    padding: 3px 8px;
   }
 
   .wl2-meaning {
@@ -1209,7 +1209,7 @@ details[open] > .wb3-summary::before {
   font-weight: 400;
 }
 .wb3-section .wordlist2-entries {
-  padding: 8px 14px;
+  padding: 4px 10px;
 }
 .wb3-section .wb3-grid {
   padding: 3px 6px;

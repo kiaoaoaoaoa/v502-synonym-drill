@@ -3586,9 +3586,10 @@ function showDashboard() {
     const logicMastered = getLogicCompleted().size;
     const cum = cumulativeLeaderboard(readLeaderboard(), null)
       .find((e) => e.name.toLowerCase() === state.playerName.toLowerCase());
-    const score = cum ? cum.correct : 0;
+    const rawScore = cum ? cum.correct : 0;
+    const irtScore = Math.round(readIrtAbility());
     html += `<div class="dash-stats dash-stats-xl">`;
-    html += `<div class="dash-stat" onclick="showRanking()" style="cursor:pointer" title="통합랭킹 보기"><span class="dash-stat-num">${score}</span><span class="dash-stat-label">통합 점수</span></div>`;
+    html += `<div class="dash-stat" onclick="showRanking()" style="cursor:pointer" title="통합랭킹 보기"><span class="dash-stat-num">${irtScore}</span><span class="dash-stat-label">통합 점수<small style="display:block;text-transform:none;letter-spacing:0;margin-top:2px">정답 ${rawScore}개</small></span></div>`;
     html += `<div class="dash-stat" onclick="showWordlist()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-icon">📋</span><span class="dash-stat-label">단어일람</span></div>`;
     html += `<div class="dash-stat" onclick="showWordlist2()" style="cursor:pointer" title="단어일람보기2"><span class="dash-stat-icon">🗂️</span><span class="dash-stat-label">단어일람2</span></div>`;
 	    html += `<div class="dash-stat" onclick="showWordbook3()" style="cursor:pointer" title="단어장3"><span class="dash-stat-icon">📗</span><span class="dash-stat-label">단어장3</span></div>`;
@@ -3701,6 +3702,7 @@ function showMyReview() {
   const wcProgress = getWordcheckProgress();
   let totalCorrect = 0, totalQuestions = 0;
   for (const e of best.values()) { totalCorrect += e.correct; totalQuestions += e.total; }
+  const irtScore = Math.round(readIrtAbility());
 
   let html = '<div style="max-width:800px">';
   html += '<h3 style="margin-bottom:12px">📊 내 리뷰</h3>';
@@ -3708,7 +3710,7 @@ function showMyReview() {
   html += `<div style="padding:16px;background:#f0f8f0;border-radius:8px;text-align:center"><strong style="font-size:24px">${completed}</strong><br><small>단어 마스터</small><br><small style="color:var(--muted)">/ ${totalSyn} (${pct}%)</small></div>`;
   html += `<div style="padding:16px;background:#f0f0f8;border-radius:8px;text-align:center"><strong style="font-size:24px">${logicMastered}</strong><br><small>논리 마스터</small><br><small style="color:var(--muted)">/ ${logicTotal}</small></div>`;
   html += `<div style="padding:16px;background:#e8f0e8;border-radius:8px;text-align:center"><strong style="font-size:24px">${wcProgress.correct}/${wcProgress.total}</strong><br><small>단어확인</small><br><small style="color:var(--muted)">${wcProgress.total > 0 ? Math.round(wcProgress.correct/wcProgress.total*100) + '%' : 'No data'}</small></div>`;
-  html += `<div style="padding:16px;background:#fff8f0;border-radius:8px;text-align:center"><strong style="font-size:24px">${totalCorrect}점</strong><br><small>통합 점수</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'} · ${totalQuestions}문제 풂</small></div>`;
+  html += `<div style="padding:16px;background:#fff8f0;border-radius:8px;text-align:center"><strong style="font-size:24px">${irtScore}점</strong><br><small>통합 점수</small><br><small style="color:var(--muted)">정답 ${totalCorrect}개 · ${totalQuestions}문제 풂</small></div>`;
   html += '</div>';
 
   const p = readSynonymProgress();
@@ -3776,12 +3778,13 @@ function renderMyInfoTab(tab) {
     const wcProgress = getWordcheckProgress();
     let totalCorrect = 0, totalQuestions = 0;
     for (const e of best.values()) { totalCorrect += e.correct; totalQuestions += e.total; }
+    const irtScore = Math.round(readIrtAbility());
 
     html += `<div style="display:grid;gap:8px;grid-template-columns:1fr 1fr">`;
     html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid var(--ok);border-radius:2px;text-align:center"><strong style="font-size:24px">${completed}</strong><br><small>단어 마스터</small><br><small style="color:var(--muted)">/ ${totalSyn} (${pct}%)</small></div>`;
     html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid #4f46e5;border-radius:2px;text-align:center"><strong style="font-size:24px">${logicMastered}</strong><br><small>논리 마스터</small><br><small style="color:var(--muted)">/ ${logicTotal}</small></div>`;
     html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid var(--ink);border-radius:2px;text-align:center"><strong style="font-size:24px">${wcProgress.correct}/${wcProgress.total}</strong><br><small>단어확인</small><br><small style="color:var(--muted)">${wcProgress.total > 0 ? Math.round(wcProgress.correct/wcProgress.total*100) + '%' : 'No data'}</small></div>`;
-    html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:2px;text-align:center;cursor:pointer" onclick="showRanking()" title="통합랭킹 보기"><strong style="font-size:24px">${totalCorrect}점</strong><br><small>통합 점수 ▸</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'} · ${totalQuestions}문제 풂</small></div>`;
+    html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:2px;text-align:center;cursor:pointer" onclick="showRanking()" title="통합랭킹 보기"><strong style="font-size:24px">${irtScore}점</strong><br><small>통합 점수 ▸</small><br><small style="color:var(--muted)">정답 ${totalCorrect}개 · ${totalQuestions}문제 풂</small></div>`;
     html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid #7c3aed;border-radius:2px;text-align:center"><strong style="font-size:24px">${wb3Known}</strong><br><small>단어장3 체크</small></div>`;
     html += '</div>';
 
