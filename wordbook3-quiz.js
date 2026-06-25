@@ -186,18 +186,18 @@ var WB3_QUIZ = [
       h += '<div class="wb3q-opts">';
       q.o.forEach(function(o,i) { h += '<button class="wb3q-opt disabled correct"><span class="wb3q-letter">' + LETTERS[i] + '</span>' + o + '</button>'; });
       h += '</div><div class="wb3q-fb show ok">✅ 정답입니다!</div>';
+      // Show option meanings immediately (not hidden behind toggle)
+      if (WB3_OPT_MEANINGS && WB3_OPT_MEANINGS[q.n]) {
+        h += '<div style="margin-top:8px;padding:8px 10px;background:#f8fafc;border-radius:6px;font-size:0.78rem;color:#64748b;line-height:1.6">';
+        WB3_OPT_MEANINGS[q.n].forEach(function(om) {
+          var parts = om.split(': '), word = parts[0], meaning = parts.slice(1).join(': ');
+          h += '<div style="' + (word === q.a ? 'color:#16a34a;font-weight:700' : '') + '">• <strong>' + word + '</strong>: ' + meaning + (word === q.a ? ' ✅' : '') + '</div>';
+        });
+        h += '</div>';
+      }
       if (EXPLANATIONS && EXPLANATIONS[q.n]) {
-        var optInfo2 = '';
-        if (WB3_OPT_MEANINGS && WB3_OPT_MEANINGS[q.n]) {
-          optInfo2 = '<div style="margin-top:8px;padding:8px 10px;background:#f8fafc;border-radius:6px;font-size:0.78rem;color:#64748b;line-height:1.6">';
-          WB3_OPT_MEANINGS[q.n].forEach(function(om) {
-            var parts = om.split(': '), word = parts[0], meaning = parts.slice(1).join(': ');
-            optInfo2 += '<div style="' + (word === q.a ? 'color:#16a34a;font-weight:700' : '') + '">• <strong>' + word + '</strong>: ' + meaning + (word === q.a ? ' ✅' : '') + '</div>';
-          });
-          optInfo2 += '</div>';
-        }
         h += '<span class="wb3q-exp-toggle" onclick="var e=document.getElementById(\'wb3exp-'+q.n+'\');e.classList.toggle(\'show\');this.textContent=e.classList.contains(\'show\')?\'📖 해설 접기\':\'📖 해설 보기\'">📖 해설 보기</span>';
-        h += '<div class="wb3q-exp" id="wb3exp-' + q.n + '">' + EXPLANATIONS[q.n] + optInfo2 + '</div>';
+        h += '<div class="wb3q-exp" id="wb3exp-' + q.n + '">' + EXPLANATIONS[q.n] + '</div>';
       }
       h += navHtml;
     } else {
@@ -287,15 +287,20 @@ var WB3_QUIZ = [
     h += '<div class="wb3q-result-msg">' + msg + '</div>';
     h += '<button class="wb3q-btn" onclick="wb3Restart()">🔄 다시 풀기</button>';
     h += '<button class="wb3q-btn sec" onclick="wb3Reset()">🗑️ 초기화</button>';
-    h += '<table class="wb3q-review"><tr><th>#</th><th>선택</th><th>정답</th><th>결과</th></tr>';
+    h += '<table class="wb3q-review"><tr><th>#</th><th>선택</th><th>정답</th><th>뜻</th><th>결과</th></tr>';
     var unanswered = [];
     for (var i = 0; i < 100; i++) {
       var qq = WB3_QUIZ[i];
       if (!answered[qq.n]) { unanswered.push(qq.n); continue; }
       var ok = picks[qq.n] === qq.a;
-      h += '<tr><td>' + qq.n + '</td><td class="' + (ok?'wb3q-rc':'wb3q-rw') + '">' + (picks[qq.n]||'—') + '</td><td>' + qq.a + '</td><td class="' + (ok?'wb3q-rc':'wb3q-rw') + '">' + (ok?'✓':'✗') + '</td></tr>';
+      var ansMeaning = '';
+      if (WB3_OPT_MEANINGS && WB3_OPT_MEANINGS[qq.n]) {
+        var found = WB3_OPT_MEANINGS[qq.n].filter(function(om) { return om.indexOf(qq.a + ':') === 0; });
+        if (found.length) ansMeaning = found[0].split(': ').slice(1).join(': ');
+      }
+      h += '<tr><td>' + qq.n + '</td><td class="' + (ok?'wb3q-rc':'wb3q-rw') + '">' + (picks[qq.n]||'—') + '</td><td>' + qq.a + '</td><td style="font-size:0.75rem;color:#64748b">' + (ansMeaning || '') + '</td><td class="' + (ok?'wb3q-rc':'wb3q-rw') + '">' + (ok?'✓':'✗') + '</td></tr>';
     }
-    if (unanswered.length) h += '<tr><td colspan="4" style="color:#94a3b8;padding-top:10px">⚠️ 미응시: ' + unanswered.join(', ') + '</td></tr>';
+    if (unanswered.length) h += '<tr><td colspan="5" style="color:#94a3b8;padding-top:10px">⚠️ 미응시: ' + unanswered.join(', ') + '</td></tr>';
     h += '</table></div>';
     area.innerHTML = h;
   }
