@@ -1775,7 +1775,7 @@ async function savePublicScore(entry) {
   const client = await getSupabaseClient();
   if (!client) return null;
 
-  const isCumulative = entry.setId === 'LOGIC' || entry.setId === 'WORDCHECK' || entry.setId === 'SYNONYM' || entry.setId === 'EXAM' || entry.setId === 'GRAMMAR';
+  const isCumulative = entry.setId === 'LOGIC' || entry.setId === 'WORDCHECK' || entry.setId === 'SYNONYM';
 
   const { data: existingRows } = await client
     .from(getLeaderboardTable())
@@ -3959,6 +3959,7 @@ function renderMyInfoTab(tab) {
       html += '<p style="color:var(--muted);margin-bottom:12px">총 <b>' + chapters.length + '</b>개 챕터</p>';
       chapters.forEach(function(ch, i) {
         var bodyHtml = escapeHtml(ch.body);
+        bodyHtml = bodyHtml.replace(/\n/g, '<br>');
         // Highlight corrections: (O) green, (X) red
         bodyHtml = bodyHtml.replace(/\(O\)/g, '<span style="color:#2e7d32;font-weight:700">(O)</span>');
         bodyHtml = bodyHtml.replace(/\(X\)/g, '<span style="color:#c62828;font-weight:700">(X)</span>');
