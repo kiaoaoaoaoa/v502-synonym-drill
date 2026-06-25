@@ -3373,21 +3373,29 @@ function logicSubmitNoExplain(opt, clickedBtn, q) {
     saveLogicWrong(q.id);
   }
   persistLogicRanking();
-  { const logicRate = (window.__V502_LOGIC_DIFFICULTY__ && window.__V502_LOGIC_DIFFICULTY__.get) ? window.__V502_LOGIC_DIFFICULTY__.get(q.id) : 50; const ability = readIrtAbility() + getScoreDelta(correct, logicRate); writeIrtAbility(ability); updateTierDisplay(); }
+  const logicRate = (window.__V502_LOGIC_DIFFICULTY__ && window.__V502_LOGIC_DIFFICULTY__.get) ? window.__V502_LOGIC_DIFFICULTY__.get(q.id) : 50;
+  const delta = getScoreDelta(correct, logicRate);
+  const ability = readIrtAbility() + delta;
+  writeIrtAbility(ability);
+  updateTierDisplay();
 
   const toast = document.createElement('div');
   const bg = correct ? '#34c759' : '#ff3b30';
+  const deltaStr = (correct ? '+' : '') + delta.toFixed(1);
   toast.style.cssText = `
     position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.3);
     width:140px;height:140px;border-radius:70px;
     background:${bg};color:#fff;
-    display:flex;align-items:center;justify-content:center;
-    font-size:64px;font-weight:900;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    font-weight:900;
     z-index:9999;pointer-events:none;
     box-shadow:0 20px 60px ${bg}44;
     transition:transform 0.25s cubic-bezier(0.175,0.885,0.32,1.275);
   `;
-  toast.textContent = correct ? '✓' : '✗';
+  toast.innerHTML = `
+    <div style="font-size:48px;line-height:1">${correct ? '✓' : '✗'}</div>
+    <div style="font-size:24px;line-height:1;margin-top:4px">${deltaStr}</div>
+  `;
   document.body.appendChild(toast);
   requestAnimationFrame(() => { toast.style.transform = 'translate(-50%,-50%) scale(1)'; });
 
@@ -3402,7 +3410,7 @@ function logicSubmitNoExplain(opt, clickedBtn, q) {
   els.logicFeedback.hidden = false;
   els.logicFeedback.className = `feedback ${correct ? "ok" : "no"}`;
   els.logicFeedback.innerHTML = `
-    <strong>${correct ? "✅ Correct!" : "❌ Incorrect."}</strong>
+    <strong>${correct ? "✅ Correct!" : "❌ Incorrect."} <span style="font-size:1.1em;color:${correct ? '#34c759' : '#ff3b30'}">${deltaStr}</span></strong>
     <p style="margin-top:8px">${escapeHtml(q.explanation).replace(/\n/g, '<br>')}</p>
   `;
 
