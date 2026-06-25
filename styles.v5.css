@@ -3409,3 +3409,47 @@ details[open] > .wb3-summary::before {
 .board-reply-form .board-textarea { min-height: 38px; padding: 8px 12px; font-size: 13.5px; border-radius: 8px; }
 .board-reply-form .board-submit-btn { min-height: 36px; padding: 0 18px; font-size: 13px; }
 .board-reply-form .board-back-btn { min-height: 36px; padding: 0 14px; font-size: 13px; }
+
+/* ── Exam two-column layout (desktop) ──────── */
+.exam-q-block {
+  margin-bottom: 16px;
+  padding: 16px;
+  border-radius: 2px;
+  border: 1px solid var(--line);
+}
+.exam-q-num {
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--accent);
+  grid-column: 1 / -1;
+}
+.exam-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+.exam-passage {
+  margin: 0;
+  padding: 14px 16px;
+  background: #f8f9fc;
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.7;
+  height: fit-content;
+}
+.exam-q-right {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.exam-q-right p {
+  margin: 0;
+}
+@media (max-width: 840px) {
+  .exam-two-col {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

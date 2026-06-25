@@ -4678,11 +4678,13 @@ function renderExamTab() {
     if (q.section) {
       html += '<div style="margin:-8px 0 16px 0;padding:4px 10px;background:var(--accent);color:#fff;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:0.5px">' + escapeHtml(q.section) + '</div>';
     }
-    html += '<div style="margin-bottom:16px;padding:16px;border-radius:2px;border:1px solid var(--line);' + (isCorrect?'background:#f1f8e9':isWrong?'background:#fff3f0':'') + '" id="examQ' + oi + '">';
-    html += '<p style="font-weight:700;margin:0 0 8px;color:var(--accent)">' + (oi+1) + '.' + (isCorrect ? ' ✅' : isWrong ? ' ❌' : '') + '</p>';
-    if (q.p && q.p.length > 30) {
+    var hasPassage = q.p && q.p.length > 30;
+    html += '<div class="exam-q-block' + (hasPassage ? ' exam-two-col' : '') + '" style="' + (isCorrect?'background:#f1f8e9':isWrong?'background:#fff3f0':'') + '" id="examQ' + oi + '">';
+    html += '<p class="exam-q-num">' + (oi+1) + '.' + (isCorrect ? ' ✅' : isWrong ? ' ❌' : '') + '</p>';
+    if (hasPassage) {
       var pHtml = escapeHtml(q.p).replace(/「([^」]+)」/g, '<u>$1</u>');
-      html += '<div style="margin:0 0 12px;padding:10px 14px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;font-size:14px;line-height:1.7">' + pHtml + '</div>';
+      html += '<div class="exam-passage">' + pHtml + '</div>';
+      html += '<div class="exam-q-right">';
     }
     var qHtml = q.q
       .replace(/(?<!\w)'([^']+)'(?!\w)/g, "'$1'")
@@ -4721,6 +4723,7 @@ function renderExamTab() {
       }
     }
     html += '<div id="examFeedback' + oi + '" style="margin-top:6px;font-size:13px;min-height:20px">' + fbHtml + '</div>';
+    if (hasPassage) html += '</div>'; // close exam-q-right
     html += '</div>';
   });
 
