@@ -3503,7 +3503,7 @@ function renderMyInfoTab(tab) {
             html += '<div style="margin:0 0 10px;padding:8px 10px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;font-size:13px;line-height:1.6">' + escapeHtml(q.p).replace(/「([^」]+)」/g, '<u>$1</u>') + '</div>';
           }
           var qHtml = q.q
-            .replace(/'([^']+)'/g, "'\uE000$1\uE001'")
+            .replace(/(?<!\w)'([^']+)'(?!\w)/g, "'\uE000$1\uE001'")
             .replace(/「([^」]+)」/g, '\uE000$1\uE001')
             .replace(/(_{2,})/g, '\uE002$1\uE003');
           qHtml = escapeHtml(qHtml)
@@ -3660,7 +3660,7 @@ function renderWordcheckQuestion() {
   const qEl = document.getElementById('wordcheckQuestion');
   qEl.innerHTML = (() => {
     const raw = q.q
-      .replace(/'([^']+)'/g, "'\uE000$1\uE001'")
+      .replace(/(?<!\w)'([^']+)'(?!\w)/g, "'\uE000$1\uE001'")
       .replace(/(_{2,})/g, '\uE002$1\uE003');
     return escapeHtml(raw)
       .replace(/\uE000/g, '<u>').replace(/\uE001/g, '</u>')
@@ -4043,7 +4043,7 @@ function renderGrammarQuestion() {
   html += `<p style="font-size:12px;color:var(--muted);margin:0 0 8px">${grammarState.index + 1} / ${items.length} | ✅ ${grammarState.correct} | ❌ ${grammarState.index - grammarState.correct}</p>`;
   html += `<p style="font-size:13px;color:var(--accent);font-weight:600;margin:0 0 4px">${escapeHtml(q.i)}. ${escapeHtml(q.t)}</p>`;
   var qHtml = q.q
-    .replace(/'([^']+)'/g, "'\uE000$1\uE001'")
+    .replace(/(?<!\w)'([^']+)'(?!\w)/g, "'\uE000$1\uE001'")
     .replace(/「([^」]+)」/g, '\uE000$1\uE001')
     .replace(/(_{2,})/g, '\uE002$1\uE003');
   qHtml = escapeHtml(qHtml)
@@ -4237,7 +4237,7 @@ function renderExamTab() {
       html += '<div style="margin:0 0 12px;padding:10px 14px;background:#f8f9fc;border-left:3px solid var(--accent);border-radius:4px;font-size:14px;line-height:1.7">' + pHtml + '</div>';
     }
     var qHtml = q.q
-      .replace(/'([^']+)'/g, "'$1'")
+      .replace(/(?<!\w)'([^']+)'(?!\w)/g, "'$1'")
       .replace(/「([^」]+)」/g, '$1')
       .replace(/(_{2,})/g, '$1');
     qHtml = escapeHtml(qHtml)
