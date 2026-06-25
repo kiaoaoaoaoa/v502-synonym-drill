@@ -994,6 +994,7 @@ function submitAnswer() {
     }
     saveSynonymRankResult(question.categoryId, question.prompt, correct);
     persistSynonymRanking();
+    { const ability = readIrtAbility() + getScoreDelta(correct, 50); writeIrtAbility(ability); updateTierDisplay(); persistIrtRanking(); }
   }
   try { saveQuizProgress(); } catch {}
   if (noExplainMode) {
@@ -1442,12 +1443,20 @@ function sortedLeaderboard(entries) {
 function cumulativeLeaderboard(entries, setId = null) {
   const JUNK_SETS = new Set(["USERDATA", "CRED", "SYNC"]);
   const best = new Map();
+  const irtBest = new Map();
   const filtered = (setId ? entries.filter((e) => e.setId === setId || (!e.setId && setId === "001-010")) : entries)
     .filter(e => !!e.name);
 
+  // Separate IRT entries from per-type entries
   for (const entry of filtered) {
     const rawSet = String(entry.setId || "001-010");
     if (JUNK_SETS.has(rawSet)) continue;
+    if (rawSet === "IRT") {
+      const nameKey = entry.name.toLowerCase();
+      const existing = irtBest.get(nameKey);
+      if (!existing || entry.correct > existing.correct) irtBest.set(nameKey, entry);
+      continue;
+    }
     const cumPrefix = rawSet.startsWith("LOGIC") ? "LOGIC"
       : rawSet.startsWith("WORDCHECK") ? "WORDCHECK"
       : rawSet.startsWith("SYNONYM") ? "SYNONYM"
@@ -1474,8 +1483,16 @@ function cumulativeLeaderboard(entries, setId = null) {
   }
 
   const aggregated = new Map();
+
+  // IRT entries take priority — single authoritative score per user
+  for (const [nameKey, entry] of irtBest) {
+    aggregated.set(nameKey, { name: entry.name, correct: entry.correct, total: entry.total });
+  }
+
+  // For users without IRT entry, fall back to per-type sum
   for (const entry of best.values()) {
     const nameKey = entry.name.toLowerCase();
+    if (irtBest.has(nameKey)) continue; // already have IRT score
     const rawSet = String(entry.setId || "001-010");
     const isCumBucket = rawSet.startsWith("LOGIC") || rawSet.startsWith("WORDCHECK") || rawSet.startsWith("SYNONYM") || rawSet.startsWith("EXAM") || rawSet.startsWith("GRAMMAR");
     if (setId === null && !isCumBucket && hasSynonymBucket.has(nameKey)) continue;
@@ -2158,7 +2175,29 @@ async function showRanking() {
         return;
       }
       els.rankingSummary.innerHTML = `<span style="font-size:11px;letter-spacing:0.1em;opacity:0.5">${totalPlayers} PLAYERS</span>` +
-        (state.playerName ? (() => { const t = getTier(readIrtAbility()); return ` <span style="font-size:12px;font-weight:700;color:var(--accent)">내 등급: ${t.icon} ${t.name}</span>`; })() : '');
+        (state.playerName ? (() => { const t = getTier(readIrtAbility()); return ` <span style="font-size:12px;font-weight:700;color:var(--accent)">내 등급: ${t.icon} ${t.name}</span>`; })() : '') +
+        ` <button onclick="toggleTierLogic()" style="font-size:11px;padding:2px 8px;border:1px solid var(--line);border-radius:4px;background:var(--panel);color:var(--muted);cursor:pointer;vertical-align:middle">랭킹로직</button>`;
+
+      const tierRows = [
+        { min:10000, name:'서성한메이저',     color:'#FFD700', desc:'최상위 0.1%' },
+        { min:9000,  name:'서성한',           color:'#AF52DE', desc:'상위 0.5%' },
+        { min:8000,  name:'서성한하위',       color:'#BF5AF2', desc:'상위 1%' },
+        { min:6000,  name:'중경외시 메이저',  color:'#FF9500', desc:'상위 3%' },
+        { min:5000,  name:'중경외시 하위',    color:'#8E8E93', desc:'상위 5%' },
+        { min:3500,  name:'건동홍',           color:'#CD7F32', desc:'상위 10%' },
+        { min:2500,  name:'국숭세단',         color:'#34C759', desc:'상위 20%' },
+        { min:1600,  name:'인가경',           color:'#007AFF', desc:'상위 35%' },
+        { min:0,     name:'정붕이',           color:'#30D158', desc:'새싹' },
+      ];
+      let tierHtml = '<div id="tierLogicPanel" style="display:none;margin:12px 0;padding:16px;background:var(--panel);border:1px solid var(--line);border-radius:8px;font-size:13px;line-height:1.6">';
+      tierHtml += '<strong style="font-size:14px">🏆 랭킹 로직</strong>';
+      tierHtml += '<p style="margin:8px 0;color:var(--muted)">IRT(Item Response Theory) 기반 능력 점수 · 모든 퀴즈 정답 시 +0.75(rate=50 기준), 오답 시 -0.75 · 논리문제는 문항별 난이도에 따라 ±0.3~1.5 차등</p>';
+      tierHtml += '<table style="width:100%;border-collapse:collapse;margin-top:8px"><tr style="font-weight:700;text-align:left"><th style="padding:4px 8px;border-bottom:1px solid var(--line)">등급</th><th style="padding:4px 8px;border-bottom:1px solid var(--line)">필요 점수</th><th style="padding:4px 8px;border-bottom:1px solid var(--line)">비고</th></tr>';
+      for (const r of tierRows) {
+        tierHtml += `<tr><td style="padding:4px 8px;color:${r.color};font-weight:700">${r.name}</td><td style="padding:4px 8px">${r.min === 0 ? '0~1599' : r.min + '+'}</td><td style="padding:4px 8px;color:var(--muted)">${r.desc}</td></tr>`;
+      }
+      tierHtml += '</table><p style="margin-top:8px;font-size:11px;color:var(--muted)">점수 = 모든 퀴즈 누적 IRT ability (localStorage v502-irt-ability)</p>';
+      tierHtml += '</div>';
 
       const colors = ['#FF6B35','#FFD449','#06D6A0','#118AB2','#EF476F','#073B4C','#8338EC','#FF006E'];
       const top3 = cumulative.slice(0, 3);
@@ -2201,11 +2240,16 @@ async function showRanking() {
         html += '</div>';
       }
 
-      els.rankingContent.innerHTML = html;
+      els.rankingContent.innerHTML = tierHtml + html;
     }).catch(() => {
       els.rankingContent.innerHTML = "<p style='color:var(--muted)'>failed to load</p>";
     });
   });
+}
+
+function toggleTierLogic() {
+  const panel = document.getElementById('tierLogicPanel');
+  if (panel) panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
 }
 
 function getActiveSetCount() {
@@ -3292,6 +3336,21 @@ function getLogicTotal() {
   return (window.__V502_LOGIC__ && window.__V502_LOGIC__.questions || []).length;
 }
 
+function persistIrtRanking() {
+  if (!state.playerName) return;
+  const score = Math.round(readIrtAbility());
+  const nameKey = state.playerName.toLowerCase();
+  const entries = readLeaderboard().filter(
+    (e) => !(e.name.toLowerCase() === nameKey && String(e.setId || '') === 'IRT'),
+  );
+  entries.push({
+    name: state.playerName, correct: score, total: score, accuracy: 100,
+    setId: 'IRT', setLabel: 'IRT Ability', completedAt: new Date().toISOString(),
+  });
+  writeLeaderboard(entries);
+  scheduleCumulativeRemoteWrite('IRT', state.playerName, score, score, 100);
+}
+
 function persistLogicRanking() {
   if (!state.playerName) return;
   const correct = getLogicCompleted().size;
@@ -3421,6 +3480,7 @@ function logicSubmitNoExplain(opt, clickedBtn, q) {
   const ability = readIrtAbility() + delta;
   writeIrtAbility(ability);
   updateTierDisplay();
+  persistIrtRanking();
 
   const toast = document.createElement('div');
   const bg = correct ? '#34c759' : '#ff3b30';
@@ -3480,7 +3540,7 @@ function submitLogicAnswer() {
     saveLogicWrong(q.id);
   }
   persistLogicRanking();
-  { const logicRate = (window.__V502_LOGIC_DIFFICULTY__ && window.__V502_LOGIC_DIFFICULTY__.get) ? window.__V502_LOGIC_DIFFICULTY__.get(q.id) : 50; const ability = readIrtAbility() + getScoreDelta(correct, logicRate); writeIrtAbility(ability); updateTierDisplay(); }
+  { const logicRate = (window.__V502_LOGIC_DIFFICULTY__ && window.__V502_LOGIC_DIFFICULTY__.get) ? window.__V502_LOGIC_DIFFICULTY__.get(q.id) : 50; const ability = readIrtAbility() + getScoreDelta(correct, logicRate); writeIrtAbility(ability); updateTierDisplay(); persistIrtRanking(); }
 
   els.logicFeedback.hidden = false;
   els.logicFeedback.className = `feedback ${correct ? "ok" : "no"}`;
@@ -3628,10 +3688,9 @@ function showDashboard() {
     const logicMastered = getLogicCompleted().size;
     const cum = cumulativeLeaderboard(readLeaderboard(), null)
       .find((e) => e.name.toLowerCase() === state.playerName.toLowerCase());
-    const rawScore = cum ? cum.correct : 0;
     const irtScore = Math.round(readIrtAbility());
     html += `<div class="dash-stats dash-stats-xl">`;
-    html += `<div class="dash-stat" onclick="showRanking()" style="cursor:pointer" title="통합랭킹 보기"><span class="dash-stat-num">${irtScore}</span><span class="dash-stat-label">통합 점수<small style="display:block;text-transform:none;letter-spacing:0;margin-top:2px">정답 ${rawScore}개</small></span></div>`;
+    html += `<div class="dash-stat" onclick="showRanking()" style="cursor:pointer" title="통합랭킹 보기"><span class="dash-stat-num">${irtScore}</span><span class="dash-stat-label">통합 점수</span></div>`;
     html += `<div class="dash-stat" onclick="showWordlist()" style="cursor:pointer" title="단어일람보기"><span class="dash-stat-icon">📋</span><span class="dash-stat-label">단어일람</span></div>`;
     html += `<div class="dash-stat" onclick="showWordlist2()" style="cursor:pointer" title="단어일람보기2"><span class="dash-stat-icon">🗂️</span><span class="dash-stat-label">단어일람2</span></div>`;
 	    html += `<div class="dash-stat" onclick="showWordbook3()" style="cursor:pointer" title="단어장3"><span class="dash-stat-icon">📗</span><span class="dash-stat-label">단어장3</span></div>`;
@@ -3752,7 +3811,7 @@ function showMyReview() {
   html += `<div style="padding:16px;background:#f0f8f0;border-radius:8px;text-align:center"><strong style="font-size:24px">${completed}</strong><br><small>단어 마스터</small><br><small style="color:var(--muted)">/ ${totalSyn} (${pct}%)</small></div>`;
   html += `<div style="padding:16px;background:#f0f0f8;border-radius:8px;text-align:center"><strong style="font-size:24px">${logicMastered}</strong><br><small>논리 마스터</small><br><small style="color:var(--muted)">/ ${logicTotal}</small></div>`;
   html += `<div style="padding:16px;background:#e8f0e8;border-radius:8px;text-align:center"><strong style="font-size:24px">${wcProgress.correct}/${wcProgress.total}</strong><br><small>단어확인</small><br><small style="color:var(--muted)">${wcProgress.total > 0 ? Math.round(wcProgress.correct/wcProgress.total*100) + '%' : 'No data'}</small></div>`;
-  html += `<div style="padding:16px;background:#fff8f0;border-radius:8px;text-align:center"><strong style="font-size:24px">${irtScore}점</strong><br><small>통합 점수</small><br><small style="color:var(--muted)">정답 ${totalCorrect}개 · ${totalQuestions}문제 풂</small></div>`;
+  html += `<div style="padding:16px;background:#fff8f0;border-radius:8px;text-align:center"><strong style="font-size:24px">${irtScore}점</strong><br><small>통합 점수</small><br><small style="color:var(--muted)">IRT Ability</small></div>`;
   html += '</div>';
 
   const p = readSynonymProgress();
@@ -3826,7 +3885,7 @@ function renderMyInfoTab(tab) {
     html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid var(--ok);border-radius:2px;text-align:center"><strong style="font-size:24px">${completed}</strong><br><small>단어 마스터</small><br><small style="color:var(--muted)">/ ${totalSyn} (${pct}%)</small></div>`;
     html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid #4f46e5;border-radius:2px;text-align:center"><strong style="font-size:24px">${logicMastered}</strong><br><small>논리 마스터</small><br><small style="color:var(--muted)">/ ${logicTotal}</small></div>`;
     html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid var(--ink);border-radius:2px;text-align:center"><strong style="font-size:24px">${wcProgress.correct}/${wcProgress.total}</strong><br><small>단어확인</small><br><small style="color:var(--muted)">${wcProgress.total > 0 ? Math.round(wcProgress.correct/wcProgress.total*100) + '%' : 'No data'}</small></div>`;
-    html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:2px;text-align:center;cursor:pointer" onclick="showRanking()" title="통합랭킹 보기"><strong style="font-size:24px">${irtScore}점</strong><br><small>통합 점수 ▸</small><br><small style="color:var(--muted)">정답 ${totalCorrect}개 · ${totalQuestions}문제 풂</small></div>`;
+    html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:2px;text-align:center;cursor:pointer" onclick="showRanking()" title="통합랭킹 보기"><strong style="font-size:24px">${irtScore}점</strong><br><small>통합 점수 ▸</small><br><small style="color:var(--muted)">IRT Ability</small></div>`;
     html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid #7c3aed;border-radius:2px;text-align:center"><strong style="font-size:24px">${wb3Known}</strong><br><small>단어장3 체크</small></div>`;
     html += '</div>';
 
@@ -4342,7 +4401,7 @@ function submitWordcheckAnswer(letter) {
   wcState.answers.push({ id: q.i, correct });
   saveWordcheckResult(q.i, correct);
   persistWordcheckRanking();
-  { const ability = readIrtAbility() + getScoreDelta(correct, 50); writeIrtAbility(ability); updateTierDisplay(); }
+  { const ability = readIrtAbility() + getScoreDelta(correct, 50); writeIrtAbility(ability); updateTierDisplay(); persistIrtRanking(); }
 
   if (noExplainMode) {
     const buttons = document.querySelectorAll('#wordcheckChoices button');
@@ -4571,7 +4630,7 @@ function submitGrammarAnswer(letter) {
   } else {
     saveGrammarWrong(q.i);
   }
-  { const ability = readIrtAbility() + getScoreDelta(correct, 50); writeIrtAbility(ability); updateTierDisplay(); }
+  { const ability = readIrtAbility() + getScoreDelta(correct, 50); writeIrtAbility(ability); updateTierDisplay(); persistIrtRanking(); }
   persistGrammarRanking();
   let html = renderGrammarCategoryNav();
   html += `<div style="max-width:900px">`;
@@ -4867,7 +4926,7 @@ function checkExamAnswer(tab, idx, letter, btn) {
   var correct = letter === q.a;
   if (correct) saveExamCorrect(tab, idx);
   else saveExamWrong(tab, idx);
-  { const ability = readIrtAbility() + getScoreDelta(correct, 50); writeIrtAbility(ability); updateTierDisplay(); }
+  { const ability = readIrtAbility() + getScoreDelta(correct, 50); writeIrtAbility(ability); updateTierDisplay(); persistIrtRanking(); }
   persistExamRanking();
 
   var fb = document.getElementById('examFeedback' + idx);
