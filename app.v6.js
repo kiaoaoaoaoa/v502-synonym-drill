@@ -963,11 +963,6 @@ function submitAnswer() {
     }
     saveSynonymRankResult(question.categoryId, question.prompt, correct);
     persistSynonymRanking();
-    const rate = (question.difficulty && typeof question.difficulty === 'object')
-      ? rateQuestion(question.difficulty) : 50; // default 50% if no per-question rating
-    const ability = readIrtAbility() + getScoreDelta(correct, rate);
-    writeIrtAbility(ability);
-    updateTierDisplay();
   }
   try { saveQuizProgress(); } catch {}
   if (noExplainMode) {
@@ -1424,7 +1419,9 @@ function cumulativeLeaderboard(entries, setId = null) {
     if (JUNK_SETS.has(rawSet)) continue;
     const cumPrefix = rawSet.startsWith("LOGIC") ? "LOGIC"
       : rawSet.startsWith("WORDCHECK") ? "WORDCHECK"
-      : rawSet.startsWith("SYNONYM") ? "SYNONYM" : null;
+      : rawSet.startsWith("SYNONYM") ? "SYNONYM"
+      : rawSet.startsWith("EXAM") ? "EXAM"
+      : rawSet.startsWith("GRAMMAR") ? "GRAMMAR" : null;
     const key = `${entry.name.toLowerCase()}|${cumPrefix || rawSet}`;
     const existing = best.get(key);
     let better;
@@ -1449,7 +1446,7 @@ function cumulativeLeaderboard(entries, setId = null) {
   for (const entry of best.values()) {
     const nameKey = entry.name.toLowerCase();
     const rawSet = String(entry.setId || "001-010");
-    const isCumBucket = rawSet.startsWith("LOGIC") || rawSet.startsWith("WORDCHECK") || rawSet.startsWith("SYNONYM");
+    const isCumBucket = rawSet.startsWith("LOGIC") || rawSet.startsWith("WORDCHECK") || rawSet.startsWith("SYNONYM") || rawSet.startsWith("EXAM") || rawSet.startsWith("GRAMMAR");
     if (setId === null && !isCumBucket && hasSynonymBucket.has(nameKey)) continue;
     if (!aggregated.has(nameKey)) {
       aggregated.set(nameKey, { name: entry.name, correct: 0, total: 0 });
@@ -2620,6 +2617,7 @@ const boardState = {
   page: 0,
   pageSize: 20,
   hasMore: false,
+  userTiers: {},
 };
 
 function getBoardTable() { return 'board_posts'; }
@@ -2630,6 +2628,49 @@ function formatBoardDate(ts) {
   const d = new Date(ts);
   const pad = (n) => String(n).padStart(2, '0');
   return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+}
+
+function tierBadgeHTML(tier) {
+  if (!tier) return '';
+  return '<span class="board-tier-badge" style="--tier-color:' + (tier.color || 'var(--muted)') + '">' + tier.icon + ' <span>' + tier.name + '</span></span>';
+}
+
+async function fetchUserTiers(nicknames) {
+  boardState.userTiers = {};
+  if (!nicknames.length) return;
+  const client = await getSupabaseClient();
+  if (!client) return;
+  try {
+    const { data } = await client.from(getLeaderboardTable())
+      .select('nickname,correct_count,total_count,quiz_set')
+      .in('nickname', nicknames)
+      .limit(2000);
+    if (!data || !data.length) return;
+    const byUser = {};
+    for (const row of data) {
+      const nk = row.nickname;
+      if (!byUser[nk]) byUser[nk] = { correct: 0, total: 0 };
+      const setId = row.quiz_set || '';
+      if (setId === 'USERDATA' || setId === 'CRED' || setId === 'SYNC') continue;
+      byUser[nk].correct += row.correct_count || 0;
+      byUser[nk].total += row.total_count || 0;
+    }
+    for (const [nk, scores] of Object.entries(byUser)) {
+      const tier = getTierForRanking(scores.correct, scores.total);
+      boardState.userTiers[nk] = { icon: tier.icon, name: tier.name, color: getTierColor(tier.name) };
+    }
+  } catch(e) { console.warn('fetchUserTiers failed', e); }
+}
+
+function getTierColor(name) {
+  if (name === '서성한메이저') return '#FFD700';
+  if (name === '서성한' || name === '서성한하위') return '#AF52DE';
+  if (name === '중경외시 메이저') return '#FF9500';
+  if (name === '중경외시 하위') return '#8E8E93';
+  if (name === '건동홍') return '#CD7F32';
+  if (name === '국숭세단') return '#34C759';
+  if (name === '인가경') return '#007AFF';
+  return '#30D158';
 }
 
 async function openBoard() {
@@ -4025,6 +4066,55 @@ function persistWordcheckRanking() {
   scheduleCumulativeRemoteWrite('WORDCHECK', state.playerName, correct, total, accuracy);
 }
 
+function persistExamRanking() {
+  if (!state.playerName) return;
+  const ep = readExamProgress();
+  const key = state.playerName.toLowerCase();
+  const userExams = ep[key] || {};
+  let totalCorrect = 0;
+  let totalWrong = 0;
+  for (const tab in userExams) {
+    const prog = userExams[tab];
+    if (prog.correct) totalCorrect += prog.correct.length;
+    if (prog.wrong) totalWrong += prog.wrong.length;
+  }
+  const total = totalCorrect + totalWrong;
+  if (total === 0) return;
+  const accuracy = Math.round((totalCorrect / total) * 100);
+  const nameKey = state.playerName.toLowerCase();
+  const entries = readLeaderboard().filter(
+    (e) => !(e.name.toLowerCase() === nameKey && String(e.setId || '').startsWith('EXAM')),
+  );
+  entries.push({
+    name: state.playerName, correct: totalCorrect, total, accuracy,
+    setId: 'EXAM', setLabel: '기출문제', completedAt: new Date().toISOString(),
+  });
+  writeLeaderboard(entries);
+  scheduleCumulativeRemoteWrite('EXAM', state.playerName, totalCorrect, total, accuracy);
+}
+
+function persistGrammarRanking() {
+  if (!state.playerName) return;
+  const gp = readGrammarProgress();
+  const key = state.playerName.toLowerCase();
+  const userGrammar = gp[key] || { correct: [], wrong: [] };
+  const correct = (userGrammar.correct || []).length;
+  const wrong = (userGrammar.wrong || []).length;
+  const total = correct + wrong;
+  if (total === 0) return;
+  const accuracy = Math.round((correct / total) * 100);
+  const nameKey = state.playerName.toLowerCase();
+  const entries = readLeaderboard().filter(
+    (e) => !(e.name.toLowerCase() === nameKey && String(e.setId || '').startsWith('GRAMMAR')),
+  );
+  entries.push({
+    name: state.playerName, correct, total, accuracy,
+    setId: 'GRAMMAR', setLabel: '문법201', completedAt: new Date().toISOString(),
+  });
+  writeLeaderboard(entries);
+  scheduleCumulativeRemoteWrite('GRAMMAR', state.playerName, correct, total, accuracy);
+}
+
 const synonymResultKey = 'v502-synonym-result';
 function readSynonymResult() {
   try { return JSON.parse(localStorage.getItem(synonymResultKey)) || {}; }
@@ -4335,6 +4425,7 @@ function submitGrammarAnswer(letter) {
     saveGrammarWrong(q.i);
   }
   { const ability = readIrtAbility() + getScoreDelta(correct, 50); writeIrtAbility(ability); updateTierDisplay(); }
+  persistGrammarRanking();
   let html = renderGrammarCategoryNav();
   html += `<div style="max-width:900px">`;
   html += `<p style="font-size:12px;color:var(--muted);margin:0 0 8px">${grammarState.index + 1} / ${items.length} | ✅ ${grammarState.correct} | ❌ ${grammarState.index - grammarState.correct}</p>`;
@@ -4558,6 +4649,7 @@ function checkExamAnswer(tab, idx, letter, btn) {
   if (correct) saveExamCorrect(tab, idx);
   else saveExamWrong(tab, idx);
   { const ability = readIrtAbility() + getScoreDelta(correct, 50); writeIrtAbility(ability); updateTierDisplay(); }
+  persistExamRanking();
 
   var fb = document.getElementById('examFeedback' + idx);
   if (fb) {
