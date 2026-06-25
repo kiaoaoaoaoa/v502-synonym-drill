@@ -2410,13 +2410,13 @@ details[open] > .wb3-summary::before {
   box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 .dash-card:hover {
-  background: linear-gradient(135deg, #fafafa 0%, #fff 100%);
-  border-color: #d0d0d0;
+  background: var(--accent-soft);
+  border-color: var(--line);
   border-left-width: 5px;
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.08);
 }
-.dash-card:active { transform: translateY(-1px) scale(0.99); }
+.dash-card:active { transform: translateY(-1px); transition: all 0.05s; }
 .dash-card:focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 3px;
@@ -2547,7 +2547,12 @@ details[open] > .wb3-summary::before {
   transition: all 0.2s;
   box-shadow: 0 1px 2px rgba(0,0,0,0.04);
 }
-.appbar-myinfo-btn:hover { background: var(--accent-soft); border-color: #ccc; transform: translateY(-1px); }
+.appbar-myinfo-btn:hover {
+  background: #fafafa;
+  border-color: #bbb;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
 
 /* ── Login box in dashboard ──────────── */
 .dashboard-panel #authSection {
