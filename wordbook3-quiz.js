@@ -149,6 +149,13 @@ var WB3_QUIZ = [
     if (bb && bestScore > 0) { bb.style.display = 'inline-block'; bb.textContent = '최고: ' + Math.max(c, bestScore) + '점'; }
   }
 
+  window.backToWordbook3 = function() {
+    if (typeof els !== 'undefined') {
+      els.wb3QuizPanel.hidden = true;
+      els.wordbook3Panel.hidden = false;
+    }
+  };
+
   function showWb3Quiz() {
     if (typeof els !== 'undefined') {
       els.wordbook3Panel.hidden = true;
