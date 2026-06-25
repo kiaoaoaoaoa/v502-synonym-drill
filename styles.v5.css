@@ -1096,7 +1096,6 @@ details[open] > .wb3-summary::before {
 }
 .wb3-card .wb3-word.wb3-word-clickable:focus {
   outline: none;
-  background: transparent;
 }
 .wb3-card .wb3-word.wb3-word-known {
   color: #2e7d32;
