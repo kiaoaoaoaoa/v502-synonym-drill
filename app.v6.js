@@ -408,6 +408,36 @@ function writeIrtAbility(v) {
   try { localStorage.setItem(irtAbilityKey, String(Math.round(capped * 1000) / 1000)); } catch {}
 }
 
+function migrateIrtAbility() {
+  if (localStorage.getItem('v502-irt-migrated-v2')) return;
+  let ability = 0;
+  const diff = window.__V502_LOGIC_DIFFICULTY__;
+
+  // Logic — exact per-question rates
+  const logicCorrect = getLogicCompleted();
+  const logicWrong = getLogicWrong();
+  if (diff) {
+    for (const qid of logicCorrect) ability += getScoreDelta(true, diff.get(qid));
+    for (const qid of logicWrong) ability += getScoreDelta(false, diff.get(qid));
+  }
+
+  // Other quiz types — estimate from leaderboard (rate=50)
+  if (state.playerName) {
+    const cum = cumulativeLeaderboard(readLeaderboard(), null);
+    const me = cum ? cum.find(e => e.name.toLowerCase() === state.playerName.toLowerCase()) : null;
+    if (me) {
+      const otherCorrect = Math.max(0, me.correct - logicCorrect.size);
+      const otherWrong = Math.max(0, (me.total - me.correct) - logicWrong.size);
+      ability += getScoreDelta(true, 50) * otherCorrect;
+      ability += getScoreDelta(false, 50) * otherWrong;
+    }
+  }
+
+  writeIrtAbility(ability);
+  localStorage.setItem('v502-irt-migrated-v2', '1');
+  updateTierDisplay();
+}
+
 function _tierSVG(path, fill) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="vertical-align:middle" aria-hidden="true"><g fill="${fill}">${path}</g></svg>`;
 }
@@ -2491,7 +2521,7 @@ function showWordbook3() {
       html += ' <button onclick="showWb3Quiz()" class="wb3-quiz-btn" style="margin-left:8px;font-size:0.78rem;padding:2px 10px;border-radius:99px;background:#4c6ef5;color:#fff;border:none;cursor:pointer;font-weight:600;white-space:nowrap">📝 단어문제 1-100</button>';
     }
     if (idx === 1) {
-      html += ' <button onclick="showWb3Quiz2()" class="wb3-quiz-btn" style="margin-left:8px;font-size:0.78rem;padding:2px 10px;border-radius:99px;background:#16a34a;color:#fff;border:none;cursor:pointer;font-weight:600;white-space:nowrap">📝 단어문제 101-200</button>';
+      html += ' <button onclick="showWb3Quiz2()" class="wb3-quiz-btn" style="margin-left:8px;font-size:0.78rem;padding:2px 10px;border-radius:99px;background:#4c6ef5;color:#fff;border:none;cursor:pointer;font-weight:600;white-space:nowrap">📝 단어문제 101-200</button>';
     }
     html += '</summary>';
     html += renderCards(sec.items);
@@ -3558,7 +3588,7 @@ function showDashboard() {
   switchMode('dashboard');
   els.dashboardPanel.hidden = false;
   const loggedIn = !!state.playerName;
-  if (loggedIn) updateTierDisplay();
+  if (loggedIn) { updateTierDisplay(); migrateIrtAbility(); }
 
   if (loggedIn) flushCloudSync();
 
