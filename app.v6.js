@@ -2405,8 +2405,8 @@ function showWordbook3() {
   }
   html += '</div>';
 
-  // 500-word chunks, all collapsed by default
-  const CHUNK = 500;
+  // 100-word chunks, all collapsed by default
+  const CHUNK = 100;
   const totalChunks = Math.ceil(words.length / CHUNK);
   const sections = [];
   for (let c = 0; c < totalChunks; c++) {
