@@ -61,7 +61,7 @@ window.__V502_EXAM_JININSA_2027_1__ = [
     "k": "impetus는 '추진력, 자극, 동기'를 의미한다. 따라서\n4stimulus(자극, 촉진 요인)가 정답이다.\n해석 서구 철학에 의한 이러한 부정은 아프리카에서 현대 철\n학적 실천을 구축하려는 동기와 추진력에 파괴적인 영향을\n미쳤다."
   },
 {
-    "q": "Online bettors had been 'wagering' on this event and tallied their winnings or losses in catastrophe markets.",
+    "q": "In January 2025, emergency management officials and insurance companies began estimating losses in the Los Angeles wildfires that ultimately included 440 deaths, of which 31 were direct deaths, and between $76 billion and $131 billion in property and capital losses. Online bettors had been 'wagering' on this event and tallied their winnings or losses in catastrophe markets.",
     "c": [
       ["1","pondering"],
       ["2","diverting"],
@@ -316,7 +316,7 @@ window.__V502_EXAM_JININSA_2027_1__ = [
       ["5","E"]
     ],
     "a": "3",
-    "k": "저자는 도널드 트럼프가 독재자가 아니라는 증거로,\n그가 자신의 인적 임명이나 법안을 공화당이 장악한 상원\n에서조차 통과시키지 못하고 있다는 점을 들고 있다. 만약\n상원이 그의 프로그램에 열성적(zealous)이라면 법안이\n통과되어야 마땅하다. 하지만 통과시키지 못하고 있다는\n맥락이므로, 상원이 그의 정책에 비협조적이거나 저항적이\n라는 단어가 와야 논리적으로 적합하다. zealous를 쓰면\n공화당 상원이 트럼프 프로그램을 열렬히 지지한다는 뜻\n이 되어 트럼프가 독재자가 아니라는 논거로 기능하지 못\n하므로 정답은 3이다.\n※'zealous to his program'에서 zealous는 '~에 열성\n적인'이라는 의미로 쓰이는데, zealous는 전치사 'about'\n또는 'in'과 함께 쓰이거나 단독으로 쓰이므로 어법상으로\n도 적절하지 않다. 다만 해당 문제의 출제 의도는 잘못된\n전치사 사용을 알아내라는 것이 아닌 의미의 어색함을 감\n지하는 것에 있다.\n[오답 분석]\n1brainwashing(세뇌): 교육에 섞인 사상 주입을 비판하\n는 맥락에서 적절하다.\n2empirical(실증적인): no empirical evidence는 실증\n적 근거가 없다는 뜻으로, 이스라엘의 대량 학살 주장에\n대한 저자의 반박 맥락에서 적절히다.\n4 presumably(아마도): 똑똑한 학생이라면 당연히 거짓\n말이라고 소리칠 것이라는 저자의 추측을 나타낸다.\n5 blunt(약화시키다): 고정관념이나 세뇌의 효과를 약화\n시킨다는 뜻으로 적절하게 쓰였다.\n정답 23.2 24.4 25.3"
+    "k": "저자는 도널드 트럼프가 독재자가 아니라는 증거로,\n그가 자신의 인적 임명이나 법안을 공화당이 장악한 상원\n에서조차 통과시키지 못하고 있다는 점을 들고 있다. 만약\n상원이 그의 프로그램에 열성적(zealous)이라면 법안이\n통과되어야 마땅하다. 하지만 통과시키지 못하고 있다는\n맥락이므로, 상원이 그의 정책에 비협조적이거나 저항적이\n라는 단어가 와야 논리적으로 적합하다. zealous를 쓰면\n공화당 상원이 트럼프 프로그램을 열렬히 지지한다는 뜻\n이 되어 트럼프가 독재자가 아니라는 논거로 기능하지 못\n하므로 정답은 3이다.\n※'zealous to his program'에서 zealous는 '~에 열성\n적인'이라는 의미로 쓰이는데, zealous는 전치사 'about'\n또는 'in'과 함께 쓰이거나 단독으로 쓰이므로 어법상으로\n도 적절하지 않다. 다만 해당 문제의 출제 의도는 잘못된\n전치사 사용을 알아내라는 것이 아닌 의미의 어색함을 감\n지하는 것에 있다.\n[오답 분석]\n1brainwashing(세뇌): 교육에 섞인 사상 주입을 비판하\n는 맥락에서 적절하다.\n2empirical(실증적인): no empirical evidence는 실증\n적 근거가 없다는 뜻으로, 이스라엘의 대량 학살 주장에\n대한 저자의 반박 맥락에서 적절하다.\n4 presumably(아마도): 똑똑한 학생이라면 당연히 거짓\n말이라고 소리칠 것이라는 저자의 추측을 나타낸다.\n5 blunt(약화시키다): 고정관념이나 세뇌의 효과를 약화\n시킨다는 뜻으로 적절하게 쓰였다.\n정답 23.2 24.4 25.3"
   },
 {
     "section": "[26-28] Read the passage and answer the questions.",
