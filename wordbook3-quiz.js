@@ -187,8 +187,17 @@ var WB3_QUIZ = [
       q.o.forEach(function(o,i) { h += '<button class="wb3q-opt disabled correct"><span class="wb3q-letter">' + LETTERS[i] + '</span>' + o + '</button>'; });
       h += '</div><div class="wb3q-fb show ok">✅ 정답입니다!</div>';
       if (EXPLANATIONS && EXPLANATIONS[q.n]) {
+        var optInfo2 = '';
+        if (WB3_OPT_MEANINGS && WB3_OPT_MEANINGS[q.n]) {
+          optInfo2 = '<div style="margin-top:8px;padding:8px 10px;background:#f8fafc;border-radius:6px;font-size:0.78rem;color:#64748b;line-height:1.6">';
+          WB3_OPT_MEANINGS[q.n].forEach(function(om) {
+            var parts = om.split(': '), word = parts[0], meaning = parts.slice(1).join(': ');
+            optInfo2 += '<div style="' + (word === q.a ? 'color:#16a34a;font-weight:700' : '') + '">• <strong>' + word + '</strong>: ' + meaning + (word === q.a ? ' ✅' : '') + '</div>';
+          });
+          optInfo2 += '</div>';
+        }
         h += '<span class="wb3q-exp-toggle" onclick="var e=document.getElementById(\'wb3exp-'+q.n+'\');e.classList.toggle(\'show\');this.textContent=e.classList.contains(\'show\')?\'📖 해설 접기\':\'📖 해설 보기\'">📖 해설 보기</span>';
-        h += '<div class="wb3q-exp" id="wb3exp-' + q.n + '">' + EXPLANATIONS[q.n] + '</div>';
+        h += '<div class="wb3q-exp" id="wb3exp-' + q.n + '">' + EXPLANATIONS[q.n] + optInfo2 + '</div>';
       }
       h += navHtml;
     } else {
@@ -223,7 +232,18 @@ var WB3_QUIZ = [
     var nb = document.getElementById('wb3btnNext'); if (nb) nb.classList.add('show');
 
     if (EXPLANATIONS && EXPLANATIONS[q.n]) {
-      var ed = document.getElementById('wb3exp-'+q.n); if (ed) { ed.innerHTML = EXPLANATIONS[q.n]; ed.classList.add('show'); }
+      var optInfo = '';
+      if (WB3_OPT_MEANINGS && WB3_OPT_MEANINGS[q.n]) {
+        optInfo = '<div style="margin-top:8px;padding:8px 10px;background:#f8fafc;border-radius:6px;font-size:0.78rem;color:#64748b;line-height:1.6">';
+        WB3_OPT_MEANINGS[q.n].forEach(function(om) {
+          var parts = om.split(': ');
+          var word = parts[0], meaning = parts.slice(1).join(': ');
+          var isAnswer = (word === q.a);
+          optInfo += '<div style="' + (isAnswer ? 'color:#16a34a;font-weight:700' : '') + '">• <strong>' + word + '</strong>: ' + meaning + (isAnswer ? ' ✅' : '') + '</div>';
+        });
+        optInfo += '</div>';
+      }
+      var ed = document.getElementById('wb3exp-'+q.n); if (ed) { ed.innerHTML = EXPLANATIONS[q.n] + optInfo; ed.classList.add('show'); }
       var et = document.getElementById('wb3tgl-'+q.n); if (et) { et.style.display = 'inline-block'; et.textContent = '📖 해설 접기'; }
     }
   };
