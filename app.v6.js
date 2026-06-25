@@ -2234,9 +2234,10 @@ function showWordlist() {
       if (state.playerName) {
         html += ` onclick="handleWordToggle('${escapeHtml(w)}', this)" title="클릭하여 안다/모른다 표시"`;
       }
-      html += `>${escapeHtml(w)}`;
+      html += `>`;
       if (known) html += `<span class="wl-check">✓</span>`;
-      if (wrong) html += `<span class="wl-wrong-mark" style="color:#c62828;font-weight:800;margin-left:2px">✗</span>`;
+      html += `<span class="wl-word-text">${escapeHtml(w)}</span>`;
+      if (wrong) html += `<span class="wl-wrong-mark" style="color:#c62828;font-weight:800">✗</span>`;
       if (m) html += `<span class="wl-meaning">${escapeHtml(m)}</span>`;
       html += `</span>`;
     });
@@ -2340,6 +2341,7 @@ function showWordlist2() {
   html += '<h4><span class="wl-cat-num">EXTRA</span> MVP2 + V401 (V502 미포함) — ' + visible.length + ' words';
   if (hiddenCount > 0) html += ' <small style="color:var(--muted);font-weight:400">(' + hiddenCount + ' hidden)</small>';
   html += ' <button onclick="showWordcheck201()" style="margin-left:8px;padding:2px 8px;border:1px solid #2563EB;border-radius:4px;background:transparent;color:#2563EB;font-size:11px;font-weight:600;cursor:pointer;vertical-align:middle">201 단어퀴즈</button>';
+  html += ' <button onclick="showWordcheck()" style="margin-left:4px;padding:2px 8px;border:1px solid #16A34A;border-radius:4px;background:transparent;color:#16A34A;font-size:11px;font-weight:600;cursor:pointer;vertical-align:middle">단어확인문제</button>';
   html += '</h4>';
   html += '<div style="margin-bottom:8px">';
   if (state.playerName) {
@@ -3581,7 +3583,6 @@ function showDashboard() {
   html += dashCard({ icon: '🧩', title: '논리문제', desc: '문맥 속 어휘 추론', accent: 'indigo', onclick: "startLogicQuiz()" });
   html += dashCard({ icon: '📝', title: '문법 201', desc: '442개 문법 문제', accent: 'plum', onclick: "showGrammar201()" });
   html += dashCard({ icon: '📄', title: '기출문제', desc: '2011-2026 성균관대 + 가천대', accent: 'slate', onclick: "showExam()" });
-  html += dashCard({ icon: '✅', title: '단어확인문제', desc: '전체 어휘 확인', accent: 'green', onclick: "showWordcheck()" });
   html += '</div>';
 
   if (!loggedIn) {
