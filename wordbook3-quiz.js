@@ -247,8 +247,10 @@ var WB3_QUIZ = [
       var et = document.getElementById('wb3tgl-'+q.n); if (et) { et.style.display = 'inline-block'; et.textContent = '📖 해설 접기'; }
     }
 
-    // Auto-advance to next unanswered/wrong question after answering
-    setTimeout(function() { wb3SubmitNext(); }, isNoExplain ? 400 : 800);
+    // 해설OFF: auto-advance. 해설ON: stay to read explanation.
+    if (isNoExplain) {
+      setTimeout(function() { wb3SubmitNext(); }, 400);
+    }
   };
 
   window.wb3Prev = function() {
