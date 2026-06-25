@@ -1055,6 +1055,11 @@ h2 {
   cursor: pointer;
   user-select: none;
   list-style: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.wb3-summary:focus {
+  outline: none;
+  background: #f5f7fa;
 }
 .wb3-summary::-webkit-details-marker {
   display: none;
@@ -1084,11 +1089,14 @@ details[open] > .wb3-summary::before {
 }
 .wb3-card .wb3-word.wb3-word-clickable {
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 .wb3-card .wb3-word.wb3-word-clickable:hover {
   text-decoration: underline;
-  background: #e8f0fe;
-  border-radius: 3px;
+}
+.wb3-card .wb3-word.wb3-word-clickable:focus {
+  outline: none;
+  background: transparent;
 }
 .wb3-card .wb3-word.wb3-word-known {
   color: #2e7d32;
