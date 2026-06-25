@@ -2835,6 +2835,58 @@ async function loadComments(postId) {
   boardState.currentComments = data || [];
 }
 
+function buildCommentTree(comments) {
+  var childrenMap = {};
+  var roots = [];
+  for (var i = 0; i < comments.length; i++) {
+    var c = comments[i];
+    if (!childrenMap[c.id]) childrenMap[c.id] = [];
+    if (c.parent_id) {
+      if (!childrenMap[c.parent_id]) childrenMap[c.parent_id] = [];
+      childrenMap[c.parent_id].push(c);
+    } else {
+      roots.push(c);
+    }
+  }
+  return { roots: roots, children: childrenMap };
+}
+
+function countAllComments(comments) { return comments.length; }
+
+function renderCommentNode(c, post, childrenMap, depth) {
+  var cInitial = (c.nickname || '?')[0].toUpperCase();
+  var cTier = boardState.userTiers[c.nickname];
+  var cTierBadge = cTier ? '<span class="board-tier-chip board-tier-chip-sm" style="color:' + cTier.color + '">' + cTier.icon + '</span>' : '';
+  var indent = depth > 0 ? ' style="margin-left:' + (Math.min(depth, 5) * 28) + 'px"' : '';
+  var html = '<div class="board-comment-item' + (depth > 0 ? ' board-comment-reply' : '') + '"' + indent + '>';
+  html += '<div class="board-comment-avatar">' + cInitial + '</div>';
+  html += '<div class="board-comment-body">';
+  html += '<div class="board-comment-meta">';
+  html += '<strong>' + escapeHtml(c.nickname) + '</strong>';
+  if (cTierBadge) html += cTierBadge;
+  html += '<time>' + formatBoardDate(c.created_at) + '</time>';
+  if (state.playerName === c.nickname) {
+    html += '<button class="board-comment-del" onclick="event.stopPropagation();deleteComment(' + c.id + ',' + post.id + ')">삭제</button>';
+  }
+  html += '</div>';
+  html += '<div class="board-comment-content">' + escapeHtml(c.content).replace(/\n/g, '<br>') + '</div>';
+  if (state.playerName) {
+    html += '<button class="board-reply-btn" onclick="toggleReplyForm(' + c.id + ',' + post.id + ')">답글</button>';
+    html += '<div id="replyForm-' + c.id + '" class="board-reply-form" style="display:none">';
+    html += '<textarea id="replyInput-' + c.id + '" class="board-textarea" rows="2" placeholder="답글을 입력하세요"></textarea>';
+    html += '<div style="display:flex;gap:8px;margin-top:8px">';
+    html += '<button class="board-submit-btn" onclick="submitComment(' + post.id + ',' + c.id + ')">등록</button>';
+    html += '<button class="board-back-btn" onclick="toggleReplyForm(' + c.id + ',' + post.id + ')">취소</button>';
+    html += '</div></div>';
+  }
+  html += '</div></div>';
+  var children = childrenMap[c.id] || [];
+  for (var ci = 0; ci < children.length; ci++) {
+    html += renderCommentNode(children[ci], post, childrenMap, depth + 1);
+  }
+  return html;
+}
+
 function renderPostDetail() {
   const post = boardState.currentPost;
   if (!post) return;
@@ -2864,29 +2916,14 @@ function renderPostDetail() {
   html += '<div class="board-comments">';
   html += '<div class="board-comments-header">';
   html += '댓글';
-  html += '<span class="board-comments-count">' + boardState.currentComments.length + '</span>';
+  html += '<span class="board-comments-count">' + countAllComments(boardState.currentComments) + '</span>';
   html += '</div>';
-  if (boardState.currentComments.length === 0) {
+  var tree = buildCommentTree(boardState.currentComments);
+  if (tree.roots.length === 0) {
     html += '<p style="color:var(--muted);font-size:14px;padding:8px 0">아직 댓글이 없습니다. 첫 댓글을 남겨보세요.</p>';
   } else {
-    for (var i = 0; i < boardState.currentComments.length; i++) {
-      var c = boardState.currentComments[i];
-      var cInitial = (c.nickname || '?')[0].toUpperCase();
-      var cTier = boardState.userTiers[c.nickname];
-      var cTierBadge = cTier ? '<span class="board-tier-chip board-tier-chip-sm" style="color:' + cTier.color + '">' + cTier.icon + '</span>' : '';
-      html += '<div class="board-comment-item">';
-      html += '<div class="board-comment-avatar">' + cInitial + '</div>';
-      html += '<div class="board-comment-body">';
-      html += '<div class="board-comment-meta">';
-      html += '<strong>' + escapeHtml(c.nickname) + '</strong>';
-      if (cTierBadge) html += cTierBadge;
-      html += '<time>' + formatBoardDate(c.created_at) + '</time>';
-      if (state.playerName === c.nickname) {
-        html += '<button class="board-comment-del" onclick="deleteComment(' + c.id + ',' + post.id + ')">삭제</button>';
-      }
-      html += '</div>';
-      html += '<div class="board-comment-content">' + escapeHtml(c.content).replace(/\n/g, '<br>') + '</div>';
-      html += '</div></div>';
+    for (var ri = 0; ri < tree.roots.length; ri++) {
+      html += renderCommentNode(tree.roots[ri], post, tree.children, 0);
     }
   }
   if (state.playerName) {
@@ -2900,18 +2937,34 @@ function renderPostDetail() {
   els.boardContent.innerHTML = html;
 }
 
-async function submitComment(postId) {
+function toggleReplyForm(commentId, postId) {
+  var form = document.getElementById('replyForm-' + commentId);
+  if (!form) return;
+  if (form.style.display === 'none') {
+    form.style.display = 'block';
+    var input = document.getElementById('replyInput-' + commentId);
+    if (input) setTimeout(function() { input.focus(); }, 50);
+  } else {
+    form.style.display = 'none';
+  }
+}
+
+async function submitComment(postId, parentId) {
   if (!state.playerName) return;
-  const input = document.getElementById('boardCommentInput');
-  const content = (input?.value || '').trim();
+  var content;
+  if (parentId) {
+    var replyInput = document.getElementById('replyInput-' + parentId);
+    content = (replyInput?.value || '').trim();
+  } else {
+    var mainInput = document.getElementById('boardCommentInput');
+    content = (mainInput?.value || '').trim();
+  }
   if (!content) { alert('댓글 내용을 입력하세요.'); return; }
+  var row = { post_id: postId, nickname: state.playerName, content: content };
+  if (parentId) row.parent_id = parentId;
   const client = await getSupabaseClient();
   if (!client) { alert('서버 연결 실패'); return; }
-  const { error } = await client.from(getCommentsTable()).insert({
-    post_id: postId,
-    nickname: state.playerName,
-    content: content,
-  });
+  const { error } = await client.from(getCommentsTable()).insert(row);
   if (error) { alert('등록 실패: ' + error.message); return; }
   viewPost(postId);
 }
