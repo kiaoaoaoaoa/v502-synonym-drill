@@ -4422,7 +4422,7 @@ document.getElementById('wcJumpBar').addEventListener('click', (e) => {
 
 document.getElementById('wordcheckRetry').addEventListener('click', () => lastWordcheckLauncher());
 
-els.wordcheckBtn.addEventListener('click', showWordcheck);
+if (els.wordcheckBtn) els.wordcheckBtn.addEventListener('click', showWordcheck);
 const wc201Btn = document.getElementById('wordcheck201Btn');
 if (wc201Btn) wc201Btn.addEventListener('click', showWordcheck201);
 els.wordcheckPanel.addEventListener('click', function(e) {
