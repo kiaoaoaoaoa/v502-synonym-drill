@@ -3561,9 +3561,6 @@ function showDashboard() {
         cloudSyncAll();
         pushAllScoresToSupabase();
         state._dashSyncing = false;
-        if (!els.dashboardPanel.hidden) {
-          setTimeout(() => showDashboard(), 50); // break call-stack recursion
-        }
       }).catch((e) => { console.warn('dashboard sync failed', e); state._dashSyncing = false; });
     }
   }
