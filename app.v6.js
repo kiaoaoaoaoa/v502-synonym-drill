@@ -396,7 +396,7 @@ function rateQuestion({X1, X2, X3, X4, X5, X6, X7}) {
 }
 
 function getScoreDelta(isCorrect, rate) {
-  return isCorrect ? +(30 * rate / 100) : -(10 * rate / 100);
+  return isCorrect ? +(1.5 * rate / 100) : -(1.5 * rate / 100);
 }
 
 function readIrtAbility() {
@@ -3765,6 +3765,7 @@ function renderMyInfoTab(tab) {
     const pct = Math.round((completed / totalSyn) * 100);
     const logicMastered = getLogicCompleted().size;
     const logicTotal = getLogicTotal();
+    const wb3Known = state.playerName ? Object.keys((readWordKnowledge()[state.playerName.toLowerCase()] || {})).length : 0;
     const entries = readLeaderboard().filter(e => state.playerName && e.name.toLowerCase() === state.playerName.toLowerCase());
     const best = new Map();
     for (const e of entries) {
@@ -3781,13 +3782,14 @@ function renderMyInfoTab(tab) {
     html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid #4f46e5;border-radius:2px;text-align:center"><strong style="font-size:24px">${logicMastered}</strong><br><small>논리 마스터</small><br><small style="color:var(--muted)">/ ${logicTotal}</small></div>`;
     html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid var(--ink);border-radius:2px;text-align:center"><strong style="font-size:24px">${wcProgress.correct}/${wcProgress.total}</strong><br><small>단어확인</small><br><small style="color:var(--muted)">${wcProgress.total > 0 ? Math.round(wcProgress.correct/wcProgress.total*100) + '%' : 'No data'}</small></div>`;
     html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:2px;text-align:center;cursor:pointer" onclick="showRanking()" title="통합랭킹 보기"><strong style="font-size:24px">${totalCorrect}점</strong><br><small>통합 점수 ▸</small><br><small style="color:var(--muted)">${totalQuestions > 0 ? Math.round((totalCorrect/totalQuestions)*100) + '%' : 'No data'} · ${totalQuestions}문제 풂</small></div>`;
+    html += `<div style="padding:16px;border:1px solid var(--line);border-left:3px solid #7c3aed;border-radius:2px;text-align:center"><strong style="font-size:24px">${wb3Known}</strong><br><small>단어장3 체크</small></div>`;
     html += '</div>';
 
     const p = readSynonymProgress();
     const key = getSynonymUserKey();
     const mastered = p[key] || {};
     const catIds = Object.keys(mastered).filter((c) => c !== 'wrong' && mastered[c] && mastered[c].length).sort();
-    html += '<h4 style="margin:18px 0 8px">📖 외운 단어</h4>';
+    html += '<h4 style="margin:18px 0 8px">📖 외운 단어 (단어문제)</h4>';
     if (catIds.length === 0) {
       html += '<p style="color:var(--muted)">아직 외운 단어가 없습니다. 단어문제를 풀어보세요!</p>';
     } else {
@@ -3797,6 +3799,22 @@ function renderMyInfoTab(tab) {
         html += `<strong style="font-size:13px">${escapeHtml(catId)} — ${escapeHtml(title)}</strong><br>`;
         html += `<span style="font-size:12px;color:var(--muted)">${mastered[catId].map(w => { const m = wordMeanings[w]||''; return escapeHtml(w)+(m?' ('+escapeHtml(m)+')':''); }).join(', ')}</span></div>`;
       }
+    }
+    const wkStore = readWordKnowledge();
+    const wkWords = wkStore[state.playerName.toLowerCase()] || {};
+    const wkList = Object.keys(wkWords);
+    if (wkList.length > 0) {
+      html += '<h4 style="margin:18px 0 8px">📗 단어장3 체크 단어</h4>';
+      const wkChunks = [];
+      for (let i = 0; i < wkList.length; i += 20) wkChunks.push(wkList.slice(i, i + 20));
+      wkChunks.forEach(chunk => {
+        html += '<div style="margin-bottom:6px;display:flex;flex-wrap:wrap;gap:4px">';
+        chunk.forEach(w => {
+          const m = wordMeanings[w] || '';
+          html += `<span style="padding:2px 8px;border-radius:4px;font-size:12px;border:1px solid #cfe6cf;background:#e8f5e9">${escapeHtml(w)}${m ? ' ('+escapeHtml(m)+')' : ''}</span>`;
+        });
+        html += '</div>';
+      });
     }
   } else if (tab === 'wrong') {
     const p = readSynonymProgress();
