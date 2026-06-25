@@ -4694,8 +4694,8 @@ function checkExamAnswer(tab, idx, letter, btn) {
     else if (bLetter === letter && !correct) b.style.background = '#fce4ec';
   });
 
-  // Auto-advance on correct answer in one-by-one mode
-  if (correct && examOneByOne) {
+  // Auto-advance on correct answer in one-by-one mode (only when 해설OFF)
+  if (correct && examOneByOne && noExplainMode) {
     var total = EXAM_REGISTRY[tab] ? EXAM_REGISTRY[tab].data().length : 0;
     if (idx < total - 1) {
       setTimeout(function() { examIndex = idx + 1; renderExamTab(); }, 800);
