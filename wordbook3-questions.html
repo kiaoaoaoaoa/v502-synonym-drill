@@ -13,12 +13,13 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
 
-  .quiz-container { width: 100%; max-width: 680px; padding: 20px 16px 60px; }
+  .quiz-container { width: 100%; max-width: 720px; padding: 20px 16px 60px; }
 
   header { text-align: center; padding: 20px 0 8px; }
   header h1 { font-size: 1.25rem; font-weight: 800; }
   header p { font-size: 0.82rem; color: var(--muted); margin-top: 2px; }
-  .back-link { color: var(--accent); text-decoration: none; font-size: 0.8rem; }
+  .user-badge { display: inline-block; font-size: 0.78rem; padding: 3px 12px; border-radius: 99px; background: #fef3c7; color: #92400e; margin: 6px 0 0; }
+  .back-link { display: inline-block; color: var(--accent); text-decoration: none; font-size: 0.8rem; margin-top: 4px; }
   .back-link:hover { text-decoration: underline; }
 
   .progress-wrap { display: flex; align-items: center; gap: 12px; margin: 16px 0 8px; }
@@ -26,20 +27,20 @@
   .progress-fill { height: 100%; background: var(--accent); border-radius: 99px; transition: width 0.3s; }
   .progress-text { font-size: 0.82rem; font-weight: 700; color: var(--muted); white-space: nowrap; }
   .score-badge { font-size: 0.78rem; font-weight: 700; padding: 3px 10px; border-radius: 99px; background: var(--accent-light); color: var(--accent); white-space: nowrap; }
+  .best-badge { font-size: 0.75rem; padding: 3px 8px; border-radius: 99px; background: #fef3c7; color: #92400e; white-space: nowrap; }
 
   .q-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px 24px; margin-bottom: 16px; }
   .q-num { display: inline-block; font-weight: 700; font-size: 0.78rem; color: var(--accent); background: var(--accent-light); padding: 3px 12px; border-radius: 99px; margin-bottom: 14px; }
+  .q-solved { display: inline-block; font-size: 0.7rem; color: var(--correct); margin-left: 6px; }
   .q-text { font-size: 0.95rem; line-height: 1.78; margin-bottom: 24px; word-break: keep-all; }
   .q-blank { display: inline-block; min-width: 90px; border-bottom: 2px dashed var(--accent); text-align: center; padding: 0 4px; color: var(--accent); font-weight: 600; }
 
   .options { display: flex; flex-direction: column; gap: 8px; }
   .opt-btn { display: flex; align-items: flex-start; width: 100%; text-align: left; padding: 13px 16px; border-radius: 8px; border: 1.5px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.9rem; transition: all 0.12s; line-height: 1.4; }
   .opt-btn:hover:not(.disabled) { border-color: var(--accent); background: #f8faff; }
-  .opt-btn.correct { border-color: var(--correct); background: var(--correct-bg); }
+  .opt-btn.show-correct { border-color: var(--correct); background: var(--correct-bg); }
   .opt-btn.wrong { border-color: var(--wrong); background: var(--wrong-bg); }
   .opt-btn.disabled { pointer-events: none; }
-  .opt-btn.show-correct { border-color: var(--correct); background: var(--correct-bg); }
-
   .letter { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid var(--border); font-size: 0.75rem; font-weight: 700; margin-right: 10px; flex-shrink: 0; }
   .opt-btn.show-correct .letter { border-color: var(--correct); background: var(--correct); color: #fff; }
   .opt-btn.wrong .letter { border-color: var(--wrong); background: var(--wrong); color: #fff; }
@@ -49,6 +50,11 @@
   .feedback.correct-fb { background: var(--correct-bg); color: var(--correct); }
   .feedback.wrong-fb { background: var(--wrong-bg); color: var(--wrong); }
 
+  .explanation { padding: 16px; border-radius: 8px; margin-top: 12px; background: #fffbeb; border: 1px solid #fde68a; font-size: 0.82rem; line-height: 1.72; display: none; color: #78350f; word-break: keep-all; }
+  .explanation.show { display: block; }
+  .exp-toggle { font-size: 0.78rem; color: #92400e; cursor: pointer; margin-top: 8px; display: inline-block; }
+  .exp-toggle:hover { text-decoration: underline; }
+
   .action-row { display: flex; gap: 8px; margin-top: 16px; }
   .btn-next { flex: 1; padding: 12px; border-radius: 8px; border: none; background: var(--accent); color: #fff; font-size: 0.9rem; font-weight: 700; cursor: pointer; display: none; }
   .btn-next:hover { opacity: 0.9; }
@@ -57,9 +63,11 @@
   .result-panel { text-align: center; padding: 40px 16px; display: none; }
   .result-panel.show { display: block; }
   .result-score { font-size: 3rem; font-weight: 800; color: var(--accent); }
+  .result-best { font-size: 0.9rem; color: var(--muted); }
   .result-detail { font-size: 0.9rem; color: var(--muted); margin: 8px 0 20px; }
-  .btn-restart { padding: 12px 32px; border-radius: 8px; border: none; background: var(--accent); color: #fff; font-size: 0.95rem; font-weight: 700; cursor: pointer; }
+  .btn-restart { padding: 12px 32px; border-radius: 8px; border: none; background: var(--accent); color: #fff; font-size: 0.95rem; font-weight: 700; cursor: pointer; margin: 4px; }
   .btn-restart:hover { opacity: 0.9; }
+  .btn-reset { padding: 12px 32px; border-radius: 8px; border: 1.5px solid var(--border); background: var(--card-bg); color: var(--text); font-size: 0.95rem; cursor: pointer; margin: 4px; }
 
   .review-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.82rem; text-align: left; }
   .review-table th, .review-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); }
@@ -71,6 +79,7 @@
     .q-card { padding: 18px 14px 16px; }
     .q-text { font-size: 0.88rem; }
     .opt-btn { padding: 11px 12px; font-size: 0.85rem; }
+    .explanation { font-size: 0.78rem; }
   }
 </style>
 </head>
@@ -79,25 +88,34 @@
   <header>
     <h1>📝 단어장3 단어문제</h1>
     <p>1~100번 단어 · GRE 레벨 빈칸 추론 · 객관식 5지선다</p>
-    <a href="javascript:history.back()" class="back-link">← V502 Synonym Drill로 돌아가기</a>
+    <div class="user-badge" id="userBadge" style="display:none"></div>
+    <a href="." class="back-link">← V502 Synonym Drill로 돌아가기</a>
   </header>
 
   <div class="progress-wrap">
     <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
     <span class="progress-text" id="progressText">1/100</span>
     <span class="score-badge" id="scoreBadge">0점</span>
+    <span class="best-badge" id="bestBadge" style="display:none">최고: -</span>
   </div>
 
   <div id="questionArea"></div>
   <div class="result-panel" id="resultPanel">
     <div class="result-score" id="resultScore"></div>
+    <div class="result-best" id="resultBest"></div>
     <div class="result-detail" id="resultDetail"></div>
     <button class="btn-restart" onclick="restartQuiz()">🔄 다시 풀기</button>
+    <button class="btn-reset" onclick="resetProgress()">🗑️ 진행상황 초기화</button>
     <table class="review-table" id="reviewTable"></table>
   </div>
 </div>
 
 <script>
+var EXPLANATIONS = {};
+</script>
+<script src="wordbook3-questions-explanations.js"></script>
+<script>
+// ── Data ──────────────────────────────────
 var QUIZ = [
 {n:1,q:"Though the king claimed to rule by divine right, the rebels sought to ______ his authority by exposing his moral failings and stripping him of all ceremonial dignity.",a:"abase",o:["abase","aggrandize","absolve","adulate","ameliorate"]},
 {n:2,q:"The biologist noted that the specimen's morphology was markedly ______ from the established taxonomic norm, suggesting either a new species or a profound environmental mutation.",a:"aberrant",o:["aberrant","aesthetic","affable","agrarian","amorphous"]},
@@ -201,101 +219,260 @@ var QUIZ = [
 {n:100,q:"To ______ is not merely to forgive but to declare that no offense ever occurred — a distinction the defendant understood perfectly when he wept with relief at the verdict.",a:"absolve",o:["absolve","abjure","abase","amnesty","amend"]}
 ];
 
-QUIZ.forEach(function(q){ for(var i=q.o.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=q.o[i];q.o[i]=q.o[j];q.o[j]=t;} });
+// ── Persistence ───────────────────────────
+var SESSION_KEY = "v502-synonym-drill-session";
+var QUIZ_PROGRESS_KEY = "v502-synonym-drill-wb3quiz-progress";
+var QUIZ_SCORE_KEY = "v502-synonym-drill-wb3quiz-best";
 
-var LETTERS=['A','B','C','D','E'];
-var cur=0,score=0,answered=new Array(100).fill(false),picks=new Array(100).fill(null);
+function getPlayerName() {
+  try {
+    var s = JSON.parse(localStorage.getItem(SESSION_KEY));
+    return (s && s.name) ? s.name : null;
+  } catch(e) { return null; }
+}
 
-function render(){
-  if(cur>=100){showResult();return;}
-  var q=QUIZ[cur];
-  document.getElementById('progressFill').style.width=(cur/100*100)+'%';
-  document.getElementById('progressText').textContent=(cur+1)+'/100';
-  document.getElementById('scoreBadge').textContent=score+'점';
-  var h='<div class="q-card">';
-  h+='<span class="q-num">문제 '+q.n+'</span>';
-  h+='<div class="q-text">'+q.q.replace(/______/g,'<span class="q-blank">______</span>')+'</div>';
-  h+='<div class="options">';
-  q.o.forEach(function(opt,i){
-    h+='<button class="opt-btn" onclick="pick(this,\''+opt.replace(/'/g,"\\'")+'\')" data-opt="'+opt.replace(/"/g,'&quot;')+'">';
-    h+='<span class="letter">'+LETTERS[i]+'</span>'+opt+'</button>';
-  });
-  h+='</div>';
-  h+='<div class="feedback" id="fb"></div>';
-  h+='<div class="action-row"><button class="btn-next" id="btnNext" onclick="next()">다음 문제 ▶</button></div>';
-  h+='</div>';
-  document.getElementById('questionArea').innerHTML=h;
-  if(answered[cur]){
-    var btns=document.querySelectorAll('.opt-btn');
-    btns.forEach(function(b){
-      b.classList.add('disabled');
-      if(b.dataset.opt===q.a)b.classList.add('show-correct');
-      if(b.dataset.opt===picks[cur]&&picks[cur]!==q.a)b.classList.add('wrong');
+function loadProgress() {
+  var name = getPlayerName();
+  if (!name) return { answered: {}, picks: {}, score: 0 };
+  try {
+    var raw = localStorage.getItem(QUIZ_PROGRESS_KEY);
+    if (!raw) return { answered: {}, picks: {}, score: 0 };
+    var all = JSON.parse(raw);
+    var key = name.toLowerCase();
+    return all[key] || { answered: {}, picks: {}, score: 0 };
+  } catch(e) { return { answered: {}, picks: {}, score: 0 }; }
+}
+
+function saveProgress(answered, picks, score) {
+  var name = getPlayerName();
+  if (!name) return;
+  try {
+    var raw = localStorage.getItem(QUIZ_PROGRESS_KEY);
+    var all = raw ? JSON.parse(raw) : {};
+    var key = name.toLowerCase();
+    all[key] = { answered: answered, picks: picks, score: score, updated: Date.now() };
+    localStorage.setItem(QUIZ_PROGRESS_KEY, JSON.stringify(all));
+  } catch(e) {}
+}
+
+function loadBestScore() {
+  var name = getPlayerName();
+  if (!name) return 0;
+  try {
+    var raw = localStorage.getItem(QUIZ_SCORE_KEY);
+    if (!raw) return 0;
+    var all = JSON.parse(raw);
+    return all[name.toLowerCase()] || 0;
+  } catch(e) { return 0; }
+}
+
+function saveBestScore(score) {
+  var name = getPlayerName();
+  if (!name) return;
+  try {
+    var raw = localStorage.getItem(QUIZ_SCORE_KEY);
+    var all = raw ? JSON.parse(raw) : {};
+    var key = name.toLowerCase();
+    if (score > (all[key] || 0)) {
+      all[key] = score;
+      localStorage.setItem(QUIZ_SCORE_KEY, JSON.stringify(all));
+    }
+  } catch(e) {}
+}
+
+// ── State ──────────────────────────────────
+var LETTERS = ['A','B','C','D','E'];
+var cur = 0;
+var answered = {};   // {qnum: true}
+var picks = {};      // {qnum: "chosen_word"}
+var score = 0;
+var bestScore = 0;
+var playerName = null;
+
+// Load persisted state
+(function init() {
+  QUIZ.forEach(function(q){ for(var i=q.o.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=q.o[i];q.o[i]=q.o[j];q.o[j]=t;} });
+  playerName = getPlayerName();
+  bestScore = loadBestScore();
+  var prog = loadProgress();
+  if (prog.answered) answered = prog.answered;
+  if (prog.picks) picks = prog.picks;
+  if (typeof prog.score === 'number') score = prog.score;
+  // Find next unanswered question
+  cur = 0;
+  while (cur < 100 && answered[cur+1]) cur++;
+  // Show user badge
+  if (playerName) {
+    var badge = document.getElementById('userBadge');
+    badge.style.display = 'inline-block';
+    badge.textContent = '👤 ' + playerName + ' — 진행상황 저장됨';
+  }
+  if (bestScore > 0) {
+    var bb = document.getElementById('bestBadge');
+    bb.style.display = 'inline-block';
+    bb.textContent = '최고: ' + bestScore + '점';
+  }
+  render();
+})();
+
+// ── Render ─────────────────────────────────
+function render() {
+  if (cur >= 100) { showResult(); return; }
+  var q = QUIZ[cur];
+  document.getElementById('progressFill').style.width = (cur/100*100) + '%';
+  document.getElementById('progressText').textContent = (cur+1) + '/100';
+  document.getElementById('scoreBadge').textContent = score + '점';
+
+  var wasAnswered = !!answered[cur+1];
+  var h = '<div class="q-card">';
+  h += '<span class="q-num">문제 ' + q.n + '</span>';
+  if (wasAnswered) h += '<span class="q-solved">(풀이완료)</span>';
+  h += '<div class="q-text">' + q.q.replace(/______/g, '<span class="q-blank">______</span>') + '</div>';
+  if (wasAnswered) {
+    // Show read-only state with highlights
+    h += '<div class="options">';
+    q.o.forEach(function(opt, i) {
+      var cls = 'opt-btn disabled';
+      if (opt === q.a) cls += ' show-correct';
+      else if (opt === picks[cur+1] && picks[cur+1] !== q.a) cls += ' wrong';
+      h += '<button class="' + cls + '"><span class="letter">' + LETTERS[i] + '</span>' + opt + '</button>';
     });
-    document.getElementById('btnNext').classList.add('show');
-    var fb=document.getElementById('fb');
-    fb.classList.add('show');
-    fb.classList.add(picks[cur]===q.a?'correct-fb':'wrong-fb');
-    fb.textContent=picks[cur]===q.a?'✅ 정답입니다!':'❌ 오답입니다. 정답: '+q.a;
+    h += '</div>';
+    h += '<div class="feedback show ' + (picks[cur+1] === q.a ? 'correct-fb' : 'wrong-fb') + '">' + (picks[cur+1] === q.a ? '✅ 정답입니다!' : '❌ 오답입니다. 정답: ' + q.a) + '</div>';
+    // Explanation
+    if (EXPLANATIONS[q.n]) {
+      h += '<span class="exp-toggle" onclick="toggleExp(' + q.n + ')">📖 해설 보기</span>';
+      h += '<div class="explanation" id="exp-' + q.n + '">' + EXPLANATIONS[q.n] + '</div>';
+    }
+    h += '<div class="action-row"><button class="btn-next show" onclick="next()">다음 문제 ▶</button></div>';
+  } else {
+    // Active question
+    h += '<div class="options">';
+    q.o.forEach(function(opt, i) {
+      h += '<button class="opt-btn" onclick="pick(this,\'' + opt.replace(/'/g,"\\'") + '\')" data-opt="' + opt.replace(/"/g,'&quot;') + '">';
+      h += '<span class="letter">' + LETTERS[i] + '</span>' + opt + '</button>';
+    });
+    h += '</div>';
+    h += '<div class="feedback" id="fb"></div>';
+    h += '<div class="explanation" id="exp-' + q.n + '"></div>';
+    h += '<span class="exp-toggle" id="expTgl-' + q.n + '" style="display:none" onclick="toggleExp(' + q.n + ')">📖 해설 보기</span>';
+    h += '<div class="action-row"><button class="btn-next" id="btnNext" onclick="next()">다음 문제 ▶</button></div>';
   }
+  h += '</div>';
+  document.getElementById('questionArea').innerHTML = h;
   document.getElementById('resultPanel').classList.remove('show');
-  document.getElementById('questionArea').style.display='block';
-  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('questionArea').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function pick(btn,chosen){
-  if(answered[cur])return;
-  var q=QUIZ[cur];
-  var ok=(chosen===q.a);
-  answered[cur]=true;picks[cur]=chosen;
-  if(ok)score++;
-  var btns=document.querySelectorAll('.opt-btn');
-  btns.forEach(function(b){
+function toggleExp(n) {
+  var el = document.getElementById('exp-' + n);
+  if (!el) return;
+  el.classList.toggle('show');
+}
+
+// ── Answer ──────────────────────────────────
+function pick(btn, chosen) {
+  if (answered[cur+1]) return;
+  var q = QUIZ[cur];
+  var ok = (chosen === q.a);
+  answered[cur+1] = true;
+  picks[cur+1] = chosen;
+  if (ok) score++;
+  saveProgress(answered, picks, score);
+  saveBestScore(score);
+
+  var btns = document.querySelectorAll('.opt-btn');
+  btns.forEach(function(b) {
     b.classList.add('disabled');
-    if(b.dataset.opt===q.a)b.classList.add('show-correct');
-    if(b===btn&&!ok)b.classList.add('wrong');
+    if (b.dataset.opt === q.a) b.classList.add('show-correct');
+    if (b === btn && !ok) b.classList.add('wrong');
   });
-  var fb=document.getElementById('fb');
+  var fb = document.getElementById('fb');
   fb.classList.add('show');
-  fb.classList.add(ok?'correct-fb':'wrong-fb');
-  fb.textContent=ok?'✅ 정답입니다!':'❌ 오답입니다. 정답: '+q.a;
+  fb.classList.add(ok ? 'correct-fb' : 'wrong-fb');
+  fb.textContent = ok ? '✅ 정답입니다!' : '❌ 오답입니다. 정답: ' + q.a;
   document.getElementById('btnNext').classList.add('show');
-  document.getElementById('scoreBadge').textContent=score+'점';
-}
+  document.getElementById('scoreBadge').textContent = score + '점';
 
-function next(){cur++;if(cur>=100){showResult();return;}render();}
-
-function showResult(){
-  document.getElementById('questionArea').style.display='none';
-  document.getElementById('progressFill').style.width='100%';
-  document.getElementById('progressText').textContent='100/100';
-  document.getElementById('scoreBadge').textContent=score+'점';
-  var p=document.getElementById('resultPanel');p.classList.add('show');
-  document.getElementById('resultScore').textContent=score+' / 100';
-  var msg='';
-  if(score>=90)msg='🏆 탁월합니다! GRE 수준 어휘력이 매우 뛰어납니다.';
-  else if(score>=70)msg='👍 좋은 성적입니다. 꾸준히 복습하면 90점 이상도 가능합니다.';
-  else if(score>=50)msg='📚 절반 이상 맞추셨네요. 오답을 복습하며 어휘력을 키워보세요.';
-  else msg='💪 아직 갈 길이 멉니다. 단어장을 다시 정독하고 재도전해보세요.';
-  document.getElementById('resultDetail').textContent=msg;
-  var rev='<tr><th>#</th><th>선택</th><th>정답</th><th>결과</th></tr>';
-  for(var i=0;i<100;i++){
-    if(!answered[i])continue;
-    var qq=QUIZ[i],ok=picks[i]===qq.a;
-    rev+='<tr><td>'+qq.n+'</td><td class="'+(ok?'review-correct':'review-wrong')+'">'+(picks[i]||'—')+'</td><td>'+qq.a+'</td><td class="'+(ok?'review-correct':'review-wrong')+'">'+(ok?'✓':'✗')+'</td></tr>';
+  // Show explanation toggle
+  if (EXPLANATIONS[q.n]) {
+    var expDiv = document.getElementById('exp-' + q.n);
+    if (expDiv) { expDiv.innerHTML = EXPLANATIONS[q.n]; expDiv.classList.add('show'); }
+    var tgl = document.getElementById('expTgl-' + q.n);
+    if (tgl) { tgl.style.display = 'inline-block'; tgl.textContent = '📖 해설 접기'; }
   }
-  document.getElementById('reviewTable').innerHTML=rev;
-  window.scrollTo({top:0,behavior:'smooth'});
+
+  if (bestScore > 0) {
+    var bb = document.getElementById('bestBadge');
+    bb.style.display = 'inline-block';
+    bb.textContent = '최고: ' + Math.max(score, bestScore) + '점';
+  }
 }
 
-function restartQuiz(){
-  cur=0;score=0;answered=new Array(100).fill(false);picks=new Array(100).fill(null);
-  QUIZ.forEach(function(q){for(var i=q.o.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=q.o[i];q.o[i]=q.o[j];q.o[j]=t;}});
-  document.getElementById('resultPanel').classList.remove('show');
-  document.getElementById('questionArea').style.display='block';
+function next() {
+  do { cur++; } while (cur < 100 && answered[cur+1]);
+  if (cur >= 100) { showResult(); return; }
   render();
 }
-render();
+
+// ── Result ──────────────────────────────────
+function showResult() {
+  document.getElementById('questionArea').style.display = 'none';
+  document.getElementById('progressFill').style.width = '100%';
+  document.getElementById('progressText').textContent = '100/100';
+  document.getElementById('scoreBadge').textContent = score + '점';
+
+  var totalAnswered = Object.keys(answered).length;
+  var pct = totalAnswered > 0 ? Math.round(score * 100 / totalAnswered) : 0;
+
+  var p = document.getElementById('resultPanel'); p.classList.add('show');
+  document.getElementById('resultScore').textContent = score + ' / 100';
+  var bestMsg = '';
+  if (bestScore > 0) bestMsg = ' (개인 최고: ' + bestScore + '점)';
+  document.getElementById('resultBest').textContent = bestMsg;
+
+  var msg = '';
+  if (pct >= 90) msg = '🏆 탁월합니다! GRE 수준 어휘력이 매우 뛰어납니다.';
+  else if (pct >= 70) msg = '👍 좋은 성적입니다. 꾸준히 복습하면 90점 이상도 가능합니다.';
+  else if (pct >= 50) msg = '📚 절반 이상 맞추셨네요. 해설을 정독하며 오답을 복습해보세요.';
+  else msg = '💪 아직 갈 길이 멉니다. 단어장3을 다시 한번 정독하고 재도전해보세요.';
+  document.getElementById('resultDetail').textContent = msg;
+
+  var rev = '<tr><th>#</th><th>선택</th><th>정답</th><th>결과</th></tr>';
+  var unanswered = [];
+  for (var i = 0; i < 100; i++) {
+    var qq = QUIZ[i];
+    if (!answered[qq.n]) { unanswered.push(qq.n); continue; }
+    var ok = picks[qq.n] === qq.a;
+    rev += '<tr><td>' + qq.n + '</td><td class="' + (ok ? 'review-correct' : 'review-wrong') + '">' + (picks[qq.n]||'—') + '</td><td>' + qq.a + '</td><td class="' + (ok ? 'review-correct' : 'review-wrong') + '">' + (ok ? '✓' : '✗') + '</td></tr>';
+  }
+  if (unanswered.length > 0) {
+    rev += '<tr><td colspan="4" style="color:var(--muted);padding-top:12px">⚠️ 미응시: ' + unanswered.join(', ') + '</td></tr>';
+  }
+  document.getElementById('reviewTable').innerHTML = rev;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── Actions ─────────────────────────────────
+function restartQuiz() {
+  // Go back to first question, keep existing progress
+  cur = 0;
+  while (cur < 100 && answered[cur+1]) cur++;
+  document.getElementById('resultPanel').classList.remove('show');
+  document.getElementById('questionArea').style.display = 'block';
+  render();
+}
+
+function resetProgress() {
+  if (!confirm('정말로 모든 진행상황과 점수를 초기화하시겠습니까? 이 작업은 되돌릴 수 없습니다.')) return;
+  answered = {}; picks = {}; score = 0; cur = 0;
+  saveProgress(answered, picks, score);
+  QUIZ.forEach(function(q){ for(var i=q.o.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=q.o[i];q.o[i]=q.o[j];q.o[j]=t;} });
+  document.getElementById('resultPanel').classList.remove('show');
+  document.getElementById('questionArea').style.display = 'block';
+  render();
+}
 </script>
 </body>
 </html>
