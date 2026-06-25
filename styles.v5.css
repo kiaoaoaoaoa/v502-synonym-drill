@@ -2172,23 +2172,28 @@ details[open] > .wb3-summary::before {
   border: 1px solid var(--faint);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
 }
 .dash-hero::before {
   content: '';
   position: absolute;
-  top: -40px; left: -40px;
-  width: 160px; height: 160px;
-  background: radial-gradient(circle, rgba(79,70,229,0.06) 0%, transparent 70%);
-  border-radius: 50%;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4f46e5, #7c3aed, #0d9488, #2563eb, #4f46e5);
+  background-size: 200% 100%;
+  animation: heroBorderShine 4s linear infinite;
   pointer-events: none;
+}
+@keyframes heroBorderShine {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 .dash-hero::after {
   content: '';
   position: absolute;
-  bottom: -30px; right: -30px;
-  width: 120px; height: 120px;
-  background: radial-gradient(circle, rgba(13,148,136,0.06) 0%, transparent 70%);
+  top: -60px; right: -40px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(79,70,229,0.05) 0%, rgba(13,148,136,0.03) 50%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -2205,6 +2210,12 @@ details[open] > .wb3-summary::before {
   border-radius: 20px;
   flex: 0 0 auto;
   color: #4f46e5;
+  animation: heroIconFloat 3s ease-in-out infinite;
+  box-shadow: 0 4px 16px rgba(79,70,229,0.08);
+}
+@keyframes heroIconFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
 }
 .dash-hero-icon svg { color: #4f46e5; }
 
@@ -2273,8 +2284,9 @@ details[open] > .wb3-summary::before {
 .dash-stat[cursor="pointer"]:hover,
 .dash-stat[onclick]:hover {
   border-color: #ccc;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+  background: linear-gradient(180deg, #fff 0%, #fafafa 100%);
 }
 .dash-stat-num {
   font-size: 38px;
@@ -2343,12 +2355,13 @@ details[open] > .wb3-summary::before {
   box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 .dash-card:hover {
-  background: #fafafa;
-  border-color: #ccc;
-  border-left-width: 6px;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  background: linear-gradient(135deg, #fafafa 0%, #fff 100%);
+  border-color: #d0d0d0;
+  border-left-width: 5px;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
 }
+.dash-card:active { transform: translateY(-1px) scale(0.99); }
 .dash-card:focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 3px;
@@ -2419,14 +2432,15 @@ details[open] > .wb3-summary::before {
 .appbar {
   display: flex;
   align-items: center;
-  padding: 12px 20px;
+  padding: 10px 20px;
   margin: -28px -36px 0;
-  background: #fff;
-  border-bottom: 1px solid var(--faint);
+  background: rgba(255,255,255,0.72);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
   position: sticky;
   top: 0;
-  z-index: 10;
-  backdrop-filter: blur(8px);
+  z-index: 100;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
 }
 .appbrand {
   display: inline-flex;
