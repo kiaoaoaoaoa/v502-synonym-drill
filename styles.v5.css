@@ -1082,6 +1082,11 @@ details[open] > .wb3-summary::before {
   padding: 3px 6px;
 }
 
+/* hide pronunciation by default */
+.wb3-pron-hidden .wb3-pron {
+  display: none;
+}
+
 /* wordbook3 card variants */
 .wb3-card.wb3-known {
   background: #f0faf0;

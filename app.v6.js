@@ -2390,6 +2390,7 @@ function showWordlist2() {
 }
 
 let wb3HideKnown = false;
+let wb3ShowPron = false;
 
 function showWordbook3() {
   switchMode('wordlist');
@@ -2400,7 +2401,7 @@ function showWordbook3() {
   const hiddenCount = words.length - visible.length;
 
   let totalCountDisplay = words.length;
-  let html = '<div class="wordlist-scroll"><div class="wordlist-cat">';
+  let html = '<div class="wordlist-scroll"><div class="wordlist-cat' + (wb3ShowPron ? '' : ' wb3-pron-hidden') + '">';
   html += '<h4><span class="wl-cat-num">WB3</span> 단어장3 — ' + visible.length + ' / ' + totalCountDisplay + ' 단어';
   if (hiddenCount > 0) html += ' <small style="color:var(--muted);font-weight:400">(' + hiddenCount + '개 숨김)</small>';
   html += '</h4>';
@@ -2408,6 +2409,7 @@ function showWordbook3() {
   if (state.playerName) {
     html += '<button class="wl-jump-btn wl-hideknown-btn' + (wb3HideKnown ? ' wl-hideknown-on' : '') + '" type="button" id="wb3HideBtn" title="외운 단어(✓) 숨기기">' + (wb3HideKnown ? '✓ 외운 단어 숨김' : '외운 단어 안보기') + '</button>';
   }
+  html += '<button class="wl-jump-btn' + (wb3ShowPron ? ' wl-hideknown-on' : '') + '" type="button" id="wb3PronBtn">' + (wb3ShowPron ? '✓ 발음기호 보임' : '발음기호 보기') + '</button>';
   html += '</div>';
 
   // 100-word chunks, all collapsed by default
@@ -2479,6 +2481,10 @@ function showWordbook3() {
   const hideBtn = document.getElementById('wb3HideBtn');
   if (hideBtn) {
     hideBtn.addEventListener('click', () => { wb3HideKnown = !wb3HideKnown; showWordbook3(); });
+  }
+  const pronBtn = document.getElementById('wb3PronBtn');
+  if (pronBtn) {
+    pronBtn.addEventListener('click', () => { wb3ShowPron = !wb3ShowPron; showWordbook3(); });
   }
 }
 
