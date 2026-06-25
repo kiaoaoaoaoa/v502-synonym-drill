@@ -2128,20 +2128,29 @@ details[open] > .wb3-summary::before {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  padding: 32px 32px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 40%, #1a1a1a 100%);
-  color: #fff;
+  padding: 36px 36px;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid var(--faint);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+.dash-hero::before {
+  content: '';
+  position: absolute;
+  top: -40px; left: -40px;
+  width: 160px; height: 160px;
+  background: radial-gradient(circle, rgba(79,70,229,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 .dash-hero::after {
   content: '';
   position: absolute;
-  top: -50%; right: -20%;
-  width: 300px; height: 300px;
-  background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+  bottom: -30px; right: -30px;
+  width: 120px; height: 120px;
+  background: radial-gradient(circle, rgba(13,148,136,0.06) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -2154,13 +2163,12 @@ details[open] > .wb3-summary::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255,255,255,0.1);
-  border-radius: 14px;
+  background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+  border-radius: 16px;
   flex: 0 0 auto;
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255,255,255,0.1);
+  color: #4f46e5;
 }
-.dash-hero-icon svg { color: #fff; }
+.dash-hero-icon svg { color: #4f46e5; }
 
 .dash-hero-text { min-width: 0; }
 .dash-hero-eyebrow {
@@ -2169,20 +2177,20 @@ details[open] > .wb3-summary::before {
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
+  color: var(--muted);
 }
 .dash-hero-title {
   margin: 0;
   font-size: 28px;
   font-weight: 800;
   line-height: 1.2;
-  color: #fff;
+  color: var(--ink);
   letter-spacing: -0.01em;
 }
 .dash-hero-sub {
   margin: 2px 0 0;
   font-size: 13px;
-  color: rgba(255,255,255,0.55);
+  color: var(--muted);
 }
 
 .dash-hero-mypage {
@@ -2190,18 +2198,19 @@ details[open] > .wb3-summary::before {
   align-items: center;
   gap: 6px;
   padding: 8px 16px;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid var(--faint);
   border-radius: 10px;
-  background: rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.85);
+  background: #fff;
+  color: var(--ink);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.2s;
   position: relative; z-index: 1;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
 }
-.dash-hero-mypage:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.35); }
+.dash-hero-mypage:hover { background: var(--accent-soft); border-color: #ccc; transform: translateY(-1px); }
 
 /* ── Stats ──────────────────────────── */
 .dash-stats {
@@ -2215,8 +2224,8 @@ details[open] > .wb3-summary::before {
 .dash-stat {
   display: grid;
   gap: 4px;
-  padding: 18px 16px;
-  border-radius: 12px;
+  padding: 20px 16px;
+  border-radius: 14px;
   background: #fff;
   border: 1px solid var(--faint);
   text-align: center;
@@ -2225,18 +2234,14 @@ details[open] > .wb3-summary::before {
 }
 .dash-stat[cursor="pointer"]:hover,
 .dash-stat[onclick]:hover {
-  background: #fff;
   border-color: #ccc;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 .dash-stat-num {
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 800;
-  background: linear-gradient(135deg, #1a1a1a 0%, #555 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--ink);
   line-height: 1.1;
   font-family: var(--fm);
 }
@@ -2246,14 +2251,14 @@ details[open] > .wb3-summary::before {
   color: var(--muted);
 }
 .dash-stat-label {
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 700;
   color: var(--muted);
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
 }
 .dash-stat-icon {
-  font-size: 32px;
+  font-size: 34px;
   line-height: 1.1;
   display: block;
 }
