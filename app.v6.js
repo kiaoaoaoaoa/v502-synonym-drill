@@ -2173,13 +2173,8 @@ function showWordlist() {
     <span class="wl-title-main">전체 단어 일람 (${categories.length}개 범주)</span>
     <span class="wl-jump-controls">
       ${state.playerName ? `<button class="wl-jump-btn wl-hideknown-btn${wlHideKnown ? ' wl-hideknown-on' : ''}" type="button" title="아는 단어(✓) 숨기기">${wlHideKnown ? '✓ 아는 단어 숨김' : '아는 단어 안보기'}</button>` : ''}
-      <button class="wl-jump-btn" type="button" data-jump-target="199" title="범주 199번으로 이동">범주200</button>
-      <button class="wl-jump-btn" type="button" data-jump-target="399" title="범주 399번으로 이동">범주400</button>
     </span>
   `;
-  els.wordlistTitle.querySelectorAll('.wl-jump-btn[data-jump-target]').forEach((button) => {
-    button.addEventListener('click', () => jumpToCategory(button.dataset.jumpTarget));
-  });
   const hideBtn = els.wordlistTitle.querySelector('.wl-hideknown-btn');
   if (hideBtn) hideBtn.addEventListener('click', () => { wlHideKnown = !wlHideKnown; showWordlist(); });
   const hideKnown = wlHideKnown && state.playerName;
@@ -2344,6 +2339,7 @@ function showWordlist2() {
   let html = '<div class="wordlist-scroll"><div class="wordlist-cat">';
   html += '<h4><span class="wl-cat-num">EXTRA</span> MVP2 + V401 (V502 미포함) — ' + visible.length + ' words';
   if (hiddenCount > 0) html += ' <small style="color:var(--muted);font-weight:400">(' + hiddenCount + ' hidden)</small>';
+  html += ' <button onclick="showWordcheck201()" style="margin-left:8px;padding:2px 8px;border:1px solid #2563EB;border-radius:4px;background:transparent;color:#2563EB;font-size:11px;font-weight:600;cursor:pointer;vertical-align:middle">201 단어퀴즈</button>';
   html += '</h4>';
   html += '<div style="margin-bottom:8px">';
   if (state.playerName) {
@@ -3573,7 +3569,6 @@ function showDashboard() {
   html += '<div class="dash-grid">';
   html += dashCard({ icon: '📝', title: '단어문제', desc: '동의어 짝 맞추기', accent: 'teal', onclick: "openSynonymPanel()" });
   html += dashCard({ icon: '🧩', title: '논리문제', desc: '문맥 속 어휘 추론', accent: 'indigo', onclick: "startLogicQuiz()" });
-  html += dashCard({ icon: '📘', title: '201 단어퀴즈', desc: '4지선다 어휘 체크', accent: 'blue', onclick: "showWordcheck201()" });
   html += dashCard({ icon: '📝', title: '문법 201', desc: '442개 문법 문제', accent: 'plum', onclick: "showGrammar201()" });
   html += dashCard({ icon: '📄', title: '기출문제', desc: '2011-2026 성균관대 + 가천대', accent: 'slate', onclick: "showExam()" });
   html += dashCard({ icon: '✅', title: '단어확인문제', desc: '전체 어휘 확인', accent: 'green', onclick: "showWordcheck()" });
