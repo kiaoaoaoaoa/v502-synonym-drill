@@ -702,11 +702,11 @@ h2 {
   background: #fff;
   border: 1px solid #eef1f5;
   border-radius: 6px;
-  padding: 8px 10px;
+  padding: 5px 8px;
   break-inside: avoid;
   display: flex;
   align-items: flex-start;
-  gap: 6px;
+  gap: 4px;
 }
 .wb3-card-inner {
   flex: 1;
@@ -722,7 +722,7 @@ h2 {
 .wb3-word {
   font-weight: 700;
   color: var(--ink);
-  font-size: 13px;
+  font-size: 15px;
   white-space: nowrap;
 }
 .wb3-pron {
@@ -730,10 +730,8 @@ h2 {
   font-size: 11px;
 }
 .wb3-body {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 4px;
+  margin-top: 1px;
+  line-height: 1.4;
 }
 .wb3-pos {
   display: inline-block;
@@ -744,6 +742,8 @@ h2 {
   padding: 1px 5px;
   border-radius: 3px;
   white-space: nowrap;
+  margin-right: 3px;
+  vertical-align: middle;
 }
 .wb3-meaning {
   color: var(--muted);
@@ -765,10 +765,10 @@ h2 {
     gap: 8px;
   }
   .wb3-card {
-    padding: 8px 10px;
+    padding: 5px 8px;
   }
   .wb3-word {
-    font-size: 13px;
+    font-size: 14px;
   }
   .wb3-pron {
     font-size: 11px;
@@ -802,12 +802,12 @@ h2 {
     gap: 6px;
   }
   .wb3-card {
-    padding: 8px 10px;
+    padding: 5px 8px;
     border-radius: 6px;
-    gap: 8px;
+    gap: 6px;
   }
   .wb3-word {
-    font-size: 14px;
+    font-size: 15px;
   }
   .wb3-pron {
     font-size: 11px;
