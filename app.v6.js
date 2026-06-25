@@ -2674,8 +2674,10 @@ function renderPostList() {
     html += '<div class="board-post-list">';
     for (const post of boardState.posts) {
       const date = formatBoardDate(post.created_at);
+      const preview = (post.content || '').replace(/\s+/g, ' ').trim().slice(0, 120);
       html += '<div class="board-post-item" onclick="viewPost(' + post.id + ')">';
       html += '<div class="board-post-title">' + escapeHtml(post.title) + '</div>';
+      html += '<div class="board-post-preview">' + escapeHtml(preview) + (post.content && post.content.replace(/\s+/g, ' ').trim().length > 120 ? '...' : '') + '</div>';
       html += '<div class="board-post-meta">';
       html += '<span>' + escapeHtml(post.nickname) + '</span>';
       html += '<span>' + date + '</span>';
