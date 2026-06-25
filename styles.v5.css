@@ -777,7 +777,7 @@ h2 {
     line-height: 1.4;
   }
   .wl2-word-num {
-    width: 30px;
+    width: 24px;
     font-size: 12px;
   }
   .wl3-jump-bar {
@@ -821,8 +821,8 @@ h2 {
   }
   .wl2-word-num {
     font-size: 12px;
-    width: 28px;
-    margin-right: 6px;
+    width: 24px;
+    margin-right: 2px;
   }
   .wl3-jump-bar {
     flex-wrap: wrap;
@@ -1140,12 +1140,12 @@ details[open] > .wb3-summary::before {
 /* word number in wordbook3 */
 .wl2-word-num {
   display: inline-block;
-  width: 36px;
+  width: 26px;
   color: var(--muted);
   font-size: 11px;
   font-weight: 600;
   text-align: right;
-  margin-right: 4px;
+  margin-right: 2px;
   flex-shrink: 0;
 }
 .wl-toggle-mid-btn.wl-toggle-mid-on,
