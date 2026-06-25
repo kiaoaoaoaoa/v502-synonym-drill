@@ -259,11 +259,60 @@
         </section>
 
         <section id="wb3QuizPanel" class="ranking-panel" hidden>
+          <style>
+            .wb3q-card { background:#fff; border:1px solid #e2e8f0; border-radius:10px; padding:22px 20px 20px; margin-bottom:12px; }
+            .wb3q-num { display:inline-block; font-weight:700; font-size:0.78rem; color:#4c6ef5; background:#dbe4ff; padding:3px 12px; border-radius:99px; margin-bottom:12px; }
+            .wb3q-solved { font-size:0.7rem; margin-left:6px; }
+            .wb3q-text { font-size:0.92rem; line-height:1.75; margin-bottom:20px; word-break:keep-all; }
+            .wb3q-blank { display:inline-block; min-width:80px; border-bottom:2px dashed #4c6ef5; text-align:center; padding:0 4px; color:#4c6ef5; font-weight:600; }
+            .wb3q-opts { display:flex; flex-direction:column; gap:7px; }
+            .wb3q-opt { display:flex; align-items:flex-start; width:100%; text-align:left; padding:11px 14px; border-radius:7px; border:1.5px solid #e2e8f0; background:#fff; cursor:pointer; font-size:0.88rem; transition:all 0.12s; line-height:1.4; }
+            .wb3q-opt:hover:not(.disabled) { border-color:#4c6ef5; background:#f8faff; }
+            .wb3q-opt.correct { border-color:#16a34a; background:#f0fdf4; }
+            .wb3q-opt.wrong { border-color:#dc2626; background:#fef2f2; }
+            .wb3q-opt.disabled { pointer-events:none; }
+            .wb3q-letter { display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; border:1.5px solid #e2e8f0; font-size:0.72rem; font-weight:700; margin-right:8px; flex-shrink:0; }
+            .wb3q-opt.correct .wb3q-letter { border-color:#16a34a; background:#16a34a; color:#fff; }
+            .wb3q-opt.wrong .wb3q-letter { border-color:#dc2626; background:#dc2626; color:#fff; }
+            .wb3q-fb { padding:10px 14px; border-radius:7px; margin-top:12px; font-size:0.82rem; font-weight:600; display:none; }
+            .wb3q-fb.show { display:block; }
+            .wb3q-fb.ok { background:#f0fdf4; color:#16a34a; }
+            .wb3q-fb.no { background:#fef2f2; color:#dc2626; }
+            .wb3q-exp { padding:14px; border-radius:7px; margin-top:10px; background:#fffbeb; border:1px solid #fde68a; font-size:0.8rem; line-height:1.7; display:none; color:#78350f; word-break:keep-all; }
+            .wb3q-exp.show { display:block; }
+            .wb3q-exp-toggle { font-size:0.76rem; color:#92400e; cursor:pointer; margin-top:6px; display:inline-block; }
+            .wb3q-exp-toggle:hover { text-decoration:underline; }
+            .wb3q-next { flex:1; padding:11px; border-radius:7px; border:none; background:#4c6ef5; color:#fff; font-size:0.88rem; font-weight:700; cursor:pointer; display:none; margin-top:14px; }
+            .wb3q-next.show { display:block; }
+            .wb3q-next:hover { opacity:0.9; }
+            .wb3q-progress { display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+            .wb3q-progress-bar { flex:1; height:5px; background:#e2e8f0; border-radius:99px; overflow:hidden; }
+            .wb3q-progress-fill { height:100%; background:#4c6ef5; border-radius:99px; transition:width 0.3s; }
+            .wb3q-progress-text { font-size:0.8rem; font-weight:700; color:#94a3b8; white-space:nowrap; }
+            .wb3q-pct { font-size:0.76rem; font-weight:700; padding:2px 10px; border-radius:99px; background:#dbe4ff; color:#4c6ef5; white-space:nowrap; }
+            .wb3q-best { font-size:0.74rem; padding:2px 8px; border-radius:99px; background:#fef3c7; color:#92400e; white-space:nowrap; }
+            .wb3q-result { text-align:center; padding:30px 16px; }
+            .wb3q-result-score { font-size:2.5rem; font-weight:800; color:#4c6ef5; }
+            .wb3q-result-best { font-size:0.85rem; color:#94a3b8; }
+            .wb3q-result-msg { font-size:0.88rem; color:#94a3b8; margin:8px 0 16px; }
+            .wb3q-btn { padding:10px 24px; border-radius:7px; border:none; background:#4c6ef5; color:#fff; font-size:0.9rem; font-weight:700; cursor:pointer; margin:4px; }
+            .wb3q-btn.sec { background:#fff; color:#1e293b; border:1.5px solid #e2e8f0; }
+            .wb3q-review { width:100%; border-collapse:collapse; margin-top:16px; font-size:0.8rem; text-align:left; }
+            .wb3q-review th,.wb3q-review td { padding:7px 9px; border-bottom:1px solid #e2e8f0; }
+            .wb3q-review th { color:#94a3b8; font-weight:600; }
+            .wb3q-rw { color:#dc2626; } .wb3q-rc { color:#16a34a; }
+          </style>
           <div class="ranking-header">
             <p class="eyebrow">Wordbook 3 Quiz</p>
-            <h3>📝 단어장3 단어문제 (1~100번 · 객관식)</h3>
+            <h3>📝 단어장3 단어문제 (1~100번 · 객관식 5지선다)</h3>
           </div>
-          <div id="wb3QuizArea"></div>
+          <div id="wb3QuizProgress" class="wb3q-progress" style="padding:0 20px">
+            <div class="wb3q-progress-bar"><div class="wb3q-progress-fill" id="wb3qPf" style="width:0%"></div></div>
+            <span class="wb3q-progress-text" id="wb3qPt">1/100</span>
+            <span class="wb3q-pct" id="wb3qSc">0/100</span>
+            <span class="wb3q-best" id="wb3qBest" style="display:none">최고: -</span>
+          </div>
+          <div id="wb3QuizArea" style="padding:0 20px"></div>
         </section>
 
         <section id="wordcheckPanel" class="ranking-panel" hidden>
@@ -407,7 +456,7 @@
     <script src="exam-skku2024.js?v=20260623e1"></script>
     <script src="exam-skku2025.js?v=20260623e1"></script>
     <script src="exam-skku2026mock.js?v=20260623e1"></script>
-    <script src="grammar-theory.js?v=20260625gm2"></script>
+    <script src="grammar-theory.js?v=20260625fix3"></script>
     <script src="exam-hufs2015A.js?v=20260625hufs1"></script>
     <script src="exam-jeongael-jininsa-2027-1.js?v=20260624jini"></script>
     <script src="app.v6.js?v=20260624v26"></script>
