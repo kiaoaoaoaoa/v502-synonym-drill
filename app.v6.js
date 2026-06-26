@@ -1641,6 +1641,8 @@ function buildUserDataPayload() {
   const wb3quizBest = JSON.stringify(JSON.parse(localStorage.getItem('v502-synonym-drill-wb3quiz-best')||'{}')[nk]||0);
   const wb3quiz2Prog = JSON.stringify(JSON.parse(localStorage.getItem('v502-synonym-drill-wb3quiz2-progress')||'{}')[nk]||{});
   const wb3quiz2Best = JSON.stringify(JSON.parse(localStorage.getItem('v502-synonym-drill-wb3quiz2-best')||'{}')[nk]||0);
+  const wb3quiz3Prog = JSON.stringify(JSON.parse(localStorage.getItem('v502-synonym-drill-wb3quiz3-progress')||'{}')[nk]||{});
+  const wb3quiz3Best = JSON.stringify(JSON.parse(localStorage.getItem('v502-synonym-drill-wb3quiz3-best')||'{}')[nk]||0);
   return JSON.stringify({
     pw, displayName: state.playerName,
     word_knowledge: wordKnowledge, synonym_progress: synProgress,
@@ -1651,6 +1653,7 @@ function buildUserDataPayload() {
     exam_progress: examData, irt_ability: irtAbility,
     wb3quiz_progress: wb3quizProg, wb3quiz_best: wb3quizBest,
     wb3quiz2_progress: wb3quiz2Prog, wb3quiz2_best: wb3quiz2Best,
+    wb3quiz3_progress: wb3quiz3Prog, wb3quiz3_best: wb3quiz3Best,
     updated_at: new Date().toISOString()
   });
 }
@@ -1838,6 +1841,8 @@ function cloudPullUserData(payload, nickname) {
     if (obj.wb3quiz_best) { const s = JSON.parse(localStorage.getItem('v502-synonym-drill-wb3quiz-best')||'{}'); s[nk] = JSON.parse(obj.wb3quiz_best); localStorage.setItem('v502-synonym-drill-wb3quiz-best', JSON.stringify(s)); }
     if (obj.wb3quiz2_progress) { const s = JSON.parse(localStorage.getItem('v502-synonym-drill-wb3quiz2-progress')||'{}'); s[nk] = JSON.parse(obj.wb3quiz2_progress); localStorage.setItem('v502-synonym-drill-wb3quiz2-progress', JSON.stringify(s)); }
     if (obj.wb3quiz2_best) { const s = JSON.parse(localStorage.getItem('v502-synonym-drill-wb3quiz2-best')||'{}'); s[nk] = JSON.parse(obj.wb3quiz2_best); localStorage.setItem('v502-synonym-drill-wb3quiz2-best', JSON.stringify(s)); }
+    if (obj.wb3quiz3_progress) { const s = JSON.parse(localStorage.getItem('v502-synonym-drill-wb3quiz3-progress')||'{}'); s[nk] = JSON.parse(obj.wb3quiz3_progress); localStorage.setItem('v502-synonym-drill-wb3quiz3-progress', JSON.stringify(s)); }
+    if (obj.wb3quiz3_best) { const s = JSON.parse(localStorage.getItem('v502-synonym-drill-wb3quiz3-best')||'{}'); s[nk] = JSON.parse(obj.wb3quiz3_best); localStorage.setItem('v502-synonym-drill-wb3quiz3-best', JSON.stringify(s)); }
     state.playerName = prevName;
   } catch(e) { console.warn('cloudPullUserData failed', e); }
 	}
@@ -2585,6 +2590,9 @@ function showWordbook3() {
     }
     if (idx === 1) {
       html += ' <button onclick="showWb3Quiz2()" class="wb3-quiz-btn" style="margin-left:8px;font-size:0.78rem;padding:2px 10px;border-radius:99px;background:#4c6ef5;color:#fff;border:none;cursor:pointer;font-weight:600;white-space:nowrap">📝 단어문제 101-200</button>';
+    }
+    if (idx === 10) {
+      html += ' <button onclick="showWb3Quiz3()" class="wb3-quiz-btn" style="margin-left:8px;font-size:0.78rem;padding:2px 10px;border-radius:99px;background:#4c6ef5;color:#fff;border:none;cursor:pointer;font-weight:600;white-space:nowrap">📝 단어문제 1000-1099</button>';
     }
     html += '</summary>';
     html += renderCards(sec.items);
