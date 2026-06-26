@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>V502 단어장3 — 200~299번 문제</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0f1117;color:#e1e4e8;min-height:100vh}
+.app{display:flex;height:100vh}
+/* ── SIDEBAR: word list ── */
+.sidebar{width:340px;min-width:340px;background:#161b22;border-right:1px solid #30363d;overflow-y:auto;display:flex;flex-direction:column}
+.sidebar-header{padding:16px;border-bottom:1px solid #30363d;position:sticky;top:0;background:#161b22;z-index:2}
+.sidebar-header h1{font-size:16px;font-weight:600;color:#58a6ff}
+.sidebar-header p{font-size:12px;color:#8b949e;margin-top:4px}
+.sidebar-stats{padding:8px 16px;font-size:12px;color:#8b949e;border-bottom:1px solid #30363d;display:flex;gap:16px}
+.sidebar-stats span{color:#e1e4e8;font-weight:600}
+.word-list{flex:1;overflow-y:auto}
+.word-item{display:flex;align-items:center;padding:8px 16px;border-bottom:1px solid #21262d;cursor:pointer;transition:background .15s;gap:8px}
+.word-item:hover{background:#1c2128}
+.word-item.active{background:#1f2937;border-left:3px solid #58a6ff}
+.word-item.done{opacity:.6}
+.word-item .num{font-size:11px;color:#8b949e;min-width:32px}
+.word-item .word{font-size:14px;font-weight:600;color:#e1e4e8;min-width:110px}
+.word-item .meaning{font-size:12px;color:#8b949e;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.word-item .status{font-size:10px;padding:2px 6px;border-radius:3px}
+.word-item .status.correct{background:#1a3a2a;color:#3fb950}
+.word-item .status.wrong{background:#3a1a1a;color:#f85149}
+.word-item .status.unanswered{background:#21262d;color:#8b949e}
+/* ── MAIN: quiz panel ── */
+.main{flex:1;display:flex;flex-direction:column;overflow-y:auto}
+.quiz-header{padding:20px 32px;border-bottom:1px solid #30363d;background:#0d1117;position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center}
+.quiz-header .q-num{font-size:14px;color:#8b949e}
+.quiz-header .q-num strong{color:#58a6ff;font-size:18px}
+.quiz-header .score{font-size:14px}
+.quiz-header .score span{color:#3fb950;font-weight:600}
+.quiz-body{padding:32px;flex:1}
+.question-text{font-size:15px;line-height:1.8;color:#e1e4e8;margin-bottom:28px;white-space:pre-wrap}
+.choices{display:flex;flex-direction:column;gap:10px}
+.choice{padding:14px 18px;background:#161b22;border:1px solid #30363d;border-radius:6px;cursor:pointer;font-size:14px;color:#e1e4e8;transition:all .15s;display:flex;align-items:center;gap:12px}
+.choice:hover{background:#1c2128;border-color:#58a6ff}
+.choice.selected{background:#1f2937;border-color:#58a6ff}
+.choice.correct-choice{background:#1a3a2a;border-color:#3fb950}
+.choice.wrong-choice{background:#3a1a1a;border-color:#f85149}
+.choice .label{font-weight:700;color:#58a6ff;min-width:24px}
+.choice.correct-choice .label{color:#3fb950}
+.choice.wrong-choice .label{color:#f85149}
+.choice:disabled{pointer-events:none;opacity:.7}
+.explanation{margin-top:24px;padding:16px;background:#161b22;border:1px solid #30363d;border-radius:6px;font-size:13px;line-height:1.7;color:#8b949e;display:none}
+.explanation.show{display:block}
+.explanation strong{color:#e1e4e8}
+.quiz-nav{padding:16px 32px;border-top:1px solid #30363d;display:flex;justify-content:space-between;align-items:center;background:#0d1117;position:sticky;bottom:0;z-index:2}
+.quiz-nav button{padding:10px 24px;border-radius:6px;font-size:14px;font-weight:500;cursor:pointer;border:1px solid #30363d;background:#21262d;color:#e1e4e8;transition:all .15s}
+.quiz-nav button:hover{background:#30363d;border-color:#58a6ff}
+.quiz-nav button:disabled{opacity:.4;cursor:not-allowed}
+.quiz-nav button.primary{background:#238636;border-color:#238636;color:#fff}
+.quiz-nav button.primary:hover{background:#2ea043}
+.quiz-nav .nav-group{display:flex;gap:8px}
+.empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:#8b949e;text-align:center}
+.empty-state h2{font-size:20px;color:#e1e4e8;margin-bottom:8px}
+.empty-state p{font-size:14px;max-width:400px}
+/* ── Progress bar ── */
+.progress-bar{height:3px;background:#21262d}
+.progress-bar .fill{height:100%;background:#58a6ff;transition:width .3s}
+/* Mobile */
+@media(max-width:768px){
+  .app{flex-direction:column}
+  .sidebar{width:100%;min-width:0;max-height:200px}
+  .quiz-body{padding:16px}
+  .quiz-header{padding:12px 16px}
+  .quiz-nav{padding:12px 16px}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <!-- SIDEBAR: Word List -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h1>단어장3 — 200~299번</h1>
+      <p>클릭해서 해당 단어 문제로 이동 · V502 Synonym Drill</p>
+    </div>
+    <div class="sidebar-stats">
+      정답: <span id="correctCount">0</span>
+      오답: <span id="wrongCount">0</span>
+      남음: <span id="remainingCount">100</span>
+    </div>
+    <div class="progress-bar"><div class="fill" id="progressFill" style="width:0%"></div></div>
+    <div class="word-list" id="wordList"></div>
+  </aside>
+
+  <!-- MAIN: Quiz Panel -->
+  <main class="main">
+    <div class="quiz-header">
+      <div class="q-num">문제 <strong id="currentQNum">-</strong> / 100</div>
+      <div class="score">점수: <span id="scoreDisplay">-</span></div>
+    </div>
+    <div class="quiz-body" id="quizBody">
+      <div class="empty-state">
+        <h2>단어장3 200~299번 문제</h2>
+        <p>왼쪽 단어 목록에서 원하는 단어를 클릭하거나,<br>아래 버튼으로 200번부터 순서대로 풀어보세요.</p>
+        <br>
+        <button class="primary" onclick="startFrom(0)" style="padding:12px 32px;font-size:16px;border-radius:8px;background:#238636;color:#fff;border:none;cursor:pointer">200번부터 문제 풀기</button>
+      </div>
+    </div>
+    <div class="quiz-nav" id="quizNav" style="display:none">
+      <button onclick="prevQuestion()" id="prevBtn">← 이전</button>
+      <div class="nav-group">
+        <button onclick="showAnswer()" id="showAnswerBtn" class="primary">정답 보기</button>
+        <button onclick="nextQuestion()" id="nextBtn">다음 →</button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="wordbook3.js"></script>
+<script>
+// ── Load exam data ──
+let examData = null;
+let currentIndex = -1;
+let userAnswers = {};  // {index: chosenNumber}
+let explanations = {};
+
+// Load exam file dynamically
+(function loadExam() {
+  const script = document.createElement('script');
+  script.src = 'exam-wordbook3-200-299.js';
+  script.onload = () => {
+    examData = window.__V502_EXAM_WORDBOOK3_200_299__;
+    buildWordList();
+    updateStats();
+  };
+  script.onerror = () => {
+    document.getElementById('quizBody').innerHTML =
+      '<div class="empty-state"><h2>문제 파일을 불러올 수 없습니다</h2><p>exam-wordbook3-200-299.js 파일이 같은 폴더에 있는지 확인하세요.</p></div>';
+  };
+  document.head.appendChild(script);
+})();
+
+// ── Build word list sidebar ──
+function buildWordList() {
+  if (!examData) return;
+  const list = document.getElementById('wordList');
+  // Get word info from wordbook3 data if available
+  const wb3 = window.__V502_WORDBOOK3__ || [];
+  const wordMap = {};
+  wb3.forEach(w => { wordMap[w.w] = w; });
+
+  list.innerHTML = examData.map((q, i) => {
+    // Extract correct word from question data
+    const correctWord = q.c.find(c => c[0] === q.a)?.[1] || '';
+    const wbInfo = wordMap[correctWord] || {};
+    const meaning = wbInfo.m || '';
+    const statusClass = userAnswers[i] !== undefined
+      ? (userAnswers[i] === q.a ? 'correct' : 'wrong')
+      : 'unanswered';
+    const statusText = userAnswers[i] !== undefined
+      ? (userAnswers[i] === q.a ? '✓' : '✗')
+      : '·';
+    return `<div class="word-item ${currentIndex===i?'active':''} ${statusClass==='correct'?'done':''}"
+                 onclick="goToQuestion(${i})" id="wordItem${i}">
+      <span class="num">${200 + i}</span>
+      <span class="word">${correctWord}</span>
+      <span class="meaning">${meaning}</span>
+      <span class="status ${statusClass}">${statusText}</span>
+    </div>`;
+  }).join('');
+}
+
+function updateWordItem(index) {
+  if (!examData) return;
+  const q = examData[index];
+  const correctWord = q.c.find(c => c[0] === q.a)?.[1] || '';
+  const statusClass = userAnswers[index] !== undefined
+    ? (userAnswers[index] === q.a ? 'correct' : 'wrong')
+    : 'unanswered';
+  const statusText = userAnswers[index] !== undefined
+    ? (userAnswers[index] === q.a ? '✓' : '✗')
+    : '·';
+  const item = document.getElementById('wordItem'+index);
+  if (item) {
+    item.className = `word-item ${currentIndex===index?'active':''} ${statusClass==='correct'?'done':''}`;
+    item.querySelector('.status').className = `status ${statusClass}`;
+    item.querySelector('.status').textContent = statusText;
+  }
+}
+
+// ── Render question ──
+function renderQuestion(index) {
+  if (!examData || index < 0 || index >= examData.length) return;
+  currentIndex = index;
+  const q = examData[index];
+
+  document.getElementById('currentQNum').textContent = 200 + index;
+  document.getElementById('quizNav').style.display = 'flex';
+  document.getElementById('prevBtn').disabled = index === 0;
+  document.getElementById('nextBtn').disabled = index === examData.length - 1;
+
+  const alreadyAnswered = userAnswers[index] !== undefined;
+  document.getElementById('showAnswerBtn').style.display = alreadyAnswered ? 'none' : 'inline-block';
+
+  let html = `<div class="question-text">${q.q}</div><div class="choices">`;
+  q.c.forEach(c => {
+    const [label, word] = c;
+    let cls = 'choice';
+    if (alreadyAnswered) {
+      if (userAnswers[index] === label) {
+        cls += userAnswers[index] === q.a ? ' correct-choice' : ' wrong-choice';
+      }
+      if (label === q.a) cls += ' correct-choice';
+    } else if (userAnswers[index] === undefined && false) {
+      // not selected yet
+    }
+    html += `<button class="${cls}" onclick="selectAnswer('${label}')" ${alreadyAnswered?'disabled':''}>
+      <span class="label">${label}</span> ${word}
+    </button>`;
+  });
+  html += '</div>';
+
+  // Explanation
+  html += `<div class="explanation ${alreadyAnswered?'show':''}" id="explanationBox">
+    ${q.explanation || ''}
+  </div>`;
+
+  document.getElementById('quizBody').innerHTML = html;
+  updateScore();
+  updateWordHighlight();
+
+  // Scroll word list to current item
+  const wordItem = document.getElementById('wordItem'+index);
+  if (wordItem) wordItem.scrollIntoView({block:'nearest',behavior:'smooth'});
+}
+
+function selectAnswer(label) {
+  if (userAnswers[currentIndex] !== undefined) return;
+  userAnswers[currentIndex] = label;
+
+  // Reveal correct/wrong visually
+  const q = examData[currentIndex];
+  const buttons = document.querySelectorAll('.choice');
+  buttons.forEach(btn => {
+    btn.disabled = true;
+    const btnLabel = btn.querySelector('.label').textContent;
+    if (btnLabel === q.a) btn.classList.add('correct-choice');
+    if (btnLabel === label && label !== q.a) btn.classList.add('wrong-choice');
+  });
+
+  // Show explanation
+  const explBox = document.getElementById('explanationBox');
+  if (explBox) explBox.classList.add('show');
+
+  document.getElementById('showAnswerBtn').style.display = 'none';
+  updateWordItem(currentIndex);
+  updateStats();
+}
+
+function showAnswer() {
+  if (userAnswers[currentIndex] !== undefined) return;
+  const q = examData[currentIndex];
+  userAnswers[currentIndex] = '__shown__'; // mark as shown but not answered
+
+  const buttons = document.querySelectorAll('.choice');
+  buttons.forEach(btn => {
+    btn.disabled = true;
+    if (btn.querySelector('.label').textContent === q.a) btn.classList.add('correct-choice');
+  });
+
+  const explBox = document.getElementById('explanationBox');
+  if (explBox) explBox.classList.add('show');
+
+  document.getElementById('showAnswerBtn').style.display = 'none';
+  updateWordItem(currentIndex);
+  updateStats();
+}
+
+// ── Navigation ──
+function goToQuestion(index) {
+  if (index >= 0 && index < examData.length) {
+    renderQuestion(index);
+  }
+}
+
+function startFrom(index) {
+  renderQuestion(index);
+}
+
+function nextQuestion() {
+  if (currentIndex < examData.length - 1) renderQuestion(currentIndex + 1);
+}
+
+function prevQuestion() {
+  if (currentIndex > 0) renderQuestion(currentIndex - 1);
+}
+
+// ── Stats ──
+function updateStats() {
+  if (!examData) return;
+  const total = examData.length;
+  const answered = Object.keys(userAnswers).filter(k => userAnswers[k] !== '__shown__').length;
+  const correct = Object.entries(userAnswers).filter(([k,v]) => v === examData[parseInt(k)].a).length;
+  const wrong = answered - correct;
+  const remaining = total - answered;
+
+  document.getElementById('correctCount').textContent = correct;
+  document.getElementById('wrongCount').textContent = wrong;
+  document.getElementById('remainingCount').textContent = remaining;
+
+  const pct = answered / total * 100;
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+
+function updateScore() {
+  if (!examData) return;
+  const answered = Object.keys(userAnswers).filter(k => userAnswers[k] !== '__shown__').length;
+  const correct = Object.entries(userAnswers).filter(([k,v]) => v === examData[parseInt(k)].a).length;
+  document.getElementById('scoreDisplay').textContent = answered > 0
+    ? `${correct}/${answered} (${Math.round(correct/answered*100)}%)`
+    : '-';
+}
+
+function updateWordHighlight() {
+  document.querySelectorAll('.word-item').forEach(el => el.classList.remove('active'));
+  const active = document.getElementById('wordItem'+currentIndex);
+  if (active) active.classList.add('active');
+}
+
+// ── Keyboard shortcuts ──
+document.addEventListener('keydown', e => {
+  if (!examData || currentIndex < 0) return;
+  if (e.key === 'ArrowRight' || e.key === 'n') nextQuestion();
+  if (e.key === 'ArrowLeft' || e.key === 'p') prevQuestion();
+  if (e.key >= '1' && e.key <= '5' && userAnswers[currentIndex] === undefined) {
+    selectAnswer(e.key);
+  }
+  if (e.key === 'Enter' && userAnswers[currentIndex] === undefined) {
+    showAnswer();
+  }
+});
+</script>
+</body>
+</html>
