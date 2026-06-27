@@ -2591,6 +2591,9 @@ function showWordbook3() {
     if (idx === 1) {
       html += ' <button onclick="showWb3Quiz2()" class="wb3-quiz-btn" style="margin-left:8px;font-size:0.78rem;padding:2px 10px;border-radius:99px;background:#4c6ef5;color:#fff;border:none;cursor:pointer;font-weight:600;white-space:nowrap">📝 단어문제 101-200</button>';
     }
+    if (idx === 2) {
+      html += ' <button onclick="showWb3Quiz200()" class="wb3-quiz-btn" style="margin-left:8px;font-size:0.78rem;padding:2px 10px;border-radius:99px;background:#4c6ef5;color:#fff;border:none;cursor:pointer;font-weight:600;white-space:nowrap">📝 단어문제 200-299</button>';
+    }
     if (idx === 10) {
       html += ' <button onclick="showWb3Quiz3()" class="wb3-quiz-btn" style="margin-left:8px;font-size:0.78rem;padding:2px 10px;border-radius:99px;background:#4c6ef5;color:#fff;border:none;cursor:pointer;font-weight:600;white-space:nowrap">📝 단어문제 1000-1099</button>';
     }
