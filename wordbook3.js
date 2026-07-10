@@ -11633,217 +11633,217 @@ window.__V502_WORDBOOK3__ = [
     "w": "inextricable",
     "p": "",
     "pos": "a.",
-    "m": "a. 탈출 할 수 없는, 해결할 수 없는"
+    "m": "a. 탈출 할 수 없는, 해결할 수 없는(complicated, convoluted, labyrinthine)"
   },
   {
     "w": "infallible",
     "p": "",
     "pos": "a.",
-    "m": "a. 틀릴 리가 없는, 확실한"
+    "m": "a. 틀릴 리가 없는, 확실한(faultless, perfect, unerring)"
   },
   {
     "w": "infantile",
     "p": "",
     "pos": "a.",
-    "m": "a. 유아기의, 아이다운; 순진한"
+    "m": "a. 유아기의, 아이다운(natal, neonatal, newborn); 순진한"
   },
   {
     "w": "infatuate",
     "p": "",
     "pos": "v.",
-    "m": "v. (이성)잃게 하다, 혹하게 하다"
+    "m": "v. (이성)잃게 하다, 혹하게 하다(bewitch, captivate, charm)"
   },
   {
     "w": "infectious",
     "p": "",
     "pos": "n.",
-    "m": "n. 전염성의"
+    "m": "n. 전염성의(catching, communicable, contagious, transmissible)"
   },
   {
     "w": "inference",
     "p": "",
     "pos": "n.",
-    "m": "n. 추론"
+    "m": "n. 추론(conclusion, deduction)"
   },
   {
     "w": "infernal",
     "p": "",
     "pos": "a.",
-    "m": "a. 지옥의, 악마 같은"
+    "m": "a. 지옥의, 악마 같은(hellish, nether, fiendish, ghoulish)"
   },
   {
     "w": "inferno",
     "p": "",
     "pos": "n.",
-    "m": "n. 지옥, 지옥 같은 장소"
+    "m": "n. 지옥, 지옥 같은 장소(hell, netherworld, the abyss, the pit)"
   },
   {
     "w": "infertile",
     "p": "",
     "pos": "a.",
-    "m": "a. (땅)비옥하지 않은; 불모의"
+    "m": "a. (땅)비옥하지 않은(depleted, fallow, unfruitful, unproductive); 불모의"
   },
   {
     "w": "infidel",
     "p": "",
     "pos": "n.",
-    "m": "n. 이교도, 이단자"
+    "m": "n. 이교도, 이단자(agnostic, atheist, heathen, heretic, pagan)"
   },
   {
     "w": "infidelity",
     "p": "",
     "pos": "n.",
-    "m": "n. 불신앙; 배신; 간통"
+    "m": "n. 불신앙(faithlessness); 배신(perfidy, treachery); 간통(adultery, cuckoldry)"
   },
   {
     "w": "infirm",
     "p": "",
     "pos": "a.",
-    "m": "a. 허약한; 우유부단한"
+    "m": "a. 허약한(ailing, anile, debilitated, decrepit); 우유부단한"
   },
   {
     "w": "infirmary",
     "p": "",
     "pos": "n.",
-    "m": "n. 병원; 부속 진료소"
+    "m": "n. 병원; (학교·공장)부속 진료소(clinic)"
   },
   {
     "w": "inflammatory",
     "p": "",
     "pos": "a.",
-    "m": "a. 선동적인"
+    "m": "a. 선동적인(explosive, fiery, inciting, provocative)"
   },
   {
     "w": "inflate",
     "p": "",
     "pos": "v.",
-    "m": "v. 부풀리다; (통화)팽창시키다"
+    "m": "v. 부풀리다(swell); (통화)팽창시키다"
   },
   {
     "w": "influx",
     "p": "",
     "pos": "n.",
-    "m": "n. 유입, 쇄도"
+    "m": "n. 유입, 쇄도(incursion, inflow, inrush, inundation, invasion)"
   },
   {
     "w": "infraction",
     "p": "",
     "pos": "n.",
-    "m": "n. 위반, 침해"
+    "m": "n. 위반, 침해(breach, encroachment, infringement, transgression, violation)"
   },
   {
     "w": "infrastructure",
     "p": "",
     "pos": "n.",
-    "m": "n. 하부구조; (사회)기반시설"
+    "m": "n. (단체)하부구조; (사회)기반시설(foundation)"
   },
   {
     "w": "infringe",
     "p": "",
     "pos": "v.",
-    "m": "v. 위반하다, 침해하다"
+    "m": "v. 위반하다, 침해하다(encroach, impinge, intrude, trespass)"
   },
   {
     "w": "infuse",
     "p": "",
     "pos": "v.",
-    "m": "v. (사상)주입하다, 불어넣다"
+    "m": "v. (사상)주입하다, 불어넣다(imbue, indoctrinate, instill)"
   },
   {
     "w": "ingenue",
     "p": "",
     "pos": "n.",
-    "m": "n. 천진난만한 소녀"
+    "m": "n. 천진난만한 소녀(an artless girl)"
   },
   {
     "w": "ingenuous",
     "p": "",
     "pos": "a.",
-    "m": "a. 순진한, 천진난만한, 솔직한"
+    "m": "a. 순진한, 천진난만한, 솔직한(frank)"
   },
   {
     "w": "ingest",
     "p": "",
     "pos": "v.",
-    "m": "v. (음식)섭취하다; (사상)받아들이다"
+    "m": "v. (음식)섭취하다(chew, consume, devour); (사상)받아들이다"
   },
   {
     "w": "ingrained",
     "p": "",
     "pos": "a.",
-    "m": "a. 깊이 베어든, 뿌리 깊은"
+    "m": "a. 깊이 베어든, 뿌리 깊은(inveterate)"
   },
   {
     "w": "ingress",
     "p": "",
     "pos": "n.",
-    "m": "n. 입구, 진입, 입장"
+    "m": "n. 입구, 진입, 입장(entrance, threshold)"
   },
   {
     "w": "inherent",
     "p": "",
     "pos": "a.",
-    "m": "a. 타고난, 고유의, 본래부터의"
+    "m": "a. 타고난, 고유의, 본래부터의(inborn, innate, intrinsic)"
   },
   {
     "w": "inhibition",
     "p": "",
     "pos": "n.",
-    "m": "n. 억제, 금지"
+    "m": "n. 억제(restraint), 금지(constraint, constriction, impediment)"
   },
   {
     "w": "inimitable",
     "p": "",
     "pos": "a.",
-    "m": "a. 흉내 낼 수 없는"
+    "m": "a. 흉내 낼 수 없는(matchless, peerless, unequaled)"
   },
   {
     "w": "iniquitous",
     "p": "",
     "pos": "a.",
-    "m": "a. 부당한, 사악한"
+    "m": "a. 부당한, 사악한(unjust, sinful, wicked)"
   },
   {
     "w": "initial",
     "p": "",
     "pos": "a.",
-    "m": "a. 초기의, 시초의"
+    "m": "a. 초기의, 시초의(beginning, first, introductory, opening)"
   },
   {
     "w": "injunction",
     "p": "",
     "pos": "n.",
-    "m": "n. 지시, 명령"
+    "m": "n. 지시, 명령(order, command)"
   },
   {
     "w": "inkling",
     "p": "",
     "pos": "n.",
-    "m": "n. 어렴풋이 알고 있음, 암시"
+    "m": "n. 어렴풋이 알고 있음, 암시(clue, glimmer, hint, suggestion)"
   },
   {
     "w": "innuendo",
     "p": "",
     "pos": "n.",
-    "m": "n. (부정적)암시; 빈정대는 말"
+    "m": "n. (부정적)암시(hint, insinuation, intimation); 빈정대는 말"
   },
   {
     "w": "inoculate",
     "p": "",
     "pos": "v.",
-    "m": "v. 접붙이다; 예방 접종하다"
+    "m": "v. 접붙이다; 예방 접종하다(shot, vaccinate)"
   },
   {
     "w": "inopportune",
     "p": "",
     "pos": "a.",
-    "m": "a. 시기가 나쁜, 부적당한"
+    "m": "a. 시기가 나쁜(unfortunate, untimely), 부적당한"
   },
   {
     "w": "inordinate",
     "p": "",
     "pos": "a.",
-    "m": "a. 과도한, 지나친"
+    "m": "a. 과도한, 지나친(excessive, exorbitant, extravagant, extreme)"
   },
   {
     "w": "inpatient",
@@ -11855,151 +11855,151 @@ window.__V502_WORDBOOK3__ = [
     "w": "inquiry",
     "p": "",
     "pos": "n.",
-    "m": "n. 조사, 문의; 연구, 탐구"
+    "m": "n. 조사, 문의; 연구, 탐구(examination, exploration, inquest)"
   },
   {
     "w": "inquisition",
     "p": "",
     "pos": "n.",
-    "m": "n. 엄중한 조사, 심문"
+    "m": "n. 엄중한 조사, 심문(interrogation)"
   },
   {
     "w": "inscrutable",
     "p": "",
     "pos": "a.",
-    "m": "a. 이해할 수 없는"
+    "m": "a. 이해할 수 없는(enigmatic, impenetrable, mysterious)"
   },
   {
     "w": "insensible",
     "p": "",
     "pos": "a.",
-    "m": "a. 무감각한, 무관심한"
+    "m": "a. 무감각한, 무관심한(comatose, numb, senseless)"
   },
   {
     "w": "insidious",
     "p": "",
     "pos": "a.",
-    "m": "a. 교활한, 음흉한; (병)잠행성인"
+    "m": "a. 교활한(cunning), 음흉한(covert, furtive); (병)잠행성인"
   },
   {
     "w": "insignia",
     "p": "",
     "pos": "n.",
-    "m": "n. 기장, 훈장"
+    "m": "n. 기장, 훈장(badge, coat of arms, decoration, emblem)"
   },
   {
     "w": "insinuate",
     "p": "",
     "pos": "v.",
-    "m": "v. 암시하다, 넌지시 비추다"
+    "m": "v. 암시하다, 넌지시 비추다(hint, imply, intimate, suggest)"
   },
   {
     "w": "insomnia",
     "p": "",
     "pos": "n.",
-    "m": "n. 불면증"
+    "m": "n. 불면증(fitfulness, restlessness, sleeplessness)"
   },
   {
     "w": "insouciant",
     "p": "",
     "pos": "a.",
-    "m": "a. 무관심한, 태평한"
+    "m": "a. 무관심한, 태평한(carefree)"
   },
   {
     "w": "inspire",
     "p": "",
     "pos": "v.",
-    "m": "v. 영감을 주다, 격려하다"
+    "m": "v. 영감을 주다, 격려하다(animate, encourage, enliven)"
   },
   {
     "w": "instigate",
     "p": "",
     "pos": "v.",
-    "m": "v. 선동하다"
+    "m": "v. 선동하다(excite, foment, incite, kindle, provoke)"
   },
   {
     "w": "instill",
     "p": "",
     "pos": "v.",
-    "m": "v. (사상)불어넣다, (서서히)가르치다"
+    "m": "v. (사상)불어넣다, (서서히)가르치다(impart gradually)"
   },
   {
     "w": "instrumental",
     "p": "",
     "pos": "a.",
-    "m": "a. 쓸모 있는"
+    "m": "a. 쓸모 있는(effectual, essential, helpful, useful)"
   },
   {
     "w": "insubordinate",
     "p": "",
     "pos": "a.",
-    "m": "a. 반항적인"
+    "m": "a. 반항적인(defiant, disobedient, insurgent, mutinous)"
   },
   {
     "w": "insufferable",
     "p": "",
     "pos": "a.",
-    "m": "a. 참을 수 없는, 미운"
+    "m": "a. 참을 수 없는, 미운(agonizing, dreadful, torturous)"
   },
   {
     "w": "insular",
     "p": "",
     "pos": "a.",
-    "m": "a. 편협한"
+    "m": "a. 편협한(parochial, provincial, narrow-minded)"
   },
   {
     "w": "insulate",
     "p": "",
     "pos": "v.",
-    "m": "v. 격리시키다, 절연하다"
+    "m": "v. 격리시키다, 절연하다(isolate, segregate, separate)"
   },
   {
     "w": "insuperable",
     "p": "",
     "pos": "a.",
-    "m": "a. 극복할 수 없는"
+    "m": "a. 극복할 수 없는(insurmountable)"
   },
   {
     "w": "insurgence",
     "p": "",
     "pos": "n.",
-    "m": "n. 반란, 폭동"
+    "m": "n. 반란, 폭동(rebellion, revolt, revolution, riot, uprising)"
   },
   {
     "w": "insurgent",
     "p": "",
     "pos": "n.",
-    "m": "n. 반란자 a. 반란을 일으키는"
+    "m": "n. 반란자(dissident, guerrilla) a. 반란을 일으키는"
   },
   {
     "w": "insurrection",
     "p": "",
     "pos": "n.",
-    "m": "n. 반란, 폭동"
+    "m": "n. 반란, 폭동(uprising, mutiny, revolt, riot, uprising)"
   },
   {
     "w": "intangible",
     "p": "",
     "pos": "a.",
-    "m": "a. 실체가 없는, 무형의"
+    "m": "a. 실체가 없는, 무형의(without physical substance)"
   },
   {
     "w": "integral",
     "p": "",
     "pos": "a.",
-    "m": "a. 완전한; 필수적인"
+    "m": "a. 완전한(complete); 필수적인(central, component, essential)"
   },
   {
     "w": "integrate",
     "p": "",
     "pos": "v.",
-    "m": "v. 통합하다"
+    "m": "v. 통합하다(desegregate, blend, combine, consolidate)"
   },
   {
     "w": "integrity",
     "p": "",
     "pos": "n.",
-    "m": "n. 성실, 청렴; 완전함"
+    "m": "n. 성실, 청렴(probity); 완전함"
   },
   {
     "w": "intelligentsia",
@@ -12011,31 +12011,31 @@ window.__V502_WORDBOOK3__ = [
     "w": "intelligible",
     "p": "",
     "pos": "a.",
-    "m": "a. 알기 쉬운, 명료한"
+    "m": "a. 알기 쉬운, 명료한(comprehensible, discernible, lucid)"
   },
   {
     "w": "intemperate",
     "p": "",
     "pos": "a.",
-    "m": "a. 무절제한, 지나친"
+    "m": "a. 무절제한, 지나친(extravagant, immoderate, unrestrained)"
   },
   {
     "w": "inter",
     "p": "",
     "pos": "v.",
-    "m": "v. 매장하다"
+    "m": "v. 매장하다(bury)"
   },
   {
     "w": "intercede",
     "p": "",
     "pos": "v.",
-    "m": "v. 중재하다"
+    "m": "v. 중재하다(arbitrate, intervene, mediate)"
   },
   {
     "w": "interdict",
     "p": "",
     "pos": "n.",
-    "m": "n. 금지명령; 파문 v. 금지하다"
+    "m": "n. (법원)금지명령; (교회)파문 v. 금지하다(prohibit, forbid)"
   },
   {
     "w": "interdisciplinary",
@@ -12047,37 +12047,37 @@ window.__V502_WORDBOOK3__ = [
     "w": "interlope",
     "p": "",
     "pos": "v.",
-    "m": "v. 간섭하다; 침해하다"
+    "m": "v. 간섭하다; (인권)침해하다(break, intermission, interval)"
   },
   {
     "w": "interlude",
     "p": "",
     "pos": "n.",
-    "m": "n. 막간; 간주곡"
+    "m": "n. 막간(break, intermission, interval); 간주곡"
   },
   {
     "w": "intermediary",
     "p": "",
     "pos": "n.",
-    "m": "n. 중재자 a. 중간의"
+    "m": "n. 중재자 a. 중간의(intermediate, middle, midway)"
   },
   {
     "w": "interminable",
     "p": "",
     "pos": "a.",
-    "m": "a. 끝없는; 지루하게 긴"
+    "m": "a. 끝없는(ceaseless, constant, endless, incessant); 지루하게 긴"
   },
   {
     "w": "internecine",
     "p": "",
     "pos": "a.",
-    "m": "a. 서로 죽이는"
+    "m": "a. 서로 죽이는(mutually destructive)"
   },
   {
     "w": "internment",
     "p": "",
     "pos": "n.",
-    "m": "n. 유치, 억류, 수용"
+    "m": "n. 유치, 억류, 수용(captivity, immurement, incarceration)"
   },
   {
     "w": "interpolate",
@@ -12095,31 +12095,31 @@ window.__V502_WORDBOOK3__ = [
     "w": "interrogate",
     "p": "",
     "pos": "v.",
-    "m": "v. 신문하다, 질문하다"
+    "m": "v. 신문하다, 질문하다(examine, inquire, query, question)"
   },
   {
     "w": "interstices",
     "p": "",
     "pos": "n.",
-    "m": "n. 갈라진 틈"
+    "m": "n. 갈라진 틈(chinks, crevices)"
   },
   {
     "w": "intertwine",
     "p": "",
     "pos": "v.",
-    "m": "v. 뒤얽히게 하다"
+    "m": "v. 뒤얽히게 하다(braid, coil, entwine, plait, weave)"
   },
   {
     "w": "intervene",
     "p": "",
     "pos": "v.",
-    "m": "v. 중재하다; 간섭하다"
+    "m": "v. 중재하다(arbitrate, intercede, mediate); 간섭하다"
   },
   {
     "w": "intoxicate",
     "p": "",
     "pos": "v.",
-    "m": "v. 취하게 하다, 흥분시키다"
+    "m": "v. 취하게 하다(inebriate), 흥분시키다(enrapture, exhilarate)"
   },
   {
     "w": "intramural",
@@ -12131,193 +12131,193 @@ window.__V502_WORDBOOK3__ = [
     "w": "intransigent",
     "p": "",
     "pos": "a.",
-    "m": "a. 비타협적인, 고집스러운"
+    "m": "a. 비타협적인(uncompromising), 고집스러운(stubborn)"
   },
   {
     "w": "intravenous",
     "p": "",
     "pos": "a.",
-    "m": "a. 정맥내의"
+    "m": "a. 정맥내의(within or into a vein)"
   },
   {
     "w": "introspective",
     "p": "",
     "pos": "a.",
-    "m": "a. 자기 성찰하는"
+    "m": "a. 자기 성찰하는(reflective)"
   },
   {
     "w": "introvert",
     "p": "",
     "pos": "n.",
-    "m": "n. 내성적인 사람"
+    "m": "n. 내성적인 사람(brooder, loner, thinker, wallflower)"
   },
   {
     "w": "intrude",
     "p": "",
     "pos": "v.",
-    "m": "v. 강요하다; 침입하다"
+    "m": "v. 강요하다; 침입하다(encroach, invade, meddle, trespass)"
   },
   {
     "w": "intrusive",
     "p": "",
     "pos": "a.",
-    "m": "a. 강제하는, 침입하는"
+    "m": "a. 강제하는, 침입하는(impertinent, presumptuous, pushy)"
   },
   {
     "w": "intuition",
     "p": "",
     "pos": "n.",
-    "m": "n. 직관, 직감"
+    "m": "n. 직관, 직감(feeling, inspiration, instinct)"
   },
   {
     "w": "inundate",
     "p": "",
     "pos": "v.",
-    "m": "v. 범람하다; 쇄도하다"
+    "m": "v. 범람하다(drown, flood, submerge); 쇄도하다(deluge)"
   },
   {
     "w": "inure",
     "p": "",
     "pos": "v.",
-    "m": "v. 익숙하게 하다, 단련하다"
+    "m": "v. 익숙하게 하다, 단련하다(acclimate, accustom, familiarize, habituate)"
   },
   {
     "w": "invalidate",
     "p": "",
     "pos": "v.",
-    "m": "v. 무효화시키다"
+    "m": "v. 무효화시키다(annul, negate, repeal, reverse, revoke)"
   },
   {
     "w": "invective",
     "p": "",
     "pos": "n.",
-    "m": "n. 욕설, 악담"
+    "m": "n. 욕설, 악담(castigation, denunciation, rebuke, tirade)"
   },
   {
     "w": "inveigh",
     "p": "",
     "pos": "v.",
-    "m": "v. 통렬히 비난하다"
+    "m": "v. 통렬히 비난하다(castigate, criticize, denounce)"
   },
   {
     "w": "inveigle",
     "p": "",
     "pos": "v.",
-    "m": "v. 유인하다, 속이다"
+    "m": "v. 유인하다, 속이다(beguile, entice, flatter, seduce, trick)"
   },
   {
     "w": "inverse",
     "p": "",
     "pos": "n.",
-    "m": "n. 역, 반대 a. 역의, 반대의"
+    "m": "n. 역, 반대 a. 역의, 반대의(inverted, opposite, reverse)"
   },
   {
     "w": "invert",
     "p": "",
     "pos": "v.",
-    "m": "v. 거꾸로 하다, 반대로 하다"
+    "m": "v. 거꾸로 하다, 반대로 하다(reverse, capsize, overturn)"
   },
   {
     "w": "inveterate",
     "p": "",
     "pos": "a.",
-    "m": "a. (병)상습적인, 고질적인"
+    "m": "a. (병)상습적인, 고질적인(chronic, deep-rooted, engrained)"
   },
   {
     "w": "invidious",
     "p": "",
     "pos": "a.",
-    "m": "a. 불쾌한"
+    "m": "a. 불쾌한(insulting, objectionable, offending)"
   },
   {
     "w": "invincible",
     "p": "",
     "pos": "a.",
-    "m": "a. 무적의"
+    "m": "a. 무적의(impenetrable, invulnerable, unbeatable, doughty)"
   },
   {
     "w": "inviting",
     "p": "",
     "pos": "a.",
-    "m": "a. 초대하는, 매력적인"
+    "m": "a. 초대하는, 매력적인(attractive, engaging, enticing)"
   },
   {
     "w": "invoke",
     "p": "",
     "pos": "v.",
-    "m": "v. 간청하다; 권리를 행사하다"
+    "m": "v. 간청하다(beseech, entreat, implore); 권리를 행사하다"
   },
   {
     "w": "invulnerable",
     "p": "",
     "pos": "a.",
-    "m": "a. 상처를 줄 수 없는"
+    "m": "a. 상처를 줄 수 없는(formidable, indestructible, invincible)"
   },
   {
     "w": "iota",
     "p": "",
     "pos": "n.",
-    "m": "n. 극소, 미량"
+    "m": "n. 극소, 미량(bit, fraction, mote, particle, shred, smidgen)"
   },
   {
     "w": "irascible",
     "p": "",
     "pos": "a.",
-    "m": "a. 화를 잘 내는, 신경질적인"
+    "m": "a. 화를 잘 내는, 신경질적인(choleric, irritable, ornery, testy)"
   },
   {
     "w": "irate",
     "p": "",
     "pos": "a.",
-    "m": "a. 성난, 분노한"
+    "m": "a. 성난, 분노한(angry, furious, incensed, indignant)"
   },
   {
     "w": "iridescent",
     "p": "",
     "pos": "a.",
-    "m": "a. 빛나는, 밝은"
+    "m": "a. 빛나는, 밝은(exhibiting, rainbow-like colors)"
   },
   {
     "w": "irk",
     "p": "",
     "pos": "v.",
-    "m": "v. 귀찮게 하다, 짜증나게 하다"
+    "m": "v. 귀찮게 하다, 짜증나게 하다(annoy, bother, irritate)"
   },
   {
     "w": "irksome",
     "p": "",
     "pos": "a.",
-    "m": "a. 짜증나는; 지루한"
+    "m": "a. 짜증나는(annoy, bother, irritate, pique); 지루한(tedious)"
   },
   {
     "w": "irrational",
     "p": "",
     "pos": "a.",
-    "m": "a. 비이성적인, 불합리한"
+    "m": "a. 비이성적인, 불합리한(groundless, illogical, unsound)"
   },
   {
     "w": "irrefragable",
     "p": "",
     "pos": "a.",
-    "m": "a. 반박할 수 없는, 명백한"
+    "m": "a. 반박할 수 없는, 명백한(indisputable)"
   },
   {
     "w": "irrefutable",
     "p": "",
     "pos": "a.",
-    "m": "a. (주장)반박할 수 없는"
+    "m": "a. (주장)반박할 수 없는(decisive, manifest, obvious)"
   },
   {
     "w": "irremediable",
     "p": "",
     "pos": "a.",
-    "m": "a. 돌이킬 수 없는"
+    "m": "a. 돌이킬 수 없는(incurable, uncorrectable)"
   },
   {
     "w": "irreparable",
     "p": "",
     "pos": "a.",
-    "m": "a. 고칠 수 없는, 불치의"
+    "m": "a. 고칠 수 없는, 불치의(impossible, irreversible, irrevocable)"
   },
   {
     "w": "irrepressible",
@@ -12329,13 +12329,13 @@ window.__V502_WORDBOOK3__ = [
     "w": "irresolute",
     "p": "",
     "pos": "a.",
-    "m": "a. 결단력 없는, 우유부단한"
+    "m": "a. 결단력 없는, 우유부단한(unresolved, vacillating)"
   },
   {
     "w": "irrevocable",
     "p": "",
     "pos": "a.",
-    "m": "a. 취소 할 수 없는"
+    "m": "a. 취소 할 수 없는(irreversible, unalterable, unchangeable)"
   },
   {
     "w": "irrigate",
@@ -12347,49 +12347,49 @@ window.__V502_WORDBOOK3__ = [
     "w": "isolate",
     "p": "",
     "pos": "v.",
-    "m": "v. 고립시키다"
+    "m": "v. 고립시키다(insulate, sequester, quarantine)"
   },
   {
     "w": "itinerant",
     "p": "",
     "pos": "a.",
-    "m": "a. (이곳저곳)돌아다니는"
+    "m": "a. (이곳저곳)돌아다니는(migrant, roving, traveling, vagrant)"
   },
   {
     "w": "itinerary",
     "p": "",
     "pos": "n.",
-    "m": "n. 여행일정"
+    "m": "n. 여행일정(agenda, docket, log, outline, route)"
   },
   {
     "w": "jade",
     "p": "",
     "pos": "n.",
-    "m": "n. 옥 v. 지치게 하다, 혹사하다"
+    "m": "n. 옥 v. 지치게 하다, 혹사하다(drain, fatigue, tire)"
   },
   {
     "w": "jargon",
     "p": "",
     "pos": "n.",
-    "m": "n. (직업)특수용어, 은어"
+    "m": "n. (직업)특수용어, 은어(dialect, lingo, patois)"
   },
   {
     "w": "jarring",
     "p": "",
     "pos": "a.",
-    "m": "a. 귀에 거슬리는"
+    "m": "a. 귀에 거슬리는(grating, raspy, raucous)"
   },
   {
     "w": "jaundiced",
     "p": "",
     "pos": "a.",
-    "m": "a. 편견을 가진"
+    "m": "a. 편견을 가진(biased, prejudiced)"
   },
   {
     "w": "jaunty",
     "p": "",
     "pos": "a.",
-    "m": "a. 명랑한; 멋진"
+    "m": "a. 명랑한(jocund, jovial, perk); 멋진(stylish)"
   },
   {
     "w": "jaywalk",
@@ -12401,127 +12401,127 @@ window.__V502_WORDBOOK3__ = [
     "w": "jejune",
     "p": "",
     "pos": "a.",
-    "m": "a. 빈약한; 불모의; 미숙한"
+    "m": "a. 빈약한(malnutrition); 불모의(dry); 미숙한(childish)"
   },
   {
     "w": "jeopardy",
     "p": "",
     "pos": "n.",
-    "m": "n. 위험, 위기"
+    "m": "n. 위험, 위기(danger, hazard, menace, peril, risk)"
   },
   {
     "w": "jeremiad",
     "p": "",
     "pos": "n.",
-    "m": "n. (장황한)푸념, 한탄"
+    "m": "n. (장황한)푸념(complaint), 한탄(lament)"
   },
   {
     "w": "jetsam",
     "p": "",
     "pos": "n.",
-    "m": "n. 해양폐기물"
+    "m": "n. (배에서 버려져 해안으로 떠밀려오는)해양폐기물"
   },
   {
     "w": "jettison",
     "p": "",
     "pos": "v.",
-    "m": "v. 바다에 버리다, 투하하다"
+    "m": "v. 바다에 버리다, 투하하다(jettison, scrap, throw away)"
   },
   {
     "w": "jilt",
     "p": "",
     "pos": "v.",
-    "m": "v. (애인)버리다·차다"
+    "m": "v. (애인)버리다·차다(break up, desert, drop, leave)"
   },
   {
     "w": "jingoism",
     "p": "",
     "pos": "n.",
-    "m": "n. 호전적국수주의"
+    "m": "n. 호전적국수주의(chauvinism, patriotism)"
   },
   {
     "w": "jittery",
     "p": "",
     "pos": "a.",
-    "m": "a. 신경과민의, 불안한, 초조한"
+    "m": "a. 신경과민의, 불안한, 초조한(tic, twitch, jitters, nervousness)"
   },
   {
     "w": "jocular",
     "p": "",
     "pos": "a.",
-    "m": "a. 익살스러운, 웃기는"
+    "m": "a. 익살스러운, 웃기는(comical, droll, humorous, jocular)"
   },
   {
     "w": "jocund",
     "p": "",
     "pos": "a.",
-    "m": "a. 명랑한, 유쾌한"
+    "m": "a. 명랑한, 유쾌한(blithe, jaunty, jovial, mirthful)"
   },
   {
     "w": "jolly",
     "p": "",
     "pos": "a.",
-    "m": "a. 명랑한, 유쾌한"
+    "m": "a. 명랑한, 유쾌한(cheerful, jocund, jolly, light-hearted)"
   },
   {
     "w": "jostle",
     "p": "",
     "pos": "v.",
-    "m": "v. (난폭하게)밀다, 떠밀다"
+    "m": "v. (난폭하게)밀다, 떠밀다(bump, jar, jiggle, push, shove)"
   },
   {
     "w": "jovial",
     "p": "",
     "pos": "a.",
-    "m": "a. 명랑한, 유쾌한"
+    "m": "a. 명랑한, 유쾌한(jocund, jolly, merry, spirited)"
   },
   {
     "w": "jubilant",
     "p": "",
     "pos": "a.",
-    "m": "a. 환호하는, 기쁨에 찬"
+    "m": "a. 환호하는, 기쁨에 찬(ecstatic, elated, joyful, radiant)"
   },
   {
     "w": "jubilation",
     "p": "",
     "pos": "n.",
-    "m": "n. 환희, 환호"
+    "m": "n. 환희, 환호(ecstasy, euphoria, excitement, exhilaration)"
   },
   {
     "w": "juggernaut",
     "p": "",
     "pos": "n.",
-    "m": "n. 엄청난 파괴력"
+    "m": "n. 엄청난 파괴력(을 가진 것)"
   },
   {
     "w": "junction",
     "p": "",
     "pos": "n.",
-    "m": "n. 교차로, 연결지점"
+    "m": "n. 교차로, 연결지점(crossroads, interchange, intersection)"
   },
   {
     "w": "juncture",
     "p": "",
     "pos": "n.",
-    "m": "n. 중대한 시점"
+    "m": "n. 중대한 시점(confluence, connection, intersection)"
   },
   {
     "w": "junket",
     "p": "",
     "pos": "n.",
-    "m": "n. 관비여행; 향연"
+    "m": "n. 관비여행(a merry picnic, jaunt); 향연(feast)"
   },
   {
     "w": "junta",
     "p": "",
     "pos": "n.",
-    "m": "n. 군사정권; 비밀결사"
+    "m": "n. 군사정권(faction); 비밀결사(cabal)"
   },
   {
     "w": "jurisdiction",
     "p": "",
     "pos": "n.",
-    "m": "n. 사법권, 관할권"
+    "m": "n. 사법권, 관할권(bailiwick, domain, precinct, province)"
   },
   {
     "w": "jurisprudence",
@@ -12533,25 +12533,25 @@ window.__V502_WORDBOOK3__ = [
     "w": "juvenile",
     "p": "",
     "pos": "a.",
-    "m": "a. 청소년의"
+    "m": "a. 청소년의(adolescent, young, youthful, childish, immature)"
   },
   {
     "w": "juxtapose",
     "p": "",
     "pos": "v.",
-    "m": "v. 나란히 놓다"
+    "m": "v. 나란히 놓다(place side by side)"
   },
   {
     "w": "kaleidoscope",
     "p": "",
     "pos": "n.",
-    "m": "n. 만화경, 끊임없이 변화하는 것"
+    "m": "n. 만화경(萬華鏡), 끊임없이 변화하는 것"
   },
   {
     "w": "karma",
     "p": "",
     "pos": "n.",
-    "m": "n. 숙명, 운명"
+    "m": "n. (불교·힌두교)숙명, 운명(fate, destiny)"
   },
   {
     "w": "ken",
@@ -12575,13 +12575,13 @@ window.__V502_WORDBOOK3__ = [
     "w": "kin",
     "p": "",
     "pos": "n.",
-    "m": "n. 친척, 친족"
+    "m": "n. 친척, 친족(clan, family, folk, house, in-laws)"
   },
   {
     "w": "kindred",
     "p": "",
     "pos": "n.",
-    "m": "n. 친척 a. 혈연의; 유사한"
+    "m": "n. 친척 a. 혈연의(consanguine); 유사한(akin)"
   },
   {
     "w": "kinetic",
@@ -12593,79 +12593,79 @@ window.__V502_WORDBOOK3__ = [
     "w": "kinship",
     "p": "",
     "pos": "n.",
-    "m": "n. 친족 관계; (성질)유사함"
+    "m": "n. 친족 관계(affinity, attachment, association); (성질)유사함"
   },
   {
     "w": "kiosk",
     "p": "",
     "pos": "n.",
-    "m": "n. 길거리 간이매점"
+    "m": "n. (신문·잡지 등을 파는)길거리 간이매점"
   },
   {
     "w": "kismet",
     "p": "",
     "pos": "n.",
-    "m": "n. 운명"
+    "m": "n. 운명(destiny, doom, fate, fortune, luck)"
   },
   {
     "w": "kith",
     "p": "",
     "pos": "n.",
-    "m": "n. 친지"
+    "m": "n. 친지(familiar friends)"
   },
   {
     "w": "knack",
     "p": "",
     "pos": "n.",
-    "m": "n. 숙련된 기술; 버릇"
+    "m": "n. 숙련된 기술(skill, talent, hang, know how); 버릇"
   },
   {
     "w": "knotty",
     "p": "",
     "pos": "a.",
-    "m": "a. 마디가 많은; 해결이 곤란한"
+    "m": "a. 마디가 많은(knotted, gnarled, knobby); 해결이 곤란한"
   },
   {
     "w": "labile",
     "p": "",
     "pos": "a.",
-    "m": "a. 변하기 쉬운, 불안정한"
+    "m": "a. 변하기 쉬운(likely to change), 불안정한(unstable)"
   },
   {
     "w": "laborious",
     "p": "",
     "pos": "a.",
-    "m": "a. 힘 드는, 고된"
+    "m": "a. 힘 드는, 고된(arduous, strenuous, painstaking)"
   },
   {
     "w": "lacerate",
     "p": "",
     "pos": "v.",
-    "m": "v. 찢다, 잡아 찢다"
+    "m": "v. 찢다, 잡아 찢다(gash, slash, slice, mangle, mutilate, tear)"
   },
   {
     "w": "lachrymose",
     "p": "",
     "pos": "a.",
-    "m": "a. 눈물 나게 하는, 애절한"
+    "m": "a. 눈물 나게 하는, 애절한(crying, tearful, weepy, pathetic)"
   },
   {
     "w": "lackadaisical",
     "p": "",
     "pos": "a.",
-    "m": "a. 열의 없는"
+    "m": "a. 열의 없는(idle, indolent, lazy, languid, lethargic, listless)"
   },
   {
     "w": "lackluster",
     "p": "",
     "pos": "a.",
-    "m": "a. 활기 없는, 생기 없는"
+    "m": "a. 활기 없는, 생기 없는(dull, lifeless, unimaginative, apathetic, half-hearted)"
   },
   {
     "w": "laggard",
     "p": "",
     "pos": "n.",
-    "m": "n. 느림보 a. 꾸물대는"
+    "m": "n. 느림보 a. 꾸물대는(dawdler, lag, loafer, loiterer)"
   },
   {
     "w": "laid-back",
@@ -12677,13 +12677,13 @@ window.__V502_WORDBOOK3__ = [
     "w": "laissez-faire",
     "p": "",
     "pos": "n.",
-    "m": "n. 자유방임주의"
+    "m": "n. 자유방임주의(noninterference)"
   },
   {
     "w": "lambaste",
     "p": "",
     "pos": "v.",
-    "m": "v. 몹시 꾸짖다"
+    "m": "v. 몹시 꾸짖다(berate, castigate, censure, chastise)"
   },
   {
     "w": "laminate",
@@ -12695,37 +12695,37 @@ window.__V502_WORDBOOK3__ = [
     "w": "lampoon",
     "p": "",
     "pos": "n.",
-    "m": "n. 풍자 v. 비아냥거리다"
+    "m": "n. 풍자 v. 비아냥거리다(deride, mock, ridicule, satirize)"
   },
   {
     "w": "landmark",
     "p": "",
     "pos": "n.",
-    "m": "n. 육상지표; 획기적 사건"
+    "m": "n. 육상지표(milestone); 획기적 사건"
   },
   {
     "w": "languid",
     "p": "",
     "pos": "a.",
-    "m": "a. 무감동한, 활력 없는"
+    "m": "a. 무감동한, 활력 없는(feeble, languorous, lethargic, lifeless, listless, torpid)"
   },
   {
     "w": "languish",
     "p": "",
     "pos": "v.",
-    "m": "v. 쇠약해지다; 그리워하다"
+    "m": "v. 쇠약해지다(decline, deteriorate, diminish, weaken); 그리워하다(pine, yearn)"
   },
   {
     "w": "lank",
     "p": "",
     "pos": "a.",
-    "m": "a. 여윈, 호리호리한"
+    "m": "a. 여윈, 호리호리한(lank, lean, rangy, spindly, tall, thin)"
   },
   {
     "w": "lanky",
     "p": "",
     "pos": "a.",
-    "m": "a. 호리호리한, 멀대같은"
+    "m": "a. 호리호리한, 멀대같은(lank, lean, rangy, spindly, tall, thin)"
   },
   {
     "w": "lapidary",
@@ -12737,193 +12737,193 @@ window.__V502_WORDBOOK3__ = [
     "w": "lapse",
     "p": "",
     "pos": "n.",
-    "m": "n. 실수; (시간)경과 v. (권리)소멸하다"
+    "m": "n. 실수(error, mistake); (시간)경과 v. (권리)소멸하다"
   },
   {
     "w": "larceny",
     "p": "",
     "pos": "n.",
-    "m": "n. 절도, 도둑질"
+    "m": "n. 절도, 도둑질(burglary, robbery, stealing, theft, thievery)"
   },
   {
     "w": "largess",
     "p": "",
     "pos": "n.",
-    "m": "n. (아낌없이 주어진)선물"
+    "m": "n. (아낌없이 주어진)선물(generous gift)"
   },
   {
     "w": "lascivious",
     "p": "",
     "pos": "a.",
-    "m": "a. 음탕한, 호색적인"
+    "m": "a. 음탕한, 호색적인(licentious, lecherous, libidinous)"
   },
   {
     "w": "lassitude",
     "p": "",
     "pos": "n.",
-    "m": "n. 나른함, 권태, 피로"
+    "m": "n. 나른함, 권태, 피로(debility, exhaustion, fatigue, languor, weariness)"
   },
   {
     "w": "latent",
     "p": "",
     "pos": "a.",
-    "m": "a. 잠재적인"
+    "m": "a. 잠재적인(dormant, inert, quiescent, passive, unconscious)"
   },
   {
     "w": "lateral",
     "p": "",
     "pos": "a.",
-    "m": "a. 옆으로의, 측면의"
+    "m": "a. 옆으로의, 측면의(flanking, left, right, side, edgewise, horizontal, sidelong)"
   },
   {
     "w": "latitude",
     "p": "",
     "pos": "n.",
-    "m": "n. 위도; (사상)자유"
+    "m": "n. 위도(opp. longitude: 경도); (사상)자유(freedom)"
   },
   {
     "w": "laudable",
     "p": "",
     "pos": "a.",
-    "m": "a. 칭찬할만한"
+    "m": "a. 칭찬할만한(commendable, estimable, exemplary)"
   },
   {
     "w": "laudatory",
     "p": "",
     "pos": "a.",
-    "m": "a. 칭찬하는, 감탄하는"
+    "m": "a. 칭찬하는, 감탄하는(acclamatory, complimentary, favorable, flattering)"
   },
   {
     "w": "launch",
     "p": "",
     "pos": "v.",
-    "m": "v. 출발하다, 착수하다"
+    "m": "v. 출발하다, 착수하다(begin, establish)"
   },
   {
     "w": "lave",
     "p": "",
     "pos": "v.",
-    "m": "v. 목욕하다; 씻어 내리다"
+    "m": "v. 목욕하다(bathe, wash); 씻어 내리다"
   },
   {
     "w": "lax",
     "p": "",
     "pos": "a.",
-    "m": "a. 느슨한, (규칙)엄격하지 않은"
+    "m": "a. 느슨한(slack), (규칙)엄격하지 않은(negligent, careless)"
   },
   {
     "w": "layman",
     "p": "",
     "pos": "n.",
-    "m": "n. 평신도, 문외한"
+    "m": "n. 평신도, 문외한(amateur, dilettante, nonprofessional, novice)"
   },
   {
     "w": "layoff",
     "p": "",
     "pos": "n.",
-    "m": "n. 일시해고"
+    "m": "n. 일시해고(unemployment, firing, sacking)"
   },
   {
     "w": "leash",
     "p": "",
     "pos": "v.",
-    "m": "v. 가죽 끈으로 매다; 억제하다"
+    "m": "v. 가죽 끈으로 매다; 억제하다(control, hamper, restrain)"
   },
   {
     "w": "leaven",
     "p": "",
     "pos": "n.",
-    "m": "n. 효모 v. 발효시키다"
+    "m": "n. 효모 v. 발효시키다(ferment)"
   },
   {
     "w": "leery",
     "p": "",
     "pos": "a.",
-    "m": "a. 경계하는, 신중한; 교활한"
+    "m": "a. 경계하는, 신중한(doubtful, dubious); 교활한"
   },
   {
     "w": "leeway",
     "p": "",
     "pos": "n.",
-    "m": "n. (행동·금전)여유, 여지"
+    "m": "n. (행동·금전)여유, 여지(parallel, freedom, liberty, license)"
   },
   {
     "w": "legacy",
     "p": "",
     "pos": "n.",
-    "m": "n. 유산"
+    "m": "n. 유산(bequest, heritage, inheritance)"
   },
   {
     "w": "legerdemain",
     "p": "",
     "pos": "n.",
-    "m": "n. 요술; 눈속임; 궤변"
+    "m": "n. 요술(sleight of hand); 눈속임(deception); 궤변"
   },
   {
     "w": "legible",
     "p": "",
     "pos": "a.",
-    "m": "a. (글자·서명)읽기 쉬운"
+    "m": "a. (글자·서명)읽기 쉬운(readable)"
   },
   {
     "w": "legitimate",
     "p": "",
     "pos": "v.",
-    "m": "v. 정당화하다 a. 합법의, 정당한"
+    "m": "v. 정당화하다 a. 합법의, 정당한(authentic, genuine, verifiable)"
   },
   {
     "w": "lenient",
     "p": "",
     "pos": "a.",
-    "m": "a. 관대한, 자비로운"
+    "m": "a. 관대한, 자비로운(indulgent, lax, permissive, merciful, sympathetic)"
   },
   {
     "w": "lesion",
     "p": "",
     "pos": "n.",
-    "m": "n. 외적손상; 정신적 상해"
+    "m": "n. 외적손상(abrasion, damage, injury, scratch); 정신적 상해"
   },
   {
     "w": "lethargic",
     "p": "",
     "pos": "a.",
-    "m": "a. 졸리는; 무기력한"
+    "m": "a. 졸리는(sleepy); 무기력한(languid, listless)"
   },
   {
     "w": "level-headed",
     "p": "",
     "pos": "a.",
-    "m": "a. 온건한, 분별 있는"
+    "m": "a. 온건한, 분별 있는(composed, poised, cautious, circumspect, prudent)"
   },
   {
     "w": "leverage",
     "p": "",
     "pos": "n.",
-    "m": "n. (정치)영향력"
+    "m": "n. (정치)영향력(clout, influence)"
   },
   {
     "w": "levitate",
     "p": "",
     "pos": "v.",
-    "m": "v. 공중에 뜨다"
+    "m": "v. (심령현상)공중에 뜨다(to rise or float in the air)"
   },
   {
     "w": "levity",
     "p": "",
     "pos": "n.",
-    "m": "n. 경솔한 행동, 경박함"
+    "m": "n. 경솔한 행동, 경박함(flippancy, frivolity, giddiness)"
   },
   {
     "w": "levy",
     "p": "",
     "pos": "v.",
-    "m": "v. (세금)부과하다"
+    "m": "v. (세금)부과하다(charge, exact, impose)"
   },
   {
     "w": "lewd",
     "p": "",
     "pos": "a.",
-    "m": "a. 음란한"
+    "m": "a. 음란한(obscene, lustful, lascivious, licentious)"
   },
   {
     "w": "lexicon",
@@ -12935,37 +12935,37 @@ window.__V502_WORDBOOK3__ = [
     "w": "liability",
     "p": "",
     "pos": "n.",
-    "m": "n. 책임, 불리한 일"
+    "m": "n. 책임(accountability, responsibility), 불리한 일(disadvantage, drawback)"
   },
   {
     "w": "liable",
     "p": "",
     "pos": "a.",
-    "m": "a. -하기 쉬운; 책임이 있는"
+    "m": "a. -하기 쉬운(apt, likely, probable, prone); 책임이 있는(culpable, responsible)"
   },
   {
     "w": "liaison",
     "p": "",
     "pos": "n.",
-    "m": "n. 연락, 연결; 간통"
+    "m": "n. 연락(communication), 연결(connection); 간통"
   },
   {
     "w": "libation",
     "p": "",
     "pos": "n.",
-    "m": "n. 술"
+    "m": "n. 술(an alcoholic drink)"
   },
   {
     "w": "libel",
     "p": "",
     "pos": "n.",
-    "m": "n. 명예훼손 v. 중상·비방하다"
+    "m": "n. 명예훼손 v. 중상·비방하다(malign, slur, traduce, vilify)"
   },
   {
     "w": "libertine",
     "p": "",
     "pos": "n.",
-    "m": "n. 방탕자, 난봉꾼"
+    "m": "n. 방탕자, 난봉꾼(debauchee, lecher, profligate, rake)"
   },
   {
     "w": "lift",
@@ -12977,13 +12977,13 @@ window.__V502_WORDBOOK3__ = [
     "w": "lilliputian",
     "p": "",
     "pos": "a.",
-    "m": "a. 난쟁이 나라의, 매우 작은"
+    "m": "a. 난쟁이 나라의, 매우 작은(extremely small)"
   },
   {
     "w": "limber",
     "p": "",
     "pos": "a.",
-    "m": "a. 유연한; 재빠른"
+    "m": "a. 유연한(flexible, pliable, supple); 재빠른(agile, nimble)"
   },
   {
     "w": "limbo",
@@ -12995,37 +12995,37 @@ window.__V502_WORDBOOK3__ = [
     "w": "limn",
     "p": "",
     "pos": "v.",
-    "m": "v. 묘사하다"
+    "m": "v. 묘사하다(depict, portray, delineate)"
   },
   {
     "w": "limpid",
     "p": "",
     "pos": "a.",
-    "m": "a. 투명한, 맑은"
+    "m": "a. 투명한(translucent, transparent), 맑은(clear, lucid)"
   },
   {
     "w": "lineage",
     "p": "",
     "pos": "n.",
-    "m": "n. 혈통, 가계"
+    "m": "n. 혈통, 가계(ancestry, derivation, family tree, genealogy)"
   },
   {
     "w": "lineament",
     "p": "",
     "pos": "n.",
-    "m": "n. 인상, 생김새; 특징"
+    "m": "n. 인상, 생김새(features of the face, contour); 특징"
   },
   {
     "w": "lionize",
     "p": "",
     "pos": "v.",
-    "m": "v. 치켜세우다, 떠받들다"
+    "m": "v. 치켜세우다(treat as a celebrity), 떠받들다"
   },
   {
     "w": "listless",
     "p": "",
     "pos": "a.",
-    "m": "a. 열의 없는, 냉담한; 나른한"
+    "m": "a. 열의 없는, 냉담한; 나른한(indolent, languid, lethargic)"
   },
   {
     "w": "litany",
@@ -13037,13 +13037,13 @@ window.__V502_WORDBOOK3__ = [
     "w": "literal",
     "p": "",
     "pos": "a.",
-    "m": "a. 과장 없는; 엄밀한, 정확한"
+    "m": "a. 과장 없는; 엄밀한, 정확한(exact, precise, accurate)"
   },
   {
     "w": "lithe",
     "p": "",
     "pos": "a.",
-    "m": "a. 유연한, 나긋나긋한"
+    "m": "a. 유연한, 나긋나긋한(flexible, pliable, supple, tractable)"
   },
   {
     "w": "litigant",
@@ -13055,7 +13055,7 @@ window.__V502_WORDBOOK3__ = [
     "w": "litigate",
     "p": "",
     "pos": "v.",
-    "m": "v. 소송을 제기하다"
+    "m": "v. 소송을 제기하다(sue)"
   },
   {
     "w": "litigious",
@@ -13067,19 +13067,19 @@ window.__V502_WORDBOOK3__ = [
     "w": "livid",
     "p": "",
     "pos": "a.",
-    "m": "a. 창백한; 격분한"
+    "m": "a. 창백한(pale, pallid, wan), 격분한(enraged)"
   },
   {
     "w": "loaf",
     "p": "",
     "pos": "n.",
-    "m": "n. 빵 덩어리 v. 빈둥거리다"
+    "m": "n. 빵 덩어리 v. 빈둥거리다(idle, loiter, lallygag, lounge)"
   },
   {
     "w": "loathsome",
     "p": "",
     "pos": "a.",
-    "m": "a. 싫은; 불쾌한; 역겨운"
+    "m": "a. 싫은; 불쾌한(disgusting); 역겨운(sickening)"
   },
   {
     "w": "locomotion",
@@ -13091,43 +13091,43 @@ window.__V502_WORDBOOK3__ = [
     "w": "lodge",
     "p": "",
     "pos": "v.",
-    "m": "v. 숙박하다; 맡기다; 박히다"
+    "m": "v. 숙박하다(board, house, quarter, shelter); 맡기다; 박히다"
   },
   {
     "w": "lofty",
     "p": "",
     "pos": "a.",
-    "m": "a. 고결한, 고상한, 숭고한"
+    "m": "a. 고결한, 고상한, 숭고한(elevated, high, tall, towering)"
   },
   {
     "w": "loiter",
     "p": "",
     "pos": "v.",
-    "m": "v. 빈둥거리다"
+    "m": "v. 빈둥거리다(hang around, linger, dally, dawdle)"
   },
   {
     "w": "loll",
     "p": "",
     "pos": "v.",
-    "m": "v. (축 늘어져)기대다"
+    "m": "v. (축 늘어져)기대다(languish, laze, loaf)"
   },
   {
     "w": "longevity",
     "p": "",
     "pos": "n.",
-    "m": "n. 장수; 수명"
+    "m": "n. 장수(long life); 수명"
   },
   {
     "w": "loony",
     "p": "",
     "pos": "a.",
-    "m": "a. 미친; 어리석은"
+    "m": "a. 미친(demented, insane); 어리석은(absurd, birdbrained)"
   },
   {
     "w": "loot",
     "p": "",
     "pos": "n.",
-    "m": "n. 약탈품 v. 약탈하다"
+    "m": "n. 약탈품(spoils) v. 약탈하다(despoil, plunder, harry)"
   },
   {
     "w": "lope",
@@ -13139,43 +13139,43 @@ window.__V502_WORDBOOK3__ = [
     "w": "lout",
     "p": "",
     "pos": "n.",
-    "m": "n. 시골뜨기"
+    "m": "n. 시골뜨기(boor, buffoon, dunce, fool, idiot)"
   },
   {
     "w": "lubricate",
     "p": "",
     "pos": "v.",
-    "m": "v. 기름칠하다; (뇌물을 주고)매수하다"
+    "m": "v. 기름칠하다(grease, oil); (뇌물을 주고)매수하다"
   },
   {
     "w": "lucid",
     "p": "",
     "pos": "a.",
-    "m": "a. 투명한, 명료한; 알기 쉬운"
+    "m": "a. 투명한(limpid, translucent, transparent), 명료한(explicit, plain); 알기 쉬운"
   },
   {
     "w": "lucre",
     "p": "",
     "pos": "n.",
-    "m": "n. 돈, 이익"
+    "m": "n. 돈(bill, cash, currency, coin, funds, lucre), 이익(profit)"
   },
   {
     "w": "ludicrous",
     "p": "",
     "pos": "a.",
-    "m": "a. 우스운, 바보 같은"
+    "m": "a. 우스운, 바보 같은(absurd, laughable, preposterous, silly, ridiculous)"
   },
   {
     "w": "lugubrious",
     "p": "",
     "pos": "a.",
-    "m": "a. 애처로운, 가엾은, 우울한"
+    "m": "a. 애처로운(pathetic), 가엾은, 우울한(disconsolate, dismal)"
   },
   {
     "w": "lull",
     "p": "",
     "pos": "v.",
-    "m": "v. 달래다, 진정시키다"
+    "m": "v. 달래다, 진정시키다(assuage, mollify, pacify, placate)"
   },
   {
     "w": "lumber",
@@ -13187,19 +13187,19 @@ window.__V502_WORDBOOK3__ = [
     "w": "luminary",
     "p": "",
     "pos": "n.",
-    "m": "n. 발광체; 유명인, 전문가"
+    "m": "n. (태양·달)발광체; 유명인, 전문가(celebrity, dignitary)"
   },
   {
     "w": "luminous",
     "p": "",
     "pos": "a.",
-    "m": "a. 빛나는, 밝은"
+    "m": "a. 빛나는, 밝은(bright, brilliant, glowing, lustrous, radiant)"
   },
   {
     "w": "lummox",
     "p": "",
     "pos": "n.",
-    "m": "n. 얼간이, 멍청이"
+    "m": "n. 얼간이, 멍청이(buffoon, bungler, clod, dolt, idiot, klutz)"
   },
   {
     "w": "lure",
@@ -13211,49 +13211,49 @@ window.__V502_WORDBOOK3__ = [
     "w": "lurid",
     "p": "",
     "pos": "a.",
-    "m": "a. 무시무시한, 현란한"
+    "m": "a. 무시무시한(dreadful, appalling), 현란한(sensational)"
   },
   {
     "w": "lurk",
     "p": "",
     "pos": "v.",
-    "m": "v. 숨다, 잠복하다"
+    "m": "v. 숨다, 잠복하다(prowl, skulk, slink, sneak)"
   },
   {
     "w": "luscious",
     "p": "",
     "pos": "a.",
-    "m": "a. 맛있는; 관능적인"
+    "m": "a. 맛있는(appetizing, delectable, succulent); 관능적인"
   },
   {
     "w": "lush",
     "p": "",
     "pos": "a.",
-    "m": "a. 무성한, 풍부한"
+    "m": "a. 무성한, 풍부한(abundant, flourishing, luxuriant, profuse)"
   },
   {
     "w": "luster",
     "p": "",
     "pos": "n.",
-    "m": "n. 빛, 광택"
+    "m": "n. 빛, 광택(brilliance, burnish, sheen, shine, fame, glory)"
   },
   {
     "w": "lustrous",
     "p": "",
     "pos": "a.",
-    "m": "a. 번쩍이는, 빛나는"
+    "m": "a. 번쩍이는, 빛나는(glistening, radiant, shiny)"
   },
   {
     "w": "luxuriant",
     "p": "",
     "pos": "a.",
-    "m": "a. 번성한; 풍부한; 화려한"
+    "m": "a. 번성한(flourishing); 풍부한(abundant); 화려한"
   },
   {
     "w": "macabre",
     "p": "",
     "pos": "a.",
-    "m": "a. 섬뜩한, 기분 나쁜"
+    "m": "a. 섬뜩한, 기분 나쁜(gory, grotesque, gruesome, hideous, morbid)"
   },
   {
     "w": "macerate",
@@ -13271,7 +13271,7 @@ window.__V502_WORDBOOK3__ = [
     "w": "machinate",
     "p": "",
     "pos": "v.",
-    "m": "v. 음모를 꾀하다"
+    "m": "v. 음모를 꾀하다(conspire, manipulate, plan, plot)"
   },
   {
     "w": "maculate",
@@ -13283,25 +13283,25 @@ window.__V502_WORDBOOK3__ = [
     "w": "magnanimous",
     "p": "",
     "pos": "a.",
-    "m": "a. 관대한"
+    "m": "a. 관대한(altruistic, benevolent, charitable, generous)"
   },
   {
     "w": "magnate",
     "p": "",
     "pos": "n.",
-    "m": "n. 권력자, 거물"
+    "m": "n. 권력자, 거물(baron, big-shot, big-wig, industrialist, mogul)"
   },
   {
     "w": "magnify",
     "p": "",
     "pos": "v.",
-    "m": "v. 확대하다"
+    "m": "v. 확대하다(amplify, enlarge, exaggerate, expand)"
   },
   {
     "w": "magniloquent",
     "p": "",
     "pos": "a.",
-    "m": "a. 과장된, 허풍떠는"
+    "m": "a. 과장된, 허풍떠는(grandiloquent, bombastic)"
   },
   {
     "w": "maim",
@@ -13313,13 +13313,13 @@ window.__V502_WORDBOOK3__ = [
     "w": "makeshift",
     "p": "",
     "pos": "a.",
-    "m": "a. 임시변통의"
+    "m": "a. 임시변통의(improvised, provisional, stopgap, substitute)"
   },
   {
     "w": "malaise",
     "p": "",
     "pos": "n.",
-    "m": "n. (막연한)불안감"
+    "m": "n. (막연한)불안감(debility, feebleness, infirmity, weakness)"
   },
   {
     "w": "malapropism",
@@ -13331,79 +13331,79 @@ window.__V502_WORDBOOK3__ = [
     "w": "malcontent",
     "p": "",
     "pos": "a.",
-    "m": "a. 불만을 품은"
+    "m": "a. 불만을 품은(discontented, disgruntled, displeased)"
   },
   {
     "w": "malefactor",
     "p": "",
     "pos": "n.",
-    "m": "n. 범인, 죄인"
+    "m": "n. 범인, 죄인(criminal, felon, lawbreaker, cur, miscreant)"
   },
   {
     "w": "malevolent",
     "p": "",
     "pos": "a.",
-    "m": "a. 악의 있는, 심술궂은"
+    "m": "a. 악의 있는, 심술궂은(malignant, pernicious, spiteful)"
   },
   {
     "w": "malfeasance",
     "p": "",
     "pos": "n.",
-    "m": "n. (공무원)불법행위"
+    "m": "n. (공무원)불법행위(impropriety, malfeasance, misbehavior)"
   },
   {
     "w": "malignant",
     "p": "",
     "pos": "a.",
-    "m": "a. 악의 있는, 해로운"
+    "m": "a. 악의 있는(spiteful), 해로운(malevolent, malicious)"
   },
   {
     "w": "malinger",
     "p": "",
     "pos": "v.",
-    "m": "v. 꾀병을 부리다"
+    "m": "v. 꾀병을 부리다(goldbrick, loaf, procrastinate, shirk, slack)"
   },
   {
     "w": "malleable",
     "p": "",
     "pos": "a.",
-    "m": "a. 유연한, 유순한"
+    "m": "a. 유연한, 유순한(ductile, moldable, plastic, pliable)"
   },
   {
     "w": "malnutrition",
     "p": "",
     "pos": "n.",
-    "m": "n. 영양실조"
+    "m": "n. 영양실조(emaciation, starvation, undernourishment)"
   },
   {
     "w": "malodorous",
     "p": "",
     "pos": "a.",
-    "m": "a. 악취가 나는"
+    "m": "a. 악취가 나는(rancid, putrid)"
   },
   {
     "w": "manacle",
     "p": "",
     "pos": "n.",
-    "m": "n. 속박, 구속, 수갑 v. 구속하다"
+    "m": "n. 속박, 구속, 수갑 v. 구속하다(bind, chain, fasten, shackle)"
   },
   {
     "w": "maneuver",
     "p": "",
     "pos": "n.",
-    "m": "n. 책략 v. (교묘하게)유도하다"
+    "m": "n. 책략(intrigue) v. (교묘하게)유도하다(manipulate)"
   },
   {
     "w": "mangle",
     "p": "",
     "pos": "v.",
-    "m": "v. 엉망으로 만들다"
+    "m": "v. 엉망으로 만들다(lacerate, mangle, slash, deform)"
   },
   {
     "w": "mangy",
     "p": "",
     "pos": "a.",
-    "m": "a. 누추한, 더러운"
+    "m": "a. 누추한, 더러운(dirty, ragged, scruffy, shabby, unkempt)"
   },
   {
     "w": "manhandle",
@@ -13415,37 +13415,37 @@ window.__V502_WORDBOOK3__ = [
     "w": "manifest",
     "p": "",
     "pos": "v.",
-    "m": "v. 분명히 밝히다, 나타내다"
+    "m": "v. 분명히 밝히다, 나타내다(display, exhibit, illustrate, reveal)"
   },
   {
     "w": "manifesto",
     "p": "",
     "pos": "n.",
-    "m": "n. 성명서, 선언문"
+    "m": "n. 성명서, 선언문(announcement, communique, declaration)"
   },
   {
     "w": "manifold",
     "p": "",
     "pos": "a.",
-    "m": "a. 많은, 여러 가지의"
+    "m": "a. 많은(numerous), 여러 가지의(diverse, multifarious)"
   },
   {
     "w": "manslaughter",
     "p": "",
     "pos": "n.",
-    "m": "n. 살인"
+    "m": "n. (murder보다 가벼운 죄)살인(homicide)"
   },
   {
     "w": "manumit",
     "p": "",
     "pos": "v.",
-    "m": "v. (노예)해방시키다"
+    "m": "v. (노예)해방시키다(emancipate)"
   },
   {
     "w": "mar",
     "p": "",
     "pos": "v.",
-    "m": "v. 손상하다(blemish, impair, sully, taint)"
+    "m": "v. 손상하다(blemish, impair, sully, taint, damage, deface)"
   },
   {
     "w": "maraud",
@@ -13457,31 +13457,31 @@ window.__V502_WORDBOOK3__ = [
     "w": "marginal",
     "p": "",
     "pos": "a.",
-    "m": "a. 주변부의; 하찮은"
+    "m": "a. 주변부의(peripheral); 하찮은(insignificant, minimal)"
   },
   {
     "w": "marital",
     "p": "",
     "pos": "a.",
-    "m": "a. 남편의; 혼인의, 부부간의"
+    "m": "a. 남편의; 혼인의(matrimonial), 부부간의"
   },
   {
     "w": "marshal",
     "p": "",
     "pos": "v.",
-    "m": "v. (사실·주장)정리하다"
+    "m": "v. (사실·주장)정리하다(assemble, deploy, gather, organize)"
   },
   {
     "w": "martial",
     "p": "",
     "pos": "a.",
-    "m": "a. 전쟁의, 호전적인"
+    "m": "a. 전쟁의, 호전적인(bellicose, belligerent, warlike)"
   },
   {
     "w": "martinet",
     "p": "",
     "pos": "n.",
-    "m": "n. 엄격한 사람[군인]"
+    "m": "n. 엄격한 사람[군인](district disciplinarian)"
   },
   {
     "w": "martyr",
@@ -13493,127 +13493,127 @@ window.__V502_WORDBOOK3__ = [
     "w": "masquerade",
     "p": "",
     "pos": "n.",
-    "m": "n. 가면무도회; 허구 v. -인척하다"
+    "m": "n. 가면무도회; 허구 v. -인척하다(disguise, dissemble)"
   },
   {
     "w": "masticate",
     "p": "",
     "pos": "v.",
-    "m": "v. (음식)씹다"
+    "m": "v. (음식)씹다(chew)"
   },
   {
     "w": "matriculate",
     "p": "",
     "pos": "v.",
-    "m": "v. (대학)입학하다"
+    "m": "v. (대학)입학하다(enroll, enter, join, register)"
   },
   {
     "w": "matrimonial",
     "p": "",
     "pos": "a.",
-    "m": "a. 결혼의, 부부의"
+    "m": "a. 결혼의, 부부의(nuptials, wedding)"
   },
   {
     "w": "matrimony",
     "p": "",
     "pos": "n.",
-    "m": "n. 결혼"
+    "m": "n. 결혼(marriage, nuptials, union, wedding)"
   },
   {
     "w": "maudlin",
     "p": "",
     "pos": "a.",
-    "m": "a. 감상적인"
+    "m": "a. 감상적인(lachrymose, mushy, sappy, sentimental)"
   },
   {
     "w": "maul",
     "p": "",
     "pos": "v.",
-    "m": "v. 쳐서 상처 내다; 거칠게 다루다"
+    "m": "v. 쳐서 상처 내다(batter, beat, mangle, pummel); 거칠게 다루다"
   },
   {
     "w": "mausoleum",
     "p": "",
     "pos": "n.",
-    "m": "n. 무덤, 능"
+    "m": "n. 무덤, 능(sepulcher, tomb)"
   },
   {
     "w": "maverick",
     "p": "",
     "pos": "n.",
-    "m": "n. 송아지; 무소속정치가"
+    "m": "n. (낙인찍히지 않은)송아지; 무소속정치가(예술가)"
   },
   {
     "w": "mawkish",
     "p": "",
     "pos": "a.",
-    "m": "a. 역겨운; 감상적인"
+    "m": "a. 역겨운(sickening); 감상적인(overly sentimental)"
   },
   {
     "w": "maxim",
     "p": "",
     "pos": "n.",
-    "m": "n. 격언"
+    "m": "n. 격언(aphorism, epigram, maxim, proverb, saying)"
   },
   {
     "w": "mayhem",
     "p": "",
     "pos": "n.",
-    "m": "n. 신체상해죄; 고의의 폭력"
+    "m": "n. 신체상해죄; 고의의 폭력(injury to body)"
   },
   {
     "w": "meander",
     "p": "",
     "pos": "v.",
-    "m": "v. (강)굽이쳐 흐르다"
+    "m": "v. (강)굽이쳐 흐르다(bend, snake, twist, wind, zigzag)"
   },
   {
     "w": "mediate",
     "p": "",
     "pos": "v.",
-    "m": "v. 중재하다 a. 중간의"
+    "m": "v. 중재하다(arbitrate, moderate, intercede) a. 중간의"
   },
   {
     "w": "mediocre",
     "p": "",
     "pos": "a.",
-    "m": "a. 평범한, 보통의"
+    "m": "a. 평범한, 보통의(lackluster, second-rate, undistinguished)"
   },
   {
     "w": "meek",
     "p": "",
     "pos": "a.",
-    "m": "a. 유순한, 온순한"
+    "m": "a. 유순한, 온순한(gentle, long-suffering, patient, tolerant)"
   },
   {
     "w": "megalomania",
     "p": "",
     "pos": "n.",
-    "m": "n. 과대망상"
+    "m": "n. 과대망상(mania for doing grandiose things)"
   },
   {
     "w": "melancholy",
     "p": "",
     "pos": "a.",
-    "m": "a. 우울한, 음울한"
+    "m": "a. 우울한, 음울한(depressed, despondent, disconsolate)"
   },
   {
     "w": "melange",
     "p": "",
     "pos": "n.",
-    "m": "n. 혼합물"
+    "m": "n. 혼합물(medley, miscellany, potpourri)"
   },
   {
     "w": "melee",
     "p": "",
     "pos": "n.",
-    "m": "n. 싸움"
+    "m": "n. 싸움(brawl, fracas, fray, free-for-all)"
   },
   {
     "w": "mellifluous",
     "p": "",
     "pos": "a.",
-    "m": "a. 부드럽게 흐르는, 감미로운"
+    "m": "a. 부드럽게 흐르는, 감미로운(dulcet)"
   },
   {
     "w": "memoir",
@@ -13625,67 +13625,67 @@ window.__V502_WORDBOOK3__ = [
     "w": "menace",
     "p": "",
     "pos": "v.",
-    "m": "v. 위협하다, 협박하다"
+    "m": "v. 위협하다, 협박하다(endanger, imperil, jeopardize)"
   },
   {
     "w": "mend",
     "p": "",
     "pos": "v.",
-    "m": "v. 수선하다, 개선하다"
+    "m": "v. 수선하다, 개선하다(repair, restore)"
   },
   {
     "w": "mendacious",
     "p": "",
     "pos": "a.",
-    "m": "a. 허위의, 거짓말 잘하는"
+    "m": "a. 허위의, 거짓말 잘하는(lying)"
   },
   {
     "w": "mendicant",
     "p": "",
     "pos": "n.",
-    "m": "n. 거지"
+    "m": "n. 거지(beggar, guttersnipe, ragamuffin, vagabond)"
   },
   {
     "w": "menial",
     "p": "",
     "pos": "n.",
-    "m": "n. 하인 a. 비천한"
+    "m": "n. 하인(hireling, lackey, servant) a. 비천한(ignoble, lowly, servile, subservient)"
   },
   {
     "w": "mentor",
     "p": "",
     "pos": "n.",
-    "m": "n. 스승, 현명한 조언자"
+    "m": "n. 스승, 현명한 조언자(counselor, guide, guru, teacher)"
   },
   {
     "w": "mercantile",
     "p": "",
     "pos": "a.",
-    "m": "a. 상업의"
+    "m": "a. 상업의(concerning trade)"
   },
   {
     "w": "mercenary",
     "p": "",
     "pos": "n.",
-    "m": "n. 고용된 사람 a. 돈만 바라는"
+    "m": "n. 고용된 사람(legionnaire) a. 돈만 바라는"
   },
   {
     "w": "merciless",
     "p": "",
     "pos": "a.",
-    "m": "a. 무자비한, 냉혹한"
+    "m": "a. 무자비한, 냉혹한(callous, cruel, heartless, pitiless, ruthless)"
   },
   {
     "w": "meretricious",
     "p": "",
     "pos": "a.",
-    "m": "a. 저속한, 겉만 화려한"
+    "m": "a. 저속한, 겉만 화려한(garish, gaudy, tawdry)"
   },
   {
     "w": "merge",
     "p": "",
     "pos": "v.",
-    "m": "v. 합병하다"
+    "m": "v. 합병하다(blend, coalesce, combine, integrate, unify)"
   },
   {
     "w": "meritocracy",
@@ -13697,37 +13697,37 @@ window.__V502_WORDBOOK3__ = [
     "w": "meritorious",
     "p": "",
     "pos": "a.",
-    "m": "a. 칭찬할 만한"
+    "m": "a. 칭찬할 만한(commendable, creditable, laudable)"
   },
   {
     "w": "mesmerize",
     "p": "",
     "pos": "v.",
-    "m": "v. 최면을 걸다, 매혹시키다"
+    "m": "v. 최면을 걸다, 매혹시키다(bewitch, captivate, enchant)"
   },
   {
     "w": "metamorphosis",
     "p": "",
     "pos": "n.",
-    "m": "n. 변형, 변화"
+    "m": "n. 변형, 변화(change, evolution, transformation)"
   },
   {
     "w": "metaphor",
     "p": "",
     "pos": "n.",
-    "m": "n. 은유"
+    "m": "n. 은유(allegory, figure, image, parable)"
   },
   {
     "w": "mete",
     "p": "",
     "pos": "v.",
-    "m": "v. (형벌·보수)할당하다(out); 측정하다"
+    "m": "v. (형벌·보수)할당하다(out)(allocate, apportion); 측정하다"
   },
   {
     "w": "meteor",
     "p": "",
     "pos": "n.",
-    "m": "n. 유성, 운석"
+    "m": "n. 유성(shooting star), 운석"
   },
   {
     "w": "meteorology",
@@ -13739,49 +13739,49 @@ window.__V502_WORDBOOK3__ = [
     "w": "methodical",
     "p": "",
     "pos": "a.",
-    "m": "a. 체계적인, 질서정연한"
+    "m": "a. 체계적인(systematic), 질서정연한(orderly)"
   },
   {
     "w": "meticulous",
     "p": "",
     "pos": "a.",
-    "m": "a. 매우 신중한, 소심한"
+    "m": "a. 매우 신중한, 소심한(fastidious, particular, scrupulous)"
   },
   {
     "w": "mettle",
     "p": "",
     "pos": "n.",
-    "m": "n. 용기, 패기"
+    "m": "n. 용기, 패기(fortitude, stamina, tenacity, bravery, valor)"
   },
   {
     "w": "miasma",
     "p": "",
     "pos": "n.",
-    "m": "n. 독기, 악취; 악영향"
+    "m": "n. 독기, 악취(swamp gas); 악영향"
   },
   {
     "w": "microcosm",
     "p": "",
     "pos": "n.",
-    "m": "n. 소우주; 인간 사회"
+    "m": "n. 소우주(small world); 인간 사회"
   },
   {
     "w": "mien",
     "p": "",
     "pos": "n.",
-    "m": "n. 태도, 풍채"
+    "m": "n. 태도, 풍채(air, bearing, demeanor, deportment)"
   },
   {
     "w": "miff",
     "p": "",
     "pos": "v.",
-    "m": "v. 발끈하게 하다"
+    "m": "v. 발끈하게 하다(affront, insult, wound, incense, inflame)"
   },
   {
     "w": "migraine",
     "p": "",
     "pos": "n.",
-    "m": "n. 편두통"
+    "m": "n. (의학)편두통(an excruciating headache)"
   },
   {
     "w": "migrate",
@@ -13793,43 +13793,43 @@ window.__V502_WORDBOOK3__ = [
     "w": "milieu",
     "p": "",
     "pos": "n.",
-    "m": "n. 환경"
+    "m": "n. 환경(environment, outskirts, suburbs, surroundings)"
   },
   {
     "w": "militant",
     "p": "",
     "pos": "a.",
-    "m": "a. 호전적인"
+    "m": "a. 호전적인(aggressive, combative, contentious, warlike)"
   },
   {
     "w": "militate",
     "p": "",
     "pos": "v.",
-    "m": "v. (긍정적·부정적)영향을 미치다"
+    "m": "v. (긍정적·부정적)영향을 미치다(for·against)"
   },
   {
     "w": "mimesis",
     "p": "",
     "pos": "n.",
-    "m": "n. 유사, 모방"
+    "m": "n. 유사, 모방(imitation, mimicry)"
   },
   {
     "w": "mimic",
     "p": "",
     "pos": "v.",
-    "m": "v. 흉내 내다"
+    "m": "v. 흉내 내다(echo, imitate, impersonate, mirror)"
   },
   {
     "w": "minatory",
     "p": "",
     "pos": "a.",
-    "m": "a. 위협하는"
+    "m": "a. 위협하는(threatening, menacing)"
   },
   {
     "w": "mince",
     "p": "",
     "pos": "v.",
-    "m": "v. (고기)잘게 썰다"
+    "m": "v. (고기)잘게 썰다(chop, dice, hash)"
   },
   {
     "w": "mind-boggling",
@@ -13841,115 +13841,115 @@ window.__V502_WORDBOOK3__ = [
     "w": "mingle",
     "p": "",
     "pos": "v.",
-    "m": "v. 혼합하다, 섞다"
+    "m": "v. 혼합하다, 섞다(blend, combine, fuse, merge, mix)"
   },
   {
     "w": "minion",
     "p": "",
     "pos": "n.",
-    "m": "n. 부하, 추종자"
+    "m": "n. 부하, 추종자(flunky, lackey, sponge)"
   },
   {
     "w": "mint",
     "p": "",
     "pos": "a.",
-    "m": "a. 갓 나온, 새로운 v. (화폐)주조하다"
+    "m": "a. 갓 나온, 새로운 v. (화폐)주조하다(coin)"
   },
   {
     "w": "mirage",
     "p": "",
     "pos": "n.",
-    "m": "n. 신기루, 망상, 덧없는 희망"
+    "m": "n. 신기루, 망상, 덧없는 희망(hallucination, phantasm)"
   },
   {
     "w": "mire",
     "p": "",
     "pos": "n.",
-    "m": "n. 늪, 수렁; 궁지"
+    "m": "n. 늪, 수렁(marsh, morass, quagmire); 궁지"
   },
   {
     "w": "mirth",
     "p": "",
     "pos": "n.",
-    "m": "n. 유쾌함, 즐거움"
+    "m": "n. 유쾌함, 즐거움(merriment, laughter)"
   },
   {
     "w": "misadventure",
     "p": "",
     "pos": "n.",
-    "m": "n. 불행, 재난"
+    "m": "n. 불행, 재난(calamity, failure, misfortune, mishap)"
   },
   {
     "w": "misanthrope",
     "p": "",
     "pos": "n.",
-    "m": "n. 사람을 싫어하는 사람"
+    "m": "n. 사람을 싫어하는 사람(anti-social, inhumane, unsociable)"
   },
   {
     "w": "miscarriage",
     "p": "",
     "pos": "n.",
-    "m": "n. 유산; 실패"
+    "m": "n. (임산부)유산; 실패(failure, malfunction, misapplication)"
   },
   {
     "w": "miscegenation",
     "p": "",
     "pos": "n.",
-    "m": "n. (다른 인종 간)결혼"
+    "m": "n. (다른 인종 간)결혼(intermarriage between races)"
   },
   {
     "w": "miscellaneous",
     "p": "",
     "pos": "a.",
-    "m": "a. 잡다한"
+    "m": "a. 잡다한(assorted, mixed, sundry, unspecified, various)"
   },
   {
     "w": "mischance",
     "p": "",
     "pos": "n.",
-    "m": "n. 재난, 불행, 사고"
+    "m": "n. 재난, 불행, 사고(mishap)"
   },
   {
     "w": "mischief",
     "p": "",
     "pos": "n.",
-    "m": "n. 손해; (아이들)장난, 못된 짓"
+    "m": "n. 손해; (아이들)장난, 못된 짓(devilment, impishness)"
   },
   {
     "w": "misconstrue",
     "p": "",
     "pos": "v.",
-    "m": "v. 잘못 해석하다, 오해하다"
+    "m": "v. 잘못 해석하다, 오해하다(confuse, misinterpret, misread)"
   },
   {
     "w": "miscreant",
     "p": "",
     "pos": "n.",
-    "m": "n. 악한, 범법자"
+    "m": "n. 악한, 범법자(criminal, devil, rogue, scoundrel, villain)"
   },
   {
     "w": "misnomer",
     "p": "",
     "pos": "n.",
-    "m": "n. 틀린 명칭, 오칭"
+    "m": "n. 틀린 명칭, 오칭(wrong name)"
   },
   {
     "w": "misogamy",
     "p": "",
     "pos": "n.",
-    "m": "n. 결혼을 싫어함"
+    "m": "n. 결혼을 싫어함(hatred of marriage)"
   },
   {
     "w": "misogyny",
     "p": "",
     "pos": "n.",
-    "m": "n. 여자를 싫어함"
+    "m": "n. 여자를 싫어함(hatred of women)"
   },
   {
     "w": "misrepresent",
     "p": "",
     "pos": "v.",
-    "m": "v. 잘못 말하다"
+    "m": "v. 잘못 말하다(describe incorrectly)"
   },
   {
     "w": "misshapen",
@@ -13961,19 +13961,19 @@ window.__V502_WORDBOOK3__ = [
     "w": "missive",
     "p": "",
     "pos": "n.",
-    "m": "n. (공식적)편지, 서한"
+    "m": "n. (공식적)편지, 서한(letter)"
   },
   {
     "w": "misty",
     "p": "",
     "pos": "a.",
-    "m": "a. 안개가 짙은; 희미한"
+    "m": "a. 안개가 짙은(foggy); 희미한(nebulous, obscure, vague)"
   },
   {
     "w": "mitigate",
     "p": "",
     "pos": "v.",
-    "m": "v. 완화시키다"
+    "m": "v. 완화시키다(allay, blunt, moderate, palliate, temper)"
   },
   {
     "w": "mnemonic",
@@ -13985,43 +13985,43 @@ window.__V502_WORDBOOK3__ = [
     "w": "mode",
     "p": "",
     "pos": "n.",
-    "m": "n. 방식, 양식; 유행"
+    "m": "n. 방식, 양식(manner of doing); 유행(fad, fashion, trend)"
   },
   {
     "w": "moderate",
     "p": "",
     "pos": "a.",
-    "m": "a. 알맞은, (가격)적당한"
+    "m": "a. 알맞은, (가격)적당한(modest, temperate)"
   },
   {
     "w": "modest",
     "p": "",
     "pos": "a.",
-    "m": "a. 겸손한; 적당한"
+    "m": "a. 겸손한(humble, meek, unassertive, unassuming); 적당한"
   },
   {
     "w": "modicum",
     "p": "",
     "pos": "n.",
-    "m": "n. 소량, 약간"
+    "m": "n. 소량, 약간(of)(bit, dash, little, pinch, smidgen, tad)"
   },
   {
     "w": "modify",
     "p": "",
     "pos": "v.",
-    "m": "v. 변경하다, 수정하다"
+    "m": "v. 변경하다, 수정하다(adjust, alter, change, revise)"
   },
   {
     "w": "modish",
     "p": "",
     "pos": "a.",
-    "m": "a. 유행하는, 최신식의"
+    "m": "a. 유행하는, 최신식의(fad, fashion, style, trend, vogue)"
   },
   {
     "w": "modulate",
     "p": "",
     "pos": "v.",
-    "m": "v. 조절하다, 조정하다"
+    "m": "v. 조절하다, 조정하다(adjust, moderate, regulate)"
   },
   {
     "w": "modus operandi",
@@ -14039,25 +14039,25 @@ window.__V502_WORDBOOK3__ = [
     "w": "mogul",
     "p": "",
     "pos": "n.",
-    "m": "n. 중요 인물, 거물"
+    "m": "n. 중요 인물, 거물(czar, magnate, tycoon, luminary)"
   },
   {
     "w": "molest",
     "p": "",
     "pos": "v.",
-    "m": "v. 괴롭히다"
+    "m": "v. 괴롭히다(annoy, bother, harass, pester, plague, vex)"
   },
   {
     "w": "mollify",
     "p": "",
     "pos": "v.",
-    "m": "v. 달래다, 누그러뜨리다"
+    "m": "v. 달래다, 누그러뜨리다(assuage, pacify, placate, soothe)"
   },
   {
     "w": "mollycoddle",
     "p": "",
     "pos": "v.",
-    "m": "v. 응석을 받아주다"
+    "m": "v. 응석을 받아주다(pamper, indulge excessively)"
   },
   {
     "w": "molt",
@@ -14069,169 +14069,169 @@ window.__V502_WORDBOOK3__ = [
     "w": "momentum",
     "p": "",
     "pos": "n.",
-    "m": "n. 힘, 추진력; 운동량"
+    "m": "n. 힘, 추진력(drive, energy, force, impetus, impulse); 운동량"
   },
   {
     "w": "monastery",
     "p": "",
     "pos": "n.",
-    "m": "n. (남자)수도원"
+    "m": "n. (남자)수도원(abbey, cloister)"
   },
   {
     "w": "moniker",
     "p": "",
     "pos": "n.",
-    "m": "n. 별명"
+    "m": "n. 별명(sobriquet, nickname, pen name, pseudonym)"
   },
   {
     "w": "monolingual",
     "p": "",
     "pos": "a.",
-    "m": "a. 1개 국어를 사용하는"
+    "m": "a. 1개 국어를 사용하는(using or knowing only one language)"
   },
   {
     "w": "monolithic",
     "p": "",
     "pos": "a.",
-    "m": "a. 거대한, 획일적인; 융통성 없는"
+    "m": "a. (조직·제도)거대한, 획일적인; 융통성 없는"
   },
   {
     "w": "monopoly",
     "p": "",
     "pos": "n.",
-    "m": "n. 독점, 독차지"
+    "m": "n. 독점, 독차지(corner, edge, bloc, cartel)"
   },
   {
     "w": "monotheism",
     "p": "",
     "pos": "n.",
-    "m": "n. 일신교"
+    "m": "n. 일신교(belief in the one God)"
   },
   {
     "w": "moody",
     "p": "",
     "pos": "a.",
-    "m": "a. 변덕스러운; 우울한"
+    "m": "a. 변덕스러운; 우울한(melancholy)"
   },
   {
     "w": "moor",
     "p": "",
     "pos": "n.",
-    "m": "n. 황야 v. 정박시키다"
+    "m": "n. 황야 v. 정박시키다(anchor, berth, dock, fasten, secure, tether)"
   },
   {
     "w": "moot",
     "p": "",
     "pos": "a.",
-    "m": "a. 논쟁의 여지가 있는"
+    "m": "a. 논쟁의 여지가 있는(arguable, debatable, doubtful)"
   },
   {
     "w": "morass",
     "p": "",
     "pos": "n.",
-    "m": "n. 늪; 곤경"
+    "m": "n. 늪(bog, marsh, mire, quagmire, swamp); 곤경"
   },
   {
     "w": "morbid",
     "p": "",
     "pos": "a.",
-    "m": "a. (생각)병적인, 불건전한"
+    "m": "a. (생각)병적인, 불건전한(unwholesome, unhealthy)"
   },
   {
     "w": "mordant",
     "p": "",
     "pos": "a.",
-    "m": "a. 신랄한, 빈정대는"
+    "m": "a. 신랄한, 빈정대는(biting, caustic, cutting, sarcastic)"
   },
   {
     "w": "mores",
     "p": "",
     "pos": "n.",
-    "m": "n. 사회적 관행, 도덕적 자세"
+    "m": "n. 사회적 관행, 도덕적 자세(ethics, ideals, morality)"
   },
   {
     "w": "morganatic",
     "p": "",
     "pos": "a.",
-    "m": "a. 귀천상혼의"
+    "m": "a. 귀천상혼(귀족과 천민사이의 결혼)의"
   },
   {
     "w": "moribund",
     "p": "",
     "pos": "a.",
-    "m": "a. 죽어가는"
+    "m": "a. 죽어가는(ailing, deteriorating, dying, failing, waning)"
   },
   {
     "w": "morose",
     "p": "",
     "pos": "a.",
-    "m": "a. 뚱한, 언짢은; 침울한"
+    "m": "a. 뚱한, 언짢은(sullen, sulky); 침울한(gloomy, somber)"
   },
   {
     "w": "mortality",
     "p": "",
     "pos": "n.",
-    "m": "n. 죽을 운명; 사망자 수"
+    "m": "n. 죽을 운명; 사망자 수(death, fatality, toll)"
   },
   {
     "w": "mote",
     "p": "",
     "pos": "n.",
-    "m": "n. 아주 작은 조각, 티끌"
+    "m": "n. 아주 작은 조각, 티끌(corpuscle, particle, speck, molecule, atom)"
   },
   {
     "w": "motif",
     "p": "",
     "pos": "n.",
-    "m": "n. (장식용)무늬; 예술작품의 주제"
+    "m": "n. (장식용)무늬; 예술작품의 주제(theme)"
   },
   {
     "w": "motley",
     "p": "",
     "pos": "a.",
-    "m": "a. 잡다한, 혼성의"
+    "m": "a. 잡다한, 혼성의(splotched, spotted, variegated)"
   },
   {
     "w": "mottled",
     "p": "",
     "pos": "a.",
-    "m": "a. 얼룩덜룩한, 잡색의"
+    "m": "a. 얼룩덜룩한, 잡색의(spotted)"
   },
   {
     "w": "mountebank",
     "p": "",
     "pos": "n.",
-    "m": "n. 돌팔이 의사; 사기꾼"
+    "m": "n. 돌팔이 의사; 사기꾼(charlatan)"
   },
   {
     "w": "muddle",
     "p": "",
     "pos": "n.",
-    "m": "n. 혼란 v. 혼란시키다"
+    "m": "n. 혼란 v. 혼란시키다(botch, bumble, bungle, fumble)"
   },
   {
     "w": "muggy",
     "p": "",
     "pos": "a.",
-    "m": "a. 무더운, 후덥지근한"
+    "m": "a. 무더운, 후덥지근한(damp, humid, sticky, sultry, sweltering)"
   },
   {
     "w": "mugwump",
     "p": "",
     "pos": "n.",
-    "m": "n. 독자노선을 걷는 사람"
+    "m": "n. 독자노선을 걷는 사람(정치가)"
   },
   {
     "w": "mulct",
     "p": "",
     "pos": "v.",
-    "m": "v. 벌금을 과하다; 빼앗다"
+    "m": "v. 벌금을 과하다(in); 빼앗다(of)"
   },
   {
     "w": "multifarious",
     "p": "",
     "pos": "a.",
-    "m": "a. 다양한"
+    "m": "a. 다양한(diverse, eclectic, manifold, multiple, numerous)"
   },
   {
     "w": "multiform",
@@ -14243,169 +14243,169 @@ window.__V502_WORDBOOK3__ = [
     "w": "multilingual",
     "p": "",
     "pos": "a.",
-    "m": "a. 여러 언어로 쓰인"
+    "m": "a. 여러 언어로 쓰인(having many languages)"
   },
   {
     "w": "multiply",
     "p": "",
     "pos": "v.",
-    "m": "v. 증가하다"
+    "m": "v. 증가하다(procreate, proliferate, propagate, reproduce)"
   },
   {
     "w": "multitude",
     "p": "",
     "pos": "n.",
-    "m": "n. 다수, 군중"
+    "m": "n. 다수, 군중(crowd, horde, mass, throng)"
   },
   {
     "w": "mundane",
     "p": "",
     "pos": "a.",
-    "m": "a. 세속적인; 일상적인"
+    "m": "a. 세속적인(secular, worldly, earthly); 일상적인(banal)"
   },
   {
     "w": "municipal",
     "p": "",
     "pos": "a.",
-    "m": "a. (자치)시의; 국지적인"
+    "m": "a. (자치)시의(city); 국지적인(local)"
   },
   {
     "w": "munificent",
     "p": "",
     "pos": "a.",
-    "m": "a. 아낌없이 주는; 후한"
+    "m": "a. 아낌없이 주는; (금전적으로)후한(lavish)"
   },
   {
     "w": "murky",
     "p": "",
     "pos": "a.",
-    "m": "a. 음울한; 애매한"
+    "m": "a. 음울한(gloomy); 애매한(vague, ambiguous)"
   },
   {
     "w": "murmur",
     "p": "",
     "pos": "v.",
-    "m": "v. 중얼거리다; 투덜거리다"
+    "m": "v. 중얼거리다(mumble, mutter),; 투덜거리다(complain)"
   },
   {
     "w": "muse",
     "p": "",
     "pos": "n.",
-    "m": "n. 시적 영감 v. 숙고하다"
+    "m": "n. 시적 영감 v. 숙고하다(ponder, ruminate)"
   },
   {
     "w": "mushroom",
     "p": "",
     "pos": "n.",
-    "m": "n. 버섯 v. (갑자기)성장하다"
+    "m": "n. 버섯 v. (갑자기)성장하다(burgeon, expand, flourish)"
   },
   {
     "w": "muster",
     "p": "",
     "pos": "n.",
-    "m": "n. 소집 v. 모으다, 소집하다"
+    "m": "n. 소집 v. 모으다, 소집하다(collect, gather, shore up, summon)"
   },
   {
     "w": "musty",
     "p": "",
     "pos": "a.",
-    "m": "a. 곰팡내 나는"
+    "m": "a. 곰팡내 나는(dank, fusty, moldy, stale, stuffy)"
   },
   {
     "w": "mute",
     "p": "",
     "pos": "v.",
-    "m": "v. 소리를 없애다 a. 무언의"
+    "m": "v. 소리를 없애다 a. 무언의(mum, reticent, silent, speechless)"
   },
   {
     "w": "mutilate",
     "p": "",
     "pos": "v.",
-    "m": "v. 불구로 만들다"
+    "m": "v. 불구로 만들다(maim, cripple)"
   },
   {
     "w": "mutter",
     "p": "",
     "pos": "v.",
-    "m": "v. 중얼거리다"
+    "m": "v. 중얼거리다(complain, grumble, mumble, murmur)"
   },
   {
     "w": "muzzle",
     "p": "",
     "pos": "v.",
-    "m": "v. 말 못하게 하다; 언론탄압 하다"
+    "m": "v. 말 못하게 하다; 언론탄압 하다(muffle, mute, silence)"
   },
   {
     "w": "myopia",
     "p": "",
     "pos": "n.",
-    "m": "n. 근시안, 근시"
+    "m": "n. 근시안, 근시(amblyopic, nearsighted, purblind)"
   },
   {
     "w": "myopic",
     "p": "",
     "pos": "a.",
-    "m": "a. 근시의, 근시안적인"
+    "m": "a. 근시의, 근시안적인(amblyopic, nearsighted, purblind)"
   },
   {
     "w": "myriad",
     "p": "",
     "pos": "n.",
-    "m": "n. 무수한 것"
+    "m": "n. 무수한 것(abundance, profusion, scores, thousands)"
   },
   {
     "w": "mystic",
     "p": "",
     "pos": "a.",
-    "m": "a. 신비스러운"
+    "m": "a. 신비스러운(cabalistic, mystical, occult)"
   },
   {
     "w": "nagging",
     "p": "",
     "pos": "a.",
-    "m": "a. (성가시게)잔소리하는"
+    "m": "a. (성가시게)잔소리하는(badgering, bedeviling, heckling, henpecking)"
   },
   {
     "w": "naive",
     "p": "",
     "pos": "a.",
-    "m": "a. 순진한, 소박한"
+    "m": "a. 순진한, 소박한(ingenuous, innocent, unsophisticated)"
   },
   {
     "w": "narcissism",
     "p": "",
     "pos": "n.",
-    "m": "n. 자기애, 자기중심주의"
+    "m": "n. 자기애, 자기중심주의(egomania, vainglory, vanity)"
   },
   {
     "w": "nascent",
     "p": "",
     "pos": "a.",
-    "m": "a. 초기의, 미성숙한"
+    "m": "a. 초기의, 미성숙한(beginning, budding, embryonic, emerging, inceptive, incipient)"
   },
   {
     "w": "natal",
     "p": "",
     "pos": "a.",
-    "m": "a. 출생의"
+    "m": "a. 출생의(pertaining to birth)"
   },
   {
     "w": "naught",
     "p": "",
     "pos": "n.",
-    "m": "n. 영, 무, 없음 a. 무가치한"
+    "m": "n. 영(零), 무, 없음 a. 무가치한(cipher)"
   },
   {
     "w": "naughty",
     "p": "",
     "pos": "a.",
-    "m": "a. 버릇없는; 외설적인"
+    "m": "a. 버릇없는(mischievous); 외설적인(indecent, risque, obscene)"
   },
   {
     "w": "nausea",
     "p": "",
     "pos": "n.",
-    "m": "n. 역겨움; 혐오"
+    "m": "n. 역겨움(sickness); 혐오"
   },
   {
     "w": "nautical",
@@ -14417,37 +14417,37 @@ window.__V502_WORDBOOK3__ = [
     "w": "nebulous",
     "p": "",
     "pos": "a.",
-    "m": "a. 흐린, 애매한"
+    "m": "a. 흐린, 애매한(ambiguous, obscure, unclear, vague)"
   },
   {
     "w": "nefarious",
     "p": "",
     "pos": "a.",
-    "m": "a. 극악한, 사악한"
+    "m": "a. 극악한, 사악한(criminal, devilish, evil, fiendish, sinister)"
   },
   {
     "w": "negate",
     "p": "",
     "pos": "v.",
-    "m": "v. 부정하다, 취소하다"
+    "m": "v. 부정하다(annul, cancel, nullify, void), 취소하다"
   },
   {
     "w": "negligent",
     "p": "",
     "pos": "a.",
-    "m": "a. 태만한, 부주의한"
+    "m": "a. 태만한, 부주의한(careless, forgetful, inattentive, indifferent)"
   },
   {
     "w": "negligible",
     "p": "",
     "pos": "a.",
-    "m": "a. 하찮은, 사소한"
+    "m": "a. 하찮은, 사소한(inconsequential, insignificant, paltry, piddling)"
   },
   {
     "w": "nemesis",
     "p": "",
     "pos": "n.",
-    "m": "n. 천벌, 인과응보"
+    "m": "n. 천벌, 인과응보(retaliation, retribution)"
   },
   {
     "w": "neologism",
@@ -14459,13 +14459,13 @@ window.__V502_WORDBOOK3__ = [
     "w": "neophyte",
     "p": "",
     "pos": "n.",
-    "m": "n. 초보자, 초심자"
+    "m": "n. 초보자, 초심자(apprentice, novice, tyro, proselyte )"
   },
   {
     "w": "nepotism",
     "p": "",
     "pos": "n.",
-    "m": "n. 친척 편중"
+    "m": "n. 친척 편중(favoritism, partisanship)"
   },
   {
     "w": "nerd",
@@ -14477,13 +14477,13 @@ window.__V502_WORDBOOK3__ = [
     "w": "nestle",
     "p": "",
     "pos": "v.",
-    "m": "v. 편히 기대다, 포근히 안기다"
+    "m": "v. 편히 기대다, 포근히 안기다(cuddle, nuzzle)"
   },
   {
     "w": "nettle",
     "p": "",
     "pos": "v.",
-    "m": "v. 짜증나게 하다"
+    "m": "v. 짜증나게 하다(annoy, irritate, perturb, vex)"
   },
   {
     "w": "neurosis",
@@ -14495,61 +14495,61 @@ window.__V502_WORDBOOK3__ = [
     "w": "neurotic",
     "p": "",
     "pos": "a.",
-    "m": "a. 신경과민의"
+    "m": "a. 신경과민의(deranged, disturbed, irrational)"
   },
   {
     "w": "neutralize",
     "p": "",
     "pos": "v.",
-    "m": "v. 중화하다; 무효로 만들다"
+    "m": "v. 중화하다; 무효로 만들다(counter, negate, nullify, offset)"
   },
   {
     "w": "newfangled",
     "p": "",
     "pos": "a.",
-    "m": "a. 최신식의, 새것을 좋아하는"
+    "m": "a. 최신식의, 새것을 좋아하는(new)"
   },
   {
     "w": "nexus",
     "p": "",
     "pos": "n.",
-    "m": "n. 연계, 관계"
+    "m": "n. 연계, 관계(connection)"
   },
   {
     "w": "nibble",
     "p": "",
     "pos": "v.",
-    "m": "v. 조금씩 갉아먹다"
+    "m": "v. 조금씩 갉아먹다(gnaw)"
   },
   {
     "w": "nicety",
     "p": "",
     "pos": "n.",
-    "m": "n. 정확, 정밀; 미묘함"
+    "m": "n. 정확, 정밀; 미묘함(delicacy, detail, particular, subtlety)"
   },
   {
     "w": "niggardly",
     "p": "",
     "pos": "a.",
-    "m": "a. 인색한"
+    "m": "a. 인색한(begrudging, cheap, miserly, stingy, tight)"
   },
   {
     "w": "niggle",
     "p": "",
     "pos": "v.",
-    "m": "v. 옹졸하게 굴다, 까다롭게 흠잡다"
+    "m": "v. 옹졸하게 굴다, 까다롭게 흠잡다(carp)"
   },
   {
     "w": "niggling",
     "p": "",
     "pos": "a.",
-    "m": "a. 옹졸한, 좀스러운"
+    "m": "a. 옹졸한, 좀스러운(minor, petty, piddling, trifling, trivial)"
   },
   {
     "w": "nihilism",
     "p": "",
     "pos": "n.",
-    "m": "n. 허무주의"
+    "m": "n. 허무주의(denial of traditional values)"
   },
   {
     "w": "nirvana",
@@ -14561,7 +14561,7 @@ window.__V502_WORDBOOK3__ = [
     "w": "nitty-gritty",
     "p": "",
     "pos": "n.",
-    "m": "n. 핵심, 요체"
+    "m": "n. (쟁점·상황)핵심, 요체(gist, crux, kernel, pith)"
   },
   {
     "w": "nocturnal",
@@ -14573,31 +14573,31 @@ window.__V502_WORDBOOK3__ = [
     "w": "noisome",
     "p": "",
     "pos": "a.",
-    "m": "a. 악취가나는; 해로운; 불쾌한"
+    "m": "a. 악취가나는(fetid), 해로운; 불쾌한"
   },
   {
     "w": "nom de plume",
     "p": "",
     "pos": "n.",
-    "m": "n. 필명, 아호"
+    "m": "n. 필명, 아호(pseudonym)"
   },
   {
     "w": "nomadic",
     "p": "",
     "pos": "a.",
-    "m": "a. 유목생활의, 방랑생활의"
+    "m": "a. 유목생활의, 방랑생활의(gypsy, itinerant, roving, traveling)"
   },
   {
     "w": "nomenclature",
     "p": "",
     "pos": "n.",
-    "m": "n. 학술명"
+    "m": "n. 학술명(jargon, language, taxonomy, terminology)"
   },
   {
     "w": "nominal",
     "p": "",
     "pos": "a.",
-    "m": "a. 명목상의, 이름뿐인"
+    "m": "a. 명목상의, 이름뿐인(titular)"
   },
   {
     "w": "non sequitur",
@@ -14609,151 +14609,151 @@ window.__V502_WORDBOOK3__ = [
     "w": "nonchalance",
     "p": "",
     "pos": "n.",
-    "m": "n. 무관심, 냉담"
+    "m": "n. 무관심, 냉담(insouciant, indifference)"
   },
   {
     "w": "noncommittal",
     "p": "",
     "pos": "a.",
-    "m": "a. 의견을 말하지 않는, 애매한"
+    "m": "a. 의견을 말하지 않는, 애매한(ambiguous, equivocal)"
   },
   {
     "w": "nondescript",
     "p": "",
     "pos": "n.",
-    "m": "n. 정체모를 것; 특징이 없는"
+    "m": "n. 정체모를 것(amorphous); 특징이 없는(common, indistinct)"
   },
   {
     "w": "nonentity",
     "p": "",
     "pos": "n.",
-    "m": "n. 존재하지 않음, 보잘 것 없는 존재"
+    "m": "n. 존재하지 않음, 보잘 것 없는 존재(cipher, nobody, zero)"
   },
   {
     "w": "nonpartisan",
     "p": "",
     "pos": "a.",
-    "m": "a. 무소속의"
+    "m": "a. 무소속의(impartial, neutral, objective, unbiased)"
   },
   {
     "w": "nonplus",
     "p": "",
     "pos": "v.",
-    "m": "v. 당황하게하다"
+    "m": "v. 당황하게하다(baffle, confound, confuse, dumbfound)"
   },
   {
     "w": "nostalgia",
     "p": "",
     "pos": "n.",
-    "m": "n. 향수병"
+    "m": "n. 향수병(homesickness, reminiscence, sentiment, longing)"
   },
   {
     "w": "nostrum",
     "p": "",
     "pos": "n.",
-    "m": "n. 해결책; 가짜 약"
+    "m": "n. (정치·사회 문제)해결책; 가짜 약(cure-all, panacea, elixir)"
   },
   {
     "w": "nuance",
     "p": "",
     "pos": "n.",
-    "m": "n. (말)미묘한 차이"
+    "m": "n. (말)미묘한 차이(hint, shade, subtlety, suggestion)"
   },
   {
     "w": "nub",
     "p": "",
     "pos": "n.",
-    "m": "n. 요점, 골자, 핵심"
+    "m": "n. 요점, 골자, 핵심(crux, gist, kernel)"
   },
   {
     "w": "nubile",
     "p": "",
     "pos": "a.",
-    "m": "a. (여자)결혼할 때가 된"
+    "m": "a. (여자)결혼할 때가 된(marriageable)"
   },
   {
     "w": "nudge",
     "p": "",
     "pos": "v.",
-    "m": "v. (팔꿈치)슬쩍 찌르다"
+    "m": "v. (팔꿈치)슬쩍 찌르다(bump, elbow, prod)"
   },
   {
     "w": "nugatory",
     "p": "",
     "pos": "a.",
-    "m": "a. 쓸모없는, 무가치한"
+    "m": "a. 쓸모없는, 무가치한(futile, worthless)"
   },
   {
     "w": "nuisance",
     "p": "",
     "pos": "n.",
-    "m": "n. 성가심, 귀찮음"
+    "m": "n. 성가심, 귀찮음(annoyance, hindrance, irritation, pest)"
   },
   {
     "w": "nullify",
     "p": "",
     "pos": "v.",
-    "m": "v. 무효로 하다, 취소하다"
+    "m": "v. 무효로 하다, 취소하다(abolish, abrogate, annul, rescind, revoke)"
   },
   {
     "w": "numismatist",
     "p": "",
     "pos": "n.",
-    "m": "n. 동전수집가"
+    "m": "n. 동전수집가(person who collects coins)"
   },
   {
     "w": "nuptial",
     "p": "",
     "pos": "a.",
-    "m": "a. 결혼식의"
+    "m": "a. 결혼식의(conjugal, connubial, marital, marriage)"
   },
   {
     "w": "nutrient",
     "p": "",
     "pos": "a.",
-    "m": "a. 영양분이 많은"
+    "m": "a. 영양분이 많은(nutritious, nutritive)"
   },
   {
     "w": "obdurate",
     "p": "",
     "pos": "a.",
-    "m": "a. 고집이 센, 완고한"
+    "m": "a. 고집이 센, 완고한(intractable, recalcitrant, stubborn)"
   },
   {
     "w": "oblong",
     "p": "",
     "pos": "a.",
-    "m": "a. 직사각형의"
+    "m": "a. 직사각형의(rectangular)"
   },
   {
     "w": "obloquy",
     "p": "",
     "pos": "n.",
-    "m": "n. 비방; 불명예"
+    "m": "n. 비방(diatribe); 불명예(disgrace, dishonor)"
   },
   {
     "w": "obsequious",
     "p": "",
     "pos": "a.",
-    "m": "a. 아첨하는, 알랑거리는"
+    "m": "a. 아첨하는, 알랑거리는(fawning, groveling, obeisant, servile)"
   },
   {
     "w": "obsess",
     "p": "",
     "pos": "v.",
-    "m": "v. 사로잡히다(with)"
+    "m": "v. 사로잡히다(with)(haunt, possess, preoccupy)"
   },
   {
     "w": "obsession",
     "p": "",
     "pos": "n.",
-    "m": "n. 강박관념, 망상"
+    "m": "n. 강박관념, 망상(fetish, fixation, mania, phobia)"
   },
   {
     "w": "obstacle",
     "p": "",
     "pos": "n.",
-    "m": "n. 방해물, 장애물"
+    "m": "n. 방해물, 장애물(barrier, deterrent, hindrance, hurdle)"
   },
   {
     "w": "obstetrician",
@@ -14765,31 +14765,31 @@ window.__V502_WORDBOOK3__ = [
     "w": "obstreperous",
     "p": "",
     "pos": "a.",
-    "m": "a. 시끄러운, 소란스러운"
+    "m": "a. 시끄러운, 소란스러운(boisterous, clamorous, uproarious)"
   },
   {
     "w": "obstruct",
     "p": "",
     "pos": "v.",
-    "m": "v. 방해하다, 차단하다"
+    "m": "v. 방해하다, 차단하다(block, hinder, impede, inhibit)"
   },
   {
     "w": "obtrude",
     "p": "",
     "pos": "v.",
-    "m": "v. (의견)강요하다; 참견하다"
+    "m": "v. (의견)강요하다; 참견하다(on)"
   },
   {
     "w": "obtrusive",
     "p": "",
     "pos": "a.",
-    "m": "a. 쓸데없이 참견하는; 두드러지는"
+    "m": "a. 쓸데없이 참견하는(officious); 두드러지는(conspicuous)"
   },
   {
     "w": "obtuse",
     "p": "",
     "pos": "a.",
-    "m": "a. 둔감한, 멍청한"
+    "m": "a. 둔감한, 멍청한(dull-witted, dumb, ignorant, stupid)"
   },
   {
     "w": "obverse",
@@ -14807,7 +14807,7 @@ window.__V502_WORDBOOK3__ = [
     "w": "obvious",
     "p": "",
     "pos": "a.",
-    "m": "a. 명백한; 뻔한"
+    "m": "a. 명백한(apparent, evident, manifest, plain); 뻔한"
   },
   {
     "w": "ochlophobia",
@@ -14825,25 +14825,25 @@ window.__V502_WORDBOOK3__ = [
     "w": "ocular",
     "p": "",
     "pos": "a.",
-    "m": "a. 눈의, 시각상의"
+    "m": "a. 눈의, 시각상의(optical)"
   },
   {
     "w": "odious",
     "p": "",
     "pos": "a.",
-    "m": "a. 혐오스러운; 불쾌한"
+    "m": "a. 혐오스러운; 불쾌한(abhorrent, contemptible, detestable)"
   },
   {
     "w": "odium",
     "p": "",
     "pos": "n.",
-    "m": "n. 혐오, 싫어함"
+    "m": "n. 혐오, 싫어함(dislike, repugnance)"
   },
   {
     "w": "odoriferous",
     "p": "",
     "pos": "a.",
-    "m": "a. 향기로운; 타락해버린"
+    "m": "a. 향기로운(aromatic, odorous); 타락해버린"
   },
   {
     "w": "odyssey",
@@ -14861,7 +14861,7 @@ window.__V502_WORDBOOK3__ = [
     "w": "off-beat",
     "p": "",
     "pos": "a.",
-    "m": "a. 색다른, 엉뚱한"
+    "m": "a. 색다른, 엉뚱한(unconventional)"
   },
   {
     "w": "offertory",
@@ -14873,25 +14873,25 @@ window.__V502_WORDBOOK3__ = [
     "w": "off-hand",
     "p": "",
     "pos": "a.",
-    "m": "a. 즉흥적인, 즉시의"
+    "m": "a. 즉흥적인, 즉시의(extempore, impromptu, spontaneous)"
   },
   {
     "w": "offset",
     "p": "",
     "pos": "v.",
-    "m": "v. 상쇄하다"
+    "m": "v. 상쇄하다(balance, compensate for, counter, countervail)"
   },
   {
     "w": "ogle",
     "p": "",
     "pos": "v.",
-    "m": "v. 추파를 던지다"
+    "m": "v. 추파를 던지다(gape, leer, stare)"
   },
   {
     "w": "ogre",
     "p": "",
     "pos": "n.",
-    "m": "n. 사람을 잡아먹는 거인"
+    "m": "n. (이야기 속에 나오는)사람을 잡아먹는 거인"
   },
   {
     "w": "olfactory",
@@ -14903,25 +14903,25 @@ window.__V502_WORDBOOK3__ = [
     "w": "oligarchy",
     "p": "",
     "pos": "n.",
-    "m": "n. 과두정치, 소수 독재정치"
+    "m": "n. 과두정치, 소수 독재정치(government by a few)"
   },
   {
     "w": "oligopoly",
     "p": "",
     "pos": "n.",
-    "m": "n. 소수 독점, 과점"
+    "m": "n. (시장)소수 독점, 과점"
   },
   {
     "w": "omen",
     "p": "",
     "pos": "n.",
-    "m": "n. 조짐 v. 전조가 되다"
+    "m": "n. 조짐 v. 전조가 되다(forewarning, harbinger, portent)"
   },
   {
     "w": "ominous",
     "p": "",
     "pos": "a.",
-    "m": "a. 불길한"
+    "m": "a. 불길한(fateful, forbidding, foreboding)"
   },
   {
     "w": "omnidirectional",
@@ -14933,7 +14933,7 @@ window.__V502_WORDBOOK3__ = [
     "w": "omnipresent",
     "p": "",
     "pos": "a.",
-    "m": "a. 편재하는, 어디에나 있는"
+    "m": "a. 편재 하는, 어디에나 있는(ubiquitous, universal)"
   },
   {
     "w": "omnivorous",
@@ -14945,13 +14945,13 @@ window.__V502_WORDBOOK3__ = [
     "w": "oncology",
     "p": "",
     "pos": "n.",
-    "m": "n. 종양학"
+    "m": "n. (의학)종양학(腫瘍學)"
   },
   {
     "w": "onerous",
     "p": "",
     "pos": "a.",
-    "m": "a. 성가신, 부담스러운"
+    "m": "a. 성가신, 부담스러운(burdensome, exhausting, taxing)"
   },
   {
     "w": "onomatopoeia",
@@ -14963,25 +14963,25 @@ window.__V502_WORDBOOK3__ = [
     "w": "onslaught",
     "p": "",
     "pos": "n.",
-    "m": "n. 맹공격, 습격"
+    "m": "n. 맹공격, 습격(assault, attack, charge, raid, rush)"
   },
   {
     "w": "ontology",
     "p": "",
     "pos": "n.",
-    "m": "n. 존재론"
+    "m": "n. (철학)존재론"
   },
   {
     "w": "onus",
     "p": "",
     "pos": "n.",
-    "m": "n. 무거운 짐, 부담; 책임"
+    "m": "n. 무거운 짐, 부담(burden); 책임(responsibility)"
   },
   {
     "w": "ooze",
     "p": "",
     "pos": "v.",
-    "m": "v. 스며나오다, 새어나오다"
+    "m": "v. 스며나오다, 새어나오다(leak, trickle, exude)"
   },
   {
     "w": "opalescent",
@@ -14993,7 +14993,7 @@ window.__V502_WORDBOOK3__ = [
     "w": "opaque",
     "p": "",
     "pos": "a.",
-    "m": "a. 불투명한; 불분명한"
+    "m": "a. 불투명한(nontransparent); 불분명한"
   },
   {
     "w": "opiate",
@@ -15005,73 +15005,73 @@ window.__V502_WORDBOOK3__ = [
     "w": "opprobrious",
     "p": "",
     "pos": "a.",
-    "m": "a. 무례한; 부끄러운"
+    "m": "a. 무례한(contemptuous, derogatory); 부끄러운(disgraceful)"
   },
   {
     "w": "optician",
     "p": "",
     "pos": "n.",
-    "m": "n. 안경상"
+    "m": "n. 안경상(商)"
   },
   {
     "w": "opulent",
     "p": "",
     "pos": "a.",
-    "m": "a. 부유한; 풍부한"
+    "m": "a. 부유한(affluent, flush, wealthy, well-to-do); 풍부한"
   },
   {
     "w": "opus",
     "p": "",
     "pos": "n.",
-    "m": "n. 작품"
+    "m": "n. 작품(composition, creation, piece, publication)"
   },
   {
     "w": "oracular",
     "p": "",
     "pos": "a.",
-    "m": "a. 예언적인, 수수께끼 같은"
+    "m": "a. 예언적인(foretelling), 수수께끼 같은(mysterious)"
   },
   {
     "w": "orbit",
     "p": "",
     "pos": "v.",
-    "m": "v. 궤도를 돌다"
+    "m": "v. 궤도를 돌다(circle, circumnavigate, revolve around)"
   },
   {
     "w": "ordain",
     "p": "",
     "pos": "v.",
-    "m": "v. (운명)정하다, (법규)규정하다"
+    "m": "v. (운명)정하다(foreordain), (법규)규정하다(decree, dictate)"
   },
   {
     "w": "ordeal",
     "p": "",
     "pos": "n.",
-    "m": "n. 가혹한 시련"
+    "m": "n. 가혹한 시련(crucible, strain, test, trial, tribulation)"
   },
   {
     "w": "ordinance",
     "p": "",
     "pos": "n.",
-    "m": "n. 법령, 포고령"
+    "m": "n. 법령, 포고령(decree, edict, law, mandate, regulation)"
   },
   {
     "w": "orifice",
     "p": "",
     "pos": "n.",
-    "m": "n. 구멍"
+    "m": "n. 구멍(aperture, chasm, hiatus, opening)"
   },
   {
     "w": "ornate",
     "p": "",
     "pos": "a.",
-    "m": "a. 잘 꾸민, (문체)화려한"
+    "m": "a. 잘 꾸민, (문체)화려한(adorned, decorated, elaborate, embellished)"
   },
   {
     "w": "ornery",
     "p": "",
     "pos": "a.",
-    "m": "a. (성질)고약한, 고집이 센"
+    "m": "a. (성질)고약한, 고집이 센(bad-tempered, stubborn)"
   },
   {
     "w": "ornithologist",
@@ -15083,25 +15083,25 @@ window.__V502_WORDBOOK3__ = [
     "w": "orotund",
     "p": "",
     "pos": "a.",
-    "m": "a. (소리)잘 울리는; (문체)거창한"
+    "m": "a. (소리)잘 울리는(sonorous); (문체)거창한(pompous)"
   },
   {
     "w": "orthodox",
     "p": "",
     "pos": "a.",
-    "m": "a. 정통의, 전통적인"
+    "m": "a. 정통의, 전통적인(traditional, conventional)"
   },
   {
     "w": "orthography",
     "p": "",
     "pos": "n.",
-    "m": "n. 올바른 철자법"
+    "m": "n. 올바른 철자법(correct spelling)"
   },
   {
     "w": "oscillate",
     "p": "",
     "pos": "v.",
-    "m": "v. (마음·의견)흔들리다"
+    "m": "v. (마음·의견)흔들리다(swing, vacillate)"
   },
   {
     "w": "osmosis",
@@ -15113,91 +15113,91 @@ window.__V502_WORDBOOK3__ = [
     "w": "ossify",
     "p": "",
     "pos": "v.",
-    "m": "v. 굳어지다, 경직화하다"
+    "m": "v. 굳어지다, 경직화하다(petrify)"
   },
   {
     "w": "ostensible",
     "p": "",
     "pos": "a.",
-    "m": "a. 표면상의; 겉치레의"
+    "m": "a. 표면상의(apparent, professed); 겉치레의"
   },
   {
     "w": "oust",
     "p": "",
     "pos": "v.",
-    "m": "v. 내쫒다"
+    "m": "v. 내쫒다(eject, evict, expel, dethrone, unseat)"
   },
   {
     "w": "outcry",
     "p": "",
     "pos": "n.",
-    "m": "n. 격렬한 항의, 반대"
+    "m": "n. 격렬한 항의, 반대(complaint, protest, remonstrance)"
   },
   {
     "w": "outdo",
     "p": "",
     "pos": "v.",
-    "m": "v. -보다 더 잘하다"
+    "m": "v. -보다 더 잘하다(eclipse, outclass, outshine, outstrip)"
   },
   {
     "w": "outgoing",
     "p": "",
     "pos": "a.",
-    "m": "a. 떠나가는; 사교적인"
+    "m": "a. 떠나가는(leaving); 사교적인(congenial, extroverted)"
   },
   {
     "w": "outgrow",
     "p": "",
     "pos": "v.",
-    "m": "v. -보다 커지다; 벗어나다"
+    "m": "v. -보다 커지다; (나쁜 습관)벗어나다(give up, relinquish)"
   },
   {
     "w": "outgrowth",
     "p": "",
     "pos": "n.",
-    "m": "n. (자연적인)결과, 부산물"
+    "m": "n. (자연적인)결과, 부산물(byproduct, offshot, result)"
   },
   {
     "w": "outing",
     "p": "",
     "pos": "n.",
-    "m": "n. 소풍"
+    "m": "n. 소풍(excursion, jaunt)"
   },
   {
     "w": "outlandish",
     "p": "",
     "pos": "a.",
-    "m": "a. 괴상한; 이국적인"
+    "m": "a. 괴상한(bizarre, grotesque); 이국적인(exotic)"
   },
   {
     "w": "outlast",
     "p": "",
     "pos": "v.",
-    "m": "v. -보다 더 오래가다"
+    "m": "v. -보다 더 오래가다(outlast, outstay, outwear, survive)"
   },
   {
     "w": "outlaw",
     "p": "",
     "pos": "n.",
-    "m": "n. 무법자 v. 불법화하다"
+    "m": "n. 무법자(bandit, desperado, fugitive) v. 불법화하다"
   },
   {
     "w": "outlay",
     "p": "",
     "pos": "n.",
-    "m": "n. 지출 v. 소비하다"
+    "m": "n. 지출(expenditure) v. 소비하다"
   },
   {
     "w": "outlet",
     "p": "",
     "pos": "n.",
-    "m": "n. 배출구"
+    "m": "n. 배출구(escape, release, vent, channel, opening, passage)"
   },
   {
     "w": "outlive",
     "p": "",
     "pos": "v.",
-    "m": "v. -보다 오래 살다"
+    "m": "v. -보다 오래 살다(outlast, outstay, outwear, survive)"
   },
   {
     "w": "outnumber",
@@ -15221,13 +15221,13 @@ window.__V502_WORDBOOK3__ = [
     "w": "outrageous",
     "p": "",
     "pos": "a.",
-    "m": "a. 터무니없는; 난폭한"
+    "m": "a. 터무니없는(absurd, ridiculous); 난폭한(flagrant)"
   },
   {
     "w": "outrun",
     "p": "",
     "pos": "v.",
-    "m": "v. -보다 빨리 달리다; 초과하다"
+    "m": "v. -보다 빨리 달리다; 초과하다(exceed)"
   },
   {
     "w": "outsell",
@@ -15239,25 +15239,25 @@ window.__V502_WORDBOOK3__ = [
     "w": "outskirts",
     "p": "",
     "pos": "n.",
-    "m": "n. 변두리, 교외"
+    "m": "n. 변두리, 교외(suburbs)"
   },
   {
     "w": "outsmart",
     "p": "",
     "pos": "v.",
-    "m": "v. 꾀로 상대를 이기다"
+    "m": "v. 꾀(재치)로 상대를 이기다(outfox, outmaneuver, outwit)"
   },
   {
     "w": "outstrip",
     "p": "",
     "pos": "v.",
-    "m": "v. -보다 뛰어나다, 능가하다"
+    "m": "v. -보다 뛰어나다, 능가하다(surpass)"
   },
   {
     "w": "outwit",
     "p": "",
     "pos": "v.",
-    "m": "v. 꾀로 상대를 이기다"
+    "m": "v. 꾀로 상대를 이기다(outfox, outmaneuver, outsmart)"
   },
   {
     "w": "outworn",
@@ -15269,19 +15269,19 @@ window.__V502_WORDBOOK3__ = [
     "w": "oval",
     "p": "",
     "pos": "a.",
-    "m": "a. 달걀 모양의, 타원형의"
+    "m": "a. 달걀 모양의(egg-shaped, elliptical, oviform), 타원형의"
   },
   {
     "w": "ovation",
     "p": "",
     "pos": "n.",
-    "m": "n. 열렬한 환영"
+    "m": "n. 열렬한 환영(hurrah, salvo, acclamation, applause)"
   },
   {
     "w": "over-all",
     "p": "",
     "pos": "a.",
-    "m": "a. 전반적인, 종합적인"
+    "m": "a. 전반적인, 종합적인(comprehensive)"
   },
   {
     "w": "overarching",
@@ -15293,157 +15293,157 @@ window.__V502_WORDBOOK3__ = [
     "w": "overbearing",
     "p": "",
     "pos": "a.",
-    "m": "a. 거만한, 건방진"
+    "m": "a. 거만한, 건방진(bossy, dictatorial, domineering, imperious)"
   },
   {
     "w": "override",
     "p": "",
     "pos": "v.",
-    "m": "v. 무효화하다"
+    "m": "v. 무효화하다(annul, nullify, overrule, overturn, reverse)"
   },
   {
     "w": "overriding",
     "p": "",
     "pos": "a.",
-    "m": "a. 최우선의, 가장 중요한"
+    "m": "a. 최우선의, 가장 중요한(outweigh, prevail over, transcend)"
   },
   {
     "w": "overrule",
     "p": "",
     "pos": "v.",
-    "m": "v. 지배하다; 무효로 만들다"
+    "m": "v. 지배하다(override); 무효로 만들다(deny, dismiss, refuse, reject)"
   },
   {
     "w": "overt",
     "p": "",
     "pos": "a.",
-    "m": "a. 명백한, 공공연한"
+    "m": "a. 명백한, 공공연한(apparent, evident, manifest, obvious)"
   },
   {
     "w": "overture",
     "p": "",
     "pos": "n.",
-    "m": "n. 서곡; 제안"
+    "m": "n. (음악)서곡(prelude); 제안(proposal)"
   },
   {
     "w": "overturn",
     "p": "",
     "pos": "v.",
-    "m": "v. 뒤집다, 전복시키다"
+    "m": "v. 뒤집다(reverse), 전복시키다(capsize, swamp, upend)"
   },
   {
     "w": "overwhelming",
     "p": "",
     "pos": "a.",
-    "m": "a. 압도적인"
+    "m": "a. 압도적인(irresistible, overpowering)"
   },
   {
     "w": "oxymoron",
     "p": "",
     "pos": "n.",
-    "m": "n. 모순어법"
+    "m": "n. 모순어법(서로 양립할 수 없는 말을 함께 사용)"
   },
   {
     "w": "pacify",
     "p": "",
     "pos": "v.",
-    "m": "v. 진정시키다"
+    "m": "v. 진정시키다(appease, assuage, calm, placate, quiet, soothe)"
   },
   {
     "w": "paean",
     "p": "",
     "pos": "n.",
-    "m": "n. 기쁨의 노래, 찬가"
+    "m": "n. 기쁨의 노래, 찬가(song of praise or joy)"
   },
   {
     "w": "pagan",
     "p": "",
     "pos": "n.",
-    "m": "n. 이교도; 미개인 a. 이교도의"
+    "m": "n. 이교도; 미개인(savage) a. 이교도의(heathen, gentile)"
   },
   {
     "w": "painstaking",
     "p": "",
     "pos": "a.",
-    "m": "a. 성실한; 공들인"
+    "m": "a. 성실한(conscientious); 공들인(exacting, meticulous)"
   },
   {
     "w": "palatable",
     "p": "",
     "pos": "a.",
-    "m": "a. 맛있는; 기분이 좋은"
+    "m": "a. 맛있는(appetizing, delectable, luscious); 기분이 좋은"
   },
   {
     "w": "palaver",
     "p": "",
     "pos": "n.",
-    "m": "n. 수다; 토론"
+    "m": "n. 수다(chatter, meaningless talk); 토론(discussion)"
   },
   {
     "w": "pall",
     "p": "",
     "pos": "v.",
-    "m": "v. 물리다, 싫증나다"
+    "m": "v. 물리다, 싫증나다(cloy, glut, jade, satiate, weary)"
   },
   {
     "w": "pallid",
     "p": "",
     "pos": "a.",
-    "m": "a. 창백한, 핏기 없는"
+    "m": "a. 창백한(pale, sallow, wan), 핏기 없는(ashen, cadaverous)"
   },
   {
     "w": "palpable",
     "p": "",
     "pos": "a.",
-    "m": "a. 만질 수 있는, 명백한"
+    "m": "a. 만질 수 있는(tangible), 명백한(discernible, noticeable)"
   },
   {
     "w": "palpitate",
     "p": "",
     "pos": "v.",
-    "m": "v. 고동치다, 맥박이 뛰다"
+    "m": "v. 고동치다, 맥박이 뛰다(pulsate, throb, flutter)"
   },
   {
     "w": "paltry",
     "p": "",
     "pos": "a.",
-    "m": "a. 하찮은; 얼마 안 되는"
+    "m": "a. 하찮은(insignificant, minor); (금액)얼마 안 되는(meager)"
   },
   {
     "w": "pamper",
     "p": "",
     "pos": "v.",
-    "m": "v. 하고 싶은 대로 하게 하다"
+    "m": "v. 하고 싶은 대로 하게 하다(coddle, indulge)"
   },
   {
     "w": "pan",
     "p": "",
     "pos": "v.",
-    "m": "v. 가려내다; 혹평하다"
+    "m": "v. 가려내다; 혹평하다(criticize harshly, censure)"
   },
   {
     "w": "panache",
     "p": "",
     "pos": "n.",
-    "m": "n. 당당한 태도; 허세"
+    "m": "n. (자신감 넘치는)당당한 태도(grandeur, magnificence); 허세"
   },
   {
     "w": "pandemic",
     "p": "",
     "pos": "n.",
-    "m": "n. 전국적 유행병 a. 널리 퍼진"
+    "m": "n. 전국적 유행병 a. 널리 퍼진(widespread, prevalent)"
   },
   {
     "w": "pander",
     "p": "",
     "pos": "v.",
-    "m": "v. (저속한 욕망)영합하다"
+    "m": "v. (저속한 욕망)영합하다(cater to)"
   },
   {
     "w": "panegyric",
     "p": "",
     "pos": "n.",
-    "m": "n. 칭찬, 찬양"
+    "m": "n. 칭찬, 찬양(eulogy, encomium)"
   },
   {
     "w": "panicky",
@@ -15461,91 +15461,91 @@ window.__V502_WORDBOOK3__ = [
     "w": "pantheon",
     "p": "",
     "pos": "n.",
-    "m": "n. 만신전"
+    "m": "n. 만신전(temple to all gods)"
   },
   {
     "w": "parable",
     "p": "",
     "pos": "n.",
-    "m": "n. 우화"
+    "m": "n. 우화(short, simple story teaching a moral, fable)"
   },
   {
     "w": "paradigm",
     "p": "",
     "pos": "n.",
-    "m": "n. 모범, 전형적인 예"
+    "m": "n. 모범, 전형적인 예(example, ideal, model, pattern)"
   },
   {
     "w": "paradox",
     "p": "",
     "pos": "n.",
-    "m": "n. 자기 모순된 말"
+    "m": "n. 자기 모순된 말(contradiction, incongruity, inconsistency)"
   },
   {
     "w": "paragon",
     "p": "",
     "pos": "n.",
-    "m": "n. 모범, 전형"
+    "m": "n. 모범, 전형(example, model, paradigm, pattern)"
   },
   {
     "w": "parallel",
     "p": "",
     "pos": "n.",
-    "m": "n. 평행선, 유사성 a. 평행의"
+    "m": "n. 평행선, 유사성(similarity) a. 평행의"
   },
   {
     "w": "paralyze",
     "p": "",
     "pos": "v.",
-    "m": "v. 마비시키다"
+    "m": "v. 마비시키다(stun, stupefy, deaden, freeze, numb, petrify)"
   },
   {
     "w": "paramount",
     "p": "",
     "pos": "a.",
-    "m": "a. 최고의, 주요한"
+    "m": "a. 최고의(supreme), 주요한(capital, chief, foremost)"
   },
   {
     "w": "paramour",
     "p": "",
     "pos": "n.",
-    "m": "n. 내연남[녀]"
+    "m": "n. 내연남[녀](concubine, gigolo, illicit lover, mistress)"
   },
   {
     "w": "paranoia",
     "p": "",
     "pos": "n.",
-    "m": "n. 망상증, 편집증"
+    "m": "n. 망상증, 편집증(anxiety, apprehension, distrust, suspicion)"
   },
   {
     "w": "paraphernalia",
     "p": "",
     "pos": "n.",
-    "m": "n. 장비, 장치; 잡동사니"
+    "m": "n. 장비, 장치(equipment), 잡동사니(odds and ends)"
   },
   {
     "w": "paraphrase",
     "p": "",
     "pos": "v.",
-    "m": "v. 말을 바꿔서 설명하다"
+    "m": "v. 말을 바꿔서 설명하다(recapitulate, rephrase, restate)"
   },
   {
     "w": "parasite",
     "p": "",
     "pos": "n.",
-    "m": "n. 기생충; 식객"
+    "m": "n. 기생충; 식객(bloodsucker, freeloader, leech, mooch)"
   },
   {
     "w": "parch",
     "p": "",
     "pos": "v.",
-    "m": "v. 볶다, 태우다"
+    "m": "v. 볶다, 태우다(dehydrate, desiccate, dry, shrivel, scorch, sear, singe)"
   },
   {
     "w": "pariah",
     "p": "",
     "pos": "n.",
-    "m": "n. 최하층민; 추방자"
+    "m": "n. 최하층민; 추방자(dropout, loner, misfit, exile, expatriate)"
   },
   {
     "w": "parity",
@@ -15557,31 +15557,31 @@ window.__V502_WORDBOOK3__ = [
     "w": "parlance",
     "p": "",
     "pos": "n.",
-    "m": "n. (전문)용어; 이야기"
+    "m": "n. (전문)용어(language, idiom); 이야기"
   },
   {
     "w": "parley",
     "p": "",
     "pos": "n.",
-    "m": "n. 회담, 협상"
+    "m": "n. 회담, 협상(conference, council, conversation, discussion)"
   },
   {
     "w": "parlous",
     "p": "",
     "pos": "a.",
-    "m": "a. 위험한; 다루기 힘든"
+    "m": "a. 위험한(perilous); 다루기 힘든"
   },
   {
     "w": "parochial",
     "p": "",
     "pos": "a.",
-    "m": "a. 지방의, 편협한"
+    "m": "a. 지방의, 편협한(church, local, narrow, provincial, regional)"
   },
   {
     "w": "parody",
     "p": "",
     "pos": "n.",
-    "m": "n. 서투른 모방 v. 흉내 내다"
+    "m": "n. 서투른 모방(exaggeration, mockery) v. 흉내 내다(ape)"
   },
   {
     "w": "parole",
@@ -15593,55 +15593,55 @@ window.__V502_WORDBOOK3__ = [
     "w": "paroxysm",
     "p": "",
     "pos": "n.",
-    "m": "n. 발작; 감정의 격발"
+    "m": "n. (병)발작(fit); 감정의 격발(convulsion, fit, seizure, spasm)"
   },
   {
     "w": "parry",
     "p": "",
     "pos": "v.",
-    "m": "v. (공격)피하다, 얼버무리다"
+    "m": "v. (공격)피하다, 얼버무리다(deflect, fend off, ward off)"
   },
   {
     "w": "partial",
     "p": "",
     "pos": "a.",
-    "m": "a. 부분적인, 불공평한"
+    "m": "a. 부분적인, 불공평한(biased, partisan, prejudiced, subjective, fractional)"
   },
   {
     "w": "partisan",
     "p": "",
     "pos": "n.",
-    "m": "n. 열성적 지지자 a. 당파적인"
+    "m": "n. 열성적 지지자(adherent, enthusiast) a. 당파적인(myopic, narrow)"
   },
   {
     "w": "partition",
     "p": "",
     "pos": "n.",
-    "m": "n. 분할 v. 칸막이하다"
+    "m": "n. 분할(division) v. 칸막이하다(divide, separate)"
   },
   {
     "w": "parturition",
     "p": "",
     "pos": "n.",
-    "m": "n. 분만, 출산"
+    "m": "n. 분만, 출산(childbirth, confinement, delivery)"
   },
   {
     "w": "parvenu",
     "p": "",
     "pos": "n.",
-    "m": "n. 벼락출세자"
+    "m": "n. 벼락출세자(upstart, nouveau riche)"
   },
   {
     "w": "passe",
     "p": "",
     "pos": "a.",
-    "m": "a. 구식의, 시대에 뒤떨어진"
+    "m": "a. 구식의, 시대에 뒤떨어진(old-fashioned)"
   },
   {
     "w": "pastiche",
     "p": "",
     "pos": "n.",
-    "m": "n. (짜깁기한)작품; 모방 작품"
+    "m": "n. (이것저것 짜깁기해서 만든)작품; 모방 작품"
   },
   {
     "w": "pastoral",
@@ -15653,13 +15653,13 @@ window.__V502_WORDBOOK3__ = [
     "w": "patent",
     "p": "",
     "pos": "n.",
-    "m": "n. 특허 a. 명백한"
+    "m": "n. 특허(charter, copyright, trademark) a. 명백한(obvious)"
   },
   {
     "w": "paternal",
     "p": "",
     "pos": "a.",
-    "m": "a. 아버지의; 참견하는"
+    "m": "a. 아버지의(fatherly, patriarchal); 참견하는"
   },
   {
     "w": "paternity",
@@ -15671,103 +15671,103 @@ window.__V502_WORDBOOK3__ = [
     "w": "pathology",
     "p": "",
     "pos": "n.",
-    "m": "n. 병리학"
+    "m": "n. 병리학(the science of disease)"
   },
   {
     "w": "pathos",
     "p": "",
     "pos": "n.",
-    "m": "n. 슬픔을 자아내는 힘"
+    "m": "n. 슬픔을 자아내는 힘(pity, sympathy, tenderness)"
   },
   {
     "w": "patriarch",
     "p": "",
     "pos": "n.",
-    "m": "n. 가장, 족장, 창시자"
+    "m": "n. 가장, 족장, 창시자(founder)"
   },
   {
     "w": "patrician",
     "p": "",
     "pos": "n.",
-    "m": "n. 귀족 a. 귀족의, 고귀한"
+    "m": "n. 귀족(aristocrat) a. 귀족의, 고귀한(dignified, genteel)"
   },
   {
     "w": "patrimony",
     "p": "",
     "pos": "n.",
-    "m": "n. 세습 재산"
+    "m": "n. 세습 재산(inheritance, legacy)"
   },
   {
     "w": "patronize",
     "p": "",
     "pos": "v.",
-    "m": "v. 후원하다; 은인인 체하다"
+    "m": "v. 후원하다(support); 은인인 체하다(condescend)"
   },
   {
     "w": "paucity",
     "p": "",
     "pos": "n.",
-    "m": "n. 부족"
+    "m": "n. 부족(lack, need, poverty, scarcity, shortage, want)"
   },
   {
     "w": "peccadillo",
     "p": "",
     "pos": "n.",
-    "m": "n. 가벼운 범죄"
+    "m": "n. 가벼운 범죄(a slight offense)"
   },
   {
     "w": "peculate",
     "p": "",
     "pos": "v.",
-    "m": "v. (공금)횡령하다"
+    "m": "v. (공금)횡령하다(embezzle)"
   },
   {
     "w": "pecuniary",
     "p": "",
     "pos": "a.",
-    "m": "a. 금전의, 금전적인"
+    "m": "a. 금전의, 금전적인(financial)"
   },
   {
     "w": "pedagogue",
     "p": "",
     "pos": "n.",
-    "m": "n. 교사, 교육자"
+    "m": "n. 교사, 교육자(educator, instructor, lecturer, tutor)"
   },
   {
     "w": "pedantic",
     "p": "",
     "pos": "a.",
-    "m": "a. 현학적인, 박식한체하는"
+    "m": "a. 현학적인, 박식한체하는(academic, bookish, scholastic)"
   },
   {
     "w": "pedestrian",
     "p": "",
     "pos": "n.",
-    "m": "n. 보행자 a. 평범한, 단조로운"
+    "m": "n. 보행자 a. 평범한, 단조로운(mediocre, mundane)"
   },
   {
     "w": "peer",
     "p": "",
     "pos": "n.",
-    "m": "n. 동료; 대등한 사람 v. 대등하다"
+    "m": "n. 동료; 대등한 사람(equal) v. 대등하다"
   },
   {
     "w": "pejorative",
     "p": "",
     "pos": "a.",
-    "m": "a. 경멸적인, 멸시하는"
+    "m": "a. 경멸적인, 멸시하는(disparaging, derogatory)"
   },
   {
     "w": "pell-mell",
     "p": "",
     "pos": "n.",
-    "m": "n. 난투 ad. 무질서하게"
+    "m": "n. 난투(melee) ad. 무질서하게(disorderly)"
   },
   {
     "w": "pellucid",
     "p": "",
     "pos": "a.",
-    "m": "a. 투명한, 맑은; 명료한"
+    "m": "a. 투명한, 맑은(transparent), 명료한(lucid)"
   },
   {
     "w": "penal",
@@ -15779,49 +15779,49 @@ window.__V502_WORDBOOK3__ = [
     "w": "penance",
     "p": "",
     "pos": "n.",
-    "m": "n. 참회, 속죄"
+    "m": "n. 참회, 속죄(atonement, contrition, expiation, propitiation)"
   },
   {
     "w": "penchant",
     "p": "",
     "pos": "n.",
-    "m": "n. 경향; 기호"
+    "m": "n. 경향; 기호(inclination, proclivity, propensity, tendency)"
   },
   {
     "w": "pendent",
     "p": "",
     "pos": "a.",
-    "m": "a. 매달린"
+    "m": "a. 매달린(pendulous, dangling)"
   },
   {
     "w": "pending",
     "p": "",
     "pos": "a.",
-    "m": "a. 미결정의, 현안의"
+    "m": "a. 미결정의, 현안의(not decided yet)"
   },
   {
     "w": "penitent",
     "p": "",
     "pos": "a.",
-    "m": "a. 회개하는, 뉘우치는"
+    "m": "a. 회개하는, 뉘우치는(contrite, repentant)"
   },
   {
     "w": "penurious",
     "p": "",
     "pos": "a.",
-    "m": "a. 가난한"
+    "m": "a. 가난한(destitute, indigent, needy, miserly, niggardly)"
   },
   {
     "w": "perch",
     "p": "",
     "pos": "n.",
-    "m": "n. (새)횃대 v. (새)-에 앉다"
+    "m": "n. (새)횃대(roost) v. (새)-에 앉다"
   },
   {
     "w": "perdition",
     "p": "",
     "pos": "n.",
-    "m": "n. 파멸; 지옥"
+    "m": "n. 파멸(complete ruin); 지옥"
   },
   {
     "w": "peregrinate",
@@ -15833,13 +15833,13 @@ window.__V502_WORDBOOK3__ = [
     "w": "peremptory",
     "p": "",
     "pos": "a.",
-    "m": "a. 단호한, 독단적인; 거만한"
+    "m": "a. 단호한, 독단적인(categorical); 거만한"
   },
   {
     "w": "perennial",
     "p": "",
     "pos": "a.",
-    "m": "a. 영구적인"
+    "m": "a. 영구적인(ceaseless, constant, continual, perpetual)"
   },
   {
     "w": "perfidy",
@@ -15851,7 +15851,7 @@ window.__V502_WORDBOOK3__ = [
     "w": "perforate",
     "p": "",
     "pos": "v.",
-    "m": "v. 꿰뚫다, 관통하다"
+    "m": "v. 꿰뚫다, 관통하다(pierce, punch, puncture)"
   },
   {
     "w": "perforce",
@@ -15869,7 +15869,7 @@ window.__V502_WORDBOOK3__ = [
     "w": "peripheral",
     "p": "",
     "pos": "a.",
-    "m": "a. 주변의; 중요하지 않은"
+    "m": "a. 주변의(marginal); 중요하지 않은(minor)"
   },
   {
     "w": "perorate",
@@ -15881,85 +15881,85 @@ window.__V502_WORDBOOK3__ = [
     "w": "perpetuate",
     "p": "",
     "pos": "v.",
-    "m": "v. 영속화하다"
+    "m": "v. 영속화하다(make something permanent)"
   },
   {
     "w": "perquisite",
     "p": "",
     "pos": "n.",
-    "m": "n. 임시수당; 부수입"
+    "m": "n. 임시수당; 부수입(benefit, bonus, extra, fringe benefit)"
   },
   {
     "w": "persecute",
     "p": "",
     "pos": "v.",
-    "m": "v. 박해하다"
+    "m": "v. 박해하다(abuse, molest, oppress, torture, harass)"
   },
   {
     "w": "persiflage",
     "p": "",
     "pos": "n.",
-    "m": "n. 가벼운 농담"
+    "m": "n. 가벼운 농담(banter, badinage)"
   },
   {
     "w": "personable",
     "p": "",
     "pos": "a.",
-    "m": "a. 매력적인"
+    "m": "a. (잘생기고 성격이 좋아서) 매력적인(amiable, congenial)"
   },
   {
     "w": "perspicacious",
     "p": "",
     "pos": "a.",
-    "m": "a. 통찰력이 있는, 총명한"
+    "m": "a. 통찰력이 있는, 총명한(astute, discerning, perceptive)"
   },
   {
     "w": "pert",
     "p": "",
     "pos": "a.",
-    "m": "a. 쾌활한; 건방진"
+    "m": "a. 쾌활한(lively); 건방진(brash, impertinent)"
   },
   {
     "w": "pertinacious",
     "p": "",
     "pos": "a.",
-    "m": "a. 끈기 있는, 끈질긴, 집요한"
+    "m": "a. 끈기 있는, 끈질긴, 집요한(stubborn, persistent)"
   },
   {
     "w": "perturb",
     "p": "",
     "pos": "v.",
-    "m": "v. 혼란시키다, 불안하게하다"
+    "m": "v. 혼란시키다, 불안하게하다(agitate, distress, disturb)"
   },
   {
     "w": "peruse",
     "p": "",
     "pos": "v.",
-    "m": "v. 정독하다"
+    "m": "v. 정독하다(cover, read, scan, scrutinize)"
   },
   {
     "w": "pervade",
     "p": "",
     "pos": "v.",
-    "m": "v. 만연하다, 스며들다"
+    "m": "v. 만연하다, 스며들다(infiltrate, infuse, permeate)"
   },
   {
     "w": "pervasive",
     "p": "",
     "pos": "a.",
-    "m": "a. 널리 퍼진, 만연한"
+    "m": "a. 널리 퍼진, 만연한(rampant, ubiquitous, widespread)"
   },
   {
     "w": "perverse",
     "p": "",
     "pos": "a.",
-    "m": "a. 고집이 센, 완고한"
+    "m": "a. 고집이 센, 완고한(mulish, obstinate, stubborn)"
   },
   {
     "w": "pesky",
     "p": "",
     "pos": "a.",
-    "m": "a. 성가신, 귀찮은"
+    "m": "a. 성가신, 귀찮은(annoying, irritating, obnoxious, vexing)"
   },
   {
     "w": "peter",
@@ -15977,25 +15977,25 @@ window.__V502_WORDBOOK3__ = [
     "w": "petulant",
     "p": "",
     "pos": "a.",
-    "m": "a. 화를 잘 내는, 신경질적인"
+    "m": "a. 화를 잘 내는, 신경질적인(touchy, peevish)"
   },
   {
     "w": "phantasm",
     "p": "",
     "pos": "n.",
-    "m": "n. 유령; 환상"
+    "m": "n. 유령; 환상(apparition, ghost, spectre, spook)"
   },
   {
     "w": "pharmaceutical",
     "p": "",
     "pos": "a.",
-    "m": "a. 제약의, 약사의"
+    "m": "a. 제약의, 약사의(drug)"
   },
   {
     "w": "philanthropic",
     "p": "",
     "pos": "a.",
-    "m": "a. 박애주의의, 인정 많은"
+    "m": "a. 박애주의의, 인정 많은(altruistic, benevolent, generous)"
   },
   {
     "w": "philatelist",
@@ -16013,19 +16013,19 @@ window.__V502_WORDBOOK3__ = [
     "w": "philistine",
     "p": "",
     "pos": "n.",
-    "m": "n. 속물; 교양 없는 사람"
+    "m": "n. 속물(snob); 교양 없는 사람(uncultivated, uneducated)"
   },
   {
     "w": "philology",
     "p": "",
     "pos": "n.",
-    "m": "n. 언어학; 문헌학"
+    "m": "n. 언어학(linguistics); 문헌학"
   },
   {
     "w": "phlegmatic",
     "p": "",
     "pos": "a.",
-    "m": "a. 침착한, 냉정한; 냉담한"
+    "m": "a. 침착한, 냉정한(calm); 냉담한(apathetic)"
   },
   {
     "w": "physiognomy",
@@ -16037,19 +16037,19 @@ window.__V502_WORDBOOK3__ = [
     "w": "piebald",
     "p": "",
     "pos": "a.",
-    "m": "a. 얼룩의, 잡색의"
+    "m": "a. 얼룩의, 잡색의(brindled, mottled, pied, variegated)"
   },
   {
     "w": "pilfer",
     "p": "",
     "pos": "v.",
-    "m": "v. 훔치다"
+    "m": "v. 훔치다(filch, heist, pirate, purloin, snitch)"
   },
   {
     "w": "pillage",
     "p": "",
     "pos": "v.",
-    "m": "v. 약탈하다"
+    "m": "v. 약탈하다(despoil, harry, plunder)"
   },
   {
     "w": "pillory",
@@ -16061,67 +16061,67 @@ window.__V502_WORDBOOK3__ = [
     "w": "pinion",
     "p": "",
     "pos": "v.",
-    "m": "v. (양팔)묶다; 속박하다"
+    "m": "v. (양팔)묶다; 속박하다(confine, cramp)"
   },
   {
     "w": "pinnacle",
     "p": "",
     "pos": "n.",
-    "m": "n. 최고점, 절정"
+    "m": "n. 최고점, 절정(acme, apex, peak, spire, summit, zenith)"
   },
   {
     "w": "pious",
     "p": "",
     "pos": "a.",
-    "m": "a. 경건한, 신앙심 깊은; 위선적인"
+    "m": "a. 경건한, 신앙심 깊은(devout); 위선적인(pharisaic)"
   },
   {
     "w": "piquant",
     "p": "",
     "pos": "a.",
-    "m": "a. (맛)톡 쏘는, 얼얼한"
+    "m": "a. (맛)톡 쏘는, 얼얼한(pungent, spicy, tangy)"
   },
   {
     "w": "pique",
     "p": "",
     "pos": "n.",
-    "m": "n. 화 v. 화나게 하다"
+    "m": "n. 화(irritation, resentment) v. 화나게 하다(vex)"
   },
   {
     "w": "pittance",
     "p": "",
     "pos": "n.",
-    "m": "n. 약간의 음식"
+    "m": "n. 약간의 음식(mite, modicum, smidgen)"
   },
   {
     "w": "pivotal",
     "p": "",
     "pos": "a.",
-    "m": "a. 주축의, 중요한"
+    "m": "a. 주축의, 중요한(central, essential, focal, principal)"
   },
   {
     "w": "placebo",
     "p": "",
     "pos": "n.",
-    "m": "n. 위약, 가짜 약"
+    "m": "n. 위약, 가짜 약(false medication)"
   },
   {
     "w": "plagiarize",
     "p": "",
     "pos": "v.",
-    "m": "v. 표절하다"
+    "m": "v. 표절하다(appropriate, forge, lift, pirate, steal)"
   },
   {
     "w": "plaintiff",
     "p": "",
     "pos": "n.",
-    "m": "n. 원고, 고소인"
+    "m": "n. 원고, 고소인(the accuser)"
   },
   {
     "w": "platitude",
     "p": "",
     "pos": "n.",
-    "m": "n. 상투어구, 진부한 표현"
+    "m": "n. 상투어구, 진부한 표현(banality, bromide, cliche)"
   },
   {
     "w": "plaudit",
@@ -16139,61 +16139,61 @@ window.__V502_WORDBOOK3__ = [
     "w": "pledge",
     "p": "",
     "pos": "n.",
-    "m": "n. 담보 v. 맹세하다"
+    "m": "n. 담보 v. 맹세하다(swear, vouch, vow)"
   },
   {
     "w": "plenipotentiary",
     "p": "",
     "pos": "a.",
-    "m": "a. 전권을 가진"
+    "m": "a. 전권을 가진(fully empowered)"
   },
   {
     "w": "plethora",
     "p": "",
     "pos": "n.",
-    "m": "n. 과잉, 과다"
+    "m": "n. 과잉, 과다(excess, glut, plenty, profusion, surfeit)"
   },
   {
     "w": "pliable",
     "p": "",
     "pos": "a.",
-    "m": "a. 유연한, 잘 휘는"
+    "m": "a. 유연한, 잘 휘는(ductile, flexible, limber, malleable, plastic)"
   },
   {
     "w": "plight",
     "p": "",
     "pos": "n.",
-    "m": "n. 곤경, 궁지"
+    "m": "n. 곤경, 궁지(difficulty, dilemma, predicament)"
   },
   {
     "w": "plot",
     "p": "",
     "pos": "n.",
-    "m": "n. (소설)줄거리; 작은 땅 v. 음모를 꾸미다"
+    "m": "n. (소설)줄거리; 작은 땅 v. 음모를 꾸미다(conspiracy)"
   },
   {
     "w": "pluck",
     "p": "",
     "pos": "n.",
-    "m": "n. 용기, 담력 v. (털·잡초)뽑다"
+    "m": "n. 용기, 담력(courage) v. (털·잡초)뽑다"
   },
   {
     "w": "plumb",
     "p": "",
     "pos": "v.",
-    "m": "v. 측정하다; 이해하다 a. 수직의"
+    "m": "v. 측정하다; 이해하다 a. 수직의(vertical)"
   },
   {
     "w": "plump",
     "p": "",
     "pos": "v.",
-    "m": "v. 주저앉다 a. 통통한"
+    "m": "v. 주저앉다 a. 통통한(chubby, fleshy, pudgy)"
   },
   {
     "w": "plunder",
     "p": "",
     "pos": "v.",
-    "m": "v. 약탈하다"
+    "m": "v. 약탈하다(despoil, pillage, raid, ravage, sack)"
   },
   {
     "w": "pluralism",
@@ -16217,61 +16217,61 @@ window.__V502_WORDBOOK3__ = [
     "w": "pogrom",
     "p": "",
     "pos": "n.",
-    "m": "n. 소수 민족 학살"
+    "m": "n. 소수 민족 학살(bloodbath, butchery, carnage, holocaust)"
   },
   {
     "w": "poignant",
     "p": "",
     "pos": "a.",
-    "m": "a. 가슴에 사무치는; 신랄한"
+    "m": "a. 가슴에 사무치는; 신랄한(acrimonious, scathing)"
   },
   {
     "w": "poise",
     "p": "",
     "pos": "v.",
-    "m": "v. 균형 잡히게 하다"
+    "m": "v. 균형 잡히게 하다(perch, stabilize)"
   },
   {
     "w": "polarize",
     "p": "",
     "pos": "v.",
-    "m": "v. 분열시키다"
+    "m": "v. 분열시키다(divide, separate)"
   },
   {
     "w": "polemic",
     "p": "",
     "pos": "n.",
-    "m": "n. 논쟁 a. 논쟁을 좋아하는"
+    "m": "n. 논쟁 a. 논쟁을 좋아하는(controversial, argumentative)"
   },
   {
     "w": "polish",
     "p": "",
     "pos": "v.",
-    "m": "v. 닦다, 윤내다; 세련되게 하다"
+    "m": "v. 닦다, 윤내다(shine); 세련되게 하다(refine)"
   },
   {
     "w": "politic",
     "p": "",
     "pos": "a.",
-    "m": "a. 현명한, 사려 깊은"
+    "m": "a. 현명한, 사려 깊은(delicate, diplomatic, discreet, judicious)"
   },
   {
     "w": "poltroon",
     "p": "",
     "pos": "n.",
-    "m": "n. 겁쟁이, 비겁한사람"
+    "m": "n. 겁쟁이, 비겁한사람(coward, dastard)"
   },
   {
     "w": "polygamy",
     "p": "",
     "pos": "n.",
-    "m": "n. 일부다처제; 일처다부제"
+    "m": "n. 일부다처제(polygyny); 일처다부제(polyandry)"
   },
   {
     "w": "polyglot",
     "p": "",
     "pos": "a.",
-    "m": "a. 여러 언어를 사용하는"
+    "m": "a. 여러 언어를 사용하는(multilingual)"
   },
   {
     "w": "polytheism",
@@ -16283,13 +16283,13 @@ window.__V502_WORDBOOK3__ = [
     "w": "ponderous",
     "p": "",
     "pos": "a.",
-    "m": "a. 크고 무거운; 지루한"
+    "m": "a. 크고 무거운(bulky, heavy, massive); (연설)지루한(dull)"
   },
   {
     "w": "pontificate",
     "p": "",
     "pos": "n.",
-    "m": "n. 교황의 직책 v. (거만하게)말하다"
+    "m": "n. (가톨릭)교황의 직책(임기) v. (거만하게)말하다"
   },
   {
     "w": "pony",
@@ -16301,103 +16301,103 @@ window.__V502_WORDBOOK3__ = [
     "w": "porous",
     "p": "",
     "pos": "a.",
-    "m": "a. 구멍이 많은"
+    "m": "a. 구멍이 많은(permeable)"
   },
   {
     "w": "portable",
     "p": "",
     "pos": "a.",
-    "m": "a. 휴대용의"
+    "m": "a. 휴대용의(conveyable, movable, transportable)"
   },
   {
     "w": "portend",
     "p": "",
     "pos": "v.",
-    "m": "v. -의 전조가 되다, 예시하다"
+    "m": "v. -의 전조가 되다, 예시하다(foretell, presage)"
   },
   {
     "w": "portent",
     "p": "",
     "pos": "n.",
-    "m": "n. 불길한 징조, 전조"
+    "m": "n. 불길한 징조, 전조(omen)"
   },
   {
     "w": "portentous",
     "p": "",
     "pos": "a.",
-    "m": "a. 전조의, 불길한"
+    "m": "a. 전조의, 불길한(foreboding, ominous, prophetic)"
   },
   {
     "w": "portly",
     "p": "",
     "pos": "a.",
-    "m": "a. 살찐; 당당한"
+    "m": "a. 살찐; 당당한(corpulent, plump, rotund, stocky, stout)"
   },
   {
     "w": "pose",
     "p": "",
     "pos": "n.",
-    "m": "n. 자세 v. -인체 하다; 제기하다"
+    "m": "n. 자세 v. -인체 하다; (문제·위협)제기하다(cause)"
   },
   {
     "w": "postmortem",
     "p": "",
     "pos": "n.",
-    "m": "n. 부검, 시체해부"
+    "m": "n. 부검, 시체해부(autopsy)"
   },
   {
     "w": "posture",
     "p": "",
     "pos": "n.",
-    "m": "n. 자세 v. 자세를 취하다"
+    "m": "n. 자세(pose) v. 자세를 취하다"
   },
   {
     "w": "potentate",
     "p": "",
     "pos": "n.",
-    "m": "n. 유력자, 세력가"
+    "m": "n. 유력자, 세력가(dictator, emperor, monarch)"
   },
   {
     "w": "potion",
     "p": "",
     "pos": "n.",
-    "m": "n. 1회분의 분량; 마법의 약"
+    "m": "n. 1회분의 분량(dose); 마법의 약"
   },
   {
     "w": "potpourri",
     "p": "",
     "pos": "n.",
-    "m": "n. 혼합, 혼성곡"
+    "m": "n. 혼합, 혼성곡(heterogeneous mixture, medley)"
   },
   {
     "w": "prate",
     "p": "",
     "pos": "v.",
-    "m": "v. 쓸데없는 소리하다"
+    "m": "v. 쓸데없는 소리하다(babble, blather, gab)"
   },
   {
     "w": "prattle",
     "p": "",
     "pos": "v.",
-    "m": "v. 재잘거리다"
+    "m": "v. 재잘거리다(babble, blather, gab, prate)"
   },
   {
     "w": "precedent",
     "p": "",
     "pos": "n.",
-    "m": "n. 전례, 선례"
+    "m": "n. 전례, 선례(criterion, example, measure, model, pattern)"
   },
   {
     "w": "precept",
     "p": "",
     "pos": "n.",
-    "m": "n. 교훈, 격언"
+    "m": "n. 교훈(canon, instruction, principle), 격언(axiom, maxim)"
   },
   {
     "w": "preceptor",
     "p": "",
     "pos": "n.",
-    "m": "n. 교사, 교장"
+    "m": "n. 교사(teacher), 교장(principal)"
   },
   {
     "w": "preciosity",
@@ -16409,7 +16409,7 @@ window.__V502_WORDBOOK3__ = [
     "w": "precipitate",
     "p": "",
     "pos": "v.",
-    "m": "v. 촉진시키다 a. 경솔한"
+    "m": "v. 촉진시키다(accelerate) a. 경솔한(headlong, rash)"
   },
   {
     "w": "precipitation",
@@ -16421,25 +16421,25 @@ window.__V502_WORDBOOK3__ = [
     "w": "precipitous",
     "p": "",
     "pos": "a.",
-    "m": "a. 가파른; 성급한"
+    "m": "a. 가파른(extremely steep); 성급한(abrupt)"
   },
   {
     "w": "preclude",
     "p": "",
     "pos": "v.",
-    "m": "v. 방해하다, 미리 배제하다"
+    "m": "v. 방해하다, 미리 배제하다(impede, obstruct, prevent)"
   },
   {
     "w": "precocious",
     "p": "",
     "pos": "a.",
-    "m": "a. 조숙한; 어른스러운"
+    "m": "a. 조숙한; 어른스러운(advanced, apt, gifted, intelligent)"
   },
   {
     "w": "precursor",
     "p": "",
     "pos": "n.",
-    "m": "n. 선구자"
+    "m": "n. 선구자(forerunner, vanguard)"
   },
   {
     "w": "predator",
@@ -16451,37 +16451,37 @@ window.__V502_WORDBOOK3__ = [
     "w": "predatory",
     "p": "",
     "pos": "a.",
-    "m": "a. 약탈하는, 탐욕스러운"
+    "m": "a. 약탈하는, 탐욕스러운(rapacious)"
   },
   {
     "w": "predecessor",
     "p": "",
     "pos": "n.",
-    "m": "n. 전임자, 조상, 선조"
+    "m": "n. 전임자, 조상, 선조(ancestor, forebear)"
   },
   {
     "w": "predicament",
     "p": "",
     "pos": "n.",
-    "m": "n. 곤경, 궁지"
+    "m": "n. 곤경(dilemma, plight, quandary, scrape), 궁지(catch22)"
   },
   {
     "w": "predisposition",
     "p": "",
     "pos": "n.",
-    "m": "n. 경향; 민감성"
+    "m": "n. 경향(to); 민감성(to)"
   },
   {
     "w": "predominant",
     "p": "",
     "pos": "a.",
-    "m": "a. 탁월한, 지배적인"
+    "m": "a. 탁월한, 지배적인(leading, primary, principal, significant)"
   },
   {
     "w": "preeminent",
     "p": "",
     "pos": "a.",
-    "m": "a. 탁월한, 현저한"
+    "m": "a. 탁월한, 현저한(eminent, famous, renowned)"
   },
   {
     "w": "preempt",
@@ -16499,13 +16499,13 @@ window.__V502_WORDBOOK3__ = [
     "w": "preen",
     "p": "",
     "pos": "v.",
-    "m": "v. 멋 부리다; 우쭐대다"
+    "m": "v. 멋 부리다(groom, primp); 우쭐대다(on)"
   },
   {
     "w": "preface",
     "p": "",
     "pos": "n.",
-    "m": "n. 서문, 머리말"
+    "m": "n. 서문, 머리말(foreword, introduction, preamble, prologue)"
   },
   {
     "w": "preferential",
@@ -16517,43 +16517,43 @@ window.__V502_WORDBOOK3__ = [
     "w": "prelude",
     "p": "",
     "pos": "n.",
-    "m": "n. 전주곡, 서곡"
+    "m": "n. 전주곡, 서곡(overture, preamble, preface, prologue)"
   },
   {
     "w": "premeditate",
     "p": "",
     "pos": "v.",
-    "m": "v. 미리 계획하다"
+    "m": "v. 미리 계획하다(calculate, plan, plot, prearrange)"
   },
   {
     "w": "premonition",
     "p": "",
     "pos": "n.",
-    "m": "n. 예고, 전조, 예감"
+    "m": "n. 예고, 전조, 예감(forewarning, foreboding)"
   },
   {
     "w": "preponderance",
     "p": "",
     "pos": "n.",
-    "m": "n. 우세, 우월; 다수"
+    "m": "n. 우세, 우월(superiority); 다수(majority)"
   },
   {
     "w": "prerequisite",
     "p": "",
     "pos": "a.",
-    "m": "a. 필수의 n. 선행조건"
+    "m": "a. 필수의(mandatory, necessary) n. 선행조건(condition)"
   },
   {
     "w": "prerogative",
     "p": "",
     "pos": "n.",
-    "m": "n. 특권"
+    "m": "n. 특권(license, privilege)"
   },
   {
     "w": "presage",
     "p": "",
     "pos": "v.",
-    "m": "v. 예언하다, -의 전조가 되다"
+    "m": "v. 예언하다(foreshadow), -의 전조가 되다(portend)"
   },
   {
     "w": "prescient",
@@ -16565,19 +16565,19 @@ window.__V502_WORDBOOK3__ = [
     "w": "presentiment",
     "p": "",
     "pos": "n.",
-    "m": "n. (불길한)예감, 육감"
+    "m": "n. (불길한)예감, 육감(foreboding)"
   },
   {
     "w": "prestige",
     "p": "",
     "pos": "n.",
-    "m": "n. 명성 a. 명성이 있는"
+    "m": "n. 명성(reputation) a. 명성이 있는"
   },
   {
     "w": "prime",
     "p": "",
     "pos": "n.",
-    "m": "n. 초기 v. 준비하다 a. 가장 중요한"
+    "m": "n. 초기 v. 준비하다(prepare) a. 가장 중요한"
   },
   {
     "w": "prognosticate",
@@ -16589,19 +16589,19 @@ window.__V502_WORDBOOK3__ = [
     "w": "propound",
     "p": "",
     "pos": "v.",
-    "m": "v. 제안하다, 제출하다"
+    "m": "v. 제안하다, 제출하다(set forth, propose)"
   },
   {
     "w": "proprietor",
     "p": "",
     "pos": "n.",
-    "m": "n. 소유자, 소유주"
+    "m": "n. 소유자, 소유주(landholder, landlady, landlord)"
   },
   {
     "w": "propriety",
     "p": "",
     "pos": "n.",
-    "m": "n. 타당함; 예절"
+    "m": "n. 타당함(fitness); 예절(courtesy, decorum)"
   },
   {
     "w": "prose",
@@ -16613,7 +16613,7 @@ window.__V502_WORDBOOK3__ = [
     "w": "proselyte",
     "p": "",
     "pos": "n.",
-    "m": "n. 개종자 v. 개종시키다"
+    "m": "n. 개종자(convert) v. 개종시키다"
   },
   {
     "w": "proselytize",
@@ -16631,13 +16631,13 @@ window.__V502_WORDBOOK3__ = [
     "w": "prosper",
     "p": "",
     "pos": "v.",
-    "m": "v. 번영하다, 성공하다"
+    "m": "v. 번영하다, 성공하다(flourish, flower, progress, thrive)"
   },
   {
     "w": "prostrate",
     "p": "",
     "pos": "v.",
-    "m": "v. 굴복시키다 a. 엎드린; 패배한"
+    "m": "v. 굴복시키다(kneel) a. 엎드린; 패배한"
   },
   {
     "w": "protagonist",
@@ -16649,31 +16649,31 @@ window.__V502_WORDBOOK3__ = [
     "w": "protean",
     "p": "",
     "pos": "a.",
-    "m": "a. 변화무쌍한, 다재다능한"
+    "m": "a. 변화무쌍한, 다재다능한(versatile)"
   },
   {
     "w": "protege",
     "p": "",
     "pos": "n.",
-    "m": "n. 피보호자, 부하"
+    "m": "n. 피보호자, 부하(subordinate)"
   },
   {
     "w": "protocol",
     "p": "",
     "pos": "n.",
-    "m": "n. 외교 의례; 조약"
+    "m": "n. 외교 의례(conventions, customs, etiquette); 조약"
   },
   {
     "w": "prototype",
     "p": "",
     "pos": "n.",
-    "m": "n. 원형, 시작품"
+    "m": "n. 원형, 시작품(archetype, cast, model, original, paradigm)"
   },
   {
     "w": "protrude",
     "p": "",
     "pos": "v.",
-    "m": "v. 내밀다; 튀어나오다"
+    "m": "v. 내밀다; 튀어나오다(extend, extrude, jut, project)"
   },
   {
     "w": "provenance",
@@ -16685,97 +16685,97 @@ window.__V502_WORDBOOK3__ = [
     "w": "provident",
     "p": "",
     "pos": "a.",
-    "m": "a. 선견지명이 있는; 검소한"
+    "m": "a. 선견지명이 있는(foreseeing); 검소한(thrifty)"
   },
   {
     "w": "providential",
     "p": "",
     "pos": "a.",
-    "m": "a. 신의 섭리에 의한; 행운의"
+    "m": "a. 신의 섭리에 의한; 행운의(opportune, propitious)"
   },
   {
     "w": "provincial",
     "p": "",
     "pos": "a.",
-    "m": "a. 지방의; 편협한"
+    "m": "a. 지방의; 편협한(insular, parochial, prejudiced)"
   },
   {
     "w": "provisional",
     "p": "",
     "pos": "a.",
-    "m": "a. 일시적인, 잠정적인"
+    "m": "a. 일시적인, 잠정적인(conditional, contingent, experimental, interim)"
   },
   {
     "w": "proviso",
     "p": "",
     "pos": "n.",
-    "m": "n. 단서, 조건"
+    "m": "n. 단서, 조건(condition, prerequisite, stipulation)"
   },
   {
     "w": "prowess",
     "p": "",
     "pos": "n.",
-    "m": "n. 용기, 뛰어난 기술"
+    "m": "n. 용기(bravery, valor), 뛰어난 기술(competence, talent)"
   },
   {
     "w": "prowl",
     "p": "",
     "pos": "v.",
-    "m": "v. 헤매다"
+    "m": "v. 헤매다(lurk, skulk, slink, sneak, haunt, hunt, pursue)"
   },
   {
     "w": "proximity",
     "p": "",
     "pos": "n.",
-    "m": "n. 인접, 근접"
+    "m": "n. 인접, 근접(contiguity, nearness, propinquity)"
   },
   {
     "w": "proxy",
     "p": "",
     "pos": "n.",
-    "m": "n. 대리인"
+    "m": "n. 대리인(proxy, replacement, representative, surrogate)"
   },
   {
     "w": "prude",
     "p": "",
     "pos": "n.",
-    "m": "n. 얌전한 체하는 사람"
+    "m": "n. (남녀 관계)얌전한 체하는 사람(prig, puritan)"
   },
   {
     "w": "prudish",
     "p": "",
     "pos": "a.",
-    "m": "a. 고상한 체하는"
+    "m": "a. 고상한 체하는(priggish, puritanical, squeamish)"
   },
   {
     "w": "prune",
     "p": "",
     "pos": "n.",
-    "m": "n. 자두 v. (가지)잘라내다"
+    "m": "n. 자두 v. (가지)잘라내다(cut)"
   },
   {
     "w": "prurient",
     "p": "",
     "pos": "a.",
-    "m": "a. 음란한, 외설한"
+    "m": "a. 음란한, 외설한(salacious, bawdy, lustful)"
   },
   {
     "w": "pseudonym",
     "p": "",
     "pos": "n.",
-    "m": "n. 가명, 필명"
+    "m": "n. 가명, 필명(alias, nickname, penname)"
   },
   {
     "w": "psychopath",
     "p": "",
     "pos": "n.",
-    "m": "n. 정신병자"
+    "m": "n. 정신병자(demented, deranged, lunatic, madman, maniac)"
   },
   {
     "w": "psychosis",
     "p": "",
     "pos": "n.",
-    "m": "n. 정신병, 정신이상"
+    "m": "n. 정신병, 정신이상(demented, deranged, insane, mad)"
   },
   {
     "w": "psychosomatic",
@@ -16787,85 +16787,85 @@ window.__V502_WORDBOOK3__ = [
     "w": "psychotic",
     "p": "",
     "pos": "n.",
-    "m": "n. 정신병자 a. 정신병의"
+    "m": "n. 정신병자(lunatic) a. 정신병의(demented, deranged, insane)"
   },
   {
     "w": "puberty",
     "p": "",
     "pos": "n.",
-    "m": "n. 사춘기"
+    "m": "n. 사춘기(adolescence, pubescence, teens, youth)"
   },
   {
     "w": "pudgy",
     "p": "",
     "pos": "a.",
-    "m": "a. 땅딸만한, 뚱뚱한"
+    "m": "a. 땅딸만한(chubby, chunky, dumpy, stout, tubby), 뚱뚱한"
   },
   {
     "w": "puerile",
     "p": "",
     "pos": "a.",
-    "m": "a. 어린애 같은, 유치한"
+    "m": "a. 어린애 같은, 유치한(childish, immature, infantile)"
   },
   {
     "w": "pugilist",
     "p": "",
     "pos": "n.",
-    "m": "n. 권투선수"
+    "m": "n. 권투선수(boxer)"
   },
   {
     "w": "pugnacious",
     "p": "",
     "pos": "a.",
-    "m": "a. 호전적인"
+    "m": "a. 호전적인(belligerent, contentious, fractious, truculent )"
   },
   {
     "w": "puissant",
     "p": "",
     "pos": "a.",
-    "m": "a. 힘 있는, 권력이 있는"
+    "m": "a. 힘 있는, 권력이 있는(forceful, mighty, robust, stalwart)"
   },
   {
     "w": "pulmonary",
     "p": "",
     "pos": "a.",
-    "m": "a. 폐의, 폐에 관한"
+    "m": "a. 폐의, 폐에 관한(pertaining to the lungs)"
   },
   {
     "w": "pulsate",
     "p": "",
     "pos": "v.",
-    "m": "v. 맥이 뛰다, 고동치다"
+    "m": "v. 맥이 뛰다, 고동치다(throb, palpitate, pound, pulse)"
   },
   {
     "w": "pulverize",
     "p": "",
     "pos": "v.",
-    "m": "v. 가루로 만들다"
+    "m": "v. 가루로 만들다(crush, grind, mash)"
   },
   {
     "w": "pummel",
     "p": "",
     "pos": "v.",
-    "m": "v. 주먹으로 치다, 연타하다"
+    "m": "v. (연달아)주먹으로 치다(pommel), 연타하다"
   },
   {
     "w": "punctilious",
     "p": "",
     "pos": "a.",
-    "m": "a. 세심한, 꼼꼼한"
+    "m": "a. 세심한, 꼼꼼한(meticulous, scrupulous)"
   },
   {
     "w": "punctuate",
     "p": "",
     "pos": "v.",
-    "m": "v. -에 구두점을 찍다; 강조하다"
+    "m": "v. -에 구두점을 찍다, (말)강조하다(accentuate)"
   },
   {
     "w": "puncture",
     "p": "",
     "pos": "v.",
-    "m": "v. 찌르다; 구멍 내다"
+    "m": "v. (바늘)찌르다; 구멍 내다(perforate, pierce, prick, stick, deflate, depress)"
   },
   {
     "w": "pundit",
@@ -16877,19 +16877,19 @@ window.__V502_WORDBOOK3__ = [
     "w": "pungent",
     "p": "",
     "pos": "a.",
-    "m": "a. 자극적인, 신랄한, 예리한"
+    "m": "a. (맛)자극적인, (말)신랄한, 예리한(caustic, incisive)"
   },
   {
     "w": "punitive",
     "p": "",
     "pos": "a.",
-    "m": "a. 벌을 주는"
+    "m": "a. 벌을 주는(punishing)"
   },
   {
     "w": "puny",
     "p": "",
     "pos": "a.",
-    "m": "a. 자그마한; 미약한"
+    "m": "a. 자그마한(dwarfish, pygmy, runty); 미약한(feeble, measly)"
   },
   {
     "w": "puppet",
@@ -16901,19 +16901,19 @@ window.__V502_WORDBOOK3__ = [
     "w": "purblind",
     "p": "",
     "pos": "a.",
-    "m": "a. 눈이 침침한; 우둔한"
+    "m": "a. 눈이 침침한(dim-sighted); 우둔한(obtuse, dull)"
   },
   {
     "w": "purgatory",
     "p": "",
     "pos": "n.",
-    "m": "n. 연옥; 일시적인 고난"
+    "m": "n. (가톨릭)연옥(영혼의 정화를 위한 곳); 일시적인 고난"
   },
   {
     "w": "purge",
     "p": "",
     "pos": "v.",
-    "m": "v. 정화하다; 제거하다; 숙청하다"
+    "m": "v. (마음·몸)정화하다, (불순물)제거하다; (정치)숙청하다"
   },
   {
     "w": "puritanical",
@@ -16925,25 +16925,25 @@ window.__V502_WORDBOOK3__ = [
     "w": "purloin",
     "p": "",
     "pos": "v.",
-    "m": "v. 훔치다"
+    "m": "v. 훔치다(filch, lift, pilfer, purloin, snatch)"
   },
   {
     "w": "purvey",
     "p": "",
     "pos": "v.",
-    "m": "v. 조달하다, 공급하다"
+    "m": "v. (식료품)조달하다, 공급하다"
   },
   {
     "w": "purview",
     "p": "",
     "pos": "n.",
-    "m": "n. 한계; 범위, 영역"
+    "m": "n. 한계(limit); 범위, 영역(scope, range, gamut)"
   },
   {
     "w": "pusillanimous",
     "p": "",
     "pos": "a.",
-    "m": "a. 비겁한, 소심한"
+    "m": "a. 비겁한, 소심한(timid, cowardly, fainthearted)"
   },
   {
     "w": "putative",
@@ -16955,55 +16955,55 @@ window.__V502_WORDBOOK3__ = [
     "w": "putrefy",
     "p": "",
     "pos": "v.",
-    "m": "v. 썩다, 부패하다"
+    "m": "v. 썩다, 부패하다(canker, fester, suppurate, decay, rot)"
   },
   {
     "w": "putrid",
     "p": "",
     "pos": "a.",
-    "m": "a. 악취가 나는, 부패한"
+    "m": "a. 악취가 나는, 부패한(foul. fetid, rank, rancid)"
   },
   {
     "w": "quack",
     "p": "",
     "pos": "n.",
-    "m": "n. 사기꾼"
+    "m": "n. 사기꾼(charlatan, imposter)"
   },
   {
     "w": "quaff",
     "p": "",
     "pos": "v.",
-    "m": "v. 단숨에 마시다"
+    "m": "v. 단숨에 마시다(down)"
   },
   {
     "w": "quagmire",
     "p": "",
     "pos": "n.",
-    "m": "n. 수렁, 습지; 곤경"
+    "m": "n. 수렁, 습지; 곤경(bog, marsh, predicament, quandary)"
   },
   {
     "w": "quail",
     "p": "",
     "pos": "v.",
-    "m": "v. 움찔하다, 위축되다"
+    "m": "v. 움찔하다, 위축되다(flinch, recoil, wince)"
   },
   {
     "w": "quaint",
     "p": "",
     "pos": "a.",
-    "m": "a. 예스런 멋이 있는; 특이한"
+    "m": "a. 예스런 멋이 있는; 특이한(peculiar)"
   },
   {
     "w": "qualify",
     "p": "",
     "pos": "v.",
-    "m": "v. (자격)주다; (의미를)제한하다"
+    "m": "v. (자격)주다; (앞에서 했던 말의 의미를)제한하다"
   },
   {
     "w": "quandary",
     "p": "",
     "pos": "n.",
-    "m": "n. 곤경, 궁지"
+    "m": "n. 곤경, 궁지(dilemma, entanglement, impasse, mire)"
   },
   {
     "w": "quarantine",
@@ -17021,127 +17021,127 @@ window.__V502_WORDBOOK3__ = [
     "w": "quash",
     "p": "",
     "pos": "v.",
-    "m": "v. (반란)진압하다, 억누르다"
+    "m": "v. (반란)진압하다, 억누르다(squash, squelch, quell)"
   },
   {
     "w": "queasy",
     "p": "",
     "pos": "a.",
-    "m": "a. 구역질나게 하는"
+    "m": "a. 구역질나게 하는(nauseated, squeamish)"
   },
   {
     "w": "quell",
     "p": "",
     "pos": "v.",
-    "m": "v. (반란)진압하다"
+    "m": "v. (반란)진압하다(putdown, quash, suppress)"
   },
   {
     "w": "quench",
     "p": "",
     "pos": "v.",
-    "m": "v. (갈증)해소하다"
+    "m": "v. (갈증)해소하다(sate, satiate)"
   },
   {
     "w": "querulous",
     "p": "",
     "pos": "a.",
-    "m": "a. 불평하는; 성 잘 내는"
+    "m": "a. 불평하는(complaining); 성 잘 내는(crotchety, peevish)"
   },
   {
     "w": "query",
     "p": "",
     "pos": "n.",
-    "m": "n. 질문 v. 묻다, 질문하다"
+    "m": "n. 질문(question) v. 묻다, 질문하다(inquire)"
   },
   {
     "w": "queue",
     "p": "",
     "pos": "n.",
-    "m": "n. (차례를 기다리는)줄"
+    "m": "n. (차례를 기다리는 사람·차)줄(column, file, line, row)"
   },
   {
     "w": "quest",
     "p": "",
     "pos": "n.",
-    "m": "n. 탐색, 탐구, 추구"
+    "m": "n. 탐색(search), 탐구(hunt), 추구(pursuit)"
   },
   {
     "w": "quibble",
     "p": "",
     "pos": "v.",
-    "m": "v. 핑계 대다; 트집 잡다"
+    "m": "v. 핑계 대다; 트집 잡다(carp, nitpick)"
   },
   {
     "w": "quiescent",
     "p": "",
     "pos": "a.",
-    "m": "a. 정지한, 무활동의"
+    "m": "a. 정지한, 무활동의(dormant, at rest)"
   },
   {
     "w": "quietude",
     "p": "",
     "pos": "n.",
-    "m": "n. 안식, 평온, 정적"
+    "m": "n. 안식, 평온, 정적(quietness)"
   },
   {
     "w": "quintessence",
     "p": "",
     "pos": "n.",
-    "m": "n. 본질, 정수; 전형"
+    "m": "n. 본질, 정수(essence), 전형(epitome, paragon)"
   },
   {
     "w": "quip",
     "p": "",
     "pos": "n.",
-    "m": "n. 빈정대는 말 v. 재치 있게 말하다"
+    "m": "n. 빈정대는 말 v. 재치 있게 말하다(repartee, wisecrack)"
   },
   {
     "w": "quirk",
     "p": "",
     "pos": "n.",
-    "m": "n. 엉뚱한 행동, 기발함"
+    "m": "n. 엉뚱한 행동, 기발함(idiosyncrasy, peculiarity, irregularity)"
   },
   {
     "w": "quisling",
     "p": "",
     "pos": "n.",
-    "m": "n. 매국노, 배반자"
+    "m": "n. 매국노, 배반자(traitor)"
   },
   {
     "w": "quixotic",
     "p": "",
     "pos": "a.",
-    "m": "a. 비현실적인"
+    "m": "a. 비현실적인(fanciful, impractical, romantic, unrealistic)"
   },
   {
     "w": "quorum",
     "p": "",
     "pos": "n.",
-    "m": "n. 정족수"
+    "m": "n. (의결에 필요한)정족수(minimum, proportion, ratio)"
   },
   {
     "w": "quotidian",
     "p": "",
     "pos": "a.",
-    "m": "a. 일상적인, 평범한"
+    "m": "a. 일상적인, 평범한(commonplace, ordinary, trivial)"
   },
   {
     "w": "rabid",
     "p": "",
     "pos": "a.",
-    "m": "a. 맹렬한, 미친 듯한; 열광적인"
+    "m": "a. 맹렬한, 미친 듯한(berserk, deranged, frenzied); 열광적인"
   },
   {
     "w": "raconteur",
     "p": "",
     "pos": "n.",
-    "m": "n. 이야기 잘하는 사람"
+    "m": "n. 이야기 잘하는 사람(storyteller)"
   },
   {
     "w": "radical",
     "p": "",
     "pos": "a.",
-    "m": "a. 근본적인, 급진적인"
+    "m": "a. 근본적인, 급진적인(drastic, fanatical, iconoclastic)"
   },
   {
     "w": "raffish",
@@ -17153,61 +17153,61 @@ window.__V502_WORDBOOK3__ = [
     "w": "ragamuffin",
     "p": "",
     "pos": "n.",
-    "m": "n. 누더기를 걸친 사람"
+    "m": "n. 누더기를 걸친 사람(tatterdemalion)"
   },
   {
     "w": "ragged",
     "p": "",
     "pos": "a.",
-    "m": "a. 누더기의; 지친"
+    "m": "a. 누더기의(frayed, shabby, tattered, threadbare); 지친"
   },
   {
     "w": "rail",
     "p": "",
     "pos": "v.",
-    "m": "v. 비난하다, 꾸짖다"
+    "m": "v. 비난하다, 꾸짖다(at)(scold, rant)"
   },
   {
     "w": "raillery",
     "p": "",
     "pos": "n.",
-    "m": "n. 농담, 조롱, 야유"
+    "m": "n. 농담, 조롱, 야유(badinage, banter, jesting, joking, kidding)"
   },
   {
     "w": "raiment",
     "p": "",
     "pos": "n.",
-    "m": "n. 의상, 의복"
+    "m": "n. 의상, 의복(apparel, attire, clothing, garb, garments)"
   },
   {
     "w": "rally",
     "p": "",
     "pos": "v.",
-    "m": "v. 불러 모으다; 조롱하다"
+    "m": "v. 불러 모으다(assemble, convene, gather, unite); 조롱하다"
   },
   {
     "w": "ram",
     "p": "",
     "pos": "v.",
-    "m": "v. 부딪치게 하다; 밀어붙이다"
+    "m": "v. 부딪치게 하다; 밀어붙이다(force, jam, thrust, crash, slam)"
   },
   {
     "w": "ramble",
     "p": "",
     "pos": "v.",
-    "m": "v. 거닐다; (두서없이)말하다"
+    "m": "v. 거닐다(amble, perambulate); (두서없이)말하다"
   },
   {
     "w": "rambunctious",
     "p": "",
     "pos": "a.",
-    "m": "a. 사나운, 다루기 힘든"
+    "m": "a. 사나운, 다루기 힘든(riotous, robust, rowdy)"
   },
   {
     "w": "ramification",
     "p": "",
     "pos": "n.",
-    "m": "n. 가지; (행동)영향, 결과"
+    "m": "n. 가지; (행동)영향, 결과(aftermath, repercussion)"
   },
   {
     "w": "ramify",
@@ -17225,37 +17225,37 @@ window.__V502_WORDBOOK3__ = [
     "w": "rampage",
     "p": "",
     "pos": "n.",
-    "m": "n. 날뛰기 v. 미쳐 날뛰다"
+    "m": "n. (성나서)날뛰기 v. 미쳐 날뛰다(binge, fling, splurge)"
   },
   {
     "w": "rampant",
     "p": "",
     "pos": "a.",
-    "m": "a. 사나운; 만연한"
+    "m": "a. 사나운; 만연한(dominant, prevailing, prevalent, widespread)"
   },
   {
     "w": "rampart",
     "p": "",
     "pos": "n.",
-    "m": "n. 성곽, 성벽"
+    "m": "n. 성곽, 성벽(fortification, bulwark)"
   },
   {
     "w": "ramshackle",
     "p": "",
     "pos": "a.",
-    "m": "a. 흔들거리는; 줏대가 없는"
+    "m": "a. 흔들거리는(rickety); 줏대가 없는"
   },
   {
     "w": "rancid",
     "p": "",
     "pos": "a.",
-    "m": "a. 고약한 냄새가 나는"
+    "m": "a. 고약한 냄새가 나는(fetid, offensive, pungent, rank, reeking)"
   },
   {
     "w": "rancor",
     "p": "",
     "pos": "n.",
-    "m": "n. 원한, 증오"
+    "m": "n. 원한, 증오(animosity, bitterness, enmity, hostility, malice)"
   },
   {
     "w": "randy",
@@ -17267,49 +17267,49 @@ window.__V502_WORDBOOK3__ = [
     "w": "rank",
     "p": "",
     "pos": "n.",
-    "m": "n. 행렬 v. 줄 세우다 a. 천한"
+    "m": "n. 행렬 v. 줄 세우다 a. 천한(fetid, putrid, rancid)"
   },
   {
     "w": "ransack",
     "p": "",
     "pos": "v.",
-    "m": "v. 샅샅이 뒤지다"
+    "m": "v. 샅샅이 뒤지다(loot, pillage, plunder)"
   },
   {
     "w": "ransom",
     "p": "",
     "pos": "n.",
-    "m": "n. 몸값 v. 되찾다"
+    "m": "n. (포로)몸값(money, payment, payoff, price) v. 되찾다"
   },
   {
     "w": "rant",
     "p": "",
     "pos": "v.",
-    "m": "v. 호언장담하다, 큰소리치다"
+    "m": "v. 호언장담하다, 큰소리치다(explode, fume, harangue, rave)"
   },
   {
     "w": "rapacious",
     "p": "",
     "pos": "a.",
-    "m": "a. 탐욕스러운, 강탈하는"
+    "m": "a. 탐욕스러운(greedy), 강탈하는(marauding, pillaging)"
   },
   {
     "w": "rapport",
     "p": "",
     "pos": "n.",
-    "m": "n. (친밀한)관계"
+    "m": "n. (친밀한)관계(affinity, camaraderie, compatibility)"
   },
   {
     "w": "rapprochement",
     "p": "",
     "pos": "n.",
-    "m": "n. 친선, 화해"
+    "m": "n. (국가 간)친선, 화해(reconciliation)"
   },
   {
     "w": "rapture",
     "p": "",
     "pos": "a.",
-    "m": "a. 기쁨, 환희, 황홀"
+    "m": "a. 기쁨, 환희, 황홀(bliss, elation, enchantment, euphoria)"
   },
   {
     "w": "rapturous",
@@ -17333,43 +17333,43 @@ window.__V502_WORDBOOK3__ = [
     "w": "rash",
     "p": "",
     "pos": "a.",
-    "m": "a. 경솔한, 무분별한"
+    "m": "a. 경솔한, 무분별한(headlong, foolhardy, thoughtless)"
   },
   {
     "w": "raspy",
     "p": "",
     "pos": "a.",
-    "m": "a. 안달 나게 하는; 신경질적인"
+    "m": "a. 안달 나게 하는; 신경질적인(grating, rough, scratchy)"
   },
   {
     "w": "ratchet",
     "p": "",
     "pos": "n.",
-    "m": "n. 톱니바퀴 v. 서서히 올리다/내리다"
+    "m": "n. 톱니바퀴 v. 서서히 올리다(up)/내리다(down)"
   },
   {
     "w": "ratify",
     "p": "",
     "pos": "v.",
-    "m": "v. (조약)비준하다"
+    "m": "v. (조약)비준하다(approve, confirm, endorse, sanction)"
   },
   {
     "w": "ratiocinate",
     "p": "",
     "pos": "v.",
-    "m": "v. 추리하다, 추론하다"
+    "m": "v. 추리하다, 추론하다(reason)"
   },
   {
     "w": "rationale",
     "p": "",
     "pos": "n.",
-    "m": "n. (정당한)이유"
+    "m": "n. (정당한·합리적인)이유(basis, explanation, grounds)"
   },
   {
     "w": "rationalize",
     "p": "",
     "pos": "v.",
-    "m": "v. 합리화하다"
+    "m": "v. 합리화하다(justify)"
   },
   {
     "w": "rattle",
@@ -17381,91 +17381,91 @@ window.__V502_WORDBOOK3__ = [
     "w": "raucous",
     "p": "",
     "pos": "a.",
-    "m": "a. 귀에 거슬리는; 무질서한"
+    "m": "a. 귀에 거슬리는(shrill, strident, boisterous); 무질서한"
   },
   {
     "w": "ravel",
     "p": "",
     "pos": "n.",
-    "m": "n. 엉클림; 혼란 v. 혼란하게 하다"
+    "m": "n. 엉클림; 혼란(complication) v. 혼란하게 하다"
   },
   {
     "w": "ravenous",
     "p": "",
     "pos": "a.",
-    "m": "a. 몹시 굶주린"
+    "m": "a. 몹시 굶주린(gluttonous, hungry, insatiable, unquenchable)"
   },
   {
     "w": "ravish",
     "p": "",
     "pos": "v.",
-    "m": "v. 성폭행 하다; 황홀하게 하다"
+    "m": "v. 성폭행 하다(deflower, rape); 황홀하게 하다(overjoy)"
   },
   {
     "w": "raze",
     "p": "",
     "pos": "v.",
-    "m": "v. 파괴하다, 무너뜨리다"
+    "m": "v. (건물)파괴하다, 무너뜨리다( demolish, flatten)"
   },
   {
     "w": "reactionary",
     "p": "",
     "pos": "a.",
-    "m": "a. 반동적인; 보수적인"
+    "m": "a. 반동적인; 보수적인(사회적·정치적 변화에 저항하는)"
   },
   {
     "w": "realm",
     "p": "",
     "pos": "n.",
-    "m": "n. 범위, 영역; 왕국"
+    "m": "n. 범위, 영역(sphere, scope, extent); 왕국(kingdom)"
   },
   {
     "w": "rebel",
     "p": "",
     "pos": "n.",
-    "m": "n. 반역자 v. (폭동)일으키다"
+    "m": "n. 반역자 v. (폭동)일으키다(mutiny, revolt)"
   },
   {
     "w": "rebellion",
     "p": "",
     "pos": "n.",
-    "m": "n. 반란, 폭동"
+    "m": "n. 반란, 폭동(insurgence, insurrection, mutiny, revolt)"
   },
   {
     "w": "rebuff",
     "p": "",
     "pos": "n.",
-    "m": "n. 거절, 퇴짜 v. 좌절시키다"
+    "m": "n. 거절, 퇴짜 v. 좌절시키다(check, disregard, ignore, reject)"
   },
   {
     "w": "rebuke",
     "p": "",
     "pos": "v.",
-    "m": "v. 비난하다"
+    "m": "v. 비난하다(admonish, censure, chide, reprimand, reprove)"
   },
   {
     "w": "rebut",
     "p": "",
     "pos": "v.",
-    "m": "v. 반박하다"
+    "m": "v. 반박하다(counter, discredit, invalidate, negate, refute)"
   },
   {
     "w": "recalcitrant",
     "p": "",
     "pos": "a.",
-    "m": "a. 고집이 센, 반항하는"
+    "m": "a. 고집이 센(stubborn), 반항하는(defiant, disobedient)"
   },
   {
     "w": "receptive",
     "p": "",
     "pos": "a.",
-    "m": "a. 영향 잘 받는, 예민한"
+    "m": "a. 영향 잘 받는(amenable), 예민한(responsive)"
   },
   {
     "w": "recession",
     "p": "",
     "pos": "n.",
-    "m": "n. 후퇴; 경기 침체"
+    "m": "n. 후퇴(retreat); 경기 침체(downturn, stagnation)"
   },
   {
     "w": "recidivism",
@@ -17477,103 +17477,103 @@ window.__V502_WORDBOOK3__ = [
     "w": "reciprocate",
     "p": "",
     "pos": "v.",
-    "m": "v. 보답하다, 보복하다"
+    "m": "v. 보답하다(requite), 보복하다(requite, retaliate)"
   },
   {
     "w": "reckless",
     "p": "",
     "pos": "a.",
-    "m": "a. 분별없는, 무모한"
+    "m": "a. 분별없는, 무모한(brash, daring, frantic, rash)"
   },
   {
     "w": "reckon",
     "p": "",
     "pos": "v.",
-    "m": "v. 세다, 계산하다; 생각하다"
+    "m": "v. 세다, 계산하다(count); 생각하다(regard)"
   },
   {
     "w": "recline",
     "p": "",
     "pos": "v.",
-    "m": "v. 기대다, 눕다; 의지하다"
+    "m": "v. 기대다(lean), 눕다(lie back); 의지하다"
   },
   {
     "w": "recluse",
     "p": "",
     "pos": "n.",
-    "m": "n. 은둔자 a. 속세를 떠난"
+    "m": "n. 은둔자(anchorite, hermit, introvert, loner) a. 속세를 떠난"
   },
   {
     "w": "recoil",
     "p": "",
     "pos": "v.",
-    "m": "v. 움찔하다"
+    "m": "v. 움찔하다(cower, cringe, flinch, wince)"
   },
   {
     "w": "recompense",
     "p": "",
     "pos": "v.",
-    "m": "v. 보답하다, 보상하다"
+    "m": "v. 보답하다, 보상하다(compensate, pay, refund)"
   },
   {
     "w": "recondite",
     "p": "",
     "pos": "a.",
-    "m": "a. 심오한, 난해한"
+    "m": "a. 심오한, 난해한(profound, abstruse)"
   },
   {
     "w": "reconnaissance",
     "p": "",
     "pos": "n.",
-    "m": "n. 수색, 정찰"
+    "m": "n. 수색(patrol), 정찰"
   },
   {
     "w": "recoup",
     "p": "",
     "pos": "v.",
-    "m": "v. 되찾다; 보상하다"
+    "m": "v. 되찾다; 보상하다(recapture, recover, repossess, retrieve)"
   },
   {
     "w": "recourse",
     "p": "",
     "pos": "n.",
-    "m": "n. 의지, 의지할 수단"
+    "m": "n. 의지, 의지할 수단(사람)(resort)"
   },
   {
     "w": "recreant",
     "p": "",
     "pos": "n.",
-    "m": "n. 겁쟁이, 배신자"
+    "m": "n. 겁쟁이(coward), 배신자(apostate, renegade)"
   },
   {
     "w": "recriminate",
     "p": "",
     "pos": "v.",
-    "m": "v. 되받아 비난하다"
+    "m": "v. 되받아 비난하다(countercharge)"
   },
   {
     "w": "recrudesce",
     "p": "",
     "pos": "v.",
-    "m": "v. (병·불평)재발하다"
+    "m": "v. (병·불평)재발하다(recidivism)"
   },
   {
     "w": "rectify",
     "p": "",
     "pos": "v.",
-    "m": "v. 수정하다, 교정하다"
+    "m": "v. 수정하다, 교정하다(correct, fix, improve, remedy, repair)"
   },
   {
     "w": "recumbent",
     "p": "",
     "pos": "a.",
-    "m": "a. 기댄; 태만한, 게으른"
+    "m": "a. 기댄(lying down); 태만한, 게으른"
   },
   {
     "w": "recuperate",
     "p": "",
     "pos": "v.",
-    "m": "v. (건강)회복하다"
+    "m": "v. (건강)회복하다(convalesce)"
   },
   {
     "w": "recusant",
@@ -17585,13 +17585,13 @@ window.__V502_WORDBOOK3__ = [
     "w": "redeem",
     "p": "",
     "pos": "v.",
-    "m": "v. 되찾다; 메우다, 벌충하다"
+    "m": "v. 되찾다; (장점이 결점을)메우다, 벌충하다"
   },
   {
     "w": "redolent",
     "p": "",
     "pos": "a.",
-    "m": "a. 향기로운; 암시하는"
+    "m": "a. 향기로운(fragrant); 암시하는(suggestive)"
   },
   {
     "w": "redoubt",
@@ -17603,61 +17603,61 @@ window.__V502_WORDBOOK3__ = [
     "w": "redoubtable",
     "p": "",
     "pos": "a.",
-    "m": "a. 가공할, 무서운"
+    "m": "a. (적수)가공할, 무서운(formidable)"
   },
   {
     "w": "redound",
     "p": "",
     "pos": "v.",
-    "m": "v. (신용)높이다, 이바지하다"
+    "m": "v. (신용)높이다, (명예)이바지하다(contribute)"
   },
   {
     "w": "redress",
     "p": "",
     "pos": "v.",
-    "m": "v. 배상하다, 교정하다"
+    "m": "v. 배상하다(compensation), 교정하다(remedy)"
   },
   {
     "w": "redundant",
     "p": "",
     "pos": "a.",
-    "m": "a. 여분의, 과다한; 일시해고 되는"
+    "m": "a. 여분의, 과다한(repetitious, tautological, superfluous); 일시해고 되는"
   },
   {
     "w": "reek",
     "p": "",
     "pos": "v.",
-    "m": "v. 연기를 피우다; 악취를 풍기다"
+    "m": "v. 연기를 피우다; 악취를 풍기다(smell, stink)"
   },
   {
     "w": "reel",
     "p": "",
     "pos": "v.",
-    "m": "v. 크게 동요하다"
+    "m": "v. 크게 동요하다(lurch, stagger, totter)"
   },
   {
     "w": "refection",
     "p": "",
     "pos": "n.",
-    "m": "n. 기분전환, 간단한 식사"
+    "m": "n. 기분전환, 간단한 식사(light meal)"
   },
   {
     "w": "refectory",
     "p": "",
     "pos": "n.",
-    "m": "n. 식당"
+    "m": "n. 식당(dining hall)"
   },
   {
     "w": "referendum",
     "p": "",
     "pos": "n.",
-    "m": "n. 국민투표, 총선거"
+    "m": "n. 국민투표, 총선거(plebiscite, general election)"
   },
   {
     "w": "refined",
     "p": "",
     "pos": "a.",
-    "m": "a. 정제된; 세련된"
+    "m": "a. 정제된(distilled, purified); 세련된(genteel, polished)"
   },
   {
     "w": "refract",
@@ -17669,61 +17669,61 @@ window.__V502_WORDBOOK3__ = [
     "w": "refractory",
     "p": "",
     "pos": "a.",
-    "m": "a. 다루기 힘든"
+    "m": "a. 다루기 힘든(intractable, disobedient)"
   },
   {
     "w": "refuge",
     "p": "",
     "pos": "n.",
-    "m": "n. 피난처, 은신처"
+    "m": "n. 피난처, 은신처(haven, retreat, sanctuary)"
   },
   {
     "w": "refulgent",
     "p": "",
     "pos": "a.",
-    "m": "a. 빛나는, 찬란한"
+    "m": "a. 빛나는, 찬란한(brilliant, gleaming, glittering, radiant)"
   },
   {
     "w": "refurbish",
     "p": "",
     "pos": "v.",
-    "m": "v. 새로 꾸미다"
+    "m": "v. 새로 꾸미다(overhaul, remodel, renovate)"
   },
   {
     "w": "regal",
     "p": "",
     "pos": "a.",
-    "m": "a. 제왕의, 위엄 있는"
+    "m": "a. 제왕의(royal), 위엄 있는(majestic, stately)"
   },
   {
     "w": "regale",
     "p": "",
     "pos": "v.",
-    "m": "v. 대접하다, 즐겁게 해주다"
+    "m": "v. 대접하다, 즐겁게 해주다(amuse, delight, entertain)"
   },
   {
     "w": "regenerate",
     "p": "",
     "pos": "v.",
-    "m": "v. 재생시키다"
+    "m": "v. 재생시키다(improve, rejuvenate, uplift, renew)"
   },
   {
     "w": "regicide",
     "p": "",
     "pos": "n.",
-    "m": "n. 국왕살해"
+    "m": "n. 국왕살해(the killing of a king)"
   },
   {
     "w": "regime",
     "p": "",
     "pos": "n.",
-    "m": "n. 정권"
+    "m": "n. 정권(administration, dominion, government)"
   },
   {
     "w": "regimen",
     "p": "",
     "pos": "n.",
-    "m": "n. 섭생; 엄한 훈련"
+    "m": "n. (식사·운동·투약)섭생(administration); 엄한 훈련"
   },
   {
     "w": "regiment",
@@ -17735,97 +17735,97 @@ window.__V502_WORDBOOK3__ = [
     "w": "regurgitate",
     "p": "",
     "pos": "v.",
-    "m": "v. 토하다; 반복하다"
+    "m": "v. 토하다(vomit); (별 생각 없이)반복하다"
   },
   {
     "w": "reign",
     "p": "",
     "pos": "v.",
-    "m": "v. 통치하다, 지배하다"
+    "m": "v. 통치하다, 지배하다(govern, rule, dominate, predominate)"
   },
   {
     "w": "reimburse",
     "p": "",
     "pos": "v.",
-    "m": "v. 빚 갚다; 배상하다"
+    "m": "v. 빚 갚다; 배상하다(refund, remit, remunerate, repay)"
   },
   {
     "w": "rein",
     "p": "",
     "pos": "n.",
-    "m": "n. 통제력 v. 제어하다, 억제하다"
+    "m": "n. 통제력 v. 제어하다, 억제하다(restrain, curb)"
   },
   {
     "w": "reinstate",
     "p": "",
     "pos": "v.",
-    "m": "v. 복귀시키다; 회복시키다"
+    "m": "v. (직장·직책)복귀시키다; (원상태)회복시키다"
   },
   {
     "w": "rejoice",
     "p": "",
     "pos": "v.",
-    "m": "v. 기뻐하다, 좋아하다"
+    "m": "v. 기뻐하다, 좋아하다(celebrate, exult, glory, revel)"
   },
   {
     "w": "rejoinder",
     "p": "",
     "pos": "n.",
-    "m": "n. (재치 있는)대답"
+    "m": "n. (재치 있는)대답(repartee)"
   },
   {
     "w": "rejuvenate",
     "p": "",
     "pos": "v.",
-    "m": "v. 젊어지게 하다"
+    "m": "v. 젊어지게 하다(invigorate, revitalize)"
   },
   {
     "w": "relapse",
     "p": "",
     "pos": "v.",
-    "m": "v. 되돌아가다; 재발하다"
+    "m": "v. (나쁜 상태)되돌아가다(into)(revert), (병)재발하다"
   },
   {
     "w": "relegate",
     "p": "",
     "pos": "v.",
-    "m": "v. 추방하다; 좌천시키다"
+    "m": "v. 추방하다(banish, dismiss, expel); 좌천시키다"
   },
   {
     "w": "relentless",
     "p": "",
     "pos": "a.",
-    "m": "a. 가차 없는, 잔인한"
+    "m": "a. 가차 없는, 잔인한(brutal, cruel, savage, severe)"
   },
   {
     "w": "relic",
     "p": "",
     "pos": "n.",
-    "m": "n. 유물, 유적; 잔재"
+    "m": "n. 유물, 유적(artifact, memento); 잔재(vestige)"
   },
   {
     "w": "relish",
     "p": "",
     "pos": "n.",
-    "m": "n. 맛, 풍미 v. 좋아하다, 즐기다"
+    "m": "n. 맛, 풍미 v. 좋아하다, 즐기다(enjoy, like, savor)"
   },
   {
     "w": "remiss",
     "p": "",
     "pos": "a.",
-    "m": "a. 게으른, 부주의한"
+    "m": "a. 게으른, 부주의한(careless, inattentive, lax, negligent)"
   },
   {
     "w": "remission",
     "p": "",
     "pos": "n.",
-    "m": "n. 용서; 면제; 완화"
+    "m": "n. (죄)용서(pardon), (채무)면제, (고통)완화"
   },
   {
     "w": "remit",
     "p": "",
     "pos": "v.",
-    "m": "v. 송금하다; 용서하다"
+    "m": "v. 송금하다(send); 용서하다"
   },
   {
     "w": "remittance",
@@ -17837,37 +17837,37 @@ window.__V502_WORDBOOK3__ = [
     "w": "remonstrate",
     "p": "",
     "pos": "v.",
-    "m": "v. 항의하다; 충고하다"
+    "m": "v. 항의하다; 충고하다(admonish, censure, chide, reprimand)"
   },
   {
     "w": "remuneration",
     "p": "",
     "pos": "n.",
-    "m": "n. 보수, 급료"
+    "m": "n. 보수, 급료(compensation, payment, salary, wages)"
   },
   {
     "w": "remunerative",
     "p": "",
     "pos": "a.",
-    "m": "a. 수지맞는"
+    "m": "a. 수지맞는(lucrative)"
   },
   {
     "w": "rend",
     "p": "",
     "pos": "v.",
-    "m": "v. 찢다, 부수다"
+    "m": "v. 찢다(break, cut, rip, tear, divide, splinter), 부수다"
   },
   {
     "w": "render",
     "p": "",
     "pos": "v.",
-    "m": "v. -하게 하다; 표현하다"
+    "m": "v. -하게 하다(make); 표현하다(present)"
   },
   {
     "w": "rendezvous",
     "p": "",
     "pos": "n.",
-    "m": "n. 약속; 만날 장소 v. 집합하다"
+    "m": "n. 약속(appointment, meeting); 만날 장소 v. 집합하다"
   },
   {
     "w": "rendition",
@@ -17879,19 +17879,19 @@ window.__V502_WORDBOOK3__ = [
     "w": "renegade",
     "p": "",
     "pos": "n.",
-    "m": "n. 배신자, 변절자, 배교자"
+    "m": "n. 배신자, 변절자, 배교자(apostate, recreant)"
   },
   {
     "w": "renege",
     "p": "",
     "pos": "v.",
-    "m": "v. 약속을 어기다"
+    "m": "v. 약속을 어기다(back out, default, go back on, withdraw)"
   },
   {
     "w": "renounce",
     "p": "",
     "pos": "v.",
-    "m": "v. 포기하다, 단념하다"
+    "m": "v. 포기하다, 단념하다(disown, forsake, relinquish)"
   },
   {
     "w": "renovate",
