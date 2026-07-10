@@ -388,6 +388,7 @@ const passwordStoreKey = "v502-synonym-drill-passwords";
 const wordKnowledgeKey = "v502-synonym-drill-word-knowledge";
 const quizProgressKey = "v502-synonym-drill-quiz-progress";
 const irtAbilityKey = "v502-irt-ability";            // IRT-based cumulative ability score
+const irtMigrationKey = "v502-irt-migrated-v3";
 
 function rateQuestion({X1, X2, X3, X4, X5, X6, X7}) {
   const raw = 138 - 2.5*X1 - 2.0*X2 - 2.5*X3 - 2.5*X4
@@ -408,8 +409,27 @@ function writeIrtAbility(v) {
   try { localStorage.setItem(irtAbilityKey, String(Math.round(capped * 1000) / 1000)); } catch {}
 }
 
+function getLocalIrtEntry(name = state.playerName) {
+  if (!name) return null;
+  const key = name.toLowerCase();
+  const entries = readLeaderboard().filter((e) =>
+    e.name && e.name.toLowerCase() === key && String(e.setId || "") === "IRT"
+  );
+  if (!entries.length) return null;
+  return entries.reduce((best, entry) => entry.correct > best.correct ? entry : best, entries[0]);
+}
+
 function migrateIrtAbility() {
-  if (localStorage.getItem('v502-irt-migrated-v2')) return;
+  if (localStorage.getItem(irtMigrationKey)) return;
+
+  const existingIrt = getLocalIrtEntry();
+  if (existingIrt && Number.isFinite(existingIrt.correct)) {
+    writeIrtAbility(existingIrt.correct);
+    localStorage.setItem(irtMigrationKey, '1');
+    updateTierDisplay();
+    return;
+  }
+
   let ability = 0;
   const diff = window.__V502_LOGIC_DIFFICULTY__;
 
@@ -423,18 +443,21 @@ function migrateIrtAbility() {
 
   // Other quiz types — estimate from leaderboard (rate=50)
   if (state.playerName) {
-    const cum = cumulativeLeaderboard(readLeaderboard(), null);
+    const cum = cumulativeLeaderboard(
+      readLeaderboard().filter((e) => !["IRT", "LOGIC"].includes(String(e.setId || ""))),
+      null
+    );
     const me = cum ? cum.find(e => e.name.toLowerCase() === state.playerName.toLowerCase()) : null;
     if (me) {
-      const otherCorrect = Math.max(0, me.correct - logicCorrect.size);
-      const otherWrong = Math.max(0, (me.total - me.correct) - logicWrong.size);
+      const otherCorrect = Math.max(0, me.correct);
+      const otherWrong = Math.max(0, me.total - me.correct);
       ability += getScoreDelta(true, 50) * otherCorrect;
       ability += getScoreDelta(false, 50) * otherWrong;
     }
   }
 
   writeIrtAbility(ability);
-  localStorage.setItem('v502-irt-migrated-v2', '1');
+  localStorage.setItem(irtMigrationKey, '1');
   updateTierDisplay();
 }
 
@@ -1599,7 +1622,11 @@ async function cloudPullScores() {
       };
       if (existingIdx >= 0) {
         const isCumulative = setId === 'LOGIC' || setId === 'WORDCHECK' || setId === 'SYNONYM' || setId === 'EXAM' || setId === 'GRAMMAR';
-        if (isCumulative) {
+        if (setId === 'IRT') {
+          entries[existingIdx] = entry;
+          writeIrtAbility(entry.correct);
+          updateTierDisplay();
+        } else if (isCumulative) {
           // Cumulative: prefer higher total (more questions answered = more recent)
           if (entry.total > (entries[existingIdx].total || 0)) {
             entries[existingIdx] = entry;
@@ -1609,6 +1636,10 @@ async function cloudPullScores() {
         }
       } else {
         entries.push(entry);
+        if (setId === 'IRT') {
+          writeIrtAbility(entry.correct);
+          updateTierDisplay();
+        }
       }
     }
     writeLeaderboard(entries);
@@ -1863,7 +1894,7 @@ async function savePublicScore(entry) {
   const client = await getSupabaseClient();
   if (!client) return null;
 
-  const isCumulative = entry.setId === 'LOGIC' || entry.setId === 'WORDCHECK' || entry.setId === 'SYNONYM' || entry.setId === 'EXAM' || entry.setId === 'GRAMMAR';
+  const isAuthoritative = entry.setId === 'IRT' || entry.setId === 'LOGIC' || entry.setId === 'WORDCHECK' || entry.setId === 'SYNONYM' || entry.setId === 'EXAM' || entry.setId === 'GRAMMAR';
 
   const { data: existingRows } = await client
     .from(getLeaderboardTable())
@@ -1874,7 +1905,7 @@ async function savePublicScore(entry) {
   const hasExisting = existingRows && existingRows.length > 0;
 
   if (hasExisting) {
-    if (isCumulative) {
+    if (isAuthoritative) {
       const { error } = await client
         .from(getLeaderboardTable())
         .update({
