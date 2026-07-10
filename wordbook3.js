@@ -21455,7 +21455,7 @@ window.__V502_WORDBOOK3__ = [
     "w": "tawdry",
     "p": "",
     "pos": "a.",
-    "m": "a. 야한; 값싸고 번지르르한"
+    "m": "a. 야한; 값싸고 번지르르한(flamboyant, garish, gaudy)"
   },
   {
     "w": "taxonomy",
@@ -21467,19 +21467,19 @@ window.__V502_WORDBOOK3__ = [
     "w": "tease",
     "p": "",
     "pos": "v.",
-    "m": "v. 집적거리다, 괴롭히다"
+    "m": "v. 집적거리다, 괴롭히다(harass, irritate, mock, molest)"
   },
   {
     "w": "tedium",
     "p": "",
     "pos": "n.",
-    "m": "n. 싫증, 지루함"
+    "m": "n. 싫증, 지루함(banality, boredom, ennui, monotony)"
   },
   {
     "w": "teem",
     "p": "",
     "pos": "v.",
-    "m": "v. 풍부하다"
+    "m": "v. 풍부하다(abound, replete, swarm)"
   },
   {
     "w": "teeter",
@@ -21491,19 +21491,19 @@ window.__V502_WORDBOOK3__ = [
     "w": "temerarious",
     "p": "",
     "pos": "a.",
-    "m": "a. 무모한"
+    "m": "a. 무모한(rash, reckless)"
   },
   {
     "w": "temerity",
     "p": "",
     "pos": "n.",
-    "m": "n. 무모한 행위"
+    "m": "n. 무모한 행위(audacity, impetuosity, impulsiveness)"
   },
   {
     "w": "temper",
     "p": "",
     "pos": "n.",
-    "m": "n. 기질 v. 완화하다"
+    "m": "n. 기질(disposition) v. 완화하다"
   },
   {
     "w": "tempest",
@@ -21515,7 +21515,7 @@ window.__V502_WORDBOOK3__ = [
     "w": "temporal",
     "p": "",
     "pos": "a.",
-    "m": "a. 일시적인; 세속적인"
+    "m": "a. 일시적인(temporary); 세속적인(secular, worldly)"
   },
   {
     "w": "temporize",
@@ -21527,67 +21527,67 @@ window.__V502_WORDBOOK3__ = [
     "w": "tendentious",
     "p": "",
     "pos": "a.",
-    "m": "a. 선전적인"
+    "m": "a. 선전적인(biased)"
   },
   {
     "w": "tender",
     "p": "",
     "pos": "v.",
-    "m": "v. 부드럽게 다루다 a. 친절한"
+    "m": "v. 부드럽게 다루다 a. 친절한(delicate, gentle, soft)"
   },
   {
     "w": "tenebrous",
     "p": "",
     "pos": "a.",
-    "m": "a. 어두운, 음침한"
+    "m": "a. 어두운, 음침한(dark, gloomy, murky, obscure, shadowy)"
   },
   {
     "w": "tenet",
     "p": "",
     "pos": "n.",
-    "m": "n. 주의, 교의"
+    "m": "n. 주의, 교의(canon, conviction, creed, doctrine, dogma)"
   },
   {
     "w": "tensile",
     "p": "",
     "pos": "a.",
-    "m": "a. 잡아 늘일 수 있는"
+    "m": "a. 잡아 늘일 수 있는(capable of being stretched)"
   },
   {
     "w": "tentacle",
     "p": "",
     "pos": "n.",
-    "m": "n. 촉수; 영향력"
+    "m": "n. 촉수; 영향력(influence)"
   },
   {
     "w": "tenure",
     "p": "",
     "pos": "n.",
-    "m": "n. 임기"
+    "m": "n. (공직)임기(period, span, spell, quarter, semester)"
   },
   {
     "w": "termagant",
     "p": "",
     "pos": "n.",
-    "m": "n. 잔소리가 심한 여자"
+    "m": "n. 잔소리가 심한 여자(harridan, shrew, virago)"
   },
   {
     "w": "terminal",
     "p": "",
     "pos": "a.",
-    "m": "a. 끝의, 말기인"
+    "m": "a. 끝의, (질병)말기인(final, last, ultimate)"
   },
   {
     "w": "terminate",
     "p": "",
     "pos": "v.",
-    "m": "v. 끝내다, 종결짓다"
+    "m": "v. 끝내다, 종결짓다(conclude, end, finish)"
   },
   {
     "w": "terminology",
     "p": "",
     "pos": "n.",
-    "m": "n. 전문용어"
+    "m": "n. 전문용어(jargon, lingo, nomenclature)"
   },
   {
     "w": "terminus",
@@ -21599,61 +21599,61 @@ window.__V502_WORDBOOK3__ = [
     "w": "terrestrial",
     "p": "",
     "pos": "a.",
-    "m": "a. 육지의, 지구의"
+    "m": "a. 육지의, 지구의(on the earth)"
   },
   {
     "w": "tertiary",
     "p": "",
     "pos": "a.",
-    "m": "a. 제3의, 세 번째의"
+    "m": "a. 제3의, 세 번째의(third)"
   },
   {
     "w": "testator",
     "p": "",
     "pos": "n.",
-    "m": "n. 유언자"
+    "m": "n. 유언자(maker of a will)"
   },
   {
     "w": "testy",
     "p": "",
     "pos": "a.",
-    "m": "a. 화 잘 내는, 신경질적인"
+    "m": "a. 화 잘 내는, 신경질적인(choleric, cranky, irascible)"
   },
   {
     "w": "tether",
     "p": "",
     "pos": "n.",
-    "m": "n. 밧줄; 한계 v. 구속하다"
+    "m": "n. 밧줄; (능력)한계 v. 구속하다(bind, fasten, secure, tie)"
   },
   {
     "w": "thaumaturgist",
     "p": "",
     "pos": "n.",
-    "m": "n. 요술사"
+    "m": "n. 요술사(magician)"
   },
   {
     "w": "thaw",
     "p": "",
     "pos": "n.",
-    "m": "n. 눈녹음 v. 녹다; 부드러워지다"
+    "m": "n. 눈녹음 v. 녹다(melt); 부드러워지다(soften)"
   },
   {
     "w": "theocracy",
     "p": "",
     "pos": "n.",
-    "m": "n. 신권정치"
+    "m": "n. 신권정치(government of religious leaders)"
   },
   {
     "w": "theology",
     "p": "",
     "pos": "n.",
-    "m": "n. 신학"
+    "m": "n. 신학(the study of God)"
   },
   {
     "w": "therapeutic",
     "p": "",
     "pos": "a.",
-    "m": "a. 치료의"
+    "m": "a. 치료의(curative, healing, recuperative, restorative)"
   },
   {
     "w": "thermal",
@@ -21665,37 +21665,37 @@ window.__V502_WORDBOOK3__ = [
     "w": "thespian",
     "p": "",
     "pos": "n.",
-    "m": "n. 배우 a.연극의"
+    "m": "n. 배우(actor, artist) a.연극의(dramatic, histrionic, stage)"
   },
   {
     "w": "thorny",
     "p": "",
     "pos": "a.",
-    "m": "a. 가시가 많은; 골치 아픈"
+    "m": "a. 가시가 많은(barbed, bristly, prickly, spiny); 골치 아픈"
   },
   {
     "w": "thrall",
     "p": "",
     "pos": "n.",
-    "m": "n. 노예; 속박"
+    "m": "n. 노예(slave, bondage); 속박"
   },
   {
     "w": "thrash",
     "p": "",
     "pos": "v.",
-    "m": "v. 때리다"
+    "m": "v. 때리다(maul, smack)"
   },
   {
     "w": "threadbare",
     "p": "",
     "pos": "a.",
-    "m": "a. 초라한; 빈약한"
+    "m": "a. 초라한(frayed, moth-eaten, ragged, shabby); 빈약한"
   },
   {
     "w": "threnody",
     "p": "",
     "pos": "n.",
-    "m": "n. 비가, 애가"
+    "m": "n. 비가, 애가(dirge, elegy, requiem)"
   },
   {
     "w": "threshold",
@@ -21713,31 +21713,31 @@ window.__V502_WORDBOOK3__ = [
     "w": "throng",
     "p": "",
     "pos": "n.",
-    "m": "n. 군중 v. 떼를 지어모이다"
+    "m": "n. 군중(crowd) v. 떼를 지어모이다(flock)"
   },
   {
     "w": "throttle",
     "p": "",
     "pos": "v.",
-    "m": "v. 질식시키다, 억압하다"
+    "m": "v. 질식시키다(asphyxiate, suffocate), 억압하다(suppress)"
   },
   {
     "w": "thrust",
     "p": "",
     "pos": "n.",
-    "m": "n. 요점, 핵심 v. 찌르다"
+    "m": "n. 요점, 핵심(kernel, gist, crux) v. 찌르다"
   },
   {
     "w": "thwart",
     "p": "",
     "pos": "v.",
-    "m": "v. 방해하다, 좌절시키다"
+    "m": "v. 방해하다(impede), 좌절시키다(frustrate)"
   },
   {
     "w": "tic",
     "p": "",
     "pos": "n.",
-    "m": "n. 안면경련"
+    "m": "n. (상습적인)안면경련"
   },
   {
     "w": "tidbit",
@@ -21749,55 +21749,55 @@ window.__V502_WORDBOOK3__ = [
     "w": "tiff",
     "p": "",
     "pos": "n.",
-    "m": "n. 말다툼"
+    "m": "n. (가까운 사이)말다툼(altercation, quarrel, scrap)"
   },
   {
     "w": "tightfisted",
     "p": "",
     "pos": "a.",
-    "m": "a. 인색한"
+    "m": "a. 인색한(parsimonious, stingy)"
   },
   {
     "w": "tilt",
     "p": "",
     "pos": "n.",
-    "m": "n. 경사 v. 기울이다"
+    "m": "n. 경사(grade, gradient) v. 기울이다(careen)"
   },
   {
     "w": "timbre",
     "p": "",
     "pos": "n.",
-    "m": "n. 음색, 음질"
+    "m": "n. 음색(音色), 음질"
   },
   {
     "w": "timid",
     "p": "",
     "pos": "a.",
-    "m": "a. 겁이 많은, 소심한"
+    "m": "a. 겁이 많은, 소심한(fainthearted, pusillanimous, timorous)"
   },
   {
     "w": "timorous",
     "p": "",
     "pos": "a.",
-    "m": "a. 소심한, 겁 많은"
+    "m": "a. 소심한, 겁 많은(cowardly, fainthearted, pusillanimous)"
   },
   {
     "w": "tinge",
     "p": "",
     "pos": "n.",
-    "m": "n. 엷은 색조 v. 물들이다"
+    "m": "n. 엷은 색조 v. 물들이다(shade, tincture, tint)"
   },
   {
     "w": "tinker",
     "p": "",
     "pos": "n.",
-    "m": "n. 땜장이 v. 어설프게 고치다"
+    "m": "n. 땜장이 v. 어설프게 고치다(tamper)"
   },
   {
     "w": "tint",
     "p": "",
     "pos": "n.",
-    "m": "n. 엷은 색, 색조 v. 색을 칠하다"
+    "m": "n. 엷은 색, 색조(cast, tinge, tone) v. 색을 칠하다"
   },
   {
     "w": "tipple",
@@ -21809,13 +21809,13 @@ window.__V502_WORDBOOK3__ = [
     "w": "tirade",
     "p": "",
     "pos": "n.",
-    "m": "n. 긴 공격연설"
+    "m": "n. 긴 공격연설(diatribe, harangue, philippic)"
   },
   {
     "w": "titillate",
     "p": "",
     "pos": "v.",
-    "m": "v. 흥분시키다"
+    "m": "v. 흥분시키다(excite, stimulate, thrill, whet)"
   },
   {
     "w": "titter",
@@ -21827,25 +21827,25 @@ window.__V502_WORDBOOK3__ = [
     "w": "titular",
     "p": "",
     "pos": "a.",
-    "m": "a. 이름뿐인, 명목상의"
+    "m": "a. 이름뿐인, 명목상의(nominal)"
   },
   {
     "w": "toady",
     "p": "",
     "pos": "v.",
-    "m": "v. 아첨하다, 알랑대다"
+    "m": "v. 아첨하다, 알랑대다(fawn, grovel, kowtow, truckle)"
   },
   {
     "w": "tocsin",
     "p": "",
     "pos": "n.",
-    "m": "n. 경보, 경종"
+    "m": "n. 경보, 경종(alarm bell)"
   },
   {
     "w": "toil",
     "p": "",
     "pos": "n.",
-    "m": "n. 노력 v. 열심히 일하다"
+    "m": "n. 노력 v. 열심히 일하다(labor, moil, strive, drudge)"
   },
   {
     "w": "tonic",
@@ -21863,19 +21863,19 @@ window.__V502_WORDBOOK3__ = [
     "w": "topography",
     "p": "",
     "pos": "n.",
-    "m": "n. 지형, 지세"
+    "m": "n. 지형, 지세(physical features of a region)"
   },
   {
     "w": "topsy-turvy",
     "p": "",
     "pos": "a.",
-    "m": "a. 거꾸로, 곤두박이로"
+    "m": "a. 거꾸로, 곤두박이로(head over heels)"
   },
   {
     "w": "torment",
     "p": "",
     "pos": "n.",
-    "m": "n. 고통 v. 괴롭히다"
+    "m": "n. 고통(affliction, agony, suffering) v. 괴롭히다(pester)"
   },
   {
     "w": "torpedo",
@@ -21887,13 +21887,13 @@ window.__V502_WORDBOOK3__ = [
     "w": "torpid",
     "p": "",
     "pos": "a.",
-    "m": "a. 무기력한"
+    "m": "a. 무기력한(lackadaisical, lethargic, listless)"
   },
   {
     "w": "torpor",
     "p": "",
     "pos": "n.",
-    "m": "n. 무기력"
+    "m": "n. 무기력(inactivity, languor, lassitude)"
   },
   {
     "w": "torrent",
@@ -21905,25 +21905,25 @@ window.__V502_WORDBOOK3__ = [
     "w": "torrid",
     "p": "",
     "pos": "a.",
-    "m": "a. 매우 덥고 건조한; 열렬한"
+    "m": "a. 매우 덥고 건조한, 열렬한(ardent, enthusiastic)"
   },
   {
     "w": "torso",
     "p": "",
     "pos": "n.",
-    "m": "n. 몸통; 미완성 작품"
+    "m": "n. (미술 조각)몸통; 미완성 작품"
   },
   {
     "w": "tort",
     "p": "",
     "pos": "n.",
-    "m": "n. 불법행위"
+    "m": "n. 불법행위(wrongdoing)"
   },
   {
     "w": "tortuous",
     "p": "",
     "pos": "a.",
-    "m": "a. 구불구불한; 부정한"
+    "m": "a. 구불구불한(meandering, sinuous); 부정한(devious)"
   },
   {
     "w": "totter",
@@ -21935,31 +21935,31 @@ window.__V502_WORDBOOK3__ = [
     "w": "touchstone",
     "p": "",
     "pos": "n.",
-    "m": "n. 판단의 기준"
+    "m": "n. 판단의 기준(criterion, gauge, guide, model, standard)"
   },
   {
     "w": "tousle",
     "p": "",
     "pos": "n.",
-    "m": "n. 어수선함 v. 거칠게 다루다"
+    "m": "n. 어수선함 v. 거칠게 다루다(cause disorder)"
   },
   {
     "w": "tout",
     "p": "",
     "pos": "v.",
-    "m": "v. 몹시 칭찬하다"
+    "m": "v. 몹시 칭찬하다(extol)"
   },
   {
     "w": "tract",
     "p": "",
     "pos": "n.",
-    "m": "n. 지역; 소책자"
+    "m": "n. 지역; 소책자(pamphlet)"
   },
   {
     "w": "tractable",
     "p": "",
     "pos": "a.",
-    "m": "a. 다루기 쉬운; 유순한"
+    "m": "a. 다루기 쉬운(malleable); 유순한(submissive, yielding)"
   },
   {
     "w": "traction",
@@ -21971,37 +21971,37 @@ window.__V502_WORDBOOK3__ = [
     "w": "traduce",
     "p": "",
     "pos": "v.",
-    "m": "v. 중상하다, 비방하다"
+    "m": "v. 중상하다, 비방하다(defame, malign, slander)"
   },
   {
     "w": "traffic",
     "p": "",
     "pos": "n.",
-    "m": "n. 교통; 교환 v. 거래 하다"
+    "m": "n. 교통(transportation); 교환(exchange, trade) v. 거래 하다"
   },
   {
     "w": "trail",
     "p": "",
     "pos": "n.",
-    "m": "n. 자취 v. 뒤쫓다"
+    "m": "n. 자취(trace, track) v. 뒤쫓다(chase, hunt)"
   },
   {
     "w": "traitorous",
     "p": "",
     "pos": "a.",
-    "m": "a. 배신하는"
+    "m": "a. 배신하는(back-stabbing, disloyal, faithless, perfidious)"
   },
   {
     "w": "trajectory",
     "p": "",
     "pos": "n.",
-    "m": "n. 탄도"
+    "m": "n. 탄도(path taken by a projectile)"
   },
   {
     "w": "trammel",
     "p": "",
     "pos": "n.",
-    "m": "n. 구속, 속박 v. 구속하다"
+    "m": "n. 구속, 속박 v. 구속하다(fetter)"
   },
   {
     "w": "trample",
@@ -22013,31 +22013,31 @@ window.__V502_WORDBOOK3__ = [
     "w": "transaction",
     "p": "",
     "pos": "n.",
-    "m": "n. 거래, 업무처리"
+    "m": "n. 거래, 업무처리(bargain, deal, exchange)"
   },
   {
     "w": "transcend",
     "p": "",
     "pos": "v.",
-    "m": "v. 초과하다, 능가하다"
+    "m": "v. 초과하다, 능가하다(exceed, surmount, surpass)"
   },
   {
     "w": "transcribe",
     "p": "",
     "pos": "v.",
-    "m": "v. 베끼다, 복사하다"
+    "m": "v. 베끼다, 복사하다(copy, duplicate, reproduce, rewrite)"
   },
   {
     "w": "transfigure",
     "p": "",
     "pos": "v.",
-    "m": "v. 모양을 바꾸다"
+    "m": "v. 모양을 바꾸다(change, convert, transmute)"
   },
   {
     "w": "transfix",
     "p": "",
     "pos": "v.",
-    "m": "v. 찌르다, 꿰뚫다; 고정시키다"
+    "m": "v. 찌르다, 꿰뚫다(pierce, perforate); 고정시키다"
   },
   {
     "w": "transfuse",
@@ -22049,157 +22049,157 @@ window.__V502_WORDBOOK3__ = [
     "w": "transgress",
     "p": "",
     "pos": "v.",
-    "m": "v. 위반하다"
+    "m": "v. (법률)위반하다(break, disobey, trespass, violate)"
   },
   {
     "w": "transition",
     "p": "",
     "pos": "n.",
-    "m": "n. 변화; 과도기"
+    "m": "n. 변화(alteration, change, conversion, variation); 과도기"
   },
   {
     "w": "translucent",
     "p": "",
     "pos": "a.",
-    "m": "a. 반투명한"
+    "m": "a. 반투명한(transparent)"
   },
   {
     "w": "transmute",
     "p": "",
     "pos": "v.",
-    "m": "v. 변화시키다"
+    "m": "v. (성질·외관·형상)변화시키다(change)"
   },
   {
     "w": "transparent",
     "p": "",
     "pos": "a.",
-    "m": "a. 투명한, 명확한"
+    "m": "a. 투명한(crystal, limpid, lucid, diaphanous), 명확한"
   },
   {
     "w": "transpire",
     "p": "",
     "pos": "v.",
-    "m": "v. 누설되다"
+    "m": "v. 누설되다(leak out)"
   },
   {
     "w": "transpose",
     "p": "",
     "pos": "v.",
-    "m": "v. 바꾸다"
+    "m": "v. 바꾸다(interchange)"
   },
   {
     "w": "trappings",
     "p": "",
     "pos": "n.",
-    "m": "n. 과시를 위한 물건"
+    "m": "n. (성공)과시를 위한 물건(outward decorations of success)"
   },
   {
     "w": "trash",
     "p": "",
     "pos": "n.",
-    "m": "n. 쓰레기 v. 지워버리다"
+    "m": "n. 쓰레기(debris, garbage, litter, offal, refuse) v. 지워버리다"
   },
   {
     "w": "treacherous",
     "p": "",
     "pos": "a.",
-    "m": "a. 믿을 수 없는"
+    "m": "a. 믿을 수 없는(perfidious, traitorous, unfaithful)"
   },
   {
     "w": "treachery",
     "p": "",
     "pos": "n.",
-    "m": "n. 배반, 반역"
+    "m": "n. 배반, 반역(betrayal, disloyalty, falseness, perfidy, treason)"
   },
   {
     "w": "treason",
     "p": "",
     "pos": "n.",
-    "m": "n. 배신, 배반"
+    "m": "n. 배신, 배반(betrayal, disloyalty, mutiny, sedition)"
   },
   {
     "w": "treatise",
     "p": "",
     "pos": "n.",
-    "m": "n. 논문"
+    "m": "n. (학술)논문(dissertation, literature, paper, thesis)"
   },
   {
     "w": "trek",
     "p": "",
     "pos": "n.",
-    "m": "n. 여행"
+    "m": "n. 여행(excursion, odyssey, peregrination, travel, journey)"
   },
   {
     "w": "tremor",
     "p": "",
     "pos": "n.",
-    "m": "n. 떨림; 불안감"
+    "m": "n. 떨림(quake, shaking, vibration, flutter, quiver); 불안감"
   },
   {
     "w": "tremulous",
     "p": "",
     "pos": "a.",
-    "m": "a. 떠는; 겁 많은"
+    "m": "a. 떠는(trembling); 겁 많은(frightened, panicky, timid)"
   },
   {
     "w": "trenchant",
     "p": "",
     "pos": "a.",
-    "m": "a. 날카로운; 신랄한"
+    "m": "a. 날카로운(acute, keen); 신랄한(incisive, biting, caustic)"
   },
   {
     "w": "trencherman",
     "p": "",
     "pos": "n.",
-    "m": "n. 대식가"
+    "m": "n. 대식가(a good eater)"
   },
   {
     "w": "tribunal",
     "p": "",
     "pos": "n.",
-    "m": "n. 법정"
+    "m": "n. 법정(court of justice)"
   },
   {
     "w": "tribute",
     "p": "",
     "pos": "n.",
-    "m": "n. 공물; 찬사"
+    "m": "n. 공물; 찬사(praise, compliment)"
   },
   {
     "w": "trigger",
     "p": "",
     "pos": "v.",
-    "m": "v. 촉발하다"
+    "m": "v. 촉발하다(set off, touch off)"
   },
   {
     "w": "trigger-happy",
     "p": "",
     "pos": "a.",
-    "m": "a. 매우 호전적인"
+    "m": "a. 매우호전적인(bellicose, cantankerous, pugnacious)"
   },
   {
     "w": "trilogy",
     "p": "",
     "pos": "n.",
-    "m": "n. 3부작"
+    "m": "n. (소설)3부작"
   },
   {
     "w": "trinket",
     "p": "",
     "pos": "n.",
-    "m": "n. 장신구"
+    "m": "n. (자질구레한)장신구(bauble, bijou, jewel, curio, gadget, knickknack)"
   },
   {
     "w": "trite",
     "p": "",
     "pos": "a.",
-    "m": "a. 진부한"
+    "m": "a. 진부한(banal, cliche, hackneyed, stale, stereotyped)"
   },
   {
     "w": "troth",
     "p": "",
     "pos": "n.",
-    "m": "n. 진실한 약속 v. 약속하다"
+    "m": "n. 진실한 약속 v. 약속하다(engage)"
   },
   {
     "w": "troubleshoot",
@@ -22211,37 +22211,37 @@ window.__V502_WORDBOOK3__ = [
     "w": "trounce",
     "p": "",
     "pos": "v.",
-    "m": "v. 혼내다; 참패시키다"
+    "m": "v. 혼내다; 참패시키다(batter, beat up, clobber, drub, thrash)"
   },
   {
     "w": "truckle",
     "p": "",
     "pos": "v.",
-    "m": "v. 굴종하다"
+    "m": "v. 굴종하다(subserve)"
   },
   {
     "w": "truculent",
     "p": "",
     "pos": "a.",
-    "m": "a. 사나운"
+    "m": "a. 사나운(aggressive, bellicose)"
   },
   {
     "w": "trudge",
     "p": "",
     "pos": "v.",
-    "m": "v. 터벅터벅 걷다"
+    "m": "v. 터벅터벅 걷다(march, plod, plow, tramp, wade)"
   },
   {
     "w": "truism",
     "p": "",
     "pos": "n.",
-    "m": "n. 자명한 이치"
+    "m": "n. 자명한 이치(axiom, fact, verity)"
   },
   {
     "w": "trumped-up",
     "p": "",
     "pos": "a.",
-    "m": "a. 날조된, 조작된"
+    "m": "a. (기사)날조된, 조작된(concocted, fabricated)"
   },
   {
     "w": "trumpery",
@@ -22259,61 +22259,61 @@ window.__V502_WORDBOOK3__ = [
     "w": "truncate",
     "p": "",
     "pos": "v.",
-    "m": "v. 자르다"
+    "m": "v. (끝)자르다(abbreviate, abridge, curtail, amputate)"
   },
   {
     "w": "tryst",
     "p": "",
     "pos": "n.",
-    "m": "n. 만날 약속"
+    "m": "n. 만날 약속(appointment)"
   },
   {
     "w": "tumble",
     "p": "",
     "pos": "v.",
-    "m": "v. 넘어지다; 하락하다"
+    "m": "v. 넘어지다; (가격)하락하다(plunge, stumble, topple, trip)"
   },
   {
     "w": "tumescent",
     "p": "",
     "pos": "a.",
-    "m": "a. 부어오르는; 과장된"
+    "m": "a. 부어오르는(swollen); 과장된"
   },
   {
     "w": "tumid",
     "p": "",
     "pos": "a.",
-    "m": "a. 팽창한, 과장된"
+    "m": "a. 팽창한(swollen), 과장된(bombastic, pompous)"
   },
   {
     "w": "tumult",
     "p": "",
     "pos": "n.",
-    "m": "n. 소란, 폭동"
+    "m": "n. 소란, 폭동(bedlam, chaos, riot, turmoil, upheaval)"
   },
   {
     "w": "turbid",
     "p": "",
     "pos": "a.",
-    "m": "a. 혼탁한, 흐린"
+    "m": "a. 혼탁한, 흐린(clouded, cloudy, dirty, muddy, murky)"
   },
   {
     "w": "turgid",
     "p": "",
     "pos": "a.",
-    "m": "a. 부어오른; 과장된"
+    "m": "a. 부어오른(bloated, distended, swollen); 과장된(bombastic)"
   },
   {
     "w": "turncoat",
     "p": "",
     "pos": "n.",
-    "m": "n. 배신자, 변절자"
+    "m": "n. 배신자, 변절자(renegade, traitor)"
   },
   {
     "w": "turnkey",
     "p": "",
     "pos": "n.",
-    "m": "n. 간수"
+    "m": "n. (교도소)간수(jailer)"
   },
   {
     "w": "turnout",
@@ -22325,13 +22325,13 @@ window.__V502_WORDBOOK3__ = [
     "w": "turpitude",
     "p": "",
     "pos": "n.",
-    "m": "n. 비열한 행위, 타락"
+    "m": "n. 비열한 행위, 타락(depravity)"
   },
   {
     "w": "tussle",
     "p": "",
     "pos": "n.",
-    "m": "n. 투쟁; 난투"
+    "m": "n. 투쟁; 난투(brawl, fracas, melee, scuffle)"
   },
   {
     "w": "tutelage",
@@ -22343,7 +22343,7 @@ window.__V502_WORDBOOK3__ = [
     "w": "tycoon",
     "p": "",
     "pos": "n.",
-    "m": "n. 거물"
+    "m": "n. (재계)거물(magnate)"
   },
   {
     "w": "tyranny",
