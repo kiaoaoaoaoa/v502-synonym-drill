@@ -22505,901 +22505,901 @@ window.__V502_WORDBOOK3__ = [
     "w": "unprecedented",
     "p": "",
     "pos": "a.",
-    "m": "a. 전례가 없는"
+    "m": "전례가 없는(unexampled, unparalleled, unrivaled, novel)"
   },
   {
     "w": "unravel",
     "p": "",
     "pos": "v.",
-    "m": "v. 풀다; 흐트러지다"
+    "m": "풀다, 해명하다(disentangle, untangle, solve); 흐트러지다(fray)"
   },
   {
     "w": "unremitting",
     "p": "",
     "pos": "a.",
-    "m": "a. 끊임없는"
+    "m": "끊임없는(ceaseless, constant, incessant, relentless)"
   },
   {
     "w": "unruly",
     "p": "",
     "pos": "a.",
-    "m": "a. 다루기 힘든"
+    "m": "다루기 힘든(disorderly, refractory, turbulent, ungovernable)"
   },
   {
     "w": "unsavory",
     "p": "",
     "pos": "a.",
-    "m": "a. 맛없는; 불쾌한"
+    "m": "맛없는, 불쾌한(distasteful, disagreeable, offensive, unpalatable)"
   },
   {
     "w": "unscathed",
     "p": "",
     "pos": "a.",
-    "m": "a. 상처 입지 않은"
+    "m": "상처 입지 않은(unharmed, unhurt, intact, undamaged)"
   },
   {
     "w": "unseemly",
     "p": "",
     "pos": "a.",
-    "m": "a. 보기 흉한"
+    "m": "보기 흉한, 부적절한(improper, indecorous, unbecoming, inappropriate)"
   },
   {
     "w": "unsightly",
     "p": "",
     "pos": "a.",
-    "m": "a. 보기 흉한, 볼품없는"
+    "m": "보기 흉한, 볼품없는(ugly, unattractive, hideous, unappealing)"
   },
   {
     "w": "unsophisticated",
     "p": "",
     "pos": "a.",
-    "m": "a. 소박한, 순진한"
+    "m": "소박한, 순진한(naive, artless, ingenuous, simple)"
   },
   {
     "w": "unsullied",
     "p": "",
     "pos": "a.",
-    "m": "a. 더럽혀지지 않은"
+    "m": "더럽혀지지 않은(spotless, immaculate, untainted, pristine)"
   },
   {
     "w": "untoward",
     "p": "",
     "pos": "a.",
-    "m": "a. 운이 나쁜"
+    "m": "운이 나쁜, 뜻밖의(adverse, unfortunate, unfavorable, unexpected)"
   },
   {
     "w": "unwieldy",
     "p": "",
     "pos": "a.",
-    "m": "a. 다루기 힘든"
+    "m": "다루기 힘든(cumbersome, clumsy, bulky, unmanageable)"
   },
   {
     "w": "unwittingly",
     "p": "",
     "pos": "a.",
-    "m": "a. 자신도 모르게"
+    "m": "자신도 모르게(unconsciously, inadvertently, unknowingly, unintentionally)"
   },
   {
     "w": "unwonted",
     "p": "",
     "pos": "a.",
-    "m": "a. 드문, 특이한"
+    "m": "드문, 특이한(unusual, uncommon, rare, exceptional)"
   },
   {
     "w": "upbraid",
     "p": "",
     "pos": "v.",
-    "m": "v. 비난하다, 비판하다"
+    "m": "비난하다, 꾸짖다(rebuke, reproach, scold, chide)"
   },
   {
     "w": "upholster",
     "p": "",
     "pos": "v.",
-    "m": "v. 가구로 꾸미다"
+    "m": "가구에 천/가죽을 씌우다(cover, pad, furnish)"
   },
   {
     "w": "uprising",
     "p": "",
     "pos": "n.",
-    "m": "n. 반란, 폭동"
+    "m": "반란, 폭동(revolt, rebellion, insurrection, mutiny)"
   },
   {
     "w": "uproar",
     "p": "",
     "pos": "n.",
-    "m": "n. 혼란, 소동"
+    "m": "혼란, 소동(tumult, commotion, clamor, hubbub)"
   },
   {
     "w": "uproot",
     "p": "",
     "pos": "v.",
-    "m": "v. 뿌리 뽑다"
+    "m": "뿌리 뽑다(eradicate, extirpate, displace, remove)"
   },
   {
     "w": "upshot",
     "p": "",
     "pos": "n.",
-    "m": "n. 결과"
+    "m": "결과(outcome, result, consequence, conclusion)"
   },
   {
     "w": "upstart",
     "p": "",
     "pos": "n.",
-    "m": "n. 벼락부자"
+    "m": "벼락출세한 사람(parvenu, arriviste, nouveau riche)"
   },
   {
     "w": "upsurge",
     "p": "",
     "pos": "v.",
-    "m": "v. 급증하다"
+    "m": "급증하다, 급증(increase, rise, swell, surge)"
   },
   {
     "w": "urbane",
     "p": "",
     "pos": "a.",
-    "m": "a. 세련된"
+    "m": "세련된, 예의 바른(polished, suave, refined, sophisticated)"
   },
   {
     "w": "urchin",
     "p": "",
     "pos": "n.",
-    "m": "n. 장난꾸러기"
+    "m": "장난꾸러기, 부랑아(ragamuffin, waif, street child, imp)"
   },
   {
     "w": "usurp",
     "p": "",
     "pos": "v.",
-    "m": "v. 빼앗다, 강탈하다"
+    "m": "빼앗다, 강탈하다(seize, appropriate, arrogate, supplant)"
   },
   {
     "w": "usury",
     "p": "",
     "pos": "n.",
-    "m": "n. 고리대금행위"
+    "m": "고리대금행위(extortionate interest, loan-sharking)"
   },
   {
     "w": "utopia",
     "p": "",
     "pos": "n.",
-    "m": "n. 이상적인 나라"
+    "m": "이상향, 이상적인 나라(paradise, ideal commonwealth, idyll)"
   },
   {
     "w": "uxoricide",
     "p": "",
     "pos": "n.",
-    "m": "n. 아내살해"
+    "m": "아내 살해(wife-killing); 아내 살해자(wife-killer)"
   },
   {
     "w": "uxorious",
     "p": "",
     "pos": "a.",
-    "m": "a. 아내를 너무 사랑하는"
+    "m": "아내를 지나치게 사랑하는(doting, excessively fond, wife-devoted)"
   },
   {
     "w": "vacuous",
     "p": "",
     "pos": "a.",
-    "m": "a. 텅 빈, 공허한"
+    "m": "텅 빈, 공허한(empty, blank, inane, devoid)"
   },
   {
     "w": "vagabond",
     "p": "",
     "pos": "n.",
-    "m": "n. 부랑자 a. 방랑하는"
+    "m": "부랑자, 방랑자(vagrant, tramp, wanderer, drifter); 방랑하는(roving)"
   },
   {
     "w": "vagary",
     "p": "",
     "pos": "n.",
-    "m": "n. 변덕"
+    "m": "변덕, 예측 불가한 변화(whim, caprice, freak, eccentricity)"
   },
   {
     "w": "vainglorious",
     "p": "",
     "pos": "a.",
-    "m": "a. 허영심이 강한"
+    "m": "허영심이 강한(boastful, conceited, vain, pompous)"
   },
   {
     "w": "valedictory",
     "p": "",
     "pos": "n.",
-    "m": "n. 고별 연설 a. 작별의"
+    "m": "고별의, 작별의(farewell, parting, final); 고별 연설(farewell address)"
   },
   {
     "w": "valiant",
     "p": "",
     "pos": "a.",
-    "m": "a. 용감한"
+    "m": "용감한(brave, courageous, gallant, heroic)"
   },
   {
     "w": "validity",
     "p": "",
     "pos": "n.",
-    "m": "n. 타당성, 정당성"
+    "m": "타당성, 정당성(soundness, legitimacy, cogency, force)"
   },
   {
     "w": "vandalism",
     "p": "",
     "pos": "n.",
-    "m": "n. 문화·예술의 파괴"
+    "m": "문화·예술 파괴, 공공물 훼손(defacement, destruction, sabotage)"
   },
   {
     "w": "vandalize",
     "p": "",
     "pos": "v.",
-    "m": "v. 파괴하다"
+    "m": "파괴하다, 훼손하다(deface, damage, wreck, demolish)"
   },
   {
     "w": "vanguard",
     "p": "",
     "pos": "n.",
-    "m": "n. 선구자"
+    "m": "선구자, 선두(avant-garde, forefront, spearhead, pioneers)"
   },
   {
     "w": "vanity",
     "p": "",
     "pos": "n.",
-    "m": "n. 허영심; 공허함"
+    "m": "허영심(conceit, vainglory, narcissism); 공허함(futility)"
   },
   {
     "w": "vantage",
     "p": "",
     "pos": "n.",
-    "m": "n. 유리한 지위"
+    "m": "유리한 지위, 우세(advantage, superiority, upper hand)"
   },
   {
     "w": "vapid",
     "p": "",
     "pos": "a.",
-    "m": "a. 김빠진, 활기 없는"
+    "m": "김빠진, 활기 없는(insipid, dull, flat, lifeless)"
   },
   {
     "w": "variegated",
     "p": "",
     "pos": "a.",
-    "m": "a. 얼룩덜룩한"
+    "m": "얼룩덜룩한, 다양한(mottled, dappled, diversified, multicolored)"
   },
   {
     "w": "vault",
     "p": "",
     "pos": "n.",
-    "m": "n. 금고 v. 도약하다"
+    "m": "금고, 지하실(strongroom, cellar); 도약하다(leap, spring, bound)"
   },
   {
     "w": "vaunt",
     "p": "",
     "pos": "v.",
-    "m": "v. 자랑하다"
+    "m": "자랑하다(boast, brag, flaunt, swagger)"
   },
   {
     "w": "veer",
     "p": "",
     "pos": "v.",
-    "m": "v. 방향을 바꾸다"
+    "m": "방향을 바꾸다(swerve, turn, shift, deviate)"
   },
   {
     "w": "velocity",
     "p": "",
     "pos": "n.",
-    "m": "n. 속도"
+    "m": "속도(speed, swiftness, rapidity, pace)"
   },
   {
     "w": "venal",
     "p": "",
     "pos": "a.",
-    "m": "a. 매수할 수 있는, 타락한"
+    "m": "매수할 수 있는, 타락한(corrupt, bribable, mercenary, purchasable)"
   },
   {
     "w": "vendetta",
     "p": "",
     "pos": "n.",
-    "m": "n. 복수"
+    "m": "복수, 원한(feud, blood feud, revenge, grudge)"
   },
   {
     "w": "veneer",
     "p": "",
     "pos": "n.",
-    "m": "n. 겉치레, 허식"
+    "m": "겉치레, 허식(facade, gloss, pretense, surface)"
   },
   {
     "w": "venerate",
     "p": "",
     "pos": "v.",
-    "m": "v. 존경하다"
+    "m": "존경하다(revere, reverence, worship, honor)"
   },
   {
     "w": "venereal",
     "p": "",
     "pos": "a.",
-    "m": "a. 성병에 걸린"
+    "m": "성병의, 성교의(sexual, genital)"
   },
   {
     "w": "venial",
     "p": "",
     "pos": "a.",
-    "m": "a. 용서받을 수 있는"
+    "m": "용서받을 수 있는(pardonable, forgivable, excusable, minor)"
   },
   {
     "w": "venomous",
     "p": "",
     "pos": "a.",
-    "m": "a. 독이 있는, 해로운"
+    "m": "독이 있는, 악의적인(poisonous, toxic, virulent, spiteful)"
   },
   {
     "w": "vent",
     "p": "",
     "pos": "v.",
-    "m": "v. 발산하다"
+    "m": "발산하다(express, utter, release, discharge)"
   },
   {
     "w": "ventilation",
     "p": "",
     "pos": "n.",
-    "m": "n. 통풍, 환기"
+    "m": "통풍, 환기(airing, aeration, circulation)"
   },
   {
     "w": "ventral",
     "p": "",
     "pos": "a.",
-    "m": "a. 배의, 복부의"
+    "m": "배의, 복부의(abdominal, belly-side)"
   },
   {
     "w": "ventriloquism",
     "p": "",
     "pos": "n.",
-    "m": "n. 복화술"
+    "m": "복화술(voice-throwing)"
   },
   {
     "w": "venturesome",
     "p": "",
     "pos": "a.",
-    "m": "a. 대담한, 무모한"
+    "m": "대담한, 모험적인(daring, bold, adventurous, audacious)"
   },
   {
     "w": "venue",
     "p": "",
     "pos": "n.",
-    "m": "n. 사건 발생장소"
+    "m": "장소, 사건 발생지(site, location, place, scene)"
   },
   {
     "w": "veracious",
     "p": "",
     "pos": "a.",
-    "m": "a. 정직한, 진실한"
+    "m": "정직한, 진실한(truthful, honest, accurate, candid)"
   },
   {
     "w": "veracity",
     "p": "",
     "pos": "n.",
-    "m": "n. 정직성, 진실성"
+    "m": "정직성, 진실성(truthfulness, honesty, accuracy, fidelity)"
   },
   {
     "w": "verbalize",
     "p": "",
     "pos": "v.",
-    "m": "v. 말로 나타내다"
+    "m": "말로 나타내다(articulate, express, utter, formulate)"
   },
   {
     "w": "verbiage",
     "p": "",
     "pos": "n.",
-    "m": "n. 장황함"
+    "m": "장황함, 말수 많음(wordiness, verbosity, prolixity, redundancy)"
   },
   {
     "w": "verbose",
     "p": "",
     "pos": "a.",
-    "m": "a. 말이 많은"
+    "m": "말이 많은, 장황한(wordy, prolix, long-winded, loquacious)"
   },
   {
     "w": "verdant",
     "p": "",
     "pos": "a.",
-    "m": "a. 파릇파릇한"
+    "m": "파릇파릇한, 신록의(green, lush, leafy, flourishing)"
   },
   {
     "w": "verdict",
     "p": "",
     "pos": "n.",
-    "m": "n. 평결"
+    "m": "평결, 판단(judgment, decision, ruling, finding)"
   },
   {
     "w": "verisimilitude",
     "p": "",
     "pos": "a.",
-    "m": "a. 사실 같음"
+    "m": "사실 같음, 그럴듯함(plausibility, lifelikeness, realism)"
   },
   {
     "w": "veritable",
     "p": "",
     "pos": "a.",
-    "m": "a. 진실의; 진정한"
+    "m": "진정한, 참된(true, genuine, real, authentic)"
   },
   {
     "w": "verity",
     "p": "",
     "pos": "n.",
-    "m": "n. 진실, 진리"
+    "m": "진실, 진리(truth, reality, fact, truism)"
   },
   {
     "w": "vernacular",
     "p": "",
     "pos": "n.",
-    "m": "n. 사투리; 일상적 표현"
+    "m": "사투리, 일상어(dialect, colloquial speech, native tongue)"
   },
   {
     "w": "vernal",
     "p": "",
     "pos": "a.",
-    "m": "a. 봄의"
+    "m": "봄의(springlike, spring, youthful)"
   },
   {
     "w": "vertex",
     "p": "",
     "pos": "n.",
-    "m": "n. 정점"
+    "m": "정점(apex, summit, peak, acme)"
   },
   {
     "w": "vertiginous",
     "p": "",
     "pos": "a.",
-    "m": "a. 어지러운"
+    "m": "어지러운, 현기증 나는(dizzying, giddy, whirling)"
   },
   {
     "w": "vertigo",
     "p": "",
     "pos": "n.",
-    "m": "n. 현기증"
+    "m": "현기증(dizziness, giddiness, lightheadedness)"
   },
   {
     "w": "verve",
     "p": "",
     "pos": "n.",
-    "m": "n. 열정; 활력"
+    "m": "열정, 활력(vigor, vitality, spirit, enthusiasm)"
   },
   {
     "w": "vest",
     "p": "",
     "pos": "n.",
-    "m": "n. 조끼 v. 부여하다"
+    "m": "조끼(waistcoat); 부여하다(endow, confer, invest)"
   },
   {
     "w": "vestige",
     "p": "",
     "pos": "n.",
-    "m": "n. 흔적, 자취"
+    "m": "흔적, 자취(trace, remnant, relic, remains)"
   },
   {
     "w": "vet",
     "p": "",
     "pos": "n.",
-    "m": "n. 수의사 v. 조사하다"
+    "m": "수의사(veterinarian); 조사하다(check, examine, screen, scrutinize)"
   },
   {
     "w": "veterinarian",
     "p": "",
     "pos": "n.",
-    "m": "n. 수의사"
+    "m": "수의사(vet, animal doctor)"
   },
   {
     "w": "veto",
     "p": "",
     "pos": "n.",
-    "m": "n. 거부 v. 거부하다"
+    "m": "거부권, 거부하다(reject, forbid, prohibit, overrule)"
   },
   {
     "w": "vex",
     "p": "",
     "pos": "v.",
-    "m": "v. 짜증나게 하다"
+    "m": "짜증나게 하다(annoy, irritate, bother, exasperate)"
   },
   {
     "w": "viand",
     "p": "",
     "pos": "n.",
-    "m": "n. 식품, 음식물"
+    "m": "식품, 음식물(food, fare, provisions, victuals)"
   },
   {
     "w": "vibrant",
     "p": "",
     "pos": "a.",
-    "m": "a. 진동하는; 활발한"
+    "m": "진동하는; 활발한(vivid, lively, energetic, resonant)"
   },
   {
     "w": "vicarious",
     "p": "",
     "pos": "a.",
-    "m": "a. 대리의"
+    "m": "대리의, 간접 경험의(substitute, delegated, indirect, surrogate)"
   },
   {
     "w": "vicinity",
     "p": "",
     "pos": "n.",
-    "m": "n. 가까움, 근접"
+    "m": "가까움, 근접(neighborhood, proximity, environs, locality)"
   },
   {
     "w": "vicious",
     "p": "",
     "pos": "a.",
-    "m": "a. 사악한, 심술궂은"
+    "m": "사악한, 악랄한(wicked, depraved, brutal, malicious)"
   },
   {
     "w": "vicissitude",
     "p": "",
     "pos": "n.",
-    "m": "n. 변화, 흥망성쇠"
+    "m": "변화, 흥망성쇠(fluctuation, variation, change, mutability)"
   },
   {
     "w": "victual",
     "p": "",
     "pos": "n.",
-    "m": "n. 음식 v. 식량을 공급하다"
+    "m": "음식, 식량(food, provisions, viands); 식량을 공급하다(provision)"
   },
   {
     "w": "vigilant",
     "p": "",
     "pos": "a.",
-    "m": "a. 방심하지 않는"
+    "m": "방심하지 않는(watchful, alert, wary, attentive)"
   },
   {
     "w": "vigilante",
     "p": "",
     "pos": "n.",
-    "m": "n. 자경단원"
+    "m": "자경단원(self-appointed guard, law enforcer)"
   },
   {
     "w": "vile",
     "p": "",
     "pos": "a.",
-    "m": "a. 비열한, 야비한"
+    "m": "비열한, 혐오스러운(base, despicable, repulsive, foul)"
   },
   {
     "w": "vilify",
     "p": "",
     "pos": "v.",
-    "m": "v. 비방하다"
+    "m": "비방하다(slander, defame, malign, denigrate)"
   },
   {
     "w": "vim",
     "p": "",
     "pos": "n.",
-    "m": "n. 정력, 활기"
+    "m": "정력, 활기(energy, vigor, vitality, zest)"
   },
   {
     "w": "vindicate",
     "p": "",
     "pos": "v.",
-    "m": "v. 혐의를 풀다"
+    "m": "혐의를 풀다, 정당성을 입증하다(exonerate, justify, clear, defend)"
   },
   {
     "w": "vindictive",
     "p": "",
     "pos": "a.",
-    "m": "a. 앙심을 품은"
+    "m": "앙심을 품은(vengeful, spiteful, revengeful, rancorous)"
   },
   {
     "w": "vintage",
     "p": "",
     "pos": "a.",
-    "m": "a. 오래된 것이지만 품질이 뛰어난"
+    "m": "오래됐지만 품질 좋은(classic, old, choice, prime)"
   },
   {
     "w": "viper",
     "p": "",
     "pos": "n.",
-    "m": "n. 독사"
+    "m": "독사(adder, serpent); 악의적인 사람(malicious person)"
   },
   {
     "w": "virile",
     "p": "",
     "pos": "a.",
-    "m": "a. 남자다운, 강건한"
+    "m": "남자다운, 강건한(manly, masculine, vigorous, robust)"
   },
   {
     "w": "virtuoso",
     "p": "",
     "pos": "n.",
-    "m": "n. 예술의 거장"
+    "m": "예술의 거장(master, maestro, expert, prodigy)"
   },
   {
     "w": "virulent",
     "p": "",
     "pos": "a.",
-    "m": "a. 유독한; 적대적인"
+    "m": "유독한, 악성의(poisonous, toxic, malignant, venomous); 적대적인(hostile)"
   },
   {
     "w": "visage",
     "p": "",
     "pos": "n.",
-    "m": "n. 얼굴, 용모"
+    "m": "얼굴, 용모(face, countenance, appearance, features)"
   },
   {
     "w": "vis-à-vis",
     "p": "",
     "pos": "a.",
-    "m": "a. -와 관련하여"
+    "m": "-와 관련하여, 마주 대하여(regarding, concerning, face-to-face)"
   },
   {
     "w": "visceral",
     "p": "",
     "pos": "a.",
-    "m": "a. 본능적인"
+    "m": "본능적인, 내장의(instinctive, gut, deep-seated, intuitive)"
   },
   {
     "w": "viscous",
     "p": "",
     "pos": "a.",
-    "m": "a. 끈적끈적한"
+    "m": "끈적끈적한(sticky, glutinous, gummy, adhesive)"
   },
   {
     "w": "visionary",
     "p": "",
     "pos": "n.",
-    "m": "n. 몽상가 a. 공상적인"
+    "m": "몽상가(dreamer, idealist); 공상적인(impractical, utopian, fanciful)"
   },
   {
     "w": "vista",
     "p": "",
     "pos": "n.",
-    "m": "n. 경치; 전망"
+    "m": "경치, 전망(view, prospect, panorama, outlook)"
   },
   {
     "w": "vitiate",
     "p": "",
     "pos": "v.",
-    "m": "v. 손상시키다; 더럽히다"
+    "m": "손상시키다, 더럽히다(spoil, impair, corrupt, invalidate)"
   },
   {
     "w": "vitreous",
     "p": "",
     "pos": "a.",
-    "m": "a. 유리 같은, 투명한"
+    "m": "유리 같은, 투명한(glassy, transparent, crystalline)"
   },
   {
     "w": "vitriolic",
     "p": "",
     "pos": "a.",
-    "m": "a. 신랄한"
+    "m": "신랄한(caustic, scathing, acrid, biting)"
   },
   {
     "w": "vituperate",
     "p": "",
     "pos": "v.",
-    "m": "v. 꾸짖다, 호통 치다"
+    "m": "꾸짖다, 욕하다(berate, rail, revile, abuse)"
   },
   {
     "w": "vivacious",
     "p": "",
     "pos": "a.",
-    "m": "a. 쾌활한, 명랑한"
+    "m": "쾌활한, 명랑한(lively, animated, spirited, buoyant)"
   },
   {
     "w": "vivisection",
     "p": "",
     "pos": "n.",
-    "m": "n. 생체해부"
+    "m": "생체해부(dissection on a living animal)"
   },
   {
     "w": "vixen",
     "p": "",
     "pos": "n.",
-    "m": "n. 암 여우; 심술궂은 여자"
+    "m": "암여우; 심술궂은 여자(shrew, termagant, virago)"
   },
   {
     "w": "vocation",
     "p": "",
     "pos": "n.",
-    "m": "n. 직업"
+    "m": "직업, 천직(calling, profession, occupation, career)"
   },
   {
     "w": "vociferous",
     "p": "",
     "pos": "a.",
-    "m": "a. 소란스러운"
+    "m": "소란스러운, 큰소리로 외치는(loud, clamorous, boisterous, strident)"
   },
   {
     "w": "volition",
     "p": "",
     "pos": "n.",
-    "m": "n. 의지"
+    "m": "의지, 결의(will, choice, determination, intent)"
   },
   {
     "w": "voluble",
     "p": "",
     "pos": "a.",
-    "m": "a. 수다스러운"
+    "m": "수다스러운(talkative, loquacious, glib, fluent)"
   },
   {
     "w": "voluminous",
     "p": "",
     "pos": "a.",
-    "m": "a. 방대한"
+    "m": "방대한(bulky, extensive, ample, massive)"
   },
   {
     "w": "voluptuous",
     "p": "",
     "pos": "a.",
-    "m": "a. 방탕한; 육감적인"
+    "m": "관능적인, 방탕한(sensual, luxurious, sybaritic, sensuous)"
   },
   {
     "w": "vortex",
     "p": "",
     "pos": "n.",
-    "m": "n. 소용돌이"
+    "m": "소용돌이(whirlpool, eddy, maelstrom, swirl)"
   },
   {
     "w": "votary",
     "p": "",
     "pos": "n.",
-    "m": "n. 지지자, 열성적인 추종자"
+    "m": "지지자, 열성 추종자(devotee, adherent, follower, enthusiast)"
   },
   {
     "w": "vouchsafe",
     "p": "",
     "pos": "v.",
-    "m": "v. 허용하다"
+    "m": "허용하다, 하사하다(grant, bestow, concede, deign)"
   },
   {
     "w": "vulgar",
     "p": "",
     "pos": "a.",
-    "m": "a. 천박한, 상스러운"
+    "m": "천박한, 상스러운(coarse, crude, common, obscene)"
   },
   {
     "w": "vulgarian",
     "p": "",
     "pos": "n.",
-    "m": "n. 속물"
+    "m": "속물, 천박한 사람(boor, lout, philistine, churl)"
   },
   {
     "w": "wade",
     "p": "",
     "pos": "v.",
-    "m": "v. 걸어서 건너다"
+    "m": "걸어서 건너다; 힘겹게 나아가다(trudge, plod, slog, ford)"
   },
   {
     "w": "waffle",
     "p": "",
     "pos": "n.",
-    "m": "n. 모호한 말 v. 모호하게 말하다"
+    "m": "모호한 말(equivocation, evasiveness); 모호하게 말하다(equivocate, waver)"
   },
   {
     "w": "waft",
     "p": "",
     "pos": "v.",
-    "m": "v. 공중을 떠돌다"
+    "m": "공중을 떠돌다, 실려 가다(float, drift, glide, carry)"
   },
   {
     "w": "wage",
     "p": "",
     "pos": "n.",
-    "m": "n. 임금 v. 수행하다"
+    "m": "임금(pay, salary); 수행하다(carry on, conduct, prosecute)"
   },
   {
     "w": "wager",
     "p": "",
     "pos": "n.",
-    "m": "n. 돈 내기 v. 내기에 돈을 걸다"
+    "m": "돈 내기(bet, gamble, stake); 내기에 걸다(bet, stake)"
   },
   {
     "w": "waggish",
     "p": "",
     "pos": "a.",
-    "m": "a. 익살스러운"
+    "m": "익살스러운(playful, jocular, roguish, mischievous)"
   },
   {
     "w": "waif",
     "p": "",
     "pos": "n.",
-    "m": "n. 방랑자, 집 없는 아이"
+    "m": "방랑자, 집 없는 아이(stray, orphan, foundling, urchin)"
   },
   {
     "w": "wail",
     "p": "",
     "pos": "v.",
-    "m": "v. 울부짖다, 통곡하다"
+    "m": "울부짖다, 통곡하다(lament, moan, howl, bewail)"
   },
   {
     "w": "waive",
     "p": "",
     "pos": "v.",
-    "m": "v. 포기하다"
+    "m": "포기하다(relinquish, forgo, surrender, renounce)"
   },
   {
     "w": "wallop",
     "p": "",
     "pos": "v.",
-    "m": "v. 세게 치다; 완파하다"
+    "m": "세게 치다, 완파하다(strike, thrash, beat, clobber)"
   },
   {
     "w": "wallow",
     "p": "",
     "pos": "v.",
-    "m": "v. 뒹굴다; 탐닉하다"
+    "m": "뒹굴다, 빠지다(roll, luxuriate, indulge, bask)"
   },
   {
     "w": "wan",
     "p": "",
     "pos": "a.",
-    "m": "a. 창백한"
+    "m": "창백한, 힘없는(pale, pallid, ashen, weak)"
   },
   {
     "w": "wangle",
     "p": "",
     "pos": "v.",
-    "m": "v. 교묘하게 손에 넣다"
+    "m": "교묘하게 얻다(finagle, contrive, manipulate, wheedle)"
   },
   {
     "w": "wanton",
     "p": "",
     "pos": "a.",
-    "m": "a. 터무니없는; 음탕한"
+    "m": "터무니없는, 무분별한(reckless, capricious, gratuitous); 음탕한(lewd)"
   },
   {
     "w": "warble",
     "p": "",
     "pos": "v.",
-    "m": "v. 노래하다; 지저귀다"
+    "m": "노래하다, 지저귀다(trill, sing, chirp, carol)"
   },
   {
     "w": "warp",
     "p": "",
     "pos": "v.",
-    "m": "v. 왜곡시키다"
+    "m": "왜곡시키다(distort, twist, deform, pervert)"
   },
   {
     "w": "warranty",
     "p": "",
     "pos": "n.",
-    "m": "n. 품질보증서"
+    "m": "품질보증서, 보증(guarantee, assurance, warrant)"
   },
   {
     "w": "warren",
     "p": "",
     "pos": "n.",
-    "m": "n. 사람들로 붐비는 장소"
+    "m": "붐비고 복잡한 장소(labyrinth, maze, crowded quarters)"
   },
   {
     "w": "wary",
     "p": "",
     "pos": "a.",
-    "m": "a. 주의 깊은, 신중한"
+    "m": "주의 깊은, 신중한(cautious, vigilant, circumspect, watchful)"
   },
   {
     "w": "wastrel",
     "p": "",
     "pos": "n.",
-    "m": "n. 낭비자, 방탕아"
+    "m": "낭비자, 방탕아(profligate, spendthrift, prodigal, idler)"
   },
   {
     "w": "watchdog",
     "p": "",
     "pos": "n.",
-    "m": "n. 감시단체"
+    "m": "감시단체, 감시자(guardian, monitor, overseer, sentinel)"
   },
   {
     "w": "watchword",
     "p": "",
     "pos": "n.",
-    "m": "n. 표어, 슬로건"
+    "m": "표어, 슬로건(slogan, motto, catchword, password)"
   },
   {
     "w": "watershed",
     "p": "",
     "pos": "n.",
-    "m": "n. 분수령, 중요한 시기"
+    "m": "분수령, 중대한 전환점(turning point, milestone, divide)"
   },
   {
     "w": "waver",
     "p": "",
     "pos": "v.",
-    "m": "v. 망설이다; 동요하다"
+    "m": "망설이다, 동요하다(falter, hesitate, vacillate, fluctuate)"
   },
   {
     "w": "wax",
     "p": "",
     "pos": "v.",
-    "m": "v. 커지다, 증대하다"
+    "m": "커지다, 증대하다(increase, grow, swell, expand)"
   },
   {
     "w": "waylay",
@@ -23751,120 +23751,4 @@ window.__V502_WORDBOOK3__ = [
   }
 ];
 
-// Wordbook3 display logic
-(function() {
-  function escapeHtml(s) {
-    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
-  }
 
-  function showWordbook3() {
-    var data = window.__V502_WORDBOOK3__ || [];
-    var panel = document.getElementById('wordbook3Panel');
-    var content = document.getElementById('wordbook3Content');
-    if (!panel || !content) return;
-    if (typeof switchMode === 'function') switchMode('wordlist');
-    panel.hidden = false;
-
-    var total = data.length;
-    var groups = [];
-    for (var i = 0; i < total; i += 100) {
-      groups.push({start: i + 1, end: Math.min(i + 100, total), items: data.slice(i, i + 100)});
-    }
-
-    var html = '<div class="wordlist-scroll">';
-    html += '<div class="wb3-header"><h4><span class="wl-cat-num">단어장3</span> Vocabulary Book 3 — ' + total + ' words</h4></div>';
-    html += '<div style="text-align:center;margin-bottom:12px"><button type="button" id="wb3-toggle-all" class="wl-jump-btn" style="font-size:12px;padding:4px 24px" onclick="window.__wb3ToggleAll()">모두 펼치기</button></div>';
-
-    groups.forEach(function(g, gi) {
-      var fid = 'wb3g' + gi;
-      var isFirst = (gi === 0);
-      html += '<div style="margin-bottom:6px;border:1px solid #e0e0e0;border-radius:8px;overflow:hidden">';
-      html += '<div style="display:flex;align-items:center;padding:10px 16px;cursor:pointer;background:' + (isFirst ? '#e8f0fe' : '#f8f9fa') + ';user-select:none" onclick="window.__wb3Toggle(\'' + fid + '\')">';
-      html += '<span style="font-weight:600;font-size:14px;color:#1a73e8">' + g.start + '~' + g.end + '</span>';
-      html += '<span style="margin-left:8px;font-size:12px;color:#888">(' + g.items.length + '단어)</span>';
-      html += '<span style="margin-left:auto;font-size:12px;color:#999;transition:transform 0.2s" id="' + fid + '-arrow">' + (isFirst ? '▲' : '▼') + '</span>';
-      html += '</div>';
-      html += '<div id="' + fid + '" style="' + (isFirst ? '' : 'display:none;') + '">';
-      html += '<div class="wb3-grid">';
-      g.items.forEach(function(item, wi) {
-        var num = g.start + wi;
-        var w = item.w || '';
-        var p = item.p || '';
-        var pos = item.pos || '';
-        var m = item.m || '';
-        html += '<div class="wb3-card" id="wl3-word-' + num + '">';
-        html += '<span class="wl2-word-num">' + num + '.</span>';
-        html += '<div class="wb3-card-inner">';
-        html += '<div class="wb3-word-row">';
-        html += '<span class="wb3-word">' + escapeHtml(w) + '</span>';
-        if (p) html += ' <span class="wb3-pron">[' + escapeHtml(p) + ']</span>';
-        html += '</div>';
-        if (pos || m) {
-          html += '<div class="wb3-body">';
-          if (pos) html += '<span class="wb3-pos">' + escapeHtml(pos) + '</span>';
-          if (m) html += '<span class="wb3-meaning">' + escapeHtml(m) + '</span>';
-          html += '</div>';
-        }
-        html += '</div></div>';
-      });
-      html += '</div></div></div>';
-    });
-
-    html += '</div>';
-    content.innerHTML = html;
-
-    window.__wb3Toggle = function(id) {
-      var el = document.getElementById(id);
-      var arrow = document.getElementById(id + '-arrow');
-      if (!el) return;
-      var isHidden = el.style.display === 'none';
-      el.style.display = isHidden ? '' : 'none';
-      arrow.textContent = isHidden ? '▲' : '▼';
-    };
-    window.__wb3ToggleAll = function() {
-      var btn = document.getElementById('wb3-toggle-all');
-      var expandAll = btn.textContent === '모두 펼치기';
-      for (var i = 0; i < groups.length; i++) {
-        var el = document.getElementById('wb3g' + i);
-        var arrow = document.getElementById('wb3g' + i + '-arrow');
-        if (el) {
-          el.style.display = expandAll ? '' : 'none';
-          if (arrow) arrow.textContent = expandAll ? '▲' : '▼';
-        }
-      }
-      btn.textContent = expandAll ? '모두 접기' : '모두 펼치기';
-    };
-  }
-
-  function wl3JumpTo(num, maxWords) {
-    if (isNaN(num) || num < 1 || num > maxWords) {
-      alert('1~' + maxWords + ' 사이의 숫자를 입력하세요.');
-      return;
-    }
-    var targetEl = document.getElementById('wl3-word-' + num);
-    if (targetEl) {
-      targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setTimeout(function() { window.scrollBy({ top: -40, behavior: 'smooth' }); }, 180);
-    }
-  }
-
-  // Expose jump function globally
-  window.wl3JumpTo = wl3JumpTo;
-
-  // Register the handler when DOM is loaded
-  function init() {
-    var btn = document.getElementById('wordbook3Btn');
-    if (btn) {
-      btn.addEventListener('click', showWordbook3);
-    }
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-
-  // Also expose globally for onclick in HTML
-  window.showWordbook3 = showWordbook3;
-})();
