@@ -12,6 +12,9 @@
     var N = qs.length;
     var end = start + 99;
     var label = start + '-' + end;
+    function expl(n) {
+      try { return (typeof WB3_EXPL_RANGES !== 'undefined' && WB3_EXPL_RANGES[start] && WB3_EXPL_RANGES[start][n]) || null; } catch(e) { return null; }
+    }
     var PROGRESS_KEY = "v502-synonym-drill-wb3quizR" + start + "-progress";
     var SCORE_KEY = "v502-synonym-drill-wb3quizR" + start + "-best";
     var cur = 0, score = 0, bestScore = 0;
@@ -74,11 +77,16 @@
         h += '<div class="wb3q-opts">';
         q.o.forEach(function(o,i) { h += '<button class="wb3q-opt disabled' + (o === q.a ? ' correct' : '') + '"><span class="wb3q-letter">' + LETTERS[i] + '</span>' + o + '</button>'; });
         h += '</div><div class="wb3q-fb show ok">✅ 정답입니다!</div>';
+        if (expl(q.n)) {
+          h += '<span class="wb3q-exp-toggle" onclick="var e=document.getElementById(\'wb3expR' + start + '-' + q.n + '\');e.classList.toggle(\'show\');this.textContent=e.classList.contains(\'show\')?\'📖 해설 접기\':\'📖 해설 보기\'">📖 해설 보기</span>';
+          h += '<div class="wb3q-exp" id="wb3expR' + start + '-' + q.n + '">' + expl(q.n) + '</div>';
+        }
         h += navHtml + '</div>';
       } else {
         h += '<div class="wb3q-opts">';
         q.o.forEach(function(o,i) { h += '<button class="wb3q-opt" onclick="wb3PickR' + start + '(this,\'' + o.replace(/'/g,"\\'") + '\')" data-opt="' + o.replace(/"/g,'&quot;') + '"><span class="wb3q-letter">' + LETTERS[i] + '</span>' + o + '</button>'; });
-        h += '</div><div class="wb3q-fb" id="wb3fbR' + start + '"></div>';
+        h += '</div><div class="wb3q-fb" id="wb3fbR' + start + '"></div><div class="wb3q-exp" id="wb3expR' + start + '-' + q.n + '"></div>';
+        h += '<span class="wb3q-exp-toggle" id="wb3tglR' + start + '-' + q.n + '" style="display:none" onclick="var e=document.getElementById(\'wb3expR' + start + '-' + q.n + '\');e.classList.toggle(\'show\');this.textContent=e.classList.contains(\'show\')?\'📖 해설 접기\':\'📖 해설 보기\'">📖 해설 보기</span>';
         h += navHtml + '</div>';
       }
       var area = document.getElementById('wb3QuizArea'); if (area) area.innerHTML = h;
@@ -144,6 +152,11 @@
         if (b === btn && !ok) b.classList.add('wrong');
       });
       var fb = document.getElementById('wb3fbR' + start); if (fb) { fb.classList.add('show'); fb.classList.add(ok?'ok':'no'); fb.textContent = ok ? '✅ 정답입니다!' : '❌ 오답입니다. 정답: ' + q.a; }
+
+      if (expl(q.n)) {
+        var ed = document.getElementById('wb3expR' + start + '-' + q.n); if (ed) { ed.innerHTML = expl(q.n); ed.classList.add('show'); }
+        var et = document.getElementById('wb3tglR' + start + '-' + q.n); if (et) { et.style.display = 'inline-block'; et.textContent = '📖 해설 접기'; }
+      }
 
       if (isNoExplain) { setTimeout(function() { window['wb3SubmitNextR' + start](); }, 400); }
     };
