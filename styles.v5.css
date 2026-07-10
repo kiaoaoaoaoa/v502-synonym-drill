@@ -1206,6 +1206,11 @@ details[open] > .wb3-summary::before {
   display: none;
 }
 
+/* hide word numbers */
+.wb3-num-hidden .wl2-word-num {
+  display: none;
+}
+
 /* wordbook3 card variants */
 .wb3-card.wb3-known {
   background: #f0faf0;
