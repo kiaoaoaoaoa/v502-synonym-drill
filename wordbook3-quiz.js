@@ -192,7 +192,7 @@ var WB3_QUIZ = [
 
     if (wasCorrect) {
       h += '<div class="wb3q-opts">';
-      q.o.forEach(function(o,i) { h += '<button class="wb3q-opt disabled correct"><span class="wb3q-letter">' + LETTERS[i] + '</span>' + o + '</button>'; });
+      q.o.forEach(function(o,i) { h += '<button class="wb3q-opt disabled' + (o === q.a ? ' correct' : '') + '"><span class="wb3q-letter">' + LETTERS[i] + '</span>' + o + '</button>'; });
       h += '</div><div class="wb3q-fb show ok">✅ 정답입니다!</div>';
       // Show option meanings immediately (not hidden behind toggle)
       if (WB3_OPT_MEANINGS && WB3_OPT_MEANINGS[q.n]) {

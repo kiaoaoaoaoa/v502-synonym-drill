@@ -73,7 +73,7 @@ var WB3_QUIZ_200 = WB3_QUIZ_200_299;
 
     if (wasCorrect) {
       h += '<div class="wb3q-opts">';
-      q.o.forEach(function(o,i) { h += '<button class="wb3q-opt disabled correct"><span class="wb3q-letter">' + LETTERS[i] + '</span>' + o + '</button>'; });
+      q.o.forEach(function(o,i) { h += '<button class="wb3q-opt disabled' + (o === q.a ? ' correct' : '') + '"><span class="wb3q-letter">' + LETTERS[i] + '</span>' + o + '</button>'; });
       h += '</div><div class="wb3q-fb show ok">✅ 정답입니다!</div>';
       if (typeof EXPLANATIONS_200_299 !== 'undefined' && EXPLANATIONS_200_299[q.n]) {
         h += '<span class="wb3q-exp-toggle" onclick="var e=document.getElementById(\'wb3exp200-'+q.n+'\');e.classList.toggle(\'show\');this.textContent=e.classList.contains(\'show\')?\'📖 해설 접기\':\'📖 해설 보기\'">📖 해설 보기</span>';
