@@ -2615,7 +2615,7 @@ function showWordbook3() {
 
   sectionItems.forEach((sec, idx) => {
     if (sec.items.length === 0) return;
-    var label = sec.start + '~' + sec.end + '번 단어';
+    var label = (sec.start + 1) + '~' + (sec.end + 1) + '번 단어';
     html += '<details class="wb3-section"' + (idx === 0 ? ' open' : '') + '>';
     html += '<summary class="wb3-summary">[' + label + '] <small>(' + sec.items.length + '개)</small>';
     if (idx === 0) {
@@ -2629,7 +2629,7 @@ function showWordbook3() {
     }
     if (idx !== 10 && typeof window['showWb3QuizR' + (idx * 100)] === 'function') {
       var rangeStart = idx * 100;
-      html += ' <button onclick="showWb3QuizR' + rangeStart + '()" class="wb3-quiz-btn" style="margin-left:8px;font-size:0.78rem;padding:2px 10px;border-radius:99px;background:#4c6ef5;color:#fff;border:none;cursor:pointer;font-weight:600;white-space:nowrap">📝 단어문제 ' + rangeStart + '-' + (rangeStart + 99) + '</button>';
+      html += ' <button onclick="showWb3QuizR' + rangeStart + '()" class="wb3-quiz-btn" style="margin-left:8px;font-size:0.78rem;padding:2px 10px;border-radius:99px;background:#4c6ef5;color:#fff;border:none;cursor:pointer;font-weight:600;white-space:nowrap">📝 단어문제 ' + (rangeStart + 1) + '-' + (rangeStart + 100) + '</button>';
     }
     if (idx === 10) {
       html += ' <button onclick="showWb3Quiz3()" class="wb3-quiz-btn" style="margin-left:8px;font-size:0.78rem;padding:2px 10px;border-radius:99px;background:#4c6ef5;color:#fff;border:none;cursor:pointer;font-weight:600;white-space:nowrap">📝 단어문제 1000-1099</button>';

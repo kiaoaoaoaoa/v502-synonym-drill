@@ -11,7 +11,8 @@
   function makeQuiz(start, qs) {
     var N = qs.length;
     var end = start + 99;
-    var label = start + '-' + end;
+    var label = (start + 1) + '-' + (end + 1);
+    function displayNo(q) { return q.n + 1; }
     function expl(n) {
       try { return (typeof WB3_EXPL_RANGES !== 'undefined' && WB3_EXPL_RANGES[start] && WB3_EXPL_RANGES[start][n]) || null; } catch(e) { return null; }
     }
@@ -62,7 +63,7 @@
       var wasCorrect = answered[cur+1] && picks[cur+1] === q.a;
       var wasWrong = answered[cur+1] && picks[cur+1] !== q.a;
       var h = '<div class="wb3q-card">';
-      h += '<span class="wb3q-num">문제 ' + q.n + '</span>';
+      h += '<span class="wb3q-num">문제 ' + displayNo(q) + '</span>';
       if (wasCorrect) h += '<span class="wb3q-solved" style="color:#16a34a">✅ 맞춤</span>';
       else if (wasWrong) h += '<span class="wb3q-solved" style="color:#dc2626">❌ 오답 (재도전)</span>';
       h += '<div class="wb3q-text">' + q.q.replace(/______/g, '<span class="wb3q-blank">______</span>') + '</div>';
@@ -110,7 +111,7 @@
       qs.forEach(function(q,i) {
         var mine = picks[i+1] || '-';
         var cls = !answered[i+1] ? '' : (picks[i+1] === q.a ? 'wb3q-rc' : 'wb3q-rw');
-        h += '<tr><td>' + q.n + '</td><td>' + q.a + '</td><td class="' + cls + '">' + mine + '</td></tr>';
+        h += '<tr><td>' + displayNo(q) + '</td><td>' + q.a + '</td><td class="' + cls + '">' + mine + '</td></tr>';
       });
       h += '</table></div>';
       area.innerHTML = h;

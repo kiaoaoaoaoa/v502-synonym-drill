@@ -5871,9 +5871,9 @@ window.__V502_WORDBOOK3__ = [
   },
   {
     "w": "defenestrate",
-    "p": "[di:fènəstréiʃən]",
-    "pos": "n.",
-    "m": "n. (정당·관직)축출, 해직"
+    "p": "diːfénəstrèit",
+    "pos": "v.",
+    "m": "창밖으로 던지다; (정당·관직에서) 축출하다, 해직하다"
   },
   {
     "w": "defer",
@@ -23750,5 +23750,4 @@ window.__V502_WORDBOOK3__ = [
     "m": "n. 재치 있는 말"
   }
 ];
-
 
