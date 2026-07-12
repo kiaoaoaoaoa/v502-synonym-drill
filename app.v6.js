@@ -4272,7 +4272,8 @@ function renderWordcheckQuestion() {
       selectedLetter = letter;
       btn.style.background = 'var(--accent-light, #e3f2fd)';
       btn.style.borderColor = 'var(--accent, #1a73e8)';
-      if (noExplainMode) { submitWordcheckAnswer(letter); }
+      const isV201 = q.i && String(q.i).indexOf('V201') === 0;
+      if (noExplainMode || isV201) { submitWordcheckAnswer(letter); }
       else { submitBtn.style.display = 'inline-block'; }
     };
     choicesEl.appendChild(btn);
@@ -4464,6 +4465,32 @@ function persistSynonymRanking() {
   updateSidebarCompletion();
 }
 
+// 201 단어문제 선지 뜻 조회: 단어일람2(EXTRA) → 단어 뜻사전 → 단어장3 → 보충 사전
+let wc201MeaningCache = null;
+function wc201ChoiceMeaning(word) {
+  if (!wc201MeaningCache) {
+    const extra = new Map((window.__V502_EXTRA__ || []).map(e => [String(e.w).toLowerCase(), e.m]));
+    const wm = new Map(Object.entries((window.__V502_EXT__ && window.__V502_EXT__.wordMeanings) || {}).map(([k, v]) => [k.toLowerCase(), v]));
+    const wb3 = new Map((window.__V502_WORDBOOK3__ || []).map(e => [String(e.w).toLowerCase(), e.m]));
+    const sup = new Map(Object.entries(window.__V502_WC201_GLOSS__ || {}).map(([k, v]) => [k.toLowerCase(), v]));
+    wc201MeaningCache = { extra, wm, wb3, sup };
+  }
+  const c = wc201MeaningCache;
+  const w = String(word).toLowerCase().trim();
+  const cands = [w];
+  if (w.endsWith('ies')) cands.push(w.slice(0, -3) + 'y');
+  if (w.endsWith('ied')) cands.push(w.slice(0, -3) + 'y');
+  if (w.length > 4 && w.endsWith('ed') && w[w.length - 3] === w[w.length - 4]) cands.push(w.slice(0, -3));
+  if (w.endsWith('ed')) cands.push(w.slice(0, -2), w.slice(0, -1), w.slice(0, -2) + 'e');
+  if (w.endsWith('es')) cands.push(w.slice(0, -2));
+  if (w.endsWith('s')) cands.push(w.slice(0, -1));
+  if (w.endsWith('ing')) cands.push(w.slice(0, -3), w.slice(0, -3) + 'e');
+  for (const src of [c.extra, c.wm, c.wb3, c.sup]) {
+    for (const k of cands) { if (src.has(k)) return src.get(k); }
+  }
+  return null;
+}
+
 function submitWordcheckAnswer(letter) {
   const q = wordcheckQuestions[wcState.index];
   const answerLetter = wordcheckCorrectLetter(q);
@@ -4539,14 +4566,20 @@ function submitWordcheckAnswer(letter) {
     expHTML += `<p style="margin:8px 0 4px;font-size:13px">📝 ${q.k}</p>`;
   }
 
+  const isV201q = q.i && String(q.i).indexOf('V201') === 0;
   expHTML += '<div style="margin-top:8px;font-size:13px">';
   q.c.forEach(([l, t]) => {
+    let gloss = '';
+    if (isV201q) {
+      const m = wc201ChoiceMeaning(t);
+      if (m) gloss = ` <span style="color:#666;font-weight:400">— ${escapeHtml(m)}</span>`;
+    }
     if (l === answerLetter) {
-      expHTML += `<div style="color:#2e7d32;padding:2px 0">✓ (${l}) ${t}</div>`;
+      expHTML += `<div style="color:#2e7d32;padding:2px 0">✓ (${l}) ${t}${gloss}</div>`;
     } else if (l === letter && !correct) {
-      expHTML += `<div style="color:#c62828;padding:2px 0">✗ (${l}) ${t}</div>`;
+      expHTML += `<div style="color:#c62828;padding:2px 0">✗ (${l}) ${t}${gloss}</div>`;
     } else {
-      expHTML += `<div style="color:#999;padding:2px 0">  (${l}) ${t}</div>`;
+      expHTML += `<div style="color:#999;padding:2px 0">  (${l}) ${t}${gloss}</div>`;
     }
   });
   expHTML += '</div>';
