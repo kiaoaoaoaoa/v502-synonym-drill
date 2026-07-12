@@ -105,7 +105,7 @@ WB3_QUIZ_RANGES["1200"] = [
 {n:1298,q:"The old captains scoffed at the tables, but the ______ data won: routes plotted from ten thousand logbooks beat any single lifetime's instinct.",a:"empirical",o:["empirical","putative","gorgeous","hirsute","tenebrous"]}
 ];
 WB3_QUIZ_RANGES["1300"] = [
-{n:1300,q:"The city ______ visitors slowly — a week of gray, then one lit bridge at dusk, and the return ticket quietly expired.",a:"enamored",o:["enamored","encumbered","enraged","enticed","estranged"]},
+{n:1300,q:"By week's end, visitors found themselves quietly ______ of the city — one lit bridge at dusk, and the return ticket expired unused.",a:"enamored",o:["enamored","encumbered","enraged","enticed","estranged"]},
 {n:1302,q:"The expedition was ______ by its own sponsors — crates of ceremonial gifts, a film crew, a poet — baggage that ate the porters' loads.",a:"encumbered",o:["encumbered","enmeshed","ensconced","entombed","enervated"]},
 {n:1304,q:"The transcripts caught the gangster's ______ — 'sweetheart,' 'my treasure' — addressed exclusively, jurors noted, to his accountant.",a:"endearments",o:["endearments","epigrams","epithets","excerpts","escapades"]},
 {n:1306,q:"The humidity ______ the orchestra by the second movement — tempos sagging, the conductor rowing against wet air.",a:"enervated",o:["enervated","enraged","enticed","entombed","eroded"]},
@@ -119,7 +119,7 @@ WB3_QUIZ_RANGES["1300"] = [
 {n:1322,q:"The recruiter ______ engineers with signing bonuses and stock — bait sized, one candidate noted, to the exact depth of their student debt.",a:"enticed",o:["enticed","entreated","enjoined","enraged","enamored"]},
 {n:1324,q:"The pharaoh was ______ with his boats, his bakers' figurines, and — the archaeologists paused here — his accountants.",a:"entombed",o:["entombed","ensconced","enmeshed","engraved","encumbered"]},
 {n:1326,q:"The star's ______ filled three SUVs — trainer, tailor, astrologer — a payroll that outnumbered the film's speaking cast.",a:"entourage",o:["entourage","electorate","emissary","epicure","equestrian"]},
-{n:1328,q:"The villagers ______ the engineer to test the dam again — a request refused in writing that the flood, that spring, countersigned.",a:"entreated",o:["entreated","enticed","enjoined","enunciated","eulogized"]},
+{n:1328,q:"The villagers ______ the engineer to test the dam again — a request refused in writing that the flood, that spring, countersigned.",a:"entreated",o:["entreated","enticed","entombed","enunciated","eulogized"]},
 {n:1330,q:"The elocution coach made the minister ______ every syllable — consonants restored like masonry — until the rural accent survived only in vowels.",a:"enunciate",o:["enunciate","entreat","enjoin","evince","equivocate"]},
 {n:1332,q:"The founder ______ a city where the factory stood — schools, tramlines, an opera house — and built, before doubting, the tram.",a:"envisioned",o:["envisioned","evoked","evinced","enunciated","eventuated"]},
 {n:1334,q:"The canyon recorded ______ in its walls — each stripe a sea that had come, stayed a million years, and left.",a:"eons",o:["eons","epigrams","epithets","excerpts","effigies"]},
@@ -141,17 +141,17 @@ WB3_QUIZ_RANGES["1300"] = [
 {n:1366,q:"The shipwreck survivors' ______ outlasted the rescue — reunions for forty years, held on the anniversary, at sea level.",a:"esprit de corps",o:["esprit de corps","ennui","euphoria","equipoise","eclat"]},
 {n:1368,q:"The inheritance ______ the brothers more efficiently than poverty ever had — the first winter they did not speak was the estate's first profitable one.",a:"estranged",o:["estranged","enraged","enmeshed","eroded","enervated"]},
 {n:1370,q:"The census added an ______ category the empire had spent a century insisting did not exist — recognition arriving as a checkbox.",a:"ethnic",o:["ethnic","equable","erratic","erstwhile","empirical"]},
-{n:1372,q:"The museum's ______ wing had been assembled by collectors who never asked — artifacts whose labels now included, in new ink, the word 'taken.'",a:"ethnology",o:["ethnology","espionage","elocution","epilepsy","ethnic"]},
+{n:1372,q:"The museum's ______ wing had been assembled by collectors who never asked — artifacts whose labels now included, in new ink, the word 'taken.'",a:"ethnology",o:["ethnology","espionage","elocution","epilepsy","ennui"]},
 {n:1374,q:"The rivals took turns ______ the dead critic — praise so warm that listeners forgot both men had sued him.",a:"eulogizing",o:["eulogizing","equivocating","enunciating","entreating","evincing"]},
 {n:1376,q:"The summit's ______ lasted one news cycle — handshakes, doves, a signed photograph — before the annexes were read.",a:"euphoria",o:["euphoria","ennui","epiphany","equipoise","eclat"]},
 {n:1378,q:"The artist worked only in frost on glass — ______ by design, each piece guaranteed to be gone by noon.",a:"evanescent",o:["evanescent","equable","erratic","erstwhile","exemplary"]},
 {n:1380,q:"The border 'incident' ______ in a treaty no one had planned — accident upgraded, by exhaustion, into policy.",a:"eventuated",o:["eventuated","escalated","eroded","evoked","evinced"]},
 {n:1382,q:"Throughout the reading of the verdict she ______ nothing — hands still, breath even — a blankness the reporters spent a week translating.",a:"evinced",o:["evinced","evoked","enunciated","envisioned","equivocated"]},
 {n:1384,q:"One bar of the anthem ______ the whole decade — curfews, bread lines, and the particular cold of that stadium.",a:"evoked",o:["evoked","evinced","envisioned","eulogized","eventuated"]},
-{n:1386,q:"The court poets ______ the emperor's defeats into strategic pauses — flattery performing, verse by verse, the work of cartography.",a:"exalted",o:["exalted","eulogized","evoked","excoriated","exculpated"]},
+{n:1386,q:"The court poets ______ the emperor's every defeat as farsighted restraint — flattery performing, verse by verse, the work of cartography.",a:"exalted",o:["exalted","enunciated","evoked","excoriated","exculpated"]},
 {n:1388,q:"The review quoted a single ______ — two sentences, mid-argument, minus their 'however' — and the author spent a year chasing the missing word.",a:"excerpt",o:["excerpt","epigram","epithet","effigy","elegy"]},
 {n:1390,q:"The editorial ______ the ministry with unusual precision — names, dates, and the exact clause each man had signed.",a:"excoriated",o:["excoriated","exculpated","exalted","eulogized","executed"]},
-{n:1392,q:"The mollusk ______ a shell of pure ceramic — construction by secretion, the engineer noted enviously, with zero waste.",a:"excretes",o:["excretes","excerpts","evinces","evokes","executes"]},
+{n:1392,q:"The aphid ______ a honeydew so sweet that ants farm whole colonies for it — waste, the biologist noted, promoted to currency.",a:"excretes",o:["excretes","excerpts","evinces","evokes","executes"]},
 {n:1394,q:"The DNA ______ the gardener after nineteen years — an exoneration the original detective, retired, drove two hundred miles to witness.",a:"exculpated",o:["exculpated","excoriated","executed","exalted","evinced"]},
 {n:1396,q:"The heist was ______ in four minutes flat — a plan rehearsed in a rented warehouse until the choreography survived its own adrenaline.",a:"executed",o:["executed","exculpated","excoriated","evoked","envisioned"]},
 {n:1398,q:"The court called the sentence ______ — punishment designed to be quoted, a verdict addressed less to the prisoner than to his profession.",a:"exemplary",o:["exemplary","evanescent","equable","erratic","effectual"]}
