@@ -60,7 +60,7 @@ var WB3_QUIZ_2 = WB3_QUIZ_101_200;
     var wasCorrect = answered[cur+1] && picks[cur+1] === q.a;
     var wasWrong = answered[cur+1] && picks[cur+1] !== q.a;
     var h = '<div class="wb3q-card">';
-    h += '<span class="wb3q-num">문제 ' + q.n + '</span>';
+
     if (wasCorrect) h += '<span class="wb3q-solved" style="color:#16a34a">✅ 맞춤</span>';
     else if (wasWrong) h += '<span class="wb3q-solved" style="color:#dc2626">❌ 오답 (재도전)</span>';
     h += '<div class="wb3q-text">' + q.q.replace(/______/g, '<span class="wb3q-blank">______</span>') + '</div>';
