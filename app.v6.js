@@ -894,6 +894,14 @@ function escapeHtml(value) {
   })[char]);
 }
 
+function escapeInlineJsString(value) {
+  return String(value || '')
+    .replace(/\\/g, '\\\\')
+    .replace(/'/g, "\\'")
+    .replace(/\r/g, '\\r')
+    .replace(/\n/g, '\\n');
+}
+
 function getCategory(word, preferredId = "") {
   return categories.find((category) => category.id === preferredId && category.words.includes(word)) ||
     categories.find((category) => category.words.includes(word));
@@ -2476,16 +2484,114 @@ function handleCardToggle(word, cardEl) {
   if (wordEl) handleWordToggle(word, wordEl);
 }
 
+const WORDCHECK_V101_WORD_FIXES = {
+  V101_002: 'abide by',
+  V101_005: 'accentuate',
+  V101_007: 'wrangle',
+  V101_011: 'deteriorate',
+  V101_013: 'ameliorate',
+  V101_023: 'bellicose',
+  V101_035: 'exempt from',
+  V101_036: 'vilify',
+  V101_042: 'contumacious',
+  V101_044: 'counterfeit',
+  V101_046: 'subvert',
+  V101_049: 'traduce',
+  V101_063: 'disseminate',
+  V101_065: 'daunt',
+  V101_066: 'disavow',
+  V101_067: 'dingy',
+  V101_071: 'dicker',
+  V101_073: 'debrief',
+  V101_078: 'penalize',
+  V101_082: 'liberate',
+  V101_085: 'embezzle',
+  V101_090: 'exacerbate',
+  V101_091: 'exacerbate',
+  V101_092: 'vilify',
+  V101_094: 'extradite',
+  V101_095: 'exhilarate',
+  V101_101: 'fabricate',
+  V101_111: 'foresight',
+  V101_112: 'foolhardy',
+  V101_113: 'forestall',
+  V101_114: 'afflict',
+  V101_122: 'grievance',
+  V101_127: 'gaffe',
+  V101_131: 'genocide',
+  V101_132: 'menace',
+  V101_134: 'gloating',
+  V101_135: 'grueling',
+  V101_139: 'meticulous',
+  V101_142: 'hangover',
+  V101_147: 'lucid',
+  V101_152: 'hinder',
+  V101_158: 'loquacious',
+  V101_161: 'jam',
+  V101_162: 'jitters',
+  V101_163: 'kickback',
+  V101_164: 'jeopardize',
+  V101_166: 'niche market',
+  V101_167: 'leverage',
+  V101_168: 'irascible',
+  V101_169: 'inflexible',
+  V101_171: 'vilify',
+  V101_172: 'waive',
+  V101_173: 'wanton',
+  V101_176: 'cooperate with',
+  V101_177: 'accomplice',
+  V101_178: 'obdurate',
+  V101_180: 'adulterate',
+  V101_186: 'vanguard',
+  V101_187: 'venal',
+  V101_190: 'vigilant',
+  V101_192: 'suppress',
+  V101_196: 'brazen',
+  V101_197: 'bureaucracy',
+};
+
+function getWordcheckV101Entries() {
+  const questions = window.__V502_WC_V101__ || [];
+  const meanings = (window.__V502_EXT__ && window.__V502_EXT__.wordMeanings) || {};
+  const extraMeanings = new Map((window.__V502_EXTRA__ || []).map((item) => [String(item.w || '').toLowerCase(), item.m || '']));
+
+  function cleanAnswer(value) {
+    return String(value || '')
+      .replace(/\s+-\s*\d+\s+-.*$/g, '')
+      .split(/\s{2,}/)[0]
+      .trim();
+  }
+
+  function lookupMeaning(word) {
+    const lower = String(word || '').toLowerCase();
+    const title = lower ? lower.charAt(0).toUpperCase() + lower.slice(1) : '';
+    return meanings[word] || meanings[lower] || meanings[title] || extraMeanings.get(lower) || '';
+  }
+
+  return questions.map((question, idx) => {
+    const choice = (question.c || []).find((item) => item[0] === question.a);
+    const word = WORDCHECK_V101_WORD_FIXES[question.i] || cleanAnswer(choice && choice[1]);
+    return {
+      w: word,
+      m: lookupMeaning(word),
+      ex: question.k || question.q || '',
+      no: idx + 1,
+    };
+  }).filter((item) => item.w);
+}
+
 function showWordlist2() {
   switchMode('wordlist');
   els.wordlist2Panel.hidden = false;
+  const v101Words = getWordcheckV101Entries();
   const extraWords = window.__V502_EXTRA__ || [];
   const hideKnown = wlHideKnown && state.playerName;
-  const visible = hideKnown ? extraWords.filter(item => !isWordKnown(item.w || '')) : extraWords;
-  const hiddenCount = extraWords.length - visible.length;
+  const v101Visible = hideKnown ? v101Words.filter(item => !isWordKnown(item.w || '')) : v101Words;
+  const extraVisible = hideKnown ? extraWords.filter(item => !isWordKnown(item.w || '')) : extraWords;
+  const hiddenCount = (v101Words.length - v101Visible.length) + (extraWords.length - extraVisible.length);
 
   let html = '<div class="wordlist-scroll"><div class="wordlist-cat">';
-  html += '<h4><span class="wl-cat-num">EXTRA</span> MVP2 + V401 (V502 미포함) — ' + visible.length + ' words';
+  html += '<h4><span class="wl-cat-num">WL2</span> 단어일람2 — ' + (v101Visible.length + extraVisible.length) + ' words';
   if (hiddenCount > 0) html += ' <small style="color:var(--muted);font-weight:400">(' + hiddenCount + ' hidden)</small>';
   html += ' <button onclick="showWordcheck201()" style="margin-left:8px;padding:2px 8px;border:1px solid #2563EB;border-radius:4px;background:transparent;color:#2563EB;font-size:11px;font-weight:600;cursor:pointer;vertical-align:middle">201 단어퀴즈</button>';
   html += ' <button onclick="showWordcheck()" style="margin-left:4px;padding:2px 8px;border:1px solid #16A34A;border-radius:4px;background:transparent;color:#16A34A;font-size:11px;font-weight:600;cursor:pointer;vertical-align:middle">단어확인문제</button>';
@@ -2498,8 +2604,8 @@ function showWordlist2() {
   // 100-word chunks
   const CHUNK = 100;
   const chunks = [];
-  for (let i = 0; i < visible.length; i += CHUNK) {
-    chunks.push({ start: i, end: Math.min(i + CHUNK - 1, visible.length - 1), items: visible.slice(i, i + CHUNK) });
+  for (let i = 0; i < extraVisible.length; i += CHUNK) {
+    chunks.push({ start: i, end: Math.min(i + CHUNK - 1, extraVisible.length - 1), items: extraVisible.slice(i, i + CHUNK) });
   }
   function renderWL2Entries(items) {
     let h = '<div class="wordlist2-entries">';
@@ -2509,9 +2615,10 @@ function showWordlist2() {
       const m = item.m || '';
       const known = state.playerName && isWordKnown(w);
       h += '<div class="wl2-entry">';
+      if (item.no) h += '<span class="wl2-word-num">' + escapeHtml(String(item.no)) + '.</span>';
       h += '<span class="wl2-word' + (known ? ' wl-known' : '') + (state.playerName ? ' wl-clickable' : '') + '"';
       if (state.playerName) {
-        h += ' onclick="handleWordToggle(\'' + escapeHtml(w) + '\', this)" title="클릭하여 안다/모른다 표시"';
+        h += ' onclick="handleWordToggle(\'' + escapeHtml(escapeInlineJsString(w)) + '\', this)" title="클릭하여 안다/모른다 표시"';
       }
       h += '>';
       if (known) h += '<span class="wl-check">✓</span>';
@@ -2523,9 +2630,17 @@ function showWordlist2() {
     h += '</div>';
     return h;
   }
+
+  if (v101Visible.length > 0) {
+    html += '<details class="wb3-section" open>';
+    html += '<summary class="wb3-summary">[101 단어] <small>(' + v101Visible.length + '개)</small></summary>';
+    html += renderWL2Entries(v101Visible);
+    html += '</details>';
+  }
+
   chunks.forEach((chunk, idx) => {
     html += '<details class="wb3-section"' + (idx === 0 ? ' open' : '') + '>';
-    html += '<summary class="wb3-summary">[' + (chunk.start + 1) + '~' + (chunk.end + 1) + '번] <small>(' + chunk.items.length + '개)</small></summary>';
+    html += '<summary class="wb3-summary">[EXTRA ' + (chunk.start + 1) + '~' + (chunk.end + 1) + '번] <small>(' + chunk.items.length + '개)</small></summary>';
     html += renderWL2Entries(chunk.items);
     html += '</details>';
   });
